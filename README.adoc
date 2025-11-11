@@ -696,29 +696,17 @@ Based on the response, you can determine:
 * ⚠️ *Partial recognition*: LLM knows it but lacks depth → Add with extra context
 * ❌ *Unknown*: LLM doesn't recognize it → May not be a good semantic anchor yet
 
-=== Contributing New Anchors via Pull Request
+=== Contributing New Anchors
 
-Once you've tested a semantic anchor and confirmed it's valuable, you can contribute it to your catalog using a Git workflow.
+Once you've tested a semantic anchor and confirmed it's valuable, you can contribute it to this catalog.
 
-==== Step 1: Prepare Your Branch
+==== Quick Contribution via GitHub
 
-Start from the main branch and create a feature branch for your addition:
+The easiest way to contribute is to click the edit button (pencil icon) on this file in GitHub, make your changes, and submit a pull request directly.
 
-[source,bash]
-----
-# Make sure main is up to date
-git checkout main
-git pull origin main
+==== Format for New Anchors
 
-# Create a feature branch
-git checkout -b feature/add-semantic-anchor-xyz
-----
-
-IMPORTANT: Always start feature branches from `main`, not from other feature branches.
-
-==== Step 2: Add Your Semantic Anchor
-
-Edit the `semantic-anchors-for-llms.adoc` file and add a new section following the established pattern:
+Add a new section following this pattern:
 
 [source,asciidoc]
 ----
@@ -743,59 +731,7 @@ Edit the `semantic-anchors-for-llms.adoc` file and add a new section following t
 ====
 ----
 
-==== Step 3: Commit Your Changes
-
-[source,bash]
-----
-# Stage your changes
-git add semantic-anchors-for-llms.adoc
-
-# Commit with a descriptive message
-git commit -m "Add semantic anchor: Your Anchor Name"
-
-# Consider adding co-authorship if Claude helped
-git commit --amend --no-edit --trailer "Co-authored-by: Claude <claude@anthropic.com>"
-----
-
-NOTE: Decide whether to credit Claude as co-author based on the level of contribution.
-
-==== Step 4: Push and Create Pull Request
-
-[source,bash]
-----
-# Push your branch
-git push origin feature/add-semantic-anchor-xyz
-
-# Create a PR via GitHub/GitLab UI or CLI
-gh pr create --title "Add semantic anchor: Your Anchor Name" \
-             --body "Adds semantic anchor for XYZ methodology. 
-             
-Tested with LLM and confirmed good recognition."
-----
-
-==== Step 5: Review and Merge
-
-* Have the PR reviewed by team members
-* Ensure the anchor fits the catalog structure
-* Check for duplicate or overlapping anchors
-* Merge to main once approved
-
-==== Working with Forks
-
-If you're contributing to a forked repository:
-
-1. *Check fork status*: Ensure your fork is synchronized with upstream
-+
-[source,bash]
-----
-git remote add upstream <original-repo-url>
-git fetch upstream
-git checkout main
-git merge upstream/main
-----
-
-2. *Create branch*: Always branch from the updated main
-3. *Create PR*: Submit PR to the upstream repository
+TIP: You can use your LLM to help generate a properly formatted entry. Ask it to analyze the semantic anchor and produce an entry following the established pattern in this document
 
 == Conclusion
 

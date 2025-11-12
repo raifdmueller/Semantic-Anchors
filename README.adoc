@@ -685,7 +685,7 @@ Below is a curated list of semantic anchors useful for software development, arc
 
 *When to Use*:
 
-* everything-as-code paradigm targetted
+* everything-as-code paradigm targeted
 * team-/community-communication
 * repository quality improvements
 

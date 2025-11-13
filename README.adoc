@@ -29,7 +29,25 @@ When working with LLMs like Claude, using semantic anchors provides several adva
 
 Below is a curated list of semantic anchors useful for software development, architecture, and requirements engineering. Each anchor includes related concepts and practices.
 
-=== TDD, London School
+The anchors are organized into the following categories:
+
+* <<testing-quality-assurance>>
+* <<software-architecture>>
+* <<architecture-documentation>>
+* <<software-design>>
+* <<requirements-engineering>>
+* <<product-management-strategy>>
+* <<decision-making-frameworks>>
+* <<documentation-practices>>
+* <<development-practices>>
+* <<software-philosophy>>
+
+[#testing-quality-assurance]
+=== Testing & Quality Assurance
+
+This category covers testing methodologies, approaches, and strategies for ensuring software quality.
+
+==== TDD, London School
 
 [%collapsible]
 ====
@@ -53,7 +71,7 @@ Below is a curated list of semantic anchors useful for software development, arc
 * Distributed systems where integration is costly
 ====
 
-=== TDD, Chicago School
+==== TDD, Chicago School
 
 [%collapsible]
 ====
@@ -77,97 +95,131 @@ Below is a curated list of semantic anchors useful for software development, arc
 * Smaller, cohesive modules
 ====
 
-=== Problem Space NVC
+==== Property-Based Testing
 
 [%collapsible]
 ====
-*Full Name*: Problem Space in Nonviolent Communication
+*Also known as*: Generative Testing, QuickCheck-style Testing
 
 *Core Concepts*:
 
-* *Observations*: Concrete, objective facts without evaluation
-* *Feelings*: Emotions arising from observations
-* *Needs*: Universal human needs underlying feelings
-* *Requests*: Specific, actionable requests (not demands)
-* *Empathic connection*: Understanding before problem-solving
-* *Separating observation from interpretation*: Avoiding judgment
-* *Needs-based conflict resolution*: Finding solutions that meet everyone's needs
+* *Properties*: Invariants that should always hold
+* *Generators*: Automatic test data creation
+* *Shrinking*: Minimizing failing test cases to simplest form
+* *Universal quantification*: Testing "for all inputs"
+* *Specification testing*: Testing high-level properties, not examples
+* *Edge case discovery*: Finds cases you didn't think of
+* *Complementary to example-based*: Works alongside traditional unit tests
+* *Stateful testing*: Testing sequences of operations
+* *Model-based testing*: Compare implementation against simpler model
 
-*Key Proponent*: Marshall Rosenberg
-
-*Application in Software Development*:
-
-* Requirements elicitation that uncovers real user needs
-* Stakeholder communication and conflict resolution
-* User story formulation focused on needs
-* Retrospectives and team communication
-====
-
-=== Mental Model according to Naur
-
-[%collapsible]
-====
-*Full Name*: Programming as Theory Building (Mental Model) according to Peter Naur
-
-*Core Concepts*:
-
-* *Theory building*: Programming is creating a mental model, not just writing code
-* *Theory of the program*: Deep understanding of why the program works and how it relates to the problem domain
-* *Knowledge in people*: The real program exists in developers' minds, not in the code
-* *Theory decay*: When original developers leave, the theory is lost
-* *Documentation limitations*: Written documentation cannot fully capture the theory
-* *Maintenance as theory*: Effective maintenance requires possessing the theory
-* *Communication is key*: Theory must be shared through collaboration and conversation
-* *Ramp-up time*: New team members need time to build the theory
-* *Code as artifact*: Code is merely a representation of the underlying theory
-
-*Key Proponent*: Peter Naur (Turing Award winner, 1978)
-
-*Original Work*: "Programming as Theory Building" (1985)
-
-*Application in Software Development*:
-
-* Understanding why knowledge transfer is challenging
-* Emphasizing pair programming and mob programming
-* Justifying time for onboarding and code walkthroughs
-* Explaining technical debt accumulation when teams change
-* Supporting documentation practices that capture "why" not just "what"
-* Advocating for team stability and continuity
-
-*Contrast with Other Views*:
-
-* Programming as text production → Focus on code output
-* Programming as problem solving → Focus on algorithms
-* Programming as theory building → Focus on understanding
-====
-
-=== EARS-Requirements
-
-[%collapsible]
-====
-*Full Name*: Easy Approach to Requirements Syntax
-
-*Core Concepts*:
-
-* *Ubiquitous requirements*: "The <system> shall <requirement>"
-* *Event-driven requirements*: "WHEN <trigger> the <system> shall <requirement>"
-* *Unwanted behavior*: "IF <condition>, THEN the <system> shall <requirement>"
-* *State-driven requirements*: "WHILE <state>, the <system> shall <requirement>"
-* *Optional features*: "WHERE <feature is included>, the <system> shall <requirement>"
-* *Structured syntax*: Consistent templates for clarity
-* *Testability*: Requirements written to be verifiable
-
-*Key Proponent*: Alistair Mavin (Rolls-Royce)
+*Key Tools*: QuickCheck (Haskell), Hypothesis (Python), fast-check (JavaScript), FsCheck (.NET)
 
 *When to Use*:
 
-* Safety-critical systems
-* Regulated industries (aerospace, automotive, medical)
-* When requirements traceability is essential
-* Large, distributed teams
+* Testing pure functions and algorithms
+* Validating business rules and invariants
+* Testing parsers and serializers
+* Finding edge cases in complex logic
+* Complementing example-based TDD
 ====
 
-=== arc42
+==== Testing Pyramid
+
+[%collapsible]
+====
+*Full Name*: Testing Pyramid according to Mike Cohn
+
+*Core Concepts*:
+
+* *Three layers*:
+** *Unit tests* (base): Many fast, isolated tests
+** *Integration tests* (middle): Moderate number, test component interaction
+** *End-to-end tests* (top): Few, test complete user journeys
+* *Proportional distribution*: More unit tests, fewer E2E tests
+* *Cost and speed*: Unit tests cheap and fast, E2E tests expensive and slow
+* *Feedback loops*: Faster feedback from lower levels
+* *Anti-pattern: Ice cream cone*: Too many E2E tests, too few unit tests
+* *Test at the right level*: Don't test through UI what can be tested in isolation
+* *Confidence gradient*: Balance confidence with execution speed
+
+*Key Proponent*: Mike Cohn ("Succeeding with Agile", 2009)
+
+*When to Use*:
+
+* Planning test strategy for projects
+* Balancing test types in CI/CD pipelines
+* Evaluating existing test suites
+* Guiding team testing practices
+====
+
+[#software-architecture]
+=== Software Architecture
+
+This category covers architectural patterns and approaches for structuring software systems.
+
+==== Hexagonal Architecture (Ports & Adapters)
+
+[%collapsible]
+====
+*Also known as*: Ports and Adapters, Onion Architecture (variant)
+
+*Core Concepts*:
+
+* *Hexagonal structure*: Core domain at the center, isolated from external concerns
+* *Ports*: Interfaces defining how the application communicates
+* *Adapters*: Implementations that connect to external systems
+* *Dependency inversion*: Dependencies point inward toward the domain
+* *Technology independence*: Core logic doesn't depend on frameworks or infrastructure
+* *Primary/Driving adapters*: User interfaces, APIs (inbound)
+* *Secondary/Driven adapters*: Databases, message queues (outbound)
+* *Testability*: Easy to test core logic in isolation
+* *Symmetry*: All external interactions are treated uniformly
+
+*Key Proponent*: Alistair Cockburn (2005)
+
+*When to Use*:
+
+* Applications requiring high testability
+* Systems that need to support multiple interfaces (web, CLI, API)
+* When you want to defer infrastructure decisions
+* Microservices with clear domain boundaries
+====
+
+==== Clean Architecture
+
+[%collapsible]
+====
+*Full Name*: Clean Architecture according to Robert C. Martin
+
+*Core Concepts*:
+
+* *The Dependency Rule*: Dependencies only point inward
+* *Concentric circles*: Entities → Use Cases → Interface Adapters → Frameworks & Drivers
+* *Independent of frameworks*: Architecture doesn't depend on libraries
+* *Testable*: Business rules testable without UI, database, or external elements
+* *Independent of UI*: UI can change without changing business rules
+* *Independent of database*: Business rules not bound to database
+* *Independent of external agencies*: Business rules don't know about outside world
+* *Screaming Architecture*: Architecture reveals the intent of the system
+* *SOLID principles*: Foundation of the architecture
+
+*Key Proponent*: Robert C. Martin ("Uncle Bob")
+
+*When to Use*:
+
+* Enterprise applications with complex business logic
+* Systems requiring long-term maintainability
+* When team size and turnover are high
+* Projects where business rules must be protected from technology changes
+====
+
+[#architecture-documentation]
+=== Architecture Documentation
+
+This category covers frameworks and approaches for documenting software architecture.
+
+==== arc42
 
 [%collapsible]
 ====
@@ -200,7 +252,7 @@ Below is a curated list of semantic anchors useful for software development, arc
 * Long-lived systems requiring maintainability
 ====
 
-=== ADR according to Nygard
+==== ADR according to Nygard
 
 [%collapsible]
 ====
@@ -230,33 +282,7 @@ Below is a curated list of semantic anchors useful for software development, arc
 * Complex systems with evolving architecture
 ====
 
-=== Pugh-Matrix
-
-[%collapsible]
-====
-*Full Name*: Pugh Decision Matrix (also Pugh Controlled Convergence)
-
-*Core Concepts*:
-
-* *Baseline comparison*: Compare alternatives against a reference solution
-* *Criteria weighting*: Assign importance to evaluation criteria
-* *Relative scoring*: Better (+), Same (S), Worse (-) than baseline
-* *Structured evaluation*: Systematic comparison across multiple dimensions
-* *Iterative refinement*: Multiple rounds to converge on best solution
-* *Team decision-making*: Facilitates group consensus
-* *Hybrid solutions*: Combine strengths of different alternatives
-
-*Key Proponent*: Stuart Pugh
-
-*When to Use*:
-
-* Multiple viable alternatives exist
-* Decision criteria are known but trade-offs are unclear
-* Team needs to reach consensus
-* Architecture or technology selection decisions
-====
-
-=== C4-Diagrams
+==== C4-Diagrams
 
 [%collapsible]
 ====
@@ -284,7 +310,306 @@ Below is a curated list of semantic anchors useful for software development, arc
 * Replacing or supplementing UML
 ====
 
-=== Docs-as-Code according to Ralf D. Müller
+[#software-design]
+=== Software Design
+
+This category covers design principles, patterns, and domain modeling approaches.
+
+==== Domain-Driven Design according to Evans
+
+[%collapsible]
+====
+*Full Name*: Domain-Driven Design according to Eric Evans
+
+*Core Concepts*:
+
+* *Ubiquitous Language*: Shared vocabulary between developers and domain experts
+* *Bounded Context*: Explicit boundaries where a model is defined and applicable
+* *Aggregates*: Cluster of domain objects treated as a single unit
+* *Entities*: Objects defined by identity, not attributes
+* *Value Objects*: Immutable objects defined by their attributes
+* *Repositories*: Abstraction for object persistence and retrieval
+* *Domain Events*: Significant occurrences in the domain
+* *Strategic Design*: Context mapping, anti-corruption layers
+* *Tactical Design*: Building blocks (entities, value objects, services)
+* *Model-Driven Design*: Code that expresses the domain model
+
+*Key Proponent*: Eric Evans ("Domain-Driven Design: Tackling Complexity in the Heart of Software", 2003)
+
+*When to Use*:
+
+* Complex business domains with intricate rules
+* Long-lived systems requiring deep domain understanding
+* When business and technical teams need close collaboration
+* Systems where the domain logic is the core value
+====
+
+==== SOLID Principles
+
+[%collapsible]
+====
+*Full Name*: SOLID Object-Oriented Design Principles
+
+*Core Concepts*:
+
+* *Single Responsibility Principle (SRP)*: Each class should have one responsibility
+* *Open/Closed Principle (OCP)*: Entities should be open for extension, closed for modification
+* *Liskov Substitution Principle (LSP)*: Subtypes must be substitutable for their base types
+* *Interface Segregation Principle (ISP)*: Clients should not be forced to depend on interfaces they do not use
+* *Dependency Inversion Principle (DIP)*: Depend on abstractions, not concrete implementations
+
+*Key Proponent*: Robert C. Martin ("Uncle Bob")
+
+*When to Use*:
+
+* Designing maintainable and scalable object-oriented systems
+* Refactoring legacy code to improve structure
+* Building systems where flexibility and testability are important
+* Teaching or enforcing good software design practices
+====
+
+[#requirements-engineering]
+=== Requirements Engineering
+
+This category covers approaches and frameworks for eliciting, documenting, and managing requirements.
+
+==== Problem Space NVC
+
+[%collapsible]
+====
+*Full Name*: Problem Space in Nonviolent Communication
+
+*Core Concepts*:
+
+* *Observations*: Concrete, objective facts without evaluation
+* *Feelings*: Emotions arising from observations
+* *Needs*: Universal human needs underlying feelings
+* *Requests*: Specific, actionable requests (not demands)
+* *Empathic connection*: Understanding before problem-solving
+* *Separating observation from interpretation*: Avoiding judgment
+* *Needs-based conflict resolution*: Finding solutions that meet everyone's needs
+
+*Key Proponent*: Marshall Rosenberg
+
+*Application in Software Development*:
+
+* Requirements elicitation that uncovers real user needs
+* Stakeholder communication and conflict resolution
+* User story formulation focused on needs
+* Retrospectives and team communication
+====
+
+==== EARS-Requirements
+
+[%collapsible]
+====
+*Full Name*: Easy Approach to Requirements Syntax
+
+*Core Concepts*:
+
+* *Ubiquitous requirements*: "The <system> shall <requirement>"
+* *Event-driven requirements*: "WHEN <trigger> the <system> shall <requirement>"
+* *Unwanted behavior*: "IF <condition>, THEN the <system> shall <requirement>"
+* *State-driven requirements*: "WHILE <state>, the <system> shall <requirement>"
+* *Optional features*: "WHERE <feature is included>, the <system> shall <requirement>"
+* *Structured syntax*: Consistent templates for clarity
+* *Testability*: Requirements written to be verifiable
+
+*Key Proponent*: Alistair Mavin (Rolls-Royce)
+
+*When to Use*:
+
+* Safety-critical systems
+* Regulated industries (aerospace, automotive, medical)
+* When requirements traceability is essential
+* Large, distributed teams
+====
+
+==== User Story Mapping
+
+[%collapsible]
+====
+*Full Name*: User Story Mapping according to Jeff Patton
+
+*Core Concepts*:
+
+* *Narrative flow*: Horizontal arrangement of user activities
+* *User activities*: High-level tasks users perform
+* *User tasks*: Steps within activities
+* *Walking skeleton*: Minimal end-to-end functionality first
+* *Release planning*: Horizontal slices for releases
+* *Prioritization by value*: Vertical ordering by importance
+* *Shared understanding*: Collaborative mapping builds team alignment
+* *Big picture view*: See the whole journey, not just backlog items
+* *Opportunity for conversation*: Stories as placeholders for discussion
+
+*Key Proponent*: Jeff Patton ("User Story Mapping", 2014)
+
+*When to Use*:
+
+* Planning new products or major features
+* When backlog feels overwhelming or fragmented
+* Release planning for incremental delivery
+* Onboarding team members to product vision
+====
+
+[#product-management-strategy]
+=== Product Management & Strategy
+
+This category covers frameworks for product planning, strategic thinking, and understanding user needs.
+
+==== Impact Mapping
+
+[%collapsible]
+====
+*Full Name*: Impact Mapping according to Gojko Adzic
+
+*Core Concepts*:
+
+* *Four levels*: Goal → Actors → Impacts → Deliverables
+* *Goal*: Business objective (Why?)
+* *Actors*: Who can produce or prevent desired impact? (Who?)
+* *Impacts*: How can actors' behavior change? (How?)
+* *Deliverables*: What can we build? (What?)
+* *Visual mapping*: Mind-map style collaborative diagram
+* *Assumption testing*: Make assumptions explicit
+* *Scope management*: Prevent scope creep by linking to goals
+* *Roadmap alternative*: Goal-oriented rather than feature-oriented
+
+*Key Proponent*: Gojko Adzic ("Impact Mapping", 2012)
+
+*When to Use*:
+
+* Strategic planning for products or projects
+* When stakeholders disagree on priorities
+* Aligning delivery with business outcomes
+* Avoiding building features that don't serve business goals
+====
+
+==== Jobs To Be Done (JTBD)
+
+[%collapsible]
+====
+*Full Name*: Jobs To Be Done Framework (Christensen interpretation)
+
+*Core Concepts*:
+
+* *Job definition*: Progress people want to make in a particular context
+* *Functional job*: Practical task to accomplish
+* *Emotional job*: How people want to feel
+* *Social job*: How people want to be perceived
+* *Hire and fire*: Customers "hire" products to do a job, "fire" when inadequate
+* *Context matters*: Jobs exist in specific circumstances
+* *Competition redefined*: Anything solving the same job is competition
+* *Innovation opportunities*: Unmet jobs or poorly served jobs
+* *Job stories*: Alternative to user stories focusing on context and motivation
+
+*Key Proponents*: Clayton Christensen, Alan Klement, Bob Moesta
+
+*When to Use*:
+
+* Product discovery and innovation
+* Understanding why customers choose solutions
+* Identifying true competition
+* Writing more meaningful user stories
+* Market segmentation based on jobs, not demographics
+====
+
+==== Wardley Mapping
+
+[%collapsible]
+====
+*Core Concepts*:
+
+* *Value chain*: Map components from user needs down
+* *Evolution axis*: Genesis → Custom → Product → Commodity
+* *Movement*: Components naturally evolve over time
+* *Situational awareness*: Understanding the landscape before deciding
+* *Gameplay patterns*: Common strategic moves
+* *Climatic patterns*: Forces that affect all players
+* *Doctrine*: Universal principles of good strategy
+* *Inertia*: Resistance to change in organizations
+* *Strategic planning*: Visual approach to strategy
+* *Build-Buy-Partner decisions*: Based on evolution stage
+
+*Key Proponent*: Simon Wardley
+
+*When to Use*:
+
+* Strategic technology planning
+* Build vs. buy decisions
+* Understanding competitive landscape
+* Communicating strategy visually
+* Identifying opportunities for disruption
+====
+
+[#decision-making-frameworks]
+=== Decision Making Frameworks
+
+This category covers frameworks and tools for structured decision-making and understanding complexity.
+
+==== Pugh-Matrix
+
+[%collapsible]
+====
+*Full Name*: Pugh Decision Matrix (also Pugh Controlled Convergence)
+
+*Core Concepts*:
+
+* *Baseline comparison*: Compare alternatives against a reference solution
+* *Criteria weighting*: Assign importance to evaluation criteria
+* *Relative scoring*: Better (+), Same (S), Worse (-) than baseline
+* *Structured evaluation*: Systematic comparison across multiple dimensions
+* *Iterative refinement*: Multiple rounds to converge on best solution
+* *Team decision-making*: Facilitates group consensus
+* *Hybrid solutions*: Combine strengths of different alternatives
+
+*Key Proponent*: Stuart Pugh
+
+*When to Use*:
+
+* Multiple viable alternatives exist
+* Decision criteria are known but trade-offs are unclear
+* Team needs to reach consensus
+* Architecture or technology selection decisions
+====
+
+==== Cynefin Framework
+
+[%collapsible]
+====
+*Full Name*: Cynefin Framework according to Dave Snowden
+
+*Core Concepts*:
+
+* *Five domains*:
+** *Clear* (formerly "Simple"): Best practices apply, sense-categorize-respond
+** *Complicated*: Good practices exist, sense-analyze-respond
+** *Complex*: Emergent practices, probe-sense-respond
+** *Chaotic*: Novel practices needed, act-sense-respond
+** *Confused* (center): Don't know which domain you're in
+* *Domain transitions*: How situations move between domains
+* *Safe-to-fail probes*: Experiments in complex domain
+* *Complacency risk*: Moving from clear to chaotic
+* *Decision-making context*: Different domains require different approaches
+* *Facilitation tool*: Helps teams discuss and categorize challenges
+
+*Key Proponent*: Dave Snowden (1999)
+
+*When to Use*:
+
+* Understanding what type of problem you're facing
+* Choosing appropriate decision-making approaches
+* Facilitating team discussions about complexity
+* Strategic planning in uncertain environments
+====
+
+[#documentation-practices]
+=== Documentation Practices
+
+This category covers approaches and frameworks for creating and organizing documentation.
+
+==== Docs-as-Code according to Ralf D. Müller
 
 [%collapsible]
 ====
@@ -320,317 +645,7 @@ Below is a curated list of semantic anchors useful for software development, arc
 * Projects requiring multiple output formats (HTML, PDF, etc.)
 ====
 
-=== Domain-Driven Design according to Evans
-
-[%collapsible]
-====
-*Full Name*: Domain-Driven Design according to Eric Evans
-
-*Core Concepts*:
-
-* *Ubiquitous Language*: Shared vocabulary between developers and domain experts
-* *Bounded Context*: Explicit boundaries where a model is defined and applicable
-* *Aggregates*: Cluster of domain objects treated as a single unit
-* *Entities*: Objects defined by identity, not attributes
-* *Value Objects*: Immutable objects defined by their attributes
-* *Repositories*: Abstraction for object persistence and retrieval
-* *Domain Events*: Significant occurrences in the domain
-* *Strategic Design*: Context mapping, anti-corruption layers
-* *Tactical Design*: Building blocks (entities, value objects, services)
-* *Model-Driven Design*: Code that expresses the domain model
-
-*Key Proponent*: Eric Evans ("Domain-Driven Design: Tackling Complexity in the Heart of Software", 2003)
-
-*When to Use*:
-
-* Complex business domains with intricate rules
-* Long-lived systems requiring deep domain understanding
-* When business and technical teams need close collaboration
-* Systems where the domain logic is the core value
-====
-
-=== Hexagonal Architecture (Ports & Adapters)
-
-[%collapsible]
-====
-*Also known as*: Ports and Adapters, Onion Architecture (variant)
-
-*Core Concepts*:
-
-* *Hexagonal structure*: Core domain at the center, isolated from external concerns
-* *Ports*: Interfaces defining how the application communicates
-* *Adapters*: Implementations that connect to external systems
-* *Dependency inversion*: Dependencies point inward toward the domain
-* *Technology independence*: Core logic doesn't depend on frameworks or infrastructure
-* *Primary/Driving adapters*: User interfaces, APIs (inbound)
-* *Secondary/Driven adapters*: Databases, message queues (outbound)
-* *Testability*: Easy to test core logic in isolation
-* *Symmetry*: All external interactions are treated uniformly
-
-*Key Proponent*: Alistair Cockburn (2005)
-
-*When to Use*:
-
-* Applications requiring high testability
-* Systems that need to support multiple interfaces (web, CLI, API)
-* When you want to defer infrastructure decisions
-* Microservices with clear domain boundaries
-====
-
-=== Clean Architecture
-
-[%collapsible]
-====
-*Full Name*: Clean Architecture according to Robert C. Martin
-
-*Core Concepts*:
-
-* *The Dependency Rule*: Dependencies only point inward
-* *Concentric circles*: Entities → Use Cases → Interface Adapters → Frameworks & Drivers
-* *Independent of frameworks*: Architecture doesn't depend on libraries
-* *Testable*: Business rules testable without UI, database, or external elements
-* *Independent of UI*: UI can change without changing business rules
-* *Independent of database*: Business rules not bound to database
-* *Independent of external agencies*: Business rules don't know about outside world
-* *Screaming Architecture*: Architecture reveals the intent of the system
-* *SOLID principles*: Foundation of the architecture
-
-*Key Proponent*: Robert C. Martin ("Uncle Bob")
-
-*When to Use*:
-
-* Enterprise applications with complex business logic
-* Systems requiring long-term maintainability
-* When team size and turnover are high
-* Projects where business rules must be protected from technology changes
-====
-
-=== SOLID Principles
-
-[%collapsible]
-====
-*Full Name*: SOLID Object-Oriented Design Principles
-
-*Core Concepts*:
-
-* *Single Responsibility Principle (SRP)*: Each class should have one responsibility
-* *Open/Closed Principle (OCP)*: Entities should be open for extension, closed for modification
-* *Liskov Substitution Principle (LSP)*: Subtypes must be substitutable for their base types
-* *Interface Segregation Principle (ISP)*: Clients should not be forced to depend on interfaces they do not use
-* *Dependency Inversion Principle (DIP)*: Depend on abstractions, not concrete implementations
-
-*Key Proponent*: Robert C. Martin ("Uncle Bob")
-
-*When to Use*:
-
-* Designing maintainable and scalable object-oriented systems
-* Refactoring legacy code to improve structure
-* Building systems where flexibility and testability are important
-* Teaching or enforcing good software design practices
-====
-
-=== User Story Mapping
-
-[%collapsible]
-====
-*Full Name*: User Story Mapping according to Jeff Patton
-
-*Core Concepts*:
-
-* *Narrative flow*: Horizontal arrangement of user activities
-* *User activities*: High-level tasks users perform
-* *User tasks*: Steps within activities
-* *Walking skeleton*: Minimal end-to-end functionality first
-* *Release planning*: Horizontal slices for releases
-* *Prioritization by value*: Vertical ordering by importance
-* *Shared understanding*: Collaborative mapping builds team alignment
-* *Big picture view*: See the whole journey, not just backlog items
-* *Opportunity for conversation*: Stories as placeholders for discussion
-
-*Key Proponent*: Jeff Patton ("User Story Mapping", 2014)
-
-*When to Use*:
-
-* Planning new products or major features
-* When backlog feels overwhelming or fragmented
-* Release planning for incremental delivery
-* Onboarding team members to product vision
-====
-
-=== Impact Mapping
-
-[%collapsible]
-====
-*Full Name*: Impact Mapping according to Gojko Adzic
-
-*Core Concepts*:
-
-* *Four levels*: Goal → Actors → Impacts → Deliverables
-* *Goal*: Business objective (Why?)
-* *Actors*: Who can produce or prevent desired impact? (Who?)
-* *Impacts*: How can actors' behavior change? (How?)
-* *Deliverables*: What can we build? (What?)
-* *Visual mapping*: Mind-map style collaborative diagram
-* *Assumption testing*: Make assumptions explicit
-* *Scope management*: Prevent scope creep by linking to goals
-* *Roadmap alternative*: Goal-oriented rather than feature-oriented
-
-*Key Proponent*: Gojko Adzic ("Impact Mapping", 2012)
-
-*When to Use*:
-
-* Strategic planning for products or projects
-* When stakeholders disagree on priorities
-* Aligning delivery with business outcomes
-* Avoiding building features that don't serve business goals
-====
-
-=== Jobs To Be Done (JTBD)
-
-[%collapsible]
-====
-*Full Name*: Jobs To Be Done Framework (Christensen interpretation)
-
-*Core Concepts*:
-
-* *Job definition*: Progress people want to make in a particular context
-* *Functional job*: Practical task to accomplish
-* *Emotional job*: How people want to feel
-* *Social job*: How people want to be perceived
-* *Hire and fire*: Customers "hire" products to do a job, "fire" when inadequate
-* *Context matters*: Jobs exist in specific circumstances
-* *Competition redefined*: Anything solving the same job is competition
-* *Innovation opportunities*: Unmet jobs or poorly served jobs
-* *Job stories*: Alternative to user stories focusing on context and motivation
-
-*Key Proponents*: Clayton Christensen, Alan Klement, Bob Moesta
-
-*When to Use*:
-
-* Product discovery and innovation
-* Understanding why customers choose solutions
-* Identifying true competition
-* Writing more meaningful user stories
-* Market segmentation based on jobs, not demographics
-====
-
-=== Cynefin Framework
-
-[%collapsible]
-====
-*Full Name*: Cynefin Framework according to Dave Snowden
-
-*Core Concepts*:
-
-* *Five domains*:
-** *Clear* (formerly "Simple"): Best practices apply, sense-categorize-respond
-** *Complicated*: Good practices exist, sense-analyze-respond
-** *Complex*: Emergent practices, probe-sense-respond
-** *Chaotic*: Novel practices needed, act-sense-respond
-** *Confused* (center): Don't know which domain you're in
-* *Domain transitions*: How situations move between domains
-* *Safe-to-fail probes*: Experiments in complex domain
-* *Complacency risk*: Moving from clear to chaotic
-* *Decision-making context*: Different domains require different approaches
-* *Facilitation tool*: Helps teams discuss and categorize challenges
-
-*Key Proponent*: Dave Snowden (1999)
-
-*When to Use*:
-
-* Understanding what type of problem you're facing
-* Choosing appropriate decision-making approaches
-* Facilitating team discussions about complexity
-* Strategic planning in uncertain environments
-====
-
-=== Wardley Mapping
-
-[%collapsible]
-====
-*Core Concepts*:
-
-* *Value chain*: Map components from user needs down
-* *Evolution axis*: Genesis → Custom → Product → Commodity
-* *Movement*: Components naturally evolve over time
-* *Situational awareness*: Understanding the landscape before deciding
-* *Gameplay patterns*: Common strategic moves
-* *Climatic patterns*: Forces that affect all players
-* *Doctrine*: Universal principles of good strategy
-* *Inertia*: Resistance to change in organizations
-* *Strategic planning*: Visual approach to strategy
-* *Build-Buy-Partner decisions*: Based on evolution stage
-
-*Key Proponent*: Simon Wardley
-
-*When to Use*:
-
-* Strategic technology planning
-* Build vs. buy decisions
-* Understanding competitive landscape
-* Communicating strategy visually
-* Identifying opportunities for disruption
-====
-
-=== Property-Based Testing
-
-[%collapsible]
-====
-*Also known as*: Generative Testing, QuickCheck-style Testing
-
-*Core Concepts*:
-
-* *Properties*: Invariants that should always hold
-* *Generators*: Automatic test data creation
-* *Shrinking*: Minimizing failing test cases to simplest form
-* *Universal quantification*: Testing "for all inputs"
-* *Specification testing*: Testing high-level properties, not examples
-* *Edge case discovery*: Finds cases you didn't think of
-* *Complementary to example-based*: Works alongside traditional unit tests
-* *Stateful testing*: Testing sequences of operations
-* *Model-based testing*: Compare implementation against simpler model
-
-*Key Tools*: QuickCheck (Haskell), Hypothesis (Python), fast-check (JavaScript), FsCheck (.NET)
-
-*When to Use*:
-
-* Testing pure functions and algorithms
-* Validating business rules and invariants
-* Testing parsers and serializers
-* Finding edge cases in complex logic
-* Complementing example-based TDD
-====
-
-=== Testing Pyramid
-
-[%collapsible]
-====
-*Full Name*: Testing Pyramid according to Mike Cohn
-
-*Core Concepts*:
-
-* *Three layers*:
-** *Unit tests* (base): Many fast, isolated tests
-** *Integration tests* (middle): Moderate number, test component interaction
-** *End-to-end tests* (top): Few, test complete user journeys
-* *Proportional distribution*: More unit tests, fewer E2E tests
-* *Cost and speed*: Unit tests cheap and fast, E2E tests expensive and slow
-* *Feedback loops*: Faster feedback from lower levels
-* *Anti-pattern: Ice cream cone*: Too many E2E tests, too few unit tests
-* *Test at the right level*: Don't test through UI what can be tested in isolation
-* *Confidence gradient*: Balance confidence with execution speed
-
-*Key Proponent*: Mike Cohn ("Succeeding with Agile", 2009)
-
-*When to Use*:
-
-* Planning test strategy for projects
-* Balancing test types in CI/CD pipelines
-* Evaluating existing test suites
-* Guiding team testing practices
-====
-
-=== Diátaxis Framework
+==== Diátaxis Framework
 
 [%collapsible]
 ====
@@ -662,7 +677,12 @@ Below is a curated list of semantic anchors useful for software development, arc
 * Complementing Docs-as-Code approaches
 ====
 
-=== Conventional Commits
+[#development-practices]
+=== Development Practices
+
+This category covers conventions and practices for software development workflow and versioning.
+
+==== Conventional Commits
 
 [%collapsible]
 ====
@@ -691,7 +711,7 @@ Below is a curated list of semantic anchors useful for software development, arc
 
 ====
 
-=== Semantic Versioning (SemVer)
+==== Semantic Versioning (SemVer)
 
 [%collapsible]
 ====
@@ -718,6 +738,49 @@ Below is a curated list of semantic anchors useful for software development, arc
 * Projects requiring dependency management
 * Communication of change impact to users/consumers
 
+====
+
+[#software-philosophy]
+=== Software Philosophy
+
+This category covers philosophical and theoretical perspectives on software development.
+
+==== Mental Model according to Naur
+
+[%collapsible]
+====
+*Full Name*: Programming as Theory Building (Mental Model) according to Peter Naur
+
+*Core Concepts*:
+
+* *Theory building*: Programming is creating a mental model, not just writing code
+* *Theory of the program*: Deep understanding of why the program works and how it relates to the problem domain
+* *Knowledge in people*: The real program exists in developers' minds, not in the code
+* *Theory decay*: When original developers leave, the theory is lost
+* *Documentation limitations*: Written documentation cannot fully capture the theory
+* *Maintenance as theory*: Effective maintenance requires possessing the theory
+* *Communication is key*: Theory must be shared through collaboration and conversation
+* *Ramp-up time*: New team members need time to build the theory
+* *Code as artifact*: Code is merely a representation of the underlying theory
+
+*Key Proponent*: Peter Naur (Turing Award winner, 1978)
+
+*Original Work*: "Programming as Theory Building" (1985)
+
+*Application in Software Development*:
+
+* Understanding why knowledge transfer is challenging
+* Emphasizing pair programming and mob programming
+* Justifying time for onboarding and code walkthroughs
+* Explaining technical debt accumulation when teams change
+* Supporting documentation practices that capture "why" not just "what"
+* Advocating for team stability and continuity
+
+*Contrast with Other Views*:
+
+* Programming as text production → Focus on code output
+* Programming as problem solving → Focus on algorithms
+* Programming as theory building → Focus on understanding
 ====
 
 == Testing and Contributing Semantic Anchors

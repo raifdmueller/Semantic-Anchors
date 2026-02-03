@@ -433,20 +433,23 @@ The catalog is organized into the following categories:
 
 *Core Concepts*:
 
-* *Centralized authority*: Each piece of information has one authoritative location
-* *Reference relationships*: Other locations reference the single source rather than duplicate it
+* *Implementation pattern*: Focuses on where and how data/logic is stored and accessed
+* *Centralized location*: Each piece of information resides in exactly one place
+* *Reference relationships*: Other locations reference the single point rather than duplicate it
 * *Data consistency*: Eliminates synchronization issues and conflicting data
 * *Update propagation*: Changes at the single point automatically affect all references
 * *Clear ownership*: Explicit responsibility for maintaining each piece of truth
-* *Canonical source*: The definitive, trusted source for each data element
+* *Code-level practice*: Applied at the code and system design level
 
 *When to Use*:
 
+* Implementing functions and utilities to avoid code duplication
 * Database schema design to eliminate redundant data
 * Configuration management across distributed systems
-* Documentation systems to avoid conflicting information
-* Microservices architecture for authoritative data ownership
 * State management in applications
+* API design where data flows from a single endpoint
+
+*Difference from SSOT*: SPOT emphasizes the implementation detail of where data lives, while SSOT emphasizes the authoritative, trusted nature of that data source
 
 *Related Concepts*: DRY, SSOT, Normalized databases, Master data management
 ====
@@ -460,12 +463,14 @@ The catalog is organized into the following categories:
 
 *Core Concepts*:
 
-* *Authoritative source*: One canonical location for each piece of data
+* *Conceptual principle*: Focuses on establishing trust and authority for data
+* *Authoritative source*: One canonical, trusted location for each piece of data
 * *Data integrity*: All consumers reference the same trusted source
 * *Version control*: Single source ensures consistent versioning
 * *Derived data*: Other representations are derived from the single source
 * *Trust and reliability*: The source is the definitive version when conflicts arise
-* *System of record*: The primary data store for critical information
+* *System of record*: The primary data store for critical business information
+* *Organizational practice*: Applied at the architecture and business process level
 
 *Key Application Areas*:
 
@@ -478,10 +483,13 @@ The catalog is organized into the following categories:
 *When to Use*:
 
 * Designing data architecture for enterprise systems
-* Establishing documentation standards
+* Establishing documentation standards and knowledge bases
 * Building data pipelines and ETL processes
 * Implementing microservices with clear data ownership
 * Creating audit trails and ensuring compliance
+* Resolving conflicts between multiple data sources
+
+*Difference from SPOT*: SSOT emphasizes the authoritative, trusted nature of a data source and is used at the architecture/organizational level, while SPOT focuses on the implementation pattern
 
 *Related Concepts*: DRY, SPOT, Event sourcing, Data lakes, Master data management
 ====

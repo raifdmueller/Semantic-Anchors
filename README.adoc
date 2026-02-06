@@ -1018,7 +1018,7 @@ The catalog is organized into the following categories:
 * "Give me the SOTA approach for semantic search"
 * "What's the SOTA in transformer architectures?"
 
-*Key Proponent*: Widely used in ML/AI research community; suggested for LLM prompting by Pete Hodgson
+*Key Proponent*: Widely used in ML/AI research community
 
 *When to Use*:
 

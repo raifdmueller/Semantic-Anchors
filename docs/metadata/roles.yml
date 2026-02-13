@@ -1,0 +1,388 @@
+# Role Mapping for Semantic Anchors
+#
+# This file maps each semantic anchor to relevant professional roles.
+# Each anchor must have at least one role assigned.
+#
+# Role IDs:
+#   - software-developer: Software Developer / Engineer
+#   - software-architect: Software Architect
+#   - qa-engineer: QA Engineer / Tester
+#   - devops-engineer: DevOps Engineer
+#   - product-owner: Product Owner / Product Manager
+#   - business-analyst: Business Analyst / Requirements Engineer
+#   - technical-writer: Technical Writer / Documentation Specialist
+#   - ux-designer: UX Designer / Researcher
+#   - data-scientist: Data Scientist / Statistician
+#   - consultant: Consultant / Coach
+#   - team-lead: Team Lead / Engineering Manager
+#   - educator: Educator / Trainer
+#
+# Mapping rationale:
+# - Roles are assigned based on "When to Use" sections and core concepts
+# - Multiple roles indicate broad applicability
+# - Focus on primary users, not all possible users
+
+---
+
+# CATEGORY: Testing & Quality Practices
+
+tdd-london-school:
+  roles:
+    - software-developer
+    - qa-engineer
+    - software-architect
+  rationale: "Outside-in TDD for complex systems; developers write tests, QA adopts methodology, architects design testable systems"
+
+tdd-chicago-school:
+  roles:
+    - software-developer
+    - qa-engineer
+  rationale: "Inside-out TDD for domain logic; developers and QA use for test-driven workflows"
+
+property-based-testing:
+  roles:
+    - software-developer
+    - qa-engineer
+  rationale: "Advanced testing technique; developers implement, QA designs property specifications"
+
+testing-pyramid:
+  roles:
+    - software-developer
+    - qa-engineer
+    - team-lead
+    - devops-engineer
+  rationale: "Test strategy framework; developers/QA implement, team leads guide strategy, DevOps automates"
+
+mutation-testing:
+  roles:
+    - software-developer
+    - qa-engineer
+  rationale: "Test quality assessment; developers improve tests, QA measures test effectiveness"
+
+# CATEGORY: Architecture & Design
+
+arc42:
+  roles:
+    - software-architect
+    - technical-writer
+    - team-lead
+  rationale: "Architecture documentation template; architects document, tech writers format, team leads review"
+
+adr-nygard:
+  roles:
+    - software-architect
+    - software-developer
+    - team-lead
+  rationale: "Architectural decisions; architects make decisions, developers document, team leads review"
+
+madr:
+  roles:
+    - software-architect
+    - software-developer
+    - team-lead
+  rationale: "Structured ADR format; architects/developers document decisions, team leads approve"
+
+c4-diagrams:
+  roles:
+    - software-architect
+    - technical-writer
+    - team-lead
+    - consultant
+  rationale: "Architecture visualization; architects create, tech writers document, consultants teach, team leads review"
+
+hexagonal-architecture:
+  roles:
+    - software-architect
+    - software-developer
+  rationale: "Architectural pattern; architects design, developers implement ports/adapters"
+
+clean-architecture:
+  roles:
+    - software-architect
+    - software-developer
+  rationale: "Layered architecture pattern; architects design layers, developers enforce dependency rules"
+
+# CATEGORY: Design Principles & Patterns
+
+solid-principles:
+  roles:
+    - software-developer
+    - software-architect
+    - educator
+    - consultant
+  rationale: "Foundational OO principles; developers apply, architects review, educators teach, consultants coach"
+
+dry:
+  roles:
+    - software-developer
+    - software-architect
+  rationale: "Avoid duplication principle; developers apply during coding, architects enforce in design"
+
+spot:
+  roles:
+    - software-developer
+    - software-architect
+  rationale: "Single Point of Truth pattern; developers implement, architects design data flow"
+
+ssot:
+  roles:
+    - software-architect
+    - data-scientist
+    - business-analyst
+  rationale: "Single Source of Truth principle; architects design, data scientists implement for data, BAs define authoritative sources"
+
+domain-driven-design:
+  roles:
+    - software-architect
+    - software-developer
+    - business-analyst
+    - team-lead
+  rationale: "Domain modeling approach; architects design bounded contexts, developers implement, BAs provide domain expertise, team leads facilitate ubiquitous language"
+
+# CATEGORY: Requirements Engineering
+
+problem-space-nvc:
+  roles:
+    - business-analyst
+    - product-owner
+    - consultant
+    - ux-designer
+  rationale: "Empathic requirements elicitation; BAs facilitate, POs gather needs, consultants coach, UX researchers interview"
+
+ears-requirements:
+  roles:
+    - business-analyst
+    - qa-engineer
+    - technical-writer
+  rationale: "Structured requirements syntax; BAs write, QA verifies testability, tech writers document"
+
+user-story-mapping:
+  roles:
+    - product-owner
+    - business-analyst
+    - team-lead
+    - ux-designer
+  rationale: "Visual requirements planning; POs prioritize, BAs facilitate, team leads plan, UX designers map user journeys"
+
+impact-mapping:
+  roles:
+    - product-owner
+    - business-analyst
+    - team-lead
+    - consultant
+  rationale: "Strategic requirements framework; POs set goals, BAs map impacts, team leads plan deliverables, consultants facilitate"
+
+jobs-to-be-done:
+  roles:
+    - product-owner
+    - ux-designer
+    - business-analyst
+  rationale: "Customer-centric framework; POs define product direction, UX researchers interview users, BAs analyze context"
+
+# CATEGORY: Documentation
+
+docs-as-code:
+  roles:
+    - technical-writer
+    - software-developer
+    - devops-engineer
+  rationale: "Documentation workflow; tech writers author, developers review/contribute, DevOps automates builds"
+
+diataxis:
+  roles:
+    - technical-writer
+    - educator
+  rationale: "Documentation structure framework; tech writers organize content, educators apply pedagogical structure"
+
+# CATEGORY: Communication & Presentation
+
+pyramid-principle:
+  roles:
+    - business-analyst
+    - consultant
+    - team-lead
+    - technical-writer
+  rationale: "Structured communication; BAs present analysis, consultants deliver recommendations, team leads communicate upward, tech writers structure docs"
+
+mece-principle:
+  roles:
+    - business-analyst
+    - consultant
+    - software-architect
+    - data-scientist
+  rationale: "Organizational principle; BAs structure requirements, consultants organize analysis, architects categorize components, data scientists classify data"
+
+# CATEGORY: Decision Making & Strategy
+
+pugh-matrix:
+  roles:
+    - software-architect
+    - team-lead
+    - product-owner
+  rationale: "Comparative decision tool; architects evaluate tech choices, team leads facilitate team decisions, POs prioritize features"
+
+cynefin-framework:
+  roles:
+    - team-lead
+    - consultant
+    - product-owner
+    - software-architect
+  rationale: "Context-based strategy; team leads assess situations, consultants guide approach, POs adapt planning, architects choose methodologies"
+
+wardley-mapping:
+  roles:
+    - product-owner
+    - software-architect
+    - consultant
+    - team-lead
+  rationale: "Strategic landscape analysis; POs plan product strategy, architects assess technology evolution, consultants advise, team leads plan capability building"
+
+# CATEGORY: Development Practices
+
+mental-model-naur:
+  roles:
+    - software-developer
+    - team-lead
+    - educator
+    - consultant
+  rationale: "Theory of programming; developers understand knowledge building, team leads manage knowledge transfer, educators/consultants teach philosophy"
+
+conventional-commits:
+  roles:
+    - software-developer
+    - devops-engineer
+  rationale: "Commit message standard; developers write commits, DevOps automates releases based on commit types"
+
+semantic-versioning:
+  roles:
+    - software-developer
+    - devops-engineer
+    - product-owner
+  rationale: "Versioning scheme; developers bump versions, DevOps automates, POs communicate breaking changes"
+
+bem-methodology:
+  roles:
+    - software-developer
+    - ux-designer
+  rationale: "CSS naming convention; developers implement, UX designers understand component naming"
+
+todo-txt-markdown:
+  roles:
+    - software-developer
+    - team-lead
+    - technical-writer
+  rationale: "Task management format; developers track TODOs, team leads organize work, tech writers track documentation tasks"
+
+sota:
+  roles:
+    - software-developer
+    - data-scientist
+    - consultant
+  rationale: "State-of-the-art research; developers explore cutting edge, data scientists benchmark methods, consultants advise on best practices"
+
+timtowtdi:
+  roles:
+    - software-developer
+    - software-architect
+    - consultant
+    - educator
+  rationale: "Flexibility philosophy; developers appreciate multiple solutions, architects evaluate trade-offs, consultants/educators teach pragmatism"
+
+# CATEGORY: Statistical Methods & Process Monitoring
+
+spc:
+  roles:
+    - data-scientist
+    - devops-engineer
+    - team-lead
+    - qa-engineer
+  rationale: "Process control framework; data scientists implement, DevOps monitors pipelines, team leads track metrics, QA monitors defects"
+
+control-chart-shewhart:
+  roles:
+    - data-scientist
+    - devops-engineer
+    - team-lead
+  rationale: "Visual monitoring tool; data scientists create charts, DevOps tracks deployment metrics, team leads monitor velocity"
+
+nelson-rules:
+  roles:
+    - data-scientist
+    - devops-engineer
+  rationale: "Pattern detection rules; data scientists apply to data analysis, DevOps uses for anomaly detection"
+
+# CATEGORY: Interaction & Reasoning Patterns
+
+socratic-method:
+  roles:
+    - educator
+    - consultant
+    - team-lead
+  rationale: "Dialogue technique; educators teach through questions, consultants coach, team leads facilitate learning"
+
+bluf:
+  roles:
+    - business-analyst
+    - team-lead
+    - technical-writer
+    - consultant
+  rationale: "Communication format; BAs present findings, team leads communicate upward, tech writers structure docs, consultants deliver recommendations"
+
+rubber-duck-debugging:
+  roles:
+    - software-developer
+    - qa-engineer
+  rationale: "Debugging technique; developers explain code to find bugs, QA uses for test case design"
+
+chain-of-thought:
+  roles:
+    - software-developer
+    - data-scientist
+    - business-analyst
+  rationale: "LLM prompting technique; developers prompt for code, data scientists for analysis, BAs for requirement refinement"
+
+devils-advocate:
+  roles:
+    - software-architect
+    - team-lead
+    - consultant
+    - qa-engineer
+  rationale: "Critical evaluation; architects stress-test designs, team leads challenge assumptions, consultants probe decisions, QA finds edge cases"
+
+five-whys:
+  roles:
+    - software-developer
+    - qa-engineer
+    - devops-engineer
+    - team-lead
+  rationale: "Root cause analysis; developers debug issues, QA investigates defects, DevOps troubleshoots incidents, team leads facilitate retrospectives"
+
+feynman-technique:
+  roles:
+    - software-developer
+    - educator
+    - consultant
+    - team-lead
+  rationale: "Learning method; developers master concepts, educators teach, consultants explain complex topics, team leads facilitate knowledge sharing"
+
+# SUMMARY STATISTICS
+
+# Total anchors mapped: 49
+#
+# Roles by frequency:
+#   - software-developer: 24 anchors (49%)
+#   - team-lead: 20 anchors (41%)
+#   - software-architect: 17 anchors (35%)
+#   - consultant: 15 anchors (31%)
+#   - qa-engineer: 13 anchors (27%)
+#   - business-analyst: 12 anchors (24%)
+#   - technical-writer: 9 anchors (18%)
+#   - devops-engineer: 9 anchors (18%)
+#   - product-owner: 8 anchors (16%)
+#   - data-scientist: 7 anchors (14%)
+#   - educator: 7 anchors (14%)
+#   - ux-designer: 5 anchors (10%)
+#
+# Average roles per anchor: 2.6
+# Min roles per anchor: 1 (Diataxis)
+# Max roles per anchor: 5 (SOLID Principles)

@@ -1,0 +1,120 @@
+[
+  {
+    "id": "communication-presentation",
+    "name": "Communication & Presentation",
+    "anchors": [
+      "bluf",
+      "mece",
+      "pyramid-principle"
+    ]
+  },
+  {
+    "id": "design-principles",
+    "name": "Design Principles & Patterns",
+    "anchors": [
+      "dry-principle",
+      "solid-principles",
+      "spot-principle",
+      "ssot-principle"
+    ]
+  },
+  {
+    "id": "development-workflow",
+    "name": "Development Workflow",
+    "anchors": [
+      "bem-methodology",
+      "conventional-commits",
+      "mental-model-according-to-naur",
+      "semantic-versioning",
+      "sota",
+      "timtowtdi",
+      "todotxt-flavoured-markdown"
+    ]
+  },
+  {
+    "id": "dialogue-interaction",
+    "name": "Dialogue Interaction",
+    "anchors": [
+      "socratic-method"
+    ]
+  },
+  {
+    "id": "documentation",
+    "name": "Documentation",
+    "anchors": [
+      "diataxis-framework",
+      "docs-as-code"
+    ]
+  },
+  {
+    "id": "meta",
+    "name": "Meta",
+    "anchors": [
+      "what-qualifies-as-a-semantic-anchor"
+    ]
+  },
+  {
+    "id": "problem-solving",
+    "name": "Problem Solving",
+    "anchors": [
+      "chain-of-thought",
+      "devils-advocate",
+      "feynman-technique",
+      "five-whys",
+      "rubber-duck-debugging"
+    ]
+  },
+  {
+    "id": "requirements-engineering",
+    "name": "Requirements Engineering",
+    "anchors": [
+      "ears-requirements",
+      "problem-space-nvc",
+      "user-story-mapping"
+    ]
+  },
+  {
+    "id": "software-architecture",
+    "name": "Software Architecture",
+    "anchors": [
+      "adr-according-to-nygard",
+      "arc42",
+      "c4-diagrams",
+      "clean-architecture",
+      "domain-driven-design",
+      "hexagonal-architecture",
+      "madr"
+    ]
+  },
+  {
+    "id": "statistical-methods",
+    "name": "Statistical Methods & Process Monitoring",
+    "anchors": [
+      "control-chart-shewhart",
+      "nelson-rules",
+      "spc"
+    ]
+  },
+  {
+    "id": "strategic-planning",
+    "name": "Strategic Planning",
+    "anchors": [
+      "cynefin-framework",
+      "impact-mapping",
+      "jobs-to-be-done",
+      "pugh-matrix",
+      "wardley-mapping"
+    ]
+  },
+  {
+    "id": "testing-quality",
+    "name": "Testing & Quality Practices",
+    "anchors": [
+      "mutation-testing",
+      "property-based-testing",
+      "tdd-chicago-school",
+      "tdd-london-school",
+      "testing-pyramid"
+    ]
+  }
+]

@@ -2,7 +2,6 @@
   "name": "semantic-anchors-scripts",
   "version": "1.0.0",
   "description": "Build scripts for Semantic Anchors project",
-  "type": "module",
   "scripts": {
     "extract-metadata": "node extract-metadata.js",
     "split-readme": "node split-readme.js"

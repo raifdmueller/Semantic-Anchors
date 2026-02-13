@@ -33,8 +33,10 @@ export const i18n = {
   },
 
   t(key) {
-    const dict = translations[currentLang] || translations[DEFAULT_LANG]
-    return dict[key] ?? key
+    const dict = translations[currentLang]
+    const fallback = translations[DEFAULT_LANG]
+    // Return translation in current language, or fallback to English, or return key
+    return dict[key] ?? fallback[key] ?? key
   },
 
   currentLang() {

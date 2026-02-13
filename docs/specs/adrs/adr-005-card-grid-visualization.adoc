@@ -1,0 +1,385 @@
+= ADR-005: Card Grid statt Treemap für Anchor-Visualisierung
+:toc:
+:icons: font
+
+== Status
+
+**Accepted** - 2026-02-13
+
+Supersedes: ADR-003 (Apache ECharts für Treemap-Visualisierung)
+
+== Context
+
+Die initiale Treemap-Visualisierung (ADR-003) zeigt erhebliche Usability-Probleme:
+
+* **Text-Truncation**: Labels werden abgeschnitten ("TDD, Chicago Sch...", "SSOT (...", "SPOT (...)")
+* **Schlechter Kontrast**: Gelbe/orange Boxen kaum sichtbar in Dark Mode (WCAG-Violation)
+* **Viewport-Probleme**: Map teilweise außerhalb des sichtbaren Bereichs
+* **Schwere Navigation**: Keine klare visuelle Hierarchie
+* **Cognitive Load**: Nutzer müssen Größenverhältnisse interpretieren
+
+**Playwright-Testing hat gezeigt:**
+* Issue #58: Modal 404 Error (behoben)
+* Issue #59: Text Truncation (fundamental)
+* Issue #60: Map Cut-Off (fundamental)
+* Issue #61: Poor Contrast (fundamental)
+
+Die fundamentalen Usability-Probleme erfordern einen Wechsel der Visualisierungsstrategie.
+
+=== Betrachtete Alternativen
+
+1. **Card Grid** (Category Sections mit Cards)
+2. **Tabs mit Liste** (Category-Tabs mit Anchor-Listen)
+3. **Tag Cloud** (Badges gruppiert nach Category)
+4. **Table View** (Sortierbare Tabelle)
+5. **Treemap verbessern** (Baseline - aktueller Zustand)
+
+== Decision
+
+Wir ersetzen die Treemap durch ein **Card Grid mit Category Sections**.
+
+=== Pugh-Matrix
+
+Baseline: Treemap verbessern (Score = 0)
+
+[cols="2,1,1,1,1,1", options="header"]
+|===
+|Kriterium (Gewichtung) |Card Grid |Treemap (Baseline) |Tabs+Liste |Tag Cloud |Table View
+
+|Lesbarkeit / Text-Truncation (10)
+|+2 (Kein Truncation)
+|0 (Truncation)
+|-1 (Liste)
+|+1 (Tags)
+|+2 (Voll)
+
+|Scannability (9)
+|+2 (Sections)
+|0 (Flat)
+|0 (Tab-Switch)
+|+1 (Compact)
+|+1 (Rows)
+
+|Navigation / Orientation (8)
+|+2 (Sections)
+|0 (Chaotisch)
+|+1 (Tabs)
+|0 (Flat)
+|+1 (Sortierbar)
+
+|Kontrast / Accessibility (9)
+|+2 (Kontrolliert)
+|0 (Palette-Problem)
+|+2 (Text)
+|+1 (Borders)
+|+2 (Text)
+
+|Viewport-Nutzung (7)
+|+1 (Responsive)
+|0 (Cut-off)
+|+2 (Compact)
+|+2 (Sehr compact)
+|+1 (Scroll)
+
+|Category-Sichtbarkeit (8)
+|+2 (Alle sichtbar)
+|+1 (Farbe)
+|-1 (Tab-Switch)
+|+1 (Gruppiert)
+|+1 (Spalte)
+
+|Mobile-Freundlichkeit (6)
+|+2 (Responsive Grid)
+|-1 (Zu klein)
+|+1 (Tabs gut)
+|+1 (Wrapping)
+|0 (Horizontal Scroll)
+
+|Visueller Appeal (5)
+|+2 (Modern)
+|+1 (Visuell)
+|0 (Standard)
+|+1 (Playful)
+|0 (Langweilig)
+
+|Click-Target-Größe (7)
+|+2 (Große Cards)
+|-1 (Kleine Boxes)
+|+1 (List Items)
+|0 (Kleine Tags)
+|+1 (Rows)
+
+|Info-Dichte (4)
+|0 (Mittel)
+|+1 (Compact)
+|+1 (Compact)
+|+2 (Sehr compact)
+|+2 (Tabelle)
+
+|Implementation-Aufwand (3)
+|+1 (CSS Grid)
+|0 (ECharts)
+|+2 (Einfach)
+|+2 (Sehr einfach)
+|+1 (Standard)
+
+|Filter/Search Integration (6)
+|+2 (Hide Sections)
+|0 (Rerender)
+|+1 (Filter List)
+|+1 (Filter Tags)
+|+2 (Native)
+
+|**Gewichteter Score**
+|**+137**
+|**0 (Baseline)**
+|**+50**
+|**+73**
+|**+83**
+|===
+
+=== Berechnung
+
+**Card Grid:**
+```
+(+2×10) + (+2×9) + (+2×8) + (+2×9) + (+1×7) + (+2×8) + (+2×6) + (+2×5) + (+2×7) + (0×4) + (+1×3) + (+2×6)
+= 20 + 18 + 16 + 18 + 7 + 16 + 12 + 10 + 14 + 0 + 3 + 12
+= +146
+```
+
+**Tabs mit Liste:**
+```
+(-1×10) + (0×9) + (+1×8) + (+2×9) + (+2×7) + (-1×8) + (+1×6) + (0×5) + (+1×7) + (+1×4) + (+2×3) + (+1×6)
+= -10 + 0 + 8 + 18 + 14 - 8 + 6 + 0 + 7 + 4 + 6 + 6
+= +51
+```
+
+**Tag Cloud:**
+```
+(+1×10) + (+1×9) + (0×8) + (+1×9) + (+2×7) + (+1×8) + (+1×6) + (+1×5) + (0×7) + (+2×4) + (+2×3) + (+1×6)
+= 10 + 9 + 0 + 9 + 14 + 8 + 6 + 5 + 0 + 8 + 6 + 6
+= +81
+```
+
+**Table View:**
+```
+(+2×10) + (+1×9) + (+1×8) + (+2×9) + (+1×7) + (+1×8) + (0×6) + (0×5) + (+1×7) + (+2×4) + (+1×3) + (+2×6)
+= 20 + 9 + 8 + 18 + 7 + 8 + 0 + 0 + 7 + 8 + 3 + 12
+= +100
+```
+
+=== Begründung
+
+**Card Grid gewinnt deutlich, weil:**
+
+* **Löst alle 3 Haupt-Usability-Probleme**:
+  - ✅ Kein Text-Truncation (voller Platz für Labels)
+  - ✅ Kontrast kontrollierbar (Tailwind colors, WCAG-compliant)
+  - ✅ Responsive Layout (kein Cut-off)
+
+* **Bessere Scannability**:
+  - Category-Sections mit Headings
+  - Klare visuelle Hierarchie
+  - Alle Anker auf einmal sichtbar
+
+* **Accessibility**:
+  - Große Click-Targets
+  - Keyboard-Navigation (Tab durch Cards)
+  - Screen-Reader-freundlich (semantic HTML)
+
+* **Modern & Familiar**:
+  - Ähnlich wie Component Libraries (shadcn/ui, Storybook)
+  - Ähnlich wie moderne Docs (Tailwind, Next.js)
+  - Nutzer kennen dieses Pattern
+
+**Treemap (Baseline) hat fundamentale Probleme:**
+* Text-Truncation ist inhärent (begrenzte Box-Größe)
+* Kontrast schwer zu kontrollieren (Palette + Dark Mode)
+* Viewport-Management komplex
+* Cognitive Load höher (Größenverhältnisse interpretieren)
+
+**Tabs mit Liste:**
+* Gut für mobile
+* Aber: nicht alle Kategorien auf einmal sichtbar
+* Tab-Switching erforderlich
+
+**Tag Cloud:**
+* Sehr compact
+* Aber: weniger strukturiert
+* Schwerer zu scannen
+
+**Table View:**
+* Sehr übersichtlich
+* Aber: weniger visuell ansprechend
+* Mobile problematisch
+
+== Consequences
+
+=== Positive
+
+* **Keine Text-Truncation**: Volle Anchor-Namen sichtbar
+* **WCAG-compliant**: Kontrast kontrollierbar
+* **Responsive**: Funktioniert auf allen Screen-Größen
+* **Bessere UX**: Klare Hierarchie, leicht zu scannen
+* **Einfachere Implementation**: CSS Grid statt ECharts
+* **Kleinere Bundle-Size**: Kein ECharts mehr (~300KB gespart)
+* **Bessere Accessibility**: Semantic HTML, Keyboard-Navigation
+* **Schnellere Rendering**: Kein Canvas-Rendering nötig
+
+=== Negative
+
+* **Mehr vertikaler Platz**: Scrolling erforderlich (aber akzeptabel)
+* **Weniger "visuell beeindruckend"**: Treemap war eye-catching
+* **Info-Dichte niedriger**: Mehr Platz pro Anchor
+
+=== Neutral
+
+* **Keine Größenverhältnisse mehr**: Anzahl Anker nicht visuell erkennbar (aber war ohnehin nicht wichtig)
+
+=== Migration
+
+1. **Phase 1: Parallel implementieren**
+   - Neue Card Grid Komponente erstellen
+   - Alte Treemap behalten (Feature-Flag möglich)
+
+2. **Phase 2: Ersetzen**
+   - Card Grid als Default
+   - Treemap entfernen
+   - ECharts dependency entfernen
+
+3. **Phase 3: Optimieren**
+   - Animationen hinzufügen (Fade-in beim Filtern)
+   - Skeleton Loading
+   - Virtualisierung wenn nötig (60+ Anker sollten OK sein)
+
+=== Implementation
+
+**HTML-Struktur:**
+
+[source,html]
+----
+<main>
+  <!-- Category Section -->
+  <section class="category-section" data-category="testing-quality">
+    <h2 class="category-heading">
+      <span class="category-icon"></span>
+      Testing & Quality Practices
+    </h2>
+
+    <!-- Card Grid -->
+    <div class="card-grid">
+      <article class="anchor-card" data-anchor="tdd-london-school">
+        <h3>TDD, London School</h3>
+        <p class="anchor-description">Mock-heavy, outside-in TDD</p>
+        <div class="anchor-meta">
+          <span class="roles-badge">3 roles</span>
+        </div>
+      </article>
+
+      <article class="anchor-card" data-anchor="tdd-chicago-school">
+        <!-- ... -->
+      </article>
+    </div>
+  </section>
+
+  <!-- Repeat for each category -->
+</main>
+----
+
+**CSS (Tailwind):**
+
+[source,css]
+----
+/* Category Section */
+.category-section {
+  @apply mb-12;
+}
+
+.category-heading {
+  @apply text-2xl font-bold mb-6 flex items-center gap-3;
+  @apply text-gray-900 dark:text-gray-100;
+}
+
+.category-icon {
+  @apply w-8 h-8 rounded-lg;
+  background-color: var(--category-color);
+}
+
+/* Card Grid - Responsive */
+.card-grid {
+  @apply grid gap-4;
+  @apply grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4;
+}
+
+/* Anchor Card */
+.anchor-card {
+  @apply p-4 rounded-lg border-2 cursor-pointer;
+  @apply bg-white dark:bg-gray-800;
+  @apply border-gray-200 dark:border-gray-700;
+  @apply hover:border-blue-500 dark:hover:border-blue-400;
+  @apply hover:shadow-lg transition-all duration-200;
+}
+
+.anchor-card:hover {
+  @apply transform -translate-y-1;
+}
+
+.anchor-card h3 {
+  @apply text-lg font-semibold mb-2;
+  @apply text-gray-900 dark:text-gray-100;
+}
+
+.anchor-description {
+  @apply text-sm text-gray-600 dark:text-gray-400 mb-3;
+}
+
+.anchor-meta {
+  @apply flex items-center gap-2 text-xs text-gray-500;
+}
+----
+
+**JavaScript (Minimal):**
+
+[source,javascript]
+----
+// Click Handler
+document.querySelectorAll('.anchor-card').forEach(card => {
+  card.addEventListener('click', () => {
+    const anchorId = card.dataset.anchor;
+    showAnchorDetails(anchorId); // Existing modal function
+  });
+});
+
+// Filter/Search
+function filterAnchors(query, roleId) {
+  const sections = document.querySelectorAll('.category-section');
+
+  sections.forEach(section => {
+    const cards = section.querySelectorAll('.anchor-card');
+    let visibleCount = 0;
+
+    cards.forEach(card => {
+      const matches = /* filter logic */;
+      card.style.display = matches ? 'block' : 'none';
+      if (matches) visibleCount++;
+    });
+
+    // Hide empty sections
+    section.style.display = visibleCount > 0 ? 'block' : 'none';
+  });
+}
+----
+
+== Related Decisions
+
+* ADR-003: Apache ECharts für Treemap (wird abgelöst)
+* ADR-001: Vite als Static Site Generator (ermöglicht optimale Bundle-Size)
+
+== References
+
+* Issue #59: Text truncation in treemap
+* Issue #60: Treemap cut off at bottom
+* Issue #61: Poor contrast on yellow boxes
+* Playwright Testing Session: 2026-02-13
+* shadcn/ui Components: https://ui.shadcn.com/
+* Tailwind UI Component Examples: https://tailwindui.com/components

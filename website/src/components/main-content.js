@@ -29,11 +29,7 @@ export function renderMain() {
           </select>
         </section>
 
-        <section
-          id="treemap-container"
-          class="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-secondary)] transition-colors duration-300"
-          style="min-height: 500px; height: calc(100vh - 350px);"
-        ></section>
+        <div id="main-content"></div>
       </div>
     </main>
   `

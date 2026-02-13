@@ -1,0 +1,116 @@
+name: 📝 Improve Existing Anchor
+description: Suggest improvements to an existing semantic anchor
+title: "[Improve]: "
+labels: ["enhancement", "documentation"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping improve our semantic anchors!
+
+  - type: dropdown
+    id: anchor-id
+    attributes:
+      label: Which anchor?
+      description: Select the anchor you want to improve (or enter manually below)
+      options:
+        - adr-according-to-nygard
+        - arc42
+        - bem-methodology
+        - bluf
+        - c4-diagrams
+        - chain-of-thought
+        - clean-architecture
+        - control-chart-shewhart
+        - conventional-commits
+        - cynefin-framework
+        - devils-advocate
+        - diataxis-framework
+        - docs-as-code
+        - domain-driven-design
+        - dry-principle
+        - ears-requirements
+        - feynman-technique
+        - five-whys
+        - hexagonal-architecture
+        - impact-mapping
+        - jobs-to-be-done
+        - madr
+        - mece
+        - mental-model-according-to-naur
+        - mutation-testing
+        - nelson-rules
+        - problem-space-nvc
+        - property-based-testing
+        - pugh-matrix
+        - pyramid-principle
+        - rubber-duck-debugging
+        - semantic-versioning
+        - socratic-method
+        - solid-principles
+        - sota
+        - spc
+        - spot-principle
+        - ssot-principle
+        - tdd-chicago-school
+        - tdd-london-school
+        - testing-pyramid
+        - timtowtdi
+        - todotxt-flavoured-markdown
+        - user-story-mapping
+        - wardley-mapping
+        - what-qualifies-as-a-semantic-anchor
+        - Other (specify below)
+
+  - type: input
+    id: anchor-id-manual
+    attributes:
+      label: Anchor ID (if not in dropdown)
+      placeholder: e.g., "new-anchor-id"
+
+  - type: dropdown
+    id: improvement-type
+    attributes:
+      label: Type of Improvement
+      options:
+        - Add missing information
+        - Fix inaccurate content
+        - Improve clarity
+        - Add related anchors
+        - Update proponents
+        - Improve examples
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: current-issue
+    attributes:
+      label: What's wrong or missing?
+      description: Describe the current problem
+      placeholder: |
+        Currently, the anchor...
+        This is problematic because...
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposed-change
+    attributes:
+      label: Proposed Change
+      description: What should be changed/added?
+      placeholder: |
+        I suggest...
+        This would improve...
+    validations:
+      required: true
+
+  - type: textarea
+    id: references
+    attributes:
+      label: References
+      description: Links or sources supporting your suggestion
+      placeholder: |
+        - https://...
+        - Book: "..."
+        - Paper: "..."

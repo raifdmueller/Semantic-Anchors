@@ -1,0 +1,114 @@
+name: 🐛 Bug Report
+description: Report a bug with the website or documentation
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting a bug! Please fill out the form below.
+
+  - type: dropdown
+    id: bug-type
+    attributes:
+      label: Bug Category
+      options:
+        - Website - UI/Display issue
+        - Website - Functionality broken
+        - Website - Performance issue
+        - Documentation - Incorrect content
+        - Documentation - Broken links
+        - Search - Not finding anchors
+        - Filter - Not working correctly
+        - Treemap - Visualization issue
+        - Theme - Dark/Light mode issue
+        - i18n - Translation issue
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Bug Description
+      description: Clear description of what's wrong
+      placeholder: When I..., the website...
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected Behavior
+      description: What should happen instead?
+      placeholder: It should...
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to Reproduce
+      description: How can we reproduce this bug?
+      placeholder: |
+        1. Go to...
+        2. Click on...
+        3. See error...
+    validations:
+      required: true
+
+  - type: input
+    id: url
+    attributes:
+      label: URL (if applicable)
+      placeholder: https://llm-coding.github.io/Semantic-Anchors/...
+
+  - type: dropdown
+    id: browser
+    attributes:
+      label: Browser
+      options:
+        - Chrome
+        - Firefox
+        - Safari
+        - Edge
+        - Mobile Safari (iOS)
+        - Mobile Chrome (Android)
+        - Other
+
+  - type: input
+    id: browser-version
+    attributes:
+      label: Browser Version
+      placeholder: e.g., Chrome 120
+
+  - type: dropdown
+    id: device
+    attributes:
+      label: Device Type
+      options:
+        - Desktop
+        - Tablet
+        - Mobile Phone
+
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: Screenshots
+      description: If applicable, add screenshots
+      placeholder: Drag and drop images here
+
+  - type: textarea
+    id: console-errors
+    attributes:
+      label: Console Errors
+      description: Any errors in the browser console (F12)?
+      placeholder: |
+        Error: ...
+        at ...
+
+  - type: textarea
+    id: additional
+    attributes:
+      label: Additional Context
+      description: Any other relevant information

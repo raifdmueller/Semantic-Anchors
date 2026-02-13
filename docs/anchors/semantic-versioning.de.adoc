@@ -8,23 +8,23 @@
 
 *Kernkonzepte*:
 
-* *Version format*: MAJOR.MINOR.PATCH (e.g., 2.4.7)
-** *MAJOR*: Incompatible API changes (breaking changes)
-** *MINOR*: Backward-compatible functionality additions
-** *PATCH*: Backward-compatible bug fixes
-** *Pre-release versions*: Append hyphen and identifiers (e.g., 1.0.0-alpha.1)
-* *Build metadata*: Append plus sign and identifiers (e.g., 1.0.0+20241111)
-* *Version precedence*: Clear rules for version comparison
-* *Initial development*: 0.y.z for initial development (API unstable)
-* *Public API declaration*: Once public API declared, version dependencies matter
+* *Versionsformat*: MAJOR.MINOR.PATCH (z.B. 2.4.7)
+** *MAJOR*: Inkompatible API-Änderungen (Breaking Changes)
+** *MINOR*: Rückwärtskompatible Funktionserweiterungen
+** *PATCH*: Rückwärtskompatible Fehlerbehebungen
+** *Pre-Release-Versionen*: Bindestrich und Identifikatoren anhängen (z.B. 1.0.0-alpha.1)
+* *Build-Metadaten*: Pluszeichen und Identifikatoren anhängen (z.B. 1.0.0+20241111)
+* *Versionspriorität*: Klare Regeln für Versionsvergleich
+* *Initiale Entwicklung*: 0.y.z für initiale Entwicklung (API instabil)
+* *Public API-Deklaration*: Sobald public API deklariert, sind Versionsabhängigkeiten wichtig
 
 *Schlüsselvertreter*: Tom Preston-Werner
 
 *Wann zu verwenden*:
 
-* Libraries and APIs consumed by other software
-* Software with defined public interfaces
-* Projects requiring dependency management
-* Communication of change impact to users/consumers
+* Bibliotheken und APIs, die von anderer Software konsumiert werden
+* Software mit definierten öffentlichen Schnittstellen
+* Projekte, die Abhängigkeitsmanagement erfordern
+* Kommunikation von Änderungsauswirkungen an Nutzer/Konsumenten
 
 ====

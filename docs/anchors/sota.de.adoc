@@ -8,42 +8,42 @@
 
 *Kernkonzepte*:
 
-* *Latest approaches*: Focus on the most current, cutting-edge methods and techniques
-* *Research-grounded*: Reference current research papers, benchmarks, and empirical results
-* *Comparative analysis*: Compare new approaches with existing or previous methods
-* *Performance-focused*: Emphasize benchmark-leading and best-performing solutions
-* *Up-to-date information*: Provide current, grounded information rather than outdated practices
-* *Evidence-based*: Support claims with recent studies, benchmarks, and real-world implementations
-* *Contextual awareness*: Consider the specific domain and timeframe for "state-of-the-art"
+* *Neueste Ansätze*: Fokus auf die aktuellsten, modernsten Methoden und Techniken
+* *Forschungsbasiert*: Referenz auf aktuelle Forschungsarbeiten, Benchmarks und empirische Ergebnisse
+* *Vergleichsanalyse*: Vergleich neuer Ansätze mit bestehenden oder früheren Methoden
+* *Leistungsorientiert*: Betonung benchmark-führender und best-performanter Lösungen
+* *Aktuelle Informationen*: Bereitstellung aktueller, fundierter Informationen statt veralteter Praktiken
+* *Evidenzbasiert*: Untermauerung von Behauptungen mit neuesten Studien, Benchmarks und Real-World-Implementierungen
+* *Kontextbewusstsein*: Berücksichtigung der spezifischen Domäne und des Zeitrahmens für "State-of-the-Art"
 
-*Usage Patterns*:
+*Nutzungsmuster*:
 
-* "Learn SOTA for [topic]" - triggers research and comprehensive information gathering
-* "What's SOTA for [topic]?" - requests current best practices and approaches
-* "Give me the SOTA approach for [problem]" - asks for cutting-edge solutions
+* "Lerne SOTA für [Thema]" - löst Recherche und umfassende Informationssammlung aus
+* "Was ist SOTA für [Thema]?" - fragt nach aktuellen Best Practices und Ansätzen
+* "Gib mir den SOTA-Ansatz für [Problem]" - bittet um modernste Lösungen
 
-*Example Usage*:
+*Beispiele*:
 
-* "Learn SOTA for RAG implementations"
-* "What's SOTA for code generation in 2024?"
-* "Give me the SOTA approach for semantic search"
-* "What's the SOTA in transformer architectures?"
+* "Lerne SOTA für RAG-Implementierungen"
+* "Was ist SOTA für Code-Generierung in 2024?"
+* "Gib mir den SOTA-Ansatz für semantische Suche"
+* "Was ist der SOTA bei Transformer-Architekturen?"
 
-*Schlüsselvertreter*: Widely used in ML/AI research community
+*Schlüsselvertreter*: Weit verbreitet in der ML/AI-Forschungsgemeinschaft
 
 *Wann zu verwenden*:
 
-* Researching current best practices in a technical domain
-* Comparing different approaches to solve a problem
-* Staying updated with rapidly evolving fields (AI/ML, web technologies)
-* Making technology decisions based on current benchmarks
-* Learning about cutting-edge implementations
-* Avoiding outdated or deprecated approaches
+* Recherche aktueller Best Practices in einer technischen Domäne
+* Vergleich verschiedener Ansätze zur Lösung eines Problems
+* Auf dem Laufenden bleiben bei sich schnell entwickelnden Feldern (AI/ML, Webtechnologien)
+* Technologieentscheidungen auf Basis aktueller Benchmarks treffen
+* Lernen über modernste Implementierungen
+* Vermeidung veralteter oder deprecated Ansätze
 
-*Why It Works*:
+*Warum es funktioniert*:
 
-* Heavily represented in ML/AI papers, benchmarks, and technical discussions
-* Consistent meaning across contexts: "best performing" and "most current"
-* Concise trigger for comprehensive research behavior
-* Activates research-oriented response patterns in LLMs
+* Stark vertreten in ML/AI-Papers, Benchmarks und technischen Diskussionen
+* Konsistente Bedeutung über Kontexte hinweg: "am besten performend" und "aktuellst"
+* Präziser Trigger für umfassendes Rechercheverhalten
+* Aktiviert forschungsorientierte Antwortmuster in LLMs
 ====

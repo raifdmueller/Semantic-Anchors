@@ -9,31 +9,31 @@
 
 *Kernkonzepte*:
 
-* *Process monitoring*: Systematic statistical monitoring of running processes
-* *Common Cause Variation*: Inherent, random fluctuation — stable and predictable
-* *Special Cause Variation*: Assignable cause — unstable, correctable
-* *Control Charts*: Central visual tool (see dedicated anchor)
-* *Detection rules*: Nelson Rules, Western Electric Rules (see dedicated anchors)
-* *Process Capability*: Indices Cp, Cpk (short-term) and Pp, Ppk (long-term)
-* *In-Control*: Process exhibits only Common Cause Variation
-* *Out-of-Control*: Special Cause detected — intervention required
-* *Continuous Improvement*: SPC as a foundation for ongoing process improvement
-* *DMAIC Control Phase*: SPC tools secure improvements within Six Sigma
+* *Prozessüberwachung*: Systematische statistische Überwachung laufender Prozesse
+* *Allgemeine Ursachen-Variation*: Inhärente, zufällige Schwankung — stabil und vorhersagbar
+* *Spezielle Ursachen-Variation*: Zuordenbare Ursache — instabil, korrigierbar
+* *Regelkarten*: Zentrales visuelles Werkzeug (siehe dedizierter Anker)
+* *Erkennungsregeln*: Nelson Rules, Western Electric Rules (siehe dedizierte Anker)
+* *Prozessfähigkeit*: Indizes Cp, Cpk (kurzfristig) und Pp, Ppk (langfristig)
+* *Unter Kontrolle*: Prozess zeigt nur Variation durch allgemeine Ursachen
+* *Außer Kontrolle*: Spezielle Ursache erkannt — Intervention erforderlich
+* *Kontinuierliche Verbesserung*: SPC als Grundlage für fortlaufende Prozessverbesserung
+* *DMAIC Control Phase*: SPC-Werkzeuge sichern Verbesserungen innerhalb von Six Sigma
 
-*Schlüsselvertreter*: Walter A. Shewhart (founder), W. Edwards Deming (dissemination), Western Electric Company
+*Schlüsselvertreter*: Walter A. Shewhart (Gründer), W. Edwards Deming (Verbreitung), Western Electric Company
 
-*Relationship to Other Anchors*:
+*Beziehung zu anderen Ankern*:
 
-* *Control Chart (Shewhart)*: Central tool within SPC
-* *Nelson Rules*: Detection rules for Special Causes on Control Charts
-* *Six Sigma*: Uses SPC particularly in the Control phase
-* *Testing Pyramid*: Conceptual parallel — different levels of quality assurance
+* *Control Chart (Shewhart)*: Zentrales Werkzeug innerhalb von SPC
+* *Nelson Rules*: Erkennungsregeln für spezielle Ursachen auf Regelkarten
+* *Six Sigma*: Nutzt SPC besonders in der Control-Phase
+* *Testing Pyramid*: Konzeptuelle Parallele — verschiedene Ebenen der Qualitätssicherung
 
 *Wann zu verwenden*:
 
-* Monitoring manufacturing and business processes
-* Quality management per ISO 9001, IATF 16949, Six Sigma
-* Pharmaceutical Continuous Process Verification (CPV)
-* Conceptual foundation for anomaly detection in IT systems
-* When the question is: "Is my process stable, or has something changed?"
+* Überwachung von Fertigungs- und Geschäftsprozessen
+* Qualitätsmanagement nach ISO 9001, IATF 16949, Six Sigma
+* Pharmazeutische Kontinuierliche Prozessverifikation (CPV)
+* Konzeptuelle Grundlage für Anomalieerkennung in IT-Systemen
+* Wenn die Frage ist: "Ist mein Prozess stabil, oder hat sich etwas geändert?"
 ====

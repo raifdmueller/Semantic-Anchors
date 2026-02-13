@@ -1,0 +1,600 @@
+= MECE Analysis of Semantic Anchor Categories
+:toc: left
+:toclevels: 3
+:sectnums:
+:icons: font
+
+== Executive Summary
+
+This document presents a comprehensive MECE (Mutually Exclusive, Collectively Exhaustive) analysis of the current 10-category taxonomy for the Semantic Anchors catalog. The analysis examines 49 semantic anchors to identify overlaps, gaps, and opportunities for restructuring.
+
+**Key Findings:**
+
+* *Overlaps Identified*: 8 significant category boundary issues
+* *Gaps Identified*: 3 missing categories for comprehensive coverage
+* *Recommended Action*: Restructure to 11 MECE-compliant categories
+
+== Current Category Structure
+
+The repository currently organizes semantic anchors into 10 categories:
+
+. Testing & Quality Practices (5 anchors)
+. Architecture & Design (6 anchors)
+. Design Principles & Patterns (5 anchors)
+. Requirements Engineering (5 anchors)
+. Documentation (2 anchors)
+. Communication & Presentation (2 anchors)
+. Decision Making & Strategy (3 anchors)
+. Development Practices (7 anchors)
+. Statistical Methods & Process Monitoring (3 anchors)
+. Interaction & Reasoning Patterns (7 anchors)
+
+**Total**: 49 semantic anchors
+
+== MECE Analysis: Mutually Exclusive Violations
+
+=== Overlap 1: Architecture & Design ↔ Design Principles & Patterns
+
+**Problem**: Unclear boundary between architectural patterns and design principles.
+
+**Affected Anchors:**
+
+* *Hexagonal Architecture* (currently in Architecture & Design)
+** Could also fit in Design Principles & Patterns as it's an architectural pattern
+* *Clean Architecture* (currently in Architecture & Design)
+** Also an architectural pattern with strong principles focus
+* *Domain-Driven Design* (currently in Design Principles & Patterns)
+** Has significant architectural implications (Bounded Contexts, etc.)
+
+**Analysis:**
+
+The distinction between "Architecture & Design" and "Design Principles & Patterns" is ambiguous. Architecture *is* a form of design, and patterns can be architectural.
+
+**Current Heuristic (implied):**
+
+* Architecture & Design → Documentation and modeling approaches (arc42, ADR, C4)
+* Design Principles & Patterns → Implementation-level principles (SOLID, DRY, DDD)
+
+**Issue**: Hexagonal and Clean Architecture blur this line - they're both architectural styles AND implementation patterns.
+
+=== Overlap 2: Development Practices ↔ Testing & Quality Practices
+
+**Problem**: TDD methodologies have both development practice and testing practice characteristics.
+
+**Affected Anchors:**
+
+* *TDD, London School* (currently in Testing & Quality Practices)
+** Development methodology that uses testing as primary driver
+* *TDD, Chicago School* (currently in Testing & Quality Practices)
+** Same as above
+
+**Analysis:**
+
+TDD is fundamentally a *development practice* that happens to use testing as its feedback mechanism. The current categorization emphasizes the testing aspect over the development workflow aspect.
+
+**Counter-argument**: The Testing category specifically focuses on quality assurance approaches, and TDD's primary differentiator is its testing philosophy (mockist vs. classicist).
+
+**Verdict**: Current categorization is defensible but creates conceptual tension.
+
+=== Overlap 3: Requirements Engineering ↔ Decision Making & Strategy
+
+**Problem**: Several requirements techniques are also strategic decision-making tools.
+
+**Affected Anchors:**
+
+* *Impact Mapping* (currently in Requirements Engineering)
+** Strategic planning tool that happens to inform requirements
+** Also fits Decision Making & Strategy
+* *Jobs To Be Done* (currently in Requirements Engineering)
+** Innovation and strategy framework
+** Could fit Decision Making & Strategy
+* *User Story Mapping* (currently in Requirements Engineering)
+** Planning and prioritization tool
+** Could also fit Decision Making & Strategy
+
+**Analysis:**
+
+These tools operate at the intersection of requirements discovery and strategic planning. The current categorization favors their use in requirements gathering, but their strategic value is equally significant.
+
+=== Overlap 4: Communication & Presentation ↔ Interaction & Reasoning Patterns
+
+**Problem**: Some interaction patterns are also communication techniques.
+
+**Affected Anchors:**
+
+* *BLUF* (currently in Interaction & Reasoning Patterns)
+** Primarily a communication format
+** Should arguably be in Communication & Presentation
+* *Socratic Method* (currently in Interaction & Reasoning Patterns)
+** Both a reasoning pattern AND a communication/dialogue technique
+
+**Analysis:**
+
+The boundary between "how to communicate" (Communication) and "how to interact/reason" (Interaction) is fuzzy. BLUF is primarily about *structuring communication*, not about reasoning processes.
+
+=== Overlap 5: Development Practices ↔ Documentation
+
+**Problem**: Docs-as-Code is both a development practice and a documentation approach.
+
+**Affected Anchors:**
+
+* *Docs-as-Code* (currently in Documentation)
+** Development workflow practice
+** Could fit in Development Practices
+
+**Analysis:**
+
+Docs-as-Code applies developer workflows (version control, CI/CD, plain text) to documentation. It's a practice that happens to produce documentation.
+
+**Verdict**: Current categorization (Documentation) is acceptable because the *outcome* is documentation.
+
+=== Overlap 6: Decision Making & Strategy ↔ Requirements Engineering
+
+**Problem**: Strategic frameworks inform both high-level decisions and requirements.
+
+**Affected Anchors:**
+
+* *Cynefin Framework* (currently in Decision Making & Strategy)
+** Also informs requirements gathering approaches based on problem complexity
+* *Wardley Mapping* (currently in Decision Making & Strategy)
+** Strategic planning that directly impacts requirements prioritization
+
+**Analysis:**
+
+These frameworks are correctly categorized as strategic, but their downstream impact on requirements work creates conceptual overlap.
+
+=== Overlap 7: Statistical Methods & Process Monitoring ↔ Development Practices
+
+**Problem**: SPC techniques apply to development workflows but are currently isolated.
+
+**Affected Anchors:**
+
+* *SPC*, *Control Charts*, *Nelson Rules* (all in Statistical Methods)
+** Apply to software delivery processes (e.g., cycle time monitoring)
+** Could be seen as development/DevOps practices
+
+**Analysis:**
+
+Statistical Methods is a specialized domain. While these techniques *can* be applied to development, they're fundamentally statistical tools, not development practices.
+
+**Verdict**: Current categorization is correct; statistical methods deserve their own category.
+
+=== Overlap 8: Interaction & Reasoning Patterns ↔ Development Practices
+
+**Problem**: Some reasoning patterns are specifically development techniques.
+
+**Affected Anchors:**
+
+* *Rubber Duck Debugging* (currently in Interaction & Reasoning Patterns)
+** Debugging technique (development practice)
+** Also a reasoning/explanation pattern
+* *Five Whys* (currently in Interaction & Reasoning Patterns)
+** Problem-solving technique applicable beyond development
+** Used in software engineering for root cause analysis
+
+**Analysis:**
+
+These are general reasoning patterns that *happen to be used* in development. The current categorization correctly emphasizes their broader applicability.
+
+== MECE Analysis: Collectively Exhaustive Violations
+
+=== Gap 1: No Category for Process/Workflow Methodologies
+
+**Missing Category**: *Process & Methodologies*
+
+**Examples of Anchors that Would Fit Here (not currently in catalog):**
+
+* Scrum
+* Kanban
+* Extreme Programming (XP)
+* SAFe
+* Shape Up
+* DevOps practices (as methodology, not tooling)
+
+**Analysis:**
+
+The catalog has *development practices* (individual techniques) and *decision-making* (strategic frameworks), but lacks a category for *team/organizational process methodologies*. This is a significant gap.
+
+**Impact**: If someone wants to add "Scrum" as a semantic anchor, where would it go?
+
+* Development Practices? (Too narrow - Scrum is more than code practices)
+* Decision Making & Strategy? (Not primarily a decision framework)
+* Requirements Engineering? (Scrum has requirements aspects but is broader)
+
+**Recommendation**: Add "Process & Agile Methodologies" category.
+
+=== Gap 2: No Category for Data/Information Architecture
+
+**Missing Category**: *Data Architecture & Modeling*
+
+**Examples of Anchors that Would Fit Here:**
+
+* Entity-Relationship Modeling
+* Data Vault 2.0
+* Star Schema / Snowflake Schema
+* Event Sourcing (data pattern)
+* CQRS (Command Query Responsibility Segregation)
+* Slowly Changing Dimensions (SCD Types)
+
+**Analysis:**
+
+The catalog has software architecture (arc42, hexagonal) but lacks data/information architecture concepts. For data-intensive systems, data modeling approaches are semantic anchors.
+
+**Impact**: Currently no clear place for data architecture patterns.
+
+**Recommendation**: Add "Data Architecture" category OR expand "Architecture & Design" to explicitly include data architecture.
+
+=== Gap 3: No Category for Security Practices/Principles
+
+**Missing Category**: *Security & Privacy*
+
+**Examples of Anchors that Would Fit Here:**
+
+* OWASP Top 10
+* Zero Trust Architecture
+* Principle of Least Privilege
+* Defense in Depth
+* Privacy by Design
+* Threat Modeling (STRIDE, DREAD)
+
+**Analysis:**
+
+Security is a critical concern in software development, and security frameworks/principles are strong semantic anchors. Currently no category addresses security.
+
+**Impact**: If someone wants to add "OWASP Top 10" or "Zero Trust", where would it go?
+
+* Design Principles? (Security is more than design)
+* Development Practices? (Security is broader than coding)
+* Architecture? (Security spans architecture AND implementation)
+
+**Recommendation**: Add "Security & Privacy" category.
+
+== MECE Analysis: Internal Category Consistency
+
+=== Category 1: Testing & Quality Practices
+
+**Consistency**: ✅ *Good*
+
+All 5 anchors are clearly about testing approaches or quality assessment:
+
+* TDD variants (London/Chicago)
+* Property-Based Testing
+* Testing Pyramid
+* Mutation Testing
+
+**Issue**: As noted in Overlap 2, TDD straddles testing and development practices.
+
+=== Category 2: Architecture & Design
+
+**Consistency**: ⚠️ *Mixed*
+
+Combines documentation approaches (arc42, ADR, MADR, C4) with architectural styles (Hexagonal, Clean). These are related but conceptually different:
+
+* *Documentation/Modeling*: arc42, ADR, MADR, C4-Diagrams
+* *Architectural Styles*: Hexagonal Architecture, Clean Architecture
+
+**Recommendation**: Consider splitting or clearly defining subcategories.
+
+=== Category 3: Design Principles & Patterns
+
+**Consistency**: ✅ *Good*
+
+All anchors are principles or patterns for code/system design:
+
+* SOLID (principles)
+* DRY/SPOT/SSOT (principles)
+* Domain-Driven Design (pattern collection + principles)
+
+**Note**: DDD is large enough that it blurs boundaries (see Overlap 1).
+
+=== Category 4: Requirements Engineering
+
+**Consistency**: ⚠️ *Mixed*
+
+Combines requirements elicitation techniques with strategic planning frameworks:
+
+* *Elicitation*: Problem Space NVC, EARS-Requirements
+* *Strategic Planning*: Impact Mapping, JTBD, User Story Mapping
+
+As noted in Overlap 3, the strategic tools also fit Decision Making & Strategy.
+
+=== Category 5: Documentation
+
+**Consistency**: ✅ *Good*
+
+Only 2 anchors, both clearly about documentation:
+
+* Docs-as-Code (approach/workflow)
+* Diátaxis Framework (organization/structure)
+
+**Issue**: Very small category. Consider merging into another category or expanding.
+
+=== Category 6: Communication & Presentation
+
+**Consistency**: ✅ *Good*
+
+Both anchors are about structuring communication:
+
+* Pyramid Principle (argumentation structure)
+* MECE Principle (organizational principle)
+
+**Issue**: Very small category (2 anchors). MECE is also meta-principle used across domains.
+
+=== Category 7: Decision Making & Strategy
+
+**Consistency**: ✅ *Good*
+
+All 3 anchors are frameworks for strategic decision-making:
+
+* Pugh Matrix (comparative decision-making)
+* Cynefin Framework (context-based strategy)
+* Wardley Mapping (strategic landscape analysis)
+
+=== Category 8: Development Practices
+
+**Consistency**: ⚠️ *Heterogeneous*
+
+This category is a catch-all for miscellaneous practices:
+
+* *Philosophy*: Mental Model (Naur)
+* *Conventions*: Conventional Commits, Semantic Versioning, BEM, todo.txt
+* *Meta-approaches*: SOTA, TIMTOWTDI
+
+**Issue**: "Development Practices" is too broad. These anchors don't share a unifying theme beyond "related to development work."
+
+**Recommendation**: Consider splitting into:
+
+* "Code Conventions & Standards" (SemVer, Conventional Commits, BEM)
+* "Development Philosophy" (Mental Model, TIMTOWTDI)
+* Or keep as-is with clearer definition
+
+=== Category 9: Statistical Methods & Process Monitoring
+
+**Consistency**: ✅ *Excellent*
+
+All 3 anchors are statistical techniques for process monitoring:
+
+* SPC (Statistical Process Control)
+* Control Chart (Shewhart)
+* Nelson Rules
+
+Highly coherent category.
+
+=== Category 10: Interaction & Reasoning Patterns
+
+**Consistency**: ⚠️ *Mixed*
+
+Combines communication techniques, reasoning methods, and debugging practices:
+
+* *Dialogue/Communication*: Socratic Method, BLUF
+* *Reasoning/Analysis*: Chain of Thought, Devil's Advocate, Five Whys
+* *Learning*: Feynman Technique
+* *Debugging*: Rubber Duck Debugging
+
+**Issue**: As noted in Overlaps 4 and 8, some anchors here could fit other categories. The category conflates "interaction with others" and "internal reasoning."
+
+**Recommendation**: Consider splitting into:
+
+* "Interaction Patterns" (Socratic, BLUF - communication with others)
+* "Reasoning & Problem-Solving" (CoT, Devil's Advocate, Five Whys, Feynman, Rubber Duck)
+
+== Proposed MECE-Compliant Category Structure
+
+Based on the analysis above, here is a proposed 11-category structure that resolves overlaps and addresses gaps:
+
+=== Proposed Categories
+
+. *Testing & Quality Assurance*
+** Current: Testing & Quality Practices
+** Keep as-is
+** 5 anchors
+
+. *Software Architecture*
+** Current: Split between "Architecture & Design" and "Design Principles & Patterns"
+** Focus: Architectural styles, documentation, modeling
+** Includes: arc42, ADR, MADR, C4, Hexagonal, Clean, DDD (architectural aspects)
+** ~8 anchors
+
+. *Design Principles*
+** Current: Subset of "Design Principles & Patterns"
+** Focus: Code-level design principles
+** Includes: SOLID, DRY, SPOT, SSOT
+** 4 anchors
+
+. *Requirements Engineering*
+** Current: Keep as-is but clarify boundary with Strategy
+** Focus: Requirements discovery, elicitation, specification
+** Includes: NVC, EARS, User Story Mapping (as requirements tool)
+** 5 anchors
+
+. *Strategic Planning & Decision-Making*
+** Current: Merge "Decision Making & Strategy" + strategic tools from Requirements
+** Focus: High-level strategic frameworks
+** Includes: Cynefin, Wardley, Pugh, Impact Mapping, JTBD
+** 5 anchors
+
+. *Documentation*
+** Current: Keep but consider expanding or merging
+** Focus: Documentation approaches and organization
+** Includes: Docs-as-Code, Diátaxis
+** 2 anchors (expand with more documentation frameworks if available)
+
+. *Communication & Presentation*
+** Current: Expand to include BLUF
+** Focus: Structuring communication for clarity
+** Includes: Pyramid Principle, MECE, BLUF
+** 3 anchors
+
+. *Development Workflow & Practices*
+** Current: Rename from "Development Practices"
+** Focus: Day-to-day development activities and conventions
+** Includes: Conventional Commits, SemVer, BEM, todo.txt, Mental Model
+** 7 anchors (keep SOTA, TIMTOWTDI here as meta-practices)
+
+. *Problem-Solving & Reasoning*
+** Current: Split from "Interaction & Reasoning Patterns"
+** Focus: Cognitive and analytical techniques
+** Includes: Chain of Thought, Devil's Advocate, Five Whys, Feynman Technique, Rubber Duck
+** 5 anchors
+
+. *Dialogue & Interaction Patterns*
+** Current: Split from "Interaction & Reasoning Patterns"
+** Focus: Communication and dialogue techniques
+** Includes: Socratic Method
+** 1 anchor (small but distinct; consider merging with Communication if not expanding)
+
+. *Statistical Methods & Process Monitoring*
+** Current: Keep as-is
+** Focus: Statistical quality control
+** Includes: SPC, Control Charts, Nelson Rules
+** 3 anchors
+
+=== Category Mapping Summary
+
+[cols="1,1,1", options="header"]
+|===
+| Current Category | Proposed Category | Notes
+
+| Testing & Quality Practices
+| Testing & Quality Assurance
+| Keep as-is
+
+| Architecture & Design (architectural styles)
+| Software Architecture
+| Merge with DDD from Design Principles
+
+| Architecture & Design (documentation)
+| Software Architecture
+| Keep documentation approaches here
+
+| Design Principles & Patterns
+| Design Principles
+| Focused on code-level principles
+
+| Requirements Engineering (elicitation)
+| Requirements Engineering
+| Keep techniques like NVC, EARS
+
+| Requirements Engineering (strategic)
+| Strategic Planning & Decision-Making
+| Move Impact Mapping, JTBD to Strategy
+
+| Decision Making & Strategy
+| Strategic Planning & Decision-Making
+| Merge with strategic requirements tools
+
+| Documentation
+| Documentation
+| Keep as-is (consider expanding)
+
+| Communication & Presentation
+| Communication & Presentation
+| Add BLUF from Interaction category
+
+| Development Practices
+| Development Workflow & Practices
+| Rename for clarity
+
+| Statistical Methods
+| Statistical Methods & Process Monitoring
+| Keep as-is
+
+| Interaction & Reasoning Patterns (reasoning)
+| Problem-Solving & Reasoning
+| Split: reasoning techniques
+
+| Interaction & Reasoning Patterns (dialogue)
+| Dialogue & Interaction Patterns
+| Split: interaction techniques
+
+| *(NEW)*
+| *(Process & Agile Methodologies)*
+| Future: Add for Scrum, Kanban, XP, etc.
+
+| *(NEW)*
+| *(Security & Privacy)*
+| Future: Add for OWASP, Zero Trust, etc.
+|===
+
+== Recommendations
+
+=== Immediate Actions (Phase 1)
+
+. *Adopt 11-category structure* as outlined above
+. *Document category boundaries* clearly in CLAUDE.md
+. *Create category definition document* with inclusion/exclusion criteria for each category
+. *Reclassify affected anchors* (Impact Mapping, JTBD, BLUF, DDD architectural aspects)
+
+=== Future Enhancements (Phase 2+)
+
+. *Add Process & Agile Methodologies category* when adding process-related anchors (Scrum, Kanban, etc.)
+. *Add Security & Privacy category* when security anchors are contributed
+. *Consider Data Architecture* category if data modeling anchors are added
+. *Monitor "Development Workflow & Practices"* - if it grows too large, split into subcategories
+
+=== Category Boundary Definitions
+
+To maintain MECE compliance going forward, establish clear inclusion criteria:
+
+[cols="1,2", options="header"]
+|===
+| Category | Inclusion Criteria
+
+| Testing & Quality Assurance
+| Techniques for verifying software correctness, quality assessment
+
+| Software Architecture
+| High-level system structure, architectural styles, architecture documentation
+
+| Design Principles
+| Code and module-level design principles, patterns applicable at implementation level
+
+| Requirements Engineering
+| Techniques for discovering, specifying, and validating requirements
+
+| Strategic Planning & Decision-Making
+| Frameworks for strategic decisions, goal-setting, and high-level planning
+
+| Documentation
+| Approaches for creating, organizing, and maintaining documentation
+
+| Communication & Presentation
+| Techniques for structuring and delivering information to audiences
+
+| Development Workflow & Practices
+| Day-to-day development activities, conventions, versioning, workflow approaches
+
+| Problem-Solving & Reasoning
+| Cognitive techniques for analysis, debugging, learning, and problem decomposition
+
+| Dialogue & Interaction Patterns
+| Techniques for structured dialogue and interactive communication
+
+| Statistical Methods & Process Monitoring
+| Statistical techniques for quality control and process analysis
+|===
+
+== Conclusion
+
+The current 10-category structure has **8 significant overlaps** and **3 gaps** that prevent MECE compliance. The proposed 11-category restructuring:
+
+✅ Resolves boundary ambiguities between Architecture/Design and Principles
+✅ Separates strategic planning from tactical requirements work
+✅ Distinguishes communication from reasoning/problem-solving
+✅ Maintains specialized categories (Statistical Methods, Documentation)
+✅ Positions the catalog for future growth (security, process methodologies)
+
+**Next Steps:**
+
+. Get stakeholder approval (@rdmueller) for proposed structure
+. Update CLAUDE.md with new category definitions
+. Reclassify ~5 anchors (Impact Mapping, JTDB, BLUF, DDD aspects)
+. Document category boundaries for contributors
+. Apply new structure when splitting README.adoc (Issue #38)
+
+---
+
+*Document Version*: 1.0 +
+*Date*: 2025-02-13 +
+*Author*: AI Analysis (Claude Sonnet 4.5) +
+*Related Issue*: #36 - MECE Analysis

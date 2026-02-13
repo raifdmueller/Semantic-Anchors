@@ -7,6 +7,7 @@ import { renderFooter } from './components/footer.js'
 import { renderCardGrid, initCardGrid, applyCardFilters } from './components/card-grid.js'
 import { fetchData } from './utils/data-loader.js'
 import { createModal, showAnchorDetails } from './components/anchor-modal.js'
+import { buildSearchIndex } from './utils/search-index.js'
 
 const APP_VERSION = '0.3.0'
 
@@ -54,6 +55,18 @@ async function initCardGridVisualization() {
 
     // Initialize card event handlers
     initCardGrid()
+
+    // Build search index in background
+    buildSearchIndex(data.anchors).then(() => {
+      console.log('✓ Full-text search ready')
+      // Show indicator that search is ready
+      const searchInput = document.getElementById('search-input')
+      if (searchInput) {
+        searchInput.placeholder = i18n.t('search.placeholder') + ' (full-text)'
+      }
+    }).catch(err => {
+      console.warn('Search index build failed:', err)
+    })
 
     // Bind role filter
     const roleFilter = document.getElementById('role-filter')

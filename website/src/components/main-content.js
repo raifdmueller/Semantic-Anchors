@@ -8,9 +8,34 @@ export function renderMain() {
           <h2 class="text-2xl font-bold text-[var(--color-text)] mb-2" data-i18n="main.heading">
             ${i18n.t('main.heading')}
           </h2>
-          <p class="text-[var(--color-text-secondary)]" data-i18n="main.subheading">
+          <p class="text-[var(--color-text-secondary)] mb-4" data-i18n="main.subheading">
             ${i18n.t('main.subheading')}
           </p>
+          <div class="flex flex-wrap gap-3 text-sm">
+            <a
+              href="https://github.com/LLM-Coding/Semantic-Anchors/blob/main/README.adoc"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-1 text-blue-600 dark:text-blue-400 hover:underline"
+            >
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+              </svg>
+              Documentation
+            </a>
+            <span class="text-gray-300 dark:text-gray-600">|</span>
+            <a
+              href="https://github.com/LLM-Coding/Semantic-Anchors/blob/main/CONTRIBUTING.md"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-1 text-blue-600 dark:text-blue-400 hover:underline"
+            >
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
+              </svg>
+              Add New Anchor
+            </a>
+          </div>
         </section>
 
         <section id="filters" class="mb-6 flex flex-wrap gap-3">

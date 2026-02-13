@@ -89,10 +89,25 @@ body {
   @apply dark:ring-blue-400 dark:ring-offset-gray-900;
 }
 
+.anchor-card-header {
+  @apply flex items-start justify-between gap-2 mb-2;
+}
+
 .anchor-card-title {
-  @apply text-lg font-semibold mb-2;
+  @apply text-lg font-semibold flex-1;
   @apply text-gray-900 dark:text-gray-100;
   @apply leading-tight;
+}
+
+.anchor-edit-btn {
+  @apply flex-shrink-0 p-1 rounded;
+  @apply text-gray-400 hover:text-blue-500;
+  @apply hover:bg-gray-100 dark:hover:bg-gray-700;
+  @apply transition-colors duration-200;
+}
+
+.anchor-edit-btn:hover {
+  @apply scale-110;
 }
 
 .anchor-card-proponents {

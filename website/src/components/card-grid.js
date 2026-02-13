@@ -1,4 +1,5 @@
 import { i18n } from '../i18n.js'
+import { search as performFullTextSearch, isIndexReady } from '../utils/search-index.js'
 
 /**
  * Category color palette (matching previous categories)
@@ -63,6 +64,7 @@ function renderCategorySection(category, allAnchors) {
 function renderAnchorCard(anchor, categoryColor) {
   const rolesCount = anchor.roles ? anchor.roles.length : 0
   const tagsPreview = anchor.tags ? anchor.tags.slice(0, 3).join(', ') : ''
+  const githubEditUrl = `https://github.com/LLM-Coding/Semantic-Anchors/edit/main/docs/anchors/${anchor.id}.adoc`
 
   return `
     <article
@@ -74,7 +76,21 @@ function renderAnchorCard(anchor, categoryColor) {
       role="button"
       aria-label="Open ${anchor.title} details"
     >
-      <h3 class="anchor-card-title">${anchor.title}</h3>
+      <div class="anchor-card-header">
+        <h3 class="anchor-card-title">${anchor.title}</h3>
+        <a
+          href="${githubEditUrl}"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="anchor-edit-btn"
+          title="Edit on GitHub"
+          onclick="event.stopPropagation()"
+        >
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path>
+          </svg>
+        </a>
+      </div>
 
       ${anchor.proponents ? `
         <p class="anchor-card-proponents">${anchor.proponents.slice(0, 2).join(', ')}</p>
@@ -206,19 +222,33 @@ export function applyCardFilters(roleId, searchQuery) {
 
   const lowerQuery = searchQuery ? searchQuery.toLowerCase().trim() : ''
 
+  // Use full-text search if index is ready and query exists
+  let matchingAnchorIds = null
+  if (lowerQuery && isIndexReady()) {
+    matchingAnchorIds = new Set(performFullTextSearch(lowerQuery))
+  }
+
   cards.forEach(card => {
     // Role filter
     const roles = card.dataset.roles.split(',').filter(Boolean)
     const roleMatch = !roleId || roles.includes(roleId)
 
     // Search filter
-    const title = card.querySelector('.anchor-card-title').textContent.toLowerCase()
-    const tags = card.dataset.tags.toLowerCase()
-    const anchorId = card.dataset.anchor.toLowerCase()
-    const searchMatch = !lowerQuery ||
-                        title.includes(lowerQuery) ||
-                        tags.includes(lowerQuery) ||
-                        anchorId.includes(lowerQuery)
+    let searchMatch = true
+    if (lowerQuery) {
+      if (matchingAnchorIds) {
+        // Use full-text search results
+        searchMatch = matchingAnchorIds.has(card.dataset.anchor)
+      } else {
+        // Fallback to simple search (if index not ready yet)
+        const title = card.querySelector('.anchor-card-title').textContent.toLowerCase()
+        const tags = card.dataset.tags.toLowerCase()
+        const anchorId = card.dataset.anchor.toLowerCase()
+        searchMatch = title.includes(lowerQuery) ||
+                     tags.includes(lowerQuery) ||
+                     anchorId.includes(lowerQuery)
+      }
+    }
 
     card.style.display = (roleMatch && searchMatch) ? 'block' : 'none'
   })

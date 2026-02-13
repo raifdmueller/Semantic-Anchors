@@ -1,0 +1,515 @@
+= Use Cases: Semantic Anchors Website
+:toc: left
+:toclevels: 3
+:icons: font
+
+== Übersicht
+
+Dieses Dokument beschreibt die Use Cases für die Semantic Anchors Website.
+
+== UC-01: Semantische Anker nach Rolle filtern
+
+=== Akteure
+* Benutzer (Software Developer, Architect, Product Owner, etc.)
+
+=== Vorbedingungen
+* Website ist geladen
+* Anker-Daten sind verfügbar
+
+=== Ablauf
+
+[plantuml]
+----
+@startuml
+start
+:Benutzer öffnet Website;
+:System zeigt alle Kategorien in Treemap;
+:Benutzer klickt auf "Filter by Role";
+:System zeigt Liste verfügbarer Rollen;
+:Benutzer wählt eine oder mehrere Rollen;
+if (Rolle(n) ausgewählt?) then (ja)
+  :System filtert Anker nach Rolle(n);
+  :System aktualisiert Treemap mit gefilterten Ankern;
+  :System zeigt Anzahl gefilterter Anker;
+else (nein)
+  :System zeigt alle Anker;
+endif
+:Benutzer sieht gefilterte Anker;
+stop
+@enduml
+----
+
+=== Nachbedingungen
+* Treemap zeigt nur Anker der ausgewählten Rolle(n)
+* URL enthält Filter-Parameter (für Deep-Linking)
+* Filter-Auswahl wird in localStorage persistiert
+
+=== Fehlerszenarien
+* **F1**: Keine Anker für ausgewählte Rolle → System zeigt "Keine Anker gefunden für diese Rolle"
+* **F2**: Browser-localStorage nicht verfügbar → Filter wird nicht persistiert, aber funktioniert während Session
+
+---
+
+== UC-02: Semantische Anker in Treemap visualisieren
+
+=== Akteure
+* Benutzer
+
+=== Vorbedingungen
+* Website ist geladen
+* Anker-Metadata ist verfügbar
+
+=== Ablauf
+
+[plantuml]
+----
+@startuml
+start
+:Benutzer öffnet Website;
+:System lädt Anker-Metadata;
+:System generiert Treemap-Daten aus Kategorien;
+:System rendert interaktive Treemap;
+note right
+  Größe = Anzahl Anker pro Kategorie
+  Farbe = Kategorie-Typ
+end note
+:Benutzer sieht Treemap;
+if (Benutzer fährt mit Maus über Kategorie?) then (ja)
+  :System zeigt Tooltip mit Details;
+  note right
+    - Kategorie-Name
+    - Anzahl Anker
+    - Prozent vom Gesamt
+  end note
+endif
+if (Benutzer klickt auf Kategorie?) then (ja)
+  :System navigiert zu Kategorie-Seite;
+  :System zeigt alle Anker dieser Kategorie;
+endif
+stop
+@enduml
+----
+
+=== Nachbedingungen
+* Treemap ist interaktiv und responsive
+* Kategorien sind proportional zur Anzahl ihrer Anker dargestellt
+
+=== Fehlerszenarien
+* **F1**: Metadata-Datei nicht gefunden → System zeigt Fehlermeldung "Kategorien können nicht geladen werden"
+* **F2**: Sehr kleine Bildschirmgröße → Treemap wird zu vereinfachter Liste
+
+---
+
+== UC-03: Semantische Anker durchsuchen
+
+=== Akteure
+* Benutzer
+
+=== Vorbedingungen
+* Website ist geladen
+* Anker-Index ist verfügbar
+
+=== Ablauf
+
+[plantuml]
+----
+@startuml
+start
+:Benutzer gibt Suchbegriff ein;
+:System sucht in Echtzeit (debounced);
+note right
+  Suche in:
+  - Anker-Namen
+  - Proponenten
+  - Core Concepts
+  - Tags
+end note
+if (Ergebnisse gefunden?) then (ja)
+  :System zeigt Ergebnisliste;
+  :System highlighted Suchbegriff in Ergebnissen;
+  if (Benutzer klickt auf Ergebnis?) then (ja)
+    :System navigiert zu Anker-Details;
+  endif
+else (nein)
+  :System zeigt "Keine Ergebnisse gefunden";
+  :System zeigt ähnliche Begriffe (optional);
+endif
+stop
+@enduml
+----
+
+=== Nachbedingungen
+* Suchergebnisse sind nach Relevanz sortiert
+* URL enthält Suchquery (für Deep-Linking)
+
+=== Fehlerszenarien
+* **F1**: Suchindex nicht geladen → System zeigt "Suche vorübergehend nicht verfügbar"
+* **F2**: Sehr lange Suchbegriffe → System limitiert auf 100 Zeichen
+
+---
+
+== UC-04: Anker-Details anzeigen
+
+=== Akteure
+* Benutzer
+
+=== Vorbedingungen
+* Anker existiert im System
+
+=== Ablauf
+
+[plantuml]
+----
+@startuml
+start
+:Benutzer wählt Anker aus (via Treemap, Suche oder Link);
+:System lädt Anker-AsciiDoc-Datei;
+:System rendert AsciiDoc zu HTML mit asciidoctor.js;
+:System zeigt Anker-Details;
+note right
+  - Full Name
+  - Core Concepts
+  - Key Proponents
+  - When to Use
+  - Related Concepts (verlinkt)
+end note
+if (Related Concepts vorhanden?) then (ja)
+  :System zeigt Related Anchors als Links;
+  if (Benutzer klickt auf Related Anchor?) then (ja)
+    :System navigiert zu Related Anchor;
+  endif
+endif
+if (Benutzer klickt auf "Collapsible" erweitern?) then (ja)
+  :System expandiert Collapsible Section;
+endif
+stop
+@enduml
+----
+
+=== Nachbedingungen
+* Anker-Details sind vollständig und formatiert dargestellt
+* Related Anchors sind anklickbar
+* URL zeigt Anker-ID (Deep-Linking möglich)
+
+=== Fehlerszenarien
+* **F1**: Anker-Datei nicht gefunden → System zeigt 404 Seite
+* **F2**: AsciiDoc-Rendering fehlgeschlagen → System zeigt Plain-Text Fallback
+
+---
+
+== UC-05: Sprache wechseln (EN/DE)
+
+=== Akteure
+* Benutzer
+
+=== Vorbedingungen
+* Website ist geladen
+
+=== Ablauf
+
+[plantuml]
+----
+@startuml
+start
+:Benutzer klickt auf Language Switcher;
+:System zeigt verfügbare Sprachen (EN, DE);
+:Benutzer wählt Sprache;
+:System aktualisiert UI-Texte;
+note right
+  Übersetzt werden:
+  - Navigation
+  - Labels
+  - Buttons
+  - Tooltips
+  (NICHT Anker-Content selbst)
+end note
+:System speichert Präferenz in localStorage;
+:System aktualisiert html lang Attribut;
+stop
+@enduml
+----
+
+=== Nachbedingungen
+* Alle UI-Elemente sind in gewählter Sprache
+* Sprachpräferenz wird bei nächstem Besuch beibehalten
+* `<html lang="...">` ist korrekt gesetzt
+
+=== Fehlerszenarien
+* **F1**: Übersetzung fehlt → System zeigt Fallback auf Englisch
+* **F2**: localStorage nicht verfügbar → Sprache nur für aktuelle Session
+
+---
+
+== UC-06: Theme wechseln (Dark/Light)
+
+=== Akteure
+* Benutzer
+
+=== Vorbedingungen
+* Website ist geladen
+
+=== Ablauf
+
+[plantuml]
+----
+@startuml
+start
+:System erkennt bevorzugtes Theme;
+note right
+  Reihenfolge:
+  1. localStorage
+  2. prefers-color-scheme
+  3. Default: Light
+end note
+:System wendet Theme an;
+if (Benutzer klickt auf Theme Toggle?) then (ja)
+  :System wechselt Theme (Light ↔ Dark);
+  :System aktualisiert CSS Variablen;
+  :System speichert Präferenz in localStorage;
+  :System aktualisiert Icon (☀️ ↔ 🌙);
+endif
+stop
+@enduml
+----
+
+=== Nachbedingungen
+* Theme wird sofort ohne Flackern angewendet
+* Theme-Präferenz wird persistiert
+* Alle Komponenten (inkl. Treemap) respektieren Theme
+
+=== Fehlerszenarien
+* **F1**: localStorage nicht verfügbar → Theme nur für Session, reagiert auf prefers-color-scheme
+* **F2**: Theme-CSS nicht geladen → Fallback auf System-Theme
+
+---
+
+== UC-07: Neuen semantischen Anker vorschlagen
+
+=== Akteure
+* Contributor (externe Person, die einen Anker vorschlagen möchte)
+
+=== Vorbedingungen
+* Contributor hat GitHub-Account
+* Contributor kennt den Begriff, den er vorschlagen möchte
+
+=== Ablauf
+
+[plantuml]
+----
+@startuml
+start
+:Contributor klickt auf "Suggest New Anchor";
+:System öffnet GitHub Issue Template;
+:Contributor füllt Formular aus;
+note right
+  - Anchor Name
+  - Why is this a semantic anchor?
+  - Key Proponents (optional)
+  - Use Cases (optional)
+end note
+:Contributor submitted Issue;
+:GitHub Actions Workflow wird getriggert;
+:System analysiert Begriff mit GitHub Copilot;
+if (Begriff qualifiziert als Semantic Anchor?) then (ja)
+  :System kommentiert: "✅ Looks good! Maintainer will review";
+  :System fügt Label "semantic-anchor: valid" hinzu;
+else (nein)
+  :System kommentiert mit Feedback;
+  note right
+    Z.B.: "This seems more like
+    an instruction than a
+    semantic anchor. Please see
+    quality criteria..."
+  end note
+  :System fügt Label "needs-clarification" hinzu;
+endif
+:Maintainer reviewed Issue;
+if (Maintainer approved?) then (ja)
+  :Maintainer assigned Issue to Copilot;
+  :Copilot generiert AsciiDoc Entry;
+  :Copilot creates PR;
+  :Maintainer merged PR;
+else (nein)
+  :Maintainer closes Issue mit Begründung;
+endif
+stop
+@enduml
+----
+
+=== Nachbedingungen
+* Issue ist erstellt mit korrektem Label
+* Automatisches Feedback ist gepostet (bei Validation)
+* Bei Approval: PR ist erstellt mit generiertem Content
+
+=== Fehlerszenarien
+* **F1**: GitHub Actions Workflow schlägt fehl → Issue bleibt ohne Auto-Comment, manueller Review nötig
+* **F2**: Copilot API nicht verfügbar → Maintainer erstellt Entry manuell
+* **F3**: Issue-Template nicht ausgefüllt → Bot kommentiert "Please fill out all required fields"
+
+---
+
+== UC-08: Anker-Beitrag validieren (GitHub Actions)
+
+=== Akteure
+* GitHub Actions Workflow
+* GitHub Copilot API
+
+=== Vorbedingungen
+* Issue wurde mit Label "new-anchor" erstellt
+* GitHub Copilot API Key ist konfiguriert
+
+=== Ablauf
+
+[plantuml]
+----
+@startuml
+start
+:Issue erstellt mit Label "new-anchor";
+:Workflow getriggert;
+:System extrahiert Anchor Name aus Issue;
+:System extrahiert Begründung;
+:System sendet Prompt an Copilot API;
+note right
+  Prompt:
+  "Evaluate if '<term>' qualifies
+  as a semantic anchor based on:
+  - Precise
+  - Rich
+  - Consistent
+  - Attributable"
+end note
+:Copilot analysiert und antwortet;
+if (Copilot Score > 7/10?) then (ja)
+  :System postet positiven Comment;
+  :System fügt Label "validated" hinzu;
+else (nein)
+  :System postet Feedback mit Gründen;
+  :System fügt Label "needs-clarification" hinzu;
+  :System schlägt Verbesserungen vor;
+endif
+stop
+@enduml
+----
+
+=== Nachbedingungen
+* Issue hat Validation Comment
+* Issue hat passendes Label
+* Contributor hat klares Feedback
+
+=== Fehlerszenarien
+* **F1**: Copilot API Timeout → Workflow posted "Validation failed, manual review required"
+* **F2**: Issue-Body unlesbar → Workflow posted "Cannot parse issue, please use template"
+* **F3**: API Rate Limit → Workflow queued, Retry später
+
+---
+
+== UC-09: Related Anchors navigieren
+
+=== Akteure
+* Benutzer
+
+=== Vorbedingungen
+* Benutzer betrachtet Anker-Details
+* Anker hat Related Anchors definiert
+
+=== Ablauf
+
+[plantuml]
+----
+@startuml
+start
+:Benutzer sieht Anker-Details;
+:System zeigt "Related Concepts" Section;
+if (Related Anchors vorhanden?) then (ja)
+  :System zeigt Liste von Related Anchors;
+  note right
+    Jeder Link zeigt:
+    - Anker-Name
+    - Mini-Preview (optional)
+  end note
+  if (Benutzer klickt auf Related Anchor?) then (ja)
+    :System navigiert zu Related Anchor;
+    :Browser-History wird aktualisiert;
+    :Benutzer kann zurück navigieren;
+  endif
+else (nein)
+  :System zeigt "No related anchors";
+endif
+stop
+@enduml
+----
+
+=== Nachbedingungen
+* Navigation funktioniert bidirektional (vor/zurück)
+* Related Anchors sind visuell hervorgehoben
+
+=== Fehlerszenarien
+* **F1**: Related Anchor existiert nicht mehr → System zeigt 404, schlägt ähnliche vor
+* **F2**: Zirkuläre Referenzen → System zeigt alle, aber markiert bereits besuchte
+
+---
+
+== UC-10: Direkt zu Anker verlinken (Deep-Linking)
+
+=== Akteure
+* Benutzer (extern, folgt Link)
+
+=== Vorbedingungen
+* Benutzer hat URL zu spezifischem Anker
+
+=== Ablauf
+
+[plantuml]
+----
+@startuml
+start
+:Benutzer öffnet Deep-Link;
+note right
+  Format: /anchor/<anchor-id>
+  oder: /#<anchor-id>
+end note
+:System parsed URL;
+if (Anker-ID gültig?) then (ja)
+  :System lädt Anker-Details;
+  :System scrollt zu Anker (falls auf Kategorie-Seite);
+  :System highlighted Anker visuell;
+  if (URL enthält Filter/Language Parameter?) then (ja)
+    :System wendet Filter/Language an;
+  endif
+else (nein)
+  :System zeigt 404 Seite;
+  :System schlägt ähnliche Anker vor;
+endif
+stop
+@enduml
+----
+
+=== Nachbedingungen
+* Benutzer sieht korrekten Anker
+* URL ist share-bar (kopierbar)
+* State (Filter, Language) ist in URL kodiert
+
+=== Fehlerszenarien
+* **F1**: Anker-ID ungültig → 404 Seite mit Suchfunktion
+* **F2**: Alter Link (nach Rename) → System zeigt Redirect-Hinweis oder 301 Redirect
+* **F3**: Hash-Fragment nicht unterstützt → Fallback auf normale Navigation
+
+---
+
+== Zusammenfassung Use Cases
+
+[cols="1,3,2", options="header"]
+|===
+|UC-ID |Name |Priorität
+
+|UC-01 |Semantische Anker nach Rolle filtern |Hoch
+|UC-02 |Semantische Anker in Treemap visualisieren |Hoch
+|UC-03 |Semantische Anker durchsuchen |Hoch
+|UC-04 |Anker-Details anzeigen |Kritisch
+|UC-05 |Sprache wechseln (EN/DE) |Mittel
+|UC-06 |Theme wechseln (Dark/Light) |Mittel
+|UC-07 |Neuen semantischen Anker vorschlagen |Hoch
+|UC-08 |Anker-Beitrag validieren (GitHub Actions) |Mittel
+|UC-09 |Related Anchors navigieren |Mittel
+|UC-10 |Direkt zu Anker verlinken (Deep-Linking) |Hoch
+|===

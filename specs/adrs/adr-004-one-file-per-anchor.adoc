@@ -1,0 +1,287 @@
+= ADR-004: Ein File pro Semantic Anchor
+:toc:
+:icons: font
+
+== Status
+
+**Accepted** - 2025-02-13
+
+== Context
+
+Der aktuelle Zustand des Semantic Anchors Repository ist ein einzelnes, großes `README.adoc` File mit 60+ Ankern (~1900 Zeilen). Für bessere Wartbarkeit und Skalierbarkeit müssen wir entscheiden, wie wir die Content-Struktur organisieren.
+
+=== Anforderungen
+
+* **Einfache Contribution**: Contributors sollen schnell neue Anker hinzufügen können
+* **Geringe Merge-Konflikte**: Parallele Beiträge sollen selten kollidieren
+* **Klare Git-History**: Änderungen an einzelnen Ankern sollen nachvollziehbar sein
+* **Flexibles Mapping**: Anker zu Kategorien und Rollen zuordnen
+* **AsciiDoc-Includes nutzen**: Wiederverwendung und Komposition
+
+=== Betrachtete Alternativen
+
+1. **Ein File pro Anchor** (docs/anchors/tdd-london.adoc)
+2. **Ein File pro Kategorie** (docs/categories/testing.adoc mit allen Ankern)
+3. **Monolithisches File** (aktueller Zustand, README.adoc)
+4. **Hybrid**: Anker-Files + Category-Files als Includes
+5. **Datenbank-Ansatz**: JSON/YAML statt AsciiDoc
+
+== Decision
+
+Wir verwenden **Ein File pro Anchor + Include-Files für Kategorien/Rollen** (Hybrid-Ansatz).
+
+=== Pugh-Matrix
+
+Baseline: Ein File pro Kategorie (Score = 0)
+
+[cols="2,1,1,1,1,1", options="header"]
+|===
+|Kriterium (Gewichtung) |1 File/Anchor + Includes |1 File/Category (Baseline) |Monolith |Hybrid (komplex) |Database
+
+|Einfache Contribution (10)
+|+2 (1 File edit)
+|0 (1 großes File)
+|-2 (Riesiges File)
+|0 (Mehrere Files)
+|-1 (Technisch)
+
+|Merge-Konflikte (9)
+|+2 (Minimal)
+|0 (Mittel)
+|-2 (Hoch)
+|+1 (Niedrig)
+|+2 (Minimal)
+
+|Git-History (8)
+|+2 (Pro Anker)
+|0 (Pro Kategorie)
+|-2 (Alles)
+|+1 (Granular)
+|0 (Schwer)
+
+|Flexibles Mapping (7)
+|+2 (Includes)
+|0 (Fixiert)
+|-1 (Monolith)
+|+2 (Sehr flexibel)
+|+1 (Queries)
+
+|Skalierbarkeit (6)
+|+2 (100+)
+|0 (OK bis 50)
+|-2 (Nicht skalierbar)
+|+1 (Gut)
+|+2 (Sehr gut)
+
+|AsciiDoc-Features (5)
+|+1 (Includes)
+|+1 (Native)
+|+1 (Native)
+|+2 (Voll)
+|-2 (Keine)
+
+|Übersichtlichkeit (4)
+|+1 (Klar)
+|0 (OK)
+|-2 (Unübersichtlich)
+|0 (Komplex)
+|+1 (Strukturiert)
+
+|Onboarding (3)
+|+2 (Einfach)
+|0 (Mittel)
+|0 (Mittel)
+|-1 (Steil)
+|0 (Mittel)
+
+|Performance (2)
+|0 (Viele Reads)
+|0 (Wenige Reads)
+|+1 (1 Read)
+|0 (Viele Reads)
+|+1 (Optimiert)
+
+|Content-Wiederverwendung (1)
+|+2 (Includes)
+|0 (Duplizierung)
+|-1 (Duplizierung)
+|+2 (Volle Kontrolle)
+|+1 (Queries)
+
+|**Gewichteter Score**
+|**+105**
+|**0 (Baseline)**
+|**-92**
+|**+60**
+|**+38**
+|===
+
+=== Berechnung
+
+**1 File/Anchor + Includes:**
+```
+(+2×10) + (+2×9) + (+2×8) + (+2×7) + (+2×6) + (+1×5) + (+1×4) + (+2×3) + (0×2) + (+2×1)
+= 20 + 18 + 16 + 14 + 12 + 5 + 4 + 6 + 0 + 2
+= +97
+```
+
+**Monolith:**
+```
+(-2×10) + (-2×9) + (-2×8) + (-1×7) + (-2×6) + (+1×5) + (-2×4) + (0×3) + (+1×2) + (-1×1)
+= -20 - 18 - 16 - 7 - 12 + 5 - 8 + 0 + 2 - 1
+= -75
+```
+
+**Hybrid (komplex):**
+```
+(0×10) + (+1×9) + (+1×8) + (+2×7) + (+1×6) + (+2×5) + (0×4) + (-1×3) + (0×2) + (+2×1)
+= 0 + 9 + 8 + 14 + 6 + 10 + 0 - 3 + 0 + 2
+= +46
+```
+
+**Database:**
+```
+(-1×10) + (+2×9) + (0×8) + (+1×7) + (+2×6) + (-2×5) + (+1×4) + (0×3) + (+1×2) + (+1×1)
+= -10 + 18 + 0 + 7 + 12 - 10 + 4 + 0 + 2 + 1
+= +24
+```
+
+=== Begründung
+
+**1 File pro Anchor + Includes gewinnt, weil:**
+
+* **Minimale Merge-Konflikte**: Jeder Contributor arbeitet an eigenem File
+* **Klare Git-History**: `git log docs/anchors/tdd-london.adoc` zeigt nur relevante Änderungen
+* **Einfache Contribution**: Nur 1 File bearbeiten, keine große Datei durchsuchen
+* **Maximale Flexibilität**: Via Includes können Anker beliebig gruppiert werden
+* **Skaliert perfekt**: 100, 200, 500 Anker - kein Problem
+* **AsciiDoc-Includes**: Native Feature für Komposition nutzen
+
+**1 File pro Kategorie (Baseline):**
+* OK für kleine Projekte
+* Aber: Bei 60+ Ankern werden Files zu groß
+* Merge-Konflikte bei parallelen Contributions in gleicher Kategorie
+
+**Monolith abgelehnt:**
+* Aktueller Zustand ist nicht skalierbar
+* 1900+ Zeilen schwer zu navigieren
+* Hohe Merge-Konflikt-Wahrscheinlichkeit
+* Git-History nicht granular
+
+**Hybrid (komplex) wäre auch gut:**
+* Sehr flexibel
+* Aber: Komplexer als nötig
+* Unsere Lösung IST ein Hybrid-Ansatz (Anker-Files + Category/Role-Includes)
+
+**Database abgelehnt:**
+* Verlust der AsciiDoc-Vorteile (Formatting, Verlinkung)
+* Höhere technische Barriere für Contributors
+* AsciiDoc ist das Herzstück dieses Projekts
+
+== Consequences
+
+=== Positive
+
+* **Skalierbarkeit**: Kann auf 500+ Anker wachsen ohne Performance-Einbußen
+* **Parallelisierung**: 10 Contributors können gleichzeitig arbeiten ohne Konflikte
+* **Granulare History**: `git blame` zeigt exakt, wer was geändert hat
+* **Flexibles Mapping**: Ein Anker kann in mehreren Kategorien/Rollen erscheinen via Include
+* **Einfaches Löschen**: Anker entfernen = File löschen + Includes entfernen
+
+=== Negative
+
+* **Mehr Files**: 60+ Anker = 60+ Files in `docs/anchors/`
+* **Include-Maintenance**: Category/Role-Files müssen gepflegt werden
+* **Initiales Setup**: Migration von README.adoc zu einzelnen Files nötig
+
+=== File-Struktur
+
+```
+docs/
+├── anchors/                    # Ein File pro Anker
+│   ├── _template.adoc          # Template für neue Anker
+│   ├── tdd-london-school.adoc
+│   ├── tdd-chicago-school.adoc
+│   ├── solid-principles.adoc
+│   └── ... (60+ Files)
+├── categories/                 # Includes für Kategorien
+│   ├── testing-quality.adoc    # include::../anchors/tdd-*.adoc[]
+│   ├── architecture-design.adoc
+│   └── ...
+├── roles/                      # Includes für Rollen
+│   ├── software-developer.adoc # include::../anchors/solid-*.adoc[]
+│   ├── architect.adoc
+│   └── ...
+└── index.adoc                  # Hauptseite
+```
+
+=== Implementation
+
+**Anker-File (`docs/anchors/tdd-london-school.adoc`):**
+
+[source,asciidoc]
+----
+= TDD, London School
+:categories: testing-quality
+:roles: software-developer, qa-engineer, architect
+:related: tdd-chicago-school, hexagonal-architecture
+
+[%collapsible]
+====
+*Full Name*: Test-Driven Development, London School
+...
+====
+----
+
+**Category-File (`docs/categories/testing-quality.adoc`):**
+
+[source,asciidoc]
+----
+= Testing & Quality Practices
+
+== Overview
+This category contains methodologies for software testing...
+
+== Semantic Anchors
+
+include::../anchors/tdd-london-school.adoc[leveloffset=+1]
+include::../anchors/tdd-chicago-school.adoc[leveloffset=+1]
+include::../anchors/property-based-testing.adoc[leveloffset=+1]
+include::../anchors/mutation-testing.adoc[leveloffset=+1]
+include::../anchors/testing-pyramid.adoc[leveloffset=+1]
+----
+
+**Role-File (`docs/roles/software-developer.adoc`):**
+
+[source,asciidoc]
+----
+= Semantic Anchors for Software Developers
+
+== Testing Practices
+include::../anchors/tdd-london-school.adoc[leveloffset=+2]
+include::../anchors/mutation-testing.adoc[leveloffset=+2]
+
+== Design Principles
+include::../anchors/solid-principles.adoc[leveloffset=+2]
+include::../anchors/dry-principle.adoc[leveloffset=+2]
+
+== Development Practices
+include::../anchors/conventional-commits.adoc[leveloffset=+2]
+----
+
+=== Mitigations
+
+* **Automatische Include-Generierung**: Build-Script kann Category/Role-Files aus Metadata generieren
+* **Template bereitstellen**: `_template.adoc` für einheitliche neue Anker
+* **Validierung**: CI-Check ob alle Includes existieren
+* **Navigation**: Website-Suche macht File-Struktur irrelevant für Endnutzer
+
+== Related Decisions
+
+* ADR-002: AsciiDoc Attributes für Metadata (ermöglicht automatisches Include-Mapping)
+* ADR-001: Vite Build-System (kann Includes zur Build-Time auflösen)
+
+== References
+
+* https://docs.asciidoctor.org/asciidoc/latest/directives/include/
+* https://docs.asciidoctor.org/asciidoc/latest/directives/include-with-leveloffset/

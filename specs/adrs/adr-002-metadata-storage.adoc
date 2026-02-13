@@ -1,0 +1,249 @@
+= ADR-002: AsciiDoc Attributes für Metadata
+:toc:
+:icons: font
+
+== Status
+
+**Accepted** - 2025-02-13
+
+== Context
+
+Jeder semantische Anker benötigt Metadata für:
+
+* Kategorien (Testing, Architecture, etc.)
+* Rollen (Software Developer, Architect, etc.)
+* Related Anchors (Verknüpfungen)
+* Tags (für Suche)
+* Proponents (Schlüsselfiguren)
+
+Diese Metadata muss maschinenlesbar sein für:
+
+* Website-Navigation (Filtern, Suchen)
+* Treemap-Generierung
+* Related-Anchors-Links
+
+=== Betrachtete Alternativen
+
+1. **AsciiDoc Attributes** (im .adoc File selbst)
+2. **Separate YAML-Dateien** (ein .yml pro Anker)
+3. **Zentrale YAML-Datei** (alle Anker in einer Datei)
+4. **Frontmatter** (YAML am Anfang des .adoc Files)
+5. **JSON in Comment** (JSON-Block als AsciiDoc-Kommentar)
+
+== Decision
+
+Wir verwenden **AsciiDoc Attributes** direkt in jedem Anker-File.
+
+=== Pugh-Matrix
+
+Baseline: Separate YAML-Dateien (Score = 0)
+
+[cols="2,1,1,1,1,1", options="header"]
+|===
+|Kriterium (Gewichtung) |AsciiDoc Attrs |Separate YAML (Baseline) |Zentrale YAML |Frontmatter |JSON Comment
+
+|Single Source of Truth (10)
+|+2 (Alles in 1 File)
+|0 (2 Files)
+|-2 (N+1 Files)
+|+1 (1 File)
+|+2 (1 File)
+
+|Einfache Contribution (9)
+|+1 (AsciiDoc-nativ)
+|0 (2 Files)
+|-1 (Edit zentral)
+|0 (Mix)
+|-1 (Unüblich)
+
+|Parsing-Komplexität (8)
+|0 (AsciiDoc-Parser)
+|0 (YAML-Parser)
+|+1 (Nur 1 File)
+|-1 (Custom)
+|-2 (Hacky)
+
+|Merge-Konflikte (7)
+|+1 (Pro Anker)
+|+1 (Pro Anker)
+|-2 (1 großes File)
+|+1 (Pro Anker)
+|+1 (Pro Anker)
+
+|Typsicherheit (6)
+|0 (Validation)
+|0 (Schema)
+|+1 (Schema)
+|0 (Validation)
+|-1 (Keine)
+
+|Lesbarkeit (5)
+|+1 (AsciiDoc-Syntax)
+|0 (YAML)
+|0 (YAML)
+|+1 (Inline)
+|-2 (Versteckt)
+
+|Tooling-Support (4)
+|0 (Standard)
+|+1 (Native YAML)
+|+1 (Native YAML)
+|0 (Custom)
+|-1 (Keine)
+
+|Wartbarkeit (3)
+|+1 (1 File)
+|0 (2 Files sync)
+|-1 (Groß)
+|+1 (1 File)
+|0 (OK)
+
+|Performance (2)
+|0 (Parse bei Build)
+|0 (Parse bei Build)
+|+1 (1× Lesen)
+|0 (Parse bei Build)
+|0 (Parse bei Build)
+
+|**Gewichteter Score**
+|**+51**
+|**0 (Baseline)**
+|**-30**
+|**+25**
+|**-41**
+|===
+
+=== Berechnung
+
+**AsciiDoc Attributes:**
+```
+(+2×10) + (+1×9) + (0×8) + (+1×7) + (0×6) + (+1×5) + (0×4) + (+1×3) + (0×2)
+= 20 + 9 + 0 + 7 + 0 + 5 + 0 + 3 + 0
+= +44
+```
+
+**Zentrale YAML:**
+```
+(-2×10) + (-1×9) + (+1×8) + (-2×7) + (+1×6) + (0×5) + (+1×4) + (-1×3) + (+1×2)
+= -20 - 9 + 8 - 14 + 6 + 0 + 4 - 3 + 2
+= -26
+```
+
+**Frontmatter:**
+```
+(+1×10) + (0×9) + (-1×8) + (+1×7) + (0×6) + (+1×5) + (0×4) + (+1×3) + (0×2)
+= 10 + 0 - 8 + 7 + 0 + 5 + 0 + 3 + 0
+= +17
+```
+
+**JSON Comment:**
+```
+(+2×10) + (-1×9) + (-2×8) + (+1×7) + (-1×6) + (-2×5) + (-1×4) + (0×3) + (0×2)
+= 20 - 9 - 16 + 7 - 6 - 10 - 4 + 0 + 0
+= -18
+```
+
+=== Begründung
+
+**AsciiDoc Attributes gewinnen, weil:**
+
+* **Single Source of Truth**: Metadata und Content im selben File
+* **Einfache Contribution**: Contributors müssen nur 1 File bearbeiten
+* **AsciiDoc-nativ**: Nutzt eingebaute AsciiDoc-Features
+* **Keine Sync-Probleme**: Kein Risiko, dass Metadata und Content auseinanderlaufen
+* **Gute Lesbarkeit**: Attributes sind klar und strukturiert
+
+**Separate YAML (Baseline) hat Vorteile:**
+* Maschinenlesbarkeit ohne AsciiDoc-Parser
+* YAML-Schema für Validierung
+* Aber: 2 Files pro Anker = Sync-Risiko
+
+**Zentrale YAML abgelehnt:**
+* Hohe Merge-Konflikt-Gefahr
+* Schwer zu navigieren bei 60+ Ankern
+* Synchronisation zwischen Content und Metadata schwierig
+
+**Frontmatter wäre auch OK:**
+* Guter Kompromiss
+* Aber: Custom Parsing nötig (AsciiDoc hat kein natives Frontmatter)
+
+**JSON Comment abgelehnt:**
+* Unüblich, hacky
+* Schlechte Lesbarkeit
+* Keine Validierung
+
+== Consequences
+
+=== Positive
+
+* **Einfache Contribution**: Nur 1 File bearbeiten
+* **Keine Sync-Probleme**: Metadata kann nicht veralten
+* **AsciiDoc-Prozessor kann Attributes extrahieren** (z.B. via Antora oder Custom-Script)
+* **Klare Struktur**: Metadata am Anfang des Files
+
+=== Negative
+
+* **AsciiDoc-Parser nötig** für Metadata-Extraktion
+* **Keine native Schema-Validierung** (aber möglich via Custom-Script)
+
+=== Implementation
+
+**Beispiel AsciiDoc-File mit Attributes:**
+
+[source,asciidoc]
+----
+= TDD, London School
+:categories: testing-quality
+:roles: software-developer, qa-engineer, architect
+:related: tdd-chicago-school, hexagonal-architecture
+:proponents: Steve Freeman, Nat Pryce
+:tags: testing, tdd, mocking, outside-in
+
+[%collapsible]
+====
+*Full Name*: Test-Driven Development, London School
+
+*Also known as*: Mockist TDD, Outside-In TDD
+
+*Core Concepts*:
+...
+====
+----
+
+**Build-Script extrahiert Attributes:**
+
+[source,javascript]
+----
+const Asciidoctor = require('asciidoctor')();
+const asciidoctor = Asciidoctor();
+
+function extractMetadata(filePath) {
+  const doc = asciidoctor.loadFile(filePath);
+
+  return {
+    id: path.basename(filePath, '.adoc'),
+    name: doc.getDocumentTitle(),
+    categories: doc.getAttribute('categories').split(',').map(s => s.trim()),
+    roles: doc.getAttribute('roles').split(',').map(s => s.trim()),
+    related: doc.getAttribute('related')?.split(',').map(s => s.trim()) || [],
+    proponents: doc.getAttribute('proponents')?.split(',').map(s => s.trim()) || [],
+    tags: doc.getAttribute('tags')?.split(',').map(s => s.trim()) || []
+  };
+}
+----
+
+=== Mitigations
+
+* **Validierung**: Build-Script validiert required Attributes
+* **Schema**: JSON-Schema für generierte Metadata-JSON
+* **Fehlerbehandlung**: Klare Fehlermeldungen bei fehlenden Attributes
+
+== Related Decisions
+
+* ADR-001: Vite als Static Site Generator
+* ADR-004: One File per Anchor
+
+== References
+
+* https://docs.asciidoctor.org/asciidoc/latest/attributes/document-attributes/
+* https://asciidoctor.org/docs/asciidoctor.js/

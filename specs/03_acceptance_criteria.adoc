@@ -1,0 +1,534 @@
+= Acceptance Criteria: Semantic Anchors Website
+:toc: left
+:toclevels: 3
+:icons: font
+
+== Übersicht
+
+Dieses Dokument enthält die Acceptance Criteria in Gherkin-Format (Given-When-Then) gruppiert nach Features.
+
+== Feature: Navigation und Filterung
+
+=== Szenario: Anker nach Rolle filtern
+
+[source,gherkin]
+----
+Funktionalität: Anker nach Rolle filtern
+  Als Software-Entwickler
+  Möchte ich Anker nach meiner Rolle filtern können
+  Damit ich nur relevante Inhalte sehe
+
+Szenario: Einzelne Rolle auswählen
+  Angenommen ich bin auf der Startseite
+  Und die Treemap zeigt alle Kategorien
+  Wenn ich auf "Filter by Role" klicke
+  Und ich "Software Developer" auswähle
+  Dann sehe ich nur Anker, die für Software Developer relevant sind
+  Und die Treemap zeigt nur gefilterte Kategorien
+  Und die Anzahl zeigt "35 anchors" an
+
+Szenario: Mehrere Rollen auswählen
+  Angenommen ich habe "Software Developer" als Filter ausgewählt
+  Wenn ich zusätzlich "Architect" auswähle
+  Dann sehe ich Anker für beide Rollen
+  Und die Anzahl zeigt "45 anchors" an
+
+Szenario: Filter zurücksetzen
+  Angenommen ich habe Filter "Software Developer" aktiv
+  Wenn ich auf "Clear Filters" klicke
+  Dann sehe ich wieder alle Anker
+  Und die Treemap zeigt alle Kategorien
+
+Szenario: Filter wird persistiert
+  Angenommen ich habe "Software Developer" als Filter ausgewählt
+  Wenn ich die Seite neu lade
+  Dann ist der Filter "Software Developer" noch aktiv
+  Und die Treemap zeigt die gefilterten Anker
+----
+
+=== Szenario: Deep-Linking mit Filtern
+
+[source,gherkin]
+----
+Szenario: URL mit Rollen-Filter öffnen
+  Angenommen ich habe die URL "/?role=software-developer"
+  Wenn ich die Seite öffne
+  Dann ist der Filter "Software Developer" automatisch aktiv
+  Und die Treemap zeigt nur Anker für diese Rolle
+
+Szenario: URL mit mehreren Filtern
+  Angenommen ich habe die URL "/?role=software-developer,architect"
+  Wenn ich die Seite öffne
+  Dann sind beide Filter "Software Developer" und "Architect" aktiv
+
+Szenario: Ungültige Rolle in URL
+  Angenommen ich habe die URL "/?role=ungueltige-rolle"
+  Wenn ich die Seite öffne
+  Dann werden alle Anker angezeigt
+  Und eine Warnung erscheint "Invalid role filter ignored"
+----
+
+== Feature: Visualisierung (Treemap)
+
+=== Szenario: Treemap anzeigen
+
+[source,gherkin]
+----
+Funktionalität: Kategorien als Treemap visualisieren
+  Als Benutzer
+  Möchte ich eine interaktive Treemap der Kategorien sehen
+  Damit ich die Struktur des Katalogs verstehe
+
+Szenario: Treemap lädt beim Seitenaufruf
+  Angenommen ich öffne die Startseite
+  Wenn die Seite vollständig geladen ist
+  Dann sehe ich eine Treemap mit allen Kategorien
+  Und jede Kategorie hat eine proportionale Größe basierend auf Anker-Anzahl
+  Und jede Kategorie hat eine eindeutige Farbe
+
+Szenario: Tooltip beim Hover
+  Angenommen die Treemap ist angezeigt
+  Wenn ich mit der Maus über "Testing & Quality Practices" fahre
+  Dann sehe ich einen Tooltip
+  Und der Tooltip zeigt "Testing & Quality Practices"
+  Und der Tooltip zeigt "12 anchors (20%)"
+
+Szenario: Kategorie in Treemap anklicken
+  Angenommen die Treemap ist angezeigt
+  Wenn ich auf die Kategorie "Testing & Quality Practices" klicke
+  Dann navigiere ich zur Kategorie-Seite
+  Und sehe alle 12 Anker dieser Kategorie
+
+Szenario: Responsive Treemap auf Mobilgerät
+  Angenommen ich öffne die Seite auf einem Smartphone (375px Breite)
+  Wenn die Treemap geladen wird
+  Dann passt sich die Treemap an die Bildschirmbreite an
+  Und alle Kategorien bleiben klickbar
+  Und der Text ist lesbar
+----
+
+=== Szenario: Treemap mit Filter
+
+[source,gherkin]
+----
+Szenario: Gefilterte Treemap
+  Angenommen ich habe den Filter "Software Developer" aktiv
+  Wenn die Treemap aktualisiert wird
+  Dann zeigt die Treemap nur Kategorien mit Ankern für Software Developer
+  Und die Größen entsprechen der gefilterten Anker-Anzahl
+  Und Kategorien ohne passende Anker werden ausgeblendet
+
+Szenario: Leere Treemap bei zu restriktivem Filter
+  Angenommen ich habe einen Filter, der keine Anker zurückgibt
+  Wenn die Treemap aktualisiert wird
+  Dann sehe ich eine leere Treemap
+  Und die Meldung "No anchors found for selected filters"
+  Und einen "Clear Filters" Button
+----
+
+== Feature: Suche
+
+=== Szenario: Anker durchsuchen
+
+[source,gherkin]
+----
+Funktionalität: Anker durchsuchen
+  Als Benutzer
+  Möchte ich nach Begriffen suchen können
+  Damit ich schnell relevante Anker finde
+
+Szenario: Erfolgreiche Suche nach Namen
+  Angenommen ich bin auf der Startseite
+  Wenn ich "TDD" in die Suchbox eingebe
+  Dann sehe ich Suchergebnisse innerhalb 300ms
+  Und "TDD, London School" ist im ersten Ergebnis
+  Und "TDD, Chicago School" ist im zweiten Ergebnis
+  Und der Suchbegriff "TDD" ist in den Ergebnissen hervorgehoben
+
+Szenario: Suche nach Proponent
+  Angenommen ich bin auf der Startseite
+  Wenn ich "Freeman" in die Suchbox eingebe
+  Dann sehe ich "TDD, London School" in den Ergebnissen
+  Und der Name "Steve Freeman" ist im Ergebnis sichtbar
+
+Szenario: Suche nach Core Concept
+  Angenommen ich bin auf der Startseite
+  Wenn ich "mocking" in die Suchbox eingebe
+  Dann sehe ich relevante Anker mit "mocking" in Core Concepts
+
+Szenario: Keine Ergebnisse gefunden
+  Angenommen ich bin auf der Startseite
+  Wenn ich "xyz123ungueltig" in die Suchbox eingebe
+  Dann sehe ich "Keine Ergebnisse gefunden"
+  Und optional eine Liste ähnlicher Begriffe
+
+Szenario: Suchbox leeren
+  Angenommen ich habe eine Suche durchgeführt
+  Wenn ich auf das "X" in der Suchbox klicke
+  Dann wird die Suchbox geleert
+  Und die Suchergebnisse verschwinden
+  Und die Hauptansicht wird wieder angezeigt
+----
+
+=== Szenario: Suche mit Filtern kombinieren
+
+[source,gherkin]
+----
+Szenario: Suche innerhalb gefilterter Anker
+  Angenommen ich habe den Filter "Software Developer" aktiv
+  Wenn ich "architecture" in die Suchbox eingebe
+  Dann sehe ich nur Architektur-Anker, die für Software Developer relevant sind
+  Und irrelevante Architektur-Anker werden ausgeblendet
+----
+
+== Feature: Anker-Details anzeigen
+
+=== Szenario: Anker-Seite öffnen
+
+[source,gherkin]
+----
+Funktionalität: Anker-Details anzeigen
+  Als Benutzer
+  Möchte ich detaillierte Informationen zu einem Anker sehen
+  Damit ich den Anker verstehe und anwenden kann
+
+Szenario: Anker via Treemap öffnen
+  Angenommen ich bin auf der Startseite
+  Wenn ich in der Treemap auf "TDD, London School" klicke
+  Dann navigiere ich zur Anker-Detailseite
+  Und sehe den vollständigen Namen "Test-Driven Development, London School"
+  Und sehe "Also known as: Mockist TDD, Outside-In TDD"
+  Und sehe alle Core Concepts
+  Und sehe Key Proponents mit "Steve Freeman, Nat Pryce"
+  Und sehe "When to Use" Anwendungsfälle
+
+Szenario: Collapsible Section erweitern
+  Angenommen ich bin auf der Anker-Detailseite
+  Und die Details sind initial collapsed
+  Wenn ich auf den Anker-Titel klicke
+  Dann expandiert die Collapsible Section
+  Und ich sehe den vollständigen Inhalt
+
+Szenario: Related Anchors sind verlinkt
+  Angenommen ich bin auf der "TDD, London School" Seite
+  Wenn ich zur "Related Concepts" Section scrolle
+  Dann sehe ich Links zu "TDD, Chicago School" und "Hexagonal Architecture"
+  Und die Links sind klickbar
+  Wenn ich auf "TDD, Chicago School" klicke
+  Dann navigiere ich zu dieser Anker-Seite
+
+Szenario: Zurück-Navigation funktioniert
+  Angenommen ich bin von "TDD, London School" zu "TDD, Chicago School" navigiert
+  Wenn ich auf den Browser-Zurück-Button klicke
+  Dann bin ich wieder auf "TDD, London School"
+----
+
+=== Szenario: Deep-Link zu Anker
+
+[source,gherkin]
+----
+Szenario: Direkter Link zu Anker öffnen
+  Angenommen ich habe die URL "/anchor/tdd-london-school"
+  Wenn ich die Seite öffne
+  Dann sehe ich direkt die Anker-Details von "TDD, London School"
+  Und die URL bleibt "/anchor/tdd-london-school"
+
+Szenario: Ungültiger Anker-Link
+  Angenommen ich habe die URL "/anchor/ungueltig"
+  Wenn ich die Seite öffne
+  Dann sehe ich eine 404-Seite
+  Und einen Link zur Startseite
+  Und optional eine Suchbox mit Vorschlägen
+----
+
+== Feature: Internationalisierung (i18n)
+
+=== Szenario: Sprache wechseln
+
+[source,gherkin]
+----
+Funktionalität: Sprache wechseln
+  Als deutschsprachiger Benutzer
+  Möchte ich die UI auf Deutsch umstellen können
+  Damit ich die Seite besser verstehe
+
+Szenario: Von Englisch auf Deutsch wechseln
+  Angenommen ich bin auf der Startseite (Englisch)
+  Wenn ich auf den Language Switcher klicke
+  Und "Deutsch" auswähle
+  Dann sind alle UI-Elemente auf Deutsch
+  Und die Navigation zeigt "Startseite", "Kategorien", "Rollen"
+  Und der Filter-Button zeigt "Nach Rolle filtern"
+  Und das <html> Element hat lang="de"
+
+Szenario: Anker-Content bleibt Englisch
+  Angenommen ich habe die Sprache auf Deutsch gestellt
+  Wenn ich einen Anker öffne
+  Dann ist die UI auf Deutsch
+  Aber der Anker-Content (Core Concepts, etc.) bleibt auf Englisch
+
+Szenario: Sprachpräferenz wird gespeichert
+  Angenommen ich habe die Sprache auf Deutsch gestellt
+  Wenn ich die Seite schließe und neu öffne
+  Dann ist die Sprache automatisch Deutsch
+  Und ich muss nicht erneut wechseln
+
+Szenario: Kategorien und Rollen sind übersetzt
+  Angenommen die Sprache ist auf Deutsch
+  Wenn ich die Kategorien-Liste öffne
+  Dann sehe ich "Testing & Qualitätspraktiken" statt "Testing & Quality Practices"
+  Und "Software-Entwickler" statt "Software Developer"
+----
+
+=== Szenario: Browser-Sprache erkennen
+
+[source,gherkin]
+----
+Szenario: Automatische Spracherkennung beim ersten Besuch
+  Angenommen ich besuche die Seite zum ersten Mal
+  Und mein Browser ist auf Deutsch eingestellt (navigator.language = "de")
+  Wenn die Seite lädt
+  Dann ist die UI automatisch auf Deutsch
+  Und ich sehe einen Hinweis "Sprache automatisch auf Deutsch gesetzt"
+
+Szenario: Fallback auf Englisch bei nicht unterstützter Sprache
+  Angenommen ich besuche die Seite zum ersten Mal
+  Und mein Browser ist auf Französisch eingestellt
+  Wenn die Seite lädt
+  Dann ist die UI auf Englisch (Fallback)
+----
+
+== Feature: Theming (Dark/Light Mode)
+
+=== Szenario: Theme wechseln
+
+[source,gherkin]
+----
+Funktionalität: Dark/Light Mode
+  Als Benutzer
+  Möchte ich zwischen hellem und dunklem Modus wechseln können
+  Damit ich in verschiedenen Umgebungen angenehm lesen kann
+
+Szenario: Auf Dark Mode wechseln
+  Angenommen die Seite ist im Light Mode
+  Wenn ich auf den Theme Toggle Button klicke
+  Dann wechselt die Seite zu Dark Mode
+  Und der Hintergrund ist dunkel
+  Und der Text ist hell
+  Und die Treemap passt ihre Farben an
+  Und das Icon zeigt eine Sonne (☀️)
+
+Szenario: Auf Light Mode wechseln
+  Angenommen die Seite ist im Dark Mode
+  Wenn ich auf den Theme Toggle Button klicke
+  Dann wechselt die Seite zu Light Mode
+  Und der Hintergrund ist hell
+  Und der Text ist dunkel
+  Und das Icon zeigt einen Mond (🌙)
+
+Szenario: Theme-Präferenz wird gespeichert
+  Angenommen ich habe Dark Mode ausgewählt
+  Wenn ich die Seite schließe und neu öffne
+  Dann ist Dark Mode automatisch aktiv
+
+Szenario: Kein Flackern beim Laden
+  Angenommen meine gespeicherte Präferenz ist Dark Mode
+  Wenn ich die Seite lade
+  Dann wird Dark Mode sofort angewendet
+  Und es gibt kein Flackern von Light zu Dark
+----
+
+=== Szenario: System-Theme respektieren
+
+[source,gherkin]
+----
+Szenario: Automatisches Theme beim ersten Besuch
+  Angenommen ich besuche die Seite zum ersten Mal
+  Und mein Betriebssystem ist auf Dark Mode eingestellt
+  Wenn die Seite lädt
+  Dann ist die Seite automatisch im Dark Mode
+
+Szenario: Manuelle Auswahl überschreibt System-Theme
+  Angenommen mein System ist auf Dark Mode
+  Und die Seite hat automatisch Dark Mode geladen
+  Wenn ich manuell auf Light Mode wechsle
+  Dann bleibt Light Mode aktiv
+  Und das System-Theme wird ignoriert
+  Und bei erneutem Besuch ist Light Mode aktiv
+----
+
+== Feature: Contribution Workflow
+
+=== Szenario: Neuen Anker vorschlagen
+
+[source,gherkin]
+----
+Funktionalität: Neuen Anker vorschlagen
+  Als Contributor
+  Möchte ich einen neuen semantischen Anker vorschlagen können
+  Damit ich zum Katalog beitragen kann
+
+Szenario: Issue-Template öffnen
+  Angenommen ich bin auf der Website
+  Wenn ich auf "Suggest New Anchor" klicke
+  Dann werde ich zu GitHub weitergeleitet
+  Und das Issue-Template "Propose New Anchor" ist vorausgefüllt
+
+Szenario: Issue erstellen mit minimalem Input
+  Angenommen ich bin im GitHub Issue-Template
+  Wenn ich nur den "Anchor Name" ausfülle (z.B. "SOTA")
+  Und eine Begründung schreibe
+  Und das Issue erstelle
+  Dann wird das Issue mit Label "new-anchor" versehen
+  Und der GitHub Actions Workflow startet
+
+Szenario: Automatische Validierung - Positiv
+  Angenommen ich habe ein Issue mit "SOTA" erstellt
+  Wenn der GitHub Actions Workflow läuft
+  Und Copilot validiert den Begriff
+  Dann erscheint ein Kommentar "✅ Looks like a valid semantic anchor!"
+  Und das Label "validated" wird hinzugefügt
+  Und der Maintainer wird benachrichtigt
+
+Szenario: Automatische Validierung - Negativ
+  Angenommen ich habe ein Issue mit "TLDR" erstellt
+  Wenn der GitHub Actions Workflow läuft
+  Und Copilot validiert den Begriff
+  Dann erscheint ein Kommentar mit Feedback
+  Und der Kommentar erklärt, warum "TLDR" kein semantischer Anker ist
+  Und das Label "needs-clarification" wird hinzugefügt
+
+Szenario: Maintainer approved und assigned Copilot
+  Angenommen ein validiertes Issue existiert
+  Wenn der Maintainer das Issue Copilot zuweist
+  Dann generiert Copilot einen AsciiDoc-Entry
+  Und erstellt einen Pull Request
+  Und der PR verlinkt das Issue
+----
+
+== Feature: Performance
+
+=== Szenario: Schnelle Ladezeit
+
+[source,gherkin]
+----
+Funktionalität: Performance
+  Als Benutzer
+  Möchte ich, dass die Seite schnell lädt
+  Damit ich nicht warten muss
+
+Szenario: Initiales Laden unter 2 Sekunden
+  Angenommen ich habe eine normale Internetverbindung (3G)
+  Wenn ich die Startseite öffne
+  Dann ist die Seite innerhalb von 2 Sekunden interaktiv
+  Und die Treemap wird innerhalb von 3 Sekunden angezeigt
+
+Szenario: Treemap rendert performant
+  Angenommen die Treemap-Daten sind geladen (60+ Anker)
+  Wenn die Treemap gerendert wird
+  Dann dauert das Rendering weniger als 500ms
+  Und die Interaktion ist flüssig (>30fps)
+
+Szenario: Suche ist responsiv
+  Angenommen ich tippe in die Suchbox
+  Wenn ich jeden Buchstaben eingebe
+  Dann erscheinen Suchergebnisse innerhalb 300ms
+  Und es gibt kein spürbares Lag
+----
+
+== Feature: Accessibility
+
+=== Szenario: Keyboard-Navigation
+
+[source,gherkin]
+----
+Funktionalität: Barrierefreiheit
+  Als Benutzer mit eingeschränkter Mobilität
+  Möchte ich die Seite mit der Tastatur navigieren können
+  Damit ich alle Funktionen nutzen kann
+
+Szenario: Tab-Navigation durch Elemente
+  Angenommen ich bin auf der Startseite
+  Wenn ich die Tab-Taste drücke
+  Dann springt der Fokus zum nächsten interaktiven Element
+  Und der Fokus ist visuell sichtbar (outline)
+  Und ich kann mit Enter aktivieren
+
+Szenario: Skip-Link für Hauptinhalt
+  Angenommen ich bin auf der Startseite
+  Wenn ich die erste Tab-Taste drücke
+  Dann erscheint ein "Skip to main content" Link
+  Wenn ich Enter drücke
+  Dann springe ich direkt zum Hauptinhalt
+
+Szenario: Escape schließt Dialoge
+  Angenommen ein Filterdialog ist offen
+  Wenn ich Escape drücke
+  Dann schließt sich der Dialog
+  Und der Fokus kehrt zum auslösenden Element zurück
+----
+
+=== Szenario: Screen Reader Support
+
+[source,gherkin]
+----
+Szenario: ARIA-Labels sind vorhanden
+  Angenommen ich nutze einen Screen Reader
+  Wenn ich über die Treemap navigiere
+  Dann höre ich aussagekräftige Labels
+  Und jede Kategorie hat ein aria-label mit Name und Anzahl
+  Und Buttons haben aria-labels (z.B. "Filter by role")
+
+Szenario: Seitentitel ist aussagekräftig
+  Angenommen ich navigiere zwischen Seiten
+  Wenn ich auf eine Anker-Detailseite gehe
+  Dann ändert sich der <title> Tag
+  Und der Screen Reader liest "TDD, London School - Semantic Anchors"
+----
+
+== Feature: Responsive Design
+
+=== Szenario: Mobile Ansicht
+
+[source,gherkin]
+----
+Funktionalität: Responsive Design
+  Als mobiler Benutzer
+  Möchte ich die Seite auf meinem Smartphone nutzen können
+  Damit ich unterwegs Anker nachschlagen kann
+
+Szenario: Layout passt sich an Smartphone an
+  Angenommen ich öffne die Seite auf einem Smartphone (375px)
+  Dann ist die Navigation als Hamburger-Menu dargestellt
+  Und die Treemap füllt die Bildschirmbreite
+  Und der Text ist ohne Zoomen lesbar
+  Und Buttons sind groß genug zum Tippen (mindestens 44x44px)
+
+Szenario: Tablet-Ansicht
+  Angenommen ich öffne die Seite auf einem Tablet (768px)
+  Dann ist die Navigation als horizontale Leiste dargestellt
+  Und die Treemap nutzt den verfügbaren Platz optimal
+
+Szenario: Touch-Gesten funktionieren
+  Angenommen ich bin auf einem Touchscreen-Gerät
+  Wenn ich auf eine Kategorie in der Treemap tippe
+  Dann öffnet sich die Kategorie-Seite
+  Und es gibt kein doppeltes Triggern
+----
+
+== Zusammenfassung
+
+Diese Acceptance Criteria decken folgende Bereiche ab:
+
+* Navigation und Filterung
+* Visualisierung (Treemap)
+* Suche
+* Anker-Details
+* Internationalisierung (EN/DE)
+* Theming (Dark/Light)
+* Contribution Workflow
+* Performance
+* Accessibility
+* Responsive Design
+
+Alle Szenarien sind testbar und messbar.

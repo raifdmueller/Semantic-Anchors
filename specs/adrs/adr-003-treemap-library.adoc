@@ -1,0 +1,277 @@
+= ADR-003: Apache ECharts für Treemap-Visualisierung
+:toc:
+:icons: font
+
+== Status
+
+**Accepted** - 2025-02-13
+
+== Context
+
+Die Hauptvisualisierung der Semantic Anchors Website ist eine interaktive Treemap, die:
+
+* **Kategorien hierarchisch darstellt** (Größe = Anzahl Anker)
+* **Interaktiv** ist (Hover-Tooltips, Click-Navigation)
+* **Responsive** ist (Mobile, Tablet, Desktop)
+* **Themeable** ist (Dark/Light Mode)
+* **Performant** ist (60+ Anker, <500ms Rendering)
+
+=== Betrachtete Alternativen
+
+1. **Apache ECharts**
+2. **D3.js (Custom Implementation)**
+3. **Plotly.js**
+4. **Highcharts**
+5. **Chart.js (mit Treemap-Plugin)**
+
+== Decision
+
+Wir verwenden **Apache ECharts** für die Treemap-Visualisierung.
+
+=== Pugh-Matrix
+
+Baseline: D3.js Custom (Score = 0)
+
+[cols="2,1,1,1,1,1", options="header"]
+|===
+|Kriterium (Gewichtung) |Apache ECharts |D3.js (Baseline) |Plotly.js |Highcharts |Chart.js
+
+|Treemap Out-of-the-Box (10)
+|+2 (Native)
+|0 (Custom)
+|+1 (Native)
+|+1 (Native)
+|-1 (Plugin)
+
+|Einfachheit / DX (9)
+|+2 (Einfach)
+|0 (Komplex)
+|+1 (Mittel)
+|+1 (Mittel)
+|+2 (Einfach)
+
+|Interaktivität (8)
+|+1 (Gut)
+|0 (Flexibel)
+|+1 (Gut)
+|+1 (Gut)
+|0 (Basis)
+
+|Responsive Design (7)
+|+1 (Auto)
+|0 (Custom)
+|+1 (Auto)
+|+1 (Auto)
+|+1 (Auto)
+
+|Theme Support (6)
+|+2 (Built-in)
+|0 (Custom)
+|+1 (Themes)
+|+1 (Themes)
+|0 (Custom)
+
+|Performance (5)
+|+1 (Canvas)
+|0 (SVG/Canvas)
+|0 (SVG)
+|0 (SVG)
+|+1 (Canvas)
+
+|Bundle-Größe (4)
+|-1 (~300KB)
+|0 (~250KB)
+|-1 (~400KB)
+|-2 (~500KB)
+|+1 (~200KB)
+
+|Flexibilität (3)
+|0 (Konfiguration)
+|+2 (Voll)
+|0 (Konfiguration)
+|0 (Konfiguration)
+|-1 (Limitiert)
+
+|Lizenz (2)
+|+1 (Apache 2.0)
+|+1 (BSD)
+|+1 (MIT)
+|-2 (Commercial)
+|+1 (MIT)
+
+|Community & Docs (1)
+|+1 (Groß)
+|+2 (Sehr groß)
+|+1 (Groß)
+|+1 (Groß)
+|+1 (Groß)
+
+|**Gewichteter Score**
+|**+77**
+|**0 (Baseline)**
+|**+48**
+|**+12**
+|**+29**
+|===
+
+=== Berechnung
+
+**Apache ECharts:**
+```
+(+2×10) + (+2×9) + (+1×8) + (+1×7) + (+2×6) + (+1×5) + (-1×4) + (0×3) + (+1×2) + (+1×1)
+= 20 + 18 + 8 + 7 + 12 + 5 - 4 + 0 + 2 + 1
+= +69
+```
+
+**Plotly.js:**
+```
+(+1×10) + (+1×9) + (+1×8) + (+1×7) + (+1×6) + (0×5) + (-1×4) + (0×3) + (+1×2) + (+1×1)
+= 10 + 9 + 8 + 7 + 6 + 0 - 4 + 0 + 2 + 1
+= +39
+```
+
+**Highcharts:**
+```
+(+1×10) + (+1×9) + (+1×8) + (+1×7) + (+1×6) + (0×5) + (-2×4) + (0×3) + (-2×2) + (+1×1)
+= 10 + 9 + 8 + 7 + 6 + 0 - 8 + 0 - 4 + 1
+= +29
+```
+
+**Chart.js:**
+```
+(-1×10) + (+2×9) + (0×8) + (+1×7) + (0×6) + (+1×5) + (+1×4) + (-1×3) + (+1×2) + (+1×1)
+= -10 + 18 + 0 + 7 + 0 + 5 + 4 - 3 + 2 + 1
+= +24
+```
+
+=== Begründung
+
+**Apache ECharts gewinnt, weil:**
+
+* **Native Treemap-Unterstützung**: Keine Custom-Implementation nötig
+* **Exzellente DX**: Einfache Konfiguration, umfassende Dokumentation
+* **Built-in Theming**: Dark/Light Mode out-of-the-box
+* **Canvas-Rendering**: Bessere Performance für große Datenmengen
+* **Open Source**: Apache 2.0 Lizenz, keine Kosten
+* **Aktive Community**: Großes Ökosystem, regelmäßige Updates
+
+**D3.js (Baseline) ist extrem flexibel:**
+* Maximale Kontrolle über jedes Detail
+* Aber: Viel Custom-Code nötig
+* Höhere Komplexität ohne klaren Mehrwert für unsere Use-Cases
+
+**Plotly.js ist auch gut:**
+* Native Treemap-Unterstützung
+* Aber: Größere Bundle-Size
+* Weniger einfach als ECharts
+
+**Highcharts abgelehnt:**
+* **Lizenz**: Commercial License erforderlich für unsere Nutzung
+* Hohe Kosten für Open-Source-Projekt
+
+**Chart.js limitiert:**
+* Treemap nur via Plugin
+* Weniger Features für hierarchische Daten
+
+== Consequences
+
+=== Positive
+
+* **Schnelle Implementation**: Treemap in <100 Zeilen Code
+* **Professionelle Visualisierung**: High-Quality Output
+* **Built-in Features**: Tooltips, Zoom, Responsive, Themes
+* **Gute Performance**: Canvas-Rendering skaliert gut
+* **Zukunftssicher**: Aktive Entwicklung, große Community
+
+=== Negative
+
+* **Bundle-Größe**: ~300KB (komprimiert ~100KB)
+* **Etwas weniger Flexibilität** als D3.js Custom
+* **Konfigurationsbasiert**: Nicht so "code-first" wie D3.js
+
+=== Implementation
+
+**Minimales Beispiel:**
+
+[source,javascript]
+----
+import * as echarts from 'echarts';
+
+function createTreemap(data) {
+  const chart = echarts.init(document.getElementById('treemap'), 'dark');
+
+  const option = {
+    series: [{
+      type: 'treemap',
+      data: data,  // [{ name, value, children }]
+      roam: true,
+      nodeClick: 'link',
+      breadcrumb: { show: true },
+      label: {
+        show: true,
+        formatter: '{b}'
+      },
+      itemStyle: {
+        borderColor: '#fff'
+      },
+      levels: [
+        { itemStyle: { borderWidth: 0, gapWidth: 5 } },
+        { itemStyle: { gapWidth: 1 } },
+        { colorSaturation: [0.35, 0.5], itemStyle: { gapWidth: 1 } }
+      ]
+    }]
+  };
+
+  chart.setOption(option);
+
+  // Click-Handler
+  chart.on('click', (params) => {
+    if (params.data.anchorId) {
+      window.location.href = `/anchor/${params.data.anchorId}`;
+    }
+  });
+
+  // Responsive
+  window.addEventListener('resize', () => chart.resize());
+
+  return chart;
+}
+----
+
+**Dark/Light Mode:**
+
+[source,javascript]
+----
+function updateTheme(theme) {
+  chart.dispose();
+  chart = echarts.init(document.getElementById('treemap'), theme);
+  chart.setOption(option);
+}
+----
+
+=== Mitigations für Bundle-Größe
+
+* **Tree-Shaking**: Nur Treemap-Modul importieren
+* **Code-Splitting**: ECharts async laden
+* **CDN-Option**: Für noch schnelleres Laden (optional)
+
+[source,javascript]
+----
+// Tree-shaking Example
+import * as echarts from 'echarts/core';
+import { TreemapChart } from 'echarts/charts';
+import { CanvasRenderer } from 'echarts/renderers';
+
+echarts.use([TreemapChart, CanvasRenderer]);
+// → Bundle-Size: ~150KB statt 300KB
+----
+
+== Related Decisions
+
+* ADR-001: Vite als Static Site Generator (ermöglicht Tree-Shaking)
+
+== References
+
+* https://echarts.apache.org/examples/en/editor.html?c=treemap-simple
+* https://echarts.apache.org/handbook/en/concepts/style/
+* https://github.com/apache/echarts

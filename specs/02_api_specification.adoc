@@ -1,0 +1,627 @@
+= API Specification: Semantic Anchors Website
+:toc: left
+:toclevels: 3
+:icons: font
+
+== Übersicht
+
+Diese Spezifikation beschreibt die Daten-Strukturen und Schnittstellen der Semantic Anchors Website.
+
+**Hinweis**: Da dies eine statische Website ist, sind die "APIs" primär Datenstrukturen (JSON/YAML) und JavaScript-Module, keine REST-Endpoints.
+
+== Datenmodelle
+
+=== Anchor (Semantischer Anker)
+
+[source,json]
+----
+{
+  "id": "tdd-london-school",
+  "name": "TDD, London School",
+  "fullName": "Test-Driven Development, London School",
+  "alsoKnownAs": ["Mockist TDD", "Outside-In TDD"],
+  "categories": ["testing-quality"],
+  "roles": ["software-developer", "qa-engineer", "architect"],
+  "proponents": [
+    {
+      "name": "Steve Freeman",
+      "publication": "Growing Object-Oriented Software, Guided by Tests"
+    },
+    {
+      "name": "Nat Pryce",
+      "publication": "Growing Object-Oriented Software, Guided by Tests"
+    }
+  ],
+  "coreConcepts": [
+    "Mock-heavy testing",
+    "Outside-in development",
+    "Interaction-based testing",
+    "Behavior verification",
+    "Interface discovery",
+    "Walking skeleton"
+  ],
+  "whenToUse": [
+    "Complex systems with many collaborating objects",
+    "When designing APIs and interfaces",
+    "Distributed systems where integration is costly"
+  ],
+  "relatedAnchors": ["tdd-chicago-school", "hexagonal-architecture"],
+  "tags": ["testing", "tdd", "mocking", "outside-in"],
+  "filePath": "docs/anchors/tdd-london-school.adoc"
+}
+----
+
+**Felder-Beschreibung:**
+
+[cols="1,2,1,4", options="header"]
+|===
+|Feld |Typ |Pflicht |Beschreibung
+
+|`id` |string |Ja |Eindeutiger Identifier (kebab-case), verwendet für URLs und Referenzen
+|`name` |string |Ja |Anzeigename des Ankers
+|`fullName` |string |Nein |Ausgeschriebener vollständiger Name
+|`alsoKnownAs` |string[] |Nein |Alternative Namen oder Synonyme
+|`categories` |string[] |Ja |Liste von Kategorie-IDs (mindestens 1)
+|`roles` |string[] |Ja |Liste von Rollen-IDs (mindestens 1)
+|`proponents` |Proponent[] |Ja |Schlüsselfiguren und deren Publikationen
+|`coreConcepts` |string[] |Ja |Kernkonzepte des Ankers
+|`whenToUse` |string[] |Ja |Anwendungsfälle
+|`relatedAnchors` |string[] |Nein |IDs verwandter Anker
+|`tags` |string[] |Nein |Suchbegriffe und Schlagwörter
+|`filePath` |string |Ja |Relativer Pfad zur AsciiDoc-Datei
+|===
+
+=== Category (Kategorie)
+
+[source,json]
+----
+{
+  "id": "testing-quality",
+  "name": "Testing & Quality Practices",
+  "nameDE": "Testing & Qualitätspraktiken",
+  "description": "Methodologies and practices for software testing and quality assurance",
+  "descriptionDE": "Methodiken und Praktiken für Software-Testing und Qualitätssicherung",
+  "anchorCount": 12,
+  "anchors": [
+    "tdd-london-school",
+    "tdd-chicago-school",
+    "property-based-testing",
+    "mutation-testing",
+    "testing-pyramid"
+  ],
+  "color": "#4CAF50"
+}
+----
+
+**Felder-Beschreibung:**
+
+[cols="1,2,1,4", options="header"]
+|===
+|Feld |Typ |Pflicht |Beschreibung
+
+|`id` |string |Ja |Eindeutiger Identifier (kebab-case)
+|`name` |string |Ja |Kategorie-Name (EN)
+|`nameDE` |string |Ja |Kategorie-Name (DE)
+|`description` |string |Ja |Kurzbeschreibung (EN)
+|`descriptionDE` |string |Ja |Kurzbeschreibung (DE)
+|`anchorCount` |number |Ja |Anzahl Anker in dieser Kategorie
+|`anchors` |string[] |Ja |Liste von Anker-IDs
+|`color` |string |Nein |Farbe für Visualisierung (Hex-Code)
+|===
+
+=== Role (Rolle)
+
+[source,json]
+----
+{
+  "id": "software-developer",
+  "name": "Software Developer / Engineer",
+  "nameDE": "Software-Entwickler",
+  "description": "Developers writing and maintaining code",
+  "descriptionDE": "Entwickler, die Code schreiben und warten",
+  "anchorCount": 35,
+  "anchors": [
+    "tdd-london-school",
+    "tdd-chicago-school",
+    "solid-principles",
+    "clean-architecture",
+    "conventional-commits"
+  ],
+  "icon": "💻"
+}
+----
+
+**Felder-Beschreibung:**
+
+[cols="1,2,1,4", options="header"]
+|===
+|Feld |Typ |Pflicht |Beschreibung
+
+|`id` |string |Ja |Eindeutiger Identifier (kebab-case)
+|`name` |string |Ja |Rollen-Name (EN)
+|`nameDE` |string |Ja |Rollen-Name (DE)
+|`description` |string |Ja |Kurzbeschreibung (EN)
+|`descriptionDE` |string |Ja |Kurzbeschreibung (DE)
+|`anchorCount` |number |Ja |Anzahl Anker für diese Rolle
+|`anchors` |string[] |Ja |Liste von Anker-IDs
+|`icon` |string |Nein |Emoji oder Icon für UI
+|===
+
+=== Proponent (Schlüsselfigur)
+
+[source,json]
+----
+{
+  "name": "Steve Freeman",
+  "publication": "Growing Object-Oriented Software, Guided by Tests",
+  "year": 2009,
+  "url": "https://www.growing-object-oriented-software.com"
+}
+----
+
+**Felder-Beschreibung:**
+
+[cols="1,2,1,4", options="header"]
+|===
+|Feld |Typ |Pflicht |Beschreibung
+
+|`name` |string |Ja |Name des Proponenten
+|`publication` |string |Nein |Hauptpublikation oder -werk
+|`year` |number |Nein |Publikationsjahr
+|`url` |string |Nein |Link zur Publikation oder Website
+|===
+
+=== TreemapNode (für Visualisierung)
+
+[source,json]
+----
+{
+  "name": "Testing & Quality Practices",
+  "value": 12,
+  "children": [
+    {
+      "name": "TDD, London School",
+      "value": 1,
+      "anchorId": "tdd-london-school",
+      "roles": ["software-developer", "qa-engineer"]
+    },
+    {
+      "name": "Property-Based Testing",
+      "value": 1,
+      "anchorId": "property-based-testing",
+      "roles": ["software-developer", "qa-engineer"]
+    }
+  ],
+  "itemStyle": {
+    "color": "#4CAF50"
+  }
+}
+----
+
+== Navigation API
+
+=== GET `/data/categories.json`
+
+Liefert alle Kategorien mit Metadata.
+
+**Response:**
+
+[source,json]
+----
+{
+  "categories": [
+    {
+      "id": "testing-quality",
+      "name": "Testing & Quality Practices",
+      "nameDE": "Testing & Qualitätspraktiken",
+      "anchorCount": 12,
+      "anchors": ["tdd-london-school", "..."]
+    }
+  ]
+}
+----
+
+=== GET `/data/roles.json`
+
+Liefert alle Rollen mit Metadata.
+
+**Response:**
+
+[source,json]
+----
+{
+  "roles": [
+    {
+      "id": "software-developer",
+      "name": "Software Developer / Engineer",
+      "nameDE": "Software-Entwickler",
+      "anchorCount": 35,
+      "anchors": ["tdd-london-school", "..."]
+    }
+  ]
+}
+----
+
+=== GET `/data/navigation.json`
+
+Liefert vollständige Navigationsstruktur.
+
+**Response:**
+
+[source,json]
+----
+{
+  "categories": [...],
+  "roles": [...],
+  "totalAnchors": 60,
+  "lastUpdated": "2025-02-13T10:00:00Z"
+}
+----
+
+== Content Access API
+
+=== GET `/data/anchors.json`
+
+Liefert alle Anker mit vollständigen Metadata (ohne AsciiDoc-Content).
+
+**Response:**
+
+[source,json]
+----
+{
+  "anchors": [
+    {
+      "id": "tdd-london-school",
+      "name": "TDD, London School",
+      "categories": ["testing-quality"],
+      "roles": ["software-developer", "qa-engineer"],
+      "filePath": "docs/anchors/tdd-london-school.adoc"
+    }
+  ]
+}
+----
+
+=== GET `/data/anchors/{anchorId}.json`
+
+Liefert detaillierte Informationen zu einem spezifischen Anker.
+
+**Path Parameters:**
+
+[cols="1,2,4", options="header"]
+|===
+|Parameter |Typ |Beschreibung
+
+|`anchorId` |string |Eindeutige Anker-ID (z.B. "tdd-london-school")
+|===
+
+**Response:**
+
+[source,json]
+----
+{
+  "id": "tdd-london-school",
+  "name": "TDD, London School",
+  "fullName": "Test-Driven Development, London School",
+  "categories": ["testing-quality"],
+  "roles": ["software-developer", "qa-engineer", "architect"],
+  "proponents": [...],
+  "coreConcepts": [...],
+  "whenToUse": [...],
+  "relatedAnchors": ["tdd-chicago-school", "hexagonal-architecture"],
+  "filePath": "docs/anchors/tdd-london-school.adoc"
+}
+----
+
+**Error Responses:**
+
+* `404`: Anker nicht gefunden
+
+=== GET `/docs/anchors/{anchorId}.adoc`
+
+Liefert den rohen AsciiDoc-Content eines Ankers.
+
+**Response:** AsciiDoc Plain Text
+
+=== GET `/api/render/{anchorId}`
+
+Rendert AsciiDoc zu HTML (clientseitig via asciidoctor.js).
+
+**Query Parameters:**
+
+[cols="1,2,1,4", options="header"]
+|===
+|Parameter |Typ |Pflicht |Beschreibung
+
+|`anchorId` |string |Ja |ID des zu rendernden Ankers
+|`lang` |string |Nein |Sprache für UI-Elemente (en, de), Default: en
+|===
+
+**Response:**
+
+[source,json]
+----
+{
+  "html": "<div class='sect1'>...</div>",
+  "metadata": {
+    "id": "tdd-london-school",
+    "name": "TDD, London School"
+  }
+}
+----
+
+== Manipulation API (Client-Side)
+
+=== filterByRole(roleIds: string[])
+
+Filtert Anker nach einer oder mehreren Rollen.
+
+**JavaScript Signatur:**
+
+[source,javascript]
+----
+/**
+ * Filtert Anker nach Rollen
+ * @param {string[]} roleIds - Array von Rollen-IDs
+ * @returns {Anchor[]} - Gefilterte Anker
+ */
+function filterByRole(roleIds) {
+  return anchors.filter(anchor =>
+    roleIds.some(roleId => anchor.roles.includes(roleId))
+  );
+}
+----
+
+=== filterByCategory(categoryIds: string[])
+
+Filtert Anker nach einer oder mehreren Kategorien.
+
+**JavaScript Signatur:**
+
+[source,javascript]
+----
+/**
+ * Filtert Anker nach Kategorien
+ * @param {string[]} categoryIds - Array von Kategorie-IDs
+ * @returns {Anchor[]} - Gefilterte Anker
+ */
+function filterByCategory(categoryIds) {
+  return anchors.filter(anchor =>
+    categoryIds.some(catId => anchor.categories.includes(catId))
+  );
+}
+----
+
+=== searchAnchors(query: string)
+
+Durchsucht Anker nach Suchbegriff.
+
+**JavaScript Signatur:**
+
+[source,javascript]
+----
+/**
+ * Durchsucht Anker
+ * @param {string} query - Suchbegriff
+ * @returns {SearchResult[]} - Suchergebnisse mit Relevanz-Score
+ */
+function searchAnchors(query) {
+  const normalizedQuery = query.toLowerCase();
+
+  return anchors.map(anchor => {
+    let score = 0;
+
+    // Name match (höchste Priorität)
+    if (anchor.name.toLowerCase().includes(normalizedQuery)) score += 10;
+
+    // Proponents match
+    if (anchor.proponents.some(p =>
+        p.name.toLowerCase().includes(normalizedQuery))) score += 5;
+
+    // Core concepts match
+    if (anchor.coreConcepts.some(c =>
+        c.toLowerCase().includes(normalizedQuery))) score += 3;
+
+    // Tags match
+    if (anchor.tags?.some(t =>
+        t.toLowerCase().includes(normalizedQuery))) score += 2;
+
+    return { anchor, score };
+  })
+  .filter(result => result.score > 0)
+  .sort((a, b) => b.score - a.score)
+  .map(result => result.anchor);
+}
+----
+
+=== generateTreemapData(anchors: Anchor[], categories: Category[])
+
+Generiert Treemap-Daten aus Ankern und Kategorien.
+
+**JavaScript Signatur:**
+
+[source,javascript]
+----
+/**
+ * Generiert ECharts Treemap-Daten
+ * @param {Anchor[]} anchors - Anker-Array
+ * @param {Category[]} categories - Kategorie-Array
+ * @returns {TreemapNode[]} - Treemap-Datenstruktur
+ */
+function generateTreemapData(anchors, categories) {
+  return categories.map(category => ({
+    name: category.name,
+    value: category.anchorCount,
+    itemStyle: { color: category.color },
+    children: anchors
+      .filter(a => a.categories.includes(category.id))
+      .map(anchor => ({
+        name: anchor.name,
+        value: 1,
+        anchorId: anchor.id,
+        roles: anchor.roles
+      }))
+  }));
+}
+----
+
+== Meta-Information API
+
+=== GET `/data/metadata.json`
+
+Liefert Meta-Informationen über die gesamte Datensammlung.
+
+**Response:**
+
+[source,json]
+----
+{
+  "totalAnchors": 60,
+  "totalCategories": 10,
+  "totalRoles": 12,
+  "lastUpdated": "2025-02-13T10:00:00Z",
+  "version": "2.0.0",
+  "languages": ["en", "de"],
+  "statistics": {
+    "anchorsByCategory": {
+      "testing-quality": 12,
+      "architecture-design": 8,
+      "design-principles": 10
+    },
+    "anchorsByRole": {
+      "software-developer": 35,
+      "architect": 25,
+      "product-owner": 15
+    }
+  }
+}
+----
+
+=== GET `/data/search-index.json`
+
+Liefert optimierten Suchindex für Client-Side Suche.
+
+**Response:**
+
+[source,json]
+----
+{
+  "index": [
+    {
+      "id": "tdd-london-school",
+      "tokens": ["tdd", "london", "school", "mockist", "outside-in", "steve", "freeman"],
+      "name": "TDD, London School"
+    }
+  ],
+  "tokenMap": {
+    "tdd": ["tdd-london-school", "tdd-chicago-school"],
+    "testing": ["tdd-london-school", "property-based-testing", "mutation-testing"]
+  }
+}
+----
+
+== Lokalisierung (i18n)
+
+=== GET `/i18n/{lang}.json`
+
+Liefert UI-Übersetzungen für eine Sprache.
+
+**Path Parameters:**
+
+[cols="1,2,4", options="header"]
+|===
+|Parameter |Typ |Beschreibung
+
+|`lang` |string |Sprachcode (en, de)
+|===
+
+**Response Beispiel (`/i18n/de.json`):**
+
+[source,json]
+----
+{
+  "nav": {
+    "home": "Startseite",
+    "categories": "Kategorien",
+    "roles": "Rollen",
+    "about": "Über"
+  },
+  "filter": {
+    "byRole": "Nach Rolle filtern",
+    "byCategory": "Nach Kategorie filtern",
+    "clear": "Filter zurücksetzen"
+  },
+  "search": {
+    "placeholder": "Semantische Anker durchsuchen...",
+    "noResults": "Keine Ergebnisse gefunden",
+    "resultsCount": "{count} Ergebnisse"
+  },
+  "anchor": {
+    "fullName": "Vollständiger Name",
+    "alsoKnownAs": "Auch bekannt als",
+    "coreConcepts": "Kernkonzepte",
+    "proponents": "Hauptvertreter",
+    "whenToUse": "Wann verwenden",
+    "relatedAnchors": "Verwandte Anker"
+  },
+  "theme": {
+    "light": "Heller Modus",
+    "dark": "Dunkler Modus",
+    "toggle": "Theme wechseln"
+  }
+}
+----
+
+== Fehlerbehandlung
+
+Alle Daten-Zugriffe sollten folgende Fehlerbehandlung implementieren:
+
+[source,javascript]
+----
+async function loadData(url) {
+  try {
+    const response = await fetch(url);
+
+    if (!response.ok) {
+      throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+    }
+
+    return await response.json();
+  } catch (error) {
+    console.error(`Failed to load data from ${url}:`, error);
+
+    // Fallback oder User-Notification
+    showError(`Daten konnten nicht geladen werden: ${error.message}`);
+
+    return null;
+  }
+}
+----
+
+== Caching-Strategie
+
+**Build-Time:**
+- Alle JSON-Dateien werden beim Build generiert
+- Versionierung via Hash im Dateinamen (z.B. `anchors.abc123.json`)
+
+**Runtime:**
+- Browser-Cache für statische JSON-Dateien (1 Tag)
+- localStorage für User-Präferenzen (Sprache, Theme, Filter)
+- Service Worker für Offline-Verfügbarkeit (optional)
+
+== API-Versioning
+
+Die Datenstruktur-Version wird in `metadata.json` definiert:
+
+[source,json]
+----
+{
+  "version": "2.0.0",
+  "apiVersion": "v2",
+  "compatibleWith": ["v1", "v2"]
+}
+----
+
+Bei Breaking Changes:
+- Major Version erhöhen
+- Migration Guide bereitstellen
+- Alte Version für 6 Monate unterstützen

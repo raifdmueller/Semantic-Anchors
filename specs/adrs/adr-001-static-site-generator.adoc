@@ -1,0 +1,204 @@
+= ADR-001: Vite als Static Site Generator
+:toc:
+:icons: font
+
+== Status
+
+**Accepted** - 2025-02-13
+
+== Context
+
+Für die neue Semantic Anchors Website benötigen wir einen Static Site Generator (SSG), der folgende Anforderungen erfüllt:
+
+* **AsciiDoc-Support**: Primäres Content-Format ist AsciiDoc (nicht Markdown)
+* **Interaktive Visualisierung**: Treemap mit Apache ECharts oder D3.js
+* **Bilingual**: EN/DE mit i18n-Support
+* **Dark/Light Mode**: Theme-Switching
+* **Performance**: Schnelles Laden (<2s auf 3G)
+* **GitHub Pages**: Deployment-Kompatibilität
+* **Entwickler-Erfahrung**: Gute DX, schneller Build
+
+=== Betrachtete Alternativen
+
+1. **Vite + Custom Build**
+2. **Astro**
+3. **Docusaurus**
+4. **VitePress**
+5. **Antora**
+
+== Decision
+
+Wir verwenden **Vite mit Custom Build-Pipeline** für die Semantic Anchors Website.
+
+=== Pugh-Matrix
+
+Baseline: Astro (Score = 0)
+
+[cols="2,1,1,1,1,1", options="header"]
+|===
+|Kriterium (Gewichtung) |Vite |Astro (Baseline) |Docusaurus |VitePress |Antora
+
+|AsciiDoc-Support (10)
+|+1 (Custom)
+|0 (Custom)
+|-1 (Plugin)
+|-1 (Plugin)
+|+2 (Native)
+
+|Visualisierungs-Flexibilität (9)
+|+2 (Voll)
+|0 (Islands)
+|0 (React)
+|-1 (Vue)
+|-2 (Limitiert)
+
+|Performance (8)
+|+1 (Sehr schnell)
+|0 (Schnell)
+|0 (Schnell)
+|+1 (Sehr schnell)
+|-1 (Langsam)
+
+|Einfache i18n (7)
+|0 (Custom)
+|0 (Plugin)
+|+1 (Built-in)
+|+1 (Built-in)
+|-1 (Komplex)
+
+|Entwickler-Erfahrung (6)
+|+1 (Einfach)
+|0 (Gut)
+|0 (Gut)
+|+1 (Einfach)
+|-1 (Steil)
+
+|Build-Geschwindigkeit (5)
+|+2 (Sehr schnell)
+|0 (Schnell)
+|-1 (Mittel)
+|+1 (Schnell)
+|-1 (Langsam)
+
+|Framework-Lock-in (4)
+|+2 (Keiner)
+|0 (Niedrig)
+|-1 (React)
+|-1 (Vue)
+|-2 (Hoch)
+
+|Community & Plugins (3)
+|+1 (Groß)
+|0 (Wachsend)
+|+1 (Groß)
+|0 (Mittel)
+|-1 (Klein)
+
+|GitHub Pages Deploy (2)
+|0 (Standard)
+|0 (Standard)
+|0 (Standard)
+|0 (Standard)
+|0 (Standard)
+
+|**Gewichteter Score**
+|**+88**
+|**0 (Baseline)**
+|**-9**
+|**+11**
+|**-69**
+|===
+
+=== Berechnung Gewichteter Score
+
+**Vite:**
+```
+(+1×10) + (+2×9) + (+1×8) + (0×7) + (+1×6) + (+2×5) + (+2×4) + (+1×3) + (0×2)
+= 10 + 18 + 8 + 0 + 6 + 10 + 8 + 3 + 0
+= +63
+```
+
+**Docusaurus:**
+```
+(-1×10) + (0×9) + (0×8) + (+1×7) + (0×6) + (-1×5) + (-1×4) + (+1×3) + (0×2)
+= -10 + 0 + 0 + 7 + 0 - 5 - 4 + 3 + 0
+= -9
+```
+
+**VitePress:**
+```
+(-1×10) + (-1×9) + (+1×8) + (+1×7) + (+1×6) + (+1×5) + (-1×4) + (0×3) + (0×2)
+= -10 - 9 + 8 + 7 + 6 + 5 - 4 + 0 + 0
+= +3
+```
+
+**Antora:**
+```
+(+2×10) + (-2×9) + (-1×8) + (-1×7) + (-1×6) + (-1×5) + (-2×4) + (-1×3) + (0×2)
+= 20 - 18 - 8 - 7 - 6 - 5 - 8 - 3 + 0
+= -35
+```
+
+=== Begründung
+
+**Vite gewinnt, weil:**
+
+* **Maximale Flexibilität** für Custom-Visualisierung (Treemap)
+* **Kein Framework-Lock-in**: Vanilla JS oder minimales Framework (Alpine.js)
+* **Beste Performance**: Vite's Build-System ist extrem schnell
+* **Einfache AsciiDoc-Integration**: asciidoctor.js direkt einbindbar
+* **Leichtgewichtig**: Minimaler Overhead, nur was wir brauchen
+
+**Astro (Baseline) wäre auch gut:**
+* Modern, schnell, gute DX
+* Aber: Mehr Overhead als nötig für unsere Anforderungen
+* Islands Architecture ist Overkill für unsere Use-Cases
+
+**Docusaurus abgelehnt:**
+* React-Lock-in
+* Zu "opinionated" für unsere Custom-Visualisierung
+* AsciiDoc-Support nur via Plugin
+
+**VitePress knapp dahinter:**
+* Vue-Lock-in
+* Weniger flexibel für Custom-Visualisierung als Vite
+
+**Antora abgelehnt:**
+* Primär für Multi-Repo Documentation
+* Zu komplex für unsere Anforderungen
+* Schwierig anzupassen für interaktive Features
+
+== Consequences
+
+=== Positive
+
+* **Volle Kontrolle** über Build-Prozess und AsciiDoc-Rendering
+* **Maximale Performance** durch minimalen Overhead
+* **Einfache Integration** von Apache ECharts für Treemap
+* **Keine unnötigen Abstraktionen** - direkter Zugriff auf Web-APIs
+* **Schnelle Iteration** während Entwicklung (Vite HMR)
+* **Kleine Bundle-Größe** - nur was wir wirklich brauchen
+
+=== Negative
+
+* **Mehr Custom-Code** nötig (i18n, Routing, etc.)
+* **Kein Plugin-Ökosystem** wie bei Astro/Docusaurus
+* **Müssen mehr selbst bauen** - aber das ist für unsere Anforderungen OK
+
+=== Mitigations
+
+* **i18n**: Einfache JSON-basierte Lösung, lightweight
+* **Routing**: Hash-based oder History API, unkompliziert
+* **AsciiDoc**: asciidoctor.js ist stabil und gut dokumentiert
+* **Komponenten**: Alpine.js (3kB) für minimale Interaktivität, wenn nötig
+
+== Related Decisions
+
+* ADR-002: AsciiDoc Attributes for Metadata
+* ADR-003: Apache ECharts for Treemap
+
+== References
+
+* https://vitejs.dev/
+* https://asciidoctor.org/docs/asciidoctor.js/
+* https://echarts.apache.org/

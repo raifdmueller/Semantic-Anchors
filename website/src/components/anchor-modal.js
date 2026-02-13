@@ -99,6 +99,11 @@ export async function loadAnchorContent(anchorId) {
     titleEl.textContent = title
     contentEl.innerHTML = htmlContent
 
+    // Auto-expand all collapsible sections
+    contentEl.querySelectorAll('details').forEach(details => {
+      details.setAttribute('open', '')
+    })
+
   } catch (error) {
     console.error('Error loading anchor content:', error)
     titleEl.textContent = 'Error'

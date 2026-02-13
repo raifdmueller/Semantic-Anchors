@@ -4,7 +4,8 @@ import { initTheme, toggleTheme, currentTheme } from './theme.js'
 import { renderHeader } from './components/header.js'
 import { renderMain } from './components/main-content.js'
 import { renderFooter } from './components/footer.js'
-import { initTreemap, updateTreemapByRole, updateTreemapBySearch } from './components/treemap.js'
+import { renderCardGrid, initCardGrid, applyCardFilters } from './components/card-grid.js'
+import { fetchData } from './utils/data-loader.js'
 import { createModal, showAnchorDetails } from './components/anchor-modal.js'
 
 const APP_VERSION = '0.3.0'
@@ -30,8 +31,8 @@ function initApp() {
   createModal()
   bindAnchorSelection()
 
-  // Initialize treemap visualization
-  initTreemapVisualization()
+  // Initialize card grid visualization
+  initCardGridVisualization()
 }
 
 function bindAnchorSelection() {
@@ -41,14 +42,23 @@ function bindAnchorSelection() {
   })
 }
 
-async function initTreemapVisualization() {
+async function initCardGridVisualization() {
   try {
-    const { currentData } = await initTreemap()
+    const data = await fetchData()
+
+    // Render card grid
+    const container = document.getElementById('main-content')
+    if (container) {
+      container.innerHTML = renderCardGrid(data.categories, data.anchors)
+    }
+
+    // Initialize card event handlers
+    initCardGrid()
 
     // Bind role filter
     const roleFilter = document.getElementById('role-filter')
-    if (roleFilter && currentData.roles) {
-      currentData.roles.forEach(role => {
+    if (roleFilter && data.roles) {
+      data.roles.forEach(role => {
         const option = document.createElement('option')
         option.value = role.id
         option.textContent = role.name
@@ -56,7 +66,8 @@ async function initTreemapVisualization() {
       })
 
       roleFilter.addEventListener('change', (e) => {
-        updateTreemapByRole(e.target.value)
+        const searchQuery = document.getElementById('search-input')?.value || ''
+        applyCardFilters(e.target.value, searchQuery)
       })
     }
 
@@ -64,11 +75,16 @@ async function initTreemapVisualization() {
     const searchInput = document.getElementById('search-input')
     if (searchInput) {
       searchInput.addEventListener('input', (e) => {
-        updateTreemapBySearch(e.target.value)
+        const roleId = document.getElementById('role-filter')?.value || ''
+        applyCardFilters(roleId, e.target.value)
       })
     }
   } catch (err) {
-    console.error('Failed to initialize treemap:', err)
+    console.error('Failed to initialize card grid:', err)
+    const container = document.getElementById('main-content')
+    if (container) {
+      container.innerHTML = '<div class="text-red-500 p-8">Failed to load anchors. Please try again later.</div>'
+    }
   }
 }
 

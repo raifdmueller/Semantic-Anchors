@@ -8,15 +8,24 @@ Full Name:: Docs-as-Code Approach according to Ralf D. Müller
 
 *Core Concepts*:
 
-* *Plain text formats*: AsciiDoc, Markdown
-* *Version control*: Documentation in Git alongside code
-* *Automated toolchains*: Build pipelines for documentation
-* *Single source of truth*: Generate multiple output formats from one source
-* *Diagrams as code*: PlantUML, Mermaid, Graphviz, Kroki
-* *Continuous documentation*: Updated with every commit
-* *Developer-friendly*: Use same tools and workflows as for code
-* *Review process*: Pull requests for documentation changes
-* *Modular documentation*: Includes and composition
+Plain text formats:: AsciiDoc, Markdown
+
+Version control:: Documentation in Git alongside code
+
+Automated toolchains:: Build pipelines for documentation
+
+Single source of truth:: Generate multiple output formats from one source
+
+Diagrams as code:: PlantUML, Mermaid, Graphviz, Kroki
+
+Continuous documentation:: Updated with every commit
+
+Developer-friendly:: Use same tools and workflows as for code
+
+Review process:: Pull requests for documentation changes
+
+Modular documentation:: Includes and composition
+
 
 Key Proponent:: Ralf D. Müller (docToolchain creator)
 

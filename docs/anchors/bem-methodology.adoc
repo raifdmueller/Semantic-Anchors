@@ -9,17 +9,28 @@ Full Name:: Block Element Modifier (BEM) (S)CSS Methodology
 
 *Core Concepts*:
 
-* *Motivation*: Solve CSS specificity wars, naming conflicts, and stylesheet maintainability issues in large codebases
-* *Block*: Standalone component that is meaningful on its own (e.g., `menu`, `button`, `header`)
-* *Element*: Part of a block with no standalone meaning (e.g., `menu__item`, `button__icon`)
-* *Modifier*: Flag on blocks or elements that changes appearance or behavior (e.g., `button--disabled`, `menu__item--active`)
-* *Naming convention*: `block__element--modifier` structure
-* *Independence*: Blocks are self-contained and reusable
-* *No cascading*: Avoid deep CSS selectors, use flat structure
-* *Explicit relationships*: Clear parent-child relationships through naming
-* *Reusability*: Components can be moved anywhere in the project
-* *Mix*: Combining multiple BEM entities on a single DOM node
-* *File structure*: Often paired with component-based file organization
+Motivation:: Solve CSS specificity wars, naming conflicts, and stylesheet maintainability issues in large codebases
+
+Block:: Standalone component that is meaningful on its own (e.g., `menu`, `button`, `header`)
+
+Element:: Part of a block with no standalone meaning (e.g., `menu__item`, `button__icon`)
+
+Modifier:: Flag on blocks or elements that changes appearance or behavior (e.g., `button--disabled`, `menu__item--active`)
+
+Naming convention:: `block__element--modifier` structure
+
+Independence:: Blocks are self-contained and reusable
+
+No cascading:: Avoid deep CSS selectors, use flat structure
+
+Explicit relationships:: Clear parent-child relationships through naming
+
+Reusability:: Components can be moved anywhere in the project
+
+Mix:: Combining multiple BEM entities on a single DOM node
+
+File structure:: Often paired with component-based file organization
+
 
 *Naming Examples*:
 

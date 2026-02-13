@@ -8,13 +8,20 @@ Full Name:: Don't Repeat Yourself Principle
 
 *Core Concepts*:
 
-* *Single representation*: Every piece of knowledge should have a single, unambiguous representation
-* *Avoid duplication*: Eliminate duplicate code, logic, and knowledge across the system
-* *Abstraction*: Extract common patterns into reusable components
-* *Maintenance efficiency*: Changes require modification in only one place
-* *Knowledge duplication vs. code duplication*: Focus on avoiding duplicate knowledge, not just duplicate code
-* *Normalized data*: Apply DRY to data structures and schemas
-* *Configuration management*: Centralize configuration and avoid scattered settings
+Single representation:: Every piece of knowledge should have a single, unambiguous representation
+
+Avoid duplication:: Eliminate duplicate code, logic, and knowledge across the system
+
+Abstraction:: Extract common patterns into reusable components
+
+Maintenance efficiency:: Changes require modification in only one place
+
+Knowledge duplication vs. code duplication:: Focus on avoiding duplicate knowledge, not just duplicate code
+
+Normalized data:: Apply DRY to data structures and schemas
+
+Configuration management:: Centralize configuration and avoid scattered settings
+
 
 Key Proponent:: Andy Hunt and Dave Thomas ("The Pragmatic Programmer", 1999)
 

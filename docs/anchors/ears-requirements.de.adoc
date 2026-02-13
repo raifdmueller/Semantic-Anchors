@@ -8,13 +8,20 @@ Vollständiger Name:: Easy Approach to Requirements Syntax (Einfacher Ansatz fü
 
 *Kernkonzepte*:
 
-* *Ubiquitäre Anforderungen*: "Das <System> muss <Anforderung>"
-* *Ereignisgesteuerte Anforderungen*: "WENN <Trigger>, dann muss das <System> <Anforderung>"
-* *Unerwünschtes Verhalten*: "FALLS <Bedingung>, DANN muss das <System> <Anforderung>"
-* *Zustandsgesteuerte Anforderungen*: "WÄHREND <Zustand>, muss das <System> <Anforderung>"
-* *Optionale Features*: "WO <Feature enthalten ist>, muss das <System> <Anforderung>"
-* *Strukturierte Syntax*: Konsistente Vorlagen für Klarheit
-* *Testbarkeit*: Anforderungen so geschrieben, dass sie überprüfbar sind
+Ubiquitäre Anforderungen:: "Das <System> muss <Anforderung>"
+
+Ereignisgesteuerte Anforderungen:: "WENN <Trigger>, dann muss das <System> <Anforderung>"
+
+Unerwünschtes Verhalten:: "FALLS <Bedingung>, DANN muss das <System> <Anforderung>"
+
+Zustandsgesteuerte Anforderungen:: "WÄHREND <Zustand>, muss das <System> <Anforderung>"
+
+Optionale Features:: "WO <Feature enthalten ist>, muss das <System> <Anforderung>"
+
+Strukturierte Syntax:: Konsistente Vorlagen für Klarheit
+
+Testbarkeit:: Anforderungen so geschrieben, dass sie überprüfbar sind
+
 
 Schlüsselvertreter:: Alistair Mavin (Rolls-Royce)
 

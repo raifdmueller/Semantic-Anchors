@@ -8,13 +8,20 @@ Vollständiger Name:: Single Point of Truth
 
 *Kernkonzepte*:
 
-* *Implementierungsmuster*: Fokussiert darauf, wo und wie Daten/Logik gespeichert und abgerufen werden
-* *Zentraler Ort*: Jede Information befindet sich an genau einer Stelle
-* *Referenzbeziehungen*: Andere Orte referenzieren den einzelnen Punkt, anstatt ihn zu duplizieren
-* *Datenkonsistenz*: Eliminiert Synchronisationsprobleme und widersprüchliche Daten
-* *Update-Propagierung*: Änderungen am einzelnen Punkt wirken sich automatisch auf alle Referenzen aus
-* *Klare Verantwortlichkeit*: Explizite Zuständigkeit für die Pflege jedes Wahrheitsstücks
-* *Code-Ebene-Praxis*: Angewendet auf Code- und Systemdesign-Ebene
+Implementierungsmuster:: Fokussiert darauf, wo und wie Daten/Logik gespeichert und abgerufen werden
+
+Zentraler Ort:: Jede Information befindet sich an genau einer Stelle
+
+Referenzbeziehungen:: Andere Orte referenzieren den einzelnen Punkt, anstatt ihn zu duplizieren
+
+Datenkonsistenz:: Eliminiert Synchronisationsprobleme und widersprüchliche Daten
+
+Update-Propagierung:: Änderungen am einzelnen Punkt wirken sich automatisch auf alle Referenzen aus
+
+Klare Verantwortlichkeit:: Explizite Zuständigkeit für die Pflege jedes Wahrheitsstücks
+
+Code-Ebene-Praxis:: Angewendet auf Code- und Systemdesign-Ebene
+
 
 *Wann zu verwenden*:
 

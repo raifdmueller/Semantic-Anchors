@@ -8,14 +8,22 @@ Vollständiger Name:: MECE (Mutually Exclusive, Collectively Exhaustive - Sich g
 
 *Kernkonzepte*:
 
-* *Sich gegenseitig ausschließend*: Kategorien überschneiden sich nicht - jedes Element gehört zu genau einer Kategorie
-* *Gemeinsam erschöpfend*: Kategorien decken alle Möglichkeiten ab - nichts wird ausgelassen
-* *Framework für Organisation*: Systematischer Ansatz zur Strukturierung von Informationen und Problemen
-* *Verhindert Duplizierung*: Gegenseitiger Ausschluss stellt sicher, dass keine redundante Abdeckung vorliegt
-* *Verhindert Lücken*: Gemeinsame Erschöpfung stellt vollständige Abdeckung sicher
-* *Klare Grenzen*: Eindeutige Kategorisierung mit klar definierten Kriterien
-* *Hierarchische Anwendung*: Kann rekursiv auf mehreren Ebenen angewendet werden
-* *Validierungsansatz*: Beide Dimensionen unabhängig prüfen (Ausschließlichkeit und Vollständigkeit)
+Sich gegenseitig ausschließend:: Kategorien überschneiden sich nicht - jedes Element gehört zu genau einer Kategorie
+
+Gemeinsam erschöpfend:: Kategorien decken alle Möglichkeiten ab - nichts wird ausgelassen
+
+Framework für Organisation:: Systematischer Ansatz zur Strukturierung von Informationen und Problemen
+
+Verhindert Duplizierung:: Gegenseitiger Ausschluss stellt sicher, dass keine redundante Abdeckung vorliegt
+
+Verhindert Lücken:: Gemeinsame Erschöpfung stellt vollständige Abdeckung sicher
+
+Klare Grenzen:: Eindeutige Kategorisierung mit klar definierten Kriterien
+
+Hierarchische Anwendung:: Kann rekursiv auf mehreren Ebenen angewendet werden
+
+Validierungsansatz:: Beide Dimensionen unabhängig prüfen (Ausschließlichkeit und Vollständigkeit)
+
 
 Schlüsselvertreterin:: Barbara Minto (McKinsey & Company, späte 1960er)
 

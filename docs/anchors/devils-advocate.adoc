@@ -8,14 +8,22 @@ Full Name:: Devil's Advocate (Latin: *Advocatus Diaboli*)
 
 *Core Concepts*:
 
-* *Systematic Counter-Argumentation*: Present opposing viewpoints even if not personally held
-* *Assumption Challenging*: Question premises and surface hidden assumptions
-* *Stress-Testing Ideas*: Identify weaknesses before they become problems
-* *Steelmanning*: Present the *strongest* version of the opposing argument, not a strawman
-* *Intellectual Honesty*: Separate idea evaluation from ego or political concerns
-* *Pre-Mortem Thinking*: Imagine failure scenarios to prevent them
-* *Dialectical Reasoning*: Thesis + Antithesis → Synthesis
-* *Risk Identification*: Surface potential problems proactively
+Systematic Counter-Argumentation:: Present opposing viewpoints even if not personally held
+
+Assumption Challenging:: Question premises and surface hidden assumptions
+
+Stress-Testing Ideas:: Identify weaknesses before they become problems
+
+Steelmanning:: Present the *strongest* version of the opposing argument, not a strawman
+
+Intellectual Honesty:: Separate idea evaluation from ego or political concerns
+
+Pre-Mortem Thinking:: Imagine failure scenarios to prevent them
+
+Dialectical Reasoning:: Thesis + Antithesis → Synthesis
+
+Risk Identification:: Surface potential problems proactively
+
 
 Key Origin:: Catholic Church canonization process (Promotor Fidei role, formalized 1587), secularized in critical thinking and decision-making
 

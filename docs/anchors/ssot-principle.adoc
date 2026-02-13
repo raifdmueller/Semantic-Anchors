@@ -8,14 +8,22 @@ Full Name:: Single Source of Truth
 
 *Core Concepts*:
 
-* *Conceptual principle*: Focuses on establishing trust and authority for data
-* *Authoritative source*: One canonical, trusted location for each piece of data
-* *Data integrity*: All consumers reference the same trusted source
-* *Version control*: Single source ensures consistent versioning
-* *Derived data*: Other representations are derived from the single source
-* *Trust and reliability*: The source is the definitive version when conflicts arise
-* *System of record*: The primary data store for critical business information
-* *Organizational practice*: Applied at the architecture and business process level
+Conceptual principle:: Focuses on establishing trust and authority for data
+
+Authoritative source:: One canonical, trusted location for each piece of data
+
+Data integrity:: All consumers reference the same trusted source
+
+Version control:: Single source ensures consistent versioning
+
+Derived data:: Other representations are derived from the single source
+
+Trust and reliability:: The source is the definitive version when conflicts arise
+
+System of record:: The primary data store for critical business information
+
+Organizational practice:: Applied at the architecture and business process level
+
 
 *Key Application Areas*:
 

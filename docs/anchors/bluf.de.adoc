@@ -11,14 +11,22 @@ Auch bekannt als:: Direkte Antwortformat, Schlussfolgerung-zuerst-Kommunikation
 
 *Kernkonzepte*:
 
-* *Schlussfolgerung zuerst*: Nennen Sie den Hauptpunkt, die Entscheidung oder Empfehlung sofort
-* *Umgekehrte Pyramide*: Wichtigste Information zuerst, unterstützende Details folgen
-* *Handlungsorientierung*: Beginnen Sie mit dem, was passieren muss oder was entschieden wurde
-* *Optimierung für beschäftigte Leser*: Ermöglicht zeitgepressten Lesern, Schlüsselinformationen sofort zu erfassen
-* *Unterstützende Belege folgen*: Detaillierte Begründung, Daten und Hintergrund kommen nach der Schlussfolgerung
-* *Scanbare Struktur*: Klare Hierarchie ermöglicht Lesern, an ihrer benötigten Tiefe zu stoppen
-* *Klarheit statt Spannung*: Kein narrativer Aufbau oder verzögerte Schlussfolgerungen
-* *Ein Satz zuerst*: Idealerweise ist das BLUF selbst ein einzelner, klarer Satz
+Schlussfolgerung zuerst:: Nennen Sie den Hauptpunkt, die Entscheidung oder Empfehlung sofort
+
+Umgekehrte Pyramide:: Wichtigste Information zuerst, unterstützende Details folgen
+
+Handlungsorientierung:: Beginnen Sie mit dem, was passieren muss oder was entschieden wurde
+
+Optimierung für beschäftigte Leser:: Ermöglicht zeitgepressten Lesern, Schlüsselinformationen sofort zu erfassen
+
+Unterstützende Belege folgen:: Detaillierte Begründung, Daten und Hintergrund kommen nach der Schlussfolgerung
+
+Scanbare Struktur:: Klare Hierarchie ermöglicht Lesern, an ihrer benötigten Tiefe zu stoppen
+
+Klarheit statt Spannung:: Kein narrativer Aufbau oder verzögerte Schlussfolgerungen
+
+Ein Satz zuerst:: Idealerweise ist das BLUF selbst ein einzelner, klarer Satz
+
 
 Schlüsselvertreter:: US-Militär (Army writing standards), weithin in Wirtschaft und Regierung übernommen
 

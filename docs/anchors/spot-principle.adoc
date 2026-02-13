@@ -8,13 +8,20 @@ Full Name:: Single Point of Truth
 
 *Core Concepts*:
 
-* *Implementation pattern*: Focuses on where and how data/logic is stored and accessed
-* *Centralized location*: Each piece of information resides in exactly one place
-* *Reference relationships*: Other locations reference the single point rather than duplicate it
-* *Data consistency*: Eliminates synchronization issues and conflicting data
-* *Update propagation*: Changes at the single point automatically affect all references
-* *Clear ownership*: Explicit responsibility for maintaining each piece of truth
-* *Code-level practice*: Applied at the code and system design level
+Implementation pattern:: Focuses on where and how data/logic is stored and accessed
+
+Centralized location:: Each piece of information resides in exactly one place
+
+Reference relationships:: Other locations reference the single point rather than duplicate it
+
+Data consistency:: Eliminates synchronization issues and conflicting data
+
+Update propagation:: Changes at the single point automatically affect all references
+
+Clear ownership:: Explicit responsibility for maintaining each piece of truth
+
+Code-level practice:: Applied at the code and system design level
+
 
 *When to Use*:
 

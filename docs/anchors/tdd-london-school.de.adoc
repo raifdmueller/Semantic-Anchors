@@ -1,0 +1,26 @@
+= TDD, London School
+:categories: testing-quality
+:roles: software-developer, qa-engineer, software-architect
+:proponents: Steve Freeman, Nat Pryce ("Growing Object-Oriented Software, Guided by Tests")
+
+[%collapsible]
+====
+*Auch bekannt als*: Mockist TDD, Outside-In TDD
+
+*Kernkonzepte*:
+
+* *Mock-heavy Testing*: Intensive Nutzung von Test Doubles (Mocks, Stubs) zur Isolation von Units
+* *Outside-In-Entwicklung*: Beginnen von den äußersten Schichten (UI, API) und nach innen arbeiten
+* *Interaktionsbasiertes Testen*: Fokus auf Verifikation von Interaktionen zwischen Objekten
+* *Verhaltensverifikation*: Testen, wie Objekte zusammenarbeiten, statt Zustand
+* *Interface Discovery*: Tests nutzen, um Interfaces zu entdecken und zu definieren
+* *Walking Skeleton*: End-to-End-Funktionalität früh aufbauen, dann Details ausfüllen
+
+*Schlüsselvertreter*: Steve Freeman, Nat Pryce ("Growing Object-Oriented Software, Guided by Tests")
+
+*Wann zu verwenden*:
+
+* Komplexe Systeme mit vielen kollaborierenden Objekten
+* Beim Design von APIs und Schnittstellen
+* Verteilte Systeme, wo Integration kostspielig ist
+====

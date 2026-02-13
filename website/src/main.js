@@ -4,7 +4,7 @@ import { initTheme, toggleTheme, currentTheme } from './theme.js'
 import { renderHeader } from './components/header.js'
 import { renderMain } from './components/main-content.js'
 import { renderFooter } from './components/footer.js'
-import { renderCardGrid, initCardGrid, applyCardFilters } from './components/card-grid.js'
+import { renderCardGrid, initCardGrid, applyCardFilters, updateAnchorCount } from './components/card-grid.js'
 import { fetchData } from './utils/data-loader.js'
 import { createModal, showAnchorDetails } from './components/anchor-modal.js'
 import { buildSearchIndex } from './utils/search-index.js'
@@ -12,6 +12,36 @@ import { initRouter, addRoute } from './utils/router.js'
 import { renderDocPage, loadDocContent } from './components/doc-page.js'
 
 const APP_VERSION = '0.4.0'
+
+// Global function for copying anchor links
+window.copyAnchorLink = async function(anchorId) {
+  const url = `${window.location.origin}${window.location.pathname}#/anchor/${anchorId}`
+
+  try {
+    await navigator.clipboard.writeText(url)
+
+    // Show toast notification
+    window.showToast(i18n.t('card.linkCopied'))
+  } catch (err) {
+    console.error('Failed to copy link:', err)
+  }
+}
+
+// Global toast notification function
+window.showToast = function(message) {
+  // Create toast element
+  const toast = document.createElement('div')
+  toast.className = 'fixed bottom-4 right-4 bg-green-600 text-white px-4 py-2 rounded-lg shadow-lg z-50 animate-fade-in'
+  toast.textContent = message
+
+  document.body.appendChild(toast)
+
+  // Remove after 2 seconds
+  setTimeout(() => {
+    toast.classList.add('animate-fade-out')
+    setTimeout(() => toast.remove(), 300)
+  }, 2000)
+}
 
 let appData = null
 
@@ -40,6 +70,7 @@ function initApp() {
   updateThemeIcon()
   bindThemeToggle()
   bindLanguageToggle()
+  bindMobileMenu()
   updateActiveNavLink()
 
   // Initialize router
@@ -132,6 +163,9 @@ async function initCardGridVisualization() {
     // Initialize card event handlers
     initCardGrid()
 
+    // Initialize anchor count
+    updateAnchorCount(data.anchors.length, data.anchors.length)
+
     // Build search index in background
     buildSearchIndex(data.anchors).then(() => {
       console.log('✓ Full-text search ready')
@@ -147,6 +181,12 @@ async function initCardGridVisualization() {
     // Bind role filter
     const roleFilter = document.getElementById('role-filter')
     if (roleFilter && data.roles) {
+      // Clear existing options (except the first "All Roles" option)
+      while (roleFilter.options.length > 1) {
+        roleFilter.remove(1)
+      }
+
+      // Add role options
       data.roles.forEach(role => {
         const option = document.createElement('option')
         option.value = role.id
@@ -154,7 +194,11 @@ async function initCardGridVisualization() {
         roleFilter.appendChild(option)
       })
 
-      roleFilter.addEventListener('change', (e) => {
+      // Remove existing listener and add new one
+      const newRoleFilter = roleFilter.cloneNode(true)
+      roleFilter.parentNode.replaceChild(newRoleFilter, roleFilter)
+
+      newRoleFilter.addEventListener('change', (e) => {
         const searchQuery = document.getElementById('search-input')?.value || ''
         applyCardFilters(e.target.value, searchQuery)
       })
@@ -163,7 +207,11 @@ async function initCardGridVisualization() {
     // Bind search input
     const searchInput = document.getElementById('search-input')
     if (searchInput) {
-      searchInput.addEventListener('input', (e) => {
+      // Remove existing listener and add new one
+      const newSearchInput = searchInput.cloneNode(true)
+      searchInput.parentNode.replaceChild(newSearchInput, searchInput)
+
+      newSearchInput.addEventListener('input', (e) => {
         const roleId = document.getElementById('role-filter')?.value || ''
         applyCardFilters(roleId, e.target.value)
       })
@@ -211,6 +259,71 @@ function bindLanguageToggle() {
     toggle.textContent = i18n.currentLang() === 'en' ? 'DE' : 'EN'
     applyTranslations()
     updateThemeIcon()
+  })
+
+  // Listen for language changes to reload content
+  document.addEventListener('langchange', handleLanguageChange)
+}
+
+function handleLanguageChange() {
+  const currentRoute = window.location.hash.slice(1) || '/'
+
+  // Reload documentation pages
+  if (currentRoute === '/about') {
+    loadDocContent('docs/about.adoc')
+  } else if (currentRoute === '/contributing') {
+    loadDocContent('CONTRIBUTING.adoc')
+  } else if (currentRoute === '/') {
+    // Re-render card grid with updated translations
+    if (appData) {
+      const container = document.getElementById('main-content')
+      if (container) {
+        container.innerHTML = renderCardGrid(appData.categories, appData.anchors)
+        initCardGrid()
+      }
+    }
+  }
+
+  // Reload anchor modal content if it's open
+  const modal = document.getElementById('anchor-modal')
+  if (modal && !modal.classList.contains('hidden')) {
+    // Get the current anchor ID from the modal title or content
+    // For now, we'll close the modal as we don't have a way to track the current anchor ID
+    // TODO: Track current anchor ID for reload on language change
+    const closeEvent = new Event('click')
+    modal.querySelector('#modal-close')?.dispatchEvent(closeEvent)
+  }
+}
+
+function bindMobileMenu() {
+  const menuToggle = document.getElementById('mobile-menu-toggle')
+  const mobileMenu = document.getElementById('mobile-menu')
+
+  if (!menuToggle || !mobileMenu) return
+
+  menuToggle.addEventListener('click', () => {
+    const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true'
+    menuToggle.setAttribute('aria-expanded', !isExpanded)
+    mobileMenu.classList.toggle('hidden')
+  })
+
+  // Close menu when a link is clicked
+  const mobileNavLinks = document.querySelectorAll('.mobile-nav-link')
+  mobileNavLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      menuToggle.setAttribute('aria-expanded', 'false')
+      mobileMenu.classList.add('hidden')
+    })
+  })
+
+  // Close menu when clicking outside
+  document.addEventListener('click', (e) => {
+    if (!menuToggle.contains(e.target) && !mobileMenu.contains(e.target)) {
+      if (!mobileMenu.classList.contains('hidden')) {
+        menuToggle.setAttribute('aria-expanded', 'false')
+        mobileMenu.classList.add('hidden')
+      }
+    }
   })
 }
 

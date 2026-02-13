@@ -88,6 +88,7 @@ function renderAnchorCard(anchor, categoryColor) {
   const roleText = rolesCount === 1 ? i18n.t('card.roles') : i18n.t('card.rolesPlural')
   const tagsText = i18n.t('card.tags')
   const editTitle = i18n.t('card.edit')
+  const copyLinkTitle = i18n.t('card.copyLink')
 
   return `
     <article
@@ -101,19 +102,32 @@ function renderAnchorCard(anchor, categoryColor) {
     >
       <div class="anchor-card-header">
         <h3 class="anchor-card-title">${anchor.title}</h3>
-        <a
-          href="${githubEditUrl}"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="anchor-edit-btn"
-          title="${editTitle}"
-          onclick="event.stopPropagation()"
-          data-i18n-title="card.edit"
-        >
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path>
-          </svg>
-        </a>
+        <div class="flex gap-1">
+          <button
+            class="anchor-copy-link-btn"
+            title="${copyLinkTitle}"
+            onclick="event.stopPropagation(); window.copyAnchorLink('${anchor.id}')"
+            data-i18n-title="card.copyLink"
+            aria-label="${copyLinkTitle}"
+          >
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"></path>
+            </svg>
+          </button>
+          <a
+            href="${githubEditUrl}"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="anchor-edit-btn"
+            title="${editTitle}"
+            onclick="event.stopPropagation()"
+            data-i18n-title="card.edit"
+          >
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path>
+            </svg>
+          </a>
+        </div>
       </div>
 
       ${anchor.proponents ? `
@@ -145,6 +159,10 @@ function renderAnchorCard(anchor, categoryColor) {
   `
 }
 
+// Store handler references to prevent duplicate listeners
+let clickHandler = null
+let keydownHandler = null
+
 /**
  * Initialize card grid event handlers
  */
@@ -152,8 +170,16 @@ export function initCardGrid() {
   const container = document.getElementById('main-content')
   if (!container) return
 
+  // Remove existing listeners if any
+  if (clickHandler) {
+    container.removeEventListener('click', clickHandler)
+  }
+  if (keydownHandler) {
+    container.removeEventListener('keydown', keydownHandler)
+  }
+
   // Click handler using event delegation
-  container.addEventListener('click', (e) => {
+  clickHandler = (e) => {
     const card = e.target.closest('.anchor-card')
     if (card) {
       const anchorId = card.dataset.anchor
@@ -162,10 +188,11 @@ export function initCardGrid() {
       })
       document.dispatchEvent(event)
     }
-  })
+  }
+  container.addEventListener('click', clickHandler)
 
   // Keyboard handler (Enter/Space on focused card)
-  container.addEventListener('keydown', (e) => {
+  keydownHandler = (e) => {
     if (e.key === 'Enter' || e.key === ' ') {
       const card = e.target.closest('.anchor-card')
       if (card) {
@@ -177,7 +204,8 @@ export function initCardGrid() {
         document.dispatchEvent(event)
       }
     }
-  })
+  }
+  container.addEventListener('keydown', keydownHandler)
 }
 
 /**
@@ -252,6 +280,8 @@ export function applyCardFilters(roleId, searchQuery) {
     matchingAnchorIds = new Set(performFullTextSearch(lowerQuery))
   }
 
+  let visibleCount = 0
+
   cards.forEach(card => {
     // Role filter
     const roles = card.dataset.roles.split(',').filter(Boolean)
@@ -274,7 +304,9 @@ export function applyCardFilters(roleId, searchQuery) {
       }
     }
 
-    card.style.display = (roleMatch && searchMatch) ? 'block' : 'none'
+    const isVisible = roleMatch && searchMatch
+    card.style.display = isVisible ? 'block' : 'none'
+    if (isVisible) visibleCount++
   })
 
   // Hide empty sections
@@ -283,4 +315,18 @@ export function applyCardFilters(roleId, searchQuery) {
       .filter(card => card.style.display !== 'none')
     section.style.display = visibleCards.length > 0 ? 'block' : 'none'
   })
+
+  // Update counter
+  updateAnchorCount(visibleCount, cards.length)
+}
+
+/**
+ * Update the anchor counter display
+ */
+export function updateAnchorCount(visible, total) {
+  const visibleCountEl = document.getElementById('visible-count')
+  const totalCountEl = document.getElementById('total-count')
+
+  if (visibleCountEl) visibleCountEl.textContent = visible
+  if (totalCountEl) totalCountEl.textContent = total
 }

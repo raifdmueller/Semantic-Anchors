@@ -1,0 +1,26 @@
+= TDD, Chicago School
+:categories: testing-quality
+:roles: software-developer, qa-engineer
+:proponents: Kent Beck, Martin Fowler
+
+[%collapsible]
+====
+*Auch bekannt als*: Klassisches TDD, Detroit School
+
+*Kernkonzepte*:
+
+* *Zustandsbasiertes Testen*: Zustand von Objekten nach Operationen überprüfen
+* *Minimales Mocking*: Echte Objekte verwenden, wann immer möglich; nur externe Abhängigkeiten mocken
+* *Inside-Out-Entwicklung*: Mit Kern-Domänenlogik beginnen und nach außen bauen
+* *Einfachheitsfokus*: Emergentes Design durch Refactoring
+* *Red-Green-Refactor*: Der fundamentale TDD-Zyklus
+* *YAGNI*: You Aren't Gonna Need It - vorzeitige Abstraktion vermeiden
+
+*Schlüsselvertreter*: Kent Beck, Martin Fowler
+
+*Wann zu verwenden*:
+
+* Domain-Driven-Design-Projekte
+* Wenn Geschäftslogik zentral ist
+* Kleinere, kohäsive Module
+====

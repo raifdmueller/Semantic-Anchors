@@ -1,0 +1,49 @@
+= SOTA (State-of-the-Art)
+:categories: development-workflow
+:roles: software-developer, data-scientist, consultant
+
+[%collapsible]
+====
+*Vollständiger Name*: State-of-the-Art
+
+*Kernkonzepte*:
+
+* *Neueste Ansätze*: Fokus auf die aktuellsten, modernsten Methoden und Techniken
+* *Forschungsbasiert*: Referenz auf aktuelle Forschungsarbeiten, Benchmarks und empirische Ergebnisse
+* *Vergleichsanalyse*: Vergleich neuer Ansätze mit bestehenden oder früheren Methoden
+* *Leistungsorientiert*: Betonung benchmark-führender und best-performanter Lösungen
+* *Aktuelle Informationen*: Bereitstellung aktueller, fundierter Informationen statt veralteter Praktiken
+* *Evidenzbasiert*: Untermauerung von Behauptungen mit neuesten Studien, Benchmarks und Real-World-Implementierungen
+* *Kontextbewusstsein*: Berücksichtigung der spezifischen Domäne und des Zeitrahmens für "State-of-the-Art"
+
+*Nutzungsmuster*:
+
+* "Lerne SOTA für [Thema]" - löst Recherche und umfassende Informationssammlung aus
+* "Was ist SOTA für [Thema]?" - fragt nach aktuellen Best Practices und Ansätzen
+* "Gib mir den SOTA-Ansatz für [Problem]" - bittet um modernste Lösungen
+
+*Beispiele*:
+
+* "Lerne SOTA für RAG-Implementierungen"
+* "Was ist SOTA für Code-Generierung in 2024?"
+* "Gib mir den SOTA-Ansatz für semantische Suche"
+* "Was ist der SOTA bei Transformer-Architekturen?"
+
+*Schlüsselvertreter*: Weit verbreitet in der ML/AI-Forschungsgemeinschaft
+
+*Wann zu verwenden*:
+
+* Recherche aktueller Best Practices in einer technischen Domäne
+* Vergleich verschiedener Ansätze zur Lösung eines Problems
+* Auf dem Laufenden bleiben bei sich schnell entwickelnden Feldern (AI/ML, Webtechnologien)
+* Technologieentscheidungen auf Basis aktueller Benchmarks treffen
+* Lernen über modernste Implementierungen
+* Vermeidung veralteter oder deprecated Ansätze
+
+*Warum es funktioniert*:
+
+* Stark vertreten in ML/AI-Papers, Benchmarks und technischen Diskussionen
+* Konsistente Bedeutung über Kontexte hinweg: "am besten performend" und "aktuellst"
+* Präziser Trigger für umfassendes Rechercheverhalten
+* Aktiviert forschungsorientierte Antwortmuster in LLMs
+====

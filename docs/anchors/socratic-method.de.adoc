@@ -1,0 +1,39 @@
+= Socratic Method
+:categories: dialogue-interaction
+:roles: educator, consultant, team-lead
+
+[%collapsible]
+====
+*Vollständiger Name*: Sokratische Methode (auch Sokratischer Dialog, Elenchos)
+
+*Kernkonzepte*:
+
+* *Geführte Entdeckung*: Lernende durch Fragen zu Einsichten führen statt direkter Instruktion
+* *Elenchos*: Kreuzverhör-Technik zur Aufdeckung von Widersprüchen in Überzeugungen
+* *Maieutik*: "Hebammenkunst der Ideen" – anderen helfen, Wissen zu gebären, das sie bereits besitzen
+* *Aporie*: Zustand produktiver Verwirrung, der tiefere Untersuchung motiviert
+* *Fragenhierarchie*: Fortschritt von klärenden Fragen über Hinterfragen von Annahmen bis zur Erforschung von Implikationen
+* *Dialektische Methode*: Strukturierter Dialog, um durch begründete Argumentation zur Wahrheit zu gelangen
+* *Nicht-assertive Lehre*: Lehrer gibt Unwissenheit vor, führt durch Fragen
+* *Annahmen sichtbar machen*: Implizite Überzeugungen durch systematisches Befragen explizit machen
+* *Logische Konsistenz*: Ideen auf innere Kohärenz und Widersprüche testen
+
+*Schlüsselvertreter*: Sokrates (via Platons Dialoge, ~400 v. Chr.)
+
+*Historischer Kontext*: 2400+ Jahre philosophische Tradition, grundlegend für westliche Philosophie und kritisches Denken in der Bildung
+
+*Wann zu verwenden*:
+
+* Lehren komplexer Konzepte, wo Verständnis konstruiert, nicht übertragen werden muss
+* Jemandem helfen, ein Problem durchzuarbeiten, ohne direkte Antworten zu geben
+* Aufdecken versteckter Annahmen in Argumenten oder Designs
+* Erforschen der Implikationen einer Entscheidung oder Überzeugung
+* Förderung tieferen Denkens über ein Thema
+* Code-Review oder Design-Review, wo Verständnis, nicht Compliance, das Ziel ist
+
+*Verwandte Konzepte*:
+
+* Kognitive Lehre (Cognitive Apprenticeship)
+* Konstruktivistische Lerntheorie
+* Kritisches-Denken-Pädagogik
+====

@@ -1,0 +1,68 @@
+= todo.txt-flavoured Markdown
+:categories: development-workflow
+:roles: software-developer, team-lead, technical-writer
+:proponents: Combines GitHub-flavoured Markdown task lists with Gina Trapani's todo.txt format
+
+[%collapsible]
+====
+*Vollständiger Name*: todo.txt-flavoured Markdown Task Lists
+
+*Auch bekannt als*: Enhanced Markdown Tasks, Markdown with todo.txt conventions
+
+*Kernkonzepte*:
+
+* *Markdown-Aufgabenlisten*: Standard GitHub-flavoured Markdown-Syntax (`- [ ]` unvollständig, `- [x]` vollständig)
+* *Prioritätsmarkierungen*: Verwendet todo.txt-Prioritätsnotation `(A)`, `(B)`, `(C)`, wobei `(A)` höchste Priorität ist
+* *Projekt-Tags*: Präfix `+` zur Gruppierung verwandter Aufgaben (z.B. `+website`, `+semantic-anchors`)
+* *Kontext-Tags*: Präfix `@` zur Angabe von Ort/Tool/Kontext (z.B. `@computer`, `@home`, `@research`)
+* *Key-Value-Metadaten*: Strukturierte Datenpaare wie `due:YYYY-MM-DD`, `priority:high` oder benutzerdefinierte Felder
+* *Datumsverfolgung*: Erstellungs- und Abschlussdaten im ISO-Format (YYYY-MM-DD)
+* *Menschliche Lesbarkeit*: Klartext-Format, das ohne spezielle Tools lesbar bleibt
+* *Tool-agnostisch*: Kann sowohl von Markdown-Renderern als auch von todo.txt-Tools verarbeitet werden
+* *Durchsuchbar und filterbar*: Einfach durch Tags, Prioritäten oder Metadaten zu grep/suchen
+
+*Pattern Structure*:
+
+[source,markdown]
+----
+- [ ] (Priority) Task description +project @context key:value
+- [x] YYYY-MM-DD (Priority) Completed task +project
+----
+
+*Example Usage*:
+
+[source,markdown]
+----
+- [ ] (A) Review PR for +website @computer due:2024-02-03
+- [x] 2024-02-01 (B) Update documentation +docToolchain
+- [ ] (C) Research new feature +semantic-anchors @research
+- [ ] Call team meeting @phone +project-planning due:2024-02-05
+- [x] 2024-01-30 Fix bug in authentication +backend @computer
+----
+
+*Schlüsselvertreter*: Combines GitHub-flavoured Markdown task lists with Gina Trapani's todo.txt format
+
+*Original References*:
+
+* GitHub-flavoured Markdown task lists
+* todo.txt format specification by Gina Trapani
+
+*Wann zu verwenden*:
+
+* Task management in markdown documentation
+* Project planning and tracking in README files
+* GitHub issues and pull request descriptions requiring structured task lists
+* Personal productivity systems using plain text
+* Documentation that combines narrative with actionable tasks
+* When you need both human readability and programmatic parsing
+* Team collaboration where tasks need clear priorities and contexts
+* Generating consistent task list formats with LLMs
+
+*Benefits*:
+
+* Leverages two well-established, widely recognized standards
+* Renders nicely in GitHub, GitLab, and other markdown viewers
+* Remains fully functional in plain text editors
+* Enables rich metadata without sacrificing readability
+* Facilitates both manual and automated task tracking
+====

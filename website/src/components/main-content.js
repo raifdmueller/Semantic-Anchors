@@ -1,14 +1,15 @@
+import { i18n } from '../i18n.js'
+
 export function renderMain() {
   return `
     <main class="flex-1">
       <div class="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
         <section class="mb-8">
-          <h2 class="text-2xl font-bold text-[var(--color-text)] mb-2">
-            Explore Semantic Anchors
+          <h2 class="text-2xl font-bold text-[var(--color-text)] mb-2" data-i18n="main.heading">
+            ${i18n.t('main.heading')}
           </h2>
-          <p class="text-[var(--color-text-secondary)]">
-            A curated catalog of well-defined terms, methodologies, and frameworks
-            for effective LLM communication.
+          <p class="text-[var(--color-text-secondary)]" data-i18n="main.subheading">
+            ${i18n.t('main.subheading')}
           </p>
         </section>
 
@@ -16,20 +17,21 @@ export function renderMain() {
           <input
             id="search-input"
             type="search"
-            placeholder="Search anchors..."
-            class="rounded-lg border border-[var(--color-border)] bg-[var(--color-bg)] px-4 py-2 text-sm text-[var(--color-text)] placeholder-[var(--color-text-secondary)] focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)]"
+            data-i18n-placeholder="search.placeholder"
+            placeholder="${i18n.t('search.placeholder')}"
+            class="rounded-lg border border-[var(--color-border)] bg-[var(--color-bg)] px-4 py-2 text-sm text-[var(--color-text)] placeholder-[var(--color-text-secondary)] focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)] transition-colors duration-300"
           />
           <select
             id="role-filter"
-            class="rounded-lg border border-[var(--color-border)] bg-[var(--color-bg)] px-4 py-2 text-sm text-[var(--color-text)] focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)]"
+            class="rounded-lg border border-[var(--color-border)] bg-[var(--color-bg)] px-4 py-2 text-sm text-[var(--color-text)] focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)] transition-colors duration-300"
           >
-            <option value="">All Roles</option>
+            <option value="" data-i18n="filter.allRoles">${i18n.t('filter.allRoles')}</option>
           </select>
         </section>
 
-        <section id="treemap-container" class="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-secondary)] p-4" style="min-height: 500px;">
+        <section id="treemap-container" class="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-secondary)] p-4 transition-colors duration-300" style="min-height: 500px;">
           <div class="flex items-center justify-center h-full text-[var(--color-text-secondary)]">
-            <p>Treemap visualization will be rendered here.</p>
+            <p data-i18n="treemap.placeholder">${i18n.t('treemap.placeholder')}</p>
           </div>
         </section>
       </div>

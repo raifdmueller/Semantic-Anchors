@@ -1,5 +1,5 @@
 = Semantic Versioning (SemVer)
-:categories: uncategorized
+:categories: development-workflow
 :roles: software-developer, devops-engineer, product-owner
 
 [%collapsible]

@@ -1,5 +1,5 @@
 = User Story Mapping
-:categories: uncategorized
+:categories: requirements-engineering
 :roles: product-owner, business-analyst, team-lead, ux-designer
 
 [%collapsible]

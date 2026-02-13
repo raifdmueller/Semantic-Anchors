@@ -1,5 +1,5 @@
 = Pyramid Principle according to Barbara Minto
-:categories: uncategorized
+:categories: communication-presentation
 :roles: business-analyst, consultant, team-lead, technical-writer
 
 [%collapsible]

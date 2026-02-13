@@ -1,5 +1,5 @@
 = MADR
-:categories: uncategorized
+:categories: software-architecture
 :roles: software-architect, software-developer, team-lead
 :proponents: Oliver Kopp, Olaf Zimmermann (and MADR community)
 

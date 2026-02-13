@@ -1,5 +1,5 @@
 = Problem Space NVC
-:categories: uncategorized
+:categories: requirements-engineering
 :roles: business-analyst, product-owner, consultant, ux-designer
 
 [%collapsible]

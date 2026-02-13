@@ -1,5 +1,5 @@
 = BEM Methodology
-:categories: uncategorized
+:categories: development-workflow
 :roles: software-developer, ux-designer
 :proponents: Yandex development team
 

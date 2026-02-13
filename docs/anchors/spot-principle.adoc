@@ -1,5 +1,5 @@
 = SPOT (Single Point of Truth)
-:categories: uncategorized
+:categories: design-principles
 :roles: software-developer, software-architect
 
 [%collapsible]

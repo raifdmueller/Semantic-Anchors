@@ -1,5 +1,5 @@
 = Jobs To Be Done (JTBD)
-:categories: uncategorized
+:categories: strategic-planning
 :roles: product-owner, ux-designer, business-analyst
 :proponents: Clayton Christensen, Alan Klement, Bob Moesta
 

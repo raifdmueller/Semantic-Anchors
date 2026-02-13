@@ -1,5 +1,5 @@
 = SOTA (State-of-the-Art)
-:categories: uncategorized
+:categories: development-workflow
 :roles: software-developer, data-scientist, consultant
 
 [%collapsible]

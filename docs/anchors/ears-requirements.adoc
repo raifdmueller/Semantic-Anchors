@@ -1,5 +1,5 @@
 = EARS-Requirements
-:categories: uncategorized
+:categories: requirements-engineering
 :roles: business-analyst, qa-engineer, technical-writer
 
 [%collapsible]

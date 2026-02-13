@@ -1,5 +1,5 @@
 = TIMTOWTDI
-:categories: uncategorized
+:categories: development-workflow
 :roles: software-developer, software-architect, consultant, educator
 
 [%collapsible]

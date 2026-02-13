@@ -1,5 +1,5 @@
 = Control Chart (Shewhart)
-:categories: uncategorized
+:categories: statistical-methods
 :roles: data-scientist, devops-engineer, team-lead
 
 [%collapsible]

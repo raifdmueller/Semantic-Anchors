@@ -1,5 +1,5 @@
 = arc42 Architecture Documentation
-:categories: uncategorized
+:categories: software-architecture
 :roles: software-architect, technical-writer, team-lead
 :proponents: Gernot Starke, Peter Hruschka
 

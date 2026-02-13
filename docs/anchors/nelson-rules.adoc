@@ -1,5 +1,5 @@
 = Nelson Rules
-:categories: uncategorized
+:categories: statistical-methods
 :roles: data-scientist, devops-engineer
 
 [%collapsible]

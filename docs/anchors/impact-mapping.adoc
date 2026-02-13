@@ -1,5 +1,5 @@
 = Impact Mapping
-:categories: uncategorized
+:categories: strategic-planning
 :roles: product-owner, business-analyst, team-lead, consultant
 
 [%collapsible]

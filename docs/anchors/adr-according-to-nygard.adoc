@@ -1,5 +1,5 @@
 = ADR according to Nygard
-:categories: uncategorized
+:categories: software-architecture
 :roles: software-architect, software-developer, team-lead
 
 [%collapsible]

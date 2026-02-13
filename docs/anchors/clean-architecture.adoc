@@ -1,5 +1,5 @@
 = Clean Architecture
-:categories: uncategorized
+:categories: software-architecture
 :roles: software-architect, software-developer
 
 [%collapsible]

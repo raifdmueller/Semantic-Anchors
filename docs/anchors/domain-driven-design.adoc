@@ -1,5 +1,5 @@
 = Domain-Driven Design according to Evans
-:categories: uncategorized
+:categories: software-architecture
 :roles: software-architect, software-developer, business-analyst, team-lead
 
 [%collapsible]

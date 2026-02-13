@@ -1,5 +1,5 @@
 = Devil's Advocate
-:categories: uncategorized
+:categories: problem-solving
 :roles: software-architect, team-lead, consultant, qa-engineer
 
 [%collapsible]

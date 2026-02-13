@@ -1,5 +1,5 @@
 = Docs-as-Code according to Ralf D. Müller
-:categories: uncategorized
+:categories: documentation
 :roles: technical-writer, software-developer, devops-engineer
 
 [%collapsible]

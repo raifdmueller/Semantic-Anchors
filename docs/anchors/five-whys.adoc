@@ -1,5 +1,5 @@
 = Five Whys (Ohno)
-:categories: uncategorized
+:categories: problem-solving
 :roles: software-developer, qa-engineer, devops-engineer, team-lead
 
 [%collapsible]

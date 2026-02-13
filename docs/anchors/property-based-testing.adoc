@@ -1,5 +1,5 @@
 = Property-Based Testing
-:categories: uncategorized
+:categories: testing-quality
 :roles: software-developer, qa-engineer
 
 [%collapsible]

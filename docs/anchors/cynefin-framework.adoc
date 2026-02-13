@@ -1,5 +1,5 @@
 = Cynefin Framework
-:categories: uncategorized
+:categories: strategic-planning
 :roles: team-lead, consultant, product-owner, software-architect
 
 [%collapsible]

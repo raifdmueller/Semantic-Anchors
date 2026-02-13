@@ -1,5 +1,5 @@
 = Testing Pyramid
-:categories: uncategorized
+:categories: testing-quality
 :roles: software-developer, qa-engineer, team-lead, devops-engineer
 
 [%collapsible]

@@ -1,5 +1,5 @@
 = TDD, London School
-:categories: uncategorized
+:categories: testing-quality
 :roles: software-developer, qa-engineer, software-architect
 :proponents: Steve Freeman, Nat Pryce ("Growing Object-Oriented Software, Guided by Tests")
 

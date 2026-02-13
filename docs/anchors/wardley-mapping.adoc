@@ -1,5 +1,5 @@
 = Wardley Mapping
-:categories: uncategorized
+:categories: strategic-planning
 :roles: product-owner, software-architect, consultant, team-lead
 
 [%collapsible]

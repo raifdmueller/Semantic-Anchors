@@ -1,5 +1,5 @@
 = DRY (Don't Repeat Yourself)
-:categories: uncategorized
+:categories: design-principles
 :roles: software-developer, software-architect
 
 [%collapsible]

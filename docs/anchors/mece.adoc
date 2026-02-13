@@ -1,5 +1,5 @@
 = MECE Principle
-:categories: uncategorized
+:categories: communication-presentation
 :roles: business-analyst, consultant, software-architect, data-scientist
 
 [%collapsible]

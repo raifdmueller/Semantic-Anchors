@@ -3,7 +3,7 @@
     "id": "adr-according-to-nygard",
     "title": "ADR according to Nygard",
     "categories": [
-      "uncategorized"
+      "software-architecture"
     ],
     "roles": [
       "software-architect",
@@ -19,7 +19,7 @@
     "id": "arc42",
     "title": "arc42 Architecture Documentation",
     "categories": [
-      "uncategorized"
+      "software-architecture"
     ],
     "roles": [
       "software-architect",
@@ -38,7 +38,7 @@
     "id": "bem-methodology",
     "title": "BEM Methodology",
     "categories": [
-      "uncategorized"
+      "development-workflow"
     ],
     "roles": [
       "software-developer",
@@ -55,7 +55,7 @@
     "id": "bluf",
     "title": "BLUF (Bottom Line Up Front)",
     "categories": [
-      "uncategorized"
+      "communication-presentation"
     ],
     "roles": [
       "business-analyst",
@@ -75,7 +75,7 @@
     "id": "c4-diagrams",
     "title": "C4-Diagrams",
     "categories": [
-      "uncategorized"
+      "software-architecture"
     ],
     "roles": [
       "software-architect",
@@ -92,7 +92,7 @@
     "id": "chain-of-thought",
     "title": "Chain of Thought (CoT)",
     "categories": [
-      "uncategorized"
+      "problem-solving"
     ],
     "roles": [
       "software-developer",
@@ -112,7 +112,7 @@
     "id": "clean-architecture",
     "title": "Clean Architecture",
     "categories": [
-      "uncategorized"
+      "software-architecture"
     ],
     "roles": [
       "software-architect",
@@ -127,7 +127,7 @@
     "id": "control-chart-shewhart",
     "title": "Control Chart (Shewhart)",
     "categories": [
-      "uncategorized"
+      "statistical-methods"
     ],
     "roles": [
       "data-scientist",
@@ -143,7 +143,7 @@
     "id": "conventional-commits",
     "title": "Conventional Commits",
     "categories": [
-      "uncategorized"
+      "development-workflow"
     ],
     "roles": [
       "software-developer",
@@ -162,7 +162,7 @@
     "id": "cynefin-framework",
     "title": "Cynefin Framework",
     "categories": [
-      "uncategorized"
+      "strategic-planning"
     ],
     "roles": [
       "team-lead",
@@ -179,7 +179,7 @@
     "id": "devils-advocate",
     "title": "Devil&#8217;s Advocate",
     "categories": [
-      "uncategorized"
+      "problem-solving"
     ],
     "roles": [
       "software-architect",
@@ -196,7 +196,7 @@
     "id": "diataxis-framework",
     "title": "Diátaxis Framework",
     "categories": [
-      "uncategorized"
+      "documentation"
     ],
     "roles": [
       "technical-writer",
@@ -211,7 +211,7 @@
     "id": "docs-as-code",
     "title": "Docs-as-Code according to Ralf D. Müller",
     "categories": [
-      "uncategorized"
+      "documentation"
     ],
     "roles": [
       "technical-writer",
@@ -227,7 +227,7 @@
     "id": "domain-driven-design",
     "title": "Domain-Driven Design according to Evans",
     "categories": [
-      "uncategorized"
+      "software-architecture"
     ],
     "roles": [
       "software-architect",
@@ -244,7 +244,7 @@
     "id": "dry-principle",
     "title": "DRY (Don&#8217;t Repeat Yourself)",
     "categories": [
-      "uncategorized"
+      "design-principles"
     ],
     "roles": [
       "software-developer",
@@ -259,7 +259,7 @@
     "id": "ears-requirements",
     "title": "EARS-Requirements",
     "categories": [
-      "uncategorized"
+      "requirements-engineering"
     ],
     "roles": [
       "business-analyst",
@@ -275,7 +275,7 @@
     "id": "feynman-technique",
     "title": "Feynman Technique",
     "categories": [
-      "uncategorized"
+      "problem-solving"
     ],
     "roles": [
       "software-developer",
@@ -292,7 +292,7 @@
     "id": "five-whys",
     "title": "Five Whys (Ohno)",
     "categories": [
-      "uncategorized"
+      "problem-solving"
     ],
     "roles": [
       "software-developer",
@@ -309,7 +309,7 @@
     "id": "hexagonal-architecture",
     "title": "Hexagonal Architecture (Ports &amp; Adapters)",
     "categories": [
-      "uncategorized"
+      "software-architecture"
     ],
     "roles": [
       "software-architect",
@@ -324,7 +324,7 @@
     "id": "impact-mapping",
     "title": "Impact Mapping",
     "categories": [
-      "uncategorized"
+      "strategic-planning"
     ],
     "roles": [
       "product-owner",
@@ -341,7 +341,7 @@
     "id": "jobs-to-be-done",
     "title": "Jobs To Be Done (JTBD)",
     "categories": [
-      "uncategorized"
+      "strategic-planning"
     ],
     "roles": [
       "product-owner",
@@ -361,7 +361,7 @@
     "id": "madr",
     "title": "MADR",
     "categories": [
-      "uncategorized"
+      "software-architecture"
     ],
     "roles": [
       "software-architect",
@@ -380,7 +380,7 @@
     "id": "mece",
     "title": "MECE Principle",
     "categories": [
-      "uncategorized"
+      "communication-presentation"
     ],
     "roles": [
       "business-analyst",
@@ -397,7 +397,7 @@
     "id": "mental-model-according-to-naur",
     "title": "Mental Model according to Naur",
     "categories": [
-      "uncategorized"
+      "development-workflow"
     ],
     "roles": [
       "software-developer",
@@ -414,7 +414,7 @@
     "id": "mutation-testing",
     "title": "Mutation Testing",
     "categories": [
-      "uncategorized"
+      "testing-quality"
     ],
     "roles": [
       "software-developer",
@@ -434,7 +434,7 @@
     "id": "nelson-rules",
     "title": "Nelson Rules",
     "categories": [
-      "uncategorized"
+      "statistical-methods"
     ],
     "roles": [
       "data-scientist",
@@ -449,7 +449,7 @@
     "id": "problem-space-nvc",
     "title": "Problem Space NVC",
     "categories": [
-      "uncategorized"
+      "requirements-engineering"
     ],
     "roles": [
       "business-analyst",
@@ -466,7 +466,7 @@
     "id": "property-based-testing",
     "title": "Property-Based Testing",
     "categories": [
-      "uncategorized"
+      "testing-quality"
     ],
     "roles": [
       "software-developer",
@@ -481,7 +481,7 @@
     "id": "pugh-matrix",
     "title": "Pugh-Matrix",
     "categories": [
-      "uncategorized"
+      "strategic-planning"
     ],
     "roles": [
       "software-architect",
@@ -497,7 +497,7 @@
     "id": "pyramid-principle",
     "title": "Pyramid Principle according to Barbara Minto",
     "categories": [
-      "uncategorized"
+      "communication-presentation"
     ],
     "roles": [
       "business-analyst",
@@ -514,7 +514,7 @@
     "id": "rubber-duck-debugging",
     "title": "Rubber Duck Debugging",
     "categories": [
-      "uncategorized"
+      "problem-solving"
     ],
     "roles": [
       "software-developer",
@@ -529,7 +529,7 @@
     "id": "semantic-versioning",
     "title": "Semantic Versioning (SemVer)",
     "categories": [
-      "uncategorized"
+      "development-workflow"
     ],
     "roles": [
       "software-developer",
@@ -545,7 +545,7 @@
     "id": "socratic-method",
     "title": "Socratic Method",
     "categories": [
-      "uncategorized"
+      "dialogue-interaction"
     ],
     "roles": [
       "educator",
@@ -561,7 +561,7 @@
     "id": "solid-principles",
     "title": "SOLID Principles",
     "categories": [
-      "uncategorized"
+      "design-principles"
     ],
     "roles": [
       "software-developer",
@@ -578,7 +578,7 @@
     "id": "sota",
     "title": "SOTA (State-of-the-Art)",
     "categories": [
-      "uncategorized"
+      "development-workflow"
     ],
     "roles": [
       "software-developer",
@@ -594,7 +594,7 @@
     "id": "spc",
     "title": "SPC (Statistical Process Control)",
     "categories": [
-      "uncategorized"
+      "statistical-methods"
     ],
     "roles": [
       "data-scientist",
@@ -615,7 +615,7 @@
     "id": "spot-principle",
     "title": "SPOT (Single Point of Truth)",
     "categories": [
-      "uncategorized"
+      "design-principles"
     ],
     "roles": [
       "software-developer",
@@ -630,7 +630,7 @@
     "id": "ssot-principle",
     "title": "SSOT (Single Source of Truth)",
     "categories": [
-      "uncategorized"
+      "design-principles"
     ],
     "roles": [
       "software-architect",
@@ -646,7 +646,7 @@
     "id": "tdd-chicago-school",
     "title": "TDD, Chicago School",
     "categories": [
-      "uncategorized"
+      "testing-quality"
     ],
     "roles": [
       "software-developer",
@@ -664,7 +664,7 @@
     "id": "tdd-london-school",
     "title": "TDD, London School",
     "categories": [
-      "uncategorized"
+      "testing-quality"
     ],
     "roles": [
       "software-developer",
@@ -684,7 +684,7 @@
     "id": "testing-pyramid",
     "title": "Testing Pyramid",
     "categories": [
-      "uncategorized"
+      "testing-quality"
     ],
     "roles": [
       "software-developer",
@@ -701,7 +701,7 @@
     "id": "timtowtdi",
     "title": "TIMTOWTDI",
     "categories": [
-      "uncategorized"
+      "development-workflow"
     ],
     "roles": [
       "software-developer",
@@ -718,7 +718,7 @@
     "id": "todotxt-flavoured-markdown",
     "title": "todo.txt-flavoured Markdown",
     "categories": [
-      "uncategorized"
+      "development-workflow"
     ],
     "roles": [
       "software-developer",
@@ -736,7 +736,7 @@
     "id": "user-story-mapping",
     "title": "User Story Mapping",
     "categories": [
-      "uncategorized"
+      "requirements-engineering"
     ],
     "roles": [
       "product-owner",
@@ -753,7 +753,7 @@
     "id": "wardley-mapping",
     "title": "Wardley Mapping",
     "categories": [
-      "uncategorized"
+      "strategic-planning"
     ],
     "roles": [
       "product-owner",
@@ -770,7 +770,7 @@
     "id": "what-qualifies-as-a-semantic-anchor",
     "title": "The Spectrum of Semantic Anchors",
     "categories": [
-      "uncategorized"
+      "meta"
     ],
     "roles": [
       "educator",

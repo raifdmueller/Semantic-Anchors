@@ -1,5 +1,5 @@
 = SSOT (Single Source of Truth)
-:categories: uncategorized
+:categories: design-principles
 :roles: software-architect, data-scientist, business-analyst
 
 [%collapsible]

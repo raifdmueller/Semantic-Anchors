@@ -1,5 +1,5 @@
 = Socratic Method
-:categories: uncategorized
+:categories: dialogue-interaction
 :roles: educator, consultant, team-lead
 
 [%collapsible]

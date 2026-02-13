@@ -1,5 +1,5 @@
 = SPC (Statistical Process Control)
-:categories: uncategorized
+:categories: statistical-methods
 :roles: data-scientist, devops-engineer, team-lead, qa-engineer
 :proponents: Walter A. Shewhart (founder), W. Edwards Deming (dissemination), Western Electric Company
 

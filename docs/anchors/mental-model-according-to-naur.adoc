@@ -1,5 +1,5 @@
 = Mental Model according to Naur
-:categories: uncategorized
+:categories: development-workflow
 :roles: software-developer, team-lead, educator, consultant
 
 [%collapsible]

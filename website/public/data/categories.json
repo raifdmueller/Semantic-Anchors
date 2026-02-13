@@ -1,13 +1,76 @@
 [
   {
-    "id": "testing-quality",
-    "name": "Testing & Quality Assurance",
+    "id": "communication-presentation",
+    "name": "Communication & Presentation",
     "anchors": [
-      "mutation-testing",
-      "property-based-testing",
-      "tdd-chicago-school",
-      "tdd-london-school",
-      "testing-pyramid"
+      "bluf",
+      "mece",
+      "pyramid-principle"
+    ]
+  },
+  {
+    "id": "design-principles",
+    "name": "Design Principles & Patterns",
+    "anchors": [
+      "dry-principle",
+      "solid-principles",
+      "spot-principle",
+      "ssot-principle"
+    ]
+  },
+  {
+    "id": "development-workflow",
+    "name": "Development Workflow",
+    "anchors": [
+      "bem-methodology",
+      "conventional-commits",
+      "mental-model-according-to-naur",
+      "semantic-versioning",
+      "sota",
+      "timtowtdi",
+      "todotxt-flavoured-markdown"
+    ]
+  },
+  {
+    "id": "dialogue-interaction",
+    "name": "Dialogue Interaction",
+    "anchors": [
+      "socratic-method"
+    ]
+  },
+  {
+    "id": "documentation",
+    "name": "Documentation",
+    "anchors": [
+      "diataxis-framework",
+      "docs-as-code"
+    ]
+  },
+  {
+    "id": "meta",
+    "name": "Meta",
+    "anchors": [
+      "what-qualifies-as-a-semantic-anchor"
+    ]
+  },
+  {
+    "id": "problem-solving",
+    "name": "Problem Solving",
+    "anchors": [
+      "chain-of-thought",
+      "devils-advocate",
+      "feynman-technique",
+      "five-whys",
+      "rubber-duck-debugging"
+    ]
+  },
+  {
+    "id": "requirements-engineering",
+    "name": "Requirements Engineering",
+    "anchors": [
+      "ears-requirements",
+      "problem-space-nvc",
+      "user-story-mapping"
     ]
   },
   {
@@ -24,84 +87,6 @@
     ]
   },
   {
-    "id": "design-principles",
-    "name": "Design Principles",
-    "anchors": [
-      "dry-principle",
-      "solid-principles",
-      "spot-principle",
-      "ssot-principle"
-    ]
-  },
-  {
-    "id": "requirements-engineering",
-    "name": "Requirements Engineering",
-    "anchors": [
-      "ears-requirements",
-      "problem-space-nvc",
-      "user-story-mapping"
-    ]
-  },
-  {
-    "id": "strategic-planning",
-    "name": "Strategic Planning & Decision-Making",
-    "anchors": [
-      "cynefin-framework",
-      "impact-mapping",
-      "jobs-to-be-done",
-      "pugh-matrix",
-      "wardley-mapping"
-    ]
-  },
-  {
-    "id": "documentation",
-    "name": "Documentation",
-    "anchors": [
-      "diataxis-framework",
-      "docs-as-code"
-    ]
-  },
-  {
-    "id": "communication-presentation",
-    "name": "Communication & Presentation",
-    "anchors": [
-      "bluf",
-      "mece",
-      "pyramid-principle"
-    ]
-  },
-  {
-    "id": "development-workflow",
-    "name": "Development Workflow & Practices",
-    "anchors": [
-      "bem-methodology",
-      "conventional-commits",
-      "mental-model-according-to-naur",
-      "semantic-versioning",
-      "sota",
-      "timtowtdi",
-      "todotxt-flavoured-markdown"
-    ]
-  },
-  {
-    "id": "problem-solving",
-    "name": "Problem-Solving & Reasoning",
-    "anchors": [
-      "chain-of-thought",
-      "devils-advocate",
-      "feynman-technique",
-      "five-whys",
-      "rubber-duck-debugging"
-    ]
-  },
-  {
-    "id": "dialogue-interaction",
-    "name": "Dialogue & Interaction Patterns",
-    "anchors": [
-      "socratic-method"
-    ]
-  },
-  {
     "id": "statistical-methods",
     "name": "Statistical Methods & Process Monitoring",
     "anchors": [
@@ -111,10 +96,25 @@
     ]
   },
   {
-    "id": "meta",
-    "name": "Meta: Understanding Semantic Anchors",
+    "id": "strategic-planning",
+    "name": "Strategic Planning",
     "anchors": [
-      "what-qualifies-as-a-semantic-anchor"
+      "cynefin-framework",
+      "impact-mapping",
+      "jobs-to-be-done",
+      "pugh-matrix",
+      "wardley-mapping"
+    ]
+  },
+  {
+    "id": "testing-quality",
+    "name": "Testing & Quality Practices",
+    "anchors": [
+      "mutation-testing",
+      "property-based-testing",
+      "tdd-chicago-school",
+      "tdd-london-school",
+      "testing-pyramid"
     ]
   }
 ]

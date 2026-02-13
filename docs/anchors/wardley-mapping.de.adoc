@@ -6,24 +6,24 @@
 ====
 *Kernkonzepte*:
 
-* *Value chain*: Map components from user needs down
-* *Evolution axis*: Genesis → Custom → Product → Commodity
-* *Movement*: Components naturally evolve over time
-* *Situational awareness*: Understanding the landscape before deciding
-* *Gameplay patterns*: Common strategic moves
-* *Climatic patterns*: Forces that affect all players
-* *Doctrine*: Universal principles of good strategy
-* *Inertia*: Resistance to change in organizations
-* *Strategic planning*: Visual approach to strategy
-* *Build-Buy-Partner decisions*: Based on evolution stage
+* *Wertkette*: Komponenten von Nutzerbedürfnissen abwärts kartieren
+* *Evolutionsachse*: Genesis → Custom → Product → Commodity
+* *Bewegung*: Komponenten entwickeln sich natürlich über die Zeit
+* *Situationsbewusstsein*: Die Landschaft verstehen, bevor man entscheidet
+* *Gameplay-Muster*: Häufige strategische Züge
+* *Klimatische Muster*: Kräfte, die alle Spieler betreffen
+* *Doktrin*: Universelle Prinzipien guter Strategie
+* *Trägheit*: Widerstand gegen Veränderung in Organisationen
+* *Strategische Planung*: Visueller Ansatz zur Strategie
+* *Build-Buy-Partner-Entscheidungen*: Basierend auf Evolutionsstufe
 
 *Schlüsselvertreter*: Simon Wardley
 
 *Wann zu verwenden*:
 
-* Strategic technology planning
-* Build vs. buy decisions
-* Understanding competitive landscape
-* Communicating strategy visually
-* Identifying opportunities for disruption
+* Strategische Technologieplanung
+* Build-vs-Buy-Entscheidungen
+* Verstehen der Wettbewerbslandschaft
+* Visuelle Kommunikation von Strategie
+* Identifikation von Disruptions-Möglichkeiten
 ====

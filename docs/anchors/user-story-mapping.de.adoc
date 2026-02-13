@@ -8,22 +8,22 @@
 
 *Kernkonzepte*:
 
-* *Narrative flow*: Horizontal arrangement of user activities
-* *User activities*: High-level tasks users perform
-* *User tasks*: Steps within activities
-* *Walking skeleton*: Minimal end-to-end functionality first
-* *Release planning*: Horizontal slices for releases
-* *Prioritization by value*: Vertical ordering by importance
-* *Shared understanding*: Collaborative mapping builds team alignment
-* *Big picture view*: See the whole journey, not just backlog items
-* *Opportunity for conversation*: Stories as placeholders for discussion
+* *Narrativer Fluss*: Horizontale Anordnung von Nutzeraktivitäten
+* *Nutzeraktivitäten*: High-Level-Aufgaben, die Nutzer ausführen
+* *Nutzeraufgaben*: Schritte innerhalb von Aktivitäten
+* *Walking Skeleton*: Minimale End-to-End-Funktionalität zuerst
+* *Release-Planung*: Horizontale Scheiben für Releases
+* *Priorisierung nach Wert*: Vertikale Ordnung nach Wichtigkeit
+* *Gemeinsames Verständnis*: Kollaboratives Mapping baut Team-Alignment auf
+* *Big-Picture-Sicht*: Die gesamte Journey sehen, nicht nur Backlog-Items
+* *Gelegenheit für Konversation*: Stories als Platzhalter für Diskussion
 
 *Schlüsselvertreter*: Jeff Patton ("User Story Mapping", 2014)
 
 *Wann zu verwenden*:
 
-* Planning new products or major features
-* When backlog feels overwhelming or fragmented
-* Release planning for incremental delivery
-* Onboarding team members to product vision
+* Planung neuer Produkte oder Major Features
+* Wenn das Backlog überwältigend oder fragmentiert erscheint
+* Release-Planung für inkrementelle Auslieferung
+* Onboarding von Teammitgliedern zur Produktvision
 ====

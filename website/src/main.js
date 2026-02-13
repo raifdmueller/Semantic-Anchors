@@ -70,6 +70,7 @@ function initApp() {
   updateThemeIcon()
   bindThemeToggle()
   bindLanguageToggle()
+  bindMobileMenu()
   updateActiveNavLink()
 
   // Initialize router
@@ -292,6 +293,38 @@ function handleLanguageChange() {
     const closeEvent = new Event('click')
     modal.querySelector('#modal-close')?.dispatchEvent(closeEvent)
   }
+}
+
+function bindMobileMenu() {
+  const menuToggle = document.getElementById('mobile-menu-toggle')
+  const mobileMenu = document.getElementById('mobile-menu')
+
+  if (!menuToggle || !mobileMenu) return
+
+  menuToggle.addEventListener('click', () => {
+    const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true'
+    menuToggle.setAttribute('aria-expanded', !isExpanded)
+    mobileMenu.classList.toggle('hidden')
+  })
+
+  // Close menu when a link is clicked
+  const mobileNavLinks = document.querySelectorAll('.mobile-nav-link')
+  mobileNavLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      menuToggle.setAttribute('aria-expanded', 'false')
+      mobileMenu.classList.add('hidden')
+    })
+  })
+
+  // Close menu when clicking outside
+  document.addEventListener('click', (e) => {
+    if (!menuToggle.contains(e.target) && !mobileMenu.contains(e.target)) {
+      if (!mobileMenu.classList.contains('hidden')) {
+        menuToggle.setAttribute('aria-expanded', 'false')
+        mobileMenu.classList.add('hidden')
+      }
+    }
+  })
 }
 
 document.addEventListener('DOMContentLoaded', initApp)

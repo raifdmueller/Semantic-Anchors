@@ -20,6 +20,9 @@ export function applyTranslations() {
   document.querySelectorAll('[data-i18n-aria]').forEach(el => {
     el.setAttribute('aria-label', i18n.t(el.dataset.i18nAria))
   })
+  document.querySelectorAll('[data-i18n-title]').forEach(el => {
+    el.setAttribute('title', i18n.t(el.dataset.i18nTitle))
+  })
 }
 
 export const i18n = {
@@ -30,8 +33,10 @@ export const i18n = {
   },
 
   t(key) {
-    const dict = translations[currentLang] || translations[DEFAULT_LANG]
-    return dict[key] ?? key
+    const dict = translations[currentLang]
+    const fallback = translations[DEFAULT_LANG]
+    // Return translation in current language, or fallback to English, or return key
+    return dict[key] ?? fallback[key] ?? key
   },
 
   currentLang() {

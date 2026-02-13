@@ -59,6 +59,11 @@ body {
   @apply text-gray-900 dark:text-gray-100;
 }
 
+/* Ensure category name is visible in dark mode */
+.category-heading span[data-i18n^="categories."] {
+  @apply text-gray-900 dark:text-gray-100;
+}
+
 .category-icon {
   @apply w-10 h-10 rounded-lg flex-shrink-0;
   @apply shadow-md;

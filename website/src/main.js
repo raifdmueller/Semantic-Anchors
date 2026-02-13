@@ -7,7 +7,7 @@ import { renderFooter } from './components/footer.js'
 import { initTreemap, updateTreemapByRole, updateTreemapBySearch } from './components/treemap.js'
 import { createModal, showAnchorDetails } from './components/anchor-modal.js'
 
-const APP_VERSION = '0.2.0'
+const APP_VERSION = '0.3.0'
 
 function initApp() {
   i18n.init()

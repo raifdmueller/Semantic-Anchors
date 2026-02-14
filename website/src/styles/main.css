@@ -60,8 +60,13 @@ body {
   font-family: Inter, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 }
 
+/* Force sans-serif on all card descendants to override AsciiDoc serif fonts */
 .anchor-card,
-.anchor-card * {
+.anchor-card *,
+.card-grid-container,
+.card-grid-container *,
+.anchor-cards-grid,
+.anchor-cards-grid * {
   font-family: Inter, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !important;
 }
 

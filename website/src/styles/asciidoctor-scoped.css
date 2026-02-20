@@ -10,7 +10,6 @@
   /* Base typography */
   background: #fff;
   color: rgba(0, 0, 0, 0.8);
-  font-family: 'Noto Serif', 'DejaVu Serif', serif;
   line-height: 1.6;
 
   & * {

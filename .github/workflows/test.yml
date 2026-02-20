@@ -42,6 +42,10 @@ jobs:
         working-directory: ./scripts
         run: npm run lint
 
+      - name: Check Prettier formatting (scripts)
+        working-directory: ./scripts
+        run: npm run format:check
+
   e2e-tests:
     name: E2E Tests
     runs-on: ubuntu-latest

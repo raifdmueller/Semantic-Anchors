@@ -1,4 +1,5 @@
 import js from '@eslint/js'
+import prettierConfig from 'eslint-config-prettier'
 
 const nodeGlobals = {
   require: 'readonly',
@@ -13,6 +14,7 @@ const nodeGlobals = {
 
 export default [
   js.configs.recommended,
+  prettierConfig,
   {
     files: ['**/*.js'],
     languageOptions: {

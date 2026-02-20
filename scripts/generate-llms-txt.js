@@ -74,12 +74,19 @@ function adocToMarkdown(adoc) {
   md = md.replace(/^(=+) (.+)$/gm, (_, eq, title) => '#'.repeat(eq.length) + ' ' + title)
 
   // [source,lang] + ---- → ```lang / ```
-  md = md.replace(/\[source(?:,([^\]]*))?\]\s*\n----/g, (_, lang) => '```' + (lang ? lang.trim() : ''))
+  md = md.replace(
+    /\[source(?:,([^\]]*))?\]\s*\n----/g,
+    (_, lang) => '```' + (lang ? lang.trim() : '')
+  )
   md = md.replace(/^----\s*$/gm, '```')
 
   // [quote] block: [quote]\n____\ntext\n____ → > text
   md = md.replace(/\[quote[^\]]*\]\s*\n_{4}\s*\n([\s\S]*?)\n_{4}/g, (_, body) =>
-    body.trim().split('\n').map((l) => '> ' + l).join('\n')
+    body
+      .trim()
+      .split('\n')
+      .map((l) => '> ' + l)
+      .join('\n')
   )
 
   // Sidebar blocks **** → remove delimiters

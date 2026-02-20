@@ -6,7 +6,9 @@
     "extract-metadata": "node extract-metadata.js",
     "split-readme": "node split-readme.js",
     "generate-llms-txt": "node generate-llms-txt.js",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
   },
   "dependencies": {
     "@asciidoctor/core": "^3.0.4",
@@ -14,6 +16,8 @@
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
-    "eslint": "^10.0.1"
+    "eslint": "^10.0.1",
+    "eslint-config-prettier": "^10.1.8",
+    "prettier": "^3.8.1"
   }
 }

@@ -56,6 +56,9 @@ jobs:
         working-directory: ./website
         run: npx playwright install --with-deps chromium
 
+      - name: Generate llms.txt and all-anchors.adoc
+        run: node scripts/generate-llms-txt.js
+
       - name: Copy documentation files to public directory
         run: |
           mkdir -p website/public/docs

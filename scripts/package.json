@@ -4,7 +4,8 @@
   "description": "Build scripts for Semantic Anchors project",
   "scripts": {
     "extract-metadata": "node extract-metadata.js",
-    "split-readme": "node split-readme.js"
+    "split-readme": "node split-readme.js",
+    "generate-llms-txt": "node generate-llms-txt.js"
   },
   "dependencies": {
     "@asciidoctor/core": "^3.0.4",

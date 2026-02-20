@@ -100,10 +100,12 @@ function adocToMarkdown(adoc) {
   // AsciiDoc line continuation (+) → remove
   md = md.replace(/^\+\s*$/gm, '')
 
-  // Links: link:url[text] → [text](url), resolve relative .adoc paths to GitHub URLs
+  // Links: link:url[text] → [text](url), resolve special URLs for standalone context
   md = md.replace(/link:([^[]+)\[([^\]]*)\]/g, (_, url, text) => {
     if (/^\.\.\/.*\.adoc$/.test(url)) {
       url = 'https://github.com/LLM-Coding/Semantic-Anchors/blob/main/' + url.slice(3)
+    } else if (url === '#/') {
+      url = 'https://llm-coding.github.io/Semantic-Anchors/'
     }
     return `[${text}](${url})`
   })
@@ -126,7 +128,8 @@ function adocToMarkdown(adoc) {
   )
 
   // Bold: **text** stays, *text* → **text**
-  md = md.replace(/(?<![*\w])\*([^*\n]+)\*(?![*\w])/g, '**$1**')
+  // Require non-whitespace after opening * to avoid matching list markers (* item)
+  md = md.replace(/(?<![*\w])\*(\S[^*\n]*\S|\S)\*(?![*\w])/g, '**$1**')
 
   // Ordered list items: ". item" → "1. item"
   md = md.replace(/^\. /gm, '1. ')

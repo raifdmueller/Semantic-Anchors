@@ -100,14 +100,14 @@ These terms are frequently used but **lack the depth and definition** required f
 
 ❌ **Bad**: "Write good tests"
 
-**Problem**: Vague instruction, no methodology
-**Result**: Inconsistent interpretations
+***Problem***: Vague instruction, no methodology
+***Result***: Inconsistent interpretations
 
 ✅ **Good**: "Test-Driven Development, London School"
 
-**Activates**: Mock-heavy testing, outside-in design, interaction-based verification
-**Proponents**: Steve Freeman, Nat Pryce
-**Result**: Consistent, rich implementation
+***Activates***: Mock-heavy testing, outside-in design, interaction-based verification
+***Proponents***: Steve Freeman, Nat Pryce
+***Result***: Consistent, rich implementation
 
 ---
 
@@ -115,14 +115,14 @@ These terms are frequently used but **lack the depth and definition** required f
 
 ❌ **Bad**: "Keep it short"
 
-**Problem**: No structure, just a preference
-**Result**: Arbitrary length decisions
+***Problem***: No structure, just a preference
+***Result***: Arbitrary length decisions
 
 ✅ **Good**: "Pyramid Principle"
 
-**Activates**: Start with conclusion, group ideas, logical ordering
-**Proponent**: Barbara Minto
-**Result**: Structured, repeatable communication pattern
+***Activates***: Start with conclusion, group ideas, logical ordering
+***Proponent***: Barbara Minto
+***Result***: Structured, repeatable communication pattern
 
 ---
 
@@ -130,20 +130,20 @@ These terms are frequently used but **lack the depth and definition** required f
 
 ❌ **Bad**: "Best practices"
 
-**Problem**: Not attributable, no specific practices
-**Result**: Everyone has different "best practices"
+***Problem***: Not attributable, no specific practices
+***Result***: Everyone has different "best practices"
 
 ✅ **Good**: "SOLID Principles"
 
-**Activates**: Five specific design principles (SRP, OCP, LSP, ISP, DIP)
-**Proponents**: Robert C. Martin
-**Result**: Concrete, testable guidelines
+***Activates***: Five specific design principles (SRP, OCP, LSP, ISP, DIP)
+***Proponents***: Robert C. Martin
+***Result***: Concrete, testable guidelines
 
 ### The Key Difference
 
-**Semantic Anchors** activate **rich, interconnected knowledge domains** from the LLM's training data.
+**Semantic Anchors** activate ***rich, interconnected knowledge domains*** from the LLM's training data.
 
-**Simple Instructions** just tell the LLM **what to do**, without providing conceptual framework or methodology.
+**Simple Instructions** just tell the LLM ***what to do***, without providing conceptual framework or methodology.
 
 Think of semantic anchors as **nouns** (methodologies, frameworks, principles) rather than **verbs** (instructions, directives).
 
@@ -303,7 +303,7 @@ https://github.com/LLM-Coding/Semantic-Anchors
 
 ---
 
-Ready to explore? [Browse the catalog →](#/)
+Ready to explore? [Browse the catalog →](https://llm-coding.github.io/Semantic-Anchors/)
 
 ---
 
@@ -311,31 +311,31 @@ Ready to explore? [Browse the catalog →](#/)
 
 ### BLUF (Bottom Line Up Front)
 
-**Full Name**: BLUF (Bottom Line Up Front)
+***Full Name***: BLUF (Bottom Line Up Front)
 
-**Also known as**: Direct Answer Format, Conclusion-First Communication
+***Also known as***: Direct Answer Format, Conclusion-First Communication
 
 **Core Concepts**:
 
-**Conclusion First**: State the main point, decision, or recommendation immediately
+***Conclusion First***: State the main point, decision, or recommendation immediately
 
-**Inverted Pyramid**: Most important information first, supporting details follow
+***Inverted Pyramid***: Most important information first, supporting details follow
 
-**Action Orientation**: Lead with what needs to happen or what was decided
+***Action Orientation***: Lead with what needs to happen or what was decided
 
-**Busy Reader Optimization**: Enable time-pressed readers to get key information instantly
+***Busy Reader Optimization***: Enable time-pressed readers to get key information instantly
 
-**Supporting Evidence Follows**: Detailed rationale, data, and background come after the conclusion
+***Supporting Evidence Follows***: Detailed rationale, data, and background come after the conclusion
 
-**Scannable Structure**: Clear hierarchy enables readers to stop at their needed depth
+***Scannable Structure***: Clear hierarchy enables readers to stop at their needed depth
 
-**Clarity Over Suspense**: No narrative buildup or delayed conclusions
+***Clarity Over Suspense***: No narrative buildup or delayed conclusions
 
-**One Sentence First**: Ideally, the BLUF itself is a single, clear sentence
+***One Sentence First***: Ideally, the BLUF itself is a single, clear sentence
 
-**Key Proponents**: US Military (Army writing standards), adopted broadly in business and government
+***Key Proponents***: US Military (Army writing standards), adopted broadly in business and government
 
-**Historical Context**: Standardized in military communication where rapid decision-making is critical; now standard in business writing (McKinsey, consulting, executive communication)
+***Historical Context***: Standardized in military communication where rapid decision-making is critical; now standard in business writing (McKinsey, consulting, executive communication)
 
 **When to Use**:
 
@@ -352,33 +352,33 @@ Ready to explore? [Browse the catalog →](#/)
 * Complements MECE by providing the organizational principle for grouped information
 * Contrasts with narrative or exploratory writing styles
 
-**Counter-example**: Academic papers (which build to conclusions) or storytelling (which uses suspense)
+***Counter-example***: Academic papers (which build to conclusions) or storytelling (which uses suspense)
 
 ### Chatham House Rule
 
-**Full Name**: Chatham House Rule
+***Full Name***: Chatham House Rule
 
 **Core Concepts**:
 
-**Information Sharing**: Participants are free to use information received, but neither the identity nor the affiliation of the speaker(s) may be revealed
+***Information Sharing***: Participants are free to use information received, but neither the identity nor the affiliation of the speaker(s) may be revealed
 
-**Confidentiality of Source**: "When a meeting, or part thereof, is held under the Chatham House Rule, participants are free to use the information received, but neither the identity nor the affiliation of the speaker(s), nor that of any other participant, may be revealed"
+***Confidentiality of Source***: "When a meeting, or part thereof, is held under the Chatham House Rule, participants are free to use the information received, but neither the identity nor the affiliation of the speaker(s), nor that of any other participant, may be revealed"
 
-**Open Discussion**: Encourages frank and honest dialogue by removing attribution concerns
+***Open Discussion***: Encourages frank and honest dialogue by removing attribution concerns
 
-**Trust Building**: Creates psychological safety for participants to express controversial or sensitive views
+***Trust Building***: Creates psychological safety for participants to express controversial or sensitive views
 
-**Knowledge Transfer**: Allows insights to be shared widely while protecting individual sources
+***Knowledge Transfer***: Allows insights to be shared widely while protecting individual sources
 
-**Single Rule Format**: Unlike other frameworks, it's a single, clearly defined rule
+***Single Rule Format***: Unlike other frameworks, it's a single, clearly defined rule
 
-**Attribution Separation**: Distinguishes between "what was said" (shareable) and "who said it" (protected)
+***Attribution Separation***: Distinguishes between "what was said" (shareable) and "who said it" (protected)
 
-**Context Independence**: Applies equally to small meetings, large conferences, or online discussions
+***Context Independence***: Applies equally to small meetings, large conferences, or online discussions
 
-**Key Origin**: Established by Chatham House (Royal Institute of International Affairs) in London, 1927
+***Key Origin***: Established by Chatham House (Royal Institute of International Affairs) in London, 1927
 
-**Historical Context**: Originally created to enable diplomats and government officials to discuss international affairs candidly; now widely adopted across business, academia, and technology sectors
+***Historical Context***: Originally created to enable diplomats and government officials to discuss international affairs candidly; now widely adopted across business, academia, and technology sectors
 
 **When to Use**:
 
@@ -415,27 +415,27 @@ to specific team members.
 
 ### MECE Principle
 
-**Full Name**: MECE (Mutually Exclusive, Collectively Exhaustive)
+***Full Name***: MECE (Mutually Exclusive, Collectively Exhaustive)
 
 **Core Concepts**:
 
-**Mutually Exclusive**: Categories have no overlap - each item belongs to exactly one category
+***Mutually Exclusive***: Categories have no overlap - each item belongs to exactly one category
 
-**Collectively Exhaustive**: Categories cover all possibilities - nothing is left out
+***Collectively Exhaustive***: Categories cover all possibilities - nothing is left out
 
-**Framework for organization**: Systematic approach to structuring information and problems
+***Framework for organization***: Systematic approach to structuring information and problems
 
-**Prevents duplication**: Mutual exclusivity ensures no redundant coverage
+***Prevents duplication***: Mutual exclusivity ensures no redundant coverage
 
-**Prevents gaps**: Collective exhaustiveness ensures complete coverage
+***Prevents gaps***: Collective exhaustiveness ensures complete coverage
 
-**Clear boundaries**: Unambiguous categorization with well-defined criteria
+***Clear boundaries***: Unambiguous categorization with well-defined criteria
 
-**Hierarchical application**: Can be applied recursively at multiple levels
+***Hierarchical application***: Can be applied recursively at multiple levels
 
-**Validation approach**: Check both dimensions independently (exclusivity and exhaustiveness)
+***Validation approach***: Check both dimensions independently (exclusivity and exhaustiveness)
 
-**Key Proponent**: Barbara Minto (McKinsey & Company, late 1960s)
+***Key Proponent***: Barbara Minto (McKinsey & Company, late 1960s)
 
 **When to Use**:
 
@@ -458,29 +458,29 @@ to specific team members.
 
 ### Pyramid Principle according to Barbara Minto
 
-**Full Name**: The Minto Pyramid Principle according to Barbara Minto
+***Full Name***: The Minto Pyramid Principle according to Barbara Minto
 
 **Core Concepts**:
 
-**Governing Thought**: Single key message at the top of the pyramid
+***Governing Thought***: Single key message at the top of the pyramid
 
-**SCQ Framework**: Situation → Complication → Question → Answer structure for setting context
+***SCQ Framework***: Situation → Complication → Question → Answer structure for setting context
 
-**MECE Principle**: Mutually Exclusive, Collectively Exhaustive grouping of ideas
+***MECE Principle***: Mutually Exclusive, Collectively Exhaustive grouping of ideas
 
-**Vertical Logic**: Each level answers "Why?" of the level above it
+***Vertical Logic***: Each level answers "Why?" of the level above it
 
-**Horizontal Logic**: Arguments at the same level grouped deductively or inductively
+***Horizontal Logic***: Arguments at the same level grouped deductively or inductively
 
-**Top-Down Delivery**: Present conclusion first, then supporting arguments
+***Top-Down Delivery***: Present conclusion first, then supporting arguments
 
-**Pyramid Structure**: One central idea supported by groups of three supporting ideas
+***Pyramid Structure***: One central idea supported by groups of three supporting ideas
 
-**BLUF**: Bottom Line Up Front - lead with the conclusion
+***BLUF***: Bottom Line Up Front - lead with the conclusion
 
-**Deductive vs. Inductive Reasoning**: Choose appropriate logic for horizontal grouping
+***Deductive vs. Inductive Reasoning***: Choose appropriate logic for horizontal grouping
 
-**Key Proponent**: Barbara Minto (McKinsey, "The Minto Pyramid Principle", 1987)
+***Key Proponent***: Barbara Minto (McKinsey, "The Minto Pyramid Principle", 1987)
 
 **When to Use**:
 
@@ -498,25 +498,25 @@ to specific team members.
 
 ### DRY (Don't Repeat Yourself)
 
-**Full Name**: Don't Repeat Yourself Principle
+***Full Name***: Don't Repeat Yourself Principle
 
 **Core Concepts**:
 
-**Single representation**: Every piece of knowledge should have a single, unambiguous representation
+***Single representation***: Every piece of knowledge should have a single, unambiguous representation
 
-**Avoid duplication**: Eliminate duplicate code, logic, and knowledge across the system
+***Avoid duplication***: Eliminate duplicate code, logic, and knowledge across the system
 
-**Abstraction**: Extract common patterns into reusable components
+***Abstraction***: Extract common patterns into reusable components
 
-**Maintenance efficiency**: Changes require modification in only one place
+***Maintenance efficiency***: Changes require modification in only one place
 
-**Knowledge duplication vs. code duplication**: Focus on avoiding duplicate knowledge, not just duplicate code
+***Knowledge duplication vs. code duplication***: Focus on avoiding duplicate knowledge, not just duplicate code
 
-**Normalized data**: Apply DRY to data structures and schemas
+***Normalized data***: Apply DRY to data structures and schemas
 
-**Configuration management**: Centralize configuration and avoid scattered settings
+***Configuration management***: Centralize configuration and avoid scattered settings
 
-**Key Proponent**: Andy Hunt and Dave Thomas ("The Pragmatic Programmer", 1999)
+***Key Proponent***: Andy Hunt and Dave Thomas ("The Pragmatic Programmer", 1999)
 
 **When to Use**:
 
@@ -525,37 +525,37 @@ to specific team members.
 * Creating maintainable systems where changes are frequent
 * Establishing coding standards and best practices
 
-**Related Concepts**: SPOT, SSOT, WET (Write Everything Twice - deliberate exception to DRY)
+***Related Concepts***: SPOT, SSOT, WET (Write Everything Twice - deliberate exception to DRY)
 
 ### Patterns of Enterprise Application Architecture (PEAA)
 
-**Full Name**: Patterns of Enterprise Application Architecture according to Martin Fowler
+***Full Name***: Patterns of Enterprise Application Architecture according to Martin Fowler
 
-**Also known as**: Fowler patterns, PEAA patterns, Enterprise patterns
+***Also known as***: Fowler patterns, PEAA patterns, Enterprise patterns
 
 **Core Concepts**:
 
-**Domain Logic Patterns**: Transaction Script, Domain Model, Table Module, Service Layer
+***Domain Logic Patterns***: Transaction Script, Domain Model, Table Module, Service Layer
 
-**Data Source Architectural Patterns**: Table Data Gateway, Row Data Gateway, Active Record, Data Mapper
+***Data Source Architectural Patterns***: Table Data Gateway, Row Data Gateway, Active Record, Data Mapper
 
-**Object-Relational Behavioral Patterns**: Unit of Work, Identity Map, Lazy Load
+***Object-Relational Behavioral Patterns***: Unit of Work, Identity Map, Lazy Load
 
-**Object-Relational Structural Patterns**: Identity Field, Foreign Key Mapping, Association Table Mapping, Dependent Mapping, Embedded Value, Serialized LOB, Single Table Inheritance, Class Table Inheritance, Concrete Table Inheritance
+***Object-Relational Structural Patterns***: Identity Field, Foreign Key Mapping, Association Table Mapping, Dependent Mapping, Embedded Value, Serialized LOB, Single Table Inheritance, Class Table Inheritance, Concrete Table Inheritance
 
-**Object-Relational Metadata Mapping Patterns**: Metadata Mapping, Query Object, Repository
+***Object-Relational Metadata Mapping Patterns***: Metadata Mapping, Query Object, Repository
 
-**Web Presentation Patterns**: Model View Controller, Page Controller, Front Controller, Template View, Transform View, Two Step View, Application Controller
+***Web Presentation Patterns***: Model View Controller, Page Controller, Front Controller, Template View, Transform View, Two Step View, Application Controller
 
-**Distribution Patterns**: Remote Facade, Data Transfer Object
+***Distribution Patterns***: Remote Facade, Data Transfer Object
 
-**Offline Concurrency Patterns**: Optimistic Offline Lock, Pessimistic Offline Lock, Coarse-Grained Lock, Implicit Lock
+***Offline Concurrency Patterns***: Optimistic Offline Lock, Pessimistic Offline Lock, Coarse-Grained Lock, Implicit Lock
 
-**Session State Patterns**: Client Session State, Server Session State, Database Session State
+***Session State Patterns***: Client Session State, Server Session State, Database Session State
 
-**Base Patterns**: Gateway, Mapper, Layer Supertype, Separated Interface, Registry, Value Object, Money, Special Case, Plugin, Service Stub, Record Set
+***Base Patterns***: Gateway, Mapper, Layer Supertype, Separated Interface, Registry, Value Object, Money, Special Case, Plugin, Service Stub, Record Set
 
-**Key Proponent**: Martin Fowler ("Patterns of Enterprise Application Architecture", 2002)
+***Key Proponent***: Martin Fowler ("Patterns of Enterprise Application Architecture", 2002)
 
 **When to Use**:
 
@@ -575,21 +575,21 @@ to specific team members.
 
 ### SOLID Principles
 
-**Full Name**: SOLID Object-Oriented Design Principles
+***Full Name***: SOLID Object-Oriented Design Principles
 
 **Core Concepts**:
 
-**Single Responsibility Principle (SRP)**: Each class should have one responsibility
+***Single Responsibility Principle (SRP)***: Each class should have one responsibility
 
-**Open/Closed Principle (OCP)**: Entities should be open for extension, closed for modification
+***Open/Closed Principle (OCP)***: Entities should be open for extension, closed for modification
 
-**Liskov Substitution Principle (LSP)**: Subtypes must be substitutable for their base types
+***Liskov Substitution Principle (LSP)***: Subtypes must be substitutable for their base types
 
-**Interface Segregation Principle (ISP)**: Clients should not be forced to depend on interfaces they do not use
+***Interface Segregation Principle (ISP)***: Clients should not be forced to depend on interfaces they do not use
 
-**Dependency Inversion Principle (DIP)**: Depend on abstractions, not concrete implementations
+***Dependency Inversion Principle (DIP)***: Depend on abstractions, not concrete implementations
 
-**Key Proponent**: Robert C. Martin ("Uncle Bob")
+***Key Proponent***: Robert C. Martin ("Uncle Bob")
 
 **When to Use**:
 
@@ -600,23 +600,23 @@ to specific team members.
 
 ### SPOT (Single Point of Truth)
 
-**Full Name**: Single Point of Truth
+***Full Name***: Single Point of Truth
 
 **Core Concepts**:
 
-**Implementation pattern**: Focuses on where and how data/logic is stored and accessed
+***Implementation pattern***: Focuses on where and how data/logic is stored and accessed
 
-**Centralized location**: Each piece of information resides in exactly one place
+***Centralized location***: Each piece of information resides in exactly one place
 
-**Reference relationships**: Other locations reference the single point rather than duplicate it
+***Reference relationships***: Other locations reference the single point rather than duplicate it
 
-**Data consistency**: Eliminates synchronization issues and conflicting data
+***Data consistency***: Eliminates synchronization issues and conflicting data
 
-**Update propagation**: Changes at the single point automatically affect all references
+***Update propagation***: Changes at the single point automatically affect all references
 
-**Clear ownership**: Explicit responsibility for maintaining each piece of truth
+***Clear ownership***: Explicit responsibility for maintaining each piece of truth
 
-**Code-level practice**: Applied at the code and system design level
+***Code-level practice***: Applied at the code and system design level
 
 **When to Use**:
 
@@ -626,31 +626,31 @@ to specific team members.
 * State management in applications
 * API design where data flows from a single endpoint
 
-**Difference from SSOT**: SPOT emphasizes the implementation detail of where data lives, while SSOT emphasizes the authoritative, trusted nature of that data source
+***Difference from SSOT***: SPOT emphasizes the implementation detail of where data lives, while SSOT emphasizes the authoritative, trusted nature of that data source
 
-**Related Concepts**: DRY, SSOT, Normalized databases, Master data management
+***Related Concepts***: DRY, SSOT, Normalized databases, Master data management
 
 ### SSOT (Single Source of Truth)
 
-**Full Name**: Single Source of Truth
+***Full Name***: Single Source of Truth
 
 **Core Concepts**:
 
-**Conceptual principle**: Focuses on establishing trust and authority for data
+***Conceptual principle***: Focuses on establishing trust and authority for data
 
-**Authoritative source**: One canonical, trusted location for each piece of data
+***Authoritative source***: One canonical, trusted location for each piece of data
 
-**Data integrity**: All consumers reference the same trusted source
+***Data integrity***: All consumers reference the same trusted source
 
-**Version control**: Single source ensures consistent versioning
+***Version control***: Single source ensures consistent versioning
 
-**Derived data**: Other representations are derived from the single source
+***Derived data***: Other representations are derived from the single source
 
-**Trust and reliability**: The source is the definitive version when conflicts arise
+***Trust and reliability***: The source is the definitive version when conflicts arise
 
-**System of record**: The primary data store for critical business information
+***System of record***: The primary data store for critical business information
 
-**Organizational practice**: Applied at the architecture and business process level
+***Organizational practice***: Applied at the architecture and business process level
 
 **Key Application Areas**:
 
@@ -669,9 +669,9 @@ to specific team members.
 * Creating audit trails and ensuring compliance
 * Resolving conflicts between multiple data sources
 
-**Difference from SPOT**: SSOT emphasizes the authoritative, trusted nature of a data source and is used at the architecture/organizational level, while SPOT focuses on the implementation pattern
+***Difference from SPOT***: SSOT emphasizes the authoritative, trusted nature of a data source and is used at the architecture/organizational level, while SPOT focuses on the implementation pattern
 
-**Related Concepts**: DRY, SPOT, Event sourcing, Data lakes, Master data management
+***Related Concepts***: DRY, SPOT, Event sourcing, Data lakes, Master data management
 
 ---
 
@@ -679,31 +679,31 @@ to specific team members.
 
 ### BEM Methodology
 
-**Full Name**: Block Element Modifier (BEM) (S)CSS Methodology
+***Full Name***: Block Element Modifier (BEM) (S)CSS Methodology
 
 **Core Concepts**:
 
-**Motivation**: Solve CSS specificity wars, naming conflicts, and stylesheet maintainability issues in large codebases
+***Motivation***: Solve CSS specificity wars, naming conflicts, and stylesheet maintainability issues in large codebases
 
-**Block**: Standalone component that is meaningful on its own (e.g., `menu`, `button`, `header`)
+***Block***: Standalone component that is meaningful on its own (e.g., `menu`, `button`, `header`)
 
-**Element**: Part of a block with no standalone meaning (e.g., `menu__item`, `button__icon`)
+***Element***: Part of a block with no standalone meaning (e.g., `menu__item`, `button__icon`)
 
-**Modifier**: Flag on blocks or elements that changes appearance or behavior (e.g., `button--disabled`, `menu__item--active`)
+***Modifier***: Flag on blocks or elements that changes appearance or behavior (e.g., `button--disabled`, `menu__item--active`)
 
-**Naming convention**: `block__element--modifier` structure
+***Naming convention***: `block__element--modifier` structure
 
-**Independence**: Blocks are self-contained and reusable
+***Independence***: Blocks are self-contained and reusable
 
-**No cascading**: Avoid deep CSS selectors, use flat structure
+***No cascading***: Avoid deep CSS selectors, use flat structure
 
-**Explicit relationships**: Clear parent-child relationships through naming
+***Explicit relationships***: Clear parent-child relationships through naming
 
-**Reusability**: Components can be moved anywhere in the project
+***Reusability***: Components can be moved anywhere in the project
 
-**Mix**: Combining multiple BEM entities on a single DOM node
+***Mix***: Combining multiple BEM entities on a single DOM node
 
-**File structure**: Often paired with component-based file organization
+***File structure***: Often paired with component-based file organization
 
 **Naming Examples**:
 
@@ -711,7 +711,7 @@ to specific team members.
 * Element: `.search-form__input`, `.search-form__button`
 * Modifier: `.search-form--compact`, `.search-form__button--disabled`
 
-**Key Proponents**: Yandex development team
+***Key Proponents***: Yandex development team
 
 **When to Use**:
 
@@ -727,20 +727,20 @@ to specific team members.
 * A specification for adding human and machine readable meaning to commit messages
 * Determining a semantic version bump (based on the types of commits landed)
 * Communicating the nature of changes to teammates, the public, and other stakeholders
-**Schema**: <type>[!][(optional scope)]: <description> + optional body/footer
+***Schema***: <type>[!][(optional scope)]: <description> + optional body/footer
 
-**Common Types**
+***Common Types***
 * **feat:** - introduce new feature to the codebase (-> Semver Minor)
 * **fix:** - patches a bug in your codebase (-> SemVer Patch)
 * **docs:** - documentation improvements to the codebase
 * **chore:** - codebase/repository housekeeping changes
 * **style:** - formatting changes that do not affect the meaning of the code
 * **refactor:** - implementation changes that do not affect the meaning of the code
-** **!* - BREAKING CHANGE (-> SemVer Major)
+* **!** - BREAKING CHANGE (-> SemVer Major)
 
 * **BREAKING CHANGE:** introduces a breaking API change
 
-**Key Proponents**: Benjamin E. Coe, James J. Womack, Steve Mao
+***Key Proponents***: Benjamin E. Coe, James J. Womack, Steve Mao
 
 **When to Use**:
 
@@ -750,31 +750,31 @@ to specific team members.
 
 ### Mental Model according to Naur
 
-**Full Name**: Programming as Theory Building (Mental Model) according to Peter Naur
+***Full Name***: Programming as Theory Building (Mental Model) according to Peter Naur
 
 **Core Concepts**:
 
-**Theory building**: Programming is creating a mental model, not just writing code
+***Theory building***: Programming is creating a mental model, not just writing code
 
-**Theory of the program**: Deep understanding of why the program works and how it relates to the problem domain
+***Theory of the program***: Deep understanding of why the program works and how it relates to the problem domain
 
-**Knowledge in people**: The real program exists in developers' minds, not in the code
+***Knowledge in people***: The real program exists in developers' minds, not in the code
 
-**Theory decay**: When original developers leave, the theory is lost
+***Theory decay***: When original developers leave, the theory is lost
 
-**Documentation limitations**: Written documentation cannot fully capture the theory
+***Documentation limitations***: Written documentation cannot fully capture the theory
 
-**Maintenance as theory**: Effective maintenance requires possessing the theory
+***Maintenance as theory***: Effective maintenance requires possessing the theory
 
-**Communication is key**: Theory must be shared through collaboration and conversation
+***Communication is key***: Theory must be shared through collaboration and conversation
 
-**Ramp-up time**: New team members need time to build the theory
+***Ramp-up time***: New team members need time to build the theory
 
-**Code as artifact**: Code is merely a representation of the underlying theory
+***Code as artifact***: Code is merely a representation of the underlying theory
 
-**Key Proponent**: Peter Naur (Turing Award winner, 1978)
+***Key Proponent***: Peter Naur (Turing Award winner, 1978)
 
-**Original Work**: "Programming as Theory Building" (1985)
+***Original Work***: "Programming as Theory Building" (1985)
 
 **Application in Software Development**:
 
@@ -793,26 +793,26 @@ to specific team members.
 
 ### Semantic Versioning (SemVer)
 
-**Full Name**: Semantic Versioning Specification
+***Full Name***: Semantic Versioning Specification
 
 **Core Concepts**:
 
-**Version format**
+***Version format***
 
-- **MAJOR**: Incompatible API changes (breaking changes)
-- **MINOR**: Backward-compatible functionality additions
-- **PATCH**: Backward-compatible bug fixes
-- **Pre-release versions**: Append hyphen and identifiers (e.g., 1.0.0-alpha.1)
+- ***MAJOR***: Incompatible API changes (breaking changes)
+- ***MINOR***: Backward-compatible functionality additions
+- ***PATCH***: Backward-compatible bug fixes
+- ***Pre-release versions***: Append hyphen and identifiers (e.g., 1.0.0-alpha.1)
 
-**Build metadata**: Append plus sign and identifiers (e.g., 1.0.0+20241111)
+***Build metadata***: Append plus sign and identifiers (e.g., 1.0.0+20241111)
 
-**Version precedence**: Clear rules for version comparison
+***Version precedence***: Clear rules for version comparison
 
-**Initial development**: 0.y.z for initial development (API unstable)
+***Initial development***: 0.y.z for initial development (API unstable)
 
-**Public API declaration**: Once public API declared, version dependencies matter
+***Public API declaration***: Once public API declared, version dependencies matter
 
-**Key Proponent**: Tom Preston-Werner
+***Key Proponent***: Tom Preston-Werner
 
 **When to Use**:
 
@@ -823,23 +823,23 @@ to specific team members.
 
 ### SOTA (State-of-the-Art)
 
-**Full Name**: State-of-the-Art
+***Full Name***: State-of-the-Art
 
 **Core Concepts**:
 
-**Latest approaches**: Focus on the most current, cutting-edge methods and techniques
+***Latest approaches***: Focus on the most current, cutting-edge methods and techniques
 
-**Research-grounded**: Reference current research papers, benchmarks, and empirical results
+***Research-grounded***: Reference current research papers, benchmarks, and empirical results
 
-**Comparative analysis**: Compare new approaches with existing or previous methods
+***Comparative analysis***: Compare new approaches with existing or previous methods
 
-**Performance-focused**: Emphasize benchmark-leading and best-performing solutions
+***Performance-focused***: Emphasize benchmark-leading and best-performing solutions
 
-**Up-to-date information**: Provide current, grounded information rather than outdated practices
+***Up-to-date information***: Provide current, grounded information rather than outdated practices
 
-**Evidence-based**: Support claims with recent studies, benchmarks, and real-world implementations
+***Evidence-based***: Support claims with recent studies, benchmarks, and real-world implementations
 
-**Contextual awareness**: Consider the specific domain and timeframe for "state-of-the-art"
+***Contextual awareness***: Consider the specific domain and timeframe for "state-of-the-art"
 
 **Usage Patterns**:
 
@@ -854,7 +854,7 @@ to specific team members.
 * "Give me the SOTA approach for semantic search"
 * "What's the SOTA in transformer architectures?"
 
-**Key Proponent**: Widely used in ML/AI research community
+***Key Proponent***: Widely used in ML/AI research community
 
 **When to Use**:
 
@@ -874,29 +874,29 @@ to specific team members.
 
 ### TIMTOWTDI
 
-**Full Name**: There Is More Than One Way To Do It
+***Full Name***: There Is More Than One Way To Do It
 
-**Also known as**: Tim Toady
+***Also known as***: Tim Toady
 
 **Core Concepts**:
 
-**Multiple valid approaches**: Acknowledges that problems can be solved in different, equally valid ways
+***Multiple valid approaches***: Acknowledges that problems can be solved in different, equally valid ways
 
-**Developer freedom**: Trust developers to choose the right approach for their context
+***Developer freedom***: Trust developers to choose the right approach for their context
 
-**Expressiveness**: Languages and tools should support diverse problem-solving styles
+***Expressiveness***: Languages and tools should support diverse problem-solving styles
 
-**Context-dependent decisions**: The "best" solution depends on constraints, team, and situation
+***Context-dependent decisions***: The "best" solution depends on constraints, team, and situation
 
-**No single canonical form**: Resist dogma — flexibility over prescription
+***No single canonical form***: Resist dogma — flexibility over prescription
 
-**Trade-off awareness**: Different approaches have different trade-offs; none is universally superior
+***Trade-off awareness***: Different approaches have different trade-offs; none is universally superior
 
-**Pragmatism over purity**: Practical results matter more than theoretical elegance
+***Pragmatism over purity***: Practical results matter more than theoretical elegance
 
-**Collaborative decision-making**: When working with others, discuss approach rather than assume
+***Collaborative decision-making***: When working with others, discuss approach rather than assume
 
-**Key Proponent**: Larry Wall (Perl programming language)
+***Key Proponent***: Larry Wall (Perl programming language)
 
 **Contrast**:
 
@@ -916,29 +916,29 @@ to specific team members.
 
 ### todo.txt-flavoured Markdown
 
-**Full Name**: todo.txt-flavoured Markdown Task Lists
+***Full Name***: todo.txt-flavoured Markdown Task Lists
 
-**Also known as**: Enhanced Markdown Tasks, Markdown with todo.txt conventions
+***Also known as***: Enhanced Markdown Tasks, Markdown with todo.txt conventions
 
 **Core Concepts**:
 
-**Markdown task lists**: Standard GitHub-flavoured markdown syntax (`- [ ]` uncompleted, `- [x]` completed)
+***Markdown task lists***: Standard GitHub-flavoured markdown syntax (`- [ ]` uncompleted, `- [x]` completed)
 
-**Priority markers**: Uses todo.txt priority notation `(A)`, `(B)`, `(C)` where `(A)` is highest priority
+***Priority markers***: Uses todo.txt priority notation `(A)`, `(B)`, `(C)` where `(A)` is highest priority
 
-**Project tags**: Prefixed with `+` to group related tasks (e.g., `+website`, `+semantic-anchors`)
+***Project tags***: Prefixed with `+` to group related tasks (e.g., `+website`, `+semantic-anchors`)
 
-**Context tags**: Prefixed with `@` to indicate location/tool/context (e.g., `@computer`, `@home`, `@research`)
+***Context tags***: Prefixed with `@` to indicate location/tool/context (e.g., `@computer`, `@home`, `@research`)
 
-**Key-value metadata**: Structured data pairs like `due:YYYY-MM-DD`, `priority:high`, or custom fields
+***Key-value metadata***: Structured data pairs like `due:YYYY-MM-DD`, `priority:high`, or custom fields
 
-**Date tracking**: Creation dates and completion dates in ISO format (YYYY-MM-DD)
+***Date tracking***: Creation dates and completion dates in ISO format (YYYY-MM-DD)
 
-**Human readability**: Plain text format that remains readable without special tools
+***Human readability***: Plain text format that remains readable without special tools
 
-**Tool-agnostic**: Can be processed by both markdown renderers and todo.txt tools
+***Tool-agnostic***: Can be processed by both markdown renderers and todo.txt tools
 
-**Searchable and filterable**: Easy to grep/search by tags, priorities, or metadata
+***Searchable and filterable***: Easy to grep/search by tags, priorities, or metadata
 
 **Pattern Structure**:
 
@@ -955,7 +955,7 @@ to specific team members.
 - [ ] Call team meeting @phone +project-planning due:2024-02-05
 - [x] 2024-01-30 Fix bug in authentication +backend @computer
 ```
-**Key Proponents**: Combines GitHub-flavoured Markdown task lists with Gina Trapani's todo.txt format
+***Key Proponents***: Combines GitHub-flavoured Markdown task lists with Gina Trapani's todo.txt format
 
 **Original References**:
 
@@ -987,31 +987,31 @@ to specific team members.
 
 ### Socratic Method
 
-**Full Name**: Socratic Method (also Socratic Dialogue, Elenchus)
+***Full Name***: Socratic Method (also Socratic Dialogue, Elenchus)
 
 **Core Concepts**:
 
-**Guided Discovery**: Lead learners to insights through questions rather than direct instruction
+***Guided Discovery***: Lead learners to insights through questions rather than direct instruction
 
-**Elenchus**: Cross-examination technique to expose contradictions in beliefs
+***Elenchus***: Cross-examination technique to expose contradictions in beliefs
 
-**Maieutics**: "Midwifery of ideas" – helping others give birth to knowledge they already possess
+***Maieutics***: "Midwifery of ideas" – helping others give birth to knowledge they already possess
 
-**Aporia**: State of productive confusion that motivates deeper inquiry
+***Aporia***: State of productive confusion that motivates deeper inquiry
 
-**Question Hierarchy**: Progress from clarifying questions to probing assumptions to exploring implications
+***Question Hierarchy***: Progress from clarifying questions to probing assumptions to exploring implications
 
-**Dialectic Method**: Structured dialogue to arrive at truth through reasoned argument
+***Dialectic Method***: Structured dialogue to arrive at truth through reasoned argument
 
-**Non-assertive Teaching**: Teacher claims ignorance, guides through questions
+***Non-assertive Teaching***: Teacher claims ignorance, guides through questions
 
-**Assumption Surfacing**: Make implicit beliefs explicit through systematic questioning
+***Assumption Surfacing***: Make implicit beliefs explicit through systematic questioning
 
-**Logical Consistency**: Test ideas for internal coherence and contradictions
+***Logical Consistency***: Test ideas for internal coherence and contradictions
 
-**Key Proponent**: Socrates (via Plato's dialogues, ~400 BCE)
+***Key Proponent***: Socrates (via Plato's dialogues, ~400 BCE)
 
-**Historical Context**: 2400+ years of philosophical tradition, foundational to Western philosophy and critical thinking education
+***Historical Context***: 2400+ years of philosophical tradition, foundational to Western philosophy and critical thinking education
 
 **When to Use**:
 
@@ -1034,30 +1034,30 @@ to specific team members.
 
 ### Diátaxis Framework
 
-**Full Name**: Diátaxis Documentation Framework according to Daniele Procida
+***Full Name***: Diátaxis Documentation Framework according to Daniele Procida
 
 **Core Concepts**:
 
-**Four documentation types**
+***Four documentation types***
 
-- **Tutorials**: Learning-oriented, lessons for beginners
-- **How-to guides**: Task-oriented, directions for specific goals
-- **Reference**: Information-oriented, technical descriptions
-- **Explanation**: Understanding-oriented, conceptual discussions
+- ***Tutorials***: Learning-oriented, lessons for beginners
+- ***How-to guides***: Task-oriented, directions for specific goals
+- ***Reference***: Information-oriented, technical descriptions
+- ***Explanation***: Understanding-oriented, conceptual discussions
 
-**Two dimensions**
+***Two dimensions***
 * Practical vs. Theoretical
 * Acquisition (learning) vs. Application (working)
 
-**Separation of concerns**: Each type serves a distinct purpose
+***Separation of concerns***: Each type serves a distinct purpose
 
-**User needs**: Different users need different documentation at different times
+***User needs***: Different users need different documentation at different times
 
-**Quality criteria**: Each type has specific quality indicators
+***Quality criteria***: Each type has specific quality indicators
 
-**Systematic approach**: Framework for organizing any documentation
+***Systematic approach***: Framework for organizing any documentation
 
-**Key Proponent**: Daniele Procida
+***Key Proponent***: Daniele Procida
 
 **When to Use**:
 
@@ -1069,29 +1069,29 @@ to specific team members.
 
 ### Docs-as-Code according to Ralf D. Müller
 
-**Full Name**: Docs-as-Code Approach according to Ralf D. Müller
+***Full Name***: Docs-as-Code Approach according to Ralf D. Müller
 
 **Core Concepts**:
 
-**Plain text formats**: AsciiDoc, Markdown
+***Plain text formats***: AsciiDoc, Markdown
 
-**Version control**: Documentation in Git alongside code
+***Version control***: Documentation in Git alongside code
 
-**Automated toolchains**: Build pipelines for documentation
+***Automated toolchains***: Build pipelines for documentation
 
-**Single source of truth**: Generate multiple output formats from one source
+***Single source of truth***: Generate multiple output formats from one source
 
-**Diagrams as code**: PlantUML, Mermaid, Graphviz, Kroki
+***Diagrams as code***: PlantUML, Mermaid, Graphviz, Kroki
 
-**Continuous documentation**: Updated with every commit
+***Continuous documentation***: Updated with every commit
 
-**Developer-friendly**: Use same tools and workflows as for code
+***Developer-friendly***: Use same tools and workflows as for code
 
-**Review process**: Pull requests for documentation changes
+***Review process***: Pull requests for documentation changes
 
-**Modular documentation**: Includes and composition
+***Modular documentation***: Includes and composition
 
-**Key Proponent**: Ralf D. Müller (docToolchain creator)
+***Key Proponent***: Ralf D. Müller (docToolchain creator)
 
 **Technical Stack**:
 
@@ -1120,13 +1120,13 @@ A term qualifies as a semantic anchor when it activates a rich, well-defined con
 
 A good semantic anchor is:
 
-**Precise**: It references a specific, established body of knowledge or methodology with clear boundaries
+***Precise***: It references a specific, established body of knowledge or methodology with clear boundaries
 
-**Rich**: It activates multiple interconnected concepts, not just a single instruction or directive
+***Rich***: It activates multiple interconnected concepts, not just a single instruction or directive
 
-**Consistent**: Different users invoking it will get similar conceptual activation across contexts
+***Consistent***: Different users invoking it will get similar conceptual activation across contexts
 
-**Attributable**: It can be traced to key proponents, publications, established practices, or documented standards
+***Attributable***: It can be traced to key proponents, publications, established practices, or documented standards
 
 Semantic anchors exist on a spectrum from domain-heavy to interaction-heavy:
 
@@ -1138,11 +1138,11 @@ Domain-heavy ◄─────────────────────�
 ```
 The distinction isn't a strict category but rather a matter of emphasis. Most anchors have **both** dimensions:
 
-**Pyramid Principle**: Domain knowledge about structured communication + behavior change in how output is structured
+***Pyramid Principle***: Domain knowledge about structured communication + behavior change in how output is structured
 
-**TDD, London School**: Domain knowledge about testing + behavior change in how code is written
+***TDD, London School***: Domain knowledge about testing + behavior change in how code is written
 
-**Socratic Method**: Interaction pattern for dialogue + domain knowledge from philosophical tradition
+***Socratic Method***: Interaction pattern for dialogue + domain knowledge from philosophical tradition
 
 The quality bar is the same across this spectrum – all anchors must be well-defined, rich, and activatable.
 
@@ -1150,13 +1150,13 @@ The quality bar is the same across this spectrum – all anchors must be well-de
 
 Well-known terms that are **not** semantic anchors because they lack definition depth:
 
-**"TLDR"**: Underspecified, no defined structure or methodology, vague instruction to "be short"
+***"TLDR"***: Underspecified, no defined structure or methodology, vague instruction to "be short"
 
-**"ELI5"**: Vague target level, no pedagogical framework, no consistent interpretation
+***"ELI5"***: Vague target level, no pedagogical framework, no consistent interpretation
 
-**"Keep it short"**: Pure instruction, no conceptual depth or established methodology
+***"Keep it short"***: Pure instruction, no conceptual depth or established methodology
 
-**"Make it simple"**: Ambiguous directive without reference to specific simplification frameworks
+***"Make it simple"***: Ambiguous directive without reference to specific simplification frameworks
 
 These terms may be useful in conversation, but they don't activate rich conceptual frameworks the way true semantic anchors do.
 
@@ -1181,29 +1181,29 @@ The catalog is organized into the following categories:
 
 ### Chain of Thought (CoT)
 
-**Full Name**: Chain of Thought Prompting
+***Full Name***: Chain of Thought Prompting
 
 **Core Concepts**:
 
-**Step-by-Step Reasoning**: Explicitly show intermediate reasoning steps before reaching a conclusion
+***Step-by-Step Reasoning***: Explicitly show intermediate reasoning steps before reaching a conclusion
 
-**Reasoning Transparency**: Make the thought process visible, not just the final answer
+***Reasoning Transparency***: Make the thought process visible, not just the final answer
 
-**Intermediate Representations**: Break complex problems into smaller, manageable steps
+***Intermediate Representations***: Break complex problems into smaller, manageable steps
 
-**Error Reduction**: Exposing reasoning allows detection of logical errors mid-process
+***Error Reduction***: Exposing reasoning allows detection of logical errors mid-process
 
-**Complex Task Decomposition**: Handle multi-step problems that cannot be solved in one jump
+***Complex Task Decomposition***: Handle multi-step problems that cannot be solved in one jump
 
-**Zero-Shot CoT**: Simple prompt like "Let's think step by step" to trigger CoT behavior
+***Zero-Shot CoT***: Simple prompt like "Let's think step by step" to trigger CoT behavior
 
-**Few-Shot CoT**: Provide examples with reasoning chains to guide the model
+***Few-Shot CoT***: Provide examples with reasoning chains to guide the model
 
-**Self-Consistency**: Generate multiple reasoning paths and select most consistent answer
+***Self-Consistency***: Generate multiple reasoning paths and select most consistent answer
 
-**Key Proponents**: Wei et al. (Google Research, 2022), "Chain-of-Thought Prompting Elicits Reasoning in Large Language Models"
+***Key Proponents***: Wei et al. (Google Research, 2022), "Chain-of-Thought Prompting Elicits Reasoning in Large Language Models"
 
-**Historical Context**: Breakthrough in LLM prompting research, significantly improved performance on reasoning tasks (math, logic, common sense)
+***Historical Context***: Breakthrough in LLM prompting research, significantly improved performance on reasoning tasks (math, logic, common sense)
 
 **When to Use**:
 
@@ -1233,29 +1233,29 @@ Therefore: [Conclusion]
 
 ### Devil's Advocate
 
-**Full Name**: Devil's Advocate (Latin: **Advocatus Diaboli**)
+***Full Name***: Devil's Advocate (Latin: **Advocatus Diaboli**)
 
 **Core Concepts**:
 
-**Systematic Counter-Argumentation**: Present opposing viewpoints even if not personally held
+***Systematic Counter-Argumentation***: Present opposing viewpoints even if not personally held
 
-**Assumption Challenging**: Question premises and surface hidden assumptions
+***Assumption Challenging***: Question premises and surface hidden assumptions
 
-**Stress-Testing Ideas**: Identify weaknesses before they become problems
+***Stress-Testing Ideas***: Identify weaknesses before they become problems
 
-**Steelmanning**: Present the **strongest** version of the opposing argument, not a strawman
+***Steelmanning***: Present the **strongest** version of the opposing argument, not a strawman
 
-**Intellectual Honesty**: Separate idea evaluation from ego or political concerns
+***Intellectual Honesty***: Separate idea evaluation from ego or political concerns
 
-**Pre-Mortem Thinking**: Imagine failure scenarios to prevent them
+***Pre-Mortem Thinking***: Imagine failure scenarios to prevent them
 
-**Dialectical Reasoning**: Thesis + Antithesis → Synthesis
+***Dialectical Reasoning***: Thesis + Antithesis → Synthesis
 
-**Risk Identification**: Surface potential problems proactively
+***Risk Identification***: Surface potential problems proactively
 
-**Key Origin**: Catholic Church canonization process (Promotor Fidei role, formalized 1587), secularized in critical thinking and decision-making
+***Key Origin***: Catholic Church canonization process (Promotor Fidei role, formalized 1587), secularized in critical thinking and decision-making
 
-**Historical Context**: 400+ years as formalized practice in the Church, adopted widely in law, philosophy, business strategy, and red teaming
+***Historical Context***: 400+ years as formalized practice in the Church, adopted widely in law, philosophy, business strategy, and red teaming
 
 **When to Use**:
 
@@ -1284,29 +1284,29 @@ Play devil's advocate: What are the strongest arguments against this approach?
 
 ### Feynman Technique
 
-**Full Name**: Feynman Technique (also Feynman Learning Method)
+***Full Name***: Feynman Technique (also Feynman Learning Method)
 
 **Core Concepts**:
 
-**Explain Simply**: Teach the concept in simple language as if to a beginner (traditionally "explain to a 12-year-old")
+***Explain Simply***: Teach the concept in simple language as if to a beginner (traditionally "explain to a 12-year-old")
 
-**Identify Gaps**: When you struggle to explain, you've found gaps in your understanding
+***Identify Gaps***: When you struggle to explain, you've found gaps in your understanding
 
-**Return to Source Material**: Go back and re-learn the parts you couldn't explain clearly
+***Return to Source Material***: Go back and re-learn the parts you couldn't explain clearly
 
-**Simplify and Use Analogies**: Refine explanation using plain language and concrete examples
+***Simplify and Use Analogies***: Refine explanation using plain language and concrete examples
 
-**Iterative Refinement**: Repeat the cycle until you can explain clearly and simply
+***Iterative Refinement***: Repeat the cycle until you can explain clearly and simply
 
-**No Jargon Hiding**: Inability to avoid jargon signals lack of true understanding
+***No Jargon Hiding***: Inability to avoid jargon signals lack of true understanding
 
-**Active Learning**: Transform passive reading into active teaching
+***Active Learning***: Transform passive reading into active teaching
 
-**Metacognition**: Become aware of what you don't know
+***Metacognition***: Become aware of what you don't know
 
-**Key Attribution**: Richard Feynman (Nobel Prize-winning physicist, 1965), famous for making complex physics accessible
+***Key Attribution***: Richard Feynman (Nobel Prize-winning physicist, 1965), famous for making complex physics accessible
 
-**Historical Context**: Feynman was renowned for his teaching ability and his belief that deep understanding meant being able to explain simply. The "technique" is a formalization of his learning approach.
+***Historical Context***: Feynman was renowned for his teaching ability and his belief that deep understanding meant being able to explain simply. The "technique" is a formalization of his learning approach.
 
 **When to Use**:
 
@@ -1332,33 +1332,33 @@ Play devil's advocate: What are the strongest arguments against this approach?
 * Elaborative interrogation
 * Plain language movement
 
-**Quote**: "If you can't explain it simply, you don't understand it well enough." (Often attributed to Einstein, but embodies Feynman's philosophy)
+***Quote***: "If you can't explain it simply, you don't understand it well enough." (Often attributed to Einstein, but embodies Feynman's philosophy)
 
 ### Five Whys (Ohno)
 
-**Full Name**: Five Whys Root Cause Analysis
+***Full Name***: Five Whys Root Cause Analysis
 
 **Core Concepts**:
 
-**Iterative Causal Analysis**: Ask "Why?" repeatedly (typically ~5 times) to drill down to root causes
+***Iterative Causal Analysis***: Ask "Why?" repeatedly (typically ~5 times) to drill down to root causes
 
-**Root Cause vs. Symptom**: Distinguish between surface symptoms and underlying causes
+***Root Cause vs. Symptom***: Distinguish between surface symptoms and underlying causes
 
-**Causal Chain**: Each answer becomes the subject of the next "Why?" question
+***Causal Chain***: Each answer becomes the subject of the next "Why?" question
 
-**Actionable Root Cause**: Continue until you reach a cause that can be acted upon
+***Actionable Root Cause***: Continue until you reach a cause that can be acted upon
 
-**Simplicity**: No complex tools or statistical analysis required
+***Simplicity***: No complex tools or statistical analysis required
 
-**Team-Based Investigation**: Collaborative exploration of causal relationships
+***Team-Based Investigation***: Collaborative exploration of causal relationships
 
-**Avoiding Blame**: Focus on process failures, not individual fault
+***Avoiding Blame***: Focus on process failures, not individual fault
 
-**Countermeasure Identification**: Once root cause is found, design interventions
+***Countermeasure Identification***: Once root cause is found, design interventions
 
-**Key Proponent**: Taiichi Ohno (Toyota Production System, 1950s)
+***Key Proponent***: Taiichi Ohno (Toyota Production System, 1950s)
 
-**Historical Context**: Core tool in Lean Manufacturing and Toyota Production System (TPS), foundational to continuous improvement (Kaizen)
+***Historical Context***: Core tool in Lean Manufacturing and Toyota Production System (TPS), foundational to continuous improvement (Kaizen)
 
 **When to Use**:
 
@@ -1398,29 +1398,29 @@ Countermeasure: Establish pre-production configuration checklist
 
 ### Morphological Box
 
-**Full Name**: Morphological Analysis / Morphological Box (German: Morphologischer Kasten)
+***Full Name***: Morphological Analysis / Morphological Box (German: Morphologischer Kasten)
 
 **Core Concepts**:
 
-**Multi-dimensional decomposition**: Break complex problem into independent parameters/dimensions
+***Multi-dimensional decomposition***: Break complex problem into independent parameters/dimensions
 
-**Variant enumeration**: Identify possible values/options for each parameter
+***Variant enumeration***: Identify possible values/options for each parameter
 
-**Matrix construction**: Organize parameters and variants in table/box form
+***Matrix construction***: Organize parameters and variants in table/box form
 
-**Combinatorial exploration**: Systematically examine combinations of variants
+***Combinatorial exploration***: Systematically examine combinations of variants
 
-**Constraint filtering**: Eliminate infeasible or contradictory combinations
+***Constraint filtering***: Eliminate infeasible or contradictory combinations
 
-**Novel solution discovery**: Find non-obvious solutions through systematic recombination
+***Novel solution discovery***: Find non-obvious solutions through systematic recombination
 
-**Complete solution space**: Ensure all possibilities are considered
+***Complete solution space***: Ensure all possibilities are considered
 
-**Structured creativity**: Systematic approach to innovation and ideation
+***Structured creativity***: Systematic approach to innovation and ideation
 
-**Key Proponent**: Fritz Zwicky (1940s-1960s, California Institute of Technology)
+***Key Proponent***: Fritz Zwicky (1940s-1960s, California Institute of Technology)
 
-**Historical Context**: Developed for aerospace engineering problems (jet engines, spacecraft propulsion), now widely applied in product development, system design, and innovation management.
+***Historical Context***: Developed for aerospace engineering problems (jet engines, spacecraft propulsion), now widely applied in product development, system design, and innovation management.
 
 **When to Use**:
 
@@ -1469,29 +1469,29 @@ Filter by constraints (e.g., "AsciiDoc + Hugo not well-supported")
 
 ### Rubber Duck Debugging
 
-**Full Name**: Rubber Duck Debugging
+***Full Name***: Rubber Duck Debugging
 
 **Core Concepts**:
 
-**Explain to Understand**: Articulating a problem aloud surfaces gaps in understanding
+***Explain to Understand***: Articulating a problem aloud surfaces gaps in understanding
 
-**Step-by-Step Verbalization**: Force yourself to go through code/logic line by line
+***Step-by-Step Verbalization***: Force yourself to go through code/logic line by line
 
-**Assumption Surfacing**: Speaking aloud exposes implicit assumptions that may be wrong
+***Assumption Surfacing***: Speaking aloud exposes implicit assumptions that may be wrong
 
-**No Expertise Required**: The "listener" (rubber duck, colleague, LLM) need not be an expert
+***No Expertise Required***: The "listener" (rubber duck, colleague, LLM) need not be an expert
 
-**Slowing Down**: The act of explaining forces a slower, more deliberate thought process
+***Slowing Down***: The act of explaining forces a slower, more deliberate thought process
 
-**External Cognition**: Verbalizing creates an external representation that aids debugging
+***External Cognition***: Verbalizing creates an external representation that aids debugging
 
-**Self-Directed Learning**: Often the explainer solves the problem before finishing the explanation
+***Self-Directed Learning***: Often the explainer solves the problem before finishing the explanation
 
-**Teaching to Learn**: Related to the Feynman Technique and learning-by-teaching principle
+***Teaching to Learn***: Related to the Feynman Technique and learning-by-teaching principle
 
-**Key Origin**: "The Pragmatic Programmer" by Andrew Hunt and David Thomas (1999), referencing earlier programmer folklore
+***Key Origin***: "The Pragmatic Programmer" by Andrew Hunt and David Thomas (1999), referencing earlier programmer folklore
 
-**Historical Context**: Decades-old practice in programming culture, formalized and named in influential software engineering literature
+***Historical Context***: Decades-old practice in programming culture, formalized and named in influential software engineering literature
 
 **When to Use**:
 
@@ -1513,25 +1513,25 @@ Filter by constraints (e.g., "AsciiDoc + Hugo not well-supported")
 
 ### EARS-Requirements
 
-**Full Name**: Easy Approach to Requirements Syntax
+***Full Name***: Easy Approach to Requirements Syntax
 
 **Core Concepts**:
 
-**Ubiquitous requirements**: "The <system> shall <requirement>"
+***Ubiquitous requirements***: "The <system> shall <requirement>"
 
-**Event-driven requirements**: "WHEN <trigger> the <system> shall <requirement>"
+***Event-driven requirements***: "WHEN <trigger> the <system> shall <requirement>"
 
-**Unwanted behavior**: "IF <condition>, THEN the <system> shall <requirement>"
+***Unwanted behavior***: "IF <condition>, THEN the <system> shall <requirement>"
 
-**State-driven requirements**: "WHILE <state>, the <system> shall <requirement>"
+***State-driven requirements***: "WHILE <state>, the <system> shall <requirement>"
 
-**Optional features**: "WHERE <feature is included>, the <system> shall <requirement>"
+***Optional features***: "WHERE <feature is included>, the <system> shall <requirement>"
 
-**Structured syntax**: Consistent templates for clarity
+***Structured syntax***: Consistent templates for clarity
 
-**Testability**: Requirements written to be verifiable
+***Testability***: Requirements written to be verifiable
 
-**Key Proponent**: Alistair Mavin (Rolls-Royce)
+***Key Proponent***: Alistair Mavin (Rolls-Royce)
 
 **When to Use**:
 
@@ -1542,25 +1542,25 @@ Filter by constraints (e.g., "AsciiDoc + Hugo not well-supported")
 
 ### Problem Space NVC
 
-**Full Name**: Problem Space in Nonviolent Communication
+***Full Name***: Problem Space in Nonviolent Communication
 
 **Core Concepts**:
 
-**Observations**: Concrete, objective facts without evaluation
+***Observations***: Concrete, objective facts without evaluation
 
-**Feelings**: Emotions arising from observations
+***Feelings***: Emotions arising from observations
 
-**Needs**: Universal human needs underlying feelings
+***Needs***: Universal human needs underlying feelings
 
-**Requests**: Specific, actionable requests (not demands)
+***Requests***: Specific, actionable requests (not demands)
 
-**Empathic connection**: Understanding before problem-solving
+***Empathic connection***: Understanding before problem-solving
 
-**Separating observation from interpretation**: Avoiding judgment
+***Separating observation from interpretation***: Avoiding judgment
 
-**Needs-based conflict resolution**: Finding solutions that meet everyone's needs
+***Needs-based conflict resolution***: Finding solutions that meet everyone's needs
 
-**Key Proponent**: Marshall Rosenberg
+***Key Proponent***: Marshall Rosenberg
 
 **Application in Software Development**:
 
@@ -1571,29 +1571,29 @@ Filter by constraints (e.g., "AsciiDoc + Hugo not well-supported")
 
 ### User Story Mapping
 
-**Full Name**: User Story Mapping according to Jeff Patton
+***Full Name***: User Story Mapping according to Jeff Patton
 
 **Core Concepts**:
 
-**Narrative flow**: Horizontal arrangement of user activities
+***Narrative flow***: Horizontal arrangement of user activities
 
-**User activities**: High-level tasks users perform
+***User activities***: High-level tasks users perform
 
-**User tasks**: Steps within activities
+***User tasks***: Steps within activities
 
-**Walking skeleton**: Minimal end-to-end functionality first
+***Walking skeleton***: Minimal end-to-end functionality first
 
-**Release planning**: Horizontal slices for releases
+***Release planning***: Horizontal slices for releases
 
-**Prioritization by value**: Vertical ordering by importance
+***Prioritization by value***: Vertical ordering by importance
 
-**Shared understanding**: Collaborative mapping builds team alignment
+***Shared understanding***: Collaborative mapping builds team alignment
 
-**Big picture view**: See the whole journey, not just backlog items
+***Big picture view***: See the whole journey, not just backlog items
 
-**Opportunity for conversation**: Stories as placeholders for discussion
+***Opportunity for conversation***: Stories as placeholders for discussion
 
-**Key Proponent**: Jeff Patton ("User Story Mapping", 2014)
+***Key Proponent***: Jeff Patton ("User Story Mapping", 2014)
 
 **When to Use**:
 
@@ -1608,28 +1608,28 @@ Filter by constraints (e.g., "AsciiDoc + Hugo not well-supported")
 
 ### ADR according to Nygard
 
-**Full Name**: Architecture Decision Records according to Michael Nygard
+***Full Name***: Architecture Decision Records according to Michael Nygard
 
 **Core Concepts**:
 
-**Lightweight documentation**: Short, focused records
+***Lightweight documentation***: Short, focused records
 
-**Standard structure**
+***Standard structure***
 * Title
 * Status (proposed, accepted, deprecated, superseded)
 * Context (forces at play)
 * Decision (what was chosen)
 * Consequences (both positive and negative)
 
-**Immutability**: ADRs are never deleted, only superseded
+***Immutability***: ADRs are never deleted, only superseded
 
-**Version control**: ADRs stored with code
+***Version control***: ADRs stored with code
 
-**Decision archaeology**: Understanding why past decisions were made
+***Decision archaeology***: Understanding why past decisions were made
 
-**Evolutionary architecture**: Supporting architecture that changes over time
+***Evolutionary architecture***: Supporting architecture that changes over time
 
-**Key Proponent**: Michael Nygard
+***Key Proponent***: Michael Nygard
 
 **When to Use**:
 
@@ -1640,41 +1640,41 @@ Filter by constraints (e.g., "AsciiDoc + Hugo not well-supported")
 
 ### arc42 Architecture Documentation
 
-**Full Name**: arc42 Architecture Documentation Template
+***Full Name***: arc42 Architecture Documentation Template
 
 **Core Concepts**:
 
-**12 standardized sections**: From introduction to glossary
+***12 standardized sections***: From introduction to glossary
 
-**Section 1**: Introduction and Goals
+***Section 1***: Introduction and Goals
 
-**Section 2**: Constraints
+***Section 2***: Constraints
 
-**Section 3**: Context and Scope
+***Section 3***: Context and Scope
 
-**Section 4**: Solution Strategy
+***Section 4***: Solution Strategy
 
-**Section 5**: Building Block View
+***Section 5***: Building Block View
 
-**Section 6**: Runtime View
+***Section 6***: Runtime View
 
-**Section 7**: Deployment View
+***Section 7***: Deployment View
 
-**Section 8**: Crosscutting Concepts
+***Section 8***: Crosscutting Concepts
 
-**Section 9**: Architecture Decisions (ADRs)
+***Section 9***: Architecture Decisions (ADRs)
 
-**Section 10**: Quality Requirements
+***Section 10***: Quality Requirements
 
-**Section 11**: Risks and Technical Debt
+***Section 11***: Risks and Technical Debt
 
-**Section 12**: Glossary
+***Section 12***: Glossary
 
-**Pragmatic documentation**: Document only what's necessary
+***Pragmatic documentation***: Document only what's necessary
 
-**Multiple formats**: AsciiDoc, Markdown, Confluence, etc.
+***Multiple formats***: AsciiDoc, Markdown, Confluence, etc.
 
-**Key Proponents**: Gernot Starke, Peter Hruschka
+***Key Proponents***: Gernot Starke, Peter Hruschka
 
 **When to Use**:
 
@@ -1684,26 +1684,26 @@ Filter by constraints (e.g., "AsciiDoc + Hugo not well-supported")
 
 ### C4-Diagrams
 
-**Full Name**: C4 Model for Software Architecture Diagrams
+***Full Name***: C4 Model for Software Architecture Diagrams
 
 **Core Concepts**:
 
-**Four levels of abstraction**
+***Four levels of abstraction***
 
-- **Level 1 - Context**: System in its environment (users, external systems)
-- **Level 2 - Container**: Applications and data stores that make up the system
-- **Level 3 - Component**: Components within containers
-- **Level 4 - Code**: Class diagrams, entity relationships (optional)
+- ***Level 1 - Context***: System in its environment (users, external systems)
+- ***Level 2 - Container***: Applications and data stores that make up the system
+- ***Level 3 - Component***: Components within containers
+- ***Level 4 - Code***: Class diagrams, entity relationships (optional)
 
-**Zoom in/out**: Progressive disclosure of detail
+***Zoom in/out***: Progressive disclosure of detail
 
-**Simple notation**: Boxes and arrows, minimal notation overhead
+***Simple notation***: Boxes and arrows, minimal notation overhead
 
-**Audience-appropriate**: Different diagrams for different stakeholders
+***Audience-appropriate***: Different diagrams for different stakeholders
 
-**Supplementary diagrams**: Deployment, dynamic views, etc.
+***Supplementary diagrams***: Deployment, dynamic views, etc.
 
-**Key Proponent**: Simon Brown
+***Key Proponent***: Simon Brown
 
 **When to Use**:
 
@@ -1714,29 +1714,29 @@ Filter by constraints (e.g., "AsciiDoc + Hugo not well-supported")
 
 ### Clean Architecture
 
-**Full Name**: Clean Architecture according to Robert C. Martin
+***Full Name***: Clean Architecture according to Robert C. Martin
 
 **Core Concepts**:
 
-**The Dependency Rule**: Dependencies only point inward
+***The Dependency Rule***: Dependencies only point inward
 
-**Concentric circles**: Entities → Use Cases → Interface Adapters → Frameworks & Drivers
+***Concentric circles***: Entities → Use Cases → Interface Adapters → Frameworks & Drivers
 
-**Independent of frameworks**: Architecture doesn't depend on libraries
+***Independent of frameworks***: Architecture doesn't depend on libraries
 
-**Testable**: Business rules testable without UI, database, or external elements
+***Testable***: Business rules testable without UI, database, or external elements
 
-**Independent of UI**: UI can change without changing business rules
+***Independent of UI***: UI can change without changing business rules
 
-**Independent of database**: Business rules not bound to database
+***Independent of database***: Business rules not bound to database
 
-**Independent of external agencies**: Business rules don't know about outside world
+***Independent of external agencies***: Business rules don't know about outside world
 
-**Screaming Architecture**: Architecture reveals the intent of the system
+***Screaming Architecture***: Architecture reveals the intent of the system
 
-**SOLID principles**: Foundation of the architecture
+***SOLID principles***: Foundation of the architecture
 
-**Key Proponent**: Robert C. Martin ("Uncle Bob")
+***Key Proponent***: Robert C. Martin ("Uncle Bob")
 
 **When to Use**:
 
@@ -1747,31 +1747,31 @@ Filter by constraints (e.g., "AsciiDoc + Hugo not well-supported")
 
 ### Domain-Driven Design according to Evans
 
-**Full Name**: Domain-Driven Design according to Eric Evans
+***Full Name***: Domain-Driven Design according to Eric Evans
 
 **Core Concepts**:
 
-**Ubiquitous Language**: Shared vocabulary between developers and domain experts
+***Ubiquitous Language***: Shared vocabulary between developers and domain experts
 
-**Bounded Context**: Explicit boundaries where a model is defined and applicable
+***Bounded Context***: Explicit boundaries where a model is defined and applicable
 
-**Aggregates**: Cluster of domain objects treated as a single unit
+***Aggregates***: Cluster of domain objects treated as a single unit
 
-**Entities**: Objects defined by identity, not attributes
+***Entities***: Objects defined by identity, not attributes
 
-**Value Objects**: Immutable objects defined by their attributes
+***Value Objects***: Immutable objects defined by their attributes
 
-**Repositories**: Abstraction for object persistence and retrieval
+***Repositories***: Abstraction for object persistence and retrieval
 
-**Domain Events**: Significant occurrences in the domain
+***Domain Events***: Significant occurrences in the domain
 
-**Strategic Design**: Context mapping, anti-corruption layers
+***Strategic Design***: Context mapping, anti-corruption layers
 
-**Tactical Design**: Building blocks (entities, value objects, services)
+***Tactical Design***: Building blocks (entities, value objects, services)
 
-**Model-Driven Design**: Code that expresses the domain model
+***Model-Driven Design***: Code that expresses the domain model
 
-**Key Proponent**: Eric Evans ("Domain-Driven Design: Tackling Complexity in the Heart of Software", 2003)
+***Key Proponent***: Eric Evans ("Domain-Driven Design: Tackling Complexity in the Heart of Software", 2003)
 
 **When to Use**:
 
@@ -1782,29 +1782,29 @@ Filter by constraints (e.g., "AsciiDoc + Hugo not well-supported")
 
 ### Hexagonal Architecture (Ports & Adapters)
 
-**Also known as**: Ports and Adapters, Onion Architecture (variant)
+***Also known as***: Ports and Adapters, Onion Architecture (variant)
 
 **Core Concepts**:
 
-**Hexagonal structure**: Core domain at the center, isolated from external concerns
+***Hexagonal structure***: Core domain at the center, isolated from external concerns
 
-**Ports**: Interfaces defining how the application communicates
+***Ports***: Interfaces defining how the application communicates
 
-**Adapters**: Implementations that connect to external systems
+***Adapters***: Implementations that connect to external systems
 
-**Dependency inversion**: Dependencies point inward toward the domain
+***Dependency inversion***: Dependencies point inward toward the domain
 
-**Technology independence**: Core logic doesn't depend on frameworks or infrastructure
+***Technology independence***: Core logic doesn't depend on frameworks or infrastructure
 
-**Primary/Driving adapters**: User interfaces, APIs (inbound)
+***Primary/Driving adapters***: User interfaces, APIs (inbound)
 
-**Secondary/Driven adapters**: Databases, message queues (outbound)
+***Secondary/Driven adapters***: Databases, message queues (outbound)
 
-**Testability**: Easy to test core logic in isolation
+***Testability***: Easy to test core logic in isolation
 
-**Symmetry**: All external interactions are treated uniformly
+***Symmetry***: All external interactions are treated uniformly
 
-**Key Proponent**: Alistair Cockburn (2005)
+***Key Proponent***: Alistair Cockburn (2005)
 
 **When to Use**:
 
@@ -1815,13 +1815,13 @@ Filter by constraints (e.g., "AsciiDoc + Hugo not well-supported")
 
 ### MADR
 
-**Full Name**: Markdown Any Decision Records
+***Full Name***: Markdown Any Decision Records
 
 **Core Concepts**:
 
-**Structured template**: Well-defined format with specific sections
+***Structured template***: Well-defined format with specific sections
 
-**Standard fields**
+***Standard fields***
 * Title (short noun phrase)
 * Status (proposed, accepted, rejected, deprecated, superseded)
 * Context and Problem Statement
@@ -1831,19 +1831,19 @@ Filter by constraints (e.g., "AsciiDoc + Hugo not well-supported")
 * Pros and Cons of the Options (trade-off analysis)
 * Links (related decisions, references)
 
-**Markdown format**: Uses standard Markdown for wide compatibility
+***Markdown format***: Uses standard Markdown for wide compatibility
 
-**Clear structure**: More detailed than basic ADRs, includes explicit alternatives
+***Clear structure***: More detailed than basic ADRs, includes explicit alternatives
 
-**Trade-off documentation**: Explicitly captures pros/cons of each option
+***Trade-off documentation***: Explicitly captures pros/cons of each option
 
-**Version control**: Stored with code, immutable like other ADRs
+***Version control***: Stored with code, immutable like other ADRs
 
-**Lightweight yet comprehensive**: Balances completeness with maintainability
+***Lightweight yet comprehensive***: Balances completeness with maintainability
 
-**Key Proponents**: Oliver Kopp, Olaf Zimmermann (and MADR community)
+***Key Proponents***: Oliver Kopp, Olaf Zimmermann (and MADR community)
 
-**Reference**: https://adr.github.io/madr/
+***Reference***: https://adr.github.io/madr/
 
 **When to Use**:
 
@@ -1860,46 +1860,46 @@ Filter by constraints (e.g., "AsciiDoc + Hugo not well-supported")
 
 ### Control Chart (Shewhart)
 
-**Full Name**: Shewhart Control Chart
+***Full Name***: Shewhart Control Chart
 
-**Also known as**: Process Control Chart, SPC Chart
+***Also known as***: Process Control Chart, SPC Chart
 
 **Core Concepts**:
 
-**Time series diagram**: Measured value plotted over time
+***Time series diagram***: Measured value plotted over time
 
-**Centerline (CL)**: Process mean
+***Centerline (CL)***: Process mean
 
-**Upper/Lower Control Limit (UCL/LCL)**: Typically at ±3σ from the mean
+***Upper/Lower Control Limit (UCL/LCL)***: Typically at ±3σ from the mean
 
-**Zones A/B/C**: Division into 6 areas (each 1σ wide) for pattern recognition
+***Zones A/B/C***: Division into 6 areas (each 1σ wide) for pattern recognition
 
-**Common Cause Variation**: Inherent, random fluctuation of a stable process
+***Common Cause Variation***: Inherent, random fluctuation of a stable process
 
-**Special Cause Variation**: Assignable, correctable deviation
+***Special Cause Variation***: Assignable, correctable deviation
 
-**Chart Types**
+***Chart Types***
 * X-bar Chart: Subgroup means
 * R-Chart: Subgroup ranges
 * I-MR Chart: Individual values and moving range
 * p-Chart: Defect proportions
 * c-Chart: Defect counts per unit
 
-**In-Control vs. Out-of-Control**: Core decision based on rules (Nelson, Western Electric)
+***In-Control vs. Out-of-Control***: Core decision based on rules (Nelson, Western Electric)
 
-**Normal distribution assumption**: Control limits are based on normally distributed data
+***Normal distribution assumption***: Control limits are based on normally distributed data
 
-**Key Proponent**: Walter A. Shewhart (1920s, Bell Labs / Western Electric)
+***Key Proponent***: Walter A. Shewhart (1920s, Bell Labs / Western Electric)
 
-**Key Work**: "Economic Control of Quality of Manufactured Product" (1931)
+***Key Work***: "Economic Control of Quality of Manufactured Product" (1931)
 
 **Relationship to Other Anchors**:
 
-**Nelson Rules**: 8 rules for pattern recognition on Control Charts
+***Nelson Rules***: 8 rules for pattern recognition on Control Charts
 
-**SPC**: Control Charts are the central tool of Statistical Process Control
+***SPC***: Control Charts are the central tool of Statistical Process Control
 
-**Six Sigma**: Control Charts are used in the Control phase of DMAIC
+***Six Sigma***: Control Charts are used in the Control phase of DMAIC
 
 **When to Use**:
 
@@ -1911,42 +1911,42 @@ Filter by constraints (e.g., "AsciiDoc + Hugo not well-supported")
 
 ### Nelson Rules
 
-**Full Name**: Nelson Rules (Tests for Special Causes)
+***Full Name***: Nelson Rules (Tests for Special Causes)
 
 **Core Concepts**:
 
 * **8 rules** for detecting non-random patterns in Control Charts
-**Rule 1**: One point beyond 3σ (Outlier)
+***Rule 1***: One point beyond 3σ (Outlier)
 
-**Rule 2**: 9 consecutive points on the same side of the mean (Shift/Bias)
+***Rule 2***: 9 consecutive points on the same side of the mean (Shift/Bias)
 
-**Rule 3**: 6 consecutive points steadily increasing or decreasing (Trend)
+***Rule 3***: 6 consecutive points steadily increasing or decreasing (Trend)
 
-**Rule 4**: 14 points alternating up and down (Oscillation)
+***Rule 4***: 14 points alternating up and down (Oscillation)
 
-**Rule 5**: 2 out of 3 points beyond 2σ on the same side
+***Rule 5***: 2 out of 3 points beyond 2σ on the same side
 
-**Rule 6**: 4 out of 5 points beyond 1σ on the same side
+***Rule 6***: 4 out of 5 points beyond 1σ on the same side
 
-**Rule 7**: 15 points within 1σ (suspiciously low variance)
+***Rule 7***: 15 points within 1σ (suspiciously low variance)
 
-**Rule 8**: 8 points outside ±1σ, but none beyond ±3σ (systematic oscillation)
+***Rule 8***: 8 points outside ±1σ, but none beyond ±3σ (systematic oscillation)
 
-**Common Cause vs. Special Cause**: Distinguishing inherent from assignable variation
+***Common Cause vs. Special Cause***: Distinguishing inherent from assignable variation
 
-**Zones A/B/C**: Dividing the Control Chart into 6 zones (each 1σ wide)
+***Zones A/B/C***: Dividing the Control Chart into 6 zones (each 1σ wide)
 
-**False Positive Trade-off**: More active rules = higher sensitivity, but more false alarms
+***False Positive Trade-off***: More active rules = higher sensitivity, but more false alarms
 
-**Key Proponent**: Lloyd S. Nelson (1984, Journal of Quality Technology)
+***Key Proponent***: Lloyd S. Nelson (1984, Journal of Quality Technology)
 
 **Relationship to Other Anchors**:
 
-**Control Chart (Shewhart)**: Nelson Rules are applied to Control Charts
+***Control Chart (Shewhart)***: Nelson Rules are applied to Control Charts
 
-**SPC**: Nelson Rules are a tool within Statistical Process Control
+***SPC***: Nelson Rules are a tool within Statistical Process Control
 
-**Western Electric Rules**: Predecessor; Nelson Rules extend these with Rules 5-8
+***Western Electric Rules***: Predecessor; Nelson Rules extend these with Rules 5-8
 
 **When to Use**:
 
@@ -1957,41 +1957,41 @@ Filter by constraints (e.g., "AsciiDoc + Hugo not well-supported")
 
 ### SPC (Statistical Process Control)
 
-**Full Name**: Statistical Process Control
+***Full Name***: Statistical Process Control
 
 **Core Concepts**:
 
-**Process monitoring**: Systematic statistical monitoring of running processes
+***Process monitoring***: Systematic statistical monitoring of running processes
 
-**Common Cause Variation**: Inherent, random fluctuation — stable and predictable
+***Common Cause Variation***: Inherent, random fluctuation — stable and predictable
 
-**Special Cause Variation**: Assignable cause — unstable, correctable
+***Special Cause Variation***: Assignable cause — unstable, correctable
 
-**Control Charts**: Central visual tool (see dedicated anchor)
+***Control Charts***: Central visual tool (see dedicated anchor)
 
-**Detection rules**: Nelson Rules, Western Electric Rules (see dedicated anchors)
+***Detection rules***: Nelson Rules, Western Electric Rules (see dedicated anchors)
 
-**Process Capability**: Indices Cp, Cpk (short-term) and Pp, Ppk (long-term)
+***Process Capability***: Indices Cp, Cpk (short-term) and Pp, Ppk (long-term)
 
-**In-Control**: Process exhibits only Common Cause Variation
+***In-Control***: Process exhibits only Common Cause Variation
 
-**Out-of-Control**: Special Cause detected — intervention required
+***Out-of-Control***: Special Cause detected — intervention required
 
-**Continuous Improvement**: SPC as a foundation for ongoing process improvement
+***Continuous Improvement***: SPC as a foundation for ongoing process improvement
 
-**DMAIC Control Phase**: SPC tools secure improvements within Six Sigma
+***DMAIC Control Phase***: SPC tools secure improvements within Six Sigma
 
-**Key Proponents**: Walter A. Shewhart (founder), W. Edwards Deming (dissemination), Western Electric Company
+***Key Proponents***: Walter A. Shewhart (founder), W. Edwards Deming (dissemination), Western Electric Company
 
 **Relationship to Other Anchors**:
 
-**Control Chart (Shewhart)**: Central tool within SPC
+***Control Chart (Shewhart)***: Central tool within SPC
 
-**Nelson Rules**: Detection rules for Special Causes on Control Charts
+***Nelson Rules***: Detection rules for Special Causes on Control Charts
 
-**Six Sigma**: Uses SPC particularly in the Control phase
+***Six Sigma***: Uses SPC particularly in the Control phase
 
-**Testing Pyramid**: Conceptual parallel — different levels of quality assurance
+***Testing Pyramid***: Conceptual parallel — different levels of quality assurance
 
 **When to Use**:
 
@@ -2007,29 +2007,29 @@ Filter by constraints (e.g., "AsciiDoc + Hugo not well-supported")
 
 ### Cynefin Framework
 
-**Full Name**: Cynefin Framework according to Dave Snowden
+***Full Name***: Cynefin Framework according to Dave Snowden
 
 **Core Concepts**:
 
-**Five domains**
+***Five domains***
 
-- **Clear (formerly "Simple")**: Best practices apply, sense-categorize-respond
-- **Complicated**: Good practices exist, sense-analyze-respond
-- **Complex**: Emergent practices, probe-sense-respond
-- **Chaotic**: Novel practices needed, act-sense-respond
-- **Confused (center)**: Don't know which domain you're in
+- ***Clear (formerly "Simple")***: Best practices apply, sense-categorize-respond
+- ***Complicated***: Good practices exist, sense-analyze-respond
+- ***Complex***: Emergent practices, probe-sense-respond
+- ***Chaotic***: Novel practices needed, act-sense-respond
+- ***Confused (center)***: Don't know which domain you're in
 
-**Domain transitions**: How situations move between domains
+***Domain transitions***: How situations move between domains
 
-**Safe-to-fail probes**: Experiments in complex domain
+***Safe-to-fail probes***: Experiments in complex domain
 
-**Complacency risk**: Moving from clear to chaotic
+***Complacency risk***: Moving from clear to chaotic
 
-**Decision-making context**: Different domains require different approaches
+***Decision-making context***: Different domains require different approaches
 
-**Facilitation tool**: Helps teams discuss and categorize challenges
+***Facilitation tool***: Helps teams discuss and categorize challenges
 
-**Key Proponent**: Dave Snowden (1999)
+***Key Proponent***: Dave Snowden (1999)
 
 **When to Use**:
 
@@ -2040,29 +2040,29 @@ Filter by constraints (e.g., "AsciiDoc + Hugo not well-supported")
 
 ### Impact Mapping
 
-**Full Name**: Impact Mapping according to Gojko Adzic
+***Full Name***: Impact Mapping according to Gojko Adzic
 
 **Core Concepts**:
 
-**Four levels**: Goal → Actors → Impacts → Deliverables
+***Four levels***: Goal → Actors → Impacts → Deliverables
 
-**Goal**: Business objective (Why?)
+***Goal***: Business objective (Why?)
 
-**Actors**: Who can produce or prevent desired impact? (Who?)
+***Actors***: Who can produce or prevent desired impact? (Who?)
 
-**Impacts**: How can actors' behavior change? (How?)
+***Impacts***: How can actors' behavior change? (How?)
 
-**Deliverables**: What can we build? (What?)
+***Deliverables***: What can we build? (What?)
 
-**Visual mapping**: Mind-map style collaborative diagram
+***Visual mapping***: Mind-map style collaborative diagram
 
-**Assumption testing**: Make assumptions explicit
+***Assumption testing***: Make assumptions explicit
 
-**Scope management**: Prevent scope creep by linking to goals
+***Scope management***: Prevent scope creep by linking to goals
 
-**Roadmap alternative**: Goal-oriented rather than feature-oriented
+***Roadmap alternative***: Goal-oriented rather than feature-oriented
 
-**Key Proponent**: Gojko Adzic ("Impact Mapping", 2012)
+***Key Proponent***: Gojko Adzic ("Impact Mapping", 2012)
 
 **When to Use**:
 
@@ -2073,29 +2073,29 @@ Filter by constraints (e.g., "AsciiDoc + Hugo not well-supported")
 
 ### Jobs To Be Done (JTBD)
 
-**Full Name**: Jobs To Be Done Framework (Christensen interpretation)
+***Full Name***: Jobs To Be Done Framework (Christensen interpretation)
 
 **Core Concepts**:
 
-**Job definition**: Progress people want to make in a particular context
+***Job definition***: Progress people want to make in a particular context
 
-**Functional job**: Practical task to accomplish
+***Functional job***: Practical task to accomplish
 
-**Emotional job**: How people want to feel
+***Emotional job***: How people want to feel
 
-**Social job**: How people want to be perceived
+***Social job***: How people want to be perceived
 
-**Hire and fire**: Customers "hire" products to do a job, "fire" when inadequate
+***Hire and fire***: Customers "hire" products to do a job, "fire" when inadequate
 
-**Context matters**: Jobs exist in specific circumstances
+***Context matters***: Jobs exist in specific circumstances
 
-**Competition redefined**: Anything solving the same job is competition
+***Competition redefined***: Anything solving the same job is competition
 
-**Innovation opportunities**: Unmet jobs or poorly served jobs
+***Innovation opportunities***: Unmet jobs or poorly served jobs
 
-**Job stories**: Alternative to user stories focusing on context and motivation
+***Job stories***: Alternative to user stories focusing on context and motivation
 
-**Key Proponents**: Clayton Christensen, Alan Klement, Bob Moesta
+***Key Proponents***: Clayton Christensen, Alan Klement, Bob Moesta
 
 **When to Use**:
 
@@ -2107,25 +2107,25 @@ Filter by constraints (e.g., "AsciiDoc + Hugo not well-supported")
 
 ### Pugh-Matrix
 
-**Full Name**: Pugh Decision Matrix (also Pugh Controlled Convergence)
+***Full Name***: Pugh Decision Matrix (also Pugh Controlled Convergence)
 
 **Core Concepts**:
 
-**Baseline comparison**: Compare alternatives against a reference solution
+***Baseline comparison***: Compare alternatives against a reference solution
 
-**Criteria weighting**: Assign importance to evaluation criteria
+***Criteria weighting***: Assign importance to evaluation criteria
 
-**Relative scoring**: Better (+), Same (S), Worse (-) than baseline
+***Relative scoring***: Better (+), Same (S), Worse (-) than baseline
 
-**Structured evaluation**: Systematic comparison across multiple dimensions
+***Structured evaluation***: Systematic comparison across multiple dimensions
 
-**Iterative refinement**: Multiple rounds to converge on best solution
+***Iterative refinement***: Multiple rounds to converge on best solution
 
-**Team decision-making**: Facilitates group consensus
+***Team decision-making***: Facilitates group consensus
 
-**Hybrid solutions**: Combine strengths of different alternatives
+***Hybrid solutions***: Combine strengths of different alternatives
 
-**Key Proponent**: Stuart Pugh
+***Key Proponent***: Stuart Pugh
 
 **When to Use**:
 
@@ -2138,27 +2138,27 @@ Filter by constraints (e.g., "AsciiDoc + Hugo not well-supported")
 
 **Core Concepts**:
 
-**Value chain**: Map components from user needs down
+***Value chain***: Map components from user needs down
 
-**Evolution axis**: Genesis → Custom → Product → Commodity
+***Evolution axis***: Genesis → Custom → Product → Commodity
 
-**Movement**: Components naturally evolve over time
+***Movement***: Components naturally evolve over time
 
-**Situational awareness**: Understanding the landscape before deciding
+***Situational awareness***: Understanding the landscape before deciding
 
-**Gameplay patterns**: Common strategic moves
+***Gameplay patterns***: Common strategic moves
 
-**Climatic patterns**: Forces that affect all players
+***Climatic patterns***: Forces that affect all players
 
-**Doctrine**: Universal principles of good strategy
+***Doctrine***: Universal principles of good strategy
 
-**Inertia**: Resistance to change in organizations
+***Inertia***: Resistance to change in organizations
 
-**Strategic planning**: Visual approach to strategy
+***Strategic planning***: Visual approach to strategy
 
-**Build-Buy-Partner decisions**: Based on evolution stage
+***Build-Buy-Partner decisions***: Based on evolution stage
 
-**Key Proponent**: Simon Wardley
+***Key Proponent***: Simon Wardley
 
 **When to Use**:
 
@@ -2174,38 +2174,38 @@ Filter by constraints (e.g., "AsciiDoc + Hugo not well-supported")
 
 ### IEC 61508 SIL Levels
 
-**Full Name**: IEC 61508 Safety Integrity Levels
+***Full Name***: IEC 61508 Safety Integrity Levels
 
-**Also known as**: Functional Safety Levels, SIL Classification
+***Also known as***: Functional Safety Levels, SIL Classification
 
 **Core Concepts**:
 
-**Four Safety Integrity Levels**
+***Four Safety Integrity Levels***
 
-- **SIL 1 (lowest)**: 10^-2^ ≤ PFD < 10^-1^ (tolerable risk reduction)
-- **SIL 2**: 10^-3^ ≤ PFD < 10^-2^ (moderate risk reduction)
-- **SIL 3**: 10^-4^ ≤ PFD < 10^-3^ (substantial risk reduction)
-- **SIL 4 (highest)**: 10^-5^ ≤ PFD < 10^-4^ (maximum risk reduction)
+- ***SIL 1 (lowest)***: 10^-2^ ≤ PFD < 10^-1^ (tolerable risk reduction)
+- ***SIL 2***: 10^-3^ ≤ PFD < 10^-2^ (moderate risk reduction)
+- ***SIL 3***: 10^-4^ ≤ PFD < 10^-3^ (substantial risk reduction)
+- ***SIL 4 (highest)***: 10^-5^ ≤ PFD < 10^-4^ (maximum risk reduction)
 
-**Risk-based classification**: SIL level determined by hazard analysis and risk assessment
+***Risk-based classification***: SIL level determined by hazard analysis and risk assessment
 
-**Safety lifecycle**: Systematic approach from concept to decommissioning
+***Safety lifecycle***: Systematic approach from concept to decommissioning
 
-**Hardware requirements**: Architectural constraints and systematic capability
+***Hardware requirements***: Architectural constraints and systematic capability
 
-**Software requirements**: Development methods, verification, and validation techniques
+***Software requirements***: Development methods, verification, and validation techniques
 
-**Probability of Failure on Demand (PFD)**: Key metric for safety function reliability
+***Probability of Failure on Demand (PFD)***: Key metric for safety function reliability
 
-**Safety instrumented systems (SIS)**: Protection layers implementing safety functions
+***Safety instrumented systems (SIS)***: Protection layers implementing safety functions
 
-**Verification and validation**: Independent assessment of safety claims
+***Verification and validation***: Independent assessment of safety claims
 
-**Systematic failures**: Focus on preventing design and specification errors
+***Systematic failures***: Focus on preventing design and specification errors
 
-**Random hardware failures**: Statistical analysis and fault tolerance
+***Random hardware failures***: Statistical analysis and fault tolerance
 
-**Key Standard**: IEC 61508 "Functional Safety of Electrical/Electronic/Programmable Electronic Safety-related Systems" (first edition 1998, second edition 2010)
+***Key Standard***: IEC 61508 "Functional Safety of Electrical/Electronic/Programmable Electronic Safety-related Systems" (first edition 1998, second edition 2010)
 
 **Related Standards**:
 
@@ -2226,35 +2226,35 @@ Filter by constraints (e.g., "AsciiDoc + Hugo not well-supported")
 
 ### Mutation Testing
 
-**Also known as**: Mutation Analysis, Fault-Based Testing
+***Also known as***: Mutation Analysis, Fault-Based Testing
 
 **Core Concepts**:
 
-**Test quality assessment**: Evaluate how effective tests are at detecting bugs
+***Test quality assessment***: Evaluate how effective tests are at detecting bugs
 
-**Code mutations**: Deliberately introduce small, syntactic changes (mutants) into source code
+***Code mutations***: Deliberately introduce small, syntactic changes (mutants) into source code
 
-**Mutation operators**: Rules for creating mutants (e.g., change `>` to `>=`, flip boolean, remove statement)
+***Mutation operators***: Rules for creating mutants (e.g., change `>` to `>=`, flip boolean, remove statement)
 
-**Killed mutants**: Mutations caught by failing tests (good)
+***Killed mutants***: Mutations caught by failing tests (good)
 
-**Survived mutants**: Mutations not detected by tests (indicates test weakness)
+***Survived mutants***: Mutations not detected by tests (indicates test weakness)
 
-**Equivalent mutants**: Mutations that don't change program behavior (false positives)
+***Equivalent mutants***: Mutations that don't change program behavior (false positives)
 
-**Mutation score**: Percentage of killed mutants: `(killed / (total - equivalent)) × 100%`
+***Mutation score***: Percentage of killed mutants: `(killed / (total - equivalent)) × 100%`
 
-**First-order mutations**: Single atomic change per mutant
+***First-order mutations***: Single atomic change per mutant
 
-**Higher-order mutations**: Multiple changes combined
+***Higher-order mutations***: Multiple changes combined
 
-**Weak mutation**: Test only needs to create different internal state
+***Weak mutation***: Test only needs to create different internal state
 
-**Strong mutation**: Test must produce different final output
+***Strong mutation***: Test must produce different final output
 
-**Test adequacy criterion**: "Are tests good enough?" not just "Is coverage high enough?"
+***Test adequacy criterion***: "Are tests good enough?" not just "Is coverage high enough?"
 
-**Key Proponents**: Richard Lipton (theoretical foundation, 1971), Richard DeMillo, Timothy Budd
+***Key Proponents***: Richard Lipton (theoretical foundation, 1971), Richard DeMillo, Timothy Budd
 
 **Key Tools**:
 
@@ -2276,49 +2276,49 @@ Filter by constraints (e.g., "AsciiDoc + Hugo not well-supported")
 
 **Practical Challenges**:
 
-**Computational cost**: N mutations × M tests = expensive
+***Computational cost***: N mutations × M tests = expensive
 
-**Equivalent mutant problem**: Hard to automatically detect functionally identical mutants
+***Equivalent mutant problem***: Hard to automatically detect functionally identical mutants
 
-**Time investment**: Can be slow on large codebases
+***Time investment***: Can be slow on large codebases
 
-**Mitigation strategies**: Selective mutation, mutation sampling, incremental analysis
+***Mitigation strategies***: Selective mutation, mutation sampling, incremental analysis
 
 **Relationship to Other Practices**:
 
-**Code coverage**: Mutation testing reveals that high coverage ≠ good tests
+***Code coverage***: Mutation testing reveals that high coverage ≠ good tests
 
-**TDD**: Strong TDD often produces high mutation scores naturally
+***TDD***: Strong TDD often produces high mutation scores naturally
 
-**Property-based testing**: Orthogonal but complementary approaches
+***Property-based testing***: Orthogonal but complementary approaches
 
-**Fault injection**: Similar concept applied to production systems
+***Fault injection***: Similar concept applied to production systems
 
 ### Property-Based Testing
 
-**Also known as**: Generative Testing, QuickCheck-style Testing
+***Also known as***: Generative Testing, QuickCheck-style Testing
 
 **Core Concepts**:
 
-**Properties**: Invariants that should always hold
+***Properties***: Invariants that should always hold
 
-**Generators**: Automatic test data creation
+***Generators***: Automatic test data creation
 
-**Shrinking**: Minimizing failing test cases to simplest form
+***Shrinking***: Minimizing failing test cases to simplest form
 
-**Universal quantification**: Testing "for all inputs"
+***Universal quantification***: Testing "for all inputs"
 
-**Specification testing**: Testing high-level properties, not examples
+***Specification testing***: Testing high-level properties, not examples
 
-**Edge case discovery**: Finds cases you didn't think of
+***Edge case discovery***: Finds cases you didn't think of
 
-**Complementary to example-based**: Works alongside traditional unit tests
+***Complementary to example-based***: Works alongside traditional unit tests
 
-**Stateful testing**: Testing sequences of operations
+***Stateful testing***: Testing sequences of operations
 
-**Model-based testing**: Compare implementation against simpler model
+***Model-based testing***: Compare implementation against simpler model
 
-**Key Tools**: QuickCheck (Haskell), Hypothesis (Python), fast-check (JavaScript), FsCheck (.NET)
+***Key Tools***: QuickCheck (Haskell), Hypothesis (Python), fast-check (JavaScript), FsCheck (.NET)
 
 **When to Use**:
 
@@ -2330,23 +2330,23 @@ Filter by constraints (e.g., "AsciiDoc + Hugo not well-supported")
 
 ### TDD, Chicago School
 
-**Also known as**: Classicist TDD, Detroit School
+***Also known as***: Classicist TDD, Detroit School
 
 **Core Concepts**:
 
-**State-based testing**: Verify the state of objects after operations
+***State-based testing***: Verify the state of objects after operations
 
-**Minimal mocking**: Use real objects whenever possible; mock only external dependencies
+***Minimal mocking***: Use real objects whenever possible; mock only external dependencies
 
-**Inside-out development**: Start with core domain logic and build outward
+***Inside-out development***: Start with core domain logic and build outward
 
-**Simplicity focus**: Emergent design through refactoring
+***Simplicity focus***: Emergent design through refactoring
 
-**Red-Green-Refactor**: The fundamental TDD cycle
+***Red-Green-Refactor***: The fundamental TDD cycle
 
-**YAGNI**: You Aren't Gonna Need It - avoid premature abstraction
+***YAGNI***: You Aren't Gonna Need It - avoid premature abstraction
 
-**Key Proponents**: Kent Beck, Martin Fowler
+***Key Proponents***: Kent Beck, Martin Fowler
 
 **When to Use**:
 
@@ -2356,23 +2356,23 @@ Filter by constraints (e.g., "AsciiDoc + Hugo not well-supported")
 
 ### TDD, London School
 
-**Also known as**: Mockist TDD, Outside-In TDD
+***Also known as***: Mockist TDD, Outside-In TDD
 
 **Core Concepts**:
 
-**Mock-heavy testing**: Heavy use of test doubles (mocks, stubs) to isolate units
+***Mock-heavy testing***: Heavy use of test doubles (mocks, stubs) to isolate units
 
-**Outside-in development**: Start from the outermost layers (UI, API) and work inward
+***Outside-in development***: Start from the outermost layers (UI, API) and work inward
 
-**Interaction-based testing**: Focus on verifying interactions between objects
+***Interaction-based testing***: Focus on verifying interactions between objects
 
-**Behavior verification**: Test how objects collaborate rather than state
+***Behavior verification***: Test how objects collaborate rather than state
 
-**Interface discovery**: Use tests to discover and define interfaces
+***Interface discovery***: Use tests to discover and define interfaces
 
-**Walking skeleton**: Build end-to-end functionality early, then fill in details
+***Walking skeleton***: Build end-to-end functionality early, then fill in details
 
-**Key Proponents**: Steve Freeman, Nat Pryce ("Growing Object-Oriented Software, Guided by Tests")
+***Key Proponents***: Steve Freeman, Nat Pryce ("Growing Object-Oriented Software, Guided by Tests")
 
 **When to Use**:
 
@@ -2382,28 +2382,28 @@ Filter by constraints (e.g., "AsciiDoc + Hugo not well-supported")
 
 ### Testing Pyramid
 
-**Full Name**: Testing Pyramid according to Mike Cohn
+***Full Name***: Testing Pyramid according to Mike Cohn
 
 **Core Concepts**:
 
-**Three layers**
+***Three layers***
 * **Unit tests** (base): Many fast, isolated tests
 * **Integration tests** (middle): Moderate number, test component interaction
 * **End-to-end tests** (top): Few, test complete user journeys
 
-**Proportional distribution**: More unit tests, fewer E2E tests
+***Proportional distribution***: More unit tests, fewer E2E tests
 
-**Cost and speed**: Unit tests cheap and fast, E2E tests expensive and slow
+***Cost and speed***: Unit tests cheap and fast, E2E tests expensive and slow
 
-**Feedback loops**: Faster feedback from lower levels
+***Feedback loops***: Faster feedback from lower levels
 
-**Anti-pattern: Ice cream cone**: Too many E2E tests, too few unit tests
+***Anti-pattern: Ice cream cone***: Too many E2E tests, too few unit tests
 
-**Test at the right level**: Don't test through UI what can be tested in isolation
+***Test at the right level***: Don't test through UI what can be tested in isolation
 
-**Confidence gradient**: Balance confidence with execution speed
+***Confidence gradient***: Balance confidence with execution speed
 
-**Key Proponent**: Mike Cohn ("Succeeding with Agile", 2009)
+***Key Proponent***: Mike Cohn ("Succeeding with Agile", 2009)
 
 **When to Use**:
 

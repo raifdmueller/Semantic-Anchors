@@ -26,13 +26,11 @@ if (!fs.existsSync(OUTPUT_DIR)) {
  */
 function decodeHtmlEntities(str) {
   if (!str) return str;
-  return str
-    .replace(/&#(\d+);/g, (_, code) => String.fromCharCode(parseInt(code, 10)))
-    .replace(/&amp;/g, '&')
-    .replace(/&lt;/g, '<')
-    .replace(/&gt;/g, '>')
-    .replace(/&quot;/g, '"')
-    .replace(/&apos;/g, "'");
+  const named = { amp: '&', lt: '<', gt: '>', quot: '"', apos: "'" };
+  return str.replace(/&#(\d+);|&([a-z]+);/gi, (match, num, name) => {
+    if (num) return String.fromCharCode(parseInt(num, 10));
+    return named[name] || match;
+  });
 }
 
 /**

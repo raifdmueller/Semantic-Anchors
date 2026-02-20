@@ -51,10 +51,12 @@ function convertAdocTable(body) {
   }
   if (colCount <= 0) colCount = 2
 
-  // Group cells into rows
+  // Group cells into rows, padding incomplete last row with empty cells
   const rows = []
   for (let i = 0; i < allCells.length; i += colCount) {
-    rows.push(allCells.slice(i, i + colCount))
+    const row = allCells.slice(i, i + colCount)
+    while (row.length < colCount) row.push('')
+    rows.push(row)
   }
 
   if (rows.length === 0) return ''

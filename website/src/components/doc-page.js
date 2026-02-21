@@ -1,21 +1,10 @@
 import { i18n } from '../i18n.js'
 
-let asciidoctor = null
-
-async function getAsciidoctor() {
-  if (asciidoctor) return asciidoctor
-  const module = await import('@asciidoctor/core')
-  asciidoctor = module.default()
-  return asciidoctor
-}
-
 /**
- * Render a documentation page from an AsciiDoc file
- * @param {string} docPath - Path to the .adoc file (relative to BASE_URL)
- * @param {string} title - Page title for header
- * @returns {string} HTML string
+ * Render a documentation page shell (content loaded async)
+ * @returns {string} HTML string with loading placeholder
  */
-export function renderDocPage(_title) {
+export function renderDocPage() {
   return `
     <main class="flex-1">
       <div class="mx-auto max-w-4xl px-4 py-8 sm:px-6 lg:px-8">
@@ -30,50 +19,35 @@ export function renderDocPage(_title) {
 }
 
 /**
- * Load and render AsciiDoc documentation
- * @param {string} docPath - Path to the .adoc file
+ * Load pre-rendered HTML documentation.
+ * Files are rendered at build time by scripts/render-docs.js.
+ * @param {string} docPath - Path to the .adoc file (used to derive .html path)
  */
 export async function loadDocContent(docPath) {
   const contentEl = document.getElementById('doc-content')
   if (!contentEl) return
 
+  const htmlPath = docPath.replace(/\.adoc$/, '.html')
+  const currentLang = i18n.currentLang()
+
   try {
-    // Try language-specific file first (e.g., about.de.adoc for German)
-    const currentLang = i18n.currentLang()
     let response
 
     if (currentLang !== 'en') {
-      // Insert language suffix before .adoc extension
-      const langPath = docPath.replace(/\.adoc$/, `.${currentLang}.adoc`)
+      const langPath = htmlPath.replace(/\.html$/, `.${currentLang}.html`)
       response = await fetch(`${import.meta.env.BASE_URL}${langPath}`)
-
-      // If language-specific file not found, fallback to English
       if (!response.ok) {
-        response = await fetch(`${import.meta.env.BASE_URL}${docPath}`)
+        response = await fetch(`${import.meta.env.BASE_URL}${htmlPath}`)
       }
     } else {
-      response = await fetch(`${import.meta.env.BASE_URL}${docPath}`)
+      response = await fetch(`${import.meta.env.BASE_URL}${htmlPath}`)
     }
 
     if (!response.ok) {
       throw new Error(`Failed to load: ${response.status}`)
     }
 
-    const adocContent = await response.text()
-    const asciidocEngine = await getAsciidoctor()
-    const htmlContent = asciidocEngine.convert(adocContent, {
-      safe: 'secure',
-      attributes: {
-        showtitle: true,
-        'source-highlighter': 'highlight.js',
-        icons: 'font',
-        sectanchors: true,
-        idprefix: '',
-        idseparator: '-',
-      },
-    })
-
-    contentEl.innerHTML = String(htmlContent)
+    contentEl.innerHTML = await response.text()
 
     // Auto-expand collapsible sections
     contentEl.querySelectorAll('details').forEach((details) => {
@@ -95,7 +69,7 @@ export async function loadDocContent(docPath) {
           </svg>
         </div>
         <h2 class="text-xl font-semibold mb-2">Failed to Load Documentation</h2>
-        <p class="text-gray-600 dark:text-gray-400">Please try again later or visit the <a href="https://github.com/LLM-Coding/Semantic-Anchors" class="text-blue-500 hover:underline" target="_blank">GitHub repository</a>.</p>
+        <p class="text-gray-600 dark:text-gray-400">Please try again later or visit the <a href="https://github.com/LLM-Coding/Semantic-Anchors" class="text-blue-500 hover:underline" target="_blank" rel="noopener noreferrer">GitHub repository</a>.</p>
       </div>
     `
   }

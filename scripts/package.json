@@ -6,6 +6,7 @@
     "extract-metadata": "node extract-metadata.js",
     "split-readme": "node split-readme.js",
     "generate-llms-txt": "node generate-llms-txt.js",
+    "render-docs": "node render-docs.js",
     "lint": "eslint .",
     "format": "prettier --write .",
     "format:check": "prettier --check ."

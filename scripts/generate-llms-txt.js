@@ -246,7 +246,66 @@ function generateLlmsTxt() {
   console.warn(`Generated: website/public/llms.txt (${totalAnchors} anchors, ~${kb} KB)`)
 }
 
+// ─── Generate website/public/docs/all-anchors.adoc (inlined, no includes) ────
+
+/**
+ * Shift AsciiDoc heading levels by offset (e.g. +1 turns = into ==)
+ */
+function shiftHeadings(content, offset) {
+  return content.replace(/^(=+)( .+)$/gm, (_, eq, rest) => '='.repeat(eq.length + offset) + rest)
+}
+
+/**
+ * Strip document-level AsciiDoc attributes (:key: value) used as metadata
+ */
+function stripDocAttrs(content) {
+  return content.replace(/^:[a-z][a-z0-9-]*:.*$/gm, '')
+}
+
+function generateAllAnchorsWebAdoc() {
+  const WEB_DOCS = path.join(ROOT, 'website/public/docs')
+  fs.mkdirSync(WEB_DOCS, { recursive: true })
+
+  const lines = [
+    '= Semantic Anchors — Complete Reference',
+    ':toc:',
+    ':toc-placement: preamble',
+    ':toclevels: 2',
+    '',
+  ]
+
+  const aboutPath = path.join(ROOT, 'docs/about.adoc')
+  if (fs.existsSync(aboutPath)) {
+    const aboutContent = fs.readFileSync(aboutPath, 'utf-8')
+    lines.push(shiftHeadings(stripDocAttrs(aboutContent), 1))
+    lines.push('')
+    lines.push("'''")
+    lines.push('')
+  }
+
+  for (const category of categories) {
+    lines.push(`== ${category.name}`)
+    lines.push('')
+    for (const anchorId of category.anchors) {
+      const filepath = path.join(ROOT, 'docs/anchors', `${anchorId}.adoc`)
+      if (fs.existsSync(filepath)) {
+        const anchorContent = fs.readFileSync(filepath, 'utf-8')
+        lines.push(shiftHeadings(stripDocAttrs(anchorContent), 2))
+        lines.push('')
+      }
+    }
+    lines.push("'''")
+    lines.push('')
+  }
+
+  const output = lines.join('\n')
+  fs.writeFileSync(path.join(WEB_DOCS, 'all-anchors.adoc'), output, 'utf-8')
+  const kb = Math.round(Buffer.byteLength(output, 'utf-8') / 1024)
+  console.warn(`Generated: website/public/docs/all-anchors.adoc (~${kb} KB, inlined)`)
+}
+
 // ─── Main ────────────────────────────────────────────────────────────────────
 
 generateAllAnchorsAdoc()
+generateAllAnchorsWebAdoc()
 generateLlmsTxt()

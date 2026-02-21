@@ -31,9 +31,7 @@ export function renderFooter(version) {
             >${i18n.t('footer.llmsTxt')}</a>
             <span class="text-gray-300 dark:text-gray-600">|</span>
             <a
-              href="https://github.com/LLM-Coding/Semantic-Anchors/blob/main/docs/all-anchors.adoc"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="#/all-anchors"
               class="text-sm text-[var(--color-text-secondary)] hover:text-[var(--color-text)] transition-colors"
               data-i18n="footer.allAnchors"
             >${i18n.t('footer.allAnchors')}</a>

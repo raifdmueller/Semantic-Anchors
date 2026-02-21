@@ -45,7 +45,7 @@ jobs:
           mkdir -p website/public/docs
           cp -r docs/anchors website/public/docs/
 
-      - name: Build website (includes prebuild: render-docs.js)
+      - name: Build website (prebuild runs render-docs.js)
         working-directory: ./website
         run: npm run build
 

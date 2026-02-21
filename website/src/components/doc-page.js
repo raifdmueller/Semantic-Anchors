@@ -4,7 +4,7 @@ import { i18n } from '../i18n.js'
  * Render a documentation page shell (content loaded async)
  * @returns {string} HTML string with loading placeholder
  */
-export function renderDocPage(_title) {
+export function renderDocPage() {
   return `
     <main class="flex-1">
       <div class="mx-auto max-w-4xl px-4 py-8 sm:px-6 lg:px-8">

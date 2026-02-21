@@ -41,10 +41,15 @@ const OPTS = {
  */
 function renderFile(srcPath, destPath) {
   if (!fs.existsSync(srcPath)) return
-  fs.mkdirSync(path.dirname(destPath), { recursive: true })
-  const html = asciidoctor.convertFile(srcPath, { ...OPTS, to_file: false })
-  fs.writeFileSync(destPath, String(html), 'utf-8')
-  console.warn(`Rendered: ${path.relative(ROOT, destPath)}`)
+  try {
+    fs.mkdirSync(path.dirname(destPath), { recursive: true })
+    const html = asciidoctor.convertFile(srcPath, { ...OPTS, to_file: false })
+    fs.writeFileSync(destPath, String(html), 'utf-8')
+    console.log(`Rendered: ${path.relative(ROOT, destPath)}`)
+  } catch (err) {
+    console.error(`Failed to render ${path.relative(ROOT, srcPath)}:`, err.message)
+    process.exit(1)
+  }
 }
 
 const WEB_DOCS = path.join(ROOT, 'website/public/docs')

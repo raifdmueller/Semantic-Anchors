@@ -148,7 +148,7 @@ function renderAboutPage() {
   const pageContent = document.getElementById('page-content')
   if (!pageContent) return
 
-  pageContent.innerHTML = renderDocPage('About')
+  pageContent.innerHTML = renderDocPage()
   updateActiveNavLink()
   loadDocContent('docs/about.adoc')
 }
@@ -157,7 +157,7 @@ function renderContributingPage() {
   const pageContent = document.getElementById('page-content')
   if (!pageContent) return
 
-  pageContent.innerHTML = renderDocPage('Contributing')
+  pageContent.innerHTML = renderDocPage()
   updateActiveNavLink()
   loadDocContent('CONTRIBUTING.adoc')
 }
@@ -166,7 +166,7 @@ function renderAllAnchorsPage() {
   const pageContent = document.getElementById('page-content')
   if (!pageContent) return
 
-  pageContent.innerHTML = renderDocPage('Full Reference')
+  pageContent.innerHTML = renderDocPage()
   updateActiveNavLink()
   loadDocContent('docs/all-anchors.adoc')
 }

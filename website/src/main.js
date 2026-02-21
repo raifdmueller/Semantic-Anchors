@@ -97,6 +97,7 @@ function initApp() {
   addRoute('/', renderHomePage)
   addRoute('/about', renderAboutPage)
   addRoute('/contributing', renderContributingPage)
+  addRoute('/all-anchors', renderAllAnchorsPage)
 
   const app = document.querySelector('#app')
   if (!app) return
@@ -159,6 +160,15 @@ function renderContributingPage() {
   pageContent.innerHTML = renderDocPage('Contributing')
   updateActiveNavLink()
   loadDocContent('CONTRIBUTING.adoc')
+}
+
+function renderAllAnchorsPage() {
+  const pageContent = document.getElementById('page-content')
+  if (!pageContent) return
+
+  pageContent.innerHTML = renderDocPage('Full Reference')
+  updateActiveNavLink()
+  loadDocContent('docs/all-anchors.adoc')
 }
 
 function updateActiveNavLink() {
@@ -282,6 +292,8 @@ function handleLanguageChange() {
     loadDocContent('docs/about.adoc')
   } else if (currentRoute === '/contributing') {
     loadDocContent('CONTRIBUTING.adoc')
+  } else if (currentRoute === '/all-anchors') {
+    loadDocContent('docs/all-anchors.adoc')
   } else if (currentRoute === '/') {
     initCardGridVisualization()
   }

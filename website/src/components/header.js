@@ -9,7 +9,10 @@ export function renderHeader() {
         <div class="flex items-center justify-between">
           <div class="flex items-center gap-6">
             <h1 class="text-xl font-bold text-[var(--color-text)] flex items-center gap-2">
-              <a href="#/" class="no-underline text-inherit hover:text-[var(--color-primary)] transition-colors" data-i18n="app.title">Semantic Anchors</a>
+              <a href="#/" class="no-underline text-inherit hover:text-[var(--color-primary)] transition-colors flex items-center gap-2" data-i18n="app.title">
+                <img src="${import.meta.env.BASE_URL}icon.png" alt="" class="h-8 w-8" aria-hidden="true" />
+                Semantic Anchors
+              </a>
               <button
                 id="onboarding-info-btn"
                 class="rounded-full p-1 text-[var(--color-text-secondary)] hover:text-[var(--color-primary)] hover:bg-[var(--color-bg-secondary)] transition-colors"
@@ -23,6 +26,7 @@ export function renderHeader() {
                 </svg>
               </button>
             </h1>
+            <span class="hidden lg:inline text-sm font-normal text-[var(--color-text-secondary)]" data-i18n="header.slogan">${i18n.t('header.slogan')}</span>
             <div class="hidden sm:flex items-center gap-4 text-sm">
               <a href="#/" class="nav-link text-[var(--color-text-secondary)] hover:text-[var(--color-text)] transition-colors" data-route="/" data-i18n="nav.catalog">${i18n.t('nav.catalog')}</a>
               <a href="#/about" class="nav-link text-[var(--color-text-secondary)] hover:text-[var(--color-text)] transition-colors" data-route="/about" data-i18n="nav.about">${i18n.t('nav.about')}</a>

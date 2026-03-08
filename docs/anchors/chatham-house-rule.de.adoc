@@ -62,9 +62,10 @@ Historischer Kontext:: Ursprünglich geschaffen, um Diplomaten und Regierungsbea
 [discrete]
 == *Beispielhafte Anwendung*:
 
-----
+[quote]
+____
 Diese Retrospektive wird unter der Chatham House Rule durchgeführt.
 Sie dürfen die generierten Erkenntnisse teilen, aber ordnen Sie
 Kommentare nicht spezifischen Teammitgliedern zu.
-----
+____
 ====

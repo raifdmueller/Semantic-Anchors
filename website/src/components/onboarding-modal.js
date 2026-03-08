@@ -15,7 +15,7 @@ export function createOnboardingModal() {
 
   const modal = document.createElement('div')
   modal.id = 'onboarding-modal'
-  modal.className = 'fixed inset-0 bg-black/50 z-50 hidden items-center justify-center p-4'
+  modal.className = 'fixed inset-0 bg-black/30 backdrop-blur-sm z-50 hidden items-center justify-center p-4'
   modal.setAttribute('role', 'dialog')
   modal.setAttribute('aria-modal', 'true')
   modal.setAttribute('aria-labelledby', 'onboarding-title')

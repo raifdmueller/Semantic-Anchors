@@ -62,9 +62,10 @@ Historical Context:: Originally created to enable diplomats and government offic
 [discrete]
 == *Example Invocation*:
 
-----
+[quote]
+____
 This retrospective will be conducted under the Chatham House Rule.
 You may share the insights we generate, but don't attribute comments
 to specific team members.
-----
+____
 ====

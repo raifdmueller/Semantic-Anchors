@@ -65,7 +65,6 @@ describe('onboarding-modal', () => {
       showOnboarding()
 
       const modal = document.getElementById('onboarding-modal')
-      expect(modal.textContent).toContain('Semantic Anchors.')
       expect(modal.textContent).toContain('One word, and the AI gets the rest.')
     })
 

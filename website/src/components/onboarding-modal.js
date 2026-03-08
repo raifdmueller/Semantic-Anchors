@@ -74,17 +74,15 @@ function buildModalContent() {
 
       <div class="text-center px-6 pb-4">
         <img src="${baseUrl}logo.png" alt="Semantic Anchors" class="h-24 mx-auto mb-3" />
-        <h2 id="onboarding-title" class="text-2xl font-bold text-[var(--color-text)]">
-          <span class="text-[var(--color-primary)]">${slogan1}</span>
-          <br />
-          <span class="text-lg font-medium text-[var(--color-text-secondary)]">${slogan2}</span>
+        <h2 id="onboarding-title" class="text-lg font-medium text-[var(--color-text-secondary)]">
+          ${slogan2}
         </h2>
       </div>
 
       <div class="px-6 pb-4">
         <div class="flex flex-col sm:flex-row gap-6">
-          <div class="sm:w-1/2 flex-shrink-0">
-            <div class="hidden sm:block rounded-xl overflow-hidden bg-black aspect-[9/16] max-h-[400px]">
+          <div class="sm:w-1/2 flex-shrink-0 flex items-center justify-center">
+            <div class="hidden sm:block rounded-xl overflow-hidden bg-black aspect-[9/16] max-h-[400px] w-full">
               <iframe
                 src="${embedUrl}"
                 title="${watchVideo}"

@@ -27,7 +27,7 @@ export function createModal() {
   const modal = document.createElement('div')
   modal.id = 'anchor-modal'
   modal.className =
-    'fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50 p-4'
+    'fixed inset-0 bg-black/30 backdrop-blur-sm hidden items-center justify-center z-50 p-4'
   modal.innerHTML = `
     <div class="bg-[var(--color-bg)] rounded-xl shadow-2xl max-w-4xl w-full max-h-[90vh] overflow-hidden flex flex-col border border-[var(--color-border)]">
       <div class="flex items-center justify-between p-6 border-b border-[var(--color-border)]">

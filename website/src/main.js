@@ -14,6 +14,11 @@ import { fetchData } from './utils/data-loader.js'
 import { buildSearchIndex, isIndexReady, isIndexBuilding } from './utils/search-index.js'
 import { initRouter, addRoute } from './utils/router.js'
 import { renderDocPage, loadDocContent } from './components/doc-page.js'
+import {
+  createOnboardingModal,
+  showOnboarding,
+  shouldShowOnboarding,
+} from './components/onboarding-modal.js'
 
 const APP_VERSION = '0.4.0'
 
@@ -78,10 +83,10 @@ function triggerSearchIndexBuild() {
   searchIndexTriggered = true
   buildSearchIndex(appData.anchors)
     .then(() => {
-      const searchInput = document.getElementById('search-input')
-      if (searchInput) {
-        searchInput.placeholder = `${i18n.t('search.placeholder')} (full-text)`
-      }
+      ;['search-input', 'header-search-input'].forEach((id) => {
+        const el = document.getElementById(id)
+        if (el) el.placeholder = `${i18n.t('search.placeholder')} ${i18n.t('search.fullText')}`
+      })
     })
     .catch((err) => {
       console.warn('Search index build failed:', err)
@@ -113,13 +118,24 @@ function initApp() {
   bindThemeToggle()
   bindLanguageToggle()
   bindMobileMenu()
+  bindOnboardingButton()
   updateActiveNavLink()
 
+  createOnboardingModal()
   initRouter()
 
-  ensureDataLoaded().catch((err) => {
-    console.error('Failed to load app data:', err)
-  })
+  if (shouldShowOnboarding()) {
+    showOnboarding()
+  }
+
+  ensureDataLoaded()
+    .then(() => {
+      populateHeaderRoleFilter()
+      bindHeaderSearchInput()
+    })
+    .catch((err) => {
+      console.error('Failed to load app data:', err)
+    })
 }
 
 function renderHomePage() {
@@ -211,7 +227,70 @@ function initCardGridVisualization() {
 }
 
 function bindRoleFilter() {
-  const roleFilter = document.getElementById('role-filter')
+  const roleFilterIds = ['role-filter', 'header-role-filter']
+
+  roleFilterIds.forEach((id) => {
+    const roleFilter = document.getElementById(id)
+    if (!roleFilter || !appData?.roles) return
+
+    while (roleFilter.options.length > 1) {
+      roleFilter.remove(1)
+    }
+
+    appData.roles.forEach((role) => {
+      const option = document.createElement('option')
+      option.value = role.id
+      option.textContent = role.name
+      roleFilter.appendChild(option)
+    })
+
+    roleFilter.onchange = (e) => {
+      // Sync the other dropdown
+      roleFilterIds.forEach((otherId) => {
+        if (otherId !== id) {
+          const other = document.getElementById(otherId)
+          if (other) other.value = e.target.value
+        }
+      })
+      const searchQuery =
+        document.getElementById('header-search-input')?.value ||
+        document.getElementById('search-input')?.value ||
+        ''
+      applyCardFilters(e.target.value, searchQuery)
+    }
+  })
+}
+
+function bindSearchInput() {
+  const searchInputIds = ['search-input', 'header-search-input']
+
+  searchInputIds.forEach((id) => {
+    const searchInput = document.getElementById(id)
+    if (!searchInput) return
+
+    searchInput.oninput = (e) => {
+      const query = e.target.value
+      // Sync the other search input
+      searchInputIds.forEach((otherId) => {
+        if (otherId !== id) {
+          const other = document.getElementById(otherId)
+          if (other) other.value = query
+        }
+      })
+      if (query.trim()) {
+        triggerSearchIndexBuild()
+      }
+      const roleId =
+        document.getElementById('header-role-filter')?.value ||
+        document.getElementById('role-filter')?.value ||
+        ''
+      applyCardFilters(roleId, query)
+    }
+  })
+}
+
+function populateHeaderRoleFilter() {
+  const roleFilter = document.getElementById('header-role-filter')
   if (!roleFilter || !appData?.roles) return
 
   while (roleFilter.options.length > 1) {
@@ -226,60 +305,70 @@ function bindRoleFilter() {
   })
 
   roleFilter.onchange = (e) => {
-    const searchQuery = document.getElementById('search-input')?.value || ''
+    // Sync the main content dropdown if it exists
+    const mainFilter = document.getElementById('role-filter')
+    if (mainFilter) mainFilter.value = e.target.value
+
+    const searchQuery = document.getElementById('header-search-input')?.value || ''
     applyCardFilters(e.target.value, searchQuery)
   }
 }
 
-function bindSearchInput() {
-  const searchInput = document.getElementById('search-input')
+function bindHeaderSearchInput() {
+  const searchInput = document.getElementById('header-search-input')
   if (!searchInput) return
 
   searchInput.oninput = (e) => {
     const query = e.target.value
+    // Sync the main content search input if it exists
+    const mainSearch = document.getElementById('search-input')
+    if (mainSearch) mainSearch.value = query
+
     if (query.trim()) {
       triggerSearchIndexBuild()
     }
 
-    const roleId = document.getElementById('role-filter')?.value || ''
+    const roleId = document.getElementById('header-role-filter')?.value || ''
     applyCardFilters(roleId, query)
   }
 }
 
 function bindThemeToggle() {
-  const toggle = document.querySelector('#theme-toggle')
-  if (!toggle) return
-
-  toggle.addEventListener('click', () => {
-    toggleTheme()
-    updateThemeIcon()
+  document.querySelectorAll('#theme-toggle, #theme-toggle-mobile').forEach((toggle) => {
+    toggle.addEventListener('click', () => {
+      toggleTheme()
+      updateThemeIcon()
+    })
   })
 }
 
 function updateThemeIcon() {
-  const moonIcon = document.querySelector('#theme-icon-moon')
-  const sunIcon = document.querySelector('#theme-icon-sun')
-  const toggle = document.querySelector('#theme-toggle')
-  if (!moonIcon || !sunIcon || !toggle) return
-
   const isDark = currentTheme() === 'dark'
-  moonIcon.classList.toggle('hidden', isDark)
-  sunIcon.classList.toggle('hidden', !isDark)
-
   const ariaKey = isDark ? 'header.themeToggle.light' : 'header.themeToggle.dark'
-  toggle.setAttribute('aria-label', i18n.t(ariaKey))
-  toggle.dataset.i18nAria = ariaKey
+
+  document.querySelectorAll('#theme-icon-moon, #theme-icon-moon-mobile').forEach((el) => {
+    el.classList.toggle('hidden', isDark)
+  })
+  document.querySelectorAll('#theme-icon-sun, #theme-icon-sun-mobile').forEach((el) => {
+    el.classList.toggle('hidden', !isDark)
+  })
+  document.querySelectorAll('#theme-toggle, #theme-toggle-mobile').forEach((el) => {
+    el.setAttribute('aria-label', i18n.t(ariaKey))
+    el.dataset.i18nAria = ariaKey
+  })
 }
 
 function bindLanguageToggle() {
-  const toggle = document.querySelector('#lang-toggle')
-  if (!toggle) return
-
-  toggle.addEventListener('click', () => {
-    i18n.toggleLang()
-    toggle.textContent = i18n.currentLang() === 'en' ? 'DE' : 'EN'
-    applyTranslations()
-    updateThemeIcon()
+  document.querySelectorAll('#lang-toggle, #lang-toggle-mobile').forEach((toggle) => {
+    toggle.addEventListener('click', () => {
+      i18n.toggleLang()
+      const label = i18n.currentLang() === 'en' ? 'DE' : 'EN'
+      document.querySelectorAll('#lang-toggle, #lang-toggle-mobile').forEach((el) => {
+        el.textContent = label
+      })
+      applyTranslations()
+      updateThemeIcon()
+    })
   })
 
   document.addEventListener('langchange', handleLanguageChange)
@@ -305,6 +394,12 @@ function handleLanguageChange() {
       getAnchorModalModule().then(({ loadAnchorContent }) => loadAnchorContent(currentAnchor))
     }
   }
+}
+
+function bindOnboardingButton() {
+  document.querySelectorAll('#onboarding-info-btn, #onboarding-info-btn-mobile').forEach((btn) => {
+    btn.addEventListener('click', () => showOnboarding())
+  })
 }
 
 function bindMobileMenu() {

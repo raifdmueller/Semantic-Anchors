@@ -2,6 +2,7 @@
   "app.title": "Semantic Anchors",
   "app.description": "Shared vocabulary for LLM communication",
   "header.langToggle": "DE",
+  "header.slogan": "One word, and the AI gets the rest.",
   "header.themeToggle.dark": "Switch to dark mode",
   "header.themeToggle.light": "Switch to light mode",
   "nav.catalog": "Catalog",
@@ -13,6 +14,7 @@
   "main.proposeAnchor": "Propose New Anchor",
   "main.documentation": "Documentation",
   "search.placeholder": "Search anchors...",
+  "search.fullText": "(full-text)",
   "filter.allRoles": "All Roles",
   "filter.anchors": "anchors",
   "footer.tagline": "Semantic Anchors - Shared vocabulary for LLM communication",
@@ -40,5 +42,14 @@
   "card.tags": "tags",
   "card.openDetails": "Open {title} details",
   "modal.close": "Close",
-  "modal.share": "Share"
+  "modal.share": "Share",
+  "onboarding.slogan1": "Semantic Anchors.",
+  "onboarding.slogan2": "One word, and the AI gets the rest.",
+  "onboarding.text1": "Imagine saying just one word \u2013 and your counterpart instantly understands an entire concept.",
+  "onboarding.text2": "A Semantic Anchor is an established term that activates an entire body of knowledge. Like an anchor holding a ship in place \u2013 a Semantic Anchor pins your conversation to a precise concept.",
+  "onboarding.text3": "This works because AI models were trained on millions of texts. Terms like MECE, Clean Architecture, or the Feynman Technique instantly trigger deep contextual knowledge.",
+  "onboarding.text4": "Instead of writing long prompts, just use the right anchor \u2013 and the AI delivers.",
+  "onboarding.cta": "Explore Catalog",
+  "onboarding.watchVideo": "Watch explainer video",
+  "onboarding.infoButton": "What are Semantic Anchors?"
 }

@@ -64,10 +64,7 @@ export function renderCardGrid(categories, anchors) {
  */
 function renderCategorySection(category, allAnchors) {
   const categoryAnchors = allAnchors.filter(
-    (anchor) =>
-      anchor.categories &&
-      anchor.categories.includes(category.id) &&
-      !anchor.umbrella
+    (anchor) => anchor.categories && anchor.categories.includes(category.id) && !anchor.umbrella
   )
 
   if (categoryAnchors.length === 0) return ''

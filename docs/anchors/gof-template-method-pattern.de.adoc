@@ -1,0 +1,29 @@
+= GoF-Template Method Pattern
+:categories: design-principles
+:roles: software-developer, software-architect
+:umbrella: gof-design-patterns
+:tier: 1
+:proponents: Erich Gamma, Richard Helm, Ralph Johnson, John Vlissides
+:tags: GoF, design pattern, behavioral, template method, algorithm skeleton, hook, inheritance
+
+[%collapsible]
+====
+Vollständiger Name:: GoF Template Method Pattern (Behavioral)
+
+[discrete]
+== *Absicht*:
+Definiere das Skelett eines Algorithmus in einer Operation und delegiere einige Schritte an Unterklassen.
+
+[discrete]
+== *Wann zu verwenden*:
+* Wenn du die unveränderlichen Teile eines Algorithmus einmal implementieren und es den Unterklassen überlassen möchtest, das variierende Verhalten zu implementieren
+* Wenn gemeinsames Verhalten unter Unterklassen in einer gemeinsamen Klasse zusammengefasst und lokalisiert werden soll
+
+[discrete]
+== *Prompt-Beispiel*:
+"Refactore die Report-Generierung nach dem GoF-Template Method Pattern. Der Algorithmus (Daten laden, transformieren, formatieren) bleibt fix, aber die einzelnen Schritte sind austauschbar."
+
+[discrete]
+== *Verwandte Anker*:
+* <<gof-design-patterns,GoF Design Patterns>> (Umbrella)
+====

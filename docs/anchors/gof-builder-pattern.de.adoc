@@ -1,0 +1,29 @@
+= GoF-Builder Pattern
+:categories: design-principles
+:roles: software-developer, software-architect
+:umbrella: gof-design-patterns
+:tier: 1
+:proponents: Erich Gamma, Richard Helm, Ralph Johnson, John Vlissides
+:tags: GoF, design pattern, creational, builder, construction, fluent interface, complex objects
+
+[%collapsible]
+====
+Vollständiger Name:: GoF Builder Pattern (Creational)
+
+[discrete]
+== *Absicht*:
+Trenne die Konstruktion eines komplexen Objekts von seiner Repräsentation, sodass derselbe Konstruktionsprozess verschiedene Repräsentationen erzeugen kann.
+
+[discrete]
+== *Wann zu verwenden*:
+* Wenn der Algorithmus zur Erzeugung eines komplexen Objekts unabhängig von den Teilen und ihrer Zusammensetzung sein soll
+* Wenn der Konstruktionsprozess verschiedene Repräsentationen ermöglichen muss
+
+[discrete]
+== *Prompt-Beispiel*:
+"Implementiere einen Builder nach GoF für das QueryObject, mit Fluent API für Filter, Sortierung und Pagination."
+
+[discrete]
+== *Verwandte Anker*:
+* <<gof-design-patterns,GoF Design Patterns>> (Umbrella)
+====

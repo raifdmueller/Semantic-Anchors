@@ -1,0 +1,29 @@
+= GoF-Facade Pattern
+:categories: design-principles
+:roles: software-developer, software-architect
+:umbrella: gof-design-patterns
+:tier: 1
+:proponents: Erich Gamma, Richard Helm, Ralph Johnson, John Vlissides
+:tags: GoF, design pattern, structural, facade, simplification, subsystem, unified interface
+
+[%collapsible]
+====
+Vollständiger Name:: GoF Facade Pattern (Structural)
+
+[discrete]
+== *Absicht*:
+Biete ein einheitliches Interface zu einer Menge von Interfaces in einem Subsystem. Facade definiert ein höheres Interface, das die Nutzung des Subsystems vereinfacht.
+
+[discrete]
+== *Wann zu verwenden*:
+* Wenn du ein einfaches Interface zu einem komplexen Subsystem bereitstellen möchtest
+* Wenn es viele Abhängigkeiten zwischen Clients und Implementierungsklassen gibt
+
+[discrete]
+== *Prompt-Beispiel*:
+"Erstelle eine Facade nach GoF für das Payment-Subsystem, die Validierung, Autorisierung und Abrechnung hinter einem einfachen Interface kapselt."
+
+[discrete]
+== *Verwandte Anker*:
+* <<gof-design-patterns,GoF Design Patterns>> (Umbrella)
+====

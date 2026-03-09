@@ -1,0 +1,30 @@
+= GoF-Prototype Pattern
+:categories: design-principles
+:roles: software-developer, software-architect
+:umbrella: gof-design-patterns
+:tier: 2
+:proponents: Erich Gamma, Richard Helm, Ralph Johnson, John Vlissides
+:tags: GoF, design pattern, creational, prototype, cloning, copy, object creation
+
+[%collapsible]
+====
+Vollständiger Name:: GoF Prototype Pattern (Creational)
+
+[discrete]
+== *Absicht*:
+Bestimme die Arten der zu erzeugenden Objekte anhand einer prototypischen Instanz und erstelle neue Objekte durch Kopieren dieses Prototypen.
+
+[discrete]
+== *Wann zu verwenden*:
+* Wenn ein System unabhängig davon sein soll, wie seine Produkte erzeugt und dargestellt werden
+* Wenn die zu instanziierenden Klassen zur Laufzeit spezifiziert werden
+* Wenn du den Aufbau einer Fabrik-Klassenhierarchie vermeiden möchtest, die die Produkt-Klassenhierarchie widerspiegelt
+
+[discrete]
+== *Prompt-Beispiel*:
+"Verwende das GoF-Prototype Pattern, um neue Konfigurationsobjekte durch Klonen eines Prototypen zu erzeugen, statt sie jedes Mal von Grund auf zu konstruieren."
+
+[discrete]
+== *Verwandte Anker*:
+* <<gof-design-patterns,GoF Design Patterns>> (Umbrella)
+====

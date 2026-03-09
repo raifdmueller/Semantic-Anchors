@@ -1,0 +1,30 @@
+= GoF-Mediator Pattern
+:categories: design-principles
+:roles: software-developer, software-architect
+:umbrella: gof-design-patterns
+:tier: 2
+:proponents: Erich Gamma, Richard Helm, Ralph Johnson, John Vlissides
+:tags: GoF, design pattern, behavioral, mediator, loose coupling, coordination, hub
+
+[%collapsible]
+====
+Vollständiger Name:: GoF Mediator Pattern (Behavioral)
+
+[discrete]
+== *Absicht*:
+Definiere ein Objekt, das kapselt, wie eine Menge von Objekten interagiert. Mediator fördert lose Kopplung, indem Objekte sich nicht explizit aufeinander beziehen.
+
+[discrete]
+== *Wann zu verwenden*:
+* Wenn eine Menge von Objekten auf wohldefinierte, aber komplexe Weise kommuniziert
+* Wenn die Wiederverwendung eines Objekts schwierig ist, weil es auf viele andere Objekte verweist und mit ihnen kommuniziert
+* Wenn Verhalten, das auf mehrere Klassen verteilt ist, ohne übermäßige Unterklassenbildung anpassbar sein soll
+
+[discrete]
+== *Prompt-Beispiel*:
+"Führe einen Mediator nach GoF ein, der die Kommunikation zwischen den UI-Komponenten (Formular, Liste, Filter) zentral koordiniert und die direkte Kopplung beseitigt."
+
+[discrete]
+== *Verwandte Anker*:
+* <<gof-design-patterns,GoF Design Patterns>> (Umbrella)
+====

@@ -1,7 +1,4 @@
 = Changelog
-:toc:
-:toc-placement: preamble
-:toclevels: 2
 
 A chronological record of all semantic anchors added to the catalog. Community contributors are credited with thanks.
 

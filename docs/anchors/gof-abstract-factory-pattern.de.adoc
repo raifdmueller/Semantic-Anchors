@@ -1,0 +1,32 @@
+= GoF-Abstract Factory Pattern
+:categories: design-principles
+:roles: software-developer, software-architect
+:umbrella: gof-design-patterns
+:tier: 2
+:proponents: Erich Gamma, Richard Helm, Ralph Johnson, John Vlissides
+:tags: GoF, design pattern, creational, abstract factory, family, platform independence
+
+[%collapsible]
+====
+Vollständiger Name:: GoF Abstract Factory Pattern (Creational)
+
+Auch bekannt als:: Kit
+
+[discrete]
+== *Absicht*:
+Biete ein Interface zur Erzeugung von Familien verwandter oder abhängiger Objekte, ohne deren konkrete Klassen zu spezifizieren.
+
+[discrete]
+== *Wann zu verwenden*:
+* Wenn ein System unabhängig davon sein soll, wie seine Produkte erzeugt werden
+* Wenn ein System mit einer von mehreren Produktfamilien konfiguriert werden soll
+* Wenn verwandte Produktobjekte für die gemeinsame Verwendung entworfen sind und du diese Einschränkung durchsetzen musst
+
+[discrete]
+== *Prompt-Beispiel*:
+"Erstelle eine Abstract Factory nach GoF, die UI-Komponenten für verschiedene Plattformen (Web, Mobile, Desktop) erzeugt, ohne dass der Client die konkreten Klassen kennen muss."
+
+[discrete]
+== *Verwandte Anker*:
+* <<gof-design-patterns,GoF Design Patterns>> (Umbrella)
+====

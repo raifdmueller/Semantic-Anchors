@@ -1,0 +1,16 @@
+= GoF-Interpreter Pattern
+:categories: design-principles
+:roles: software-developer, software-architect
+:umbrella: gof-design-patterns
+:tier: 3
+:proponents: Erich Gamma, Richard Helm, Ralph Johnson, John Vlissides
+:tags: GoF, design pattern, behavioral, interpreter, grammar, DSL, parsing
+
+[%collapsible]
+====
+Vollständiger Name:: GoF Interpreter Pattern (Behavioral)
+
+[discrete]
+== *Absicht*:
+Definiere für eine gegebene Sprache eine Repräsentation ihrer Grammatik zusammen mit einem Interpreter, der diese Repräsentation nutzt, um Sätze in der Sprache zu interpretieren.
+====

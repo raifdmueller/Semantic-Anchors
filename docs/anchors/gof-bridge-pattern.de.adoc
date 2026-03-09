@@ -1,0 +1,30 @@
+= GoF-Bridge Pattern
+:categories: design-principles
+:roles: software-developer, software-architect
+:umbrella: gof-design-patterns
+:tier: 2
+:proponents: Erich Gamma, Richard Helm, Ralph Johnson, John Vlissides
+:tags: GoF, design pattern, structural, bridge, abstraction, implementation, decoupling
+
+[%collapsible]
+====
+Vollständiger Name:: GoF Bridge Pattern (Structural)
+
+[discrete]
+== *Absicht*:
+Entkopple eine Abstraktion von ihrer Implementierung, sodass beide unabhängig voneinander variieren können.
+
+[discrete]
+== *Wann zu verwenden*:
+* Wenn du eine permanente Bindung zwischen einer Abstraktion und ihrer Implementierung vermeiden möchtest
+* Wenn sowohl die Abstraktionen als auch ihre Implementierungen durch Unterklassenbildung erweiterbar sein sollen
+* Wenn Änderungen in der Implementierung keine Auswirkungen auf Clients haben sollen
+
+[discrete]
+== *Prompt-Beispiel*:
+"Trenne die Rendering-Abstraktion von der plattformspezifischen Implementierung nach dem GoF-Bridge Pattern, damit beide unabhängig erweitert werden können."
+
+[discrete]
+== *Verwandte Anker*:
+* <<gof-design-patterns,GoF Design Patterns>> (Umbrella)
+====

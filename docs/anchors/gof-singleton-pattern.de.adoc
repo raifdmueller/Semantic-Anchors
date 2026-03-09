@@ -1,0 +1,29 @@
+= GoF-Singleton Pattern
+:categories: design-principles
+:roles: software-developer, software-architect
+:umbrella: gof-design-patterns
+:tier: 1
+:proponents: Erich Gamma, Richard Helm, Ralph Johnson, John Vlissides
+:tags: GoF, design pattern, creational, singleton, global state, instance control
+
+[%collapsible]
+====
+Vollständiger Name:: GoF Singleton Pattern (Creational)
+
+[discrete]
+== *Absicht*:
+Stelle sicher, dass eine Klasse nur eine Instanz hat, und biete einen globalen Zugriffspunkt darauf.
+
+[discrete]
+== *Wann zu verwenden*:
+* Wenn es genau eine Instanz einer Klasse geben muss
+* Wenn die einzige Instanz durch Unterklassenbildung erweiterbar sein soll
+
+[discrete]
+== *Prompt-Beispiel*:
+"Stelle sicher, dass der ConfigManager als GoF-Singleton implementiert ist, mit thread-sicherem Lazy Loading."
+
+[discrete]
+== *Verwandte Anker*:
+* <<gof-design-patterns,GoF Design Patterns>> (Umbrella)
+====

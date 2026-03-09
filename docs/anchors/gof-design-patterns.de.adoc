@@ -1,0 +1,49 @@
+= GoF Design Patterns
+:categories: design-principles
+:roles: software-developer, software-architect, educator
+:proponents: Erich Gamma, Richard Helm, Ralph Johnson, John Vlissides
+:related: solid-principles, fowler-patterns, clean-architecture
+:tags: design-patterns, gang-of-four, oop, creational, structural, behavioral
+:sub-anchors: gof-strategy-pattern, gof-observer-pattern, gof-factory-method-pattern, gof-singleton-pattern, gof-adapter-pattern, gof-decorator-pattern, gof-command-pattern, gof-facade-pattern, gof-template-method-pattern, gof-builder-pattern, gof-state-pattern, gof-proxy-pattern, gof-abstract-factory-pattern, gof-composite-pattern, gof-iterator-pattern, gof-mediator-pattern, gof-chain-of-responsibility-pattern, gof-bridge-pattern, gof-prototype-pattern, gof-flyweight-pattern, gof-interpreter-pattern, gof-memento-pattern, gof-visitor-pattern
+
+[%collapsible]
+====
+Vollständiger Name:: Gang of Four Design Patterns
+
+Auch bekannt als:: Design Patterns, Gang of Four Patterns
+
+[discrete]
+== *Kernkonzepte*:
+
+Erzeugungsmuster:: Abstract Factory, Builder, Factory Method, Prototype, Singleton — Mechanismen zur Objekterzeugung
+
+Strukturmuster:: Adapter, Bridge, Composite, Decorator, Facade, Flyweight, Proxy — Objektkomposition und Beziehungen
+
+Verhaltensmuster:: Chain of Responsibility, Command, Interpreter, Iterator, Mediator, Memento, Observer, State, Strategy, Template Method, Visitor — Objektinteraktion und Verantwortlichkeiten
+
+Pattern-Sprache:: Gemeinsames Vokabular zur Kommunikation wiederkehrender Entwurfsprobleme und bewährter Lösungen
+
+Komposition vor Vererbung:: Objektkomposition für Flexibilität gegenüber starren Klassenhierarchien bevorzugen
+
+Gegen ein Interface programmieren:: Von Abstraktionen abhängen statt von konkreten Implementierungen
+
+Für Veränderung entwerfen:: Identifiziere, was sich in deinem Entwurf ändert, und kapsle es
+
+
+Schlüsselvertreter:: Erich Gamma, Richard Helm, Ralph Johnson, John Vlissides ("Design Patterns: Elements of Reusable Object-Oriented Software", 1994)
+
+[discrete]
+== *Wann zu verwenden*:
+
+* Objektorientierter Entwurf, der bewährte Lösungen für wiederkehrende Probleme erfordert
+* Kommunikation von Entwurfsentscheidungen mit einem gemeinsamen Vokabular
+* Vermittlung objektorientierter Entwurfsprinzipien anhand konkreter Beispiele
+* Refactoring von Code zur Erhöhung von Flexibilität und Wiederverwendbarkeit
+
+[discrete]
+== *Verwandte Anker*:
+
+* <<solid-principles,SOLID Principles>> - Entwurfsprinzipien, deren Umsetzung GoF-Patterns unterstützen
+* <<fowler-patterns,Fowler Patterns>> - Architekturmuster für Unternehmensanwendungen (komplementärer Umfang)
+* <<clean-architecture,Clean Architecture>> - Architekturstil, der GoF-Prinzipien nutzt
+====

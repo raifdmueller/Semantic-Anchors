@@ -153,6 +153,7 @@
     "name": "Testing & Quality Practices",
     "anchors": [
       "bdd-given-when-then",
+      "gherkin",
       "iec-61508-sil-levels",
       "mutation-testing",
       "owasp-top-10",

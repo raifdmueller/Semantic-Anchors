@@ -492,6 +492,38 @@
     "filePath": "docs/anchors/fowler-patterns.adoc"
   },
   {
+    "id": "gherkin",
+    "title": "Gherkin",
+    "categories": [
+      "testing-quality"
+    ],
+    "roles": [
+      "software-developer",
+      "qa-engineer",
+      "business-analyst",
+      "product-owner"
+    ],
+    "related": [
+      "bdd-given-when-then",
+      "ears-requirements",
+      "tdd-london-school"
+    ],
+    "proponents": [
+      "Aslak Hellesøy"
+    ],
+    "tags": [
+      "gherkin",
+      "bdd",
+      "cucumber",
+      "given-when-then",
+      "specification-by-example",
+      "dsl",
+      "acceptance-testing",
+      "living-documentation"
+    ],
+    "filePath": "docs/anchors/gherkin.adoc"
+  },
+  {
     "id": "gof-abstract-factory-pattern",
     "title": "GoF-Abstract Factory Pattern",
     "categories": [

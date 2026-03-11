@@ -19,6 +19,7 @@
       "pyramid-principle",
       "regulated-environment",
       "ssot-principle",
+      "swot",
       "user-story-mapping"
     ]
   },
@@ -48,6 +49,7 @@
       "socratic-method",
       "solid-principles",
       "sota",
+      "swot",
       "timtowtdi",
       "wardley-mapping",
       "what-qualifies-as-a-semantic-anchor",
@@ -118,6 +120,7 @@
       "problem-space-nvc",
       "pugh-matrix",
       "semantic-versioning",
+      "swot",
       "user-story-mapping",
       "wardley-mapping"
     ]
@@ -202,6 +205,7 @@
       "solid-srp",
       "spot-principle",
       "ssot-principle",
+      "swot",
       "tdd-london-school",
       "timtowtdi",
       "wardley-mapping",
@@ -310,6 +314,7 @@
       "regulated-environment",
       "socratic-method",
       "spc",
+      "swot",
       "testing-pyramid",
       "todotxt-flavoured-markdown",
       "user-story-mapping",

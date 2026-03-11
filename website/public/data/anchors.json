@@ -1995,6 +1995,39 @@
     "filePath": "docs/anchors/ssot-principle.adoc"
   },
   {
+    "id": "swot",
+    "title": "SWOT",
+    "categories": [
+      "strategic-planning"
+    ],
+    "roles": [
+      "product-owner",
+      "business-analyst",
+      "consultant",
+      "team-lead",
+      "software-architect"
+    ],
+    "related": [
+      "pugh-matrix",
+      "wardley-mapping",
+      "moscow"
+    ],
+    "proponents": [
+      "Albert Humphrey"
+    ],
+    "tags": [
+      "swot",
+      "strategic-planning",
+      "analysis",
+      "strengths",
+      "weaknesses",
+      "opportunities",
+      "threats",
+      "business-analysis"
+    ],
+    "filePath": "docs/anchors/swot.adoc"
+  },
+  {
     "id": "tdd-chicago-school",
     "title": "TDD, Chicago School",
     "categories": [

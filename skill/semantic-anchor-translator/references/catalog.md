@@ -293,3 +293,7 @@ Source: https://github.com/LLM-Coding/Semantic-Anchors
 ### Pugh Matrix
 - **Proponents:** Stuart Pugh
 - **Core:** Decision matrix comparing options against criteria with baseline
+
+### SWOT
+- **Proponents:** Albert Humphrey
+- **Core:** Strengths, Weaknesses, Opportunities, Threats — internal vs. external strategic analysis

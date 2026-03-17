@@ -42,6 +42,10 @@ Source: https://github.com/LLM-Coding/Semantic-Anchors
 - **Proponents:** International Electrotechnical Commission
 - **Core:** Safety integrity levels for safety-critical systems
 
+### STRIDE Threat Model
+- **Proponents:** Loren Kohnfelder, Praerit Garg (Microsoft), Adam Shostack
+- **Core:** Spoofing, Tampering, Repudiation, Information Disclosure, Denial of Service, Elevation of Privilege — structured threat categorization for security design
+
 ## Software Architecture
 
 ### Clean Architecture

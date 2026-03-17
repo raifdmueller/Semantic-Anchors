@@ -1495,6 +1495,34 @@
     "filePath": "docs/anchors/mental-model-according-to-naur.adoc"
   },
   {
+    "id": "mikado-method",
+    "title": "Mikado Method",
+    "categories": [
+      "development-workflow"
+    ],
+    "roles": [
+      "software-developer",
+      "software-architect",
+      "team-lead"
+    ],
+    "related": [
+      "tdd-chicago-school",
+      "tdd-london-school"
+    ],
+    "proponents": [
+      "Ola Ellnestam",
+      "Daniel Brolund"
+    ],
+    "tags": [
+      "refactoring",
+      "legacy code",
+      "incremental change",
+      "dependency graph",
+      "reversible steps"
+    ],
+    "filePath": "docs/anchors/mikado-method.adoc"
+  },
+  {
     "id": "morphological-box",
     "title": "Morphological Box",
     "categories": [

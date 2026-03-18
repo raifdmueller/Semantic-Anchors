@@ -184,7 +184,14 @@ body {
 
 /* Feedback section in anchor modal (comments area) */
 .feedback-section {
-  @apply mt-8 pt-6 border-t border-gray-200 dark:border-gray-700;
+  @apply mt-8 p-4 rounded-lg;
+  @apply bg-gray-50 dark:bg-gray-800/50;
+  @apply border border-gray-200 dark:border-gray-700;
+}
+
+.feedback-heading {
+  @apply flex items-center gap-2 text-sm font-semibold mb-3;
+  @apply text-gray-500 dark:text-gray-400;
 }
 
 .feedback-actions {

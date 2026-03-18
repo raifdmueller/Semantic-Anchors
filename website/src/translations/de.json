@@ -61,5 +61,6 @@
   "feedback.vote": "Abstimmen",
   "feedback.discuss": "Diskutieren",
   "feedback.cta": "Ist dieser Anker hilfreich?",
+  "feedback.discussionHeading": "Community-Diskussion",
   "feedback.requiresLogin": "Erfordert GitHub-Login"
 }

@@ -166,6 +166,40 @@ body {
   @apply bg-gray-100 dark:bg-gray-700;
 }
 
+.feedback-badge {
+  @apply text-inherit no-underline cursor-pointer;
+  @apply hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors;
+}
+
+/* Feedback section in anchor modal */
+.feedback-section {
+  @apply mt-8 pt-6 border-t border-gray-200 dark:border-gray-700;
+  @apply text-center;
+}
+
+.feedback-actions {
+  @apply flex justify-center gap-3;
+}
+
+.feedback-btn {
+  @apply inline-flex items-center gap-2 px-4 py-2 rounded-lg;
+  @apply text-sm font-medium no-underline transition-colors;
+}
+
+.feedback-btn-vote {
+  @apply bg-blue-50 text-blue-700 hover:bg-blue-100;
+  @apply dark:bg-blue-900/30 dark:text-blue-300 dark:hover:bg-blue-900/50;
+}
+
+.feedback-btn-discuss {
+  @apply bg-gray-50 text-gray-700 hover:bg-gray-100;
+  @apply dark:bg-gray-800 dark:text-gray-300 dark:hover:bg-gray-700;
+}
+
+.feedback-hint {
+  @apply mt-2 text-xs text-gray-400 dark:text-gray-500;
+}
+
 .anchor-card-indicator {
   @apply absolute bottom-0 left-0 right-0 h-1;
 }

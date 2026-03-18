@@ -4,6 +4,7 @@ import { createModal, openModal, closeModal, showAnchorDetails } from './anchor-
 
 vi.mock('../utils/data-loader.js', () => ({
   fetchAnchorsData: vi.fn(),
+  fetchFeedbackData: vi.fn().mockResolvedValue({}),
 }))
 
 describe('anchor-modal', () => {

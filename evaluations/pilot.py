@@ -164,16 +164,19 @@ def make_openai_caller(openai_model):
 
 
 def make_mistral_caller(mistral_model):
-    """Create a Mistral caller for a specific model."""
+    """Create a Mistral caller via OpenAI-compatible API."""
     def call_mistral(prompt, model=mistral_model):
         try:
-            from mistralai import Mistral
+            import openai
         except ImportError:
-            print("mistralai package required: pip install mistralai")
+            print("openai package required: pip install openai")
             sys.exit(1)
 
-        client = Mistral(api_key=os.environ.get("MISTRAL_API_KEY", ""))
-        response = client.chat.complete(
+        client = openai.OpenAI(
+            base_url="https://api.mistral.ai/v1",
+            api_key=os.environ.get("MISTRAL_API_KEY", ""),
+        )
+        response = client.chat.completions.create(
             model=model,
             max_tokens=10,
             temperature=TEMPERATURE,

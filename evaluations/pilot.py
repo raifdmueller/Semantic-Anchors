@@ -167,7 +167,7 @@ def make_ollama_caller(ollama_model, no_think=False):
             data=data,
             headers={"Content-Type": "application/json"},
         )
-        with urllib.request.urlopen(req, timeout=120) as resp:
+        with urllib.request.urlopen(req, timeout=300) as resp:
             result = json.loads(resp.read())
 
         content = result.get("message", {}).get("content", "")
@@ -188,7 +188,13 @@ def run_question(question_data, call_fn, label, context="", verbose=False):
         prompt = build_prompt(question_text, options, perm)
         expected = correct_letter_for_permutation(original_correct, perm)
 
-        response_text, model_id = call_fn(prompt)
+        try:
+            response_text, model_id = call_fn(prompt)
+        except Exception as e:
+            response_text = f"ERROR: {e}"
+            if verbose:
+                print(f"\n    [ERROR] {e}")
+
         answer = parse_response(response_text)
         correct = answer == expected
 
@@ -200,7 +206,7 @@ def run_question(question_data, call_fn, label, context="", verbose=False):
             "expected": expected,
             "answer": answer,
             "correct": correct,
-            "raw_response": response_text.strip(),
+            "raw_response": response_text.strip()[:500],
         })
         time.sleep(0.5)  # rate limiting
 

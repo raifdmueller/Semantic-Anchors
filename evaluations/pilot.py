@@ -91,6 +91,11 @@ def parse_response(text):
 TEMPERATURE = 0.0
 
 
+def set_temperature(t):
+    global TEMPERATURE
+    TEMPERATURE = t
+
+
 def call_claude_api(prompt, model="claude-sonnet-4-20250514"):
     """Send prompt to Claude via Anthropic API."""
     try:
@@ -387,6 +392,5 @@ if __name__ == "__main__":
     parser.add_argument("--verbose", action="store_true",
                         help="Print raw responses for debugging")
     args = parser.parse_args()
-    global TEMPERATURE
-    TEMPERATURE = args.temperature
+    set_temperature(args.temperature)
     run_pilot(args.model, args.dry_run, args.verbose, args.ollama_model, args.no_think, args.ollama_url)

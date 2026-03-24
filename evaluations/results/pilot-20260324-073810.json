@@ -1,0 +1,1845 @@
+{
+  "timestamp": "2026-03-24T07:29:12.955266+00:00",
+  "models": {
+    "claude-haiku": [
+      {
+        "label": "arc42/recognition",
+        "score": 1.0,
+        "results": [
+          {
+            "permutation": [
+              "A",
+              "B",
+              "C",
+              "D"
+            ],
+            "expected": "A",
+            "answer": "A",
+            "correct": true,
+            "raw_response": "A"
+          },
+          {
+            "permutation": [
+              "B",
+              "C",
+              "D",
+              "A"
+            ],
+            "expected": "D",
+            "answer": "D",
+            "correct": true,
+            "raw_response": "D"
+          },
+          {
+            "permutation": [
+              "C",
+              "D",
+              "A",
+              "B"
+            ],
+            "expected": "C",
+            "answer": "C",
+            "correct": true,
+            "raw_response": "C"
+          },
+          {
+            "permutation": [
+              "D",
+              "A",
+              "B",
+              "C"
+            ],
+            "expected": "B",
+            "answer": "B",
+            "correct": true,
+            "raw_response": "B"
+          }
+        ]
+      },
+      {
+        "label": "arc42/application-anchor",
+        "score": 1.0,
+        "results": [
+          {
+            "permutation": [
+              "A",
+              "B",
+              "C",
+              "D"
+            ],
+            "expected": "B",
+            "answer": "B",
+            "correct": true,
+            "raw_response": "B"
+          },
+          {
+            "permutation": [
+              "B",
+              "C",
+              "D",
+              "A"
+            ],
+            "expected": "A",
+            "answer": "A",
+            "correct": true,
+            "raw_response": "A"
+          },
+          {
+            "permutation": [
+              "C",
+              "D",
+              "A",
+              "B"
+            ],
+            "expected": "D",
+            "answer": "D",
+            "correct": true,
+            "raw_response": "D"
+          },
+          {
+            "permutation": [
+              "D",
+              "A",
+              "B",
+              "C"
+            ],
+            "expected": "C",
+            "answer": "C",
+            "correct": true,
+            "raw_response": "C"
+          }
+        ]
+      },
+      {
+        "label": "arc42/application-paraphrase",
+        "score": 1.0,
+        "results": [
+          {
+            "permutation": [
+              "A",
+              "B",
+              "C",
+              "D"
+            ],
+            "expected": "B",
+            "answer": "B",
+            "correct": true,
+            "raw_response": "B"
+          },
+          {
+            "permutation": [
+              "B",
+              "C",
+              "D",
+              "A"
+            ],
+            "expected": "A",
+            "answer": "A",
+            "correct": true,
+            "raw_response": "A"
+          },
+          {
+            "permutation": [
+              "C",
+              "D",
+              "A",
+              "B"
+            ],
+            "expected": "D",
+            "answer": "D",
+            "correct": true,
+            "raw_response": "D"
+          },
+          {
+            "permutation": [
+              "D",
+              "A",
+              "B",
+              "C"
+            ],
+            "expected": "C",
+            "answer": "C",
+            "correct": true,
+            "raw_response": "C"
+          }
+        ]
+      },
+      {
+        "label": "arc42/consistency-variant-1",
+        "score": 1.0,
+        "results": [
+          {
+            "permutation": [
+              "A",
+              "B",
+              "C",
+              "D"
+            ],
+            "expected": "B",
+            "answer": "B",
+            "correct": true,
+            "raw_response": "B"
+          },
+          {
+            "permutation": [
+              "B",
+              "C",
+              "D",
+              "A"
+            ],
+            "expected": "A",
+            "answer": "A",
+            "correct": true,
+            "raw_response": "A"
+          },
+          {
+            "permutation": [
+              "C",
+              "D",
+              "A",
+              "B"
+            ],
+            "expected": "D",
+            "answer": "D",
+            "correct": true,
+            "raw_response": "D"
+          },
+          {
+            "permutation": [
+              "D",
+              "A",
+              "B",
+              "C"
+            ],
+            "expected": "C",
+            "answer": "C",
+            "correct": true,
+            "raw_response": "C"
+          }
+        ]
+      },
+      {
+        "label": "arc42/consistency-variant-2",
+        "score": 1.0,
+        "results": [
+          {
+            "permutation": [
+              "A",
+              "B",
+              "C",
+              "D"
+            ],
+            "expected": "B",
+            "answer": "B",
+            "correct": true,
+            "raw_response": "B) Gernot Starke"
+          },
+          {
+            "permutation": [
+              "B",
+              "C",
+              "D",
+              "A"
+            ],
+            "expected": "A",
+            "answer": "A",
+            "correct": true,
+            "raw_response": "A"
+          },
+          {
+            "permutation": [
+              "C",
+              "D",
+              "A",
+              "B"
+            ],
+            "expected": "D",
+            "answer": "D",
+            "correct": true,
+            "raw_response": "D"
+          },
+          {
+            "permutation": [
+              "D",
+              "A",
+              "B",
+              "C"
+            ],
+            "expected": "C",
+            "answer": "C",
+            "correct": true,
+            "raw_response": "C"
+          }
+        ]
+      },
+      {
+        "label": "arc42/consistency-variant-3",
+        "score": 1.0,
+        "results": [
+          {
+            "permutation": [
+              "A",
+              "B",
+              "C",
+              "D"
+            ],
+            "expected": "B",
+            "answer": "B",
+            "correct": true,
+            "raw_response": "B"
+          },
+          {
+            "permutation": [
+              "B",
+              "C",
+              "D",
+              "A"
+            ],
+            "expected": "A",
+            "answer": "A",
+            "correct": true,
+            "raw_response": "A"
+          },
+          {
+            "permutation": [
+              "C",
+              "D",
+              "A",
+              "B"
+            ],
+            "expected": "D",
+            "answer": "D",
+            "correct": true,
+            "raw_response": "D"
+          },
+          {
+            "permutation": [
+              "D",
+              "A",
+              "B",
+              "C"
+            ],
+            "expected": "C",
+            "answer": "C",
+            "correct": true,
+            "raw_response": "C"
+          }
+        ]
+      },
+      {
+        "label": "arc42/consistency-language",
+        "score": 1.0,
+        "results": [
+          {
+            "permutation": [
+              "A",
+              "B",
+              "C",
+              "D"
+            ],
+            "expected": "B",
+            "answer": "B",
+            "correct": true,
+            "raw_response": "B"
+          },
+          {
+            "permutation": [
+              "B",
+              "C",
+              "D",
+              "A"
+            ],
+            "expected": "A",
+            "answer": "A",
+            "correct": true,
+            "raw_response": "A"
+          },
+          {
+            "permutation": [
+              "C",
+              "D",
+              "A",
+              "B"
+            ],
+            "expected": "D",
+            "answer": "D",
+            "correct": true,
+            "raw_response": "D"
+          },
+          {
+            "permutation": [
+              "D",
+              "A",
+              "B",
+              "C"
+            ],
+            "expected": "C",
+            "answer": "C",
+            "correct": true,
+            "raw_response": "C"
+          }
+        ]
+      },
+      {
+        "label": "docs-as-code/recognition",
+        "score": 1.0,
+        "results": [
+          {
+            "permutation": [
+              "A",
+              "B",
+              "C",
+              "D"
+            ],
+            "expected": "B",
+            "answer": "B",
+            "correct": true,
+            "raw_response": "B"
+          },
+          {
+            "permutation": [
+              "B",
+              "C",
+              "D",
+              "A"
+            ],
+            "expected": "A",
+            "answer": "A",
+            "correct": true,
+            "raw_response": "A"
+          },
+          {
+            "permutation": [
+              "C",
+              "D",
+              "A",
+              "B"
+            ],
+            "expected": "D",
+            "answer": "D",
+            "correct": true,
+            "raw_response": "D"
+          },
+          {
+            "permutation": [
+              "D",
+              "A",
+              "B",
+              "C"
+            ],
+            "expected": "C",
+            "answer": "C",
+            "correct": true,
+            "raw_response": "C"
+          }
+        ]
+      },
+      {
+        "label": "mece/recognition",
+        "score": 1.0,
+        "results": [
+          {
+            "permutation": [
+              "A",
+              "B",
+              "C",
+              "D"
+            ],
+            "expected": "B",
+            "answer": "B",
+            "correct": true,
+            "raw_response": "B"
+          },
+          {
+            "permutation": [
+              "B",
+              "C",
+              "D",
+              "A"
+            ],
+            "expected": "A",
+            "answer": "A",
+            "correct": true,
+            "raw_response": "A"
+          },
+          {
+            "permutation": [
+              "C",
+              "D",
+              "A",
+              "B"
+            ],
+            "expected": "D",
+            "answer": "D",
+            "correct": true,
+            "raw_response": "D"
+          },
+          {
+            "permutation": [
+              "D",
+              "A",
+              "B",
+              "C"
+            ],
+            "expected": "C",
+            "answer": "C",
+            "correct": true,
+            "raw_response": "C"
+          }
+        ]
+      },
+      {
+        "label": "tdd-london-school/recognition",
+        "score": 1.0,
+        "results": [
+          {
+            "permutation": [
+              "A",
+              "B",
+              "C",
+              "D"
+            ],
+            "expected": "B",
+            "answer": "B",
+            "correct": true,
+            "raw_response": "B"
+          },
+          {
+            "permutation": [
+              "B",
+              "C",
+              "D",
+              "A"
+            ],
+            "expected": "A",
+            "answer": "A",
+            "correct": true,
+            "raw_response": "A"
+          },
+          {
+            "permutation": [
+              "C",
+              "D",
+              "A",
+              "B"
+            ],
+            "expected": "D",
+            "answer": "D",
+            "correct": true,
+            "raw_response": "D"
+          },
+          {
+            "permutation": [
+              "D",
+              "A",
+              "B",
+              "C"
+            ],
+            "expected": "C",
+            "answer": "C",
+            "correct": true,
+            "raw_response": "C"
+          }
+        ]
+      },
+      {
+        "label": "tdd-london-school/application-anchor",
+        "score": 1.0,
+        "results": [
+          {
+            "permutation": [
+              "A",
+              "B",
+              "C",
+              "D"
+            ],
+            "expected": "B",
+            "answer": "B",
+            "correct": true,
+            "raw_response": "**B**\n\nLondon School TDD emphasizes:\n- Mock-heavy testing of collaborating objects\n- Outside-in development (test interfaces, not implementations)\n- Interaction-based verification (how objects communicate)\n\nOption B isolates OrderService from its dependencies (PaymentGateway, InventoryService) using mocks, allowing you to verify the expected interactions and contracts between them—the core principle of London School TDD."
+          },
+          {
+            "permutation": [
+              "B",
+              "C",
+              "D",
+              "A"
+            ],
+            "expected": "A",
+            "answer": "A",
+            "correct": true,
+            "raw_response": "A"
+          },
+          {
+            "permutation": [
+              "C",
+              "D",
+              "A",
+              "B"
+            ],
+            "expected": "D",
+            "answer": "D",
+            "correct": true,
+            "raw_response": "D"
+          },
+          {
+            "permutation": [
+              "D",
+              "A",
+              "B",
+              "C"
+            ],
+            "expected": "C",
+            "answer": "C",
+            "correct": true,
+            "raw_response": "C\n\nLondon School TDD emphasizes mocking external dependencies and verifying interactions between collaborating objects. You'd write a unit test that mocks PaymentGateway and InventoryService to verify OrderService calls them correctly—the opposite of integration testing."
+          }
+        ]
+      },
+      {
+        "label": "tdd-london-school/application-paraphrase",
+        "score": 1.0,
+        "results": [
+          {
+            "permutation": [
+              "A",
+              "B",
+              "C",
+              "D"
+            ],
+            "expected": "B",
+            "answer": "B",
+            "correct": true,
+            "raw_response": "B"
+          },
+          {
+            "permutation": [
+              "B",
+              "C",
+              "D",
+              "A"
+            ],
+            "expected": "A",
+            "answer": "A",
+            "correct": true,
+            "raw_response": "A"
+          },
+          {
+            "permutation": [
+              "C",
+              "D",
+              "A",
+              "B"
+            ],
+            "expected": "D",
+            "answer": "D",
+            "correct": true,
+            "raw_response": "D"
+          },
+          {
+            "permutation": [
+              "D",
+              "A",
+              "B",
+              "C"
+            ],
+            "expected": "C",
+            "answer": "C",
+            "correct": true,
+            "raw_response": "C"
+          }
+        ]
+      },
+      {
+        "label": "tdd-london-school/consistency-variant-1",
+        "score": 1.0,
+        "results": [
+          {
+            "permutation": [
+              "A",
+              "B",
+              "C",
+              "D"
+            ],
+            "expected": "B",
+            "answer": "B",
+            "correct": true,
+            "raw_response": "B"
+          },
+          {
+            "permutation": [
+              "B",
+              "C",
+              "D",
+              "A"
+            ],
+            "expected": "A",
+            "answer": "A",
+            "correct": true,
+            "raw_response": "A"
+          },
+          {
+            "permutation": [
+              "C",
+              "D",
+              "A",
+              "B"
+            ],
+            "expected": "D",
+            "answer": "D",
+            "correct": true,
+            "raw_response": "D"
+          },
+          {
+            "permutation": [
+              "D",
+              "A",
+              "B",
+              "C"
+            ],
+            "expected": "C",
+            "answer": "C",
+            "correct": true,
+            "raw_response": "C"
+          }
+        ]
+      },
+      {
+        "label": "tdd-london-school/consistency-variant-2",
+        "score": 1.0,
+        "results": [
+          {
+            "permutation": [
+              "A",
+              "B",
+              "C",
+              "D"
+            ],
+            "expected": "B",
+            "answer": "B",
+            "correct": true,
+            "raw_response": "B"
+          },
+          {
+            "permutation": [
+              "B",
+              "C",
+              "D",
+              "A"
+            ],
+            "expected": "A",
+            "answer": "A",
+            "correct": true,
+            "raw_response": "A"
+          },
+          {
+            "permutation": [
+              "C",
+              "D",
+              "A",
+              "B"
+            ],
+            "expected": "D",
+            "answer": "D",
+            "correct": true,
+            "raw_response": "D"
+          },
+          {
+            "permutation": [
+              "D",
+              "A",
+              "B",
+              "C"
+            ],
+            "expected": "C",
+            "answer": "C",
+            "correct": true,
+            "raw_response": "C"
+          }
+        ]
+      },
+      {
+        "label": "tdd-london-school/consistency-variant-3",
+        "score": 1.0,
+        "results": [
+          {
+            "permutation": [
+              "A",
+              "B",
+              "C",
+              "D"
+            ],
+            "expected": "B",
+            "answer": "B",
+            "correct": true,
+            "raw_response": "B"
+          },
+          {
+            "permutation": [
+              "B",
+              "C",
+              "D",
+              "A"
+            ],
+            "expected": "A",
+            "answer": "A",
+            "correct": true,
+            "raw_response": "A"
+          },
+          {
+            "permutation": [
+              "C",
+              "D",
+              "A",
+              "B"
+            ],
+            "expected": "D",
+            "answer": "D",
+            "correct": true,
+            "raw_response": "D"
+          },
+          {
+            "permutation": [
+              "D",
+              "A",
+              "B",
+              "C"
+            ],
+            "expected": "C",
+            "answer": "C",
+            "correct": true,
+            "raw_response": "C"
+          }
+        ]
+      },
+      {
+        "label": "tdd-london-school/consistency-language",
+        "score": 1.0,
+        "results": [
+          {
+            "permutation": [
+              "A",
+              "B",
+              "C",
+              "D"
+            ],
+            "expected": "B",
+            "answer": "B",
+            "correct": true,
+            "raw_response": "B"
+          },
+          {
+            "permutation": [
+              "B",
+              "C",
+              "D",
+              "A"
+            ],
+            "expected": "A",
+            "answer": "A",
+            "correct": true,
+            "raw_response": "A"
+          },
+          {
+            "permutation": [
+              "C",
+              "D",
+              "A",
+              "B"
+            ],
+            "expected": "D",
+            "answer": "D",
+            "correct": true,
+            "raw_response": "D"
+          },
+          {
+            "permutation": [
+              "D",
+              "A",
+              "B",
+              "C"
+            ],
+            "expected": "C",
+            "answer": "C",
+            "correct": true,
+            "raw_response": "C"
+          }
+        ]
+      },
+      {
+        "label": "timtowtdi/recognition",
+        "score": 1.0,
+        "results": [
+          {
+            "permutation": [
+              "A",
+              "B",
+              "C",
+              "D"
+            ],
+            "expected": "A",
+            "answer": "A",
+            "correct": true,
+            "raw_response": "A"
+          },
+          {
+            "permutation": [
+              "B",
+              "C",
+              "D",
+              "A"
+            ],
+            "expected": "D",
+            "answer": "D",
+            "correct": true,
+            "raw_response": "D"
+          },
+          {
+            "permutation": [
+              "C",
+              "D",
+              "A",
+              "B"
+            ],
+            "expected": "C",
+            "answer": "C",
+            "correct": true,
+            "raw_response": "C"
+          },
+          {
+            "permutation": [
+              "D",
+              "A",
+              "B",
+              "C"
+            ],
+            "expected": "B",
+            "answer": "B",
+            "correct": true,
+            "raw_response": "B"
+          }
+        ]
+      }
+    ],
+    "openai": [
+      {
+        "label": "arc42/recognition",
+        "score": 1.0,
+        "results": [
+          {
+            "permutation": [
+              "A",
+              "B",
+              "C",
+              "D"
+            ],
+            "expected": "A",
+            "answer": "A",
+            "correct": true,
+            "raw_response": "A"
+          },
+          {
+            "permutation": [
+              "B",
+              "C",
+              "D",
+              "A"
+            ],
+            "expected": "D",
+            "answer": "D",
+            "correct": true,
+            "raw_response": "D"
+          },
+          {
+            "permutation": [
+              "C",
+              "D",
+              "A",
+              "B"
+            ],
+            "expected": "C",
+            "answer": "C",
+            "correct": true,
+            "raw_response": "C"
+          },
+          {
+            "permutation": [
+              "D",
+              "A",
+              "B",
+              "C"
+            ],
+            "expected": "B",
+            "answer": "B",
+            "correct": true,
+            "raw_response": "B"
+          }
+        ]
+      },
+      {
+        "label": "arc42/application-anchor",
+        "score": 1.0,
+        "results": [
+          {
+            "permutation": [
+              "A",
+              "B",
+              "C",
+              "D"
+            ],
+            "expected": "B",
+            "answer": "B",
+            "correct": true,
+            "raw_response": "B"
+          },
+          {
+            "permutation": [
+              "B",
+              "C",
+              "D",
+              "A"
+            ],
+            "expected": "A",
+            "answer": "A",
+            "correct": true,
+            "raw_response": "A"
+          },
+          {
+            "permutation": [
+              "C",
+              "D",
+              "A",
+              "B"
+            ],
+            "expected": "D",
+            "answer": "D",
+            "correct": true,
+            "raw_response": "D"
+          },
+          {
+            "permutation": [
+              "D",
+              "A",
+              "B",
+              "C"
+            ],
+            "expected": "C",
+            "answer": "C",
+            "correct": true,
+            "raw_response": "C"
+          }
+        ]
+      },
+      {
+        "label": "arc42/application-paraphrase",
+        "score": 1.0,
+        "results": [
+          {
+            "permutation": [
+              "A",
+              "B",
+              "C",
+              "D"
+            ],
+            "expected": "B",
+            "answer": "B",
+            "correct": true,
+            "raw_response": "B"
+          },
+          {
+            "permutation": [
+              "B",
+              "C",
+              "D",
+              "A"
+            ],
+            "expected": "A",
+            "answer": "A",
+            "correct": true,
+            "raw_response": "A"
+          },
+          {
+            "permutation": [
+              "C",
+              "D",
+              "A",
+              "B"
+            ],
+            "expected": "D",
+            "answer": "D",
+            "correct": true,
+            "raw_response": "D"
+          },
+          {
+            "permutation": [
+              "D",
+              "A",
+              "B",
+              "C"
+            ],
+            "expected": "C",
+            "answer": "C",
+            "correct": true,
+            "raw_response": "C"
+          }
+        ]
+      },
+      {
+        "label": "arc42/consistency-variant-1",
+        "score": 1.0,
+        "results": [
+          {
+            "permutation": [
+              "A",
+              "B",
+              "C",
+              "D"
+            ],
+            "expected": "B",
+            "answer": "B",
+            "correct": true,
+            "raw_response": "B"
+          },
+          {
+            "permutation": [
+              "B",
+              "C",
+              "D",
+              "A"
+            ],
+            "expected": "A",
+            "answer": "A",
+            "correct": true,
+            "raw_response": "A"
+          },
+          {
+            "permutation": [
+              "C",
+              "D",
+              "A",
+              "B"
+            ],
+            "expected": "D",
+            "answer": "D",
+            "correct": true,
+            "raw_response": "D"
+          },
+          {
+            "permutation": [
+              "D",
+              "A",
+              "B",
+              "C"
+            ],
+            "expected": "C",
+            "answer": "C",
+            "correct": true,
+            "raw_response": "C"
+          }
+        ]
+      },
+      {
+        "label": "arc42/consistency-variant-2",
+        "score": 1.0,
+        "results": [
+          {
+            "permutation": [
+              "A",
+              "B",
+              "C",
+              "D"
+            ],
+            "expected": "B",
+            "answer": "B",
+            "correct": true,
+            "raw_response": "B"
+          },
+          {
+            "permutation": [
+              "B",
+              "C",
+              "D",
+              "A"
+            ],
+            "expected": "A",
+            "answer": "A",
+            "correct": true,
+            "raw_response": "A"
+          },
+          {
+            "permutation": [
+              "C",
+              "D",
+              "A",
+              "B"
+            ],
+            "expected": "D",
+            "answer": "D",
+            "correct": true,
+            "raw_response": "D"
+          },
+          {
+            "permutation": [
+              "D",
+              "A",
+              "B",
+              "C"
+            ],
+            "expected": "C",
+            "answer": "C",
+            "correct": true,
+            "raw_response": "C"
+          }
+        ]
+      },
+      {
+        "label": "arc42/consistency-variant-3",
+        "score": 0.5,
+        "results": [
+          {
+            "permutation": [
+              "A",
+              "B",
+              "C",
+              "D"
+            ],
+            "expected": "B",
+            "answer": "B",
+            "correct": true,
+            "raw_response": "B"
+          },
+          {
+            "permutation": [
+              "B",
+              "C",
+              "D",
+              "A"
+            ],
+            "expected": "A",
+            "answer": "A",
+            "correct": true,
+            "raw_response": "A"
+          },
+          {
+            "permutation": [
+              "C",
+              "D",
+              "A",
+              "B"
+            ],
+            "expected": "D",
+            "answer": "B",
+            "correct": false,
+            "raw_response": "B"
+          },
+          {
+            "permutation": [
+              "D",
+              "A",
+              "B",
+              "C"
+            ],
+            "expected": "C",
+            "answer": "A",
+            "correct": false,
+            "raw_response": "A"
+          }
+        ]
+      },
+      {
+        "label": "arc42/consistency-language",
+        "score": 1.0,
+        "results": [
+          {
+            "permutation": [
+              "A",
+              "B",
+              "C",
+              "D"
+            ],
+            "expected": "B",
+            "answer": "B",
+            "correct": true,
+            "raw_response": "B"
+          },
+          {
+            "permutation": [
+              "B",
+              "C",
+              "D",
+              "A"
+            ],
+            "expected": "A",
+            "answer": "A",
+            "correct": true,
+            "raw_response": "A"
+          },
+          {
+            "permutation": [
+              "C",
+              "D",
+              "A",
+              "B"
+            ],
+            "expected": "D",
+            "answer": "D",
+            "correct": true,
+            "raw_response": "D"
+          },
+          {
+            "permutation": [
+              "D",
+              "A",
+              "B",
+              "C"
+            ],
+            "expected": "C",
+            "answer": "C",
+            "correct": true,
+            "raw_response": "C"
+          }
+        ]
+      },
+      {
+        "label": "docs-as-code/recognition",
+        "score": 1.0,
+        "results": [
+          {
+            "permutation": [
+              "A",
+              "B",
+              "C",
+              "D"
+            ],
+            "expected": "B",
+            "answer": "B",
+            "correct": true,
+            "raw_response": "B"
+          },
+          {
+            "permutation": [
+              "B",
+              "C",
+              "D",
+              "A"
+            ],
+            "expected": "A",
+            "answer": "A",
+            "correct": true,
+            "raw_response": "A"
+          },
+          {
+            "permutation": [
+              "C",
+              "D",
+              "A",
+              "B"
+            ],
+            "expected": "D",
+            "answer": "D",
+            "correct": true,
+            "raw_response": "D"
+          },
+          {
+            "permutation": [
+              "D",
+              "A",
+              "B",
+              "C"
+            ],
+            "expected": "C",
+            "answer": "C",
+            "correct": true,
+            "raw_response": "C"
+          }
+        ]
+      },
+      {
+        "label": "mece/recognition",
+        "score": 1.0,
+        "results": [
+          {
+            "permutation": [
+              "A",
+              "B",
+              "C",
+              "D"
+            ],
+            "expected": "B",
+            "answer": "B",
+            "correct": true,
+            "raw_response": "B"
+          },
+          {
+            "permutation": [
+              "B",
+              "C",
+              "D",
+              "A"
+            ],
+            "expected": "A",
+            "answer": "A",
+            "correct": true,
+            "raw_response": "A"
+          },
+          {
+            "permutation": [
+              "C",
+              "D",
+              "A",
+              "B"
+            ],
+            "expected": "D",
+            "answer": "D",
+            "correct": true,
+            "raw_response": "D"
+          },
+          {
+            "permutation": [
+              "D",
+              "A",
+              "B",
+              "C"
+            ],
+            "expected": "C",
+            "answer": "C",
+            "correct": true,
+            "raw_response": "C"
+          }
+        ]
+      },
+      {
+        "label": "tdd-london-school/recognition",
+        "score": 0.25,
+        "results": [
+          {
+            "permutation": [
+              "A",
+              "B",
+              "C",
+              "D"
+            ],
+            "expected": "B",
+            "answer": "A",
+            "correct": false,
+            "raw_response": "A"
+          },
+          {
+            "permutation": [
+              "B",
+              "C",
+              "D",
+              "A"
+            ],
+            "expected": "A",
+            "answer": "D",
+            "correct": false,
+            "raw_response": "D"
+          },
+          {
+            "permutation": [
+              "C",
+              "D",
+              "A",
+              "B"
+            ],
+            "expected": "D",
+            "answer": "C",
+            "correct": false,
+            "raw_response": "C"
+          },
+          {
+            "permutation": [
+              "D",
+              "A",
+              "B",
+              "C"
+            ],
+            "expected": "C",
+            "answer": "C",
+            "correct": true,
+            "raw_response": "C"
+          }
+        ]
+      },
+      {
+        "label": "tdd-london-school/application-anchor",
+        "score": 1.0,
+        "results": [
+          {
+            "permutation": [
+              "A",
+              "B",
+              "C",
+              "D"
+            ],
+            "expected": "B",
+            "answer": "B",
+            "correct": true,
+            "raw_response": "B"
+          },
+          {
+            "permutation": [
+              "B",
+              "C",
+              "D",
+              "A"
+            ],
+            "expected": "A",
+            "answer": "A",
+            "correct": true,
+            "raw_response": "A"
+          },
+          {
+            "permutation": [
+              "C",
+              "D",
+              "A",
+              "B"
+            ],
+            "expected": "D",
+            "answer": "D",
+            "correct": true,
+            "raw_response": "D"
+          },
+          {
+            "permutation": [
+              "D",
+              "A",
+              "B",
+              "C"
+            ],
+            "expected": "C",
+            "answer": "C",
+            "correct": true,
+            "raw_response": "C"
+          }
+        ]
+      },
+      {
+        "label": "tdd-london-school/application-paraphrase",
+        "score": 1.0,
+        "results": [
+          {
+            "permutation": [
+              "A",
+              "B",
+              "C",
+              "D"
+            ],
+            "expected": "B",
+            "answer": "B",
+            "correct": true,
+            "raw_response": "B"
+          },
+          {
+            "permutation": [
+              "B",
+              "C",
+              "D",
+              "A"
+            ],
+            "expected": "A",
+            "answer": "A",
+            "correct": true,
+            "raw_response": "A"
+          },
+          {
+            "permutation": [
+              "C",
+              "D",
+              "A",
+              "B"
+            ],
+            "expected": "D",
+            "answer": "D",
+            "correct": true,
+            "raw_response": "D"
+          },
+          {
+            "permutation": [
+              "D",
+              "A",
+              "B",
+              "C"
+            ],
+            "expected": "C",
+            "answer": "C",
+            "correct": true,
+            "raw_response": "C"
+          }
+        ]
+      },
+      {
+        "label": "tdd-london-school/consistency-variant-1",
+        "score": 0.75,
+        "results": [
+          {
+            "permutation": [
+              "A",
+              "B",
+              "C",
+              "D"
+            ],
+            "expected": "B",
+            "answer": "B",
+            "correct": true,
+            "raw_response": "B"
+          },
+          {
+            "permutation": [
+              "B",
+              "C",
+              "D",
+              "A"
+            ],
+            "expected": "A",
+            "answer": "A",
+            "correct": true,
+            "raw_response": "A"
+          },
+          {
+            "permutation": [
+              "C",
+              "D",
+              "A",
+              "B"
+            ],
+            "expected": "D",
+            "answer": "A",
+            "correct": false,
+            "raw_response": "A"
+          },
+          {
+            "permutation": [
+              "D",
+              "A",
+              "B",
+              "C"
+            ],
+            "expected": "C",
+            "answer": "C",
+            "correct": true,
+            "raw_response": "C"
+          }
+        ]
+      },
+      {
+        "label": "tdd-london-school/consistency-variant-2",
+        "score": 0.25,
+        "results": [
+          {
+            "permutation": [
+              "A",
+              "B",
+              "C",
+              "D"
+            ],
+            "expected": "B",
+            "answer": "C",
+            "correct": false,
+            "raw_response": "C"
+          },
+          {
+            "permutation": [
+              "B",
+              "C",
+              "D",
+              "A"
+            ],
+            "expected": "A",
+            "answer": "B",
+            "correct": false,
+            "raw_response": "B"
+          },
+          {
+            "permutation": [
+              "C",
+              "D",
+              "A",
+              "B"
+            ],
+            "expected": "D",
+            "answer": "A",
+            "correct": false,
+            "raw_response": "A"
+          },
+          {
+            "permutation": [
+              "D",
+              "A",
+              "B",
+              "C"
+            ],
+            "expected": "C",
+            "answer": "C",
+            "correct": true,
+            "raw_response": "C"
+          }
+        ]
+      },
+      {
+        "label": "tdd-london-school/consistency-variant-3",
+        "score": 0.5,
+        "results": [
+          {
+            "permutation": [
+              "A",
+              "B",
+              "C",
+              "D"
+            ],
+            "expected": "B",
+            "answer": "B",
+            "correct": true,
+            "raw_response": "B"
+          },
+          {
+            "permutation": [
+              "B",
+              "C",
+              "D",
+              "A"
+            ],
+            "expected": "A",
+            "answer": "B",
+            "correct": false,
+            "raw_response": "B"
+          },
+          {
+            "permutation": [
+              "C",
+              "D",
+              "A",
+              "B"
+            ],
+            "expected": "D",
+            "answer": "A",
+            "correct": false,
+            "raw_response": "A"
+          },
+          {
+            "permutation": [
+              "D",
+              "A",
+              "B",
+              "C"
+            ],
+            "expected": "C",
+            "answer": "C",
+            "correct": true,
+            "raw_response": "C"
+          }
+        ]
+      },
+      {
+        "label": "tdd-london-school/consistency-language",
+        "score": 0.5,
+        "results": [
+          {
+            "permutation": [
+              "A",
+              "B",
+              "C",
+              "D"
+            ],
+            "expected": "B",
+            "answer": "B",
+            "correct": true,
+            "raw_response": "B"
+          },
+          {
+            "permutation": [
+              "B",
+              "C",
+              "D",
+              "A"
+            ],
+            "expected": "A",
+            "answer": "A",
+            "correct": true,
+            "raw_response": "A"
+          },
+          {
+            "permutation": [
+              "C",
+              "D",
+              "A",
+              "B"
+            ],
+            "expected": "D",
+            "answer": "C",
+            "correct": false,
+            "raw_response": "C"
+          },
+          {
+            "permutation": [
+              "D",
+              "A",
+              "B",
+              "C"
+            ],
+            "expected": "C",
+            "answer": "B",
+            "correct": false,
+            "raw_response": "B"
+          }
+        ]
+      },
+      {
+        "label": "timtowtdi/recognition",
+        "score": 1.0,
+        "results": [
+          {
+            "permutation": [
+              "A",
+              "B",
+              "C",
+              "D"
+            ],
+            "expected": "A",
+            "answer": "A",
+            "correct": true,
+            "raw_response": "A"
+          },
+          {
+            "permutation": [
+              "B",
+              "C",
+              "D",
+              "A"
+            ],
+            "expected": "D",
+            "answer": "D",
+            "correct": true,
+            "raw_response": "D"
+          },
+          {
+            "permutation": [
+              "C",
+              "D",
+              "A",
+              "B"
+            ],
+            "expected": "C",
+            "answer": "C",
+            "correct": true,
+            "raw_response": "C"
+          },
+          {
+            "permutation": [
+              "D",
+              "A",
+              "B",
+              "C"
+            ],
+            "expected": "B",
+            "answer": "B",
+            "correct": true,
+            "raw_response": "B"
+          }
+        ]
+      }
+    ]
+  }
+}

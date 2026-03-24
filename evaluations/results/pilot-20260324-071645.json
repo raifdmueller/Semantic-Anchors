@@ -1,0 +1,925 @@
+{
+  "timestamp": "2026-03-24T07:15:35.294123+00:00",
+  "models": {
+    "claude-cli": [
+      {
+        "label": "arc42/recognition",
+        "score": 0.0,
+        "results": [
+          {
+            "permutation": [
+              "A",
+              "B",
+              "C",
+              "D"
+            ],
+            "expected": "A",
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: error: unknown option '--no-input'"
+          },
+          {
+            "permutation": [
+              "B",
+              "C",
+              "D",
+              "A"
+            ],
+            "expected": "D",
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: error: unknown option '--no-input'"
+          },
+          {
+            "permutation": [
+              "C",
+              "D",
+              "A",
+              "B"
+            ],
+            "expected": "C",
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: error: unknown option '--no-input'"
+          },
+          {
+            "permutation": [
+              "D",
+              "A",
+              "B",
+              "C"
+            ],
+            "expected": "B",
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: error: unknown option '--no-input'"
+          }
+        ]
+      },
+      {
+        "label": "arc42/application-anchor",
+        "score": 0.0,
+        "results": [
+          {
+            "permutation": [
+              "A",
+              "B",
+              "C",
+              "D"
+            ],
+            "expected": "B",
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: error: unknown option '--no-input'"
+          },
+          {
+            "permutation": [
+              "B",
+              "C",
+              "D",
+              "A"
+            ],
+            "expected": "A",
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: error: unknown option '--no-input'"
+          },
+          {
+            "permutation": [
+              "C",
+              "D",
+              "A",
+              "B"
+            ],
+            "expected": "D",
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: error: unknown option '--no-input'"
+          },
+          {
+            "permutation": [
+              "D",
+              "A",
+              "B",
+              "C"
+            ],
+            "expected": "C",
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: error: unknown option '--no-input'"
+          }
+        ]
+      },
+      {
+        "label": "arc42/application-paraphrase",
+        "score": 0.0,
+        "results": [
+          {
+            "permutation": [
+              "A",
+              "B",
+              "C",
+              "D"
+            ],
+            "expected": "B",
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: error: unknown option '--no-input'"
+          },
+          {
+            "permutation": [
+              "B",
+              "C",
+              "D",
+              "A"
+            ],
+            "expected": "A",
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: error: unknown option '--no-input'"
+          },
+          {
+            "permutation": [
+              "C",
+              "D",
+              "A",
+              "B"
+            ],
+            "expected": "D",
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: error: unknown option '--no-input'"
+          },
+          {
+            "permutation": [
+              "D",
+              "A",
+              "B",
+              "C"
+            ],
+            "expected": "C",
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: error: unknown option '--no-input'"
+          }
+        ]
+      },
+      {
+        "label": "arc42/consistency-variant-1",
+        "score": 0.0,
+        "results": [
+          {
+            "permutation": [
+              "A",
+              "B",
+              "C",
+              "D"
+            ],
+            "expected": "B",
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: error: unknown option '--no-input'"
+          },
+          {
+            "permutation": [
+              "B",
+              "C",
+              "D",
+              "A"
+            ],
+            "expected": "A",
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: error: unknown option '--no-input'"
+          },
+          {
+            "permutation": [
+              "C",
+              "D",
+              "A",
+              "B"
+            ],
+            "expected": "D",
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: error: unknown option '--no-input'"
+          },
+          {
+            "permutation": [
+              "D",
+              "A",
+              "B",
+              "C"
+            ],
+            "expected": "C",
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: error: unknown option '--no-input'"
+          }
+        ]
+      },
+      {
+        "label": "arc42/consistency-variant-2",
+        "score": 0.0,
+        "results": [
+          {
+            "permutation": [
+              "A",
+              "B",
+              "C",
+              "D"
+            ],
+            "expected": "B",
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: error: unknown option '--no-input'"
+          },
+          {
+            "permutation": [
+              "B",
+              "C",
+              "D",
+              "A"
+            ],
+            "expected": "A",
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: error: unknown option '--no-input'"
+          },
+          {
+            "permutation": [
+              "C",
+              "D",
+              "A",
+              "B"
+            ],
+            "expected": "D",
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: error: unknown option '--no-input'"
+          },
+          {
+            "permutation": [
+              "D",
+              "A",
+              "B",
+              "C"
+            ],
+            "expected": "C",
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: error: unknown option '--no-input'"
+          }
+        ]
+      },
+      {
+        "label": "arc42/consistency-variant-3",
+        "score": 0.0,
+        "results": [
+          {
+            "permutation": [
+              "A",
+              "B",
+              "C",
+              "D"
+            ],
+            "expected": "B",
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: error: unknown option '--no-input'"
+          },
+          {
+            "permutation": [
+              "B",
+              "C",
+              "D",
+              "A"
+            ],
+            "expected": "A",
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: error: unknown option '--no-input'"
+          },
+          {
+            "permutation": [
+              "C",
+              "D",
+              "A",
+              "B"
+            ],
+            "expected": "D",
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: error: unknown option '--no-input'"
+          },
+          {
+            "permutation": [
+              "D",
+              "A",
+              "B",
+              "C"
+            ],
+            "expected": "C",
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: error: unknown option '--no-input'"
+          }
+        ]
+      },
+      {
+        "label": "arc42/consistency-language",
+        "score": 0.0,
+        "results": [
+          {
+            "permutation": [
+              "A",
+              "B",
+              "C",
+              "D"
+            ],
+            "expected": "B",
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: error: unknown option '--no-input'"
+          },
+          {
+            "permutation": [
+              "B",
+              "C",
+              "D",
+              "A"
+            ],
+            "expected": "A",
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: error: unknown option '--no-input'"
+          },
+          {
+            "permutation": [
+              "C",
+              "D",
+              "A",
+              "B"
+            ],
+            "expected": "D",
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: error: unknown option '--no-input'"
+          },
+          {
+            "permutation": [
+              "D",
+              "A",
+              "B",
+              "C"
+            ],
+            "expected": "C",
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: error: unknown option '--no-input'"
+          }
+        ]
+      },
+      {
+        "label": "docs-as-code/recognition",
+        "score": 0.0,
+        "results": [
+          {
+            "permutation": [
+              "A",
+              "B",
+              "C",
+              "D"
+            ],
+            "expected": "B",
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: error: unknown option '--no-input'"
+          },
+          {
+            "permutation": [
+              "B",
+              "C",
+              "D",
+              "A"
+            ],
+            "expected": "A",
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: error: unknown option '--no-input'"
+          },
+          {
+            "permutation": [
+              "C",
+              "D",
+              "A",
+              "B"
+            ],
+            "expected": "D",
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: error: unknown option '--no-input'"
+          },
+          {
+            "permutation": [
+              "D",
+              "A",
+              "B",
+              "C"
+            ],
+            "expected": "C",
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: error: unknown option '--no-input'"
+          }
+        ]
+      },
+      {
+        "label": "mece/recognition",
+        "score": 0.0,
+        "results": [
+          {
+            "permutation": [
+              "A",
+              "B",
+              "C",
+              "D"
+            ],
+            "expected": "B",
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: error: unknown option '--no-input'"
+          },
+          {
+            "permutation": [
+              "B",
+              "C",
+              "D",
+              "A"
+            ],
+            "expected": "A",
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: error: unknown option '--no-input'"
+          },
+          {
+            "permutation": [
+              "C",
+              "D",
+              "A",
+              "B"
+            ],
+            "expected": "D",
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: error: unknown option '--no-input'"
+          },
+          {
+            "permutation": [
+              "D",
+              "A",
+              "B",
+              "C"
+            ],
+            "expected": "C",
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: error: unknown option '--no-input'"
+          }
+        ]
+      },
+      {
+        "label": "tdd-london-school/recognition",
+        "score": 0.0,
+        "results": [
+          {
+            "permutation": [
+              "A",
+              "B",
+              "C",
+              "D"
+            ],
+            "expected": "B",
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: error: unknown option '--no-input'"
+          },
+          {
+            "permutation": [
+              "B",
+              "C",
+              "D",
+              "A"
+            ],
+            "expected": "A",
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: error: unknown option '--no-input'"
+          },
+          {
+            "permutation": [
+              "C",
+              "D",
+              "A",
+              "B"
+            ],
+            "expected": "D",
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: error: unknown option '--no-input'"
+          },
+          {
+            "permutation": [
+              "D",
+              "A",
+              "B",
+              "C"
+            ],
+            "expected": "C",
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: error: unknown option '--no-input'"
+          }
+        ]
+      },
+      {
+        "label": "tdd-london-school/application-anchor",
+        "score": 0.0,
+        "results": [
+          {
+            "permutation": [
+              "A",
+              "B",
+              "C",
+              "D"
+            ],
+            "expected": "B",
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: error: unknown option '--no-input'"
+          },
+          {
+            "permutation": [
+              "B",
+              "C",
+              "D",
+              "A"
+            ],
+            "expected": "A",
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: error: unknown option '--no-input'"
+          },
+          {
+            "permutation": [
+              "C",
+              "D",
+              "A",
+              "B"
+            ],
+            "expected": "D",
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: error: unknown option '--no-input'"
+          },
+          {
+            "permutation": [
+              "D",
+              "A",
+              "B",
+              "C"
+            ],
+            "expected": "C",
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: error: unknown option '--no-input'"
+          }
+        ]
+      },
+      {
+        "label": "tdd-london-school/application-paraphrase",
+        "score": 0.0,
+        "results": [
+          {
+            "permutation": [
+              "A",
+              "B",
+              "C",
+              "D"
+            ],
+            "expected": "B",
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: error: unknown option '--no-input'"
+          },
+          {
+            "permutation": [
+              "B",
+              "C",
+              "D",
+              "A"
+            ],
+            "expected": "A",
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: error: unknown option '--no-input'"
+          },
+          {
+            "permutation": [
+              "C",
+              "D",
+              "A",
+              "B"
+            ],
+            "expected": "D",
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: error: unknown option '--no-input'"
+          },
+          {
+            "permutation": [
+              "D",
+              "A",
+              "B",
+              "C"
+            ],
+            "expected": "C",
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: error: unknown option '--no-input'"
+          }
+        ]
+      },
+      {
+        "label": "tdd-london-school/consistency-variant-1",
+        "score": 0.0,
+        "results": [
+          {
+            "permutation": [
+              "A",
+              "B",
+              "C",
+              "D"
+            ],
+            "expected": "B",
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: error: unknown option '--no-input'"
+          },
+          {
+            "permutation": [
+              "B",
+              "C",
+              "D",
+              "A"
+            ],
+            "expected": "A",
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: error: unknown option '--no-input'"
+          },
+          {
+            "permutation": [
+              "C",
+              "D",
+              "A",
+              "B"
+            ],
+            "expected": "D",
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: error: unknown option '--no-input'"
+          },
+          {
+            "permutation": [
+              "D",
+              "A",
+              "B",
+              "C"
+            ],
+            "expected": "C",
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: error: unknown option '--no-input'"
+          }
+        ]
+      },
+      {
+        "label": "tdd-london-school/consistency-variant-2",
+        "score": 0.0,
+        "results": [
+          {
+            "permutation": [
+              "A",
+              "B",
+              "C",
+              "D"
+            ],
+            "expected": "B",
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: error: unknown option '--no-input'"
+          },
+          {
+            "permutation": [
+              "B",
+              "C",
+              "D",
+              "A"
+            ],
+            "expected": "A",
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: error: unknown option '--no-input'"
+          },
+          {
+            "permutation": [
+              "C",
+              "D",
+              "A",
+              "B"
+            ],
+            "expected": "D",
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: error: unknown option '--no-input'"
+          },
+          {
+            "permutation": [
+              "D",
+              "A",
+              "B",
+              "C"
+            ],
+            "expected": "C",
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: error: unknown option '--no-input'"
+          }
+        ]
+      },
+      {
+        "label": "tdd-london-school/consistency-variant-3",
+        "score": 0.0,
+        "results": [
+          {
+            "permutation": [
+              "A",
+              "B",
+              "C",
+              "D"
+            ],
+            "expected": "B",
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: error: unknown option '--no-input'"
+          },
+          {
+            "permutation": [
+              "B",
+              "C",
+              "D",
+              "A"
+            ],
+            "expected": "A",
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: error: unknown option '--no-input'"
+          },
+          {
+            "permutation": [
+              "C",
+              "D",
+              "A",
+              "B"
+            ],
+            "expected": "D",
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: error: unknown option '--no-input'"
+          },
+          {
+            "permutation": [
+              "D",
+              "A",
+              "B",
+              "C"
+            ],
+            "expected": "C",
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: error: unknown option '--no-input'"
+          }
+        ]
+      },
+      {
+        "label": "tdd-london-school/consistency-language",
+        "score": 0.0,
+        "results": [
+          {
+            "permutation": [
+              "A",
+              "B",
+              "C",
+              "D"
+            ],
+            "expected": "B",
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: error: unknown option '--no-input'"
+          },
+          {
+            "permutation": [
+              "B",
+              "C",
+              "D",
+              "A"
+            ],
+            "expected": "A",
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: error: unknown option '--no-input'"
+          },
+          {
+            "permutation": [
+              "C",
+              "D",
+              "A",
+              "B"
+            ],
+            "expected": "D",
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: error: unknown option '--no-input'"
+          },
+          {
+            "permutation": [
+              "D",
+              "A",
+              "B",
+              "C"
+            ],
+            "expected": "C",
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: error: unknown option '--no-input'"
+          }
+        ]
+      },
+      {
+        "label": "timtowtdi/recognition",
+        "score": 0.0,
+        "results": [
+          {
+            "permutation": [
+              "A",
+              "B",
+              "C",
+              "D"
+            ],
+            "expected": "A",
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: error: unknown option '--no-input'"
+          },
+          {
+            "permutation": [
+              "B",
+              "C",
+              "D",
+              "A"
+            ],
+            "expected": "D",
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: error: unknown option '--no-input'"
+          },
+          {
+            "permutation": [
+              "C",
+              "D",
+              "A",
+              "B"
+            ],
+            "expected": "C",
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: error: unknown option '--no-input'"
+          },
+          {
+            "permutation": [
+              "D",
+              "A",
+              "B",
+              "C"
+            ],
+            "expected": "B",
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: error: unknown option '--no-input'"
+          }
+        ]
+      }
+    ]
+  }
+}

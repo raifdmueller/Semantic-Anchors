@@ -43,8 +43,13 @@ For example:
 |"Ask me targeted questions to uncover my assumptions before proceeding"
 |===
 
-If both produce the same quality of output, the anchor has no advantage -- it is just a shorthand.
-If the anchor activates richer, more specific behavior, it earns its place in the catalog.
+Semantic anchors are designed to be exactly this: a compact shorthand that replaces lengthy instructions.
+A TDD instruction without anchors can easily span 100–1000 lines.
+"Use TDD, London School" achieves the same activation in five words, saving tokens and context window.
+
+If anchor and paraphrase produce equivalent output, the anchor is a *successful* shorthand -- fewer tokens, same result.
+If the anchor activates *richer* behavior than the paraphrase, it is even more valuable: it leverages knowledge that is hard to spell out explicitly.
+If the paraphrase outperforms the anchor, the model does not associate the term with the expected framework -- a problem worth knowing about.
 
 == Evaluation Dimensions
 

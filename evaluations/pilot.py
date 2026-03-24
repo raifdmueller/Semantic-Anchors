@@ -44,7 +44,7 @@ def load_specs():
     return specs
 
 
-def build_prompt(question_text, options, permutation, is_negative_control=False):
+def build_prompt(question_text, options, permutation):
     """Build a prompt with options in the given permutation order."""
     lines = [question_text.strip(), ""]
     for i, perm_idx in enumerate(permutation):
@@ -52,18 +52,12 @@ def build_prompt(question_text, options, permutation, is_negative_control=False)
         option_text = options[LETTERS[perm_idx]]
         lines.append(f"{letter}) {option_text}")
     lines.append("")
-    if is_negative_control:
-        lines.append("Answer with the letter only, or 'N' if none of the options are correct.")
-    else:
-        lines.append("Answer with the letter only.")
+    lines.append("Answer with the letter only.")
     return "\n".join(lines)
 
 
 def correct_letter_for_permutation(original_correct, permutation):
-    """Find which letter the original correct answer maps to in this permutation.
-    Returns 'X' for negative controls (no correct answer)."""
-    if original_correct == "X":
-        return "X"
+    """Find which letter the original correct answer maps to in this permutation."""
     original_idx = LETTERS.index(original_correct)
     for i, perm_idx in enumerate(permutation):
         if perm_idx == original_idx:
@@ -80,12 +74,12 @@ def parse_response(text):
     # If nothing left after stripping, fall back to original
     if not cleaned:
         cleaned = text.strip()
-    # Try to find a standalone answer letter (e.g., "B", "B)", "**B**", "b", "N")
+    # Try to find a standalone answer letter (e.g., "B", "B)", "**B**", "b")
     # First: look for a line that is just a letter (strongest signal)
     for line in cleaned.split('\n'):
         line = line.strip().strip('*').strip('.').strip(')').strip()
-        if line.upper() in ("A", "B", "C", "D", "N"):
-            return line.upper() if line.upper() != "N" else None
+        if line.upper() in ("A", "B", "C", "D"):
+            return line.upper()
     # Fallback: first capital A-D in the text
     for char in cleaned:
         if char in "ABCD":
@@ -199,11 +193,9 @@ def run_question(question_data, call_fn, label, context="", verbose=False):
         question_text = f"{context}\n{question_text}"
     options = question_data["options"]
     original_correct = question_data["correct"]
-    is_negative = original_correct == "X"
-
     results = []
     for i, perm in enumerate(POSITION_PERMUTATIONS):
-        prompt = build_prompt(question_text, options, perm, is_negative_control=is_negative)
+        prompt = build_prompt(question_text, options, perm)
         expected = correct_letter_for_permutation(original_correct, perm)
 
         try:
@@ -214,11 +206,7 @@ def run_question(question_data, call_fn, label, context="", verbose=False):
                 print(f"\n    [ERROR] {e}")
 
         answer = parse_response(response_text)
-        # Negative control: correct means the model did NOT pick any answer
-        if expected == "X":
-            correct = answer is None
-        else:
-            correct = answer == expected
+        correct = answer == expected
 
         if verbose and i == 0:  # show first permutation only
             print(f"\n    [RAW] expected={expected} parsed={answer} response={repr(response_text[:200])}")

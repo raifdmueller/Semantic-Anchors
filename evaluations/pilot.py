@@ -237,6 +237,7 @@ def save_results(all_results, out_file):
 
 
 def run_pilot(models, dry_run=False, verbose=False, ollama_model="qwen3:4b", no_think=False, ollama_url="http://localhost:11434"):
+    start_time = time.time()
     specs = load_specs()
     print(f"Loaded {len(specs)} anchor specs")
     print(f"Models: {', '.join(models)}")
@@ -359,12 +360,22 @@ def run_pilot(models, dry_run=False, verbose=False, ollama_model="qwen3:4b", no_
 
         all_results["models"][model_name] = model_results
 
+    elapsed = time.time() - start_time
+    all_results["duration_seconds"] = round(elapsed, 1)
+
     if not dry_run:
         save_results(all_results, out_file)
         print(f"\nResults saved to {out_file}")
 
         # Summary
         print("\n=== SUMMARY ===")
+        print(f"Models: {', '.join(models)}")
+        print(f"Temperature: {TEMPERATURE}")
+        if "ollama" in models:
+            print(f"Ollama: {ollama_model} @ {ollama_url} (no-think={no_think})")
+        minutes, seconds = divmod(int(elapsed), 60)
+        print(f"Duration: {minutes}m {seconds}s")
+        print()
         for model_name, results in all_results["models"].items():
             scores = [r["score"] for r in results]
             avg = sum(scores) / len(scores) if scores else 0

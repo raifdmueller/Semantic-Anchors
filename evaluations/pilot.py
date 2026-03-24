@@ -212,6 +212,13 @@ def run_question(question_data, call_fn, label, context="", verbose=False):
     }
 
 
+def save_results(all_results, out_file):
+    """Save results incrementally after each question."""
+    RESULTS_DIR.mkdir(parents=True, exist_ok=True)
+    with open(out_file, "w", encoding="utf-8") as fh:
+        json.dump(all_results, fh, indent=2, ensure_ascii=False)
+
+
 def run_pilot(models, dry_run=False, verbose=False, ollama_model="qwen3:4b", no_think=False):
     specs = load_specs()
     print(f"Loaded {len(specs)} anchor specs")
@@ -221,6 +228,9 @@ def run_pilot(models, dry_run=False, verbose=False, ollama_model="qwen3:4b", no_
         print(f"No-think: {no_think}")
     print(f"Dry run: {dry_run}")
     print()
+
+    ts = datetime.now().strftime("%Y%m%d-%H%M%S")
+    out_file = RESULTS_DIR / f"pilot-{ts}.json"
 
     all_results = {
         "timestamp": datetime.now(timezone.utc).isoformat(),
@@ -249,6 +259,12 @@ def run_pilot(models, dry_run=False, verbose=False, ollama_model="qwen3:4b", no_
 
         print(f"=== {model_name.upper()} ===")
         model_results = []
+        all_results["models"][model_name] = model_results
+
+        def append_and_save(r):
+            model_results.append(r)
+            if not dry_run:
+                save_results(all_results, out_file)
 
         for spec in specs:
             anchor = spec["anchor"]
@@ -265,7 +281,7 @@ def run_pilot(models, dry_run=False, verbose=False, ollama_model="qwen3:4b", no_
                     print(f"  {anchor} / recognition...", end=" ", flush=True)
                     result = run_question(q, call_fn, f"{anchor}/recognition", verbose=verbose)
                     print(f"{result['score']:.0%}")
-                    model_results.append(result)
+                    append_and_save(result)
 
             # Level 2: Application (anchor variant)
             if "application" in questions:
@@ -288,12 +304,12 @@ def run_pilot(models, dry_run=False, verbose=False, ollama_model="qwen3:4b", no_
                     print(f"  {anchor} / application (anchor)...", end=" ", flush=True)
                     result_a = run_question(anchor_q, call_fn, f"{anchor}/application-anchor", verbose=verbose)
                     print(f"{result_a['score']:.0%}")
-                    model_results.append(result_a)
+                    append_and_save(result_a)
 
                     print(f"  {anchor} / application (paraphrase)...", end=" ", flush=True)
                     result_p = run_question(para_q, call_fn, f"{anchor}/application-paraphrase", verbose=verbose)
                     print(f"{result_p['score']:.0%}")
-                    model_results.append(result_p)
+                    append_and_save(result_p)
 
             # Level 4: Consistency
             if "consistency" in questions:
@@ -318,16 +334,12 @@ def run_pilot(models, dry_run=False, verbose=False, ollama_model="qwen3:4b", no_
                         print(f"  {anchor} / consistency ({variant_label})...", end=" ", flush=True)
                         result = run_question(variant_q, call_fn, f"{anchor}/consistency-{variant_label}", verbose=verbose)
                         print(f"{result['score']:.0%}")
-                        model_results.append(result)
+                        append_and_save(result)
 
         all_results["models"][model_name] = model_results
 
     if not dry_run:
-        RESULTS_DIR.mkdir(parents=True, exist_ok=True)
-        ts = datetime.now().strftime("%Y%m%d-%H%M%S")
-        out_file = RESULTS_DIR / f"pilot-{ts}.json"
-        with open(out_file, "w", encoding="utf-8") as fh:
-            json.dump(all_results, fh, indent=2, ensure_ascii=False)
+        save_results(all_results, out_file)
         print(f"\nResults saved to {out_file}")
 
         # Summary

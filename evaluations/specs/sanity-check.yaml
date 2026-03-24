@@ -1,0 +1,17 @@
+anchor: sanity-check
+tier: null
+
+# Sanity check: the "correct" answer is deliberately WRONG.
+# Every model MUST score 0% on this. If any model scores >0%,
+# the scoring pipeline has a bug.
+
+questions:
+  recognition:
+    question: |
+      What is 2 + 2?
+    options:
+      A: "3"
+      B: "4"
+      C: "5"
+      D: "6"
+    correct: A

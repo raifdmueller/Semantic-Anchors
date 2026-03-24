@@ -1474,7 +1474,602 @@
             "raw_response": "C"
           }
         ]
+      },
+      {
+        "label": "mece/recognition",
+        "score": 1.0,
+        "results": [
+          {
+            "permutation": [
+              "A",
+              "B",
+              "C",
+              "D"
+            ],
+            "expected": "B",
+            "answer": "B",
+            "correct": true,
+            "raw_response": "B"
+          },
+          {
+            "permutation": [
+              "B",
+              "C",
+              "D",
+              "A"
+            ],
+            "expected": "A",
+            "answer": "A",
+            "correct": true,
+            "raw_response": "A"
+          },
+          {
+            "permutation": [
+              "C",
+              "D",
+              "A",
+              "B"
+            ],
+            "expected": "D",
+            "answer": "D",
+            "correct": true,
+            "raw_response": "D"
+          },
+          {
+            "permutation": [
+              "D",
+              "A",
+              "B",
+              "C"
+            ],
+            "expected": "C",
+            "answer": "C",
+            "correct": true,
+            "raw_response": "C"
+          }
+        ]
+      },
+      {
+        "label": "negative-control/recognition",
+        "score": 1.0,
+        "results": [
+          {
+            "permutation": [
+              "A",
+              "B",
+              "C",
+              "D"
+            ],
+            "expected": "D",
+            "answer": "D",
+            "correct": true,
+            "raw_response": "D"
+          },
+          {
+            "permutation": [
+              "B",
+              "C",
+              "D",
+              "A"
+            ],
+            "expected": "C",
+            "answer": "C",
+            "correct": true,
+            "raw_response": "C\n\nI'm not aware of \"Müller's Inversion Principle\" as an established, recognized methodology. I cannot confidently identify it as any of the other options without risking inaccuracy."
+          },
+          {
+            "permutation": [
+              "C",
+              "D",
+              "A",
+              "B"
+            ],
+            "expected": "B",
+            "answer": "B",
+            "correct": true,
+            "raw_response": "B"
+          },
+          {
+            "permutation": [
+              "D",
+              "A",
+              "B",
+              "C"
+            ],
+            "expected": "A",
+            "answer": "A",
+            "correct": true,
+            "raw_response": "A"
+          }
+        ]
+      },
+      {
+        "label": "sanity-check/recognition",
+        "score": 0.0,
+        "results": [
+          {
+            "permutation": [
+              "A",
+              "B",
+              "C",
+              "D"
+            ],
+            "expected": "X",
+            "answer": "D",
+            "correct": false,
+            "raw_response": "The correct answer to the Ultimate Question of Life, the Universe, and Everything (from Douglas Adams' \"The Hitchhiker's Guide to the Galaxy\") is **42**, which is not among the options provided."
+          },
+          {
+            "permutation": [
+              "B",
+              "C",
+              "D",
+              "A"
+            ],
+            "expected": "X",
+            "answer": "A",
+            "correct": false,
+            "raw_response": "The answer is **42**, which isn't among your options. None of A, B, C, or D is correct according to \"The Hitchhiker's Guide to the Galaxy.\""
+          },
+          {
+            "permutation": [
+              "C",
+              "D",
+              "A",
+              "B"
+            ],
+            "expected": "X",
+            "answer": null,
+            "correct": false,
+            "raw_response": "42 is not listed as an option."
+          },
+          {
+            "permutation": [
+              "D",
+              "A",
+              "B",
+              "C"
+            ],
+            "expected": "X",
+            "answer": null,
+            "correct": false,
+            "raw_response": "None of the above. The answer is **42**."
+          }
+        ]
+      },
+      {
+        "label": "tdd-london-school/recognition",
+        "score": 1.0,
+        "results": [
+          {
+            "permutation": [
+              "A",
+              "B",
+              "C",
+              "D"
+            ],
+            "expected": "B",
+            "answer": "B",
+            "correct": true,
+            "raw_response": "B"
+          },
+          {
+            "permutation": [
+              "B",
+              "C",
+              "D",
+              "A"
+            ],
+            "expected": "A",
+            "answer": "A",
+            "correct": true,
+            "raw_response": "A"
+          },
+          {
+            "permutation": [
+              "C",
+              "D",
+              "A",
+              "B"
+            ],
+            "expected": "D",
+            "answer": "D",
+            "correct": true,
+            "raw_response": "D"
+          },
+          {
+            "permutation": [
+              "D",
+              "A",
+              "B",
+              "C"
+            ],
+            "expected": "C",
+            "answer": "C",
+            "correct": true,
+            "raw_response": "C"
+          }
+        ]
+      },
+      {
+        "label": "tdd-london-school/application-anchor",
+        "score": 1.0,
+        "results": [
+          {
+            "permutation": [
+              "A",
+              "B",
+              "C",
+              "D"
+            ],
+            "expected": "B",
+            "answer": "B",
+            "correct": true,
+            "raw_response": "B\n\nLondon School TDD emphasizes mock-heavy testing and interaction-based verification. Option B aligns perfectly with this approach: mocking the dependencies (PaymentGateway and InventoryService) to verify how OrderService interacts with them. This enables outside-in design and fast, isolated unit testing without real dependencies."
+          },
+          {
+            "permutation": [
+              "B",
+              "C",
+              "D",
+              "A"
+            ],
+            "expected": "A",
+            "answer": "A",
+            "correct": true,
+            "raw_response": "A"
+          },
+          {
+            "permutation": [
+              "C",
+              "D",
+              "A",
+              "B"
+            ],
+            "expected": "D",
+            "answer": "D",
+            "correct": true,
+            "raw_response": "D"
+          },
+          {
+            "permutation": [
+              "D",
+              "A",
+              "B",
+              "C"
+            ],
+            "expected": "C",
+            "answer": "C",
+            "correct": true,
+            "raw_response": "**C**\n\nLondon School TDD uses mocks to isolate the unit under test and verifies interactions with dependencies, not final state or end-to-end behavior."
+          }
+        ]
+      },
+      {
+        "label": "tdd-london-school/application-paraphrase",
+        "score": 1.0,
+        "results": [
+          {
+            "permutation": [
+              "A",
+              "B",
+              "C",
+              "D"
+            ],
+            "expected": "B",
+            "answer": "B",
+            "correct": true,
+            "raw_response": "B"
+          },
+          {
+            "permutation": [
+              "B",
+              "C",
+              "D",
+              "A"
+            ],
+            "expected": "A",
+            "answer": "A",
+            "correct": true,
+            "raw_response": "A"
+          },
+          {
+            "permutation": [
+              "C",
+              "D",
+              "A",
+              "B"
+            ],
+            "expected": "D",
+            "answer": "D",
+            "correct": true,
+            "raw_response": "D"
+          },
+          {
+            "permutation": [
+              "D",
+              "A",
+              "B",
+              "C"
+            ],
+            "expected": "C",
+            "answer": "C",
+            "correct": true,
+            "raw_response": "C"
+          }
+        ]
+      },
+      {
+        "label": "tdd-london-school/consistency-variant-1",
+        "score": 1.0,
+        "results": [
+          {
+            "permutation": [
+              "A",
+              "B",
+              "C",
+              "D"
+            ],
+            "expected": "B",
+            "answer": "B",
+            "correct": true,
+            "raw_response": "B"
+          },
+          {
+            "permutation": [
+              "B",
+              "C",
+              "D",
+              "A"
+            ],
+            "expected": "A",
+            "answer": "A",
+            "correct": true,
+            "raw_response": "A"
+          },
+          {
+            "permutation": [
+              "C",
+              "D",
+              "A",
+              "B"
+            ],
+            "expected": "D",
+            "answer": "D",
+            "correct": true,
+            "raw_response": "D"
+          },
+          {
+            "permutation": [
+              "D",
+              "A",
+              "B",
+              "C"
+            ],
+            "expected": "C",
+            "answer": "C",
+            "correct": true,
+            "raw_response": "C"
+          }
+        ]
+      },
+      {
+        "label": "tdd-london-school/consistency-variant-2",
+        "score": 1.0,
+        "results": [
+          {
+            "permutation": [
+              "A",
+              "B",
+              "C",
+              "D"
+            ],
+            "expected": "B",
+            "answer": "B",
+            "correct": true,
+            "raw_response": "B"
+          },
+          {
+            "permutation": [
+              "B",
+              "C",
+              "D",
+              "A"
+            ],
+            "expected": "A",
+            "answer": "A",
+            "correct": true,
+            "raw_response": "A"
+          },
+          {
+            "permutation": [
+              "C",
+              "D",
+              "A",
+              "B"
+            ],
+            "expected": "D",
+            "answer": "D",
+            "correct": true,
+            "raw_response": "D"
+          },
+          {
+            "permutation": [
+              "D",
+              "A",
+              "B",
+              "C"
+            ],
+            "expected": "C",
+            "answer": "C",
+            "correct": true,
+            "raw_response": "C"
+          }
+        ]
+      },
+      {
+        "label": "tdd-london-school/consistency-variant-3",
+        "score": 0.75,
+        "results": [
+          {
+            "permutation": [
+              "A",
+              "B",
+              "C",
+              "D"
+            ],
+            "expected": "B",
+            "answer": "B",
+            "correct": true,
+            "raw_response": "B"
+          },
+          {
+            "permutation": [
+              "B",
+              "C",
+              "D",
+              "A"
+            ],
+            "expected": "A",
+            "answer": "B",
+            "correct": false,
+            "raw_response": "B"
+          },
+          {
+            "permutation": [
+              "C",
+              "D",
+              "A",
+              "B"
+            ],
+            "expected": "D",
+            "answer": "D",
+            "correct": true,
+            "raw_response": "D"
+          },
+          {
+            "permutation": [
+              "D",
+              "A",
+              "B",
+              "C"
+            ],
+            "expected": "C",
+            "answer": "C",
+            "correct": true,
+            "raw_response": "C"
+          }
+        ]
+      },
+      {
+        "label": "tdd-london-school/consistency-language",
+        "score": 1.0,
+        "results": [
+          {
+            "permutation": [
+              "A",
+              "B",
+              "C",
+              "D"
+            ],
+            "expected": "B",
+            "answer": "B",
+            "correct": true,
+            "raw_response": "B"
+          },
+          {
+            "permutation": [
+              "B",
+              "C",
+              "D",
+              "A"
+            ],
+            "expected": "A",
+            "answer": "A",
+            "correct": true,
+            "raw_response": "A"
+          },
+          {
+            "permutation": [
+              "C",
+              "D",
+              "A",
+              "B"
+            ],
+            "expected": "D",
+            "answer": "D",
+            "correct": true,
+            "raw_response": "D"
+          },
+          {
+            "permutation": [
+              "D",
+              "A",
+              "B",
+              "C"
+            ],
+            "expected": "C",
+            "answer": "C",
+            "correct": true,
+            "raw_response": "C"
+          }
+        ]
+      },
+      {
+        "label": "timtowtdi/recognition",
+        "score": 1.0,
+        "results": [
+          {
+            "permutation": [
+              "A",
+              "B",
+              "C",
+              "D"
+            ],
+            "expected": "A",
+            "answer": "A",
+            "correct": true,
+            "raw_response": "A"
+          },
+          {
+            "permutation": [
+              "B",
+              "C",
+              "D",
+              "A"
+            ],
+            "expected": "D",
+            "answer": "D",
+            "correct": true,
+            "raw_response": "D"
+          },
+          {
+            "permutation": [
+              "C",
+              "D",
+              "A",
+              "B"
+            ],
+            "expected": "C",
+            "answer": "C",
+            "correct": true,
+            "raw_response": "C"
+          },
+          {
+            "permutation": [
+              "D",
+              "A",
+              "B",
+              "C"
+            ],
+            "expected": "B",
+            "answer": "B",
+            "correct": true,
+            "raw_response": "B"
+          }
+        ]
       }
     ]
-  }
+  },
+  "duration_seconds": 1174.9
 }

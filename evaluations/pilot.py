@@ -74,6 +74,13 @@ def parse_response(text):
     # If nothing left after stripping, fall back to original
     if not cleaned:
         cleaned = text.strip()
+    # Try to find a standalone answer letter (e.g., "B", "B)", "**B**", "b")
+    # First: look for a line that is just a letter (strongest signal)
+    for line in cleaned.split('\n'):
+        line = line.strip().strip('*').strip('.').strip(')').strip()
+        if line.upper() in ("A", "B", "C", "D"):
+            return line.upper()
+    # Fallback: first capital A-D in the text
     for char in cleaned:
         if char in "ABCD":
             return char

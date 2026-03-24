@@ -57,7 +57,10 @@ def build_prompt(question_text, options, permutation):
 
 
 def correct_letter_for_permutation(original_correct, permutation):
-    """Find which letter the original correct answer maps to in this permutation."""
+    """Find which letter the original correct answer maps to in this permutation.
+    Returns 'X' for sanity checks (no correct answer exists)."""
+    if original_correct == "X":
+        return "X"
     original_idx = LETTERS.index(original_correct)
     for i, perm_idx in enumerate(permutation):
         if perm_idx == original_idx:

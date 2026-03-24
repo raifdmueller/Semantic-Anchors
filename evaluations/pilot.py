@@ -87,6 +87,10 @@ def parse_response(text):
     return None
 
 
+# Global temperature — set via --temperature flag
+TEMPERATURE = 0.0
+
+
 def call_claude_api(prompt, model="claude-sonnet-4-20250514"):
     """Send prompt to Claude via Anthropic API."""
     try:
@@ -99,14 +103,15 @@ def call_claude_api(prompt, model="claude-sonnet-4-20250514"):
     response = client.messages.create(
         model=model,
         max_tokens=10,
-        temperature=0,
+        temperature=TEMPERATURE,
         messages=[{"role": "user", "content": prompt}],
     )
     return response.content[0].text, model
 
 
 def call_claude_cli(prompt, model="claude-cli"):
-    """Send prompt to Claude Sonnet via claude -p CLI."""
+    """Send prompt to Claude Sonnet via claude -p CLI.
+    Note: temperature cannot be controlled via CLI."""
     import subprocess
     result = subprocess.run(
         ["claude", "-p", prompt],
@@ -118,7 +123,8 @@ def call_claude_cli(prompt, model="claude-cli"):
 
 
 def call_claude_haiku(prompt, model="claude-haiku"):
-    """Send prompt to Claude Haiku via claude -p CLI."""
+    """Send prompt to Claude Haiku via claude -p CLI.
+    Note: temperature cannot be controlled via CLI."""
     import subprocess
     result = subprocess.run(
         ["claude", "-p", prompt, "--model", "haiku"],
@@ -141,7 +147,7 @@ def call_openai(prompt, model="gpt-4o-mini"):
     response = client.chat.completions.create(
         model=model,
         max_tokens=10,
-        temperature=0,
+        temperature=TEMPERATURE,
         messages=[{"role": "user", "content": prompt}],
     )
     return response.choices[0].message.content.strip(), model
@@ -156,7 +162,7 @@ def make_ollama_caller(ollama_model, no_think=False, base_url="http://localhost:
             "model": model,
             "messages": [{"role": "user", "content": prompt}],
             "stream": False,
-            "options": {"temperature": 0},
+            "options": {"temperature": TEMPERATURE},
         }
         if no_think:
             body["think"] = False
@@ -229,6 +235,7 @@ def run_pilot(models, dry_run=False, verbose=False, ollama_model="qwen3:4b", no_
     specs = load_specs()
     print(f"Loaded {len(specs)} anchor specs")
     print(f"Models: {', '.join(models)}")
+    print(f"Temperature: {TEMPERATURE}")
     if "ollama" in models:
         print(f"Ollama model: {ollama_model}")
         print(f"Ollama URL: {ollama_url}")
@@ -246,6 +253,7 @@ def run_pilot(models, dry_run=False, verbose=False, ollama_model="qwen3:4b", no_
             "ollama_model": ollama_model if "ollama" in models else None,
             "ollama_url": ollama_url if "ollama" in models else None,
             "no_think": no_think if "ollama" in models else None,
+            "temperature": TEMPERATURE,
         },
         "models": {},
     }
@@ -370,6 +378,8 @@ if __name__ == "__main__":
                         help="Ollama model name (default: qwen3:4b)")
     parser.add_argument("--ollama-url", default="http://localhost:11434",
                         help="Ollama API base URL (default: http://localhost:11434)")
+    parser.add_argument("--temperature", type=float, default=0.0,
+                        help="Sampling temperature (default: 0.0). Note: claude-cli/claude-haiku ignore this.")
     parser.add_argument("--no-think", action="store_true",
                         help="Disable reasoning/thinking for Ollama models (faster, fewer tokens)")
     parser.add_argument("--dry-run", action="store_true",
@@ -377,4 +387,6 @@ if __name__ == "__main__":
     parser.add_argument("--verbose", action="store_true",
                         help="Print raw responses for debugging")
     args = parser.parse_args()
+    global TEMPERATURE
+    TEMPERATURE = args.temperature
     run_pilot(args.model, args.dry_run, args.verbose, args.ollama_model, args.no_think, args.ollama_url)

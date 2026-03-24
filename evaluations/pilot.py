@@ -147,7 +147,7 @@ def call_openai(prompt, model="gpt-4o-mini"):
     return response.choices[0].message.content.strip(), model
 
 
-def make_ollama_caller(ollama_model, no_think=False):
+def make_ollama_caller(ollama_model, no_think=False, base_url="http://localhost:11434"):
     """Create an Ollama caller for a specific model."""
     def call_ollama(prompt, model=ollama_model):
         import urllib.request
@@ -163,7 +163,7 @@ def make_ollama_caller(ollama_model, no_think=False):
 
         data = json.dumps(body).encode("utf-8")
         req = urllib.request.Request(
-            "http://localhost:11434/api/chat",
+            f"{base_url}/api/chat",
             data=data,
             headers={"Content-Type": "application/json"},
         )
@@ -225,12 +225,13 @@ def save_results(all_results, out_file):
         json.dump(all_results, fh, indent=2, ensure_ascii=False)
 
 
-def run_pilot(models, dry_run=False, verbose=False, ollama_model="qwen3:4b", no_think=False):
+def run_pilot(models, dry_run=False, verbose=False, ollama_model="qwen3:4b", no_think=False, ollama_url="http://localhost:11434"):
     specs = load_specs()
     print(f"Loaded {len(specs)} anchor specs")
     print(f"Models: {', '.join(models)}")
     if "ollama" in models:
         print(f"Ollama model: {ollama_model}")
+        print(f"Ollama URL: {ollama_url}")
         print(f"No-think: {no_think}")
     print(f"Dry run: {dry_run}")
     print()
@@ -243,6 +244,7 @@ def run_pilot(models, dry_run=False, verbose=False, ollama_model="qwen3:4b", no_
         "config": {
             "models": models,
             "ollama_model": ollama_model if "ollama" in models else None,
+            "ollama_url": ollama_url if "ollama" in models else None,
             "no_think": no_think if "ollama" in models else None,
         },
         "models": {},
@@ -258,7 +260,7 @@ def run_pilot(models, dry_run=False, verbose=False, ollama_model="qwen3:4b", no_
         elif model_name == "openai":
             call_fn = call_openai
         elif model_name == "ollama":
-            call_fn = make_ollama_caller(args.ollama_model, no_think=args.no_think)
+            call_fn = make_ollama_caller(ollama_model, no_think=no_think, base_url=ollama_url)
         else:
             print(f"Unknown model: {model_name}")
             continue
@@ -366,6 +368,8 @@ if __name__ == "__main__":
                         help="Models to evaluate (default: claude)")
     parser.add_argument("--ollama-model", default="qwen3:4b",
                         help="Ollama model name (default: qwen3:4b)")
+    parser.add_argument("--ollama-url", default="http://localhost:11434",
+                        help="Ollama API base URL (default: http://localhost:11434)")
     parser.add_argument("--no-think", action="store_true",
                         help="Disable reasoning/thinking for Ollama models (faster, fewer tokens)")
     parser.add_argument("--dry-run", action="store_true",
@@ -373,4 +377,4 @@ if __name__ == "__main__":
     parser.add_argument("--verbose", action="store_true",
                         help="Print raw responses for debugging")
     args = parser.parse_args()
-    run_pilot(args.model, args.dry_run, args.verbose, args.ollama_model, args.no_think)
+    run_pilot(args.model, args.dry_run, args.verbose, args.ollama_model, args.no_think, args.ollama_url)

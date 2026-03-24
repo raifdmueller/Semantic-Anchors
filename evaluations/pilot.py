@@ -153,12 +153,16 @@ def make_openai_caller(openai_model):
             sys.exit(1)
 
         client = openai.OpenAI()
-        response = client.chat.completions.create(
-            model=model,
-            max_tokens=10,
-            temperature=TEMPERATURE,
-            messages=[{"role": "user", "content": prompt}],
-        )
+        # GPT-5+ and reasoning models require different parameters
+        is_new_api = any(x in model for x in ("gpt-5", "o3", "o4"))
+        kwargs = {"model": model, "messages": [{"role": "user", "content": prompt}]}
+        if is_new_api:
+            kwargs["max_completion_tokens"] = 2048
+            # GPT-5 only supports temperature=1
+        else:
+            kwargs["max_tokens"] = 10
+            kwargs["temperature"] = TEMPERATURE
+        response = client.chat.completions.create(**kwargs)
         return response.choices[0].message.content.strip(), model
     return call_openai
 

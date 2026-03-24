@@ -143,22 +143,67 @@ def call_claude_haiku(prompt, model="claude-haiku"):
     return result.stdout.strip(), model
 
 
-def call_openai(prompt, model="gpt-4o-mini"):
-    """Send prompt to OpenAI API."""
-    try:
-        import openai
-    except ImportError:
-        print("openai package required: pip install openai")
-        sys.exit(1)
+def make_openai_caller(openai_model):
+    """Create an OpenAI caller for a specific model."""
+    def call_openai(prompt, model=openai_model):
+        try:
+            import openai
+        except ImportError:
+            print("openai package required: pip install openai")
+            sys.exit(1)
 
-    client = openai.OpenAI()
-    response = client.chat.completions.create(
-        model=model,
-        max_tokens=10,
-        temperature=TEMPERATURE,
-        messages=[{"role": "user", "content": prompt}],
-    )
-    return response.choices[0].message.content.strip(), model
+        client = openai.OpenAI()
+        response = client.chat.completions.create(
+            model=model,
+            max_tokens=10,
+            temperature=TEMPERATURE,
+            messages=[{"role": "user", "content": prompt}],
+        )
+        return response.choices[0].message.content.strip(), model
+    return call_openai
+
+
+def make_mistral_caller(mistral_model):
+    """Create a Mistral caller for a specific model."""
+    def call_mistral(prompt, model=mistral_model):
+        try:
+            from mistralai import Mistral
+        except ImportError:
+            print("mistralai package required: pip install mistralai")
+            sys.exit(1)
+
+        client = Mistral(api_key=os.environ.get("MISTRAL_API_KEY", ""))
+        response = client.chat.complete(
+            model=model,
+            max_tokens=10,
+            temperature=TEMPERATURE,
+            messages=[{"role": "user", "content": prompt}],
+        )
+        return response.choices[0].message.content.strip(), model
+    return call_mistral
+
+
+def make_deepseek_caller(deepseek_model):
+    """Create a DeepSeek caller via OpenAI-compatible API."""
+    def call_deepseek(prompt, model=deepseek_model):
+        try:
+            import openai
+        except ImportError:
+            print("openai package required: pip install openai")
+            sys.exit(1)
+
+        client = openai.OpenAI(
+            base_url="https://api.deepseek.com",
+            api_key=os.environ.get("DEEPSEEK_API_KEY", ""),
+        )
+        response = client.chat.completions.create(
+            model=model,
+            max_tokens=10,
+            temperature=TEMPERATURE,
+            messages=[{"role": "user", "content": prompt}],
+        )
+        return response.choices[0].message.content.strip(), model
+    return call_deepseek
 
 
 def make_ollama_caller(ollama_model, no_think=False, base_url="http://localhost:11434"):
@@ -238,12 +283,20 @@ def save_results(all_results, out_file):
         json.dump(all_results, fh, indent=2, ensure_ascii=False)
 
 
-def run_pilot(models, dry_run=False, verbose=False, ollama_model="qwen3:4b", no_think=False, ollama_url="http://localhost:11434"):
+def run_pilot(models, dry_run=False, verbose=False, ollama_model="qwen3:4b", no_think=False,
+              ollama_url="http://localhost:11434", openai_model="gpt-4o-mini",
+              mistral_model="mistral-large-latest", deepseek_model="deepseek-chat"):
     start_time = time.time()
     specs = load_specs()
     print(f"Loaded {len(specs)} anchor specs")
     print(f"Models: {', '.join(models)}")
     print(f"Temperature: {TEMPERATURE}")
+    if "openai" in models:
+        print(f"OpenAI model: {openai_model}")
+    if "mistral" in models:
+        print(f"Mistral model: {mistral_model}")
+    if "deepseek" in models:
+        print(f"DeepSeek model: {deepseek_model}")
     if "ollama" in models:
         print(f"Ollama model: {ollama_model}")
         print(f"Ollama URL: {ollama_url}")
@@ -258,6 +311,9 @@ def run_pilot(models, dry_run=False, verbose=False, ollama_model="qwen3:4b", no_
         "timestamp": datetime.now(timezone.utc).isoformat(),
         "config": {
             "models": models,
+            "openai_model": openai_model if "openai" in models else None,
+            "mistral_model": mistral_model if "mistral" in models else None,
+            "deepseek_model": deepseek_model if "deepseek" in models else None,
             "ollama_model": ollama_model if "ollama" in models else None,
             "ollama_url": ollama_url if "ollama" in models else None,
             "no_think": no_think if "ollama" in models else None,
@@ -274,7 +330,11 @@ def run_pilot(models, dry_run=False, verbose=False, ollama_model="qwen3:4b", no_
         elif model_name == "claude-haiku":
             call_fn = call_claude_haiku
         elif model_name == "openai":
-            call_fn = call_openai
+            call_fn = make_openai_caller(openai_model)
+        elif model_name == "mistral":
+            call_fn = make_mistral_caller(mistral_model)
+        elif model_name == "deepseek":
+            call_fn = make_deepseek_caller(deepseek_model)
         elif model_name == "ollama":
             call_fn = make_ollama_caller(ollama_model, no_think=no_think, base_url=ollama_url)
         else:
@@ -373,6 +433,12 @@ def run_pilot(models, dry_run=False, verbose=False, ollama_model="qwen3:4b", no_
         print("\n=== SUMMARY ===")
         print(f"Models: {', '.join(models)}")
         print(f"Temperature: {TEMPERATURE}")
+        if "openai" in models:
+            print(f"OpenAI: {openai_model}")
+        if "mistral" in models:
+            print(f"Mistral: {mistral_model}")
+        if "deepseek" in models:
+            print(f"DeepSeek: {deepseek_model}")
         if "ollama" in models:
             print(f"Ollama: {ollama_model} @ {ollama_url} (no-think={no_think})")
         minutes, seconds = divmod(int(elapsed), 60)
@@ -390,8 +456,14 @@ def run_pilot(models, dry_run=False, verbose=False, ollama_model="qwen3:4b", no_
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Pilot evaluation runner")
     parser.add_argument("--model", nargs="+", default=["claude-cli"],
-                        choices=["claude", "claude-cli", "claude-haiku", "openai", "ollama"],
-                        help="Models to evaluate (default: claude)")
+                        choices=["claude", "claude-cli", "claude-haiku", "openai", "mistral", "deepseek", "ollama"],
+                        help="Models to evaluate (default: claude-cli)")
+    parser.add_argument("--openai-model", default="gpt-4o-mini",
+                        help="OpenAI model name (default: gpt-4o-mini). Try: gpt-5, gpt-5-mini, gpt-4o")
+    parser.add_argument("--mistral-model", default="mistral-large-latest",
+                        help="Mistral model name (default: mistral-large-latest)")
+    parser.add_argument("--deepseek-model", default="deepseek-chat",
+                        help="DeepSeek model name (default: deepseek-chat)")
     parser.add_argument("--ollama-model", default="qwen3:4b",
                         help="Ollama model name (default: qwen3:4b)")
     parser.add_argument("--ollama-url", default="http://localhost:11434",
@@ -406,4 +478,5 @@ if __name__ == "__main__":
                         help="Print raw responses for debugging")
     args = parser.parse_args()
     set_temperature(args.temperature)
-    run_pilot(args.model, args.dry_run, args.verbose, args.ollama_model, args.no_think, args.ollama_url)
+    run_pilot(args.model, args.dry_run, args.verbose, args.ollama_model, args.no_think,
+              args.ollama_url, args.openai_model, args.mistral_model, args.deepseek_model)

@@ -1,0 +1,17 @@
+anchor: negative-control
+tier: null
+
+# Negative control: a fabricated anchor that does not exist.
+# Every model should ideally refuse to answer or express uncertainty.
+# Any confident answer (A/B/C/D) indicates hallucination.
+
+questions:
+  recognition:
+    question: |
+      Which of the following best describes "Müller's Inversion Principle"?
+    options:
+      A: "Inverting dependency direction so high-level modules don't depend on low-level modules"
+      B: "Reversing the test execution order to detect hidden state dependencies"
+      C: "Structuring recursive algorithms by solving the inverse problem first"
+      D: "Applying matrix inversion to optimize database query plans"
+    correct: X

@@ -19,35 +19,58 @@ import json
 from collections import defaultdict
 from pathlib import Path
 
-RESULTS_DIR = Path(__file__).parent / "results"
+RESULTS_DIR = Path(__file__).parent / "summaries"
 SPECS_DIR = Path(__file__).parent / "specs"
 
-# Models to include and display order
-MODEL_DISPLAY = {
+# Fallback display names (used when config doesn't have exact model ID)
+MODEL_DISPLAY_FALLBACK = {
     "claude": "Claude Sonnet",
     "claude-cli": "Claude Sonnet (CLI)",
     "claude-haiku": "Claude Haiku",
     "openai": "GPT-4o",
-    "mistral": "Mistral Large",
+    "mistral": "Mistral",
     "ollama": "Ollama (local)",
 }
+
+
+def get_model_display(backend, config):
+    """Get exact model display name from config."""
+    if backend == "openai" and config.get("openai_model"):
+        return config["openai_model"]
+    if backend == "mistral" and config.get("mistral_model"):
+        return config["mistral_model"]
+    if backend == "deepseek" and config.get("deepseek_model"):
+        return config["deepseek_model"]
+    if backend == "ollama" and config.get("ollama_model"):
+        return f"ollama/{config['ollama_model']}"
+    if backend == "claude":
+        return "claude-sonnet-4-20250514"
+    if backend == "claude-cli":
+        return "claude-sonnet-4 (CLI)"
+    if backend == "claude-haiku":
+        return "claude-haiku-4-5"
+    return MODEL_DISPLAY_FALLBACK.get(backend, backend)
 
 CONTROL_ANCHORS = {"sanity-check", "negative-control"}
 
 
 def load_best_results():
-    """Load the latest result with the most questions per model."""
+    """Load the latest result per unique model identifier."""
     results = {}
     for f in sorted(RESULTS_DIR.glob("pilot-*.json")):
         d = json.load(open(f, encoding="utf-8"))
+        config = d.get("config", {})
         for m, r in d["models"].items():
-            if m not in results or len(r) >= len(results[m]["data"]):
-                results[m] = {
+            # Use exact model ID as key instead of backend alias
+            exact_id = get_model_display(m, config)
+            if exact_id not in results or len(r) >= len(results[exact_id]["data"]):
+                results[exact_id] = {
                     "data": r,
                     "file": f.name,
-                    "config": d.get("config", {}),
+                    "config": config,
                     "duration": d.get("duration_seconds", 0),
                     "timestamp": d.get("timestamp", ""),
+                    "backend": m,
                 }
     return results
 
@@ -71,19 +94,15 @@ def score_bg(score):
 
 
 def generate_html(results, output_path):
+    # Keys are already exact model IDs (e.g. "mistral-large-2512")
+    display_names = {m: m for m in results}
+
     # Collect all anchors and questions
     all_questions = defaultdict(dict)  # anchor/label -> {model: score}
-    model_names = []
 
-    # Prefer full runs (75 questions) over pilot runs
-    for m in ["claude", "openai", "mistral"]:
-        if m in results and len(results[m]["data"]) >= 60:
-            model_names.append(m)
-
-    # Add smaller runs if no full run exists
-    for m in ["claude-cli", "claude-haiku", "ollama"]:
-        if m in results and m not in model_names:
-            model_names.append(m)
+    # Sort models: most questions first, then alphabetically
+    model_names = sorted(results.keys(),
+                         key=lambda m: (-len(results[m]["data"]), m))
 
     for m in model_names:
         for q in results[m]["data"]:
@@ -162,7 +181,7 @@ def generate_html(results, output_path):
 
     for m in model_names:
         avg = model_avgs.get(m, 0)
-        display = MODEL_DISPLAY.get(m, m)
+        display = display_names.get(m, m)
         n = len([1 for l in anchor_questions if anchor_questions[l].get(m) is not None])
         info = results[m]
         html += f"""  <div class="summary-card">
@@ -181,7 +200,7 @@ def generate_html(results, output_path):
 """
 
     for m in model_names:
-        html += f"  <th style='text-align:center'>{MODEL_DISPLAY.get(m, m)}</th>\n"
+        html += f"  <th style='text-align:center'>{display_names.get(m, m)}</th>\n"
     html += "</tr></thead>\n<tbody>\n"
 
     for anchor_id in sorted(anchor_groups.keys()):
@@ -224,7 +243,7 @@ def generate_html(results, output_path):
     if control_questions:
         html += '<h2>Control Questions</h2>\n<table class="controls">\n<thead><tr><th>Control</th>'
         for m in model_names:
-            html += f"<th style='text-align:center'>{MODEL_DISPLAY.get(m, m)}</th>"
+            html += f"<th style='text-align:center'>{display_names.get(m, m)}</th>"
         html += "</tr></thead>\n<tbody>\n"
         for label in sorted(control_questions.keys()):
             short = label.replace("/recognition", "")
@@ -246,9 +265,9 @@ def generate_html(results, output_path):
         fails = [(q["label"], q["score"]) for q in results[m]["data"]
                  if q["score"] < 1.0 and not any(q["label"].startswith(c) for c in CONTROL_ANCHORS)]
         if not fails:
-            html += f"<h3>{MODEL_DISPLAY.get(m, m)}: no failures</h3>\n"
+            html += f"<h3>{display_names.get(m, m)}: no failures</h3>\n"
         else:
-            html += f'<h3>{MODEL_DISPLAY.get(m, m)}: {len(fails)} failures</h3>\n<div class="fail-list">\n'
+            html += f'<h3>{display_names.get(m, m)}: {len(fails)} failures</h3>\n<div class="fail-list">\n'
             for label, score in sorted(fails):
                 html += f'<div class="fail-item"><span>{h(label)}</span><span style="color:{score_color(score)};font-weight:600">{score:.0%}</span></div>\n'
             html += "</div>\n"
@@ -262,7 +281,7 @@ def generate_html(results, output_path):
     for m in model_names:
         info = results[m]
         dur = info["duration"]
-        html += f"<dt>{MODEL_DISPLAY.get(m, m)}:</dt><dd>{info['file']} · {int(dur//60)}m {int(dur%60)}s · {info['timestamp'][:19]}</dd><br>"
+        html += f"<dt>{display_names.get(m, m)}:</dt><dd>{info['file']} · {int(dur//60)}m {int(dur%60)}s · {info['timestamp'][:19]}</dd><br>"
 
     html += """
 </dl>

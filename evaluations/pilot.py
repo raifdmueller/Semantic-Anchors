@@ -312,7 +312,20 @@ def run_pilot(models, dry_run=False, verbose=False, ollama_model="qwen3:4b", no_
     print()
 
     ts = datetime.now().strftime("%Y%m%d-%H%M%S")
-    out_file = RESULTS_DIR / f"pilot-{ts}.json"
+    # Include model names in filename to prevent race conditions on parallel runs
+    model_suffix = "_".join(models)
+    for m in models:
+        if m == "openai":
+            model_suffix = model_suffix.replace("openai", openai_model)
+        elif m == "mistral":
+            model_suffix = model_suffix.replace("mistral", mistral_model)
+        elif m == "deepseek":
+            model_suffix = model_suffix.replace("deepseek", deepseek_model)
+        elif m == "ollama":
+            model_suffix = model_suffix.replace("ollama", f"ollama-{ollama_model}")
+    # Sanitize for filename
+    model_suffix = model_suffix.replace(":", "-").replace("/", "-")
+    out_file = RESULTS_DIR / f"pilot-{ts}_{model_suffix}.json"
 
     all_results = {
         "timestamp": datetime.now(timezone.utc).isoformat(),

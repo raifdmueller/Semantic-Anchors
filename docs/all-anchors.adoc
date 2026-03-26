@@ -77,6 +77,10 @@ include::anchors/gof-template-method-pattern.adoc[leveloffset=+2]
 
 include::anchors/gof-visitor-pattern.adoc[leveloffset=+2]
 
+include::anchors/grasp.adoc[leveloffset=+2]
+
+include::anchors/kiss-principle.adoc[leveloffset=+2]
+
 include::anchors/solid-dip.adoc[leveloffset=+2]
 
 include::anchors/solid-isp.adoc[leveloffset=+2]
@@ -132,6 +136,8 @@ include::anchors/socratic-method.adoc[leveloffset=+2]
 include::anchors/diataxis-framework.adoc[leveloffset=+2]
 
 include::anchors/docs-as-code.adoc[leveloffset=+2]
+
+include::anchors/para-method.adoc[leveloffset=+2]
 
 <<<
 
@@ -193,9 +199,13 @@ include::anchors/gom.adoc[leveloffset=+2]
 
 include::anchors/hexagonal-architecture.adoc[leveloffset=+2]
 
+include::anchors/iso-25010.adoc[leveloffset=+2]
+
 include::anchors/lasr.adoc[leveloffset=+2]
 
 include::anchors/madr.adoc[leveloffset=+2]
+
+include::anchors/vertical-slice-architecture.adoc[leveloffset=+2]
 
 <<<
 
@@ -217,6 +227,8 @@ include::anchors/impact-mapping.adoc[leveloffset=+2]
 
 include::anchors/jobs-to-be-done.adoc[leveloffset=+2]
 
+include::anchors/pert.adoc[leveloffset=+2]
+
 include::anchors/pugh-matrix.adoc[leveloffset=+2]
 
 include::anchors/swot.adoc[leveloffset=+2]
@@ -236,6 +248,8 @@ include::anchors/gherkin.adoc[leveloffset=+2]
 include::anchors/iec-61508-sil-levels.adoc[leveloffset=+2]
 
 include::anchors/linddun.adoc[leveloffset=+2]
+
+include::anchors/llm-evaluations.adoc[leveloffset=+2]
 
 include::anchors/mutation-testing.adoc[leveloffset=+2]
 

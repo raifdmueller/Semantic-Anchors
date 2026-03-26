@@ -55,18 +55,22 @@ CONTROL_ANCHORS = {"sanity-check", "negative-control"}
 
 
 def load_best_results():
-    """Load the latest result with the most questions per model."""
+    """Load the latest result per unique model identifier."""
     results = {}
     for f in sorted(RESULTS_DIR.glob("pilot-*.json")):
         d = json.load(open(f, encoding="utf-8"))
+        config = d.get("config", {})
         for m, r in d["models"].items():
-            if m not in results or len(r) >= len(results[m]["data"]):
-                results[m] = {
+            # Use exact model ID as key instead of backend alias
+            exact_id = get_model_display(m, config)
+            if exact_id not in results or len(r) >= len(results[exact_id]["data"]):
+                results[exact_id] = {
                     "data": r,
                     "file": f.name,
-                    "config": d.get("config", {}),
+                    "config": config,
                     "duration": d.get("duration_seconds", 0),
                     "timestamp": d.get("timestamp", ""),
+                    "backend": m,
                 }
     return results
 
@@ -90,24 +94,15 @@ def score_bg(score):
 
 
 def generate_html(results, output_path):
-    # Build display name lookup from configs
-    display_names = {}
-    for m, info in results.items():
-        display_names[m] = get_model_display(m, info.get("config", {}))
+    # Keys are already exact model IDs (e.g. "mistral-large-2512")
+    display_names = {m: m for m in results}
 
     # Collect all anchors and questions
     all_questions = defaultdict(dict)  # anchor/label -> {model: score}
-    model_names = []
 
-    # Prefer full runs (75 questions) over pilot runs
-    for m in ["claude", "openai", "mistral"]:
-        if m in results and len(results[m]["data"]) >= 60:
-            model_names.append(m)
-
-    # Add smaller runs if no full run exists
-    for m in ["claude-cli", "claude-haiku", "ollama"]:
-        if m in results and m not in model_names:
-            model_names.append(m)
+    # Sort models: most questions first, then alphabetically
+    model_names = sorted(results.keys(),
+                         key=lambda m: (-len(results[m]["data"]), m))
 
     for m in model_names:
         for q in results[m]["data"]:

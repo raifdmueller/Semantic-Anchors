@@ -1,11 +1,11 @@
 {
-  "timestamp": "2026-03-24T19:06:00.394684+00:00",
+  "timestamp": "2026-03-26T07:41:32.011654+00:00",
   "config": {
     "models": [
       "mistral"
     ],
     "openai_model": null,
-    "mistral_model": "mistral-large-2512",
+    "mistral_model": "mistral-small-2603",
     "deepseek_model": null,
     "ollama_model": null,
     "ollama_url": null,
@@ -70,7 +70,7 @@
       },
       {
         "label": "adr-according-to-nygard/application-anchor",
-        "score": 1.0,
+        "score": 0.75,
         "results": [
           {
             "permutation": [
@@ -92,9 +92,9 @@
               "A"
             ],
             "expected": "A",
-            "answer": "A",
-            "correct": true,
-            "raw_response": "A)"
+            "answer": "B",
+            "correct": false,
+            "raw_response": "B"
           },
           {
             "permutation": [
@@ -610,7 +610,7 @@
       },
       {
         "label": "atam/application-anchor",
-        "score": 1.0,
+        "score": 0.75,
         "results": [
           {
             "permutation": [
@@ -632,9 +632,9 @@
               "A"
             ],
             "expected": "A",
-            "answer": "A",
-            "correct": true,
-            "raw_response": "A"
+            "answer": "B",
+            "correct": false,
+            "raw_response": "B"
           },
           {
             "permutation": [
@@ -826,7 +826,7 @@
       },
       {
         "label": "bdd-given-when-then/application-paraphrase",
-        "score": 0.5,
+        "score": 0.75,
         "results": [
           {
             "permutation": [
@@ -848,9 +848,9 @@
               "A"
             ],
             "expected": "A",
-            "answer": null,
-            "correct": false,
-            "raw_response": "ERROR: Error code: 429 - {'object': 'error', 'message': 'Rate limit exceeded', 'type': 'rate_limited', 'param': None, 'code': '1300', 'raw_status_code': 429}"
+            "answer": "A",
+            "correct": true,
+            "raw_response": "A"
           },
           {
             "permutation": [
@@ -1906,7 +1906,7 @@
       },
       {
         "label": "conventional-commits/application-anchor",
-        "score": 1.0,
+        "score": 0.5,
         "results": [
           {
             "permutation": [
@@ -1940,9 +1940,9 @@
               "B"
             ],
             "expected": "D",
-            "answer": "D",
-            "correct": true,
-            "raw_response": "D"
+            "answer": "C",
+            "correct": false,
+            "raw_response": "C"
           },
           {
             "permutation": [
@@ -1952,15 +1952,15 @@
               "C"
             ],
             "expected": "C",
-            "answer": "C",
-            "correct": true,
-            "raw_response": "C"
+            "answer": "B",
+            "correct": false,
+            "raw_response": "B"
           }
         ]
       },
       {
         "label": "conventional-commits/application-paraphrase",
-        "score": 1.0,
+        "score": 0.75,
         "results": [
           {
             "permutation": [
@@ -1994,9 +1994,9 @@
               "B"
             ],
             "expected": "D",
-            "answer": "D",
-            "correct": true,
-            "raw_response": "D"
+            "answer": "C",
+            "correct": false,
+            "raw_response": "C"
           },
           {
             "permutation": [
@@ -2068,7 +2068,7 @@
       },
       {
         "label": "cqrs/application-anchor",
-        "score": 1.0,
+        "score": 0.75,
         "results": [
           {
             "permutation": [
@@ -2102,9 +2102,9 @@
               "B"
             ],
             "expected": "D",
-            "answer": "D",
-            "correct": true,
-            "raw_response": "D"
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: Error code: 429 - {'object': 'error', 'message': 'Rate limit exceeded', 'type': 'rate_limited', 'param': None, 'code': '1300', 'raw_status_code': 429}"
           },
           {
             "permutation": [
@@ -2122,7 +2122,7 @@
       },
       {
         "label": "cqrs/application-paraphrase",
-        "score": 1.0,
+        "score": 0.5,
         "results": [
           {
             "permutation": [
@@ -2144,9 +2144,9 @@
               "A"
             ],
             "expected": "A",
-            "answer": "A",
-            "correct": true,
-            "raw_response": "A"
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: Error code: 429 - {'object': 'error', 'message': 'Rate limit exceeded', 'type': 'rate_limited', 'param': None, 'code': '1300', 'raw_status_code': 429}"
           },
           {
             "permutation": [
@@ -2156,9 +2156,9 @@
               "B"
             ],
             "expected": "D",
-            "answer": "D",
-            "correct": true,
-            "raw_response": "D"
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: Error code: 429 - {'object': 'error', 'message': 'Rate limit exceeded', 'type': 'rate_limited', 'param': None, 'code': '1300', 'raw_status_code': 429}"
           },
           {
             "permutation": [
@@ -2338,7 +2338,7 @@
       },
       {
         "label": "definition-of-done/recognition",
-        "score": 1.0,
+        "score": 0.75,
         "results": [
           {
             "permutation": [
@@ -2384,15 +2384,15 @@
               "C"
             ],
             "expected": "C",
-            "answer": "C",
-            "correct": true,
-            "raw_response": "C"
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: Error code: 429 - {'object': 'error', 'message': 'Rate limit exceeded', 'type': 'rate_limited', 'param': None, 'code': '1300', 'raw_status_code': 429}"
           }
         ]
       },
       {
         "label": "definition-of-done/application-anchor",
-        "score": 1.0,
+        "score": 0.75,
         "results": [
           {
             "permutation": [
@@ -2426,9 +2426,9 @@
               "B"
             ],
             "expected": "D",
-            "answer": "D",
-            "correct": true,
-            "raw_response": "D"
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: Error code: 429 - {'object': 'error', 'message': 'Rate limit exceeded', 'type': 'rate_limited', 'param': None, 'code': '1300', 'raw_status_code': 429}"
           },
           {
             "permutation": [
@@ -2446,7 +2446,7 @@
       },
       {
         "label": "definition-of-done/application-paraphrase",
-        "score": 1.0,
+        "score": 0.5,
         "results": [
           {
             "permutation": [
@@ -2456,9 +2456,9 @@
               "D"
             ],
             "expected": "B",
-            "answer": "B",
-            "correct": true,
-            "raw_response": "B"
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: Error code: 429 - {'object': 'error', 'message': 'Rate limit exceeded', 'type': 'rate_limited', 'param': None, 'code': '1300', 'raw_status_code': 429}"
           },
           {
             "permutation": [
@@ -2492,15 +2492,15 @@
               "C"
             ],
             "expected": "C",
-            "answer": "C",
-            "correct": true,
-            "raw_response": "C"
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: Error code: 429 - {'object': 'error', 'message': 'Rate limit exceeded', 'type': 'rate_limited', 'param': None, 'code': '1300', 'raw_status_code': 429}"
           }
         ]
       },
       {
         "label": "devils-advocate/recognition",
-        "score": 1.0,
+        "score": 0.5,
         "results": [
           {
             "permutation": [
@@ -2510,9 +2510,9 @@
               "D"
             ],
             "expected": "B",
-            "answer": "B",
-            "correct": true,
-            "raw_response": "B"
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: Error code: 429 - {'object': 'error', 'message': 'Rate limit exceeded', 'type': 'rate_limited', 'param': None, 'code': '1300', 'raw_status_code': 429}"
           },
           {
             "permutation": [
@@ -2534,9 +2534,9 @@
               "B"
             ],
             "expected": "D",
-            "answer": "D",
-            "correct": true,
-            "raw_response": "D"
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: Error code: 429 - {'object': 'error', 'message': 'Rate limit exceeded', 'type': 'rate_limited', 'param': None, 'code': '1300', 'raw_status_code': 429}"
           },
           {
             "permutation": [
@@ -2554,7 +2554,7 @@
       },
       {
         "label": "devils-advocate/application-anchor",
-        "score": 1.0,
+        "score": 0.75,
         "results": [
           {
             "permutation": [
@@ -2576,9 +2576,9 @@
               "A"
             ],
             "expected": "A",
-            "answer": "A",
-            "correct": true,
-            "raw_response": "A"
+            "answer": "B",
+            "correct": false,
+            "raw_response": "B"
           },
           {
             "permutation": [
@@ -2608,7 +2608,7 @@
       },
       {
         "label": "devils-advocate/application-paraphrase",
-        "score": 1.0,
+        "score": 0.5,
         "results": [
           {
             "permutation": [
@@ -2618,9 +2618,9 @@
               "D"
             ],
             "expected": "B",
-            "answer": "B",
-            "correct": true,
-            "raw_response": "B"
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: Error code: 429 - {'object': 'error', 'message': 'Rate limit exceeded', 'type': 'rate_limited', 'param': None, 'code': '1300', 'raw_status_code': 429}"
           },
           {
             "permutation": [
@@ -2654,15 +2654,15 @@
               "C"
             ],
             "expected": "C",
-            "answer": "C",
-            "correct": true,
-            "raw_response": "C"
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: Error code: 429 - {'object': 'error', 'message': 'Rate limit exceeded', 'type': 'rate_limited', 'param': None, 'code': '1300', 'raw_status_code': 429}"
           }
         ]
       },
       {
         "label": "diataxis-framework/recognition",
-        "score": 1.0,
+        "score": 0.25,
         "results": [
           {
             "permutation": [
@@ -2672,9 +2672,9 @@
               "D"
             ],
             "expected": "B",
-            "answer": "B",
-            "correct": true,
-            "raw_response": "B"
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: Error code: 429 - {'object': 'error', 'message': 'Rate limit exceeded', 'type': 'rate_limited', 'param': None, 'code': '1300', 'raw_status_code': 429}"
           },
           {
             "permutation": [
@@ -2696,9 +2696,9 @@
               "B"
             ],
             "expected": "D",
-            "answer": "D",
-            "correct": true,
-            "raw_response": "D"
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: Error code: 429 - {'object': 'error', 'message': 'Rate limit exceeded', 'type': 'rate_limited', 'param': None, 'code': '1300', 'raw_status_code': 429}"
           },
           {
             "permutation": [
@@ -2708,15 +2708,15 @@
               "C"
             ],
             "expected": "C",
-            "answer": "C",
-            "correct": true,
-            "raw_response": "C"
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: Error code: 429 - {'object': 'error', 'message': 'Rate limit exceeded', 'type': 'rate_limited', 'param': None, 'code': '1300', 'raw_status_code': 429}"
           }
         ]
       },
       {
         "label": "diataxis-framework/application-anchor",
-        "score": 1.0,
+        "score": 0.75,
         "results": [
           {
             "permutation": [
@@ -2738,9 +2738,9 @@
               "A"
             ],
             "expected": "A",
-            "answer": "A",
-            "correct": true,
-            "raw_response": "A"
+            "answer": "B",
+            "correct": false,
+            "raw_response": "B"
           },
           {
             "permutation": [
@@ -2770,7 +2770,7 @@
       },
       {
         "label": "diataxis-framework/application-paraphrase",
-        "score": 1.0,
+        "score": 0.75,
         "results": [
           {
             "permutation": [
@@ -2816,9 +2816,9 @@
               "C"
             ],
             "expected": "C",
-            "answer": "C",
-            "correct": true,
-            "raw_response": "C"
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: Error code: 429 - {'object': 'error', 'message': 'Rate limit exceeded', 'type': 'rate_limited', 'param': None, 'code': '1300', 'raw_status_code': 429}"
           }
         ]
       },
@@ -2932,7 +2932,7 @@
       },
       {
         "label": "docs-as-code/application-paraphrase",
-        "score": 1.0,
+        "score": 0.5,
         "results": [
           {
             "permutation": [
@@ -2954,9 +2954,9 @@
               "A"
             ],
             "expected": "A",
-            "answer": "A",
-            "correct": true,
-            "raw_response": "A"
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: Error code: 429 - {'object': 'error', 'message': 'Rate limit exceeded', 'type': 'rate_limited', 'param': None, 'code': '1300', 'raw_status_code': 429}"
           },
           {
             "permutation": [
@@ -2978,15 +2978,15 @@
               "C"
             ],
             "expected": "C",
-            "answer": "C",
-            "correct": true,
-            "raw_response": "C"
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: Error code: 429 - {'object': 'error', 'message': 'Rate limit exceeded', 'type': 'rate_limited', 'param': None, 'code': '1300', 'raw_status_code': 429}"
           }
         ]
       },
       {
         "label": "domain-driven-design/recognition",
-        "score": 1.0,
+        "score": 0.5,
         "results": [
           {
             "permutation": [
@@ -2996,9 +2996,9 @@
               "D"
             ],
             "expected": "B",
-            "answer": "B",
-            "correct": true,
-            "raw_response": "B"
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: Error code: 429 - {'object': 'error', 'message': 'Rate limit exceeded', 'type': 'rate_limited', 'param': None, 'code': '1300', 'raw_status_code': 429}"
           },
           {
             "permutation": [
@@ -3032,9 +3032,9 @@
               "C"
             ],
             "expected": "C",
-            "answer": "C",
-            "correct": true,
-            "raw_response": "C"
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: Error code: 429 - {'object': 'error', 'message': 'Rate limit exceeded', 'type': 'rate_limited', 'param': None, 'code': '1300', 'raw_status_code': 429}"
           }
         ]
       },
@@ -3094,7 +3094,7 @@
       },
       {
         "label": "domain-driven-design/application-paraphrase",
-        "score": 1.0,
+        "score": 0.5,
         "results": [
           {
             "permutation": [
@@ -3128,9 +3128,9 @@
               "B"
             ],
             "expected": "D",
-            "answer": "D",
-            "correct": true,
-            "raw_response": "D"
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: Error code: 429 - {'object': 'error', 'message': 'Rate limit exceeded', 'type': 'rate_limited', 'param': None, 'code': '1300', 'raw_status_code': 429}"
           },
           {
             "permutation": [
@@ -3140,15 +3140,15 @@
               "C"
             ],
             "expected": "C",
-            "answer": "C",
-            "correct": true,
-            "raw_response": "C"
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: Error code: 429 - {'object': 'error', 'message': 'Rate limit exceeded', 'type': 'rate_limited', 'param': None, 'code': '1300', 'raw_status_code': 429}"
           }
         ]
       },
       {
         "label": "ears-requirements/recognition",
-        "score": 0.75,
+        "score": 0.0,
         "results": [
           {
             "permutation": [
@@ -3160,7 +3160,7 @@
             "expected": "B",
             "answer": "C",
             "correct": false,
-            "raw_response": "C)"
+            "raw_response": "C"
           },
           {
             "permutation": [
@@ -3170,9 +3170,9 @@
               "A"
             ],
             "expected": "A",
-            "answer": "A",
-            "correct": true,
-            "raw_response": "A"
+            "answer": "B",
+            "correct": false,
+            "raw_response": "B"
           },
           {
             "permutation": [
@@ -3182,9 +3182,117 @@
               "B"
             ],
             "expected": "D",
-            "answer": "D",
+            "answer": "A",
+            "correct": false,
+            "raw_response": "A"
+          },
+          {
+            "permutation": [
+              "D",
+              "A",
+              "B",
+              "C"
+            ],
+            "expected": "C",
+            "answer": "A",
+            "correct": false,
+            "raw_response": "A"
+          }
+        ]
+      },
+      {
+        "label": "ears-requirements/application-anchor",
+        "score": 0.0,
+        "results": [
+          {
+            "permutation": [
+              "A",
+              "B",
+              "C",
+              "D"
+            ],
+            "expected": "B",
+            "answer": "A",
+            "correct": false,
+            "raw_response": "A"
+          },
+          {
+            "permutation": [
+              "B",
+              "C",
+              "D",
+              "A"
+            ],
+            "expected": "A",
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: Error code: 429 - {'object': 'error', 'message': 'Rate limit exceeded', 'type': 'rate_limited', 'param': None, 'code': '1300', 'raw_status_code': 429}"
+          },
+          {
+            "permutation": [
+              "C",
+              "D",
+              "A",
+              "B"
+            ],
+            "expected": "D",
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: Error code: 429 - {'object': 'error', 'message': 'Rate limit exceeded', 'type': 'rate_limited', 'param': None, 'code': '1300', 'raw_status_code': 429}"
+          },
+          {
+            "permutation": [
+              "D",
+              "A",
+              "B",
+              "C"
+            ],
+            "expected": "C",
+            "answer": "B",
+            "correct": false,
+            "raw_response": "B"
+          }
+        ]
+      },
+      {
+        "label": "ears-requirements/application-paraphrase",
+        "score": 0.5,
+        "results": [
+          {
+            "permutation": [
+              "A",
+              "B",
+              "C",
+              "D"
+            ],
+            "expected": "B",
+            "answer": "B",
             "correct": true,
-            "raw_response": "D"
+            "raw_response": "B"
+          },
+          {
+            "permutation": [
+              "B",
+              "C",
+              "D",
+              "A"
+            ],
+            "expected": "A",
+            "answer": "C",
+            "correct": false,
+            "raw_response": "C"
+          },
+          {
+            "permutation": [
+              "C",
+              "D",
+              "A",
+              "B"
+            ],
+            "expected": "D",
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: Error code: 429 - {'object': 'error', 'message': 'Rate limit exceeded', 'type': 'rate_limited', 'param': None, 'code': '1300', 'raw_status_code': 429}"
           },
           {
             "permutation": [
@@ -3201,116 +3309,8 @@
         ]
       },
       {
-        "label": "ears-requirements/application-anchor",
-        "score": 1.0,
-        "results": [
-          {
-            "permutation": [
-              "A",
-              "B",
-              "C",
-              "D"
-            ],
-            "expected": "B",
-            "answer": "B",
-            "correct": true,
-            "raw_response": "B)"
-          },
-          {
-            "permutation": [
-              "B",
-              "C",
-              "D",
-              "A"
-            ],
-            "expected": "A",
-            "answer": "A",
-            "correct": true,
-            "raw_response": "A"
-          },
-          {
-            "permutation": [
-              "C",
-              "D",
-              "A",
-              "B"
-            ],
-            "expected": "D",
-            "answer": "D",
-            "correct": true,
-            "raw_response": "D)"
-          },
-          {
-            "permutation": [
-              "D",
-              "A",
-              "B",
-              "C"
-            ],
-            "expected": "C",
-            "answer": "C",
-            "correct": true,
-            "raw_response": "C)"
-          }
-        ]
-      },
-      {
-        "label": "ears-requirements/application-paraphrase",
-        "score": 0.75,
-        "results": [
-          {
-            "permutation": [
-              "A",
-              "B",
-              "C",
-              "D"
-            ],
-            "expected": "B",
-            "answer": "B",
-            "correct": true,
-            "raw_response": "B)"
-          },
-          {
-            "permutation": [
-              "B",
-              "C",
-              "D",
-              "A"
-            ],
-            "expected": "A",
-            "answer": "B",
-            "correct": false,
-            "raw_response": "B)"
-          },
-          {
-            "permutation": [
-              "C",
-              "D",
-              "A",
-              "B"
-            ],
-            "expected": "D",
-            "answer": "D",
-            "correct": true,
-            "raw_response": "D"
-          },
-          {
-            "permutation": [
-              "D",
-              "A",
-              "B",
-              "C"
-            ],
-            "expected": "C",
-            "answer": "C",
-            "correct": true,
-            "raw_response": "C)"
-          }
-        ]
-      },
-      {
         "label": "event-driven-architecture/recognition",
-        "score": 1.0,
+        "score": 0.75,
         "results": [
           {
             "permutation": [
@@ -3344,9 +3344,9 @@
               "B"
             ],
             "expected": "D",
-            "answer": "D",
-            "correct": true,
-            "raw_response": "D"
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: Error code: 429 - {'object': 'error', 'message': 'Rate limit exceeded', 'type': 'rate_limited', 'param': None, 'code': '1300', 'raw_status_code': 429}"
           },
           {
             "permutation": [
@@ -3364,7 +3364,7 @@
       },
       {
         "label": "event-driven-architecture/application-anchor",
-        "score": 1.0,
+        "score": 0.75,
         "results": [
           {
             "permutation": [
@@ -3386,9 +3386,9 @@
               "A"
             ],
             "expected": "A",
-            "answer": "A",
-            "correct": true,
-            "raw_response": "A"
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: Error code: 429 - {'object': 'error', 'message': 'Rate limit exceeded', 'type': 'rate_limited', 'param': None, 'code': '1300', 'raw_status_code': 429}"
           },
           {
             "permutation": [
@@ -3418,7 +3418,7 @@
       },
       {
         "label": "event-driven-architecture/application-paraphrase",
-        "score": 1.0,
+        "score": 0.75,
         "results": [
           {
             "permutation": [
@@ -3428,9 +3428,9 @@
               "D"
             ],
             "expected": "B",
-            "answer": "B",
-            "correct": true,
-            "raw_response": "B"
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: Error code: 429 - {'object': 'error', 'message': 'Rate limit exceeded', 'type': 'rate_limited', 'param': None, 'code': '1300', 'raw_status_code': 429}"
           },
           {
             "permutation": [
@@ -3472,7 +3472,7 @@
       },
       {
         "label": "fagan-inspection/recognition",
-        "score": 1.0,
+        "score": 0.75,
         "results": [
           {
             "permutation": [
@@ -3494,9 +3494,9 @@
               "A"
             ],
             "expected": "A",
-            "answer": "A",
-            "correct": true,
-            "raw_response": "A"
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: Error code: 429 - {'object': 'error', 'message': 'Rate limit exceeded', 'type': 'rate_limited', 'param': None, 'code': '1300', 'raw_status_code': 429}"
           },
           {
             "permutation": [
@@ -3526,7 +3526,7 @@
       },
       {
         "label": "fagan-inspection/application-anchor",
-        "score": 1.0,
+        "score": 0.25,
         "results": [
           {
             "permutation": [
@@ -3548,9 +3548,9 @@
               "A"
             ],
             "expected": "A",
-            "answer": "A",
-            "correct": true,
-            "raw_response": "A"
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: Error code: 429 - {'object': 'error', 'message': 'Rate limit exceeded', 'type': 'rate_limited', 'param': None, 'code': '1300', 'raw_status_code': 429}"
           },
           {
             "permutation": [
@@ -3560,9 +3560,9 @@
               "B"
             ],
             "expected": "D",
-            "answer": "D",
-            "correct": true,
-            "raw_response": "D"
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: Error code: 429 - {'object': 'error', 'message': 'Rate limit exceeded', 'type': 'rate_limited', 'param': None, 'code': '1300', 'raw_status_code': 429}"
           },
           {
             "permutation": [
@@ -3572,15 +3572,15 @@
               "C"
             ],
             "expected": "C",
-            "answer": "C",
-            "correct": true,
-            "raw_response": "C"
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: Error code: 429 - {'object': 'error', 'message': 'Rate limit exceeded', 'type': 'rate_limited', 'param': None, 'code': '1300', 'raw_status_code': 429}"
           }
         ]
       },
       {
         "label": "fagan-inspection/application-paraphrase",
-        "score": 1.0,
+        "score": 0.75,
         "results": [
           {
             "permutation": [
@@ -3626,9 +3626,9 @@
               "C"
             ],
             "expected": "C",
-            "answer": "C",
-            "correct": true,
-            "raw_response": "C"
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: Error code: 429 - {'object': 'error', 'message': 'Rate limit exceeded', 'type': 'rate_limited', 'param': None, 'code': '1300', 'raw_status_code': 429}"
           }
         ]
       },
@@ -3688,7 +3688,7 @@
       },
       {
         "label": "feynman-technique/application-anchor",
-        "score": 1.0,
+        "score": 0.5,
         "results": [
           {
             "permutation": [
@@ -3710,9 +3710,9 @@
               "A"
             ],
             "expected": "A",
-            "answer": "A",
-            "correct": true,
-            "raw_response": "A"
+            "answer": "B",
+            "correct": false,
+            "raw_response": "B"
           },
           {
             "permutation": [
@@ -3722,9 +3722,9 @@
               "B"
             ],
             "expected": "D",
-            "answer": "D",
-            "correct": true,
-            "raw_response": "D"
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: Error code: 429 - {'object': 'error', 'message': 'Rate limit exceeded', 'type': 'rate_limited', 'param': None, 'code': '1300', 'raw_status_code': 429}"
           },
           {
             "permutation": [
@@ -3850,7 +3850,7 @@
       },
       {
         "label": "five-whys/application-anchor",
-        "score": 1.0,
+        "score": 0.75,
         "results": [
           {
             "permutation": [
@@ -3896,9 +3896,9 @@
               "C"
             ],
             "expected": "C",
-            "answer": "C",
-            "correct": true,
-            "raw_response": "C"
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: Error code: 429 - {'object': 'error', 'message': 'Rate limit exceeded', 'type': 'rate_limited', 'param': None, 'code': '1300', 'raw_status_code': 429}"
           }
         ]
       },
@@ -3958,7 +3958,7 @@
       },
       {
         "label": "fowler-patterns/recognition",
-        "score": 1.0,
+        "score": 0.5,
         "results": [
           {
             "permutation": [
@@ -3968,9 +3968,9 @@
               "D"
             ],
             "expected": "B",
-            "answer": "B",
-            "correct": true,
-            "raw_response": "B"
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: Error code: 429 - {'object': 'error', 'message': 'Rate limit exceeded', 'type': 'rate_limited', 'param': None, 'code': '1300', 'raw_status_code': 429}"
           },
           {
             "permutation": [
@@ -3980,9 +3980,9 @@
               "A"
             ],
             "expected": "A",
-            "answer": "A",
-            "correct": true,
-            "raw_response": "A"
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: Error code: 429 - {'object': 'error', 'message': 'Rate limit exceeded', 'type': 'rate_limited', 'param': None, 'code': '1300', 'raw_status_code': 429}"
           },
           {
             "permutation": [
@@ -4012,7 +4012,7 @@
       },
       {
         "label": "fowler-patterns/application-anchor",
-        "score": 1.0,
+        "score": 0.75,
         "results": [
           {
             "permutation": [
@@ -4046,9 +4046,9 @@
               "B"
             ],
             "expected": "D",
-            "answer": "D",
-            "correct": true,
-            "raw_response": "D"
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: Error code: 429 - {'object': 'error', 'message': 'Rate limit exceeded', 'type': 'rate_limited', 'param': None, 'code': '1300', 'raw_status_code': 429}"
           },
           {
             "permutation": [
@@ -4120,7 +4120,7 @@
       },
       {
         "label": "gherkin/recognition",
-        "score": 1.0,
+        "score": 0.75,
         "results": [
           {
             "permutation": [
@@ -4130,9 +4130,9 @@
               "D"
             ],
             "expected": "A",
-            "answer": "A",
-            "correct": true,
-            "raw_response": "A"
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: Error code: 429 - {'object': 'error', 'message': 'Rate limit exceeded', 'type': 'rate_limited', 'param': None, 'code': '1300', 'raw_status_code': 429}"
           },
           {
             "permutation": [
@@ -4174,7 +4174,7 @@
       },
       {
         "label": "gherkin/application-anchor",
-        "score": 1.0,
+        "score": 0.75,
         "results": [
           {
             "permutation": [
@@ -4196,9 +4196,9 @@
               "A"
             ],
             "expected": "A",
-            "answer": "A",
-            "correct": true,
-            "raw_response": "A"
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: Error code: 429 - {'object': 'error', 'message': 'Rate limit exceeded', 'type': 'rate_limited', 'param': None, 'code': '1300', 'raw_status_code': 429}"
           },
           {
             "permutation": [
@@ -4264,7 +4264,7 @@
             "expected": "D",
             "answer": "D",
             "correct": true,
-            "raw_response": "D)"
+            "raw_response": "D"
           },
           {
             "permutation": [
@@ -4282,7 +4282,7 @@
       },
       {
         "label": "github-flow/recognition",
-        "score": 1.0,
+        "score": 0.75,
         "results": [
           {
             "permutation": [
@@ -4316,9 +4316,9 @@
               "B"
             ],
             "expected": "D",
-            "answer": "D",
-            "correct": true,
-            "raw_response": "D"
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: Error code: 429 - {'object': 'error', 'message': 'Rate limit exceeded', 'type': 'rate_limited', 'param': None, 'code': '1300', 'raw_status_code': 429}"
           },
           {
             "permutation": [
@@ -4336,61 +4336,7 @@
       },
       {
         "label": "github-flow/application-anchor",
-        "score": 1.0,
-        "results": [
-          {
-            "permutation": [
-              "A",
-              "B",
-              "C",
-              "D"
-            ],
-            "expected": "B",
-            "answer": "B",
-            "correct": true,
-            "raw_response": "B"
-          },
-          {
-            "permutation": [
-              "B",
-              "C",
-              "D",
-              "A"
-            ],
-            "expected": "A",
-            "answer": "A",
-            "correct": true,
-            "raw_response": "A"
-          },
-          {
-            "permutation": [
-              "C",
-              "D",
-              "A",
-              "B"
-            ],
-            "expected": "D",
-            "answer": "D",
-            "correct": true,
-            "raw_response": "D"
-          },
-          {
-            "permutation": [
-              "D",
-              "A",
-              "B",
-              "C"
-            ],
-            "expected": "C",
-            "answer": "C",
-            "correct": true,
-            "raw_response": "C"
-          }
-        ]
-      },
-      {
-        "label": "github-flow/application-paraphrase",
-        "score": 0.75,
+        "score": 0.5,
         "results": [
           {
             "permutation": [
@@ -4424,9 +4370,9 @@
               "B"
             ],
             "expected": "D",
-            "answer": "D",
-            "correct": true,
-            "raw_response": "D"
+            "answer": "B",
+            "correct": false,
+            "raw_response": "B"
           },
           {
             "permutation": [
@@ -4443,8 +4389,62 @@
         ]
       },
       {
+        "label": "github-flow/application-paraphrase",
+        "score": 0.0,
+        "results": [
+          {
+            "permutation": [
+              "A",
+              "B",
+              "C",
+              "D"
+            ],
+            "expected": "B",
+            "answer": "A",
+            "correct": false,
+            "raw_response": "A"
+          },
+          {
+            "permutation": [
+              "B",
+              "C",
+              "D",
+              "A"
+            ],
+            "expected": "A",
+            "answer": "D",
+            "correct": false,
+            "raw_response": "D"
+          },
+          {
+            "permutation": [
+              "C",
+              "D",
+              "A",
+              "B"
+            ],
+            "expected": "D",
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: Error code: 429 - {'object': 'error', 'message': 'Rate limit exceeded', 'type': 'rate_limited', 'param': None, 'code': '1300', 'raw_status_code': 429}"
+          },
+          {
+            "permutation": [
+              "D",
+              "A",
+              "B",
+              "C"
+            ],
+            "expected": "C",
+            "answer": "B",
+            "correct": false,
+            "raw_response": "B"
+          }
+        ]
+      },
+      {
         "label": "gutes-deutsch-wolf-schneider/recognition",
-        "score": 1.0,
+        "score": 0.75,
         "results": [
           {
             "permutation": [
@@ -4466,9 +4466,9 @@
               "A"
             ],
             "expected": "A",
-            "answer": "A",
-            "correct": true,
-            "raw_response": "A"
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: Error code: 429 - {'object': 'error', 'message': 'Rate limit exceeded', 'type': 'rate_limited', 'param': None, 'code': '1300', 'raw_status_code': 429}"
           },
           {
             "permutation": [
@@ -4606,7 +4606,7 @@
       },
       {
         "label": "hexagonal-architecture/recognition",
-        "score": 1.0,
+        "score": 0.75,
         "results": [
           {
             "permutation": [
@@ -4640,9 +4640,9 @@
               "B"
             ],
             "expected": "D",
-            "answer": "D",
-            "correct": true,
-            "raw_response": "D"
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: Error code: 429 - {'object': 'error', 'message': 'Rate limit exceeded', 'type': 'rate_limited', 'param': None, 'code': '1300', 'raw_status_code': 429}"
           },
           {
             "permutation": [
@@ -4822,6 +4822,168 @@
       },
       {
         "label": "iec-61508-sil-levels/application-anchor",
+        "score": 0.0,
+        "results": [
+          {
+            "permutation": [
+              "A",
+              "B",
+              "C",
+              "D"
+            ],
+            "expected": "B",
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: Error code: 429 - {'object': 'error', 'message': 'Rate limit exceeded', 'type': 'rate_limited', 'param': None, 'code': '1300', 'raw_status_code': 429}"
+          },
+          {
+            "permutation": [
+              "B",
+              "C",
+              "D",
+              "A"
+            ],
+            "expected": "A",
+            "answer": "B",
+            "correct": false,
+            "raw_response": "B"
+          },
+          {
+            "permutation": [
+              "C",
+              "D",
+              "A",
+              "B"
+            ],
+            "expected": "D",
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: Error code: 429 - {'object': 'error', 'message': 'Rate limit exceeded', 'type': 'rate_limited', 'param': None, 'code': '1300', 'raw_status_code': 429}"
+          },
+          {
+            "permutation": [
+              "D",
+              "A",
+              "B",
+              "C"
+            ],
+            "expected": "C",
+            "answer": "D",
+            "correct": false,
+            "raw_response": "D"
+          }
+        ]
+      },
+      {
+        "label": "iec-61508-sil-levels/application-paraphrase",
+        "score": 0.0,
+        "results": [
+          {
+            "permutation": [
+              "A",
+              "B",
+              "C",
+              "D"
+            ],
+            "expected": "B",
+            "answer": "C",
+            "correct": false,
+            "raw_response": "C"
+          },
+          {
+            "permutation": [
+              "B",
+              "C",
+              "D",
+              "A"
+            ],
+            "expected": "A",
+            "answer": "B",
+            "correct": false,
+            "raw_response": "B"
+          },
+          {
+            "permutation": [
+              "C",
+              "D",
+              "A",
+              "B"
+            ],
+            "expected": "D",
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: Error code: 429 - {'object': 'error', 'message': 'Rate limit exceeded', 'type': 'rate_limited', 'param': None, 'code': '1300', 'raw_status_code': 429}"
+          },
+          {
+            "permutation": [
+              "D",
+              "A",
+              "B",
+              "C"
+            ],
+            "expected": "C",
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: Error code: 429 - {'object': 'error', 'message': 'Rate limit exceeded', 'type': 'rate_limited', 'param': None, 'code': '1300', 'raw_status_code': 429}"
+          }
+        ]
+      },
+      {
+        "label": "impact-mapping/recognition",
+        "score": 0.75,
+        "results": [
+          {
+            "permutation": [
+              "A",
+              "B",
+              "C",
+              "D"
+            ],
+            "expected": "B",
+            "answer": "B",
+            "correct": true,
+            "raw_response": "B"
+          },
+          {
+            "permutation": [
+              "B",
+              "C",
+              "D",
+              "A"
+            ],
+            "expected": "A",
+            "answer": "A",
+            "correct": true,
+            "raw_response": "A"
+          },
+          {
+            "permutation": [
+              "C",
+              "D",
+              "A",
+              "B"
+            ],
+            "expected": "D",
+            "answer": "D",
+            "correct": true,
+            "raw_response": "D"
+          },
+          {
+            "permutation": [
+              "D",
+              "A",
+              "B",
+              "C"
+            ],
+            "expected": "C",
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: Error code: 429 - {'object': 'error', 'message': 'Rate limit exceeded', 'type': 'rate_limited', 'param': None, 'code': '1300', 'raw_status_code': 429}"
+          }
+        ]
+      },
+      {
+        "label": "impact-mapping/application-anchor",
         "score": 0.5,
         "results": [
           {
@@ -4844,9 +5006,9 @@
               "A"
             ],
             "expected": "A",
-            "answer": "B",
+            "answer": "C",
             "correct": false,
-            "raw_response": "B"
+            "raw_response": "C"
           },
           {
             "permutation": [
@@ -4868,177 +5030,15 @@
               "C"
             ],
             "expected": "C",
-            "answer": "D",
+            "answer": "A",
             "correct": false,
-            "raw_response": "D"
-          }
-        ]
-      },
-      {
-        "label": "iec-61508-sil-levels/application-paraphrase",
-        "score": 1.0,
-        "results": [
-          {
-            "permutation": [
-              "A",
-              "B",
-              "C",
-              "D"
-            ],
-            "expected": "B",
-            "answer": "B",
-            "correct": true,
-            "raw_response": "B"
-          },
-          {
-            "permutation": [
-              "B",
-              "C",
-              "D",
-              "A"
-            ],
-            "expected": "A",
-            "answer": "A",
-            "correct": true,
             "raw_response": "A"
-          },
-          {
-            "permutation": [
-              "C",
-              "D",
-              "A",
-              "B"
-            ],
-            "expected": "D",
-            "answer": "D",
-            "correct": true,
-            "raw_response": "D"
-          },
-          {
-            "permutation": [
-              "D",
-              "A",
-              "B",
-              "C"
-            ],
-            "expected": "C",
-            "answer": "C",
-            "correct": true,
-            "raw_response": "C"
-          }
-        ]
-      },
-      {
-        "label": "impact-mapping/recognition",
-        "score": 1.0,
-        "results": [
-          {
-            "permutation": [
-              "A",
-              "B",
-              "C",
-              "D"
-            ],
-            "expected": "B",
-            "answer": "B",
-            "correct": true,
-            "raw_response": "B"
-          },
-          {
-            "permutation": [
-              "B",
-              "C",
-              "D",
-              "A"
-            ],
-            "expected": "A",
-            "answer": "A",
-            "correct": true,
-            "raw_response": "A"
-          },
-          {
-            "permutation": [
-              "C",
-              "D",
-              "A",
-              "B"
-            ],
-            "expected": "D",
-            "answer": "D",
-            "correct": true,
-            "raw_response": "D"
-          },
-          {
-            "permutation": [
-              "D",
-              "A",
-              "B",
-              "C"
-            ],
-            "expected": "C",
-            "answer": "C",
-            "correct": true,
-            "raw_response": "C"
-          }
-        ]
-      },
-      {
-        "label": "impact-mapping/application-anchor",
-        "score": 1.0,
-        "results": [
-          {
-            "permutation": [
-              "A",
-              "B",
-              "C",
-              "D"
-            ],
-            "expected": "B",
-            "answer": "B",
-            "correct": true,
-            "raw_response": "B)"
-          },
-          {
-            "permutation": [
-              "B",
-              "C",
-              "D",
-              "A"
-            ],
-            "expected": "A",
-            "answer": "A",
-            "correct": true,
-            "raw_response": "A"
-          },
-          {
-            "permutation": [
-              "C",
-              "D",
-              "A",
-              "B"
-            ],
-            "expected": "D",
-            "answer": "D",
-            "correct": true,
-            "raw_response": "D"
-          },
-          {
-            "permutation": [
-              "D",
-              "A",
-              "B",
-              "C"
-            ],
-            "expected": "C",
-            "answer": "C",
-            "correct": true,
-            "raw_response": "C)"
           }
         ]
       },
       {
         "label": "impact-mapping/application-paraphrase",
-        "score": 1.0,
+        "score": 0.25,
         "results": [
           {
             "permutation": [
@@ -5048,9 +5048,9 @@
               "D"
             ],
             "expected": "B",
-            "answer": "B",
-            "correct": true,
-            "raw_response": "B"
+            "answer": "A",
+            "correct": false,
+            "raw_response": "A"
           },
           {
             "permutation": [
@@ -5060,9 +5060,9 @@
               "A"
             ],
             "expected": "A",
-            "answer": "A",
-            "correct": true,
-            "raw_response": "A"
+            "answer": "C",
+            "correct": false,
+            "raw_response": "C"
           },
           {
             "permutation": [
@@ -5084,15 +5084,15 @@
               "C"
             ],
             "expected": "C",
-            "answer": "C",
-            "correct": true,
-            "raw_response": "C"
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: Error code: 429 - {'object': 'error', 'message': 'Rate limit exceeded', 'type': 'rate_limited', 'param': None, 'code': '1300', 'raw_status_code': 429}"
           }
         ]
       },
       {
         "label": "invest/recognition",
-        "score": 1.0,
+        "score": 0.25,
         "results": [
           {
             "permutation": [
@@ -5114,9 +5114,9 @@
               "A"
             ],
             "expected": "A",
-            "answer": "A",
-            "correct": true,
-            "raw_response": "A"
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: Error code: 429 - {'object': 'error', 'message': 'Rate limit exceeded', 'type': 'rate_limited', 'param': None, 'code': '1300', 'raw_status_code': 429}"
           },
           {
             "permutation": [
@@ -5126,9 +5126,9 @@
               "B"
             ],
             "expected": "D",
-            "answer": "D",
-            "correct": true,
-            "raw_response": "D"
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: Error code: 429 - {'object': 'error', 'message': 'Rate limit exceeded', 'type': 'rate_limited', 'param': None, 'code': '1300', 'raw_status_code': 429}"
           },
           {
             "permutation": [
@@ -5138,9 +5138,9 @@
               "C"
             ],
             "expected": "C",
-            "answer": "C",
-            "correct": true,
-            "raw_response": "C"
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: Error code: 429 - {'object': 'error', 'message': 'Rate limit exceeded', 'type': 'rate_limited', 'param': None, 'code': '1300', 'raw_status_code': 429}"
           }
         ]
       },
@@ -5308,7 +5308,7 @@
       },
       {
         "label": "iso-25010/application-anchor",
-        "score": 0.75,
+        "score": 0.5,
         "results": [
           {
             "permutation": [
@@ -5330,9 +5330,9 @@
               "A"
             ],
             "expected": "A",
-            "answer": "B",
+            "answer": null,
             "correct": false,
-            "raw_response": "B"
+            "raw_response": "ERROR: Error code: 429 - {'object': 'error', 'message': 'Rate limit exceeded', 'type': 'rate_limited', 'param': None, 'code': '1300', 'raw_status_code': 429}"
           },
           {
             "permutation": [
@@ -5342,9 +5342,9 @@
               "B"
             ],
             "expected": "D",
-            "answer": "D",
-            "correct": true,
-            "raw_response": "D"
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: Error code: 429 - {'object': 'error', 'message': 'Rate limit exceeded', 'type': 'rate_limited', 'param': None, 'code': '1300', 'raw_status_code': 429}"
           },
           {
             "permutation": [
@@ -5384,9 +5384,9 @@
               "A"
             ],
             "expected": "A",
-            "answer": "B",
+            "answer": null,
             "correct": false,
-            "raw_response": "B"
+            "raw_response": "ERROR: Error code: 429 - {'object': 'error', 'message': 'Rate limit exceeded', 'type': 'rate_limited', 'param': None, 'code': '1300', 'raw_status_code': 429}"
           },
           {
             "permutation": [
@@ -5470,7 +5470,7 @@
       },
       {
         "label": "jobs-to-be-done/application-anchor",
-        "score": 1.0,
+        "score": 0.5,
         "results": [
           {
             "permutation": [
@@ -5492,9 +5492,9 @@
               "A"
             ],
             "expected": "A",
-            "answer": "A",
-            "correct": true,
-            "raw_response": "A"
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: Error code: 429 - {'object': 'error', 'message': 'Rate limit exceeded', 'type': 'rate_limited', 'param': None, 'code': '1300', 'raw_status_code': 429}"
           },
           {
             "permutation": [
@@ -5504,9 +5504,9 @@
               "B"
             ],
             "expected": "D",
-            "answer": "D",
-            "correct": true,
-            "raw_response": "D"
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: Error code: 429 - {'object': 'error', 'message': 'Rate limit exceeded', 'type': 'rate_limited', 'param': None, 'code': '1300', 'raw_status_code': 429}"
           },
           {
             "permutation": [
@@ -5578,61 +5578,7 @@
       },
       {
         "label": "lasr/recognition",
-        "score": 0.25,
-        "results": [
-          {
-            "permutation": [
-              "A",
-              "B",
-              "C",
-              "D"
-            ],
-            "expected": "B",
-            "answer": "A",
-            "correct": false,
-            "raw_response": "A"
-          },
-          {
-            "permutation": [
-              "B",
-              "C",
-              "D",
-              "A"
-            ],
-            "expected": "A",
-            "answer": "A",
-            "correct": true,
-            "raw_response": "A"
-          },
-          {
-            "permutation": [
-              "C",
-              "D",
-              "A",
-              "B"
-            ],
-            "expected": "D",
-            "answer": "C",
-            "correct": false,
-            "raw_response": "C"
-          },
-          {
-            "permutation": [
-              "D",
-              "A",
-              "B",
-              "C"
-            ],
-            "expected": "C",
-            "answer": "A",
-            "correct": false,
-            "raw_response": "A"
-          }
-        ]
-      },
-      {
-        "label": "lasr/application-anchor",
-        "score": 1.0,
+        "score": 0.5,
         "results": [
           {
             "permutation": [
@@ -5657,6 +5603,60 @@
             "answer": "A",
             "correct": true,
             "raw_response": "A"
+          },
+          {
+            "permutation": [
+              "C",
+              "D",
+              "A",
+              "B"
+            ],
+            "expected": "D",
+            "answer": "B",
+            "correct": false,
+            "raw_response": "B"
+          },
+          {
+            "permutation": [
+              "D",
+              "A",
+              "B",
+              "C"
+            ],
+            "expected": "C",
+            "answer": "A",
+            "correct": false,
+            "raw_response": "A"
+          }
+        ]
+      },
+      {
+        "label": "lasr/application-anchor",
+        "score": 0.5,
+        "results": [
+          {
+            "permutation": [
+              "A",
+              "B",
+              "C",
+              "D"
+            ],
+            "expected": "B",
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: Error code: 429 - {'object': 'error', 'message': 'Rate limit exceeded', 'type': 'rate_limited', 'param': None, 'code': '1300', 'raw_status_code': 429}"
+          },
+          {
+            "permutation": [
+              "B",
+              "C",
+              "D",
+              "A"
+            ],
+            "expected": "A",
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: Error code: 429 - {'object': 'error', 'message': 'Rate limit exceeded', 'type': 'rate_limited', 'param': None, 'code': '1300', 'raw_status_code': 429}"
           },
           {
             "permutation": [
@@ -5680,13 +5680,13 @@
             "expected": "C",
             "answer": "C",
             "correct": true,
-            "raw_response": "C)"
+            "raw_response": "C"
           }
         ]
       },
       {
         "label": "lasr/application-paraphrase",
-        "score": 1.0,
+        "score": 0.75,
         "results": [
           {
             "permutation": [
@@ -5696,9 +5696,9 @@
               "D"
             ],
             "expected": "B",
-            "answer": "B",
-            "correct": true,
-            "raw_response": "B"
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: Error code: 429 - {'object': 'error', 'message': 'Rate limit exceeded', 'type': 'rate_limited', 'param': None, 'code': '1300', 'raw_status_code': 429}"
           },
           {
             "permutation": [
@@ -5848,7 +5848,7 @@
       },
       {
         "label": "linddun/application-paraphrase",
-        "score": 1.0,
+        "score": 0.5,
         "results": [
           {
             "permutation": [
@@ -5870,9 +5870,9 @@
               "A"
             ],
             "expected": "A",
-            "answer": "A",
-            "correct": true,
-            "raw_response": "A"
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: Error code: 429 - {'object': 'error', 'message': 'Rate limit exceeded', 'type': 'rate_limited', 'param': None, 'code': '1300', 'raw_status_code': 429}"
           },
           {
             "permutation": [
@@ -5894,15 +5894,15 @@
               "C"
             ],
             "expected": "C",
-            "answer": "C",
-            "correct": true,
-            "raw_response": "C"
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: Error code: 429 - {'object': 'error', 'message': 'Rate limit exceeded', 'type': 'rate_limited', 'param': None, 'code': '1300', 'raw_status_code': 429}"
           }
         ]
       },
       {
         "label": "llm-evaluations/recognition",
-        "score": 1.0,
+        "score": 0.75,
         "results": [
           {
             "permutation": [
@@ -5924,9 +5924,9 @@
               "A"
             ],
             "expected": "A",
-            "answer": "A",
-            "correct": true,
-            "raw_response": "A"
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: Error code: 429 - {'object': 'error', 'message': 'Rate limit exceeded', 'type': 'rate_limited', 'param': None, 'code': '1300', 'raw_status_code': 429}"
           },
           {
             "permutation": [
@@ -5956,7 +5956,7 @@
       },
       {
         "label": "llm-evaluations/application-anchor",
-        "score": 1.0,
+        "score": 0.75,
         "results": [
           {
             "permutation": [
@@ -5990,9 +5990,9 @@
               "B"
             ],
             "expected": "D",
-            "answer": "D",
-            "correct": true,
-            "raw_response": "D"
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: Error code: 429 - {'object': 'error', 'message': 'Rate limit exceeded', 'type': 'rate_limited', 'param': None, 'code': '1300', 'raw_status_code': 429}"
           },
           {
             "permutation": [
@@ -6064,7 +6064,7 @@
       },
       {
         "label": "madr/recognition",
-        "score": 1.0,
+        "score": 0.75,
         "results": [
           {
             "permutation": [
@@ -6086,9 +6086,9 @@
               "A"
             ],
             "expected": "A",
-            "answer": "A",
-            "correct": true,
-            "raw_response": "A"
+            "answer": "B",
+            "correct": false,
+            "raw_response": "B"
           },
           {
             "permutation": [
@@ -6118,7 +6118,7 @@
       },
       {
         "label": "madr/application-anchor",
-        "score": 1.0,
+        "score": 0.5,
         "results": [
           {
             "permutation": [
@@ -6128,9 +6128,9 @@
               "D"
             ],
             "expected": "B",
-            "answer": "B",
-            "correct": true,
-            "raw_response": "B"
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: Error code: 429 - {'object': 'error', 'message': 'Rate limit exceeded', 'type': 'rate_limited', 'param': None, 'code': '1300', 'raw_status_code': 429}"
           },
           {
             "permutation": [
@@ -6140,9 +6140,9 @@
               "A"
             ],
             "expected": "A",
-            "answer": "A",
-            "correct": true,
-            "raw_response": "A)"
+            "answer": "B",
+            "correct": false,
+            "raw_response": "B"
           },
           {
             "permutation": [
@@ -6154,7 +6154,7 @@
             "expected": "D",
             "answer": "D",
             "correct": true,
-            "raw_response": "D)"
+            "raw_response": "D"
           },
           {
             "permutation": [
@@ -6172,7 +6172,7 @@
       },
       {
         "label": "madr/application-paraphrase",
-        "score": 1.0,
+        "score": 0.75,
         "results": [
           {
             "permutation": [
@@ -6194,9 +6194,9 @@
               "A"
             ],
             "expected": "A",
-            "answer": "A",
-            "correct": true,
-            "raw_response": "A"
+            "answer": "B",
+            "correct": false,
+            "raw_response": "B"
           },
           {
             "permutation": [
@@ -6208,7 +6208,7 @@
             "expected": "D",
             "answer": "D",
             "correct": true,
-            "raw_response": "D)"
+            "raw_response": "D"
           },
           {
             "permutation": [
@@ -6280,7 +6280,7 @@
       },
       {
         "label": "mece/application-anchor",
-        "score": 1.0,
+        "score": 0.5,
         "results": [
           {
             "permutation": [
@@ -6290,9 +6290,9 @@
               "D"
             ],
             "expected": "B",
-            "answer": "B",
-            "correct": true,
-            "raw_response": "B"
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: Error code: 429 - {'object': 'error', 'message': 'Rate limit exceeded', 'type': 'rate_limited', 'param': None, 'code': '1300', 'raw_status_code': 429}"
           },
           {
             "permutation": [
@@ -6314,9 +6314,9 @@
               "B"
             ],
             "expected": "D",
-            "answer": "D",
-            "correct": true,
-            "raw_response": "D"
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: Error code: 429 - {'object': 'error', 'message': 'Rate limit exceeded', 'type': 'rate_limited', 'param': None, 'code': '1300', 'raw_status_code': 429}"
           },
           {
             "permutation": [
@@ -6442,7 +6442,7 @@
       },
       {
         "label": "morphological-box/application-anchor",
-        "score": 1.0,
+        "score": 0.25,
         "results": [
           {
             "permutation": [
@@ -6464,9 +6464,9 @@
               "A"
             ],
             "expected": "A",
-            "answer": "A",
-            "correct": true,
-            "raw_response": "A"
+            "answer": "B",
+            "correct": false,
+            "raw_response": "B"
           },
           {
             "permutation": [
@@ -6476,9 +6476,9 @@
               "B"
             ],
             "expected": "D",
-            "answer": "D",
-            "correct": true,
-            "raw_response": "D"
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: Error code: 429 - {'object': 'error', 'message': 'Rate limit exceeded', 'type': 'rate_limited', 'param': None, 'code': '1300', 'raw_status_code': 429}"
           },
           {
             "permutation": [
@@ -6488,15 +6488,15 @@
               "C"
             ],
             "expected": "C",
-            "answer": "C",
-            "correct": true,
-            "raw_response": "C"
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: Error code: 429 - {'object': 'error', 'message': 'Rate limit exceeded', 'type': 'rate_limited', 'param': None, 'code': '1300', 'raw_status_code': 429}"
           }
         ]
       },
       {
         "label": "morphological-box/application-paraphrase",
-        "score": 1.0,
+        "score": 0.75,
         "results": [
           {
             "permutation": [
@@ -6518,9 +6518,9 @@
               "A"
             ],
             "expected": "A",
-            "answer": "A",
-            "correct": true,
-            "raw_response": "A"
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: Error code: 429 - {'object': 'error', 'message': 'Rate limit exceeded', 'type': 'rate_limited', 'param': None, 'code': '1300', 'raw_status_code': 429}"
           },
           {
             "permutation": [
@@ -6550,7 +6550,7 @@
       },
       {
         "label": "moscow/recognition",
-        "score": 1.0,
+        "score": 0.75,
         "results": [
           {
             "permutation": [
@@ -6584,9 +6584,9 @@
               "B"
             ],
             "expected": "D",
-            "answer": "D",
-            "correct": true,
-            "raw_response": "D"
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: Error code: 429 - {'object': 'error', 'message': 'Rate limit exceeded', 'type': 'rate_limited', 'param': None, 'code': '1300', 'raw_status_code': 429}"
           },
           {
             "permutation": [
@@ -6658,7 +6658,7 @@
       },
       {
         "label": "moscow/application-paraphrase",
-        "score": 0.25,
+        "score": 0.5,
         "results": [
           {
             "permutation": [
@@ -6668,9 +6668,9 @@
               "D"
             ],
             "expected": "B",
-            "answer": "A",
+            "answer": null,
             "correct": false,
-            "raw_response": "A"
+            "raw_response": "ERROR: Error code: 429 - {'object': 'error', 'message': 'Rate limit exceeded', 'type': 'rate_limited', 'param': None, 'code': '1300', 'raw_status_code': 429}"
           },
           {
             "permutation": [
@@ -6680,9 +6680,9 @@
               "A"
             ],
             "expected": "A",
-            "answer": "D",
-            "correct": false,
-            "raw_response": "D"
+            "answer": "A",
+            "correct": true,
+            "raw_response": "A"
           },
           {
             "permutation": [
@@ -6692,9 +6692,9 @@
               "B"
             ],
             "expected": "D",
-            "answer": "D",
-            "correct": true,
-            "raw_response": "D"
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: Error code: 429 - {'object': 'error', 'message': 'Rate limit exceeded', 'type': 'rate_limited', 'param': None, 'code': '1300', 'raw_status_code': 429}"
           },
           {
             "permutation": [
@@ -6704,15 +6704,15 @@
               "C"
             ],
             "expected": "C",
-            "answer": "B",
-            "correct": false,
-            "raw_response": "B"
+            "answer": "C",
+            "correct": true,
+            "raw_response": "C"
           }
         ]
       },
       {
         "label": "mutation-testing/recognition",
-        "score": 1.0,
+        "score": 0.75,
         "results": [
           {
             "permutation": [
@@ -6734,9 +6734,9 @@
               "A"
             ],
             "expected": "A",
-            "answer": "A",
-            "correct": true,
-            "raw_response": "A"
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: Error code: 429 - {'object': 'error', 'message': 'Rate limit exceeded', 'type': 'rate_limited', 'param': None, 'code': '1300', 'raw_status_code': 429}"
           },
           {
             "permutation": [
@@ -6766,7 +6766,7 @@
       },
       {
         "label": "mutation-testing/application-anchor",
-        "score": 1.0,
+        "score": 0.75,
         "results": [
           {
             "permutation": [
@@ -6800,9 +6800,9 @@
               "B"
             ],
             "expected": "D",
-            "answer": "D",
-            "correct": true,
-            "raw_response": "D"
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: Error code: 429 - {'object': 'error', 'message': 'Rate limit exceeded', 'type': 'rate_limited', 'param': None, 'code': '1300', 'raw_status_code': 429}"
           },
           {
             "permutation": [
@@ -6820,7 +6820,7 @@
       },
       {
         "label": "mutation-testing/application-paraphrase",
-        "score": 1.0,
+        "score": 0.25,
         "results": [
           {
             "permutation": [
@@ -6842,9 +6842,9 @@
               "A"
             ],
             "expected": "A",
-            "answer": "A",
-            "correct": true,
-            "raw_response": "A"
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: Error code: 429 - {'object': 'error', 'message': 'Rate limit exceeded', 'type': 'rate_limited', 'param': None, 'code': '1300', 'raw_status_code': 429}"
           },
           {
             "permutation": [
@@ -6852,6 +6852,36 @@
               "D",
               "A",
               "B"
+            ],
+            "expected": "D",
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: Error code: 429 - {'object': 'error', 'message': 'Rate limit exceeded', 'type': 'rate_limited', 'param': None, 'code': '1300', 'raw_status_code': 429}"
+          },
+          {
+            "permutation": [
+              "D",
+              "A",
+              "B",
+              "C"
+            ],
+            "expected": "C",
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: Error code: 429 - {'object': 'error', 'message': 'Rate limit exceeded', 'type': 'rate_limited', 'param': None, 'code': '1300', 'raw_status_code': 429}"
+          }
+        ]
+      },
+      {
+        "label": "negative-control/recognition",
+        "score": 0.5,
+        "results": [
+          {
+            "permutation": [
+              "A",
+              "B",
+              "C",
+              "D"
             ],
             "expected": "D",
             "answer": "D",
@@ -6860,36 +6890,6 @@
           },
           {
             "permutation": [
-              "D",
-              "A",
-              "B",
-              "C"
-            ],
-            "expected": "C",
-            "answer": "C",
-            "correct": true,
-            "raw_response": "C"
-          }
-        ]
-      },
-      {
-        "label": "negative-control/recognition",
-        "score": 0.75,
-        "results": [
-          {
-            "permutation": [
-              "A",
-              "B",
-              "C",
-              "D"
-            ],
-            "expected": "D",
-            "answer": "B",
-            "correct": false,
-            "raw_response": "B"
-          },
-          {
-            "permutation": [
               "B",
               "C",
               "D",
@@ -6908,9 +6908,9 @@
               "B"
             ],
             "expected": "B",
-            "answer": "B",
-            "correct": true,
-            "raw_response": "B"
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: Error code: 429 - {'object': 'error', 'message': 'Rate limit exceeded', 'type': 'rate_limited', 'param': None, 'code': '1300', 'raw_status_code': 429}"
           },
           {
             "permutation": [
@@ -6920,9 +6920,9 @@
               "C"
             ],
             "expected": "A",
-            "answer": "A",
-            "correct": true,
-            "raw_response": "A"
+            "answer": "B",
+            "correct": false,
+            "raw_response": "B"
           }
         ]
       },
@@ -6982,7 +6982,7 @@
       },
       {
         "label": "nelson-rules/application-anchor",
-        "score": 1.0,
+        "score": 0.5,
         "results": [
           {
             "permutation": [
@@ -6992,9 +6992,9 @@
               "D"
             ],
             "expected": "B",
-            "answer": "B",
-            "correct": true,
-            "raw_response": "B"
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: Error code: 429 - {'object': 'error', 'message': 'Rate limit exceeded', 'type': 'rate_limited', 'param': None, 'code': '1300', 'raw_status_code': 429}"
           },
           {
             "permutation": [
@@ -7004,9 +7004,9 @@
               "A"
             ],
             "expected": "A",
-            "answer": "A",
-            "correct": true,
-            "raw_response": "A"
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: Error code: 429 - {'object': 'error', 'message': 'Rate limit exceeded', 'type': 'rate_limited', 'param': None, 'code': '1300', 'raw_status_code': 429}"
           },
           {
             "permutation": [
@@ -7090,7 +7090,7 @@
       },
       {
         "label": "owasp-top-10/recognition",
-        "score": 1.0,
+        "score": 0.75,
         "results": [
           {
             "permutation": [
@@ -7112,9 +7112,9 @@
               "A"
             ],
             "expected": "D",
-            "answer": "D",
-            "correct": true,
-            "raw_response": "D"
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: Error code: 429 - {'object': 'error', 'message': 'Rate limit exceeded', 'type': 'rate_limited', 'param': None, 'code': '1300', 'raw_status_code': 429}"
           },
           {
             "permutation": [
@@ -7144,7 +7144,7 @@
       },
       {
         "label": "owasp-top-10/application-anchor",
-        "score": 1.0,
+        "score": 0.75,
         "results": [
           {
             "permutation": [
@@ -7166,9 +7166,9 @@
               "A"
             ],
             "expected": "A",
-            "answer": "A",
-            "correct": true,
-            "raw_response": "A"
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: Error code: 429 - {'object': 'error', 'message': 'Rate limit exceeded', 'type': 'rate_limited', 'param': None, 'code': '1300', 'raw_status_code': 429}"
           },
           {
             "permutation": [
@@ -7198,7 +7198,7 @@
       },
       {
         "label": "owasp-top-10/application-paraphrase",
-        "score": 1.0,
+        "score": 0.5,
         "results": [
           {
             "permutation": [
@@ -7208,9 +7208,9 @@
               "D"
             ],
             "expected": "B",
-            "answer": "B",
-            "correct": true,
-            "raw_response": "B"
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: Error code: 429 - {'object': 'error', 'message': 'Rate limit exceeded', 'type': 'rate_limited', 'param': None, 'code': '1300', 'raw_status_code': 429}"
           },
           {
             "permutation": [
@@ -7220,9 +7220,9 @@
               "A"
             ],
             "expected": "A",
-            "answer": "A",
-            "correct": true,
-            "raw_response": "A"
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: Error code: 429 - {'object': 'error', 'message': 'Rate limit exceeded', 'type': 'rate_limited', 'param': None, 'code': '1300', 'raw_status_code': 429}"
           },
           {
             "permutation": [
@@ -7252,7 +7252,7 @@
       },
       {
         "label": "plain-english-strunk-white/recognition",
-        "score": 1.0,
+        "score": 0.5,
         "results": [
           {
             "permutation": [
@@ -7274,9 +7274,9 @@
               "A"
             ],
             "expected": "A",
-            "answer": "A",
-            "correct": true,
-            "raw_response": "A"
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: Error code: 429 - {'object': 'error', 'message': 'Rate limit exceeded', 'type': 'rate_limited', 'param': None, 'code': '1300', 'raw_status_code': 429}"
           },
           {
             "permutation": [
@@ -7286,9 +7286,9 @@
               "B"
             ],
             "expected": "D",
-            "answer": "D",
-            "correct": true,
-            "raw_response": "D"
+            "answer": "A",
+            "correct": false,
+            "raw_response": "A"
           },
           {
             "permutation": [
@@ -7306,7 +7306,7 @@
       },
       {
         "label": "plain-english-strunk-white/application-anchor",
-        "score": 1.0,
+        "score": 0.5,
         "results": [
           {
             "permutation": [
@@ -7340,9 +7340,9 @@
               "B"
             ],
             "expected": "D",
-            "answer": "D",
-            "correct": true,
-            "raw_response": "D"
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: Error code: 429 - {'object': 'error', 'message': 'Rate limit exceeded', 'type': 'rate_limited', 'param': None, 'code': '1300', 'raw_status_code': 429}"
           },
           {
             "permutation": [
@@ -7352,15 +7352,15 @@
               "C"
             ],
             "expected": "C",
-            "answer": "C",
-            "correct": true,
-            "raw_response": "C"
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: Error code: 429 - {'object': 'error', 'message': 'Rate limit exceeded', 'type': 'rate_limited', 'param': None, 'code': '1300', 'raw_status_code': 429}"
           }
         ]
       },
       {
         "label": "plain-english-strunk-white/application-paraphrase",
-        "score": 1.0,
+        "score": 0.75,
         "results": [
           {
             "permutation": [
@@ -7394,9 +7394,9 @@
               "B"
             ],
             "expected": "D",
-            "answer": "D",
-            "correct": true,
-            "raw_response": "D"
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: Error code: 429 - {'object': 'error', 'message': 'Rate limit exceeded', 'type': 'rate_limited', 'param': None, 'code': '1300', 'raw_status_code': 429}"
           },
           {
             "permutation": [
@@ -7414,7 +7414,7 @@
       },
       {
         "label": "prd/recognition",
-        "score": 0.0,
+        "score": 0.25,
         "results": [
           {
             "permutation": [
@@ -7424,9 +7424,9 @@
               "D"
             ],
             "expected": "B",
-            "answer": "D",
+            "answer": null,
             "correct": false,
-            "raw_response": "D"
+            "raw_response": "ERROR: Error code: 429 - {'object': 'error', 'message': 'Rate limit exceeded', 'type': 'rate_limited', 'param': None, 'code': '1300', 'raw_status_code': 429}"
           },
           {
             "permutation": [
@@ -7436,9 +7436,9 @@
               "A"
             ],
             "expected": "A",
-            "answer": "C",
-            "correct": false,
-            "raw_response": "C"
+            "answer": "A",
+            "correct": true,
+            "raw_response": "A"
           },
           {
             "permutation": [
@@ -7468,7 +7468,7 @@
       },
       {
         "label": "prd/application-anchor",
-        "score": 1.0,
+        "score": 0.5,
         "results": [
           {
             "permutation": [
@@ -7490,9 +7490,9 @@
               "A"
             ],
             "expected": "A",
-            "answer": "A",
-            "correct": true,
-            "raw_response": "A"
+            "answer": "B",
+            "correct": false,
+            "raw_response": "B"
           },
           {
             "permutation": [
@@ -7502,9 +7502,9 @@
               "B"
             ],
             "expected": "D",
-            "answer": "D",
-            "correct": true,
-            "raw_response": "D"
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: Error code: 429 - {'object': 'error', 'message': 'Rate limit exceeded', 'type': 'rate_limited', 'param': None, 'code': '1300', 'raw_status_code': 429}"
           },
           {
             "permutation": [
@@ -7576,7 +7576,7 @@
       },
       {
         "label": "problem-space-nvc/recognition",
-        "score": 1.0,
+        "score": 0.75,
         "results": [
           {
             "permutation": [
@@ -7622,15 +7622,15 @@
               "C"
             ],
             "expected": "C",
-            "answer": "C",
-            "correct": true,
-            "raw_response": "C"
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: Error code: 429 - {'object': 'error', 'message': 'Rate limit exceeded', 'type': 'rate_limited', 'param': None, 'code': '1300', 'raw_status_code': 429}"
           }
         ]
       },
       {
         "label": "problem-space-nvc/application-anchor",
-        "score": 0.75,
+        "score": 0.25,
         "results": [
           {
             "permutation": [
@@ -7640,9 +7640,9 @@
               "D"
             ],
             "expected": "B",
-            "answer": "B",
-            "correct": true,
-            "raw_response": "B"
+            "answer": "D",
+            "correct": false,
+            "raw_response": "D"
           },
           {
             "permutation": [
@@ -7676,15 +7676,15 @@
               "C"
             ],
             "expected": "C",
-            "answer": "C",
-            "correct": true,
-            "raw_response": "C"
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: Error code: 429 - {'object': 'error', 'message': 'Rate limit exceeded', 'type': 'rate_limited', 'param': None, 'code': '1300', 'raw_status_code': 429}"
           }
         ]
       },
       {
         "label": "problem-space-nvc/application-paraphrase",
-        "score": 0.75,
+        "score": 0.5,
         "results": [
           {
             "permutation": [
@@ -7718,9 +7718,9 @@
               "B"
             ],
             "expected": "D",
-            "answer": "D",
-            "correct": true,
-            "raw_response": "D"
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: Error code: 429 - {'object': 'error', 'message': 'Rate limit exceeded', 'type': 'rate_limited', 'param': None, 'code': '1300', 'raw_status_code': 429}"
           },
           {
             "permutation": [
@@ -7738,7 +7738,7 @@
       },
       {
         "label": "property-based-testing/recognition",
-        "score": 1.0,
+        "score": 0.75,
         "results": [
           {
             "permutation": [
@@ -7784,15 +7784,15 @@
               "C"
             ],
             "expected": "C",
-            "answer": "C",
-            "correct": true,
-            "raw_response": "C"
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: Error code: 429 - {'object': 'error', 'message': 'Rate limit exceeded', 'type': 'rate_limited', 'param': None, 'code': '1300', 'raw_status_code': 429}"
           }
         ]
       },
       {
         "label": "property-based-testing/application-anchor",
-        "score": 1.0,
+        "score": 0.25,
         "results": [
           {
             "permutation": [
@@ -7802,9 +7802,9 @@
               "D"
             ],
             "expected": "B",
-            "answer": "B",
-            "correct": true,
-            "raw_response": "B"
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: Error code: 429 - {'object': 'error', 'message': 'Rate limit exceeded', 'type': 'rate_limited', 'param': None, 'code': '1300', 'raw_status_code': 429}"
           },
           {
             "permutation": [
@@ -7814,9 +7814,9 @@
               "A"
             ],
             "expected": "A",
-            "answer": "A",
-            "correct": true,
-            "raw_response": "A"
+            "answer": "B",
+            "correct": false,
+            "raw_response": "B"
           },
           {
             "permutation": [
@@ -7826,9 +7826,9 @@
               "B"
             ],
             "expected": "D",
-            "answer": "D",
-            "correct": true,
-            "raw_response": "D"
+            "answer": "A",
+            "correct": false,
+            "raw_response": "A"
           },
           {
             "permutation": [
@@ -7954,7 +7954,7 @@
       },
       {
         "label": "pyramid-principle/application-anchor",
-        "score": 1.0,
+        "score": 0.75,
         "results": [
           {
             "permutation": [
@@ -7988,9 +7988,9 @@
               "B"
             ],
             "expected": "D",
-            "answer": "D",
-            "correct": true,
-            "raw_response": "D"
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: Error code: 429 - {'object': 'error', 'message': 'Rate limit exceeded', 'type': 'rate_limited', 'param': None, 'code': '1300', 'raw_status_code': 429}"
           },
           {
             "permutation": [
@@ -8008,7 +8008,7 @@
       },
       {
         "label": "pyramid-principle/application-paraphrase",
-        "score": 1.0,
+        "score": 0.75,
         "results": [
           {
             "permutation": [
@@ -8042,9 +8042,9 @@
               "B"
             ],
             "expected": "D",
-            "answer": "D",
-            "correct": true,
-            "raw_response": "D"
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: Error code: 429 - {'object': 'error', 'message': 'Rate limit exceeded', 'type': 'rate_limited', 'param': None, 'code': '1300', 'raw_status_code': 429}"
           },
           {
             "permutation": [
@@ -8072,9 +8072,9 @@
               "D"
             ],
             "expected": "X",
-            "answer": null,
+            "answer": "D",
             "correct": false,
-            "raw_response": "None of the above options is correct, but the"
+            "raw_response": "D"
           },
           {
             "permutation": [
@@ -8084,9 +8084,9 @@
               "A"
             ],
             "expected": "X",
-            "answer": null,
+            "answer": "D",
             "correct": false,
-            "raw_response": "None of the options provided is correct, but the"
+            "raw_response": "D"
           },
           {
             "permutation": [
@@ -8096,9 +8096,9 @@
               "B"
             ],
             "expected": "X",
-            "answer": null,
+            "answer": "A",
             "correct": false,
-            "raw_response": "None of the options provided is correct, but the"
+            "raw_response": "A"
           },
           {
             "permutation": [
@@ -8108,9 +8108,9 @@
               "C"
             ],
             "expected": "X",
-            "answer": "C",
+            "answer": null,
             "correct": false,
-            "raw_response": "C"
+            "raw_response": "ERROR: Error code: 429 - {'object': 'error', 'message': 'Rate limit exceeded', 'type': 'rate_limited', 'param': None, 'code': '1300', 'raw_status_code': 429}"
           }
         ]
       },
@@ -8170,114 +8170,6 @@
       },
       {
         "label": "semantic-versioning/application-anchor",
-        "score": 0.5,
-        "results": [
-          {
-            "permutation": [
-              "A",
-              "B",
-              "C",
-              "D"
-            ],
-            "expected": "B",
-            "answer": "C",
-            "correct": false,
-            "raw_response": "C"
-          },
-          {
-            "permutation": [
-              "B",
-              "C",
-              "D",
-              "A"
-            ],
-            "expected": "A",
-            "answer": "A",
-            "correct": true,
-            "raw_response": "A"
-          },
-          {
-            "permutation": [
-              "C",
-              "D",
-              "A",
-              "B"
-            ],
-            "expected": "D",
-            "answer": "D",
-            "correct": true,
-            "raw_response": "D"
-          },
-          {
-            "permutation": [
-              "D",
-              "A",
-              "B",
-              "C"
-            ],
-            "expected": "C",
-            "answer": "D",
-            "correct": false,
-            "raw_response": "D"
-          }
-        ]
-      },
-      {
-        "label": "semantic-versioning/application-paraphrase",
-        "score": 0.75,
-        "results": [
-          {
-            "permutation": [
-              "A",
-              "B",
-              "C",
-              "D"
-            ],
-            "expected": "B",
-            "answer": "B",
-            "correct": true,
-            "raw_response": "B"
-          },
-          {
-            "permutation": [
-              "B",
-              "C",
-              "D",
-              "A"
-            ],
-            "expected": "A",
-            "answer": "A",
-            "correct": true,
-            "raw_response": "A"
-          },
-          {
-            "permutation": [
-              "C",
-              "D",
-              "A",
-              "B"
-            ],
-            "expected": "D",
-            "answer": "D",
-            "correct": true,
-            "raw_response": "D"
-          },
-          {
-            "permutation": [
-              "D",
-              "A",
-              "B",
-              "C"
-            ],
-            "expected": "C",
-            "answer": "D",
-            "correct": false,
-            "raw_response": "D"
-          }
-        ]
-      },
-      {
-        "label": "socratic-method/recognition",
         "score": 1.0,
         "results": [
           {
@@ -8327,6 +8219,114 @@
             "answer": "C",
             "correct": true,
             "raw_response": "C"
+          }
+        ]
+      },
+      {
+        "label": "semantic-versioning/application-paraphrase",
+        "score": 0.75,
+        "results": [
+          {
+            "permutation": [
+              "A",
+              "B",
+              "C",
+              "D"
+            ],
+            "expected": "B",
+            "answer": "B",
+            "correct": true,
+            "raw_response": "B"
+          },
+          {
+            "permutation": [
+              "B",
+              "C",
+              "D",
+              "A"
+            ],
+            "expected": "A",
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: Error code: 429 - {'object': 'error', 'message': 'Rate limit exceeded', 'type': 'rate_limited', 'param': None, 'code': '1300', 'raw_status_code': 429}"
+          },
+          {
+            "permutation": [
+              "C",
+              "D",
+              "A",
+              "B"
+            ],
+            "expected": "D",
+            "answer": "D",
+            "correct": true,
+            "raw_response": "D"
+          },
+          {
+            "permutation": [
+              "D",
+              "A",
+              "B",
+              "C"
+            ],
+            "expected": "C",
+            "answer": "C",
+            "correct": true,
+            "raw_response": "C"
+          }
+        ]
+      },
+      {
+        "label": "socratic-method/recognition",
+        "score": 0.25,
+        "results": [
+          {
+            "permutation": [
+              "A",
+              "B",
+              "C",
+              "D"
+            ],
+            "expected": "B",
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: Error code: 429 - {'object': 'error', 'message': 'Rate limit exceeded', 'type': 'rate_limited', 'param': None, 'code': '1300', 'raw_status_code': 429}"
+          },
+          {
+            "permutation": [
+              "B",
+              "C",
+              "D",
+              "A"
+            ],
+            "expected": "A",
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: Error code: 429 - {'object': 'error', 'message': 'Rate limit exceeded', 'type': 'rate_limited', 'param': None, 'code': '1300', 'raw_status_code': 429}"
+          },
+          {
+            "permutation": [
+              "C",
+              "D",
+              "A",
+              "B"
+            ],
+            "expected": "D",
+            "answer": "D",
+            "correct": true,
+            "raw_response": "D"
+          },
+          {
+            "permutation": [
+              "D",
+              "A",
+              "B",
+              "C"
+            ],
+            "expected": "C",
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: Error code: 429 - {'object': 'error', 'message': 'Rate limit exceeded', 'type': 'rate_limited', 'param': None, 'code': '1300', 'raw_status_code': 429}"
           }
         ]
       },
@@ -8386,7 +8386,7 @@
       },
       {
         "label": "socratic-method/application-paraphrase",
-        "score": 1.0,
+        "score": 0.75,
         "results": [
           {
             "permutation": [
@@ -8408,9 +8408,9 @@
               "A"
             ],
             "expected": "A",
-            "answer": "A",
-            "correct": true,
-            "raw_response": "A"
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: Error code: 429 - {'object': 'error', 'message': 'Rate limit exceeded', 'type': 'rate_limited', 'param': None, 'code': '1300', 'raw_status_code': 429}"
           },
           {
             "permutation": [
@@ -8422,7 +8422,7 @@
             "expected": "D",
             "answer": "D",
             "correct": true,
-            "raw_response": "D)"
+            "raw_response": "D"
           },
           {
             "permutation": [
@@ -8494,7 +8494,7 @@
       },
       {
         "label": "sota/application-anchor",
-        "score": 1.0,
+        "score": 0.5,
         "results": [
           {
             "permutation": [
@@ -8516,9 +8516,9 @@
               "A"
             ],
             "expected": "A",
-            "answer": "A",
-            "correct": true,
-            "raw_response": "A"
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: Error code: 429 - {'object': 'error', 'message': 'Rate limit exceeded', 'type': 'rate_limited', 'param': None, 'code': '1300', 'raw_status_code': 429}"
           },
           {
             "permutation": [
@@ -8540,15 +8540,15 @@
               "C"
             ],
             "expected": "C",
-            "answer": "C",
-            "correct": true,
-            "raw_response": "C"
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: Error code: 429 - {'object': 'error', 'message': 'Rate limit exceeded', 'type': 'rate_limited', 'param': None, 'code': '1300', 'raw_status_code': 429}"
           }
         ]
       },
       {
         "label": "sota/application-paraphrase",
-        "score": 1.0,
+        "score": 0.75,
         "results": [
           {
             "permutation": [
@@ -8582,9 +8582,9 @@
               "B"
             ],
             "expected": "D",
-            "answer": "D",
-            "correct": true,
-            "raw_response": "D"
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: Error code: 429 - {'object': 'error', 'message': 'Rate limit exceeded', 'type': 'rate_limited', 'param': None, 'code': '1300', 'raw_status_code': 429}"
           },
           {
             "permutation": [
@@ -8602,7 +8602,7 @@
       },
       {
         "label": "spc/recognition",
-        "score": 1.0,
+        "score": 0.5,
         "results": [
           {
             "permutation": [
@@ -8636,9 +8636,9 @@
               "B"
             ],
             "expected": "D",
-            "answer": "D",
-            "correct": true,
-            "raw_response": "D"
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: Error code: 429 - {'object': 'error', 'message': 'Rate limit exceeded', 'type': 'rate_limited', 'param': None, 'code': '1300', 'raw_status_code': 429}"
           },
           {
             "permutation": [
@@ -8648,15 +8648,15 @@
               "C"
             ],
             "expected": "C",
-            "answer": "C",
-            "correct": true,
-            "raw_response": "C"
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: Error code: 429 - {'object': 'error', 'message': 'Rate limit exceeded', 'type': 'rate_limited', 'param': None, 'code': '1300', 'raw_status_code': 429}"
           }
         ]
       },
       {
         "label": "spc/application-anchor",
-        "score": 1.0,
+        "score": 0.25,
         "results": [
           {
             "permutation": [
@@ -8666,9 +8666,9 @@
               "D"
             ],
             "expected": "B",
-            "answer": "B",
-            "correct": true,
-            "raw_response": "B"
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: Error code: 429 - {'object': 'error', 'message': 'Rate limit exceeded', 'type': 'rate_limited', 'param': None, 'code': '1300', 'raw_status_code': 429}"
           },
           {
             "permutation": [
@@ -8678,9 +8678,9 @@
               "A"
             ],
             "expected": "A",
-            "answer": "A",
-            "correct": true,
-            "raw_response": "A"
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: Error code: 429 - {'object': 'error', 'message': 'Rate limit exceeded', 'type': 'rate_limited', 'param': None, 'code': '1300', 'raw_status_code': 429}"
           },
           {
             "permutation": [
@@ -8690,9 +8690,9 @@
               "B"
             ],
             "expected": "D",
-            "answer": "D",
-            "correct": true,
-            "raw_response": "D"
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: Error code: 429 - {'object': 'error', 'message': 'Rate limit exceeded', 'type': 'rate_limited', 'param': None, 'code': '1300', 'raw_status_code': 429}"
           },
           {
             "permutation": [
@@ -8710,7 +8710,7 @@
       },
       {
         "label": "spc/application-paraphrase",
-        "score": 1.0,
+        "score": 0.75,
         "results": [
           {
             "permutation": [
@@ -8744,9 +8744,9 @@
               "B"
             ],
             "expected": "D",
-            "answer": "D",
-            "correct": true,
-            "raw_response": "D"
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: Error code: 429 - {'object': 'error', 'message': 'Rate limit exceeded', 'type': 'rate_limited', 'param': None, 'code': '1300', 'raw_status_code': 429}"
           },
           {
             "permutation": [
@@ -8764,7 +8764,7 @@
       },
       {
         "label": "stride/recognition",
-        "score": 1.0,
+        "score": 0.5,
         "results": [
           {
             "permutation": [
@@ -8786,9 +8786,9 @@
               "A"
             ],
             "expected": "A",
-            "answer": "A",
-            "correct": true,
-            "raw_response": "A"
+            "answer": "B",
+            "correct": false,
+            "raw_response": "B"
           },
           {
             "permutation": [
@@ -8798,9 +8798,9 @@
               "B"
             ],
             "expected": "D",
-            "answer": "D",
-            "correct": true,
-            "raw_response": "None of the options perfectly describe the **STRIDE"
+            "answer": "A",
+            "correct": false,
+            "raw_response": "A"
           },
           {
             "permutation": [
@@ -8818,7 +8818,7 @@
       },
       {
         "label": "stride/application-anchor",
-        "score": 1.0,
+        "score": 0.5,
         "results": [
           {
             "permutation": [
@@ -8828,9 +8828,9 @@
               "D"
             ],
             "expected": "B",
-            "answer": "B",
-            "correct": true,
-            "raw_response": "B"
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: Error code: 429 - {'object': 'error', 'message': 'Rate limit exceeded', 'type': 'rate_limited', 'param': None, 'code': '1300', 'raw_status_code': 429}"
           },
           {
             "permutation": [
@@ -8840,9 +8840,9 @@
               "A"
             ],
             "expected": "A",
-            "answer": "A",
-            "correct": true,
-            "raw_response": "A"
+            "answer": "C",
+            "correct": false,
+            "raw_response": "C"
           },
           {
             "permutation": [
@@ -8980,7 +8980,7 @@
       },
       {
         "label": "swot/application-anchor",
-        "score": 1.0,
+        "score": 0.25,
         "results": [
           {
             "permutation": [
@@ -8990,9 +8990,9 @@
               "D"
             ],
             "expected": "B",
-            "answer": "B",
-            "correct": true,
-            "raw_response": "B)"
+            "answer": "A",
+            "correct": false,
+            "raw_response": "A"
           },
           {
             "permutation": [
@@ -9004,7 +9004,7 @@
             "expected": "A",
             "answer": "A",
             "correct": true,
-            "raw_response": "A) SWOT Analysis\nB) Value Chain"
+            "raw_response": "A"
           },
           {
             "permutation": [
@@ -9014,9 +9014,9 @@
               "B"
             ],
             "expected": "D",
-            "answer": "D",
-            "correct": true,
-            "raw_response": "D)"
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: Error code: 429 - {'object': 'error', 'message': 'Rate limit exceeded', 'type': 'rate_limited', 'param': None, 'code': '1300', 'raw_status_code': 429}"
           },
           {
             "permutation": [
@@ -9026,15 +9026,15 @@
               "C"
             ],
             "expected": "C",
-            "answer": "C",
-            "correct": true,
-            "raw_response": "C)"
+            "answer": "A",
+            "correct": false,
+            "raw_response": "A"
           }
         ]
       },
       {
         "label": "swot/application-paraphrase",
-        "score": 1.0,
+        "score": 0.75,
         "results": [
           {
             "permutation": [
@@ -9044,9 +9044,9 @@
               "D"
             ],
             "expected": "B",
-            "answer": "B",
-            "correct": true,
-            "raw_response": "B"
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: Error code: 429 - {'object': 'error', 'message': 'Rate limit exceeded', 'type': 'rate_limited', 'param': None, 'code': '1300', 'raw_status_code': 429}"
           },
           {
             "permutation": [
@@ -9088,7 +9088,7 @@
       },
       {
         "label": "tdd-chicago-school/recognition",
-        "score": 1.0,
+        "score": 0.5,
         "results": [
           {
             "permutation": [
@@ -9110,9 +9110,9 @@
               "A"
             ],
             "expected": "A",
-            "answer": "A",
-            "correct": true,
-            "raw_response": "A"
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: Error code: 429 - {'object': 'error', 'message': 'Rate limit exceeded', 'type': 'rate_limited', 'param': None, 'code': '1300', 'raw_status_code': 429}"
           },
           {
             "permutation": [
@@ -9134,9 +9134,9 @@
               "C"
             ],
             "expected": "C",
-            "answer": "C",
-            "correct": true,
-            "raw_response": "C"
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: Error code: 429 - {'object': 'error', 'message': 'Rate limit exceeded', 'type': 'rate_limited', 'param': None, 'code': '1300', 'raw_status_code': 429}"
           }
         ]
       },
@@ -9196,7 +9196,7 @@
       },
       {
         "label": "tdd-chicago-school/application-paraphrase",
-        "score": 1.0,
+        "score": 0.5,
         "results": [
           {
             "permutation": [
@@ -9206,9 +9206,9 @@
               "D"
             ],
             "expected": "B",
-            "answer": "B",
-            "correct": true,
-            "raw_response": "B"
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: Error code: 429 - {'object': 'error', 'message': 'Rate limit exceeded', 'type': 'rate_limited', 'param': None, 'code': '1300', 'raw_status_code': 429}"
           },
           {
             "permutation": [
@@ -9230,9 +9230,9 @@
               "B"
             ],
             "expected": "D",
-            "answer": "D",
-            "correct": true,
-            "raw_response": "D"
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: Error code: 429 - {'object': 'error', 'message': 'Rate limit exceeded', 'type': 'rate_limited', 'param': None, 'code': '1300', 'raw_status_code': 429}"
           },
           {
             "permutation": [
@@ -9250,7 +9250,7 @@
       },
       {
         "label": "tdd-london-school/recognition",
-        "score": 1.0,
+        "score": 0.5,
         "results": [
           {
             "permutation": [
@@ -9272,9 +9272,9 @@
               "A"
             ],
             "expected": "A",
-            "answer": "A",
-            "correct": true,
-            "raw_response": "A"
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: Error code: 429 - {'object': 'error', 'message': 'Rate limit exceeded', 'type': 'rate_limited', 'param': None, 'code': '1300', 'raw_status_code': 429}"
           },
           {
             "permutation": [
@@ -9284,9 +9284,9 @@
               "B"
             ],
             "expected": "D",
-            "answer": "D",
-            "correct": true,
-            "raw_response": "D"
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: Error code: 429 - {'object': 'error', 'message': 'Rate limit exceeded', 'type': 'rate_limited', 'param': None, 'code': '1300', 'raw_status_code': 429}"
           },
           {
             "permutation": [
@@ -9304,7 +9304,7 @@
       },
       {
         "label": "tdd-london-school/application-anchor",
-        "score": 1.0,
+        "score": 0.5,
         "results": [
           {
             "permutation": [
@@ -9314,9 +9314,9 @@
               "D"
             ],
             "expected": "B",
-            "answer": "B",
-            "correct": true,
-            "raw_response": "B"
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: Error code: 429 - {'object': 'error', 'message': 'Rate limit exceeded', 'type': 'rate_limited', 'param': None, 'code': '1300', 'raw_status_code': 429}"
           },
           {
             "permutation": [
@@ -9350,15 +9350,15 @@
               "C"
             ],
             "expected": "C",
-            "answer": "C",
-            "correct": true,
-            "raw_response": "C"
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: Error code: 429 - {'object': 'error', 'message': 'Rate limit exceeded', 'type': 'rate_limited', 'param': None, 'code': '1300', 'raw_status_code': 429}"
           }
         ]
       },
       {
         "label": "tdd-london-school/application-paraphrase",
-        "score": 1.0,
+        "score": 0.75,
         "results": [
           {
             "permutation": [
@@ -9404,15 +9404,15 @@
               "C"
             ],
             "expected": "C",
-            "answer": "C",
-            "correct": true,
-            "raw_response": "C"
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: Error code: 429 - {'object': 'error', 'message': 'Rate limit exceeded', 'type': 'rate_limited', 'param': None, 'code': '1300', 'raw_status_code': 429}"
           }
         ]
       },
       {
         "label": "tdd-london-school/consistency-variant-1",
-        "score": 1.0,
+        "score": 0.5,
         "results": [
           {
             "permutation": [
@@ -9446,9 +9446,9 @@
               "B"
             ],
             "expected": "D",
-            "answer": "D",
-            "correct": true,
-            "raw_response": "D"
+            "answer": "C",
+            "correct": false,
+            "raw_response": "C"
           },
           {
             "permutation": [
@@ -9458,15 +9458,15 @@
               "C"
             ],
             "expected": "C",
-            "answer": "C",
-            "correct": true,
-            "raw_response": "C"
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: Error code: 429 - {'object': 'error', 'message': 'Rate limit exceeded', 'type': 'rate_limited', 'param': None, 'code': '1300', 'raw_status_code': 429}"
           }
         ]
       },
       {
         "label": "tdd-london-school/consistency-variant-2",
-        "score": 1.0,
+        "score": 0.75,
         "results": [
           {
             "permutation": [
@@ -9500,9 +9500,9 @@
               "B"
             ],
             "expected": "D",
-            "answer": "D",
-            "correct": true,
-            "raw_response": "D"
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: Error code: 429 - {'object': 'error', 'message': 'Rate limit exceeded', 'type': 'rate_limited', 'param': None, 'code': '1300', 'raw_status_code': 429}"
           },
           {
             "permutation": [
@@ -9520,7 +9520,7 @@
       },
       {
         "label": "tdd-london-school/consistency-variant-3",
-        "score": 1.0,
+        "score": 0.25,
         "results": [
           {
             "permutation": [
@@ -9542,9 +9542,9 @@
               "A"
             ],
             "expected": "A",
-            "answer": "A",
-            "correct": true,
-            "raw_response": "A"
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: Error code: 429 - {'object': 'error', 'message': 'Rate limit exceeded', 'type': 'rate_limited', 'param': None, 'code': '1300', 'raw_status_code': 429}"
           },
           {
             "permutation": [
@@ -9554,9 +9554,9 @@
               "B"
             ],
             "expected": "D",
-            "answer": "D",
-            "correct": true,
-            "raw_response": "D"
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: Error code: 429 - {'object': 'error', 'message': 'Rate limit exceeded', 'type': 'rate_limited', 'param': None, 'code': '1300', 'raw_status_code': 429}"
           },
           {
             "permutation": [
@@ -9566,15 +9566,15 @@
               "C"
             ],
             "expected": "C",
-            "answer": "C",
-            "correct": true,
-            "raw_response": "C"
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: Error code: 429 - {'object': 'error', 'message': 'Rate limit exceeded', 'type': 'rate_limited', 'param': None, 'code': '1300', 'raw_status_code': 429}"
           }
         ]
       },
       {
         "label": "tdd-london-school/consistency-language",
-        "score": 1.0,
+        "score": 0.5,
         "results": [
           {
             "permutation": [
@@ -9608,9 +9608,9 @@
               "B"
             ],
             "expected": "D",
-            "answer": "D",
-            "correct": true,
-            "raw_response": "D"
+            "answer": "C",
+            "correct": false,
+            "raw_response": "C"
           },
           {
             "permutation": [
@@ -9620,9 +9620,9 @@
               "C"
             ],
             "expected": "C",
-            "answer": "C",
-            "correct": true,
-            "raw_response": "C"
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: Error code: 429 - {'object': 'error', 'message': 'Rate limit exceeded', 'type': 'rate_limited', 'param': None, 'code': '1300', 'raw_status_code': 429}"
           }
         ]
       },
@@ -9736,7 +9736,7 @@
       },
       {
         "label": "testing-pyramid/application-paraphrase",
-        "score": 1.0,
+        "score": 0.75,
         "results": [
           {
             "permutation": [
@@ -9782,15 +9782,15 @@
               "C"
             ],
             "expected": "C",
-            "answer": "C",
-            "correct": true,
-            "raw_response": "C"
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: Error code: 429 - {'object': 'error', 'message': 'Rate limit exceeded', 'type': 'rate_limited', 'param': None, 'code': '1300', 'raw_status_code': 429}"
           }
         ]
       },
       {
         "label": "timtowtdi/recognition",
-        "score": 1.0,
+        "score": 0.75,
         "results": [
           {
             "permutation": [
@@ -9800,9 +9800,9 @@
               "D"
             ],
             "expected": "A",
-            "answer": "A",
-            "correct": true,
-            "raw_response": "A"
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: Error code: 429 - {'object': 'error', 'message': 'Rate limit exceeded', 'type': 'rate_limited', 'param': None, 'code': '1300', 'raw_status_code': 429}"
           },
           {
             "permutation": [
@@ -9844,7 +9844,7 @@
       },
       {
         "label": "timtowtdi/application-anchor",
-        "score": 1.0,
+        "score": 0.75,
         "results": [
           {
             "permutation": [
@@ -9866,9 +9866,9 @@
               "A"
             ],
             "expected": "A",
-            "answer": "A",
-            "correct": true,
-            "raw_response": "A"
+            "answer": "C",
+            "correct": false,
+            "raw_response": "C"
           },
           {
             "permutation": [
@@ -9952,7 +9952,7 @@
       },
       {
         "label": "todotxt-flavoured-markdown/recognition",
-        "score": 0.5,
+        "score": 0.75,
         "results": [
           {
             "permutation": [
@@ -9962,9 +9962,9 @@
               "D"
             ],
             "expected": "B",
-            "answer": "A",
+            "answer": null,
             "correct": false,
-            "raw_response": "A"
+            "raw_response": "ERROR: Error code: 429 - {'object': 'error', 'message': 'Rate limit exceeded', 'type': 'rate_limited', 'param': None, 'code': '1300', 'raw_status_code': 429}"
           },
           {
             "permutation": [
@@ -9974,9 +9974,9 @@
               "A"
             ],
             "expected": "A",
-            "answer": "D",
-            "correct": false,
-            "raw_response": "D"
+            "answer": "A",
+            "correct": true,
+            "raw_response": "A"
           },
           {
             "permutation": [
@@ -10006,7 +10006,7 @@
       },
       {
         "label": "todotxt-flavoured-markdown/application-anchor",
-        "score": 1.0,
+        "score": 0.75,
         "results": [
           {
             "permutation": [
@@ -10028,9 +10028,9 @@
               "A"
             ],
             "expected": "A",
-            "answer": "A",
-            "correct": true,
-            "raw_response": "A"
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: Error code: 429 - {'object': 'error', 'message': 'Rate limit exceeded', 'type': 'rate_limited', 'param': None, 'code': '1300', 'raw_status_code': 429}"
           },
           {
             "permutation": [
@@ -10060,7 +10060,7 @@
       },
       {
         "label": "todotxt-flavoured-markdown/application-paraphrase",
-        "score": 1.0,
+        "score": 0.75,
         "results": [
           {
             "permutation": [
@@ -10082,9 +10082,9 @@
               "A"
             ],
             "expected": "A",
-            "answer": "A",
-            "correct": true,
-            "raw_response": "A"
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: Error code: 429 - {'object': 'error', 'message': 'Rate limit exceeded', 'type': 'rate_limited', 'param': None, 'code': '1300', 'raw_status_code': 429}"
           },
           {
             "permutation": [
@@ -10114,7 +10114,7 @@
       },
       {
         "label": "user-story-mapping/recognition",
-        "score": 1.0,
+        "score": 0.75,
         "results": [
           {
             "permutation": [
@@ -10136,9 +10136,9 @@
               "A"
             ],
             "expected": "A",
-            "answer": "A",
-            "correct": true,
-            "raw_response": "A"
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: Error code: 429 - {'object': 'error', 'message': 'Rate limit exceeded', 'type': 'rate_limited', 'param': None, 'code': '1300', 'raw_status_code': 429}"
           },
           {
             "permutation": [
@@ -10222,7 +10222,7 @@
       },
       {
         "label": "user-story-mapping/application-paraphrase",
-        "score": 1.0,
+        "score": 0.5,
         "results": [
           {
             "permutation": [
@@ -10232,9 +10232,9 @@
               "D"
             ],
             "expected": "B",
-            "answer": "B",
-            "correct": true,
-            "raw_response": "B"
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: Error code: 429 - {'object': 'error', 'message': 'Rate limit exceeded', 'type': 'rate_limited', 'param': None, 'code': '1300', 'raw_status_code': 429}"
           },
           {
             "permutation": [
@@ -10244,9 +10244,9 @@
               "A"
             ],
             "expected": "A",
-            "answer": "A",
-            "correct": true,
-            "raw_response": "A"
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: Error code: 429 - {'object': 'error', 'message': 'Rate limit exceeded', 'type': 'rate_limited', 'param': None, 'code': '1300', 'raw_status_code': 429}"
           },
           {
             "permutation": [
@@ -10276,7 +10276,7 @@
       },
       {
         "label": "wardley-mapping/recognition",
-        "score": 1.0,
+        "score": 0.5,
         "results": [
           {
             "permutation": [
@@ -10286,9 +10286,9 @@
               "D"
             ],
             "expected": "B",
-            "answer": "B",
-            "correct": true,
-            "raw_response": "B"
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: Error code: 429 - {'object': 'error', 'message': 'Rate limit exceeded', 'type': 'rate_limited', 'param': None, 'code': '1300', 'raw_status_code': 429}"
           },
           {
             "permutation": [
@@ -10298,9 +10298,9 @@
               "A"
             ],
             "expected": "A",
-            "answer": "A",
-            "correct": true,
-            "raw_response": "A"
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: Error code: 429 - {'object': 'error', 'message': 'Rate limit exceeded', 'type': 'rate_limited', 'param': None, 'code': '1300', 'raw_status_code': 429}"
           },
           {
             "permutation": [
@@ -10330,7 +10330,7 @@
       },
       {
         "label": "wardley-mapping/application-anchor",
-        "score": 1.0,
+        "score": 0.5,
         "results": [
           {
             "permutation": [
@@ -10340,9 +10340,9 @@
               "D"
             ],
             "expected": "B",
-            "answer": "B",
-            "correct": true,
-            "raw_response": "B"
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: Error code: 429 - {'object': 'error', 'message': 'Rate limit exceeded', 'type': 'rate_limited', 'param': None, 'code': '1300', 'raw_status_code': 429}"
           },
           {
             "permutation": [
@@ -10352,9 +10352,9 @@
               "A"
             ],
             "expected": "A",
-            "answer": "A",
-            "correct": true,
-            "raw_response": "A"
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: Error code: 429 - {'object': 'error', 'message': 'Rate limit exceeded', 'type': 'rate_limited', 'param': None, 'code': '1300', 'raw_status_code': 429}"
           },
           {
             "permutation": [
@@ -10384,7 +10384,7 @@
       },
       {
         "label": "wardley-mapping/application-paraphrase",
-        "score": 1.0,
+        "score": 0.25,
         "results": [
           {
             "permutation": [
@@ -10394,9 +10394,9 @@
               "D"
             ],
             "expected": "B",
-            "answer": "B",
-            "correct": true,
-            "raw_response": "B"
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: Error code: 429 - {'object': 'error', 'message': 'Rate limit exceeded', 'type': 'rate_limited', 'param': None, 'code': '1300', 'raw_status_code': 429}"
           },
           {
             "permutation": [
@@ -10406,9 +10406,9 @@
               "A"
             ],
             "expected": "A",
-            "answer": "A",
-            "correct": true,
-            "raw_response": "A"
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: Error code: 429 - {'object': 'error', 'message': 'Rate limit exceeded', 'type': 'rate_limited', 'param': None, 'code': '1300', 'raw_status_code': 429}"
           },
           {
             "permutation": [
@@ -10418,9 +10418,9 @@
               "B"
             ],
             "expected": "D",
-            "answer": "D",
-            "correct": true,
-            "raw_response": "D"
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: Error code: 429 - {'object': 'error', 'message': 'Rate limit exceeded', 'type': 'rate_limited', 'param': None, 'code': '1300', 'raw_status_code': 429}"
           },
           {
             "permutation": [
@@ -10438,5 +10438,5 @@
       }
     ]
   },
-  "duration_seconds": 1018.4
+  "duration_seconds": 1089.2
 }

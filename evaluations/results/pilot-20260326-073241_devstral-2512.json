@@ -1,11 +1,11 @@
 {
-  "timestamp": "2026-03-24T19:06:00.394684+00:00",
+  "timestamp": "2026-03-26T07:32:41.051735+00:00",
   "config": {
     "models": [
       "mistral"
     ],
     "openai_model": null,
-    "mistral_model": "mistral-large-2512",
+    "mistral_model": "devstral-2512",
     "deepseek_model": null,
     "ollama_model": null,
     "ollama_url": null,
@@ -16,7 +16,7 @@
     "mistral": [
       {
         "label": "adr-according-to-nygard/recognition",
-        "score": 0.75,
+        "score": 1.0,
         "results": [
           {
             "permutation": [
@@ -50,9 +50,9 @@
               "B"
             ],
             "expected": "D",
-            "answer": "A",
-            "correct": false,
-            "raw_response": "A"
+            "answer": "D",
+            "correct": true,
+            "raw_response": "D"
           },
           {
             "permutation": [
@@ -94,7 +94,7 @@
             "expected": "A",
             "answer": "A",
             "correct": true,
-            "raw_response": "A)"
+            "raw_response": "A"
           },
           {
             "permutation": [
@@ -352,7 +352,7 @@
             "expected": "B",
             "answer": "B",
             "correct": true,
-            "raw_response": "B"
+            "raw_response": "B) Gernot Starke"
           },
           {
             "permutation": [
@@ -388,7 +388,7 @@
             "expected": "C",
             "answer": "C",
             "correct": true,
-            "raw_response": "C"
+            "raw_response": "C) Gernot Starke"
           }
         ]
       },
@@ -406,7 +406,7 @@
             "expected": "B",
             "answer": "B",
             "correct": true,
-            "raw_response": "B"
+            "raw_response": "B) Gernot Starke"
           },
           {
             "permutation": [
@@ -442,7 +442,7 @@
             "expected": "C",
             "answer": "C",
             "correct": true,
-            "raw_response": "C"
+            "raw_response": "C) Gernot Starke"
           }
         ]
       },
@@ -460,7 +460,7 @@
             "expected": "B",
             "answer": "B",
             "correct": true,
-            "raw_response": "B"
+            "raw_response": "B) Gernot Starke"
           },
           {
             "permutation": [
@@ -664,7 +664,7 @@
       },
       {
         "label": "atam/application-paraphrase",
-        "score": 1.0,
+        "score": 0.5,
         "results": [
           {
             "permutation": [
@@ -698,9 +698,9 @@
               "B"
             ],
             "expected": "D",
-            "answer": "D",
-            "correct": true,
-            "raw_response": "D"
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: Error code: 429 - {'object': 'error', 'message': 'Rate limit exceeded', 'type': 'rate_limited', 'param': None, 'code': '1300', 'raw_status_code': 429}"
           },
           {
             "permutation": [
@@ -710,15 +710,15 @@
               "C"
             ],
             "expected": "C",
-            "answer": "C",
-            "correct": true,
-            "raw_response": "C"
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: Error code: 429 - {'object': 'error', 'message': 'Rate limit exceeded', 'type': 'rate_limited', 'param': None, 'code': '1300', 'raw_status_code': 429}"
           }
         ]
       },
       {
         "label": "bdd-given-when-then/recognition",
-        "score": 1.0,
+        "score": 0.0,
         "results": [
           {
             "permutation": [
@@ -728,9 +728,9 @@
               "D"
             ],
             "expected": "B",
-            "answer": "B",
-            "correct": true,
-            "raw_response": "B"
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: Error code: 429 - {'object': 'error', 'message': 'Rate limit exceeded', 'type': 'rate_limited', 'param': None, 'code': '1300', 'raw_status_code': 429}"
           },
           {
             "permutation": [
@@ -740,9 +740,9 @@
               "A"
             ],
             "expected": "A",
-            "answer": "A",
-            "correct": true,
-            "raw_response": "A"
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: Error code: 429 - {'object': 'error', 'message': 'Rate limit exceeded', 'type': 'rate_limited', 'param': None, 'code': '1300', 'raw_status_code': 429}"
           },
           {
             "permutation": [
@@ -752,9 +752,9 @@
               "B"
             ],
             "expected": "D",
-            "answer": "D",
-            "correct": true,
-            "raw_response": "D"
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: Error code: 429 - {'object': 'error', 'message': 'Rate limit exceeded', 'type': 'rate_limited', 'param': None, 'code': '1300', 'raw_status_code': 429}"
           },
           {
             "permutation": [
@@ -764,15 +764,15 @@
               "C"
             ],
             "expected": "C",
-            "answer": "C",
-            "correct": true,
-            "raw_response": "C"
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: Error code: 429 - {'object': 'error', 'message': 'Rate limit exceeded', 'type': 'rate_limited', 'param': None, 'code': '1300', 'raw_status_code': 429}"
           }
         ]
       },
       {
         "label": "bdd-given-when-then/application-anchor",
-        "score": 1.0,
+        "score": 0.5,
         "results": [
           {
             "permutation": [
@@ -782,9 +782,9 @@
               "D"
             ],
             "expected": "B",
-            "answer": "B",
-            "correct": true,
-            "raw_response": "B"
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: Error code: 429 - {'object': 'error', 'message': 'Rate limit exceeded', 'type': 'rate_limited', 'param': None, 'code': '1300', 'raw_status_code': 429}"
           },
           {
             "permutation": [
@@ -794,9 +794,9 @@
               "A"
             ],
             "expected": "A",
-            "answer": "A",
-            "correct": true,
-            "raw_response": "A"
+            "answer": null,
+            "correct": false,
+            "raw_response": "ERROR: Error code: 429 - {'object': 'error', 'message': 'Rate limit exceeded', 'type': 'rate_limited', 'param': None, 'code': '1300', 'raw_status_code': 429}"
           },
           {
             "permutation": [
@@ -826,7 +826,7 @@
       },
       {
         "label": "bdd-given-when-then/application-paraphrase",
-        "score": 0.5,
+        "score": 1.0,
         "results": [
           {
             "permutation": [
@@ -836,9 +836,9 @@
               "D"
             ],
             "expected": "B",
-            "answer": null,
-            "correct": false,
-            "raw_response": "ERROR: Error code: 429 - {'object': 'error', 'message': 'Rate limit exceeded', 'type': 'rate_limited', 'param': None, 'code': '1300', 'raw_status_code': 429}"
+            "answer": "B",
+            "correct": true,
+            "raw_response": "B"
           },
           {
             "permutation": [
@@ -848,9 +848,9 @@
               "A"
             ],
             "expected": "A",
-            "answer": null,
-            "correct": false,
-            "raw_response": "ERROR: Error code: 429 - {'object': 'error', 'message': 'Rate limit exceeded', 'type': 'rate_limited', 'param': None, 'code': '1300', 'raw_status_code': 429}"
+            "answer": "A",
+            "correct": true,
+            "raw_response": "A"
           },
           {
             "permutation": [
@@ -3148,7 +3148,7 @@
       },
       {
         "label": "ears-requirements/recognition",
-        "score": 0.75,
+        "score": 1.0,
         "results": [
           {
             "permutation": [
@@ -3158,9 +3158,9 @@
               "D"
             ],
             "expected": "B",
-            "answer": "C",
-            "correct": false,
-            "raw_response": "C)"
+            "answer": "B",
+            "correct": true,
+            "raw_response": "B"
           },
           {
             "permutation": [
@@ -3202,7 +3202,7 @@
       },
       {
         "label": "ears-requirements/application-anchor",
-        "score": 1.0,
+        "score": 0.75,
         "results": [
           {
             "permutation": [
@@ -3212,9 +3212,9 @@
               "D"
             ],
             "expected": "B",
-            "answer": "B",
-            "correct": true,
-            "raw_response": "B)"
+            "answer": "C",
+            "correct": false,
+            "raw_response": "C"
           },
           {
             "permutation": [
@@ -3238,7 +3238,7 @@
             "expected": "D",
             "answer": "D",
             "correct": true,
-            "raw_response": "D)"
+            "raw_response": "D"
           },
           {
             "permutation": [
@@ -3250,7 +3250,7 @@
             "expected": "C",
             "answer": "C",
             "correct": true,
-            "raw_response": "C)"
+            "raw_response": "C"
           }
         ]
       },
@@ -3268,7 +3268,7 @@
             "expected": "B",
             "answer": "B",
             "correct": true,
-            "raw_response": "B)"
+            "raw_response": "B"
           },
           {
             "permutation": [
@@ -3280,7 +3280,7 @@
             "expected": "A",
             "answer": "B",
             "correct": false,
-            "raw_response": "B)"
+            "raw_response": "B"
           },
           {
             "permutation": [
@@ -3304,7 +3304,7 @@
             "expected": "C",
             "answer": "C",
             "correct": true,
-            "raw_response": "C)"
+            "raw_response": "C"
           }
         ]
       },
@@ -3688,7 +3688,7 @@
       },
       {
         "label": "feynman-technique/application-anchor",
-        "score": 1.0,
+        "score": 0.75,
         "results": [
           {
             "permutation": [
@@ -3710,9 +3710,9 @@
               "A"
             ],
             "expected": "A",
-            "answer": "A",
-            "correct": true,
-            "raw_response": "A"
+            "answer": "B",
+            "correct": false,
+            "raw_response": "B"
           },
           {
             "permutation": [
@@ -4264,7 +4264,7 @@
             "expected": "D",
             "answer": "D",
             "correct": true,
-            "raw_response": "D)"
+            "raw_response": "D"
           },
           {
             "permutation": [
@@ -4400,9 +4400,9 @@
               "D"
             ],
             "expected": "B",
-            "answer": "A",
-            "correct": false,
-            "raw_response": "A"
+            "answer": "B",
+            "correct": true,
+            "raw_response": "B"
           },
           {
             "permutation": [
@@ -4436,9 +4436,9 @@
               "C"
             ],
             "expected": "C",
-            "answer": "C",
-            "correct": true,
-            "raw_response": "C"
+            "answer": "B",
+            "correct": false,
+            "raw_response": "B"
           }
         ]
       },
@@ -4822,7 +4822,7 @@
       },
       {
         "label": "iec-61508-sil-levels/application-anchor",
-        "score": 0.5,
+        "score": 0.75,
         "results": [
           {
             "permutation": [
@@ -4847,60 +4847,6 @@
             "answer": "B",
             "correct": false,
             "raw_response": "B"
-          },
-          {
-            "permutation": [
-              "C",
-              "D",
-              "A",
-              "B"
-            ],
-            "expected": "D",
-            "answer": "D",
-            "correct": true,
-            "raw_response": "D"
-          },
-          {
-            "permutation": [
-              "D",
-              "A",
-              "B",
-              "C"
-            ],
-            "expected": "C",
-            "answer": "D",
-            "correct": false,
-            "raw_response": "D"
-          }
-        ]
-      },
-      {
-        "label": "iec-61508-sil-levels/application-paraphrase",
-        "score": 1.0,
-        "results": [
-          {
-            "permutation": [
-              "A",
-              "B",
-              "C",
-              "D"
-            ],
-            "expected": "B",
-            "answer": "B",
-            "correct": true,
-            "raw_response": "B"
-          },
-          {
-            "permutation": [
-              "B",
-              "C",
-              "D",
-              "A"
-            ],
-            "expected": "A",
-            "answer": "A",
-            "correct": true,
-            "raw_response": "A"
           },
           {
             "permutation": [
@@ -4924,7 +4870,61 @@
             "expected": "C",
             "answer": "C",
             "correct": true,
-            "raw_response": "C"
+            "raw_response": "C) Classify as SIL 2, implement"
+          }
+        ]
+      },
+      {
+        "label": "iec-61508-sil-levels/application-paraphrase",
+        "score": 0.75,
+        "results": [
+          {
+            "permutation": [
+              "A",
+              "B",
+              "C",
+              "D"
+            ],
+            "expected": "B",
+            "answer": "B",
+            "correct": true,
+            "raw_response": "B"
+          },
+          {
+            "permutation": [
+              "B",
+              "C",
+              "D",
+              "A"
+            ],
+            "expected": "A",
+            "answer": "B",
+            "correct": false,
+            "raw_response": "B"
+          },
+          {
+            "permutation": [
+              "C",
+              "D",
+              "A",
+              "B"
+            ],
+            "expected": "D",
+            "answer": "D",
+            "correct": true,
+            "raw_response": "D"
+          },
+          {
+            "permutation": [
+              "D",
+              "A",
+              "B",
+              "C"
+            ],
+            "expected": "C",
+            "answer": "C",
+            "correct": true,
+            "raw_response": "C) Classify as SIL 2, implement"
           }
         ]
       },
@@ -4996,7 +4996,7 @@
             "expected": "B",
             "answer": "B",
             "correct": true,
-            "raw_response": "B)"
+            "raw_response": "B"
           },
           {
             "permutation": [
@@ -5032,7 +5032,7 @@
             "expected": "C",
             "answer": "C",
             "correct": true,
-            "raw_response": "C)"
+            "raw_response": "C"
           }
         ]
       },
@@ -5308,7 +5308,7 @@
       },
       {
         "label": "iso-25010/application-anchor",
-        "score": 0.75,
+        "score": 1.0,
         "results": [
           {
             "permutation": [
@@ -5330,9 +5330,9 @@
               "A"
             ],
             "expected": "A",
-            "answer": "B",
-            "correct": false,
-            "raw_response": "B"
+            "answer": "A",
+            "correct": true,
+            "raw_response": "A"
           },
           {
             "permutation": [
@@ -5362,7 +5362,7 @@
       },
       {
         "label": "iso-25010/application-paraphrase",
-        "score": 0.75,
+        "score": 1.0,
         "results": [
           {
             "permutation": [
@@ -5384,9 +5384,9 @@
               "A"
             ],
             "expected": "A",
-            "answer": "B",
-            "correct": false,
-            "raw_response": "B"
+            "answer": "A",
+            "correct": true,
+            "raw_response": "A"
           },
           {
             "permutation": [
@@ -5578,7 +5578,7 @@
       },
       {
         "label": "lasr/recognition",
-        "score": 0.25,
+        "score": 0.5,
         "results": [
           {
             "permutation": [
@@ -5612,9 +5612,9 @@
               "B"
             ],
             "expected": "D",
-            "answer": "C",
-            "correct": false,
-            "raw_response": "C"
+            "answer": "D",
+            "correct": true,
+            "raw_response": "D"
           },
           {
             "permutation": [
@@ -5624,9 +5624,9 @@
               "C"
             ],
             "expected": "C",
-            "answer": "A",
+            "answer": "B",
             "correct": false,
-            "raw_response": "A"
+            "raw_response": "B"
           }
         ]
       },
@@ -5680,7 +5680,7 @@
             "expected": "C",
             "answer": "C",
             "correct": true,
-            "raw_response": "C)"
+            "raw_response": "C"
           }
         ]
       },
@@ -6064,6 +6064,60 @@
       },
       {
         "label": "madr/recognition",
+        "score": 0.5,
+        "results": [
+          {
+            "permutation": [
+              "A",
+              "B",
+              "C",
+              "D"
+            ],
+            "expected": "B",
+            "answer": "B",
+            "correct": true,
+            "raw_response": "B"
+          },
+          {
+            "permutation": [
+              "B",
+              "C",
+              "D",
+              "A"
+            ],
+            "expected": "A",
+            "answer": "B",
+            "correct": false,
+            "raw_response": "B"
+          },
+          {
+            "permutation": [
+              "C",
+              "D",
+              "A",
+              "B"
+            ],
+            "expected": "D",
+            "answer": "D",
+            "correct": true,
+            "raw_response": "D"
+          },
+          {
+            "permutation": [
+              "D",
+              "A",
+              "B",
+              "C"
+            ],
+            "expected": "C",
+            "answer": "B",
+            "correct": false,
+            "raw_response": "B"
+          }
+        ]
+      },
+      {
+        "label": "madr/application-anchor",
         "score": 1.0,
         "results": [
           {
@@ -6117,60 +6171,6 @@
         ]
       },
       {
-        "label": "madr/application-anchor",
-        "score": 1.0,
-        "results": [
-          {
-            "permutation": [
-              "A",
-              "B",
-              "C",
-              "D"
-            ],
-            "expected": "B",
-            "answer": "B",
-            "correct": true,
-            "raw_response": "B"
-          },
-          {
-            "permutation": [
-              "B",
-              "C",
-              "D",
-              "A"
-            ],
-            "expected": "A",
-            "answer": "A",
-            "correct": true,
-            "raw_response": "A)"
-          },
-          {
-            "permutation": [
-              "C",
-              "D",
-              "A",
-              "B"
-            ],
-            "expected": "D",
-            "answer": "D",
-            "correct": true,
-            "raw_response": "D)"
-          },
-          {
-            "permutation": [
-              "D",
-              "A",
-              "B",
-              "C"
-            ],
-            "expected": "C",
-            "answer": "C",
-            "correct": true,
-            "raw_response": "C"
-          }
-        ]
-      },
-      {
         "label": "madr/application-paraphrase",
         "score": 1.0,
         "results": [
@@ -6208,7 +6208,7 @@
             "expected": "D",
             "answer": "D",
             "correct": true,
-            "raw_response": "D)"
+            "raw_response": "D"
           },
           {
             "permutation": [
@@ -6658,7 +6658,7 @@
       },
       {
         "label": "moscow/application-paraphrase",
-        "score": 0.25,
+        "score": 1.0,
         "results": [
           {
             "permutation": [
@@ -6668,9 +6668,9 @@
               "D"
             ],
             "expected": "B",
-            "answer": "A",
-            "correct": false,
-            "raw_response": "A"
+            "answer": "B",
+            "correct": true,
+            "raw_response": "B"
           },
           {
             "permutation": [
@@ -6680,9 +6680,9 @@
               "A"
             ],
             "expected": "A",
-            "answer": "D",
-            "correct": false,
-            "raw_response": "D"
+            "answer": "A",
+            "correct": true,
+            "raw_response": "A"
           },
           {
             "permutation": [
@@ -6704,9 +6704,9 @@
               "C"
             ],
             "expected": "C",
-            "answer": "B",
-            "correct": false,
-            "raw_response": "B"
+            "answer": "C",
+            "correct": true,
+            "raw_response": "C"
           }
         ]
       },
@@ -6884,9 +6884,9 @@
               "D"
             ],
             "expected": "D",
-            "answer": "B",
-            "correct": false,
-            "raw_response": "B"
+            "answer": "D",
+            "correct": true,
+            "raw_response": "D"
           },
           {
             "permutation": [
@@ -6920,9 +6920,9 @@
               "C"
             ],
             "expected": "A",
-            "answer": "A",
-            "correct": true,
-            "raw_response": "A"
+            "answer": "B",
+            "correct": false,
+            "raw_response": "B"
           }
         ]
       },
@@ -7414,7 +7414,7 @@
       },
       {
         "label": "prd/recognition",
-        "score": 0.0,
+        "score": 0.5,
         "results": [
           {
             "permutation": [
@@ -7424,9 +7424,9 @@
               "D"
             ],
             "expected": "B",
-            "answer": "D",
-            "correct": false,
-            "raw_response": "D"
+            "answer": "B",
+            "correct": true,
+            "raw_response": "B"
           },
           {
             "permutation": [
@@ -7436,9 +7436,9 @@
               "A"
             ],
             "expected": "A",
-            "answer": "C",
-            "correct": false,
-            "raw_response": "C"
+            "answer": "A",
+            "correct": true,
+            "raw_response": "A"
           },
           {
             "permutation": [
@@ -7630,7 +7630,7 @@
       },
       {
         "label": "problem-space-nvc/application-anchor",
-        "score": 0.75,
+        "score": 1.0,
         "results": [
           {
             "permutation": [
@@ -7652,9 +7652,9 @@
               "A"
             ],
             "expected": "A",
-            "answer": "C",
-            "correct": false,
-            "raw_response": "C"
+            "answer": "A",
+            "correct": true,
+            "raw_response": "A"
           },
           {
             "permutation": [
@@ -7684,7 +7684,7 @@
       },
       {
         "label": "problem-space-nvc/application-paraphrase",
-        "score": 0.75,
+        "score": 1.0,
         "results": [
           {
             "permutation": [
@@ -7706,9 +7706,9 @@
               "A"
             ],
             "expected": "A",
-            "answer": "C",
-            "correct": false,
-            "raw_response": "C"
+            "answer": "A",
+            "correct": true,
+            "raw_response": "A"
           },
           {
             "permutation": [
@@ -7792,7 +7792,7 @@
       },
       {
         "label": "property-based-testing/application-anchor",
-        "score": 1.0,
+        "score": 0.75,
         "results": [
           {
             "permutation": [
@@ -7802,9 +7802,9 @@
               "D"
             ],
             "expected": "B",
-            "answer": "B",
-            "correct": true,
-            "raw_response": "B"
+            "answer": "A",
+            "correct": false,
+            "raw_response": "A"
           },
           {
             "permutation": [
@@ -8072,9 +8072,9 @@
               "D"
             ],
             "expected": "X",
-            "answer": null,
+            "answer": "B",
             "correct": false,
-            "raw_response": "None of the above options is correct, but the"
+            "raw_response": "B"
           },
           {
             "permutation": [
@@ -8084,9 +8084,9 @@
               "A"
             ],
             "expected": "X",
-            "answer": null,
+            "answer": "D",
             "correct": false,
-            "raw_response": "None of the options provided is correct, but the"
+            "raw_response": "D"
           },
           {
             "permutation": [
@@ -8096,9 +8096,9 @@
               "B"
             ],
             "expected": "X",
-            "answer": null,
+            "answer": "D",
             "correct": false,
-            "raw_response": "None of the options provided is correct, but the"
+            "raw_response": "D"
           },
           {
             "permutation": [
@@ -8108,9 +8108,9 @@
               "C"
             ],
             "expected": "X",
-            "answer": "C",
+            "answer": "D",
             "correct": false,
-            "raw_response": "C"
+            "raw_response": "D"
           }
         ]
       },
@@ -8170,7 +8170,7 @@
       },
       {
         "label": "semantic-versioning/application-anchor",
-        "score": 0.5,
+        "score": 1.0,
         "results": [
           {
             "permutation": [
@@ -8180,9 +8180,9 @@
               "D"
             ],
             "expected": "B",
-            "answer": "C",
-            "correct": false,
-            "raw_response": "C"
+            "answer": "B",
+            "correct": true,
+            "raw_response": "B"
           },
           {
             "permutation": [
@@ -8194,7 +8194,7 @@
             "expected": "A",
             "answer": "A",
             "correct": true,
-            "raw_response": "A"
+            "raw_response": "A) 3.0.0"
           },
           {
             "permutation": [
@@ -8216,15 +8216,15 @@
               "C"
             ],
             "expected": "C",
-            "answer": "D",
-            "correct": false,
-            "raw_response": "D"
+            "answer": "C",
+            "correct": true,
+            "raw_response": "C"
           }
         ]
       },
       {
         "label": "semantic-versioning/application-paraphrase",
-        "score": 0.75,
+        "score": 1.0,
         "results": [
           {
             "permutation": [
@@ -8270,9 +8270,9 @@
               "C"
             ],
             "expected": "C",
-            "answer": "D",
-            "correct": false,
-            "raw_response": "D"
+            "answer": "C",
+            "correct": true,
+            "raw_response": "C"
           }
         ]
       },
@@ -8422,7 +8422,7 @@
             "expected": "D",
             "answer": "D",
             "correct": true,
-            "raw_response": "D)"
+            "raw_response": "D"
           },
           {
             "permutation": [
@@ -8800,7 +8800,7 @@
             "expected": "D",
             "answer": "D",
             "correct": true,
-            "raw_response": "None of the options perfectly describe the **STRIDE"
+            "raw_response": "D"
           },
           {
             "permutation": [
@@ -8992,7 +8992,7 @@
             "expected": "B",
             "answer": "B",
             "correct": true,
-            "raw_response": "B)"
+            "raw_response": "B"
           },
           {
             "permutation": [
@@ -9004,7 +9004,7 @@
             "expected": "A",
             "answer": "A",
             "correct": true,
-            "raw_response": "A) SWOT Analysis\nB) Value Chain"
+            "raw_response": "A"
           },
           {
             "permutation": [
@@ -9016,7 +9016,7 @@
             "expected": "D",
             "answer": "D",
             "correct": true,
-            "raw_response": "D)"
+            "raw_response": "D"
           },
           {
             "permutation": [
@@ -9028,7 +9028,7 @@
             "expected": "C",
             "answer": "C",
             "correct": true,
-            "raw_response": "C)"
+            "raw_response": "C"
           }
         ]
       },
@@ -9088,7 +9088,7 @@
       },
       {
         "label": "tdd-chicago-school/recognition",
-        "score": 1.0,
+        "score": 0.75,
         "results": [
           {
             "permutation": [
@@ -9122,9 +9122,9 @@
               "B"
             ],
             "expected": "D",
-            "answer": "D",
-            "correct": true,
-            "raw_response": "D"
+            "answer": "C",
+            "correct": false,
+            "raw_response": "C"
           },
           {
             "permutation": [
@@ -9520,7 +9520,7 @@
       },
       {
         "label": "tdd-london-school/consistency-variant-3",
-        "score": 1.0,
+        "score": 0.25,
         "results": [
           {
             "permutation": [
@@ -9542,9 +9542,9 @@
               "A"
             ],
             "expected": "A",
-            "answer": "A",
-            "correct": true,
-            "raw_response": "A"
+            "answer": "B",
+            "correct": false,
+            "raw_response": "B"
           },
           {
             "permutation": [
@@ -9554,9 +9554,9 @@
               "B"
             ],
             "expected": "D",
-            "answer": "D",
-            "correct": true,
-            "raw_response": "D"
+            "answer": "A",
+            "correct": false,
+            "raw_response": "A"
           },
           {
             "permutation": [
@@ -9566,9 +9566,9 @@
               "C"
             ],
             "expected": "C",
-            "answer": "C",
-            "correct": true,
-            "raw_response": "C"
+            "answer": "D",
+            "correct": false,
+            "raw_response": "D"
           }
         ]
       },
@@ -9586,7 +9586,7 @@
             "expected": "B",
             "answer": "B",
             "correct": true,
-            "raw_response": "B"
+            "raw_response": "B) Steve Freeman"
           },
           {
             "permutation": [
@@ -9974,9 +9974,9 @@
               "A"
             ],
             "expected": "A",
-            "answer": "D",
-            "correct": false,
-            "raw_response": "D"
+            "answer": "A",
+            "correct": true,
+            "raw_response": "A"
           },
           {
             "permutation": [
@@ -9998,9 +9998,9 @@
               "C"
             ],
             "expected": "C",
-            "answer": "C",
-            "correct": true,
-            "raw_response": "C"
+            "answer": "B",
+            "correct": false,
+            "raw_response": "B"
           }
         ]
       },
@@ -10438,5 +10438,5 @@
       }
     ]
   },
-  "duration_seconds": 1018.4
+  "duration_seconds": 919.6
 }

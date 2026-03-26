@@ -2,6 +2,22 @@
 
 A chronological record of all semantic anchors added to the catalog. Community contributors are credited with thanks.
 
+== 2026-03-26
+
+*New anchors:*
+
+* *GRASP* — Craig Larman's 9 OO responsibility-assignment patterns
+* *Vertical Slice Architecture* — Jimmy Bogard's feature-first architecture
+* *KISS Principle* — Keep It Simple (Tier 1)
+* *P.A.R.A. Method* — Tiago Forte's knowledge organization framework
+* *PERT* — Program Evaluation and Review Technique (Tier 2)
+* *ISO 25010* — Software product quality model
+
+*New features:*
+
+* *Semantic Contracts* — composable project conventions that reference existing anchors. Select and download as `semantic-contracts.md` for AGENTS.md/CLAUDE.md.
+* *Anchor Evaluations* — multiple-choice evaluation framework testing 63 anchors across 10 LLMs. link:evaluation-report.html[View results].
+
 == 2026-03-14 — Catalog Curation
 
 Quality review of all anchors: introduced a three-tier rating system (★★★ self-standing, ★★☆ needs qualification, ★☆☆ descriptive only) to measure how reliably an anchor improves LLM communication. All anchors now carry an internal `:tier:` attribute.

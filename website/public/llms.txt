@@ -1,6 +1,6 @@
 # Semantic Anchors — Complete Reference
 
-> 105 well-defined terms, methodologies, and frameworks
+> 112 well-defined terms, methodologies, and frameworks
 > that serve as precision reference points when communicating with LLMs.
 > Source: https://github.com/LLM-Coding/Semantic-Anchors
 > Website: https://llm-coding.github.io/Semantic-Anchors/
@@ -1156,6 +1156,90 @@ Define the skeleton of an algorithm in an operation, deferring some steps to sub
 ## **Intent**:
 Represent an operation to be performed on the elements of an object structure. Visitor lets you define a new operation without changing the classes of the elements on which it operates.
 
+### GRASP
+
+***Full Name***: General Responsibility Assignment Software Patterns (or Principles)
+
+***Also known as***: GRASP Patterns, Responsibility-Driven Design Guidelines
+
+[discrete]
+## **Core Concepts**:
+
+***Information Expert***: Assign responsibility to the class that has the information needed to fulfill it
+
+***Creator***: Assign responsibility for creating an object to the class that aggregates, contains, or closely uses it
+
+***Controller***: Assign responsibility for handling system events to a non-UI class representing the overall system or a use case
+
+***Low Coupling***: Assign responsibilities to minimize dependencies between classes, increasing reuse and reducing change impact
+
+***High Cohesion***: Assign responsibilities so that classes remain focused, understandable, and manageable
+
+***Polymorphism***: Use polymorphic operations to handle variations in type-based behavior instead of conditionals
+
+***Pure Fabrication***: Assign a set of responsibilities to an artificial class not representing a domain concept, to achieve low coupling and high cohesion
+
+***Indirection***: Assign responsibility to an intermediate object to mediate between other components, reducing direct coupling
+
+***Protected Variations***: Identify points of predicted variation and assign responsibilities to create a stable interface around them
+
+***Key Proponents***: Craig Larman ("Applying UML and Patterns", 3rd ed., 2004)
+
+[discrete]
+## **When to Use**:
+
+* Designing object-oriented systems and deciding where to assign responsibilities
+* Improving cohesion and reducing coupling in existing codebases
+* Guiding refactoring decisions by evaluating current responsibility assignments
+* Teaching foundational object-oriented design principles
+
+[discrete]
+## **Related Anchors**:
+
+* SOLID Principles - Complementary OO design principles for maintainable systems
+* GoF Design Patterns - Patterns that often embody GRASP principles
+* Clean Architecture - Architectural style that leverages GRASP-based thinking
+* Domain-Driven Design - Uses responsibility assignment in the domain model
+
+### KISS Principle
+
+***Full Name***: Keep It Simple, Stupid (also: Keep It Super Simple)
+
+***Also known as***: KISS, Keep It Simple
+
+[discrete]
+## **Core Concepts**:
+
+***Simplicity as a design goal***: Systems work best when kept simple; complexity should be avoided whenever possible
+
+***Avoid over-engineering***: Don't add complexity, abstraction, or features beyond what the current problem requires
+
+***Readability over cleverness***: Code that is easy to read and understand is preferred over sophisticated but opaque solutions
+
+***Simplest working solution first***: Implement the most straightforward approach that satisfies the requirements, then refine if needed
+
+***Cognitive load reduction***: Simpler designs reduce the mental effort required to understand, maintain, and extend a system
+
+***Progressive enhancement***: Start simple; add complexity only when justified by concrete requirements (pairs with YAGNI)
+
+***Key Proponents***: Kelly Johnson (Lockheed Skunk Works, 1960s), Robert C. Martin ("Clean Code", 2008)
+
+[discrete]
+## **When to Use**:
+
+* When facing the choice between a simple and a complex solution
+* Reviewing code for maintainability and readability
+* Designing APIs, interfaces, or data models
+* Onboarding new team members to an unfamiliar codebase
+* Refactoring code that has grown unnecessarily complicated
+
+[discrete]
+## **Related Anchors**:
+
+* YAGNI - Don't implement what you don't need yet (complementary simplicity principle)
+* DRY - Eliminate redundancy to keep codebases simple and consistent
+* SOLID Principles - Structured guidelines that reinforce clean, simple designs
+
 ### SOLID-Dependency Inversion Principle
 
 ***Full Name***: SOLID Dependency Inversion Principle (DIP)
@@ -1378,6 +1462,7 @@ A class should have only one reason to change. Each module or class should be re
 * DRY - Eliminates duplication of existing knowledge (complementary but distinct)
 * SPOT - Single Point of Truth, related simplicity principle
 * TDD, Chicago School - YAGNI is a core principle of classicist TDD
+* KISS Principle - Keep systems as simple as possible (complementary simplicity principle)
 
 ---
 
@@ -1576,17 +1661,21 @@ A class should have only one reason to change. Each module or class should be re
 [discrete]
 ## **Core Concepts**:
 
-***Mikado Goal***: The final desired state of the code after refactoring; the root of the dependency graph
+***Mikado Goal***: The clear desired future state of the code after refactoring; the root of the dependency graph and success criterion of the change
 
 ***Prerequisite discovery***: Reveal blocking dependencies by attempting the change and noting what breaks
 
-***Revert and repeat***: After discovering a prerequisite, revert to a working state before addressing it
+***Use experiments***: Prefer quick or time-boxed empirical attempts over long upfront analysis
 
-***Mikado Graph***: A directed acyclic graph where nodes are prerequisites and edges show dependencies between them
+***Always revert***: **IMPORTANT**: After discovering a prerequisite, **always** revert to the last known working state before addressing it
+
+***Mikado Graph***: A directed acyclic graph where goals and prerequisites are nodes and arrows show dependencies
 
 ***Leaf-first resolution***: Resolve the leaf nodes (no further prerequisites) first, working back to the root goal
 
-***Small reversible steps***: Each step leaves the codebase in a working state, eliminating the risk of long-running broken branches
+***Small reversible steps***: Revert failed experiments immediately; keep or commit only coherent healthy changes
+
+***Meaningful commits***: Commit only when the code compiles, tests run, the product is in a good state, and the change makes sense on its own
 
 ***Key Proponents***: Ola Ellnestam, Daniel Brolund ("The Mikado Method", 2012)
 
@@ -1597,6 +1686,41 @@ A class should have only one reason to change. Each module or class should be re
 * When a direct change breaks too many things to fix at once
 * Coordinating multi-developer refactoring efforts safely
 * Making incremental improvements without blocking the team
+* Brownfield development with hidden dependencies
+
+[[mikado-method-recipe-canonical-form]]
+[discrete]
+## **Mikado Method Recipe (Canonical Form)**
+
+1. Start here: Draw the Mikado Goal.
+1. Implement the goal or prerequisite naively.
+1. Are there any errors?
+
+--
+** Examples: compiler errors, failing tests, runtime errors, broken builds.
+** If **Yes**, go to step 4.
+** If **No**, go to step 9.
+--
+1. Come up with immediate solutions to the errors.
+1. Draw the solutions as new prerequisites in the Mikado Graph.
+1. Revert all changes and return to the last known good state.
+1. Select the next prerequisite to work with.
+1. Go to step 2.
+1. Does the change make sense?
+
+--
+** Examples: understandable, internally consistent, safe to keep, useful on its own.
+** If **Yes**, go to step 10.
+** If **No**, go to step 7.
+--
+1. Commit the change.
+1. Is the Mikado Goal met?
+
+--
+** If **Yes**, go to step 12.
+** If **No**, go to step 7.
+--
+1. DONE!
 
 [discrete]
 ## **Related Anchors**:
@@ -2001,6 +2125,48 @@ A class should have only one reason to change. Each module or class should be re
 * When documentation needs to stay synchronized with code
 * Distributed teams collaborating on documentation
 * Projects requiring multiple output formats (HTML, PDF, etc.)
+
+### P.A.R.A. Method
+
+***Full Name***: P.A.R.A. Method (Projects, Areas, Resources, Archive)
+
+***Also known as***: PARA Framework, Second Brain Organization System
+
+[discrete]
+## **Core Concepts**:
+
+***Projects***: Short-term efforts with a specific goal and deadline (e.g., "Launch website", "Write article")
+
+***Areas***: Long-term responsibilities with a standard to maintain over time (e.g., "Health", "Finances", "Team Management")
+
+***Resources***: Topics of ongoing interest or future relevance without a current action (e.g., "Machine Learning", "Design Patterns")
+
+***Archive***: Inactive items from the other three categories — completed projects, dropped areas, or obsolete resources
+
+***Actionability principle***: Items are organized by how actionable they are, not by topic or type
+
+***Tool-agnostic***: Applicable to any note-taking or file management system (Notion, Obsidian, Roam Research, plain folders)
+
+***Single source of truth***: Each piece of information belongs in exactly one of the four categories
+
+***Key Proponent***: Tiago Forte ("Building a Second Brain")
+
+[discrete]
+## **When to Use**:
+
+* Organizing notes, documents, or files across tools
+* Managing knowledge work with multiple concurrent projects
+* Setting up a "Second Brain" personal knowledge management system
+* Reducing time spent searching for information
+* Separating actionable work from reference material
+* Onboarding teams to a shared information architecture
+* Structuring documentation repositories or wikis
+
+[discrete]
+## **Related Anchors**:
+
+* Diátaxis Framework
+* todo.txt-flavoured Markdown
 
 ---
 
@@ -2997,6 +3163,54 @@ MoSCoW = **M**ust have / **S**hould have / **C**ould have / **W**on't have
 * When you want to defer infrastructure decisions
 * Microservices with clear domain boundaries
 
+### ISO/IEC 25010
+
+***Full Name***: ISO/IEC 25010 — Systems and Software Quality Requirements and Evaluation (SQuaRE) — Product Quality Model
+
+***Also known as***: SQuaRE Quality Model, Software Product Quality Model, ISO 25010
+
+[discrete]
+## **Core Concepts**:
+
+***Product Quality Model***: Eight top-level quality characteristics that describe the quality of a software product: Functional Suitability, Performance Efficiency, Compatibility, Usability, Reliability, Security, Maintainability, and Portability
+
+***Functional Suitability***: The degree to which the product provides functions that meet stated and implied needs — sub-characteristics: Functional Completeness, Functional Correctness, Functional Appropriateness
+
+***Performance Efficiency***: How the product achieves its functions relative to the amount of resources used — sub-characteristics: Time Behaviour, Resource Utilisation, Capacity
+
+***Compatibility***: The ability to exchange information with other products — sub-characteristics: Co-existence, Interoperability
+
+***Usability***: The degree to which a product can be used to achieve goals effectively, efficiently, and satisfactorily — sub-characteristics: Appropriateness Recognisability, Learnability, Operability, User Error Protection, User Interface Aesthetics, Accessibility
+
+***Reliability***: The ability of the product to perform its functions under stated conditions for a specified period — sub-characteristics: Maturity, Availability, Fault Tolerance, Recoverability
+
+***Security***: The degree to which the product protects information and data from unauthorized access — sub-characteristics: Confidentiality, Integrity, Non-repudiation, Accountability, Authenticity
+
+***Maintainability***: The effectiveness and efficiency with which the product can be modified — sub-characteristics: Modularity, Reusability, Analysability, Modifiability, Testability
+
+***Portability***: The ability of the product to be transferred from one environment to another — sub-characteristics: Adaptability, Installability, Replaceability
+
+***Quality in Use Model***: Five characteristics that describe quality from the user's perspective: Effectiveness, Efficiency, Satisfaction, Freedom from Risk, Context Coverage
+
+***Key Proponents***: ISO/IEC JTC 1/SC 7 (replaces ISO/IEC 9126)
+
+[discrete]
+## **When to Use**:
+
+* Conducting structured software quality assessments or architecture reviews
+* Communicating quality requirements to diverse stakeholders using a shared vocabulary
+* Defining and prioritizing non-functional requirements at the start of a project
+* Documenting architecture quality goals in arc42 or similar frameworks (e.g., section 10 "Quality Requirements")
+* Evaluating competing architectural approaches using quality attribute scenarios (combined with ATAM)
+* Creating a quality tree or quality scenarios for an architecture documentation
+
+[discrete]
+## **Related Anchors**:
+
+* ATAM
+* arc42 Architecture Documentation
+* ADR according to Nygard
+
 ### LASR according to Toth/Zörner
 
 ***Full Name***: LASR – Lightweight Architecture Documentation by Toth/Zörner
@@ -3078,6 +3292,46 @@ MoSCoW = **M**ust have / **S**hould have / **C**ould have / **W**on't have
 * Organizations using Markdown-based documentation workflows
 * When LLM assistance is needed to generate consistent decision records
 * Complementing arc42 Section 9 (Architecture Decisions)
+
+### Vertical Slice Architecture (VSA)
+
+***Also known as***: VSA, Feature Slices
+
+[discrete]
+## **Core Concepts**:
+
+***Vertical slices***: Each feature is organized as an end-to-end slice spanning all layers (request, validation, domain logic, persistence, API)
+
+***Feature cohesion***: Code for a feature lives together regardless of technical layer
+
+***No horizontal layers***: Avoids traditional layered architecture (controllers, services, repositories) as primary organizing principle
+
+***CQRS alignment***: Naturally pairs with Command/Query separation per slice
+
+***Thin shared layer***: Minimal shared infrastructure; each slice owns its behavior
+
+***Screaming intent***: Folder/namespace structure reflects features, not technical concerns
+
+***Independent evolution***: Slices can evolve independently with minimal cross-cutting changes
+
+***Reduced coupling***: Changes to one feature rarely affect other features
+
+***Key Proponents***: Jimmy Bogard
+
+[discrete]
+## **When to Use**:
+
+* Applications with many distinct business features
+* When feature teams own end-to-end delivery
+* To reduce merge conflicts in large teams
+* When traditional layered architecture creates too much coupling across features
+
+[discrete]
+## **Related Anchors**:
+
+* Clean Architecture
+* Hexagonal Architecture (Ports & Adapters)
+* CQRS
 
 ---
 
@@ -3351,6 +3605,49 @@ MoSCoW = **M**ust have / **S**hould have / **C**ould have / **W**on't have
 * Identifying true competition
 * Writing more meaningful user stories
 * Market segmentation based on jobs, not demographics
+
+### PERT
+
+***Full Name***: Program Evaluation and Review Technique
+
+***Also known as***: Three-Point Estimation, PERT Network Analysis
+
+[discrete]
+## **Core Concepts**:
+
+***Three-Time Estimation***: Each activity requires three duration estimates: Optimistic (O) — best case if everything goes well; Most Likely (M) — realistic expected duration; Pessimistic (P) — worst case if problems arise
+
+***PERT Formula***: Weighted average: **E = (O + 4M + P) / 6** — weights the most likely estimate four times more than the extreme estimates
+
+***Standard Deviation***: **σ = (P − O) / 6** — quantifies schedule uncertainty per activity; used to calculate confidence intervals for the project completion date
+
+***Network Diagram***: Activities are represented as nodes or arrows in a directed acyclic graph; dependencies between activities are modelled explicitly
+
+***Critical Path***: The longest path through the network determines the minimum project duration; any delay on the critical path delays the whole project
+
+***Float / Slack***: Time an activity can be delayed without affecting the project end date; activities on the critical path have zero float
+
+***Probabilistic Scheduling***: Unlike CPM (which uses single-point estimates), PERT treats duration as a random variable, enabling statistical confidence ranges for milestones
+
+***Origin***: Developed in 1958 by D.G. Malcolm, J.H. Roseboom, C.E. Clark, and W. Fazar at Booz Allen Hamilton for the US Navy's Polaris submarine missile programme
+
+***Key Proponents***: D.G. Malcolm, J.H. Roseboom, C.E. Clark, W. Fazar ("Application of a Technique for Research and Development Program Evaluation", 1959)
+
+[discrete]
+## **When to Use**:
+
+* Estimating effort and schedule for projects with significant uncertainty
+* Planning R&D, software development, or any novel work where duration is hard to predict
+* Communicating schedule risk and confidence levels to stakeholders
+* Identifying the critical path to focus risk management and resource allocation
+* Complementing Story Points or T-shirt sizing with a probabilistic time dimension
+
+[discrete]
+## **Related Anchors**:
+
+* MoSCoW
+* User Story Mapping
+* Impact Mapping
 
 ### Pugh-Matrix
 
@@ -3679,6 +3976,52 @@ SWOT = **S**trengths / **W**eaknesses / **O**pportunities / **T**hreats
 
 * OWASP Top 10
 * Regulated Environment
+
+### LLM-Evaluations
+
+***Full Name***: Large Language Model Evaluations
+
+***Also known as***: LLM Benchmarking, LLM Assessment, Foundation Model Evaluation
+
+[discrete]
+## **Core Concepts**:
+
+***Benchmark Suites***: Standardized datasets and tasks used to compare LLM capabilities — MMLU (Massive Multitask Language Understanding), HellaSwag, HumanEval, BIG-Bench, GSM8K, TruthfulQA, ARC
+
+***Evaluation Metrics***: Quantitative measures of model quality — perplexity, accuracy, BLEU, ROUGE, F1, pass@k (code generation), exact match, calibration
+
+***Automatic vs. Human Evaluation***: Automated scoring via metrics or reference outputs (fast, scalable) vs. human judgment (nuanced, expensive); hybrid approaches such as LLM-as-judge
+
+***HELM (Holistic Evaluation of Language Models)***: Stanford framework evaluating models across multiple scenarios and metrics simultaneously to surface trade-offs across accuracy, robustness, fairness, and efficiency
+
+***Chatbot Arena / Elo Rating***: Human preference-based evaluation where two models respond to the same prompt and humans choose the better answer; produces Elo-style rankings
+
+***Open LLM Leaderboard***: Hugging Face / EleutherAI hosted ranking of open-source models across standardized benchmarks enabling reproducible comparisons
+
+***Red-Teaming & Safety Evaluation***: Systematic adversarial probing for harmful outputs, jailbreaks, and failure modes; a required step before production deployment
+
+***Contamination & Overfitting***: Risk that a model's training data includes benchmark test sets, inflating apparent performance; mitigated by held-out or dynamic benchmarks
+
+***Task-Specific vs. General Evaluation***: Targeted evaluation for a specific use case (e.g., code, summarization, RAG retrieval) vs. broad capability assessment across diverse domains
+
+***Key Proponents***: Percy Liang et al. (Stanford, "Holistic Evaluation of Language Models"), EleutherAI ("Language Model Evaluation Harness"), LMSYS ("Chatbot Arena: Benchmarking LLMs in the Wild")
+
+[discrete]
+## **When to Use**:
+
+* Selecting a foundation model for a specific application domain
+* Comparing fine-tuned model versions during iterative training
+* Validating that a model meets quality, safety, and fairness requirements before deployment
+* Reproducing or challenging published model capability claims
+* Establishing regression baselines when updating a deployed model
+* Communicating model strengths and limitations to non-technical stakeholders
+
+[discrete]
+## **Related Anchors**:
+
+* Chain of Thought (CoT)
+* SOTA (State-of-the-Art)
+* Mutation Testing
 
 ### Mutation Testing
 

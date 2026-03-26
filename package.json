@@ -10,7 +10,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "extract-metadata": "node scripts/extract-metadata.js",
     "generate-sitemap": "node scripts/generate-sitemap.js",
-    "build": "npm run extract-metadata && npm run generate-sitemap"
+    "generate-llms-txt": "node scripts/generate-llms-txt.js",
+    "render-docs": "node scripts/render-docs.js",
+    "build": "npm run extract-metadata && npm run generate-llms-txt && npm run render-docs && npm run generate-sitemap"
   },
   "keywords": [],
   "author": "",

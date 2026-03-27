@@ -11,6 +11,20 @@ let scrollBeforeModal = 0
 // Base path for GitHub Pages subdirectory deployment
 const BASE_PATH = import.meta.env.BASE_URL.replace(/\/$/, '')
 
+// Page titles for SEO and browser tabs
+const ROUTE_TITLES = {
+  '/': 'Semantic Anchors — Shared Vocabulary for LLM Communication',
+  '/about': 'About — Semantic Anchors',
+  '/contracts': 'Semantic Contracts — Semantic Anchors',
+  '/workflow': 'Development Workflow — Semantic Anchors',
+  '/evaluations': 'Evaluations — Semantic Anchors',
+  '/contributing': 'Contributing — Semantic Anchors',
+  '/changelog': 'Changelog — Semantic Anchors',
+  '/agentskill': 'AgentSkill — Semantic Anchors',
+  '/rejected-proposals': 'Rejected Proposals — Semantic Anchors',
+  '/all-anchors': 'Full Reference — Semantic Anchors',
+}
+
 /**
  * Strip base path from a pathname to get the route
  */
@@ -144,6 +158,10 @@ function handleRoute() {
     // Restore scroll position
     window.scrollTo(0, scrollBeforeModal)
 
+    // Set title to anchor name
+    const readableName = safeAnchorId.replace(/-/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase())
+    document.title = `${readableName} — Semantic Anchors`
+
     // Open the anchor modal as overlay on current page
     import('../components/anchor-modal.js').then(({ showAnchorDetails }) => {
       showAnchorDetails(safeAnchorId)
@@ -155,12 +173,14 @@ function handleRoute() {
 
   if (typeof handler === 'function') {
     currentRoute = path
+    document.title = ROUTE_TITLES[path] || 'Semantic Anchors'
     handler()
   } else {
     // Default to home if route not found
     const homeHandler = routes.get('/')
     if (typeof homeHandler === 'function') {
       currentRoute = '/'
+      document.title = ROUTE_TITLES['/']
       homeHandler()
     }
   }

@@ -23,17 +23,35 @@ Eine echte Methodik, aber zu spezialisiert für zuverlässige Aktivierung über 
 
 | *TLDR*
 | Strukturell ungeeignet
-| Unterspezifizierte Anweisung ohne definierte Struktur. Bedeutet nur "fasse dich kurz" ohne ein Framework dafür. Keine Methodik.
+| Unterspezifizierte Anweisung ohne definierte Struktur. Bedeutet nur "fasse dich kurz" ohne ein Framework dafür. Keine Methodik. +
+*Jetzt verfügbar als link:#/contracts[Semantic Contract]*: "Concise Response" — kombiniert BLUF + Strunk & White.
 
 | *ELI5* (Explain Like I'm 5)
 | Strukturell ungeeignet
-| Vages Zielniveau ohne pädagogisches Framework. Keine konsistente Interpretation dessen, was "Niveau eines 5-Jährigen" technisch bedeutet.
+| Vages Zielniveau ohne pädagogisches Framework. Keine konsistente Interpretation dessen, was "Niveau eines 5-Jährigen" technisch bedeutet. +
+*Jetzt verfügbar als link:#/contracts[Semantic Contract]*: "Simple Explanation" — nutzt die Feynman-Technik.
+
+| *Spec-Driven Development* (https://github.com/LLM-Coding/Semantic-Anchors/pull/356[#356])
+| Strukturell ungeeignet
+| Relevantes Konzept, aber keine einheitliche Definition — verschiedene Interpretationen (API-first, formale Specs, unser Workflow). Nicht einem konkreten Urheber zuordenbar. +
+*Jetzt verfügbar als link:#/contracts[Semantic Contracts]*: "Specification" + "Requirements Discovery" — kombiniert Gherkin, BDD, Sokratische Methode, MECE, PRD.
+
+| *Explicit Contract Surface* (https://github.com/LLM-Coding/Semantic-Anchors/pull/357[#357])
+| Strukturell ungeeignet
+| Gut beschriebene Design-Praxis, aber kein etablierter Begriff in der Literatur. Kombiniert bestehende Anker (Clean Architecture, Hexagonal, DDD, SOLID DIP/ISP) ohne neue Aktivierung. +
+*Jetzt verfügbar als link:#/contracts[Semantic Contract]*: "Layer Boundaries".
 
 | *MIRRR UX Framework* (https://github.com/LLM-Coding/Semantic-Anchors/issues/150[#150])
 | Nicht in Trainingsdaten
 | Ein echtes UX-Framework mit definierter Methodik, aber nicht weit genug dokumentiert, damit LLMs es zuverlässig erkennen und die richtigen Konzepte aktivieren.
 
 |===
+
+[TIP]
+====
+Begriffe, die nicht als Semantic Anchors qualifizieren, können trotzdem als link:#/contracts[Semantic Contracts] nützlich sein.
+Ein Contract definiert, was ein Begriff in deinem Projekt bedeutet — entweder durch Komposition etablierter Anker oder durch eigene Definitionen, die nur in deinem Team existieren.
+====
 
 == Wie wir bewerten
 

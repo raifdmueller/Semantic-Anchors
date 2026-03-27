@@ -1,6 +1,6 @@
 import { i18n } from '../i18n.js'
 import { fetchAnchorsData, fetchFeedbackData } from '../utils/data-loader.js'
-import { getRouteBeforeModal, getScrollBeforeModal, buildPath, navigate } from '../utils/router.js'
+import { getRouteBeforeModal, buildPath, navigate } from '../utils/router.js'
 
 let asciidoctor = null
 

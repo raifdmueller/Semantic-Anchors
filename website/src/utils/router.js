@@ -81,13 +81,17 @@ export function initRouter() {
 
     const href = link.getAttribute('href')
 
-    // Skip external links, new tab links, and non-http links
+    // Skip external links, new tab links, modifier keys, and non-http links
     if (
       !href ||
       href.startsWith('http') ||
       href.startsWith('mailto:') ||
       link.target === '_blank' ||
-      link.hasAttribute('download')
+      link.hasAttribute('download') ||
+      e.metaKey ||
+      e.ctrlKey ||
+      e.shiftKey ||
+      e.altKey
     )
       return
 
@@ -105,7 +109,9 @@ export function initRouter() {
     // Handle internal route links (e.g., /about, /anchor/xxx)
     if (href.startsWith('/') || href.startsWith(BASE_PATH)) {
       e.preventDefault()
-      history.pushState(null, '', href)
+      // Ensure BASE_PATH is prepended for bare routes like /about
+      const fullPath = href.startsWith(BASE_PATH) ? href : buildPath(href)
+      history.pushState(null, '', fullPath)
       handleRoute()
     }
   })

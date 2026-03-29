@@ -1469,6 +1469,36 @@
     "tier": 3
   },
   {
+    "id": "hemingway-bridge",
+    "title": "Hemingway Bridge",
+    "categories": [
+      "knowledge-management"
+    ],
+    "roles": [
+      "software-developer",
+      "technical-writer",
+      "educator",
+      "consultant"
+    ],
+    "related": [
+      "gtd",
+      "para-method"
+    ],
+    "proponents": [
+      "Ernest Hemingway"
+    ],
+    "tags": [
+      "productivity",
+      "session-management",
+      "creative-flow",
+      "re-entry",
+      "momentum",
+      "writer-block"
+    ],
+    "filePath": "docs/anchors/hemingway-bridge.adoc",
+    "tier": 3
+  },
+  {
     "id": "hexagonal-architecture",
     "title": "Hexagonal Architecture (Ports & Adapters)",
     "categories": [

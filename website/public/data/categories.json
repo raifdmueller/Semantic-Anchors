@@ -89,6 +89,7 @@
     "name": "Knowledge Management",
     "anchors": [
       "gtd",
+      "hemingway-bridge",
       "para-method",
       "todotxt-flavoured-markdown"
     ]

@@ -110,6 +110,7 @@ function initApp() {
   addRoute('/rejected-proposals', renderRejectedProposalsPage)
   addRoute('/all-anchors', renderAllAnchorsPage)
   addRoute('/workflow', renderWorkflowPage)
+  addRoute('/brownfield', renderBrownfieldPage)
   addRoute('/contracts', renderContractsPageHandler)
   addRoute('/evaluations', renderEvaluationsPage)
 
@@ -231,6 +232,15 @@ function renderWorkflowPage() {
   pageContent.innerHTML = renderDocPage()
   updateActiveNavLink()
   loadDocContent('docs/spec-driven-workflow.adoc')
+}
+
+function renderBrownfieldPage() {
+  const pageContent = document.getElementById('page-content')
+  if (!pageContent) return
+
+  pageContent.innerHTML = renderDocPage()
+  updateActiveNavLink()
+  loadDocContent('docs/brownfield-workflow.adoc')
 }
 
 function renderContractsPageHandler() {
@@ -458,6 +468,8 @@ function handleLanguageChange() {
     loadDocContent('docs/all-anchors.adoc')
   } else if (currentRoute === '/workflow') {
     loadDocContent('docs/spec-driven-workflow.adoc')
+  } else if (currentRoute === '/brownfield') {
+    loadDocContent('docs/brownfield-workflow.adoc')
   } else if (currentRoute === '/') {
     initCardGridVisualization()
   }

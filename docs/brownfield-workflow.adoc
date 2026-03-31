@@ -6,7 +6,7 @@ Ralf D. Müller
 
 == Introduction
 
-You have mastered the link:spec-driven-workflow.adoc[greenfield workflow].
+You have mastered the link:#/workflow[greenfield workflow].
 Now you want to apply it to an existing codebase.
 
 The core principles remain the same: small steps, high autonomy, error correction loops.
@@ -64,7 +64,7 @@ The output is a set of use cases that describe the *existing* behavior -- not wh
 .Prompt
 ----
 Read the code in [bounded context path]. Extract the existing behavior as Use Cases.
-For each Use Case: ID, Trigger, Actors, Preconditions, Main Flow, Alternative Flows, Postconditions.
+For each Use Case: ID, Trigger, Actors, Preconditions, Main Flow, Alternative Flows, Postconditions, Business Rules.
 Save as docs/specs/use-cases-[context-name].adoc.
 ----
 
@@ -152,7 +152,7 @@ Stable code that nobody touches does not need specs.
 |link:#/anchor/tdd-london-school[TDD London] / link:#/anchor/tdd-chicago-school[Chicago]
 
 |Continue
-|Follow link:spec-driven-workflow.adoc[the standard workflow] from Step 3 (PRD) or Step 8 (Implementation), depending on whether you are adding new features or fixing bugs.
+|Follow link:#/workflow[the standard workflow] from Step 3 (PRD) or Step 8 (Implementation), depending on whether you are adding new features or fixing bugs.
 |{empty}--
 |===
 

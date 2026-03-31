@@ -31,7 +31,7 @@ Click on any anchor to see its full definition on the Semantic Anchors website.
 [IMPORTANT]
 ====
 This workflow is designed for greenfield projects built from scratch with AI assistance.
-For existing codebases, see link:brownfield-workflow.adoc[Adapting the Workflow to Brownfield Projects].
+For existing codebases, see link:#/brownfield[Adapting the Workflow to Brownfield Projects].
 ====
 
 == The Key Principle: Small Steps, High Autonomy
@@ -210,7 +210,7 @@ From the PRD, generate a full specification:
 [source]
 ----
 Create a detailed specification from the PRD. Include:
-- Use Cases (Trigger, Main Flow, Alternative Flows, Postconditions)
+- Use Cases (Trigger, Main Flow, Alternative Flows, Postconditions, Business Rules)
 - Activity Diagrams for all flows (not just the happy path)
 - Acceptance criteria in Gherkin format
 Save as .adoc files in src/docs/specs/.
@@ -224,6 +224,9 @@ Without a trigger, neither the AI nor a tester knows when the use case begins.
 * *Alternative Flows*: Named branches (A1, A2, ...) for error handling, validation failures, and edge cases.
 * *Postconditions*: The guaranteed system state after successful completion.
 Postconditions are what your tests assert.
+* *Business Rules*: Numbered rules (BR-001, BR-002, ...) that capture validation constraints, calculation logic, or domain invariants.
+Business rules make implicit knowledge explicit.
+Without them, the AI invents its own validation logic -- or skips it entirely.
 
 This structure follows Alistair Cockburn's Use Case format, which LLMs recognize reliably.
 The more precise the use case, the less the AI has to guess during implementation.
@@ -431,7 +434,7 @@ Consider assigning different AI models to different review roles.
 Run ATAM reviews after each major architectural change, not just once.
 Groom the backlog more frequently as the project grows.
 *Legacy codebases*:: This workflow assumes you start from scratch.
-See link:brownfield-workflow.adoc[Adapting the Workflow to Brownfield Projects] for a dedicated guide covering reverse engineering, baseline test coverage, and incremental migration using bounded contexts.
+See link:#/brownfield[Adapting the Workflow to Brownfield Projects] for a dedicated guide covering reverse engineering, baseline test coverage, and incremental migration using bounded contexts.
 *Frontend / HTML applications*:: This workflow works well for backend code, CLIs, and libraries where the compiler and TDD provide strong error correction.
 Frontend applications can be built with the same approach, but consistent UI is harder to verify automatically.
 The error correction layers that make backend development reliable (compiler errors, test failures) have no direct equivalent for visual consistency.
@@ -457,7 +460,7 @@ The essential one-liners for each phase, with the Semantic Anchors they activate
 |link:#/anchor/plain-english-strunk-white[Strunk & White]
 
 |Specification
-|`Create a detailed spec with Use Cases (Trigger, Main Flow, Alternative Flows, Postconditions), Activity Diagrams (all paths), and Gherkin acceptance criteria.`
+|`Create a detailed spec with Use Cases (Trigger, Main Flow, Alternative Flows, Postconditions, Business Rules), Activity Diagrams (all paths), and Gherkin acceptance criteria.`
 |link:#/anchor/gherkin[Gherkin]
 
 |Architecture
@@ -529,7 +532,7 @@ Start with the Socratic Method for requirements and see where it leads.
 If you discover anchors that work well in your workflow, https://github.com/LLM-Coding/Semantic-Anchors/blob/main/CONTRIBUTING.md[contribute them to the collection].
 
 Once you are comfortable with this greenfield workflow, you can adapt it to existing codebases.
-See link:brownfield-workflow.adoc[Adapting the Workflow to Brownfield Projects] for a step-by-step guide.
+See link:#/brownfield[Adapting the Workflow to Brownfield Projects] for a step-by-step guide.
 
 === Further Reading
 

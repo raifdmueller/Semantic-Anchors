@@ -17,6 +17,7 @@ const ROUTE_TITLES = {
   '/about': 'About — Semantic Anchors',
   '/contracts': 'Semantic Contracts — Semantic Anchors',
   '/workflow': 'Development Workflow — Semantic Anchors',
+  '/brownfield': 'Brownfield Workflow — Semantic Anchors',
   '/evaluations': 'Evaluations — Semantic Anchors',
   '/contributing': 'Contributing — Semantic Anchors',
   '/changelog': 'Changelog — Semantic Anchors',

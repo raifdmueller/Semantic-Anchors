@@ -31,7 +31,7 @@ Click on any anchor to see its full definition on the Semantic Anchors website.
 [IMPORTANT]
 ====
 This workflow is designed for greenfield projects built from scratch with AI assistance.
-Adapting it to legacy codebases requires additional considerations (reverse engineering existing architecture, establishing test coverage, incremental migration) that are not yet covered here.
+For existing codebases, see link:brownfield-workflow.adoc[Adapting the Workflow to Brownfield Projects].
 ====
 
 == The Key Principle: Small Steps, High Autonomy
@@ -418,8 +418,7 @@ Consider assigning different AI models to different review roles.
 Run ATAM reviews after each major architectural change, not just once.
 Groom the backlog more frequently as the project grows.
 *Legacy codebases*:: This workflow assumes you start from scratch.
-Adapting it to existing code requires additional steps: reverse engineering the existing architecture into arc42, establishing baseline test coverage, and incremental migration.
-First steps: let the AI generate arc42 documentation from the existing codebase, then add tests for the areas you plan to change.
+See link:brownfield-workflow.adoc[Adapting the Workflow to Brownfield Projects] for a dedicated guide covering reverse engineering, baseline test coverage, and incremental migration using bounded contexts.
 *Frontend / HTML applications*:: This workflow works well for backend code, CLIs, and libraries where the compiler and TDD provide strong error correction.
 Frontend applications can be built with the same approach, but consistent UI is harder to verify automatically.
 The error correction layers that make backend development reliable (compiler errors, test failures) have no direct equivalent for visual consistency.
@@ -515,6 +514,9 @@ Your job is to know which anchor to use when, and to verify the results.
 Try it on your next project.
 Start with the Socratic Method for requirements and see where it leads.
 If you discover anchors that work well in your workflow, https://github.com/LLM-Coding/Semantic-Anchors/blob/main/CONTRIBUTING.md[contribute them to the collection].
+
+Once you are comfortable with this greenfield workflow, you can adapt it to existing codebases.
+See link:brownfield-workflow.adoc[Adapting the Workflow to Brownfield Projects] for a step-by-step guide.
 
 === Further Reading
 

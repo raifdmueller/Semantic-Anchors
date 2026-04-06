@@ -225,7 +225,7 @@ Source: https://github.com/LLM-Coding/Semantic-Anchors
 
 ### Feynman Technique
 - **Proponents:** Richard Feynman
-- **Core:** Explain concept simply, identify gaps, refine understanding
+- **Core:** Explain concepts simply, identify gaps, refine understanding
 
 ### Rubber Duck Debugging
 - **Core:** Explain code line-by-line to find bugs

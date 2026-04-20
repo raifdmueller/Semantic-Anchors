@@ -9,6 +9,7 @@ A chronological record of all semantic anchors added to the catalog. Community c
 * *Single Level of Abstraction Principle (SLAP)* — Kent Beck's Composed Method, codified as a Clean Code function-design rule by Robert C. Martin (proposed by https://github.com/eirikbell[@eirikbell] in https://github.com/LLM-Coding/Semantic-Anchors/issues/440[#440])
 * *Occam's Razor* — William of Ockham's parsimony principle applied to explanations, debugging and architecture rationale (proposed by https://github.com/danielschmeiss[@danielschmeiss] in https://github.com/LLM-Coding/Semantic-Anchors/issues/439[#439])
 * *Code Smells* — Kent Beck / Martin Fowler / Robert C. Martin catalogue of surface indications pointing to deeper design problems (proposed by https://github.com/ma7tz[@ma7tz] in https://github.com/LLM-Coding/Semantic-Anchors/issues/435[#435])
+* *What Would Chuck Norris Do? (WWCND)* — Tier 3 disposition-activator for direct commitment under uncertainty; originally rejected in https://github.com/LLM-Coding/Semantic-Anchors/issues/426[#426], re-proposed by https://github.com/cornelius[@cornelius] in https://github.com/LLM-Coding/Semantic-Anchors/issues/438[#438] with a 16-page empirical validation (3 models × 19 prompts × N=2 = 114 manually scored responses) that passed all four catalog criteria
 
 == 2026-04-15
 

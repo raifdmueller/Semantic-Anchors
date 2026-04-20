@@ -3633,6 +3633,38 @@
     "tier": 3
   },
   {
+    "id": "what-would-chuck-norris-do",
+    "title": "What Would Chuck Norris Do? (WWCND)",
+    "categories": [
+      "problem-solving"
+    ],
+    "roles": [
+      "software-developer",
+      "software-architect",
+      "team-lead",
+      "consultant"
+    ],
+    "related": [
+      "devils-advocate",
+      "kiss-principle",
+      "yagni",
+      "occams-razor"
+    ],
+    "proponents": [
+      "Ian Spector",
+      "Chuck Norris"
+    ],
+    "tags": [
+      "decisiveness",
+      "commitment",
+      "action-bias",
+      "disposition",
+      "meme-anchor"
+    ],
+    "filePath": "docs/anchors/what-would-chuck-norris-do.adoc",
+    "tier": 3
+  },
+  {
     "id": "yagni",
     "title": "YAGNI (You Aren’t Gonna Need It)",
     "categories": [

@@ -64,6 +64,26 @@ export function renderFooter(version) {
             <span class="text-gray-300 dark:text-gray-600">|</span>
             <span class="text-xs text-[var(--color-text-secondary)]">v${version}</span>
           </div>
+          <div class="flex flex-wrap items-center justify-center gap-2 pt-1">
+            <span class="text-xs text-[var(--color-text-secondary)]" data-i18n="footer.asSeenOn">${i18n.t('footer.asSeenOn')}</span>
+            <a
+              href="https://www.youtube.com/watch?v=rQj-B3VTx48"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-1.5 hover:opacity-80 transition-opacity"
+              title="${i18n.t('footer.hmzeAlt')}"
+            >
+              <img
+                src="${import.meta.env.BASE_URL}hmze-logo.png"
+                alt="HMZE Podcast"
+                width="28"
+                height="24"
+                class="h-6 w-auto"
+                loading="lazy"
+              />
+              <span class="text-xs text-[var(--color-text-secondary)]">HMZE <span class="opacity-60">(DE)</span></span>
+            </a>
+          </div>
         </div>
       </div>
     </footer>

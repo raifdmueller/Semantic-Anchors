@@ -1,4 +1,5 @@
 import { i18n } from '../i18n.js'
+import { hydrateYouTubeFacades } from '../utils/youtube-facade.js'
 
 /**
  * Render a documentation page shell (content loaded async)
@@ -59,6 +60,10 @@ export async function loadDocContent(docPath) {
       link.setAttribute('target', '_blank')
       link.setAttribute('rel', 'noopener noreferrer')
     })
+
+    // Attach click-to-load handlers for any YouTube placeholders in the doc.
+    // Keeps us DSGVO-compliant: YouTube is only contacted after user consent.
+    hydrateYouTubeFacades(contentEl)
   } catch (error) {
     console.error('Failed to load documentation:', error)
     contentEl.innerHTML = `

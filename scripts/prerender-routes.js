@@ -59,6 +59,13 @@ const ROUTES = [
       'Applying semantic anchors to brownfield codebases using a bounded-context approach.',
   },
   {
+    path: '/contracts',
+    fragment: 'docs/contracts.html',
+    title: 'Semantic Contracts — Semantic Anchors',
+    description:
+      'Semantic Contracts define what terms mean in your project — composing established anchors or custom definitions for your AGENTS.md or CLAUDE.md.',
+  },
+  {
     path: '/changelog',
     fragment: 'docs/changelog.html',
     title: 'Changelog — Semantic Anchors',

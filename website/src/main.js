@@ -147,7 +147,7 @@ function initApp() {
   addRoute('/rejected-proposals', renderRejectedProposalsPage)
   addRoute('/all-anchors', renderAllAnchorsPage)
   addRoute('/spec-driven-development', renderWorkflowPage)
-  addRoute('/workflow', () => navigate('/spec-driven-development'))
+  addRoute('/workflow', () => navigate('/spec-driven-development', { replace: true }))
   addRoute('/brownfield', renderBrownfieldPage)
   addRoute('/contracts', renderContractsPageHandler)
   addRoute('/evaluations', renderEvaluationsPage)

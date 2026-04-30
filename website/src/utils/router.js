@@ -55,9 +55,12 @@ export function addRoute(path, handler) {
 /**
  * Navigate to a specific route
  * @param {string} path - Route path
+ * @param {object} [options]
+ * @param {boolean} [options.replace=false] - Replace current history entry instead of pushing
  */
-export function navigate(path) {
-  history.pushState(null, '', buildPath(path))
+export function navigate(path, { replace = false } = {}) {
+  const method = replace ? 'replaceState' : 'pushState'
+  history[method](null, '', buildPath(path))
   handleRoute()
 }
 

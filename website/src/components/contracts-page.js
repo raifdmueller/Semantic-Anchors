@@ -50,20 +50,31 @@ export function renderContractsPage() {
           <a href="https://www.linkedin.com/feed/update/urn:li:activity:7438137401019105281/" target="_blank" rel="noopener noreferrer" class="text-blue-600 dark:text-blue-400 hover:underline" data-i18n="contracts.linkedinLink">${i18n.t('contracts.linkedinLink')}</a>
         </p>
 
-        <div class="flex items-center gap-4 mb-6">
+        <div class="flex items-center gap-3 mb-6">
+          <span id="contracts-count" class="inline-flex items-center rounded-full bg-blue-100 dark:bg-blue-900/30 px-3 py-1 text-sm font-medium text-blue-700 dark:text-blue-300">${selectedCount} <span data-i18n="contracts.selected" class="ml-1">${i18n.t('contracts.selected')}</span></span>
           <button
             id="contracts-download"
-            class="inline-flex items-center gap-2 rounded-lg bg-blue-600 px-4 py-2 text-sm font-medium text-white hover:bg-blue-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+            class="inline-flex items-center gap-2 rounded-lg bg-blue-600 px-3 py-2 text-sm font-medium text-white hover:bg-blue-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+            title="${i18n.t('contracts.download')}"
           >
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
             </svg>
             <span data-i18n="contracts.download">${i18n.t('contracts.download')}</span>
-            <span id="contracts-count" class="rounded-full bg-blue-500 px-2 py-0.5 text-xs">${selectedCount}</span>
+          </button>
+          <button
+            id="contracts-copy"
+            class="inline-flex items-center gap-2 rounded-lg border border-blue-600 dark:border-blue-400 px-3 py-2 text-sm font-medium text-blue-600 dark:text-blue-400 hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+            title="${i18n.t('contracts.copy')}"
+          >
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"/>
+            </svg>
+            <span data-i18n="contracts.copy">${i18n.t('contracts.copy')}</span>
           </button>
           <button
             id="contracts-select-all"
-            class="text-sm text-blue-600 dark:text-blue-400 hover:underline"
+            class="text-sm text-blue-600 dark:text-blue-400 hover:underline ml-1"
             data-i18n="contracts.selectAll"
           >${i18n.t('contracts.selectAll')}</button>
           <button
@@ -176,6 +187,12 @@ export function initContractsPage(contracts) {
     downloadBtn.addEventListener('click', () => downloadContracts(contracts))
   }
 
+  // Copy to clipboard button
+  const copyBtn = document.getElementById('contracts-copy')
+  if (copyBtn) {
+    copyBtn.addEventListener('click', () => copyContracts(contracts))
+  }
+
   // Select all
   const selectAllBtn = document.getElementById('contracts-select-all')
   if (selectAllBtn) {
@@ -200,10 +217,17 @@ export function initContractsPage(contracts) {
 function updateUI() {
   const selected = getSelectedContracts()
   const countEl = document.getElementById('contracts-count')
-  if (countEl) countEl.textContent = selected.length
+  if (countEl) {
+    countEl.querySelector('span:not([data-i18n])') ||
+      (countEl.childNodes[0].textContent = selected.length + ' ')
+    countEl.firstChild.textContent = selected.length + ' '
+  }
 
   const downloadBtn = document.getElementById('contracts-download')
   if (downloadBtn) downloadBtn.disabled = selected.length === 0
+
+  const copyBtn = document.getElementById('contracts-copy')
+  if (copyBtn) copyBtn.disabled = selected.length === 0
 
   // Update card styles
   document.querySelectorAll('.contract-card').forEach((card) => {
@@ -217,12 +241,12 @@ function updateUI() {
   })
 }
 
-function downloadContracts(contracts) {
+function buildContractsMarkdown(contracts) {
   const selected = getSelectedContracts()
   const lang = i18n.currentLanguage || 'en'
   const filtered = contracts.filter((c) => selected.includes(c.id))
 
-  if (filtered.length === 0) return
+  if (filtered.length === 0) return null
 
   let md = '# Semantic Contracts\n\n'
   md +=
@@ -242,6 +266,13 @@ function downloadContracts(contracts) {
       ? 'Generiert von https://llm-coding.github.io/Semantic-Anchors/#/contracts\n'
       : 'Generated from https://llm-coding.github.io/Semantic-Anchors/#/contracts\n'
 
+  return md
+}
+
+function downloadContracts(contracts) {
+  const md = buildContractsMarkdown(contracts)
+  if (!md) return
+
   const blob = new Blob([md], { type: 'text/markdown' })
   const url = URL.createObjectURL(blob)
   const a = document.createElement('a')
@@ -249,4 +280,23 @@ function downloadContracts(contracts) {
   a.download = 'semantic-contracts.md'
   a.click()
   URL.revokeObjectURL(url)
+}
+
+async function copyContracts(contracts) {
+  const md = buildContractsMarkdown(contracts)
+  if (!md) return
+
+  try {
+    await navigator.clipboard.writeText(md)
+    const copyBtn = document.getElementById('contracts-copy')
+    if (copyBtn) {
+      const original = copyBtn.querySelector('span[data-i18n]').textContent
+      copyBtn.querySelector('span[data-i18n]').textContent = i18n.t('contracts.copied')
+      setTimeout(() => {
+        copyBtn.querySelector('span[data-i18n]').textContent = original
+      }, 2000)
+    }
+  } catch {
+    // fallback ignored
+  }
 }

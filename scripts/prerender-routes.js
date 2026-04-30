@@ -41,11 +41,11 @@ const ROUTES = [
       'Learn what semantic anchors are, why they matter for LLM communication, and how the catalog is curated.',
   },
   {
-    path: '/workflow',
+    path: '/spec-driven-development',
     fragment: 'docs/spec-driven-workflow.html',
-    title: 'Development Workflow — Semantic Anchors',
+    title: 'Spec-Driven Development with Semantic Anchors',
     description:
-      'The Semantic Anchors spec-driven development workflow — from requirements to specification to implementation, powered by semantic anchors.',
+      'Spec-driven development workflow — from requirements to specification to implementation, powered by semantic anchors.',
   },
   {
     path: '/brownfield',

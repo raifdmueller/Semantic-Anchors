@@ -2,6 +2,16 @@
 
 A chronological record of all semantic anchors added to the catalog. Community contributors are credited with thanks.
 
+== 2026-05-02
+
+*New anchors:*
+
+* *Cockburn Use Cases* — Alistair Cockburn's structured textual use case format with Goal Levels (Summary, User Goal, Subfunction) and Actor-Goal List discovery technique
+
+*New contracts:*
+
+* *Socratic Code Theory Recovery* — Recover a program's "theory" (Naur 1985) from source code through recursive question refinement; composes Socratic Method, arc42, ISO 25010, Nygard ADRs, Mental Model (Naur)
+
 == 2026-04-20
 
 *New anchors:*

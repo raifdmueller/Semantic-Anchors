@@ -386,6 +386,11 @@ Source: https://github.com/LLM-Coding/Semantic-Anchors
 
 ## Requirements Engineering
 
+### Cockburn Use Cases
+- **Also known as:** Fully Dressed Use Cases, Goal-Level Use Cases
+- **Proponents:** Alistair Cockburn
+- **Core:** Structured textual use case format — Primary Actor, Stakeholders & Interests, Preconditions, Trigger, Main Success Scenario, Extensions, Postconditions; three Goal Levels (Summary/Kite, User Goal/Sea Level, Subfunction/Fish); Actor-Goal List as discovery technique; deliberately prose-based and notation-agnostic — does NOT prescribe Activity Diagrams, Gherkin, or EARS, which are complementary representations
+
 ### INVEST
 - **Proponents:** Bill Wake
 - **Core:** Independent, Negotiable, Valuable, Estimable, Small, Testable — criteria for well-formed user stories

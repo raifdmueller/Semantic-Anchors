@@ -139,6 +139,7 @@
     "id": "requirements-engineering",
     "name": "Requirements Engineering",
     "anchors": [
+      "cockburn-use-cases",
       "ears-requirements",
       "invest",
       "moscow",

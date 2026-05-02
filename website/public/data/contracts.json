@@ -5,9 +5,9 @@
     "titleDe": "Spezifikation",
     "description": "What we mean when we say 'spec'",
     "descriptionDe": "Was wir meinen, wenn wir 'Spec' sagen",
-    "anchors": ["gherkin", "bdd-given-when-then"],
-    "template": "When we talk about a \"specification\" or \"spec\", we mean:\n- Use Cases with Trigger, Main Flow, Alternative Flows, Postconditions, and Business Rules (BR-IDs)\n- Activity Diagrams for all flows (not just the happy path)\n- Acceptance criteria in Gherkin format (Given/When/Then)",
-    "templateDe": "Wenn wir von einer \"Spezifikation\" oder \"Spec\" sprechen, meinen wir:\n- Use Cases mit Trigger, Hauptablauf, Alternativabläufe, Nachbedingungen und Geschäftsregeln (BR-IDs)\n- Activity Diagrams für alle Abläufe (nicht nur der Happy Path)\n- Akzeptanzkriterien im Gherkin-Format (Given/When/Then)",
+    "anchors": ["cockburn-use-cases", "gherkin", "bdd-given-when-then", "ears-requirements"],
+    "template": "When we talk about a \"specification\" or \"spec\", we mean:\n- Use Cases in Cockburn's Fully Dressed format (Primary Actor, Trigger, Main Success Scenario, Extensions, Postconditions) at User Goal level, with Business Rules (BR-IDs)\n- Activity Diagrams for all flows (not just the happy path)\n- Acceptance criteria in Gherkin format (Given/When/Then)\n- Individual requirements in EARS syntax where applicable (When/While/If/Shall)",
+    "templateDe": "Wenn wir von einer \"Spezifikation\" oder \"Spec\" sprechen, meinen wir:\n- Use Cases im Cockburn Fully Dressed Format (Primary Actor, Trigger, Main Success Scenario, Extensions, Nachbedingungen) auf User-Goal-Ebene, mit Geschäftsregeln (BR-IDs)\n- Activity Diagrams für alle Abläufe (nicht nur der Happy Path)\n- Akzeptanzkriterien im Gherkin-Format (Given/When/Then)\n- Einzelanforderungen in EARS-Syntax wo passend (When/While/If/Shall)",
     "category": "requirements"
   },
   {

@@ -205,36 +205,57 @@ Write a PRD based on our discussion. Save it as src/docs/specs/prd.adoc.
 
 === Step 4: Create Detailed Specification
 
-From the PRD, generate a full specification:
+Start by discovering scope with an ⚓ link:#/anchor/cockburn-use-cases[*Actor-Goal List*]:
 
 [source]
 ----
-Create a detailed specification from the PRD. Include:
-- Use Cases (Trigger, Main Flow, Alternative Flows, Postconditions, Business Rules)
-- Activity Diagrams for all flows (not just the happy path)
-- Acceptance criteria in Gherkin format
+Create an Actor-Goal List from the PRD.
+For each actor, list every goal they have against the system.
+Apply the Goal Level test: "Does the actor go home happy if this goal
+is achieved?" — if yes, it's a User Goal. If not, it's a Subfunction
+(extract only when reused). Save as src/docs/specs/actor-goal-list.adoc.
+----
+
+Then generate the full specification from the Actor-Goal List:
+
+[source]
+----
+Create a detailed specification from the PRD and Actor-Goal List.
+For each User Goal, write a Use Case in Cockburn's Fully Dressed format:
+- Primary Actor and Stakeholders & Interests
+- Trigger, Preconditions
+- Main Success Scenario (numbered steps)
+- Extensions (alternative/failure paths, referencing step numbers)
+- Postconditions (Success Guarantee and Minimal Guarantee)
+- Business Rules (BR-001, BR-002, ...)
+Then add for each Use Case:
+- Activity Diagram covering all flows (not just the happy path)
+- Acceptance criteria in Gherkin format (Given/When/Then)
 Save as .adoc files in src/docs/specs/.
 ----
 
-Each Use Case must define four elements:
+Each Use Case in ⚓ link:#/anchor/cockburn-use-cases[*Cockburn's Fully Dressed format*] defines:
 
+* *Primary Actor*: Who initiates the use case and has the goal.
+* *Stakeholders & Interests*: Who else cares about the outcome and what they need from it.
 * *Trigger*: The specific event that starts the use case ("User clicks Submit", "System receives webhook").
 Without a trigger, neither the AI nor a tester knows when the use case begins.
-* *Main Flow*: The numbered steps of the happy path, each describing observable system behavior.
-* *Alternative Flows*: Named branches (A1, A2, ...) for error handling, validation failures, and edge cases.
-* *Postconditions*: The guaranteed system state after successful completion.
+* *Main Success Scenario*: The numbered steps of the happy path, each describing observable system behavior.
+* *Extensions*: Named branches (3a, 4b, ...) for error handling, validation failures, and edge cases — referencing the step they branch from.
+* *Postconditions*: The guaranteed system state after successful completion (Success Guarantee) and the minimum guarantee even when the use case fails (Minimal Guarantee).
 Postconditions are what your tests assert.
 * *Business Rules*: Numbered rules (BR-001, BR-002, ...) that capture validation constraints, calculation logic, or domain invariants.
 Business rules make implicit knowledge explicit.
 Without them, the AI invents its own validation logic -- or skips it entirely.
 
-This structure follows Alistair Cockburn's Use Case format, which LLMs recognize reliably.
 The more precise the use case, the less the AI has to guess during implementation.
+Cockburn's format is deliberately prose-based — it does not prescribe any specific notation.
+Activity Diagrams and Gherkin are complementary representations we layer on top:
 
 ⚓ link:#/anchor/gherkin[*Gherkin*] (Given/When/Then) provides acceptance criteria that are both human-readable and machine-testable.
 These criteria become the foundation for TDD later.
 
-Activity Diagrams are an important part of the specification because they define flows, error paths, and edge cases in a way the AI can follow during implementation.
+Activity Diagrams define flows, error paths, and edge cases visually — the AI can follow them during implementation to cover all branches, not just the happy path.
 
 == Phase 2: Architecture
 

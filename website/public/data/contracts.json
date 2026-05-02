@@ -5,9 +5,9 @@
     "titleDe": "Spezifikation",
     "description": "What we mean when we say 'spec'",
     "descriptionDe": "Was wir meinen, wenn wir 'Spec' sagen",
-    "anchors": ["gherkin", "bdd-given-when-then"],
-    "template": "When we talk about a \"specification\" or \"spec\", we mean:\n- Use Cases with Trigger, Main Flow, Alternative Flows, Postconditions, and Business Rules (BR-IDs)\n- Activity Diagrams for all flows (not just the happy path)\n- Acceptance criteria in Gherkin format (Given/When/Then)",
-    "templateDe": "Wenn wir von einer \"Spezifikation\" oder \"Spec\" sprechen, meinen wir:\n- Use Cases mit Trigger, Hauptablauf, Alternativabläufe, Nachbedingungen und Geschäftsregeln (BR-IDs)\n- Activity Diagrams für alle Abläufe (nicht nur der Happy Path)\n- Akzeptanzkriterien im Gherkin-Format (Given/When/Then)",
+    "anchors": ["cockburn-use-cases", "gherkin", "bdd-given-when-then", "ears-requirements"],
+    "template": "When we talk about a \"specification\" or \"spec\", we mean:\n- Use Cases in Cockburn's Fully Dressed format (Primary Actor, Trigger, Main Success Scenario, Extensions, Postconditions) at User Goal level, with Business Rules (BR-IDs)\n- Activity Diagrams for all flows (not just the happy path)\n- Acceptance criteria in Gherkin format (Given/When/Then)\n- Individual requirements in EARS syntax where applicable (When/While/If/Shall)",
+    "templateDe": "Wenn wir von einer \"Spezifikation\" oder \"Spec\" sprechen, meinen wir:\n- Use Cases im Cockburn Fully Dressed Format (Primary Actor, Trigger, Main Success Scenario, Extensions, Nachbedingungen) auf User-Goal-Ebene, mit Geschäftsregeln (BR-IDs)\n- Activity Diagrams für alle Abläufe (nicht nur der Happy Path)\n- Akzeptanzkriterien im Gherkin-Format (Given/When/Then)\n- Einzelanforderungen in EARS-Syntax wo passend (When/While/If/Shall)",
     "category": "requirements"
   },
   {
@@ -96,6 +96,17 @@
     "anchors": ["docs-as-code", "plain-english-strunk-white", "gutes-deutsch-wolf-schneider"],
     "template": "Documentation follows Docs-as-Code according to Ralf D. Müller:\n- AsciiDoc as format, PlantUML for inline diagrams, built by docToolchain\n- Version-controlled, peer-reviewed, and built automatically\n- Plain English according to Strunk & White (or Gutes Deutsch nach Wolf Schneider)",
     "templateDe": "Dokumentation folgt Docs-as-Code nach Ralf D. Müller:\n- AsciiDoc als Format, PlantUML für Inline-Diagramme, gebaut von docToolchain\n- Versioniert, reviewt und automatisch gebaut\n- Gutes Deutsch nach Wolf Schneider (oder Plain English nach Strunk & White)",
+    "category": "documentation"
+  },
+  {
+    "id": "socratic-code-theory-recovery",
+    "title": "Socratic Code Theory Recovery",
+    "titleDe": "Sokratische Code-Theorie-Rekonstruktion",
+    "description": "Recover a program's 'theory' from source code through recursive question refinement",
+    "descriptionDe": "Die 'Theorie' eines Programms aus dem Quellcode durch rekursive Fragenverfeinerung rekonstruieren",
+    "anchors": ["socratic-method", "arc42", "iso-25010", "adr-according-to-nygard", "mental-model-according-to-naur"],
+    "template": "Recover a program's \"theory\" (Naur 1985) from source code through recursive question refinement.\n- Start with 5 high-level questions: Problem/Users, Specification, Architecture, Quality Goals, Risks\n- Decompose each question using Semantic Anchors as guides: arc42 (12 sub-questions), Cockburn Use Cases, ISO 25010, Nygard ADRs\n- Each leaf is either `[ANSWERED]` (with code evidence) or `[OPEN]` (with Category, Ask role, and why unanswerable)\n- The Question Tree is the primary artifact; documentation is synthesized from answered leaves\n- Open Questions are the handoff document: routed by role (Product Owner, Architect, Developer, Domain Expert, Operations)\n- Two-phase workflow: Phase 1 builds the tree, team answers Open Questions, Phase 2 produces documentation with Q-ID traceability",
+    "templateDe": "Die \"Theorie\" eines Programms (Naur 1985) aus dem Quellcode durch rekursive Fragenverfeinerung rekonstruieren.\n- Start mit 5 High-Level-Fragen: Problem/Nutzer, Spezifikation, Architektur, Qualitätsziele, Risiken\n- Jede Frage mit Semantic Anchors als Leitfaden zerlegen: arc42 (12 Unterfragen), Cockburn Use Cases, ISO 25010, Nygard ADRs\n- Jedes Blatt ist entweder `[BEANTWORTET]` (mit Code-Evidenz) oder `[OFFEN]` (mit Kategorie, zuständiger Rolle und Begründung warum nicht beantwortbar)\n- Der Fragenbaum ist das primäre Artefakt; Dokumentation wird aus beantworteten Blättern synthetisiert\n- Offene Fragen sind das Übergabedokument: nach Rolle geroutet (Product Owner, Architekt, Entwickler, Domänenexperte, Operations)\n- Zwei-Phasen-Workflow: Phase 1 baut den Baum, Team beantwortet offene Fragen, Phase 2 erzeugt Dokumentation mit Q-ID-Rückverfolgbarkeit",
     "category": "documentation"
   },
   {

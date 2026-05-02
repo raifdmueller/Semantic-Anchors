@@ -215,36 +215,57 @@ Write a PRD based on our discussion. Save it as src/docs/specs/prd.adoc.
 
 === Schritt 4: Detaillierte Spezifikation erstellen
 
-Aus dem PRD eine vollständige Spezifikation generieren:
+Zuerst den Scope mit einer ⚓ link:#/anchor/cockburn-use-cases[*Actor-Goal-Liste*] entdecken:
 
 [source]
 ----
-Create a detailed specification from the PRD. Include:
-- Use Cases (Trigger, Main Flow, Alternative Flows, Postconditions, Business Rules)
-- Activity Diagrams for all flows (not just the happy path)
-- Acceptance criteria in Gherkin format
+Create an Actor-Goal List from the PRD.
+For each actor, list every goal they have against the system.
+Apply the Goal Level test: "Does the actor go home happy if this goal
+is achieved?" — if yes, it's a User Goal. If not, it's a Subfunction
+(extract only when reused). Save as src/docs/specs/actor-goal-list.adoc.
+----
+
+Dann aus der Actor-Goal-Liste die vollständige Spezifikation generieren:
+
+[source]
+----
+Create a detailed specification from the PRD and Actor-Goal List.
+For each User Goal, write a Use Case in Cockburn's Fully Dressed format:
+- Primary Actor and Stakeholders & Interests
+- Trigger, Preconditions
+- Main Success Scenario (numbered steps)
+- Extensions (alternative/failure paths, referencing step numbers)
+- Postconditions (Success Guarantee and Minimal Guarantee)
+- Business Rules (BR-001, BR-002, ...)
+Then add for each Use Case:
+- Activity Diagram covering all flows (not just the happy path)
+- Acceptance criteria in Gherkin format (Given/When/Then)
 Save as .adoc files in src/docs/specs/.
 ----
 
-Jeder Use Case muss fünf Elemente definieren:
+Jeder Use Case in ⚓ link:#/anchor/cockburn-use-cases[*Cockburns Fully Dressed Format*] definiert:
 
+* *Primary Actor*: Wer den Use Case initiiert und das Ziel hat.
+* *Stakeholders & Interests*: Wer noch am Ergebnis beteiligt ist und was sie davon brauchen.
 * *Trigger*: Das spezifische Ereignis, das den Use Case auslöst ("Benutzer klickt auf Absenden", "System empfängt Webhook").
 Ohne Trigger weiß weder die KI noch ein Tester, wann der Use Case beginnt.
-* *Hauptablauf (Main Flow)*: Die nummerierten Schritte des Happy Path, jeder beschreibt beobachtbares Systemverhalten.
-* *Alternativabläufe (Alternative Flows)*: Benannte Verzweigungen (A1, A2, ...) für Fehlerbehandlung, Validierungsfehler und Randfälle.
-* *Nachbedingungen (Postconditions)*: Der garantierte Systemzustand nach erfolgreicher Ausführung.
+* *Main Success Scenario*: Die nummerierten Schritte des Happy Path, jeder beschreibt beobachtbares Systemverhalten.
+* *Extensions*: Benannte Verzweigungen (3a, 4b, ...) für Fehlerbehandlung, Validierungsfehler und Randfälle — mit Verweis auf den Schritt, von dem sie abzweigen.
+* *Nachbedingungen (Postconditions)*: Der garantierte Systemzustand nach erfolgreicher Ausführung (Success Guarantee) und die minimale Garantie auch bei Fehlschlag (Minimal Guarantee).
 Nachbedingungen sind das, was die Tests prüfen.
 * *Geschäftsregeln (Business Rules)*: Nummerierte Regeln (BR-001, BR-002, ...) für Validierungslogik, Berechnungen oder Domäneninvarianten.
 Geschäftsregeln machen implizites Wissen explizit.
 Ohne sie erfindet die KI eigene Validierungslogik -- oder lässt sie komplett weg.
 
-Diese Struktur folgt dem Use-Case-Format von Alistair Cockburn, das LLMs zuverlässig erkennen.
 Je präziser der Use Case, desto weniger muss die KI bei der Implementierung raten.
+Cockburns Format ist bewusst prosabasiert — es schreibt keine bestimmte Notation vor.
+Activity-Diagramme und Gherkin sind komplementäre Darstellungsformen, die wir darauf aufsetzen:
 
 ⚓ link:#/anchor/gherkin[*Gherkin*] (Given/When/Then) liefert Akzeptanzkriterien, die sowohl für Menschen lesbar als auch maschinell testbar sind.
 Diese Kriterien werden später die Grundlage für TDD.
 
-Activity Diagrams sind ein wichtiger Teil der Spezifikation, weil sie Abläufe, Fehlerpfade und Randfälle so definieren, dass die KI ihnen bei der Implementierung folgen kann.
+Activity Diagrams definieren Abläufe, Fehlerpfade und Randfälle visuell — die KI kann ihnen bei der Implementierung folgen, um alle Zweige abzudecken, nicht nur den Happy Path.
 
 == Phase 2: Architektur
 

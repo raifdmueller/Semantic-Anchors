@@ -215,6 +215,10 @@ Write a PRD based on our discussion. Save it as src/docs/specs/prd.adoc.
 
 === Schritt 4: Detaillierte Spezifikation erstellen
 
+Schritt 4 baut die Spezifikation in Schichten auf: von der Scope-Ermittlung (Actor-Goal-Liste) über Use Cases auf Persona-Ebene bis zu technischen System-Spezifikationen und ergänzenden Modellen.
+
+==== Schritt 4a: Scope mit der Actor-Goal-Liste ermitteln
+
 Zuerst den Scope mit einer ⚓ link:#/anchor/cockburn-use-cases[*Actor-Goal-Liste*] entdecken:
 
 [source]
@@ -226,11 +230,14 @@ is achieved?" — if yes, it's a User Goal. If not, it's a Subfunction
 (extract only when reused). Save as src/docs/specs/actor-goal-list.adoc.
 ----
 
-Dann aus der Actor-Goal-Liste die vollständige Spezifikation generieren:
+==== Schritt 4b: Persona Use Cases
+
+Use Cases auf User-Goal-Ebene aus der Actor-Goal-Liste generieren.
+Diese beschreiben, was Akteure erreichen wollen und wie das System reagiert — in Prosa, auf einem Abstraktionsniveau, das Stakeholder reviewen können.
 
 [source]
 ----
-Create a detailed specification from the PRD and Actor-Goal List.
+Create Persona Use Cases from the PRD and Actor-Goal List.
 For each User Goal, write a Use Case in Cockburn's Fully Dressed format:
 - Primary Actor and Stakeholders & Interests
 - Trigger, Preconditions
@@ -266,6 +273,50 @@ Activity-Diagramme und Gherkin sind komplementäre Darstellungsformen, die wir d
 Diese Kriterien werden später die Grundlage für TDD.
 
 Activity Diagrams definieren Abläufe, Fehlerpfade und Randfälle visuell — die KI kann ihnen bei der Implementierung folgen, um alle Zweige abzudecken, nicht nur den Happy Path.
+
+==== Schritt 4c: System Use Cases
+
+System Use Cases aus den Persona Use Cases ableiten.
+Wo Persona Use Cases beschreiben, was Akteure wollen, beschreiben System Use Cases, was das System an seinen technischen Schnittstellen tut — API-Endpunkte, CLI-Befehle, Events, Dateiformate.
+
+[source]
+----
+Derive System Use Cases from the Persona Use Cases.
+For each system interface (API endpoint, CLI command, event, file format):
+- Trigger and Preconditions (technical: HTTP method, auth token, system state)
+- Input: format, validation rules, constraints
+- Processing: steps the system performs (reference Business Rules)
+- Output: response format, status codes, payload schema
+- Error responses: codes, messages, recovery hints
+- Non-functional: performance budget, rate limits, timeouts
+Use EARS syntax (When/While/If/Shall) for individual requirements
+where applicable. Save as src/docs/specs/system-use-cases.adoc.
+----
+
+System Use Cases schließen die Lücke zwischen stakeholder-orientierten Persona Use Cases und der Implementierung.
+Sie sind der Input, den die KI braucht, um korrekte API-Handler, CLI-Parser und Event-Prozessoren zu generieren, ohne technische Details zu erraten.
+
+Simon Martinellis https://unifiedprocess.ai/[AI Unified Process] nennt das den Übergang von Business Use Cases zu System Use Case Specifications — dieselbe Unterscheidung auf anderer Granularitätsebene.
+
+==== Schritt 4d: Ergänzende Spezifikationen
+
+Nicht jede Anforderung passt in einen Use Case.
+Ergänzende Spezifikationen je nach Projekttyp erstellen:
+
+[source]
+----
+Based on the Use Cases, create supplementary specifications:
+- Entity Model: entities, attributes, relationships, constraints (as PlantUML ERD)
+- State Machines: for entities with lifecycle behavior (as PlantUML state diagrams)
+- Interface Contracts: DTOs and schemas at system boundaries
+- Validation Rules: cross-cutting rules not tied to a single use case
+Save in src/docs/specs/.
+----
+
+Welche ergänzenden Specs man braucht, hängt vom Projekt ab.
+Ein CLI-Tool braucht vielleicht nur ein Entity Model.
+Eine Webanwendung braucht typischerweise alle vier.
+Die KI fragt nach, wenn etwas fehlt — der Feedback-Loop (Schritt 8) fängt Lücken früh auf.
 
 == Phase 2: Architektur
 
@@ -497,9 +548,17 @@ Die wichtigsten Einzeiler pro Phase mit den Semantic Anchors, die sie aktivieren
 |`Write a PRD based on our discussion. Save as src/docs/specs/prd.adoc. Follow Strunk & White.`
 |link:#/anchor/plain-english-strunk-white[Strunk & White]
 
-|Spezifikation
-|`Create a detailed spec with Use Cases (Trigger, Main Flow, Alternative Flows, Postconditions, Business Rules), Activity Diagrams (all paths), and Gherkin acceptance criteria.`
-|link:#/anchor/gherkin[Gherkin]
+|Persona Use Cases
+|`Create Persona Use Cases in Cockburn's Fully Dressed format (Actor, Trigger, Main Flow, Extensions, Postconditions, Business Rules). Add Activity Diagrams and Gherkin acceptance criteria.`
+|link:#/anchor/cockburn-use-cases[Cockburn], link:#/anchor/gherkin[Gherkin]
+
+|System Use Cases
+|`Derive System Use Cases from Persona Use Cases. For each interface: input/validation, processing, output/status codes, error responses. EARS syntax where applicable.`
+|link:#/anchor/ears-requirements[EARS]
+
+|Ergänzende Specs
+|`Create Entity Model (PlantUML ERD), State Machines, Interface Contracts (DTOs), Validation Rules as needed.`
+|{empty}--
 
 |Architektur
 |`Create arc42 docs with PlantUML C4 diagrams based on the spec. Save in src/docs/arc42/.`

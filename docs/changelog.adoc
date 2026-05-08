@@ -2,6 +2,18 @@
 
 A chronological record of all semantic anchors added to the catalog. Community contributors are credited with thanks.
 
+== 2026-05-07
+
+*New anchors:*
+
+* *XY Problem* — Communication anti-pattern from technical-support culture, coined by Mark Jason Dominus (2001) and popularised by Eric S. Raymond ("How To Ask Questions The Smart Way"); the asker requests Y when the real goal is X (proposed by https://github.com/dernerl[@dernerl] in https://github.com/LLM-Coding/Semantic-Anchors/issues/457[#457])
+
+== 2026-05-03
+
+*Workflow improvements:*
+
+* *Specification workflow restructured* — Step 4 now builds the spec in layers: Persona Use Cases (Cockburn Fully Dressed, User Goal level), System Use Cases (technical interfaces: API, CLI, events, file formats), and Supplementary Specifications (Entity Model, State Machines, Interface Contracts, Validation Rules). Aligned with Martinelli's AIUP distinction between Business and System Use Case Specifications.
+
 == 2026-05-02
 
 *New anchors:*

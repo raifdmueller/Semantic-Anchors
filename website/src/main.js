@@ -149,6 +149,8 @@ function initApp() {
   addRoute('/spec-driven-development', renderWorkflowPage)
   addRoute('/workflow', () => navigate('/spec-driven-development', { replace: true }))
   addRoute('/brownfield', renderBrownfieldPage)
+  addRoute('/brownfield-experiment-report', renderBrownfieldExperimentReportPage)
+  addRoute('/brownfield-fair-comparison', renderBrownfieldFairComparisonPage)
   addRoute('/contracts', renderContractsPageHandler)
   addRoute('/evaluations', renderEvaluationsPage)
 
@@ -275,6 +277,24 @@ function renderBrownfieldPage() {
   pageContent.innerHTML = renderDocPage()
   updateActiveNavLink()
   loadDocContent('docs/brownfield-workflow.adoc')
+}
+
+function renderBrownfieldExperimentReportPage() {
+  const pageContent = document.getElementById('page-content')
+  if (!pageContent) return
+
+  pageContent.innerHTML = renderDocPage()
+  updateActiveNavLink()
+  loadDocContent('docs/brownfield-experiment-report.adoc')
+}
+
+function renderBrownfieldFairComparisonPage() {
+  const pageContent = document.getElementById('page-content')
+  if (!pageContent) return
+
+  pageContent.innerHTML = renderDocPage()
+  updateActiveNavLink()
+  loadDocContent('docs/brownfield-fair-comparison.adoc')
 }
 
 function renderContractsPageHandler() {
@@ -504,6 +524,10 @@ function handleLanguageChange() {
     loadDocContent('docs/spec-driven-workflow.adoc')
   } else if (currentRoute === '/brownfield') {
     loadDocContent('docs/brownfield-workflow.adoc')
+  } else if (currentRoute === '/brownfield-experiment-report') {
+    loadDocContent('docs/brownfield-experiment-report.adoc')
+  } else if (currentRoute === '/brownfield-fair-comparison') {
+    loadDocContent('docs/brownfield-fair-comparison.adoc')
   } else if (currentRoute === '/') {
     initCardGridVisualization()
   }

@@ -2,6 +2,12 @@
 
 A chronological record of all semantic anchors added to the catalog. Community contributors are credited with thanks.
 
+== 2026-05-08
+
+*New anchors:*
+
+* *Kano Model* — Noriaki Kano's two-dimensional quality model classifying features as Must-be, Performance, Attractive, Indifferent or Reverse, surveyed via paired functional/dysfunctional questions; pairs naturally with MoSCoW for backlog prioritisation (proposed in https://github.com/LLM-Coding/Semantic-Anchors/issues/459[#459])
+
 == 2026-05-07
 
 *New anchors:*

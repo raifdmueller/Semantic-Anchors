@@ -570,6 +570,11 @@ Source: https://github.com/LLM-Coding/Semantic-Anchors
 - **Proponents:** Albert Humphrey
 - **Core:** Strengths, Weaknesses, Opportunities, Threats — internal vs. external strategic analysis
 
+### Kano Model
+- **Also known as:** Kano Analysis, Kano-Modell, Customer Satisfaction Model
+- **Proponents:** Noriaki Kano (1984, *Hinshitsu* journal)
+- **Core:** Two-dimensional quality model — features classified as Must-be (basic, absence dissatisfies), Performance (linear), Attractive (delighter, exceeds expectation), Indifferent or Reverse; surveyed via paired functional/dysfunctional questions ("How would you feel if X were present? / absent?"); categories decay over time (Delighter → Performer → Must-be); complements MoSCoW for backlog prioritisation
+
 ### PERT (Program Evaluation and Review Technique)
 - **Also known as:** Three-Point Estimation, PERT Network Analysis
 - **Proponents:** D.G. Malcolm, J.H. Roseboom, C.E. Clark, W. Fazar

@@ -99,6 +99,11 @@ renderFile(
 )
 
 renderFile(
+  path.join(ROOT, 'docs/brownfield-fair-comparison.adoc'),
+  path.join(WEB_DOCS, 'brownfield-fair-comparison.html')
+)
+
+renderFile(
   path.join(ROOT, 'docs/anchor-evaluations.adoc'),
   path.join(WEB_DOCS, 'anchor-evaluations.html')
 )

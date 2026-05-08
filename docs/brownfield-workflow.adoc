@@ -235,4 +235,4 @@ If the system cannot be built or started, you have a different problem -- fix th
 * Michael Feathers, _Working Effectively with Legacy Code_ -- techniques for establishing test coverage in systems without tests.
 * Peter Naur, "Programming as Theory Building" (1985) -- argues that programming is about building a mental model ("theory") that cannot be fully captured in documentation. Socratic Code Theory Recovery tests this claim in the context of LLM-generated code.
 * link:#/brownfield-experiment-report[Brownfield Experiment Report] -- controlled experiment: delete documentation from a greenfield project, regenerate from code, compare. Full methodology and findings.
-* https://github.com/rdmueller/personalAssistant/blob/main/resources/brownfield-fair-comparison.adoc[Fair Comparison Report] -- three approaches (Direct, Socratic, Two-Phase) with identical team answers. Measures the structural value of the Question Tree.
+* link:#/brownfield-fair-comparison[Fair Comparison Report] -- three approaches (Direct, Socratic, Two-Phase) with identical team answers. Measures the structural value of the Question Tree.

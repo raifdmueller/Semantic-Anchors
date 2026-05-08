@@ -1,0 +1,127 @@
+= Fair Comparison: Three Approaches with Team Answers
+:toc: left
+:toclevels: 3
+:sectnums:
+:icons: font
+
+== Context
+
+The previous Two-Phase report had a validity problem: the Two-Phase approach received 11 team-answered Open Questions while Direct and Socratic did not. This made the comparison unfair.
+
+To fix this, we ran follow-up prompts on both the Direct and Socratic experiments, providing the same team answers. All three approaches now have identical information. The comparison below measures the value of the *structure* (template-based vs. question-tree vs. two-phase), not the value of the answers.
+
+== Results After Team Answers
+
+[cols="3,2,2,2,2",options="header"]
+|===
+| Metric | Original | Direct | Socratic | Two-Phase
+
+| Total lines (adoc) | 11,756 | 3,886 | 2,481 | 4,083
+| Compression vs. Original | 100% | 33% | 21% | 35%
+| ADRs | 5 | 7 | 3 | 5
+| ADR topics match Original | — | No | No | *Yes*
+| Quality goal priorities | Yes | Yes (6, expanded) | Yes (3, correct) | Yes (3, correct)
+| Performance budgets (Ch. 7) | Yes | Yes | Yes | Yes
+| Threat model (3 boundaries) | No (separate doc) | *Yes (inline)* | No | No
+| Team answer markers | 0 | 26 | 35 | 50
+| Q-ID traceability | 0 | 101 | 123 | 109
+| Open Questions remaining | — | 0 | 0 | 0
+| Competitive context | 4 mentions | 2 | 2 | 2
+|===
+
+All three approaches now have performance budgets, quality goal priorities, and zero remaining Open Questions. The differences are structural.
+
+== What Each Approach Does Best
+
+=== Direct: Broadest Coverage
+
+The Direct approach produced the most ADRs (7, including a new ADR-007 for the layout engine created from the team answer) and is the only version that documents the threat model with 3 explicit trust boundaries inline in Chapter 10. It has 101 Q-ID references despite not starting with a Question Tree — the follow-up prompt added them retroactively.
+
+The trade-off: 7 ADRs means 2 extra ADRs that weren't in the Original. The Direct approach *over-generates* when given information — it creates new artifacts rather than just integrating answers.
+
+=== Socratic: Most Efficient
+
+At 2,481 lines (21% of Original), the Socratic approach achieves the highest Q-ID density (123 references) and strong team-answer traceability (35 markers) with the least text. It is the most concise version that still covers all essential content.
+
+The trade-off: only 3 ADRs (the Question Tree identified fewer decision points), and no threat model documentation. The Socratic approach is *selective* — it documents only what the Question Tree covered, and the tree didn't branch into security narrative.
+
+=== Two-Phase: Highest Fidelity
+
+The Two-Phase approach is the only version where the ADR topics match the Original exactly (5 ADRs, correct subjects, correct status including ADR-004 Rejected). It has the most team-answer markers (50) and a resolution log in OPEN_QUESTIONS.adoc mapping each answer to its landing page.
+
+The trade-off: no threat model (same as Socratic), and 35% compression vs. Original is less efficient than Socratic's 21%.
+
+== Structural Differences That Persist
+
+Even with identical information, the three approaches produce structurally different output:
+
+[cols="2,2,2,2",options="header"]
+|===
+| Dimension | Direct | Socratic | Two-Phase
+
+| ADR generation | Over-generates (7) | Under-generates (3) | Matches Original (5)
+| Threat model | Included | Missing | Missing
+| Answer integration | Inline updates | Question Tree + inline | Resolution log + inline
+| Traceability style | Retroactive Q-IDs | Native Q-IDs | Native Q-IDs + OQ markers
+| Volume control | Medium (33%) | Tight (21%) | Medium (35%)
+|===
+
+=== Why ADR fidelity differs
+
+The Direct approach sees each team answer as an opportunity to create or expand an artifact. When it received OQ-022 (layout engine rationale), it created a new ADR-007. The Two-Phase approach, guided by OQ-4 ("which ADRs exist?"), already knew there were exactly 5 and stuck to them. The Socratic approach only created ADRs for decisions its Question Tree branched into.
+
+This is the core structural difference: *the Question Tree constrains the output*. Without it, the LLM follows its own judgment about what deserves an ADR. With it, the LLM follows the tree's decomposition.
+
+=== Why the threat model only appears in Direct
+
+The Direct approach received OQ-053 (threat model) as a standalone answer and integrated it into Chapter 10. The Socratic and Two-Phase approaches had equivalent information (OQ-7 / Q-4.7.2) but placed security coverage differently — in quality scenarios rather than as a dedicated threat-model section. This suggests the *placement* of security information is a prompt-design issue, not an information issue. All three have the same facts; only Direct has a named "Threat Model" section.
+
+== Lessons Learned
+
+=== The value of the Question Tree
+
+The Question Tree doesn't just improve honesty (Experiment 1c finding). It also *constrains output fidelity*. The Two-Phase approach matched the Original's ADR structure precisely because Phase 1 asked "which ADRs exist?" and the team answer locked in the 5 topics. Without this constraint, the Direct approach hallucinated 2 extra ADRs.
+
+=== Team answers close the same gaps regardless of approach
+
+All three approaches achieved:
+
+* Zero remaining Open Questions
+* Performance budgets in Chapter 7
+* Quality goal priorities in Chapter 1
+* Correct competitive context in PRD
+
+This confirms that the team answers, not the approach structure, determine information completeness. The structure determines *how well the information is organized and traceable*.
+
+=== Traceability is a function of process, not information
+
+[cols="2,1,1,1",options="header"]
+|===
+| Traceability type | Direct | Socratic | Two-Phase
+
+| Team answer markers | 26 | 35 | 50
+| Q-ID references | 101 | 123 | 109
+| Resolution log | No | No | Yes
+|===
+
+Two-Phase has the most team-answer markers because the Phase 2 prompt *required* marking every team-provided claim. Socratic has the most Q-IDs because the Question Tree *is* the documentation structure. Direct has fewer of both because traceability was added retroactively, not built into the process.
+
+== Recommendation
+
+[cols="3,2",options="header"]
+|===
+| Scenario | Recommended Approach
+
+| Quick documentation, no team access | Direct (broadest coverage from code alone)
+| Identifying knowledge gaps for team | Socratic Phase 1 (cheapest way to produce targeted questions)
+| Production-quality Brownfield docs | Two-Phase (highest ADR fidelity, best traceability)
+| Security-critical projects | Direct (only version with inline threat model)
+| Maximum conciseness | Socratic (21% of Original, all essentials covered)
+|===
+
+For most Brownfield projects preparing for the Dark Factory, the recommended workflow is:
+
+. *Socratic Phase 1* to identify the 10-15 questions the team must answer
+. *Team answers* the questions (routed by Ask role)
+. *Two-Phase Phase 2* to produce documentation with Q-ID traceability and team-answer markers
+. *Direct follow-up* for security-specific sections (threat model, trust boundaries) if needed

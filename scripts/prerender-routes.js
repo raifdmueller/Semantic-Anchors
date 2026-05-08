@@ -66,6 +66,13 @@ const ROUTES = [
       'Controlled experiment: delete documentation from a greenfield project, regenerate from code, compare. Methodology, findings, and the Brownfield Preparation Checklist.',
   },
   {
+    path: '/brownfield-fair-comparison',
+    fragment: 'docs/brownfield-fair-comparison.html',
+    title: 'Brownfield Fair Comparison — Semantic Anchors',
+    description:
+      'Three approaches (Direct, Socratic, Two-Phase) compared with identical team answers. Measures the structural value of the Question Tree, not the answers.',
+  },
+  {
     path: '/contracts',
     fragment: 'docs/contracts.html',
     title: 'Semantic Contracts — Semantic Anchors',

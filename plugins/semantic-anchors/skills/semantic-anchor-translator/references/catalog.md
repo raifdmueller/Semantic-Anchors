@@ -81,6 +81,11 @@ Source: https://github.com/LLM-Coding/Semantic-Anchors
 - **Proponents:** Percy Liang (Stanford HELM), EleutherAI (Open LLM Leaderboard), LMSYS (Chatbot Arena)
 - **Core:** Frameworks and metrics for assessing LLM capabilities — benchmark suites (MMLU, HumanEval, BIG-Bench), automatic vs. human evaluation, HELM, Chatbot Arena Elo ratings, red-teaming, contamination detection
 
+### Red/Green TDD
+- **Also known as:** Red-Green-Refactor, Classical TDD Cycle, Test-First Development
+- **Proponents:** Kent Beck
+- **Core:** Classical TDD cycle — write failing test first (red), minimal code to pass (green), then refactor; watch it fail for the right reason; one failing test at a time; test names describe behavior, not method signatures; counters the default LLM habit of writing tests after the implementation
+
 ## Software Architecture
 
 ### Clean Architecture
@@ -141,10 +146,25 @@ Source: https://github.com/LLM-Coding/Semantic-Anchors
 - **Proponents:** Stefan Toth, Stefan Zörner
 - **Core:** Lightweight architecture description framework — describe a system through four lenses: Layers (structural decomposition), Aspects (cross-cutting concerns), Solution Strategy (key technology and design choices), Rationale (documented reasoning behind decisions); pairs naturally with arc42 and ADRs
 
+### Lehman's Software Classification
+- **Also known as:** SPE Classification, Lehman's SPE Taxonomy
+- **Proponents:** Meir M. Lehman
+- **Core:** Three software types by relationship to reality — S-type (formally specifiable, provable), P-type (real problem, only approximable, validate against reality), E-type (embedded in the world, changes the world through use, requirements drift by nature); basis for Lehman's Laws of Software Evolution (Continuing Change, Increasing Complexity, etc.) which explain why E-type systems require ongoing maintenance
+
 ### OWASP Top 10
 - **Also known as:** OWASP Top Ten, Open Worldwide Application Security Project Top 10
 - **Proponents:** OWASP Foundation
 - **Core:** Consensus ranking of the ten most critical web-application security risks (Broken Access Control, Cryptographic Failures, Injection, Insecure Design, Security Misconfiguration, Vulnerable Components, Authentication Failures, Data Integrity Failures, Logging Failures, SSRF); used as a baseline checklist for secure code review, threat modeling, and compliance
+
+### Walking Skeleton
+- **Also known as:** Skeleton Architecture, End-to-End Thin Implementation
+- **Proponents:** Alistair Cockburn
+- **Core:** Minimal end-to-end implementation touching every architectural layer (UI → logic → persistence → deployment) that is production-capable from day one; validates integration and structure before any significant feature work; grown iteratively rather than thrown away like a prototype
+
+### Tracer Bullet
+- **Also known as:** Tracer Bullet Development, Tracer Code
+- **Proponents:** Andy Hunt, David Thomas
+- **Core:** Lightweight end-to-end slice that validates architectural direction on real infrastructure; unlike a spike, tracer code is kept and refined into the final system; enables rapid directional correction via the "aim-fire-adjust" loop; primary goal is architecture validation, not feature delivery
 
 ## Design Principles
 
@@ -208,6 +228,16 @@ Source: https://github.com/LLM-Coding/Semantic-Anchors
 ### YAGNI (You Aren't Gonna Need It)
 - **Proponents:** Ron Jeffries, Kent Beck
 - **Core:** Don't build for hypothetical futures, speculative generality anti-pattern, incremental design, delete dead code
+
+### Single Level of Abstraction Principle (SLAP)
+- **Also known as:** SLAP, One Level of Abstraction Per Function
+- **Proponents:** Kent Beck, Robert C. Martin
+- **Core:** All statements inside a function should live at one abstraction level; mixing orchestration with mechanics is the main driver of unreadable code; refactor by extracting low-level details into named helpers so the outer function reads like a table of contents; formal expression of Beck's Composed Method pattern, codified as a Clean Code function-design rule by Martin
+
+### Code Smells
+- **Also known as:** Bad Smells in Code, Refactoring Smells
+- **Proponents:** Kent Beck (coined term), Martin Fowler, Robert C. Martin
+- **Core:** Surface indications in code that usually point to deeper design problems; Fowler's *Refactoring* (1999) catalogue groups ~20 smells into Bloaters (Long Method, Large Class, Primitive Obsession), OO Abusers (Switch Statements, Refused Bequest), Change Preventers (Divergent Change, Shotgun Surgery), Dispensables (Duplicate Code, Dead Code, Speculative Generality), Couplers (Feature Envy, Message Chains); Martin's *Clean Code* Appendix A extends with ~65 heuristics across Comments, Functions, Names, Tests; each smell pairs with a canonical refactoring — a smell tells you *where to look*, not *what to do*
 
 ### GoF Design Patterns
 - **Also known as:** Design Patterns, Gang of Four Patterns
@@ -332,6 +362,16 @@ Source: https://github.com/LLM-Coding/Semantic-Anchors
 ### Devil's Advocate
 - **Core:** Argue against proposal to stress-test it
 
+### Occam's Razor
+- **Also known as:** Law of Parsimony, Lex Parsimoniae, Ockham's Razor
+- **Proponents:** William of Ockham
+- **Core:** Among competing hypotheses that explain the same observations equally well, prefer the one requiring the fewest assumptions; applies to *explanations* (debugging, diagnosis, architecture rationale), distinct from KISS which applies to *solutions*; a selection prior under uncertainty, not a proof of truth; Einstein's corollary "as simple as possible, but no simpler" warns against under-fitting
+
+### What Would Chuck Norris Do? (WWCND)
+- **Also known as:** WWCND, Chuck Norris framing
+- **Proponents:** Ian Spector, Chuck Norris (co-author of *The Official Chuck Norris Fact Book*, 2009); empirical catalog validation by Cornelius Schumacher (Protocol v3, 2026)
+- **Core:** Tier 3 qualified anchor — activates a *disposition* (commit to the most direct, effective solution; refuse hedging, premature optimisation, and unnecessary ceremony), not a methodology; driven by the Chuck Norris meme corpus and its software subcorpus ("Chuck Norris doesn't write unit tests — the code is too afraid to fail"); empirically validated across three models (Claude, Gemini, Codex) with 12/12 recommendation convergence and engagement > "be direct, don't hedge" control; complements Devil's Advocate (commit then challenge); best used with a short qualifier ("WWCND: commit to the most direct solution") and not for situations requiring calibrated judgment between genuinely different outcomes
+
 ### Morphological Box
 - **Proponents:** Fritz Zwicky
 - **Core:** Matrix of parameters × options to explore solution space
@@ -344,7 +384,22 @@ Source: https://github.com/LLM-Coding/Semantic-Anchors
 - **Proponents:** Dave Snowden
 - **Core:** Clear, Complicated, Complex, Chaotic, Confused — match approach to domain
 
+### XY Problem
+- **Also known as:** Solution Fixation, Asking the Wrong Question
+- **Proponents:** Mark Jason Dominus (coined the term in comp.lang.perl.misc, 2001), Eric S. Raymond ("How To Ask Questions The Smart Way")
+- **Core:** Communication anti-pattern — asker requests help with attempted solution Y when the real goal X is hidden; resolution by probing for X first ("What are you actually trying to accomplish?"); applies to support, code review, requirements clarification, and LLM dialogues; canonical references at xyproblem.info and Greg's Wiki
+
+### Double Diamond
+- **Also known as:** 4Ds Model, Design Council Double Diamond
+- **Proponents:** UK Design Council (2005; expanded as "Framework for Innovation", 2019)
+- **Core:** Two divergent-convergent cycles — Discover/Define (problem space) and Develop/Deliver (solution space); "design the right thing, then design the thing right"; explicit iteration; widely used in UX, service design, government innovation
+
 ## Requirements Engineering
+
+### Cockburn Use Cases
+- **Also known as:** Fully Dressed Use Cases, Goal-Level Use Cases
+- **Proponents:** Alistair Cockburn
+- **Core:** Structured textual use case format — Primary Actor, Stakeholders & Interests, Preconditions, Trigger, Main Success Scenario, Extensions, Postconditions; three Goal Levels (Summary/Kite, User Goal/Sea Level, Subfunction/Fish); Actor-Goal List as discovery technique; deliberately prose-based and notation-agnostic — does NOT prescribe Activity Diagrams, Gherkin, or EARS, which are complementary representations
 
 ### INVEST
 - **Proponents:** Bill Wake
@@ -395,6 +450,11 @@ Source: https://github.com/LLM-Coding/Semantic-Anchors
 ### Plain English according to Strunk & White
 - **Proponents:** William Strunk Jr., E.B. White
 - **Core:** Omit needless words, use active voice, prefer concrete language, write with nouns and verbs — clarity-first principles for English writing ("The Elements of Style")
+
+### 4MAT
+- **Also known as:** 4MAT System of Instruction, McCarthy's 4MAT, 4MAT Learning Cycle
+- **Proponents:** Bernice McCarthy
+- **Core:** Four-quadrant learning cycle structuring explanations and presentations — Why (motivation, relevance), What (facts, concepts), How (practical application, examples), What If (extension, transfer); order matters to serve all four learner types (Innovative/Analytic/Common Sense/Dynamic) instead of only analytic learners
 
 ### Chatham House Rule
 - **Proponents:** Chatham House
@@ -479,6 +539,16 @@ Source: https://github.com/LLM-Coding/Semantic-Anchors
 - **Proponents:** Tiago Forte (coined the term), inspired by Ernest Hemingway
 - **Core:** End each work session before a natural stopping point while you still know what comes next; leave an explicit re-entry note (unfinished sentence, comment, TODO) to eliminate "blank page" paralysis, preserve momentum, and manage creative energy across sessions
 
+### Thin Vertical Slice
+- **Also known as:** Vertical Slicing, End-to-End Slice
+- **Proponents:** Alistair Cockburn, Mike Cohn
+- **Core:** Delivery technique where each increment implements one small feature end-to-end through every technical layer (UI → logic → persistence → integration); keeps the system shippable after each slice; distinct from Vertical Slice Architecture (structural pattern vs. delivery technique); surfaces integration issues early and often
+
+### Spike Solution
+- **Also known as:** Spike, Technical Spike, Research Spike
+- **Proponents:** Kent Beck
+- **Core:** Time-boxed, disposable experiment written to answer one specific technical question before committing to an approach; output is a decision, not a deliverable; deliberately rough quality — no tests, no review, no polish; time-boxing is mandatory or the spike becomes speculative development
+
 ## Statistical Methods
 
 ### SPC (Statistical Process Control)
@@ -505,10 +575,35 @@ Source: https://github.com/LLM-Coding/Semantic-Anchors
 - **Proponents:** Albert Humphrey
 - **Core:** Strengths, Weaknesses, Opportunities, Threats — internal vs. external strategic analysis
 
+### Kano Model
+- **Also known as:** Kano Analysis, Kano-Modell, Customer Satisfaction Model
+- **Proponents:** Noriaki Kano (1984, *Hinshitsu* journal)
+- **Core:** Two-dimensional quality model — features classified as Must-be (basic, absence dissatisfies), Performance (linear), Attractive (delighter, exceeds expectation), Indifferent or Reverse; surveyed via paired functional/dysfunctional questions ("How would you feel if X were present? / absent?"); categories decay over time (Delighter → Performer → Must-be); complements MoSCoW for backlog prioritisation
+
+### Kotter's 8-Step Change Model
+- **Also known as:** Kotter's 8 Steps for Leading Change, Kotter's Change Process
+- **Proponents:** John P. Kotter (HBR 1995 *"Leading Change: Why Transformation Efforts Fail"*; book *Leading Change*, 1996)
+- **Core:** Eight sequential steps for organisational transformation — (1) establish urgency, (2) form a guiding coalition, (3) develop vision and strategy, (4) communicate the vision, (5) empower broad-based action / remove obstacles, (6) generate short-term wins, (7) consolidate gains and produce more change, (8) anchor changes in culture; the model is the inversion of the eight common errors Kotter identified in failed transformations; widely used in M&A, digital transformation, and agile rollouts; later complemented by *Accelerate* (2014) with a dual operating system of hierarchy plus network
+
 ### PERT (Program Evaluation and Review Technique)
 - **Also known as:** Three-Point Estimation, PERT Network Analysis
 - **Proponents:** D.G. Malcolm, J.H. Roseboom, C.E. Clark, W. Fazar
 - **Core:** Stochastic project scheduling using three-point estimates per activity (Optimistic, Most Likely, Pessimistic); weighted average formula E = (O + 4M + P) / 6; standard deviation σ = (P − O) / 6; critical path analysis; probabilistic milestone confidence intervals
+
+### Minimum Viable Product (MVP)
+- **Also known as:** MVP, Lean Startup MVP
+- **Proponents:** Eric Ries, Frank Robinson
+- **Core:** Smallest product that tests a single falsifiable hypothesis about user needs with the least effort; the defining output is *validated learning*, not a feature set or revenue; first turn of the build-measure-learn loop; distinct from a "small v1" — an MVP would be embarrassing to ship in production because its job is learning, not market entry; gives evidence for pivot-or-persevere decisions
+
+### Hoshin Kanri
+- **Also known as:** Policy Deployment, Strategy Deployment, Hoshin Planning
+- **Proponents:** Yoji Akao ("Hoshin Kanri: Policy Deployment for Successful TQM", 1991), Thomas L. Jackson ("Hoshin Kanri for the Lean Enterprise", 2006)
+- **Core:** Lean strategy-deployment discipline — 3-5 year True North breakthrough objectives cascade into annual hoshin via the X-Matrix (long-term strategy × annual objectives × improvement priorities × metrics, with explicit correlations); two-way *catchball* negotiation between levels prevents top-down imposition; monthly *Bowling Chart* reviews drive PDCA on the strategy itself; deliberately restricted to the few vital goals so "business as usual" stays outside the hoshin
+
+### Decisional Balance Sheet
+- **Also known as:** Benjamin Franklin Analysis, Moral Algebra, Pros-and-Cons Sheet
+- **Proponents:** Irving Janis & Leon Mann ("Decision Making: A Psychological Analysis of Conflict, Choice, and Commitment", 1977); Benjamin Franklin (1772 "moral algebra" letter to Joseph Priestley); adapted by Miller & Rollnick ("Motivational Interviewing", 1991)
+- **Core:** Four-cell decision matrix capturing utilitarian gains/losses for self and for significant others, plus self-approval and approval from others; weighted entries surface trade-offs and resolve ambivalence rather than mechanise the choice; simplified two-column pros/cons form is a degenerate case; used in decision coaching and Motivational Interviewing to elicit change-talk; deliberative — weak under time pressure or high uncertainty
 
 ## Creative Writing & Storytelling
 

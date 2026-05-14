@@ -44,7 +44,19 @@ Der Skill folgt der https://agentskills.io[agentskills.io]-Spezifikation. Verwei
 
 === link:https://docs.anthropic.com/en/docs/claude-code/memory[Claude Code]
 
-Skill in `CLAUDE.md` referenzieren:
+**Empfohlen: Installation über den Claude-Code-Plugin-Marketplace.** Dieses Repository ist als Claude-Code-Marketplace veröffentlicht; das Plugin bündelt alle Semantic-Anchors-Skills (Translator, Onboarding, Socratic Code-Theory Recovery) in einer Installation.
+
+In einer Claude-Code-Session ausführen:
+
+[source,text]
+----
+/plugin marketplace add LLM-Coding/Semantic-Anchors
+/plugin install semantic-anchors@semantic-anchors
+----
+
+Die Skills sind sofort verfügbar — Claude Code erkennt den `socratic-code-theory-recovery`-Skill aus dem installierten Plugin, ohne dass `CLAUDE.md` angepasst werden muss.
+
+**Alternative: Skill manuell in `CLAUDE.md` referenzieren**, wenn der Marketplace-Weg nicht passt (Corporate-Installationen, gepinnte Versionen, eigene Skill-Verzeichnisse):
 
 [source,markdown]
 ----
@@ -60,8 +72,6 @@ https://github.com/LLM-Coding/Semantic-Anchors/blob/main/skill/socratic-code-the
 Phase 2 prompt:
 https://github.com/LLM-Coding/Semantic-Anchors/blob/main/skill/socratic-code-theory-recovery/prompts/phase-2-synthesize.md
 ----
-
-Alternativ kann `skill/socratic-code-theory-recovery/SKILL.md` ins Skills-Verzeichnis deines Projekts gelegt werden, wenn die Claude-Code-Konfiguration einen eigenen Skills-Pfad nutzt.
 
 === link:https://openai.com/codex/[Codex]
 

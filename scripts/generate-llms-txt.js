@@ -220,7 +220,8 @@ function generateLlmsTxt() {
     {
       title: 'About',
       url: 'https://llm-coding.github.io/Semantic-Anchors/about',
-      summary: 'What semantic anchors are, why they matter for LLM communication, and how the catalog is curated.',
+      summary:
+        'What semantic anchors are, why they matter for LLM communication, and how the catalog is curated.',
     },
     {
       title: 'Spec-Driven Development',
@@ -272,7 +273,8 @@ function generateLlmsTxt() {
     {
       title: 'Full Reference',
       url: 'https://llm-coding.github.io/Semantic-Anchors/all-anchors',
-      summary: 'All semantic anchors in one long document — readable offline, linkable, easy to Ctrl-F.',
+      summary:
+        'All semantic anchors in one long document — readable offline, linkable, easy to Ctrl-F.',
     },
     {
       title: 'Changelog',
@@ -282,7 +284,8 @@ function generateLlmsTxt() {
     {
       title: 'Contributing',
       url: 'https://llm-coding.github.io/Semantic-Anchors/contributing',
-      summary: 'How to propose new semantic anchors, quality criteria, and the contribution workflow.',
+      summary:
+        'How to propose new semantic anchors, quality criteria, and the contribution workflow.',
     },
   ]
 

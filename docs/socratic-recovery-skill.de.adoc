@@ -22,7 +22,7 @@ Output sind zwei AsciiDoc-Dateien: `QUESTION_TREE.adoc` (vollständige Begründu
 
 === Phase 2 — Dokumentation synthetisieren
 
-Der Skill nimmt den beantworteten Baum und erzeugt ein PRD, Cockburn Use Cases, eine arc42-Architekturbeschreibung und Nygard-ADRs mit Pugh-Matrix. Jede Aussage zitiert eine Q-ID; team-gegebene Fakten sind mit `(team answer)` markiert.
+Der Skill nimmt den beantworteten Baum und erzeugt ein PRD, Cockburn Use Cases, eine arc42-Architekturbeschreibung und Nygard-ADRs mit Pugh-Matrix. Jede Aussage zitiert eine Q-ID; code-basierte Aussagen tragen zusätzlich die `file:line`-Evidenz aus ihrem `[ANSWERED]`-Leaf, und team-gegebene Fakten sind mit `(team answer)` markiert.
 
 == Wann zu verwenden
 
@@ -105,7 +105,8 @@ https://github.com/LLM-Coding/Semantic-Anchors/tree/main/skill/socratic-code-the
 Build a Question Tree before writing any documentation. Mark each leaf
 [ANSWERED] (with file:line evidence) or [OPEN] (with Category and Ask role).
 Synthesize docs from the answered tree only after the team has filled in
-the OPEN leaves. Cite Q-IDs in every claim.
+the OPEN leaves. Cite a Q-ID in every claim; for code-derived claims,
+also cite the file:line evidence from the ANSWERED leaf.
 ----
 
 === link:https://docs.cursor.com/[Cursor]

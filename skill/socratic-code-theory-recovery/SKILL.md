@@ -104,7 +104,7 @@ Use [prompts/phase-2-synthesize.md](prompts/phase-2-synthesize.md). The Phase 2 
 - **arc42** with all 12 chapters from the Q3 branch
 - **Nygard ADRs** with Pugh Matrix from the Q3.9 branch
 
-Every claim references a Q-ID. Team-supplied information is marked `(team answer)`. This dual traceability — code evidence plus team input — is the difference from a simple reverse-engineering prompt that fills in gaps silently.
+Every claim references a Q-ID. A code-derived claim also carries the `file:line` evidence from its `[ANSWERED]` leaf, copied into the citation so the source is visible without opening the Question Tree. Team-supplied information is marked `(team answer)`. This dual traceability — code evidence plus team input — is the difference from a simple reverse-engineering prompt that fills in gaps silently.
 
 ## What the LLM can and cannot recover
 

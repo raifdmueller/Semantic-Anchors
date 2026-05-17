@@ -50,10 +50,18 @@ Produce four artifacts:
    - Anchor: ADR according to Nygard
 
 Rules for traceability:
-- Every paragraph references the Q-IDs that support it, in square brackets:
-  "The system uses Hexagonal Architecture [Q3.5]."
-- Team-supplied facts get an inline marker: "Sessions expire after 24 hours
-  (team answer, Q3.4.2)."
+- Every paragraph references the Q-IDs that support it, in square brackets.
+- For a claim backed by an [ANSWERED] leaf, carry the code evidence from
+  that leaf into the citation alongside the Q-ID — so the reader sees the
+  source location without opening the Question Tree:
+  "The system uses Hexagonal Architecture [Q3.5; src/app/Ports.java,
+  src/adapter/JpaOrderRepository.java:30]."
+  Copy the Evidence line verbatim from the leaf; do not invent, shorten,
+  or re-derive file paths. If a leaf has no Evidence line it is not
+  [ANSWERED] and must not be cited as fact.
+- Team-supplied facts have no code evidence — mark them (team answer)
+  with the Q-ID only: "Sessions expire after 24 hours (team answer,
+  Q3.4.2)."
 - Deferred questions stay as explicit gaps: "Quality-goal priorities are
   deferred (Q4.1.deferred) and must be resolved before the next release."
 - Do not introduce facts that do not appear in QUESTION_TREE.adoc or

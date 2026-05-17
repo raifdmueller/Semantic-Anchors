@@ -163,7 +163,7 @@ The LLM synthesizes the answered questions plus the code evidence from Phase 1 i
 * *arc42* with all 12 chapters from Q-3 branch
 * *Nygard ADRs* with Pugh Matrix from Q-3.9 branch
 
-Every claim references a Question ID and marks team-provided information with `(team answer)`. This dual traceability (code evidence + team input) is the key difference from a simple reverse-engineering prompt.
+Every claim references a Question ID. A code-derived claim also carries the `file:line` evidence from its `[ANSWERED]` leaf, copied into the citation so the source is visible without opening the Question Tree; team-provided information is marked `(team answer)`. This dual traceability (code evidence + team input) is the key difference from a simple reverse-engineering prompt.
 
 === Establish Baseline Tests
 
@@ -261,7 +261,7 @@ Stable code that nobody touches does not need specs.
 |{empty}--
 
 |Theory Recovery (Phase 2)
-|`Synthesize documentation from the Question Tree and team answers. Every claim references a Q-ID. Mark team input with (team answer).`
+|`Synthesize documentation from the Question Tree and team answers. Every claim references a Q-ID; for code-derived claims, also cite the file:line evidence from the ANSWERED leaf. Mark team input with (team answer).`
 |link:#/spec-driven-development[Spec-Driven Workflow]
 
 |Baseline Tests

@@ -141,13 +141,20 @@ _(write here)_
 
 ## Phase 2 traceability
 
-After Phase 2, every paragraph in the synthesized documentation cites at least one Q-ID:
+After Phase 2, every paragraph in the synthesized documentation cites at least one Q-ID. For a claim backed by an `[ANSWERED]` leaf, the citation also carries the code evidence copied from that leaf, so the reader sees the source location without opening the Question Tree:
 
 ```
-The system uses Hexagonal Architecture [Q3.9.HexagonalArchitecture]. Sessions
+The system uses Hexagonal Architecture [Q3.9.HexagonalArchitecture;
+src/app/Ports.java, src/adapter/JpaOrderRepository.java:30]. Sessions
 expire after 24 hours (team answer, Q3.8.Security.SessionLifetime).
 Quality-goal priorities are deferred (Q4.0.deferred) and must be resolved
 before the next release.
 ```
 
-This is the auditable trace from documentation back to either code evidence or a team answer. Anything without a Q-ID is invention.
+The three citation forms are deliberate:
+
+- `[Q-ID; file:line, ...]` — code-derived fact. The `file:line` part is the `Evidence` line of the `[ANSWERED]` leaf, copied verbatim.
+- `(team answer, Q-ID)` — team-supplied fact. No code evidence exists; the Q-ID points to the answered `[OPEN]` leaf.
+- `(Q-ID.deferred)` — an explicit gap, not a fact.
+
+This is the auditable trace from documentation back to either code evidence or a team answer. Anything without a Q-ID is invention; a code-derived claim without its `file:line` evidence is incomplete.

@@ -10,8 +10,10 @@ Inputs:
 - OPEN_QUESTIONS.adoc — same OPEN leaves, now with team answers (or
   (deferred) markers) written under each question.
 
-Goal: synthesize documentation from the answered tree. Every claim must be
-traceable to a Q-ID. Team-supplied facts must be marked (team answer).
+Goal: synthesize documentation from the answered tree. Every claim must
+trace back to a tree leaf — this is a build-time check, not a Q-ID stamped
+into the text; Q-IDs do NOT appear in the final documents (see Rules for
+traceability below). Team-supplied facts must be marked (team answer).
 Anything still marked (deferred) must remain an explicit gap in the output,
 not be filled with invention.
 

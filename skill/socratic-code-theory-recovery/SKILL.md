@@ -78,7 +78,7 @@ Outputs:
 - `QUESTION_TREE.adoc` — the full hierarchical reasoning trace
 - `OPEN_QUESTIONS.adoc` — only the `[OPEN]` leaves, grouped by Ask role
 
-The five root questions decompose into a **fixed second level** — the same enumerated node set on every run, so Q-IDs are stable and trees from different runs can be diffed node-by-node. Free, code-driven decomposition applies only *below* the fixed level. The fixed nodes:
+The five root questions decompose into a **fixed second level** — the same enumerated node set on every run, so Q-IDs are stable and trees from different runs can be diffed node-by-node. Adaptive, code-driven decomposition applies only *below* the fixed level. The fixed nodes:
 
 - **Q1.1–Q1.6** — product identity, primary users, channels, why-built, success metrics, segment priority.
 - **Q2.1–Q2.6** — actors, use-case catalog, per-interface system specs, data/entity model, acceptance criteria, cross-cutting business rules. See [references/cockburn-use-cases.md](references/cockburn-use-cases.md).
@@ -87,6 +87,8 @@ The five root questions decompose into a **fixed second level** — the same enu
 - **Q5.1–Q5.5** — technical debt, security risks, operational risks, dependency/supply-chain risks, scaling/performance risks.
 
 Every fixed node is emitted even when its only leaf is `[OPEN]` or `[ANSWERED: not applicable]`.
+
+**Depth below the fixed level is adaptive, not fixed.** A node is a leaf only when its question can be answered with specific `file:line` evidence or definitively marked `[OPEN]`. If the honest answer would still be coarse — a whole directory as evidence, one paragraph for an entire arc42 chapter — the node decomposes further (under a four-level cap below each fixed node). Tree depth therefore tracks code density: a small bounded context yields a shallow tree, a large one a deep tree. The fixed skeleton stays diffable; only the depth varies. This prevents the thin-documentation failure where a large context produces one leaf per arc42 chapter and Phase 2 cannot synthesize a substantial chapter without inventing detail.
 
 Leaf classification rules and Q-ID scheme: [references/output-schema.md](references/output-schema.md).
 

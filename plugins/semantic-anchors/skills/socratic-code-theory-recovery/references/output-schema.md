@@ -62,7 +62,7 @@ move it forward? Affects what counts as success.
 
 - `Q1`, `Q2`, ... — the five root questions
 - `Q1.1` ... `Q5.5` — the **fixed second level**: the same enumerated node set on every run (Q1.1–Q1.6, Q2.1–Q2.6, Q3.1–Q3.12, Q4.1–Q4.9, Q5.1–Q5.5). A given Q-ID always means the same node — `Q3.7` is always the Deployment View — so trees from different runs diff node-by-node. Emit every fixed node even when its only leaf is `[OPEN]` or `[ANSWERED: not applicable]`.
-- `Q3.5.2` — arbitrary depth *below* the fixed second level; third-level depth is free, code-driven, and varies between runs.
+- `Q3.5.2`, `Q3.5.2.1`, ... — adaptive depth *below* the fixed second level. Depth is code-driven and tracks code density: a node keeps decomposing until each leaf maps to one specific, citable piece of code, so a large bounded context produces a deep sub-tree and a small one a shallow sub-tree. Depth therefore varies between runs. Backstop: do not decompose more than four levels below a fixed node.
 - Within named sub-trees, use a stable label between dots so cites are stable across reruns:
   - `Q2.2.PUC.PlaceOrder.Trigger` — persona use case PlaceOrder (under Q2.2, the use-case catalog), field Trigger
   - `Q2.3.SUC.CreateOrderEndpoint.ErrorResponses` — system use case (under Q2.3, per-interface system specs) for the create endpoint, ErrorResponses field
@@ -78,7 +78,8 @@ Evidence: <file>:<line>[, <file>:<line> ...]
 
 - **Evidence is mandatory.** No exception. A claim without evidence is `[OPEN]`, not `[ANSWERED]`.
 - File paths are relative to the bounded context root.
-- Use `file:line` for a specific line, `file::function` for a function regardless of line drift, `file` for a whole-file claim.
+- Use `file:line` for a specific line, `file::function` for a function regardless of line drift, `file` for a genuinely file-scoped claim (e.g. "this file is the context's entry point").
+- **A directory is not valid evidence.** If a leaf can only cite a folder (`src/core/`, `vibe/cli/`), it still covers too much — it has not been decomposed far enough. Split it into child nodes until each leaf cites a specific `file:line` or `file::function`. Coarse evidence is the schema-level signal that Phase 1 stopped too shallow.
 - Keep the prose factual. The answer is the *what*; the *why* belongs in a separate `[OPEN]` leaf if it isn't in the code.
 
 ### `[OPEN]` block format

@@ -9,6 +9,10 @@ A chronological record of all semantic anchors added to the catalog. Community c
 * *Architecture Documentation* — sharpened with cross-section traceability and arc42 chapter-level rules. The contract now directs scaffolding the arc42 "with-help" template via docToolchain `downloadTemplate` instead of restating chapter structure; adds five cross-section traceability rules (quality goal → strategy, context ↔ building blocks, building block → runtime, Chapter 9 ADR index, building-block detail); separates Chapter 11 Risks from Technical Debt with probability/impact/priority columns; wires ADR Consequences to Chapter 11 risk IDs; and clarifies that Chapter 1.2 holds the top 3-5 quality goals while Chapter 10 may elaborate further characteristics (https://github.com/LLM-Coding/Semantic-Anchors/issues/502[#502], https://github.com/LLM-Coding/Semantic-Anchors/issues/503[#503], https://github.com/LLM-Coding/Semantic-Anchors/issues/504[#504], https://github.com/LLM-Coding/Semantic-Anchors/issues/505[#505])
 * *Socratic Code Theory Recovery* — the Q4 quality wording now states the Chapter 1.2-vs-10 relationship: Chapter 1.2 names only the top quality goals, Chapter 10 covers all eight characteristics, each marked as concretising a top goal or as derived (https://github.com/LLM-Coding/Semantic-Anchors/issues/505[#505])
 
+*Skill updates:*
+
+* *Socratic Code-Theory Recovery skill* — Phase 1 decomposition is now adaptive instead of near-fixed: a node is a leaf only when answerable from specific `file:line` evidence, otherwise it decomposes further (capped at four levels below a fixed node). Tree depth tracks code density, so a large bounded context no longer collapses into one thin leaf per arc42 chapter. Directory-level evidence is no longer valid. The Phase 2 prompt wording was corrected to match the schema — claims trace back to a tree leaf as a build-time check, Q-IDs never appear in the final documents (https://github.com/LLM-Coding/Semantic-Anchors/issues/522[#522], https://github.com/LLM-Coding/Semantic-Anchors/issues/524[#524])
+
 == 2026-05-13
 
 *New anchors:*

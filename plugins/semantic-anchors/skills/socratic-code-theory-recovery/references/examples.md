@@ -73,18 +73,32 @@ The endpoint returns:
 
 ### Q3.5: How is the bounded context decomposed into modules?
 
+`Q3.5` is a **parent node, not a leaf**. "Five packages, hexagonal layout"
+is too coarse to be `[ANSWERED]` — its only honest evidence would be a list
+of directories, which the schema forbids. It decomposes one level per
+module; each child is a leaf with `file:line` evidence stating the module's
+responsibility, interface, and source location:
+
 ```
+==== Q3.5.1: The api module — responsibility, interface, source
 [ANSWERED]
-Evidence: src/api/, src/service/, src/persistence/, src/integration/, src/domain/
-Five-package decomposition following a hexagonal-architecture-like layout:
-- api/ — HTTP controllers, request/response DTOs
-- service/ — application services (OrderService, ValidationService)
-- domain/ — entities (Order, OrderLine, Customer reference)
-- persistence/ — JPA repositories and entity adapters
-- integration/ — adapters to Inventory, Pricing, Notification services
-Dependencies point inward: api → service → domain. persistence and
-integration are adapters depended on by service via ports defined in domain.
+Evidence: src/api/OrderController.java:18-92, src/api/ApiExceptionHandler.java:42-71
+HTTP controllers and request/response DTOs. OrderController exposes the REST
+surface (POST /orders, GET /orders/{id}); ApiExceptionHandler maps domain
+exceptions to status codes. Depends inward on service/.
+
+==== Q3.5.4: The persistence module — responsibility, interface, source
+[ANSWERED]
+Evidence: src/persistence/OrderRepositoryAdapter.java:14, src/persistence/OrderEntity.java:9
+JPA repositories and entity adapters. OrderRepositoryAdapter implements the
+OrderRepositoryPort defined in domain/; OrderEntity is the JPA mapping of the
+Order aggregate. An adapter, depended on by service/ via the port.
 ```
+
+(`Q3.5.2` service, `Q3.5.3` domain, `Q3.5.5` integration follow the same
+shape — each a leaf with `file:line` evidence. The dependency direction is
+itself an `[ANSWERED]` leaf under `Q3.9`, the architecture-decisions chapter,
+not a clause smuggled into a coarse building-block leaf.)
 
 ### Q3.1: Which 3-5 quality goals drive the design?
 

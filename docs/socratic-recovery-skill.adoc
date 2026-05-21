@@ -9,7 +9,7 @@ Recovers documentation from a brownfield codebase without hallucinating the part
 
 === Phase 1 — Build the Question Tree
 
-The skill prompts the LLM to build a Question Tree from five root questions about a bounded context (Problem/Users, Specification, Architecture, Quality Goals, Risks). Their second level is fixed — every run emits the same enumerated nodes (Q1.1–Q5.5: six PRD elements, six specification categories, the twelve arc42 chapters, the eight ISO/IEC 25010 characteristics plus a priority question, five risk categories), so Q-IDs are stable and trees from different runs can be diffed node-by-node. Free, code-driven decomposition happens only below that fixed level. Each leaf is classified:
+The skill prompts the LLM to build a Question Tree from five root questions about a bounded context (Problem/Users, Specification, Architecture, Quality Goals, Risks). Their second level is fixed — every run emits the same enumerated nodes (Q1.1–Q5.5: six PRD elements, six specification categories, the twelve arc42 chapters, the eight ISO/IEC 25010 characteristics plus a priority question, five risk categories), so Q-IDs are stable and trees from different runs can be diffed node-by-node. Adaptive, code-driven decomposition happens only below that fixed level — a node keeps splitting until each leaf maps to one specific `file:line`, so tree depth tracks code density and a large bounded context yields a deeper tree. Each leaf is classified:
 
 * `[ANSWERED]` -- the LLM found it in the code, with `<file>:<line>` evidence
 * `[OPEN]` -- the answer is not derivable from code; tagged with a Category and the role that must answer (Product Owner, Architect, Developer, Domain Expert, Operations)

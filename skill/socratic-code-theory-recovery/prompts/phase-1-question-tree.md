@@ -32,13 +32,28 @@ Process:
      Q5.1-Q5.5  technical debt, security risks, operational risks,
                 dependency/supply-chain risks, scaling/performance risks
 
-3. Below the fixed second level, decompose freely and code-driven. Stop
-   when a leaf is small enough to answer from a single piece of code
-   evidence, or to pose as a single precise question to a stakeholder.
-   Third-level depth varies between runs
-   — that is expected. Q-IDs are stable: Q3.7 is always the Deployment
-   View, in every run, so trees from different runs can be diffed
-   node-by-node.
+3. Below the fixed second level, decompose ADAPTIVELY and code-driven.
+   A node is a leaf ONLY when its question can be answered with specific
+   `file:line` (or `file::function`) evidence, or definitively marked
+   [OPEN]. If the honest answer would still be coarse — a whole directory
+   as evidence, "the building blocks are these four packages", a single
+   paragraph standing in for an entire arc42 chapter — the node is NOT a
+   leaf yet. Decompose it further ("building blocks?" -> "building blocks
+   of the tool subsystem?" -> "...of the agent loop?") until every leaf
+   maps to one specific, citable piece of code.
+
+   Tree depth therefore tracks code density: a small bounded context
+   yields a shallow tree, a large one a deep tree — you do not have to
+   guess the right bounded-context granularity up front. Backstop against
+   runaway recursion: do not decompose more than four levels below a fixed
+   node. If a leaf is still too coarse at that depth, mark it [OPEN]
+   (Category: business-context or design-rationale) and note that the
+   bounded context may be too large to recover in one pass.
+
+   The fixed second level (Q1.1-Q5.5) is the SAME on every run, so the
+   skeleton stays diffable; only the depth below it is adaptive. Q-IDs are
+   stable: Q3.7 is always the Deployment View, in every run, so trees from
+   different runs can be diffed node-by-node.
 
 4. For each leaf, classify it:
 
@@ -46,6 +61,9 @@ Process:
      - You found the answer in the code.
      - Cite the evidence as <file>:<line> or <file>::<function>.
      - Be exact. No "see X for details."
+     - A directory or a bare folder path is NOT valid evidence. If the
+       only honest cite is a directory, the leaf still covers too much —
+       go back to step 3 and decompose it further.
 
    [OPEN]
      - The answer is not derivable from code alone.
@@ -83,10 +101,12 @@ team has filled in the [OPEN] leaves.
 
 ## What to do after the prompt completes
 
-1. **Sanity-check `QUESTION_TREE.adoc`.** Pick three `[ANSWERED]` leaves at random and verify the cited file:line actually contains the claim. If any cite is wrong, the LLM is hallucinating evidence — re-run with a smaller bounded context.
+1. **Sanity-check `QUESTION_TREE.adoc` for evidence.** Pick three `[ANSWERED]` leaves at random and verify the cited file:line actually contains the claim. If any cite is wrong, the LLM is hallucinating evidence — re-run with a smaller bounded context.
 
-2. **Route `OPEN_QUESTIONS.adoc` to the team.** One section per Ask role. Typically 10-15 questions for a small bounded context; if you see 50+, the bounded context is too large.
+2. **Sanity-check the tree for depth.** Scan for `[ANSWERED]` leaves whose evidence is a directory or a whole file, or whose answer is one paragraph standing in for an entire arc42 chapter (a common failure on `Q3.5` building-block view and `Q2.3` per-interface system specs). Those leaves were not decomposed far enough — decomposition stopped before the answer became specific. Re-run Phase 1, or decompose those branches further. Note: the OPEN-question count measures only the OPEN side; a healthy count (10-15) does not mean the ANSWERED side is deep enough — check leaf granularity separately.
 
-3. **Team writes answers directly into `OPEN_QUESTIONS.adoc`** under each question. Mark deferrals explicitly as `(deferred)` so Phase 2 can decide whether to leave them as gaps in the documentation.
+3. **Route `OPEN_QUESTIONS.adoc` to the team.** One section per Ask role. Typically 10-15 questions for a small bounded context; if you see 50+, the bounded context is too large.
 
-4. Only after every leaf has an answer or an explicit deferral, run Phase 2.
+4. **Team writes answers directly into `OPEN_QUESTIONS.adoc`** under each question. Mark deferrals explicitly as `(deferred)` so Phase 2 can decide whether to leave them as gaps in the documentation.
+
+5. Only after every leaf has an answer or an explicit deferral, run Phase 2.

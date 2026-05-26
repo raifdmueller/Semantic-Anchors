@@ -302,6 +302,7 @@ If the system cannot be built or started, you have a different problem -- fix th
 
 == Further Reading
 
+* link:#/harness-inventory[The Harness Inventory] -- the error-correction layers that surround any agentic workflow, including this one. Brownfield Recovery raises the signal; the Harness Inventory catalogues what catches the remaining noise.
 * Simon Martinelli, https://unifiedprocess.ai/[AI Unified Process] -- the bounded-context approach to spec-driven development in existing systems.
 * Eric Evans, https://www.domainlanguage.com/ddd/[Domain-Driven Design] -- the foundational work on bounded contexts and strategic design.
 * Michael Feathers, _Working Effectively with Legacy Code_ -- techniques for establishing test coverage in systems without tests.

@@ -340,7 +340,9 @@
   display: block;
   padding: 0.125rem 0.5rem;
   border-radius: 0.25rem;
-  transition: color 0.15s, background-color 0.15s;
+  transition:
+    color 0.15s,
+    background-color 0.15s;
 }
 
 .doc-toc a:hover {

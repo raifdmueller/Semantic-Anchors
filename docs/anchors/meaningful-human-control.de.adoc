@@ -51,7 +51,7 @@ Key Proponents:: Article 36 (prägte den Begriff, 2013), Noel Sharkey (Fünf-Stu
 == *Verwandte Anker*:
 
 * <<regulated-environment,Regulierte Umgebung>>
-* <<cynebin-framework,Cynefin-Framework>>
+* <<cynefin-framework,Cynefin-Framework>>
 * <<luhmann-system-theory,Luhmann-Systemtheorie>>
 * <<simon-constructivism,Simon-Konstruktivismus>>
 * <<systemic-consulting,Systemische Beratung>>

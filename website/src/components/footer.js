@@ -102,6 +102,26 @@ export function renderFooter(version) {
               <span class="text-xs text-[var(--color-text-secondary)]">rabauer.dev (EN)</span>
             </a>
           </div>
+          <div class="flex flex-wrap items-center justify-center gap-2 pt-1">
+            <span class="text-xs text-[var(--color-text-secondary)]" data-i18n="footer.featuredIn">${i18n.t('footer.featuredIn')}</span>
+            <a
+              href="https://www.heise.de/news/Semantische-Anker-verkuerzen-den-Kontext-fuer-das-agentische-Coden-11311061.html"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-1.5 hover:opacity-80 transition-opacity rounded bg-white px-1.5 py-0.5"
+              title="${i18n.t('footer.heiseAlt')}"
+            >
+              <img
+                src="${import.meta.env.BASE_URL}heise-logo.svg"
+                alt="heise online"
+                width="24"
+                height="21"
+                class="h-5 w-auto"
+                loading="lazy"
+              />
+              <span class="text-xs text-gray-700">heise online (DE)</span>
+            </a>
+          </div>
         </div>
       </div>
     </footer>

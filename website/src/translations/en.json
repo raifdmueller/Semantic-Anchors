@@ -88,6 +88,8 @@
   "footer.asSeenOn": "As seen on",
   "footer.hmzeAlt": "HMZE Podcast — Beyond Vibe Coding (German)",
   "footer.rabauerAlt": "rabauer.dev — Live coding session: From Vibe Coding to a Real Java App (English)",
+  "footer.featuredIn": "Featured in",
+  "footer.heiseAlt": "heise online — Semantic Anchors shorten the context for agentic coding (German)",
   "categories.communication-presentation": "Communication & Presentation",
   "categories.design-principles": "Design Principles & Patterns",
   "categories.development-workflow": "Development Workflow",

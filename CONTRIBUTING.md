@@ -139,23 +139,29 @@ cd Semantic-Anchors
 
 ### Install Dependencies
 
+Both `website/` and `scripts/` have their own `package.json`. Install both:
+
 ```bash
-# Website dependencies
-cd website
+# Script dependencies (needed for anchor syncing and doc rendering)
+cd scripts
 npm install
 
-# Script dependencies
-cd ../scripts
+# Website dependencies
+cd ../website
 npm install
 ```
 
 ### Run Development Server
 
+Always use `npm run dev` (not `npx vite` directly). The `predev` hook syncs anchor `.adoc` files from `docs/anchors/` into `website/public/docs/anchors/`. Without this step, clicking anchor cards results in a 404 error.
+
 ```bash
 cd website
 npm run dev
-# → http://localhost:5173/
+# → http://localhost:5173/Semantic-Anchors/
 ```
+
+> **Note:** The dev server URL includes `/Semantic-Anchors/` because of the Vite `base` configuration. This matches the GitHub Pages deployment path.
 
 ### Run Tests
 
@@ -165,6 +171,8 @@ npm run test
 ```
 
 ### Build for Production
+
+The `prebuild` hook runs three steps automatically: syncing anchors, rendering docs, and rendering contracts. Then Vite builds the bundle and pre-renders static routes.
 
 ```bash
 cd website

@@ -1,3 +1,0 @@
-*.pyc
-# Full results with raw responses (large, reproducible via pilot.py)
-results/

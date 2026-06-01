@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="robots" content="noindex" />
+    <link rel="canonical" href="https://llm-coding.github.io/Semantic-Anchors/" />
+    <title>Redirecting to Semantic Anchors</title>
+    <script>
+      // Forward every fork-Pages URL to the canonical site, preserving the
+      // deep path, query and hash (the catalog is a SPA with #/ and clean URLs).
+      ;(function () {
+        var canonical = 'https://llm-coding.github.io/Semantic-Anchors/'
+        var base = '/Semantic-Anchors/'
+        var path = location.pathname
+        var rest = path.indexOf(base) === 0 ? path.slice(base.length) : ''
+        location.replace(canonical + rest + location.search + location.hash)
+      })()
+    </script>
+    <!-- No-JS fallback (lands on the canonical home page) -->
+    <meta
+      http-equiv="refresh"
+      content="0; url=https://llm-coding.github.io/Semantic-Anchors/"
+    />
+  </head>
+  <body>
+    <p>
+      This page has permanently moved to
+      <a href="https://llm-coding.github.io/Semantic-Anchors/"
+        >llm-coding.github.io/Semantic-Anchors</a
+      >.
+    </p>
+  </body>
+</html>

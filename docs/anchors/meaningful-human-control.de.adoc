@@ -55,4 +55,42 @@ Key Proponents:: Article 36 (prägte den Begriff, 2013), Noel Sharkey (Fünf-Stu
 * <<luhmann-system-theory,Luhmann-Systemtheorie>>
 * <<simon-constructivism,Simon-Konstruktivismus>>
 * <<systemic-consulting,Systemische Beratung>>
+
+[discrete]
+== *Qualitätskriterien-Checkliste* (Tier-2-Begründung)
+
+Dieser Anker ist als *Tier 2 — qualifizierungsbedürftig* eingestuft. Er steht nicht für sich allein; er braucht Domänenkontext und explizite Prüfkriterien, um sinnvoll angewendet zu werden. Die folgende Checkliste dokumentiert die Qualifizierungsanforderungen, zugeordnet zu Issue #540.
+
+. **Akzeptanzkriterien** (messbar)
+* Kritische Domäne identifiziert: ja/nein — Domäne angeben (Waffen, Medizin, autonomes Fahren, kritische Infrastruktur, algorithmische Strafzumessung)
+* Autonomiegrad klassifiziert: ja/nein — Sharkey-Stufe (S1–S5) für jede kritische Funktion angeben
+* Menschlicher Bediener identifiziert: ja/nein — Rolle, Ausbildungsstand und Entscheidungsbefugnis angeben
+* Verantwortungskette dokumentiert: ja/nein — angeben, wer entscheidet, wer genehmigt, wer prüft
+* Rechtlicher/regulatorischer Rahmen identifiziert: ja/nein — anwendbares Recht angeben (IHL, EU AI Act, DSGVO usw.)
+
+. **Erforderliche Nachweisarten**
+* Systemspezifikation, die Autonomiegrenzen und Mensch-Maschine-Interaktionspunkte dokumentiert
+* Schulungs- und Qualifikationsnachweise der Bediener
+* Audit-Trail-Konzept, das menschliche Verantwortlichkeit an jedem Entscheidungspunkt nachweist
+* Risikobewertung, die Restrisiken nach den Maßnahmen menschlicher Aufsicht aufzeigt
+* Rechtsprüfung, die die Konformität mit dem anwendbaren regulatorischen Rahmen bestätigt
+
+. **Mindestdokumentation / Artefakte**
+* Human-Machine-Interface-(HMI-)Spezifikation mit Override- und Abbruchmechanismen
+* Entscheidungsbefugnis-Matrix (wer entscheidet was, unter welchen Bedingungen)
+* Anforderungen an das Situationsbewusstsein der Bediener (Informationszufluss, Latenz, Entscheidungszeit)
+* Graceful-Degradation-Protokoll für Kommunikationsverlust oder Systemausfall
+* Testprotokoll, das die Eingriffsfähigkeit des Menschen unter Einsatzbedingungen validiert
+
+. **Validierungsmethoden**
+* Simulierte Szenariotests unter Zeitdruck und mit eingeschränkter Informationslage
+* Red-Team-Bewertung der Wirksamkeit des menschlichen Overrides
+* Unabhängiges Audit der Vollständigkeit der Verantwortungskette
+* Rechtsprüfung gegen anwendbares IHL oder regulatorische Anforderungen
+* Monitoring-Plan nach Inbetriebnahme, um die Erosion der MHC über die Zeit zu messen
+
+. **Zusammenfassung der Tier-2-Begründung**
+* *Warum nicht Tier 3*: MHC lässt sich ohne domänenspezifischen Kontext nicht bewerten (Waffen vs. Medizin vs. Automotive). Dasselbe System kann MHC in einer Domäne erfüllen und in einer anderen verfehlen. Sharkey-Stufe S3 mag für Frachtschiffe genügen, nicht aber für die Zielbekämpfung mit Waffengewalt.
+* *Warum nicht Tier 1*: MHC ist ein gut etabliertes, mehrfach belegtes Konzept mit klarer Definition, konsistenter Verwendung über Domänen hinweg, attribuierbarem Ursprung und reicher konzeptueller Aktivierung.
+* *Qualifizierungspfad*: Um MHC anzuwenden, muss man beantworten: „Wer kontrolliert was, mit welchen Informationen, unter welchen Einschränkungen, und wer trägt die Verantwortung?" Die fünf Kriterien oben operationalisieren diese Frage.
 ====

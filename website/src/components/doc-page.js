@@ -78,6 +78,18 @@ export async function loadDocContent(docPath) {
       link.setAttribute('rel', 'noopener noreferrer')
     })
 
+    // Re-root relative image paths. Rendered AsciiDoc emits paths like
+    // "docs/workflow-diagram.svg" relative to the document, but doc pages are
+    // served under clean URLs (e.g. /spec-driven-development/), so the browser
+    // resolves the relative path against the route and 404s. Prefix the site
+    // base so it points at the asset's real location. Absolute, protocol and
+    // data URLs are left untouched.
+    contentEl.querySelectorAll('img[src]').forEach((img) => {
+      const src = img.getAttribute('src')
+      if (!src || /^(https?:|data:|\/|#)/.test(src)) return
+      img.setAttribute('src', `${import.meta.env.BASE_URL}${src}`)
+    })
+
     // Attach click-to-load handlers for any YouTube placeholders in the doc.
     // Keeps us DSGVO-compliant: YouTube is only contacted after user consent.
     hydrateYouTubeFacades(contentEl)

@@ -109,6 +109,8 @@ describe('category quick-nav', () => {
     expect(html).toContain('class="category-nav"')
     expect(html).toContain('href="#category-testing-quality"')
     expect(html).toContain('href="#category-design-principles"')
+    // nav label must stay i18n-reactive on language switch
+    expect(html).toContain('data-i18n-aria="nav.categoryJump"')
   })
 
   it('omits categories with no non-umbrella anchors from the nav', () => {

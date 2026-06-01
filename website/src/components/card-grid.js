@@ -121,7 +121,11 @@ function renderCategoryNav(categories, allAnchors) {
     .join('')
 
   return `
-    <nav class="category-nav" aria-label="${escapeHtml(i18n.t('nav.categoryJump'))}">
+    <nav
+      class="category-nav"
+      aria-label="${escapeHtml(i18n.t('nav.categoryJump'))}"
+      data-i18n-aria="nav.categoryJump"
+    >
       <ul class="category-nav-list">${links}</ul>
     </nav>
   `

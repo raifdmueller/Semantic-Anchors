@@ -42,4 +42,22 @@ describe('doc-page', () => {
       'Failed to Load Documentation'
     )
   })
+
+  it('re-roots relative image paths to the site base, leaving absolute ones', async () => {
+    global.fetch.mockResolvedValue({
+      ok: true,
+      text: async () =>
+        '<h1>Spec</h1><img src="docs/workflow-diagram.svg" alt="d"><img src="https://x.test/a.png" alt="ext">',
+    })
+
+    await loadDocContent('docs/spec-driven-workflow.adoc')
+
+    const base = import.meta.env.BASE_URL
+    const rel = document.querySelector('#doc-content img[alt="d"]')
+    const ext = document.querySelector('#doc-content img[alt="ext"]')
+    // relative AsciiDoc image path must be re-rooted (clean-URL routes break it otherwise)
+    expect(rel.getAttribute('src')).toBe(`${base}docs/workflow-diagram.svg`)
+    // absolute/external sources are left untouched
+    expect(ext.getAttribute('src')).toBe('https://x.test/a.png')
+  })
 })

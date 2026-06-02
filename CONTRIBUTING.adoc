@@ -312,10 +312,10 @@ All issues should follow a consistent `[Type]: <Name>` title format. This makes 
 
 === Guidelines
 
-- *Use the issue template* whenever one exists — the prefix is set automatically.
-- *Free-form issues* (no matching template) should manually use one of the recognized prefixes.
-- *Apply going forward only* — do not retro-rename closed issues.
-- *EPICs* use the bare `EPIC:` prefix without brackets, as a sanctioned exception.
+* *Use the issue template* whenever one exists — the prefix is set automatically.
+* *Free-form issues* (no matching template) should manually use one of the recognized prefixes.
+* *Apply going forward only* — do not retro-rename closed issues.
+* *EPICs* use the bare `EPIC:` prefix without brackets, as a sanctioned exception.
 
 == Code of Conduct
 

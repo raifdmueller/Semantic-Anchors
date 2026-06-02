@@ -225,10 +225,10 @@ Alle Issues sollten einem konsistenten `[Typ]: <Name>` Titelformat folgen. Dies 
 
 === Richtlinien
 
-- *Verwenden Sie das Issue-Template*, wann immer eines existiert — das Prefix wird automatisch gesetzt.
-- *Frei formulierte Issues* (kein passendes Template) sollten manuell eines der anerkannten Prefixe verwenden.
-- *Nur zukünftig anwenden* — geschlossene Issues nicht rückwirkend umbenennen.
-- *EPICs* verwenden das bloße `EPIC:` Prefix ohne Klammern als anerkannte Ausnahme.
+* *Verwenden Sie das Issue-Template*, wann immer eines existiert — das Prefix wird automatisch gesetzt.
+* *Frei formulierte Issues* (kein passendes Template) sollten manuell eines der anerkannten Prefixe verwenden.
+* *Nur zukünftig anwenden* — geschlossene Issues nicht rückwirkend umbenennen.
+* *EPICs* verwenden das bloße `EPIC:` Prefix ohne Klammern als anerkannte Ausnahme.
 
 == Verhaltenskodex
 

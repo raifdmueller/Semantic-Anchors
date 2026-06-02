@@ -17,20 +17,55 @@ function escapeRegex(str) {
   return str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
 }
 
-// Highlight verbatim mentions of a contract's declared anchors, linked to the anchor.
-// Operates on raw text and returns escaped HTML with <a> links injected.
+// Curated surface-form aliases for anchors whose prose mention differs from the
+// canonical title (e.g. "MECE Principle" written as just "MECE"). Each alias was
+// verified to appear verbatim in at least one contract template (EN or DE) and to
+// be unambiguous among the anchors a contract declares. Keyed by anchor id.
+const ANCHOR_ALIASES = {
+  'cockburn-use-cases': ['Cockburn'],
+  'ears-requirements': ['EARS'],
+  mece: ['MECE'],
+  arc42: ['arc42'],
+  'c4-diagrams': ['C4'],
+  'adr-according-to-nygard': ['ADRs', 'Nygard'],
+  'pugh-matrix': ['Pugh Matrix'],
+  'quality-attribute-scenario': ['quality attribute scenario'],
+  stride: ['STRIDE'],
+  'testing-pyramid': ['testing pyramid'],
+  'domain-driven-design': ['Domain-Driven Design', 'Ubiquitous Language'],
+  'solid-dip': ['DIP'],
+  'solid-principles': ['SOLID'],
+  'walking-skeleton': ['walking skeleton'],
+  'tracer-bullet': ['Tracer'],
+  'spike-solution': ['spike'],
+  'definition-of-done': ['Definition of Done'],
+  'code-smells': ['code smells', 'Code Smells'],
+  dry: ['DRY'],
+  'kiss-principle': ['KISS'],
+  'socratic-method': ['Socratic Method'],
+  'mental-model-according-to-naur': ['Naur'],
+  bluf: ['BLUF'],
+  'plain-english-strunk-white': ['Strunk & White', 'Plain English'],
+  'blooms-taxonomy': ["Bloom's", 'Blooms'],
+}
+
+// Highlight mentions of a contract's declared anchors, linked to the anchor.
+// Matches each anchor's title plus the curated aliases above, scoped to the
+// declared anchors only. Operates on raw text and returns escaped HTML.
 function highlightAnchors(text, anchorIds) {
-  const entries = (anchorIds || [])
-    .map((id) => ({ id, title: anchorTitleMap[id] }))
-    .filter((e) => e.title)
-    .sort((a, b) => b.title.length - a.title.length) // longest title first
+  const terms = []
+  for (const id of anchorIds || []) {
+    const title = anchorTitleMap[id]
+    if (title) terms.push({ id, term: title })
+    for (const alias of ANCHOR_ALIASES[id] || []) terms.push({ id, term: alias })
+  }
+  if (!terms.length) return esc(text)
+  terms.sort((a, b) => b.term.length - a.term.length) // longest term first
 
-  if (!entries.length) return esc(text)
-
-  // Collect non-overlapping verbatim matches of each declared anchor's title.
+  // Collect non-overlapping matches; the longest term wins a contested span.
   const matches = []
-  for (const { id, title } of entries) {
-    const re = new RegExp(`(?<![\\w])${escapeRegex(title)}(?![\\w])`, 'g')
+  for (const { id, term } of terms) {
+    const re = new RegExp(`(?<![\\w])${escapeRegex(term)}(?![\\w])`, 'g')
     let m
     while ((m = re.exec(text)) !== null) {
       const start = m.index

@@ -1,0 +1,62 @@
+= Bloom's Taxonomy
+:categories: communication-presentation
+:roles: educator, technical-writer, consultant, team-lead
+:related: 4mat, feynman-technique, socratic-method, diataxis-framework
+:proponents: Benjamin Bloom, Lorin Anderson, David Krathwohl
+:tags: blooms-taxonomy, learning-objectives, cognitive-levels, higher-order-thinking, assessment, didactics, education
+:tier: 3
+
+[%collapsible]
+====
+Full Name:: Taxonomy of Educational Objectives, Cognitive Domain (Revised 2001)
+
+Also known as:: Bloom's Revised Taxonomy; Anderson & Krathwohl Taxonomy
+
+[discrete]
+== *Core Concepts*:
+
+Six cognitive levels:: A hierarchy of *what a learner can do* with knowledge, from lower-order to higher-order — Remember, Understand, Apply, Analyze, Evaluate, Create. Higher levels presuppose the lower ones.
+
+Remember:: Retrieve facts from memory — recall, recognise, list, name. The floor, not the goal.
+
+Understand:: Construct meaning — explain in one's own words, summarise, paraphrase, give an example. *Understanding is not yet mastery.*
+
+Apply:: Use knowledge in a new situation — execute, implement, solve a fresh case. The first level that proves transfer beyond the example taught.
+
+Analyze:: Break a whole into parts and see how they relate — differentiate, attribute, find the edge cases, trace cause to effect.
+
+Evaluate:: Judge against criteria — critique, weigh trade-offs, defend a decision.
+
+Create:: Assemble parts into something new — design, build, generate a working solution.
+
+Action verbs per level:: Each level has its own measurable verbs, which is what turns a vague aim ("understand recursion") into a testable objective ("*implement* a recursive traversal", "*analyse* why this base case prevents infinite recursion").
+
+The 2001 revision:: Anderson & Krathwohl turned Bloom's 1956 nouns into verbs and reordered the top two (the original ended Synthesis → Evaluation; the revision ends Evaluate → *Create*). They also added a second axis — the *knowledge dimension* (factual, conceptual, procedural, metacognitive) — yielding a two-dimensional taxonomy table.
+
+A heuristic, not a law:: The hierarchy is a design aid, not a strict ladder — real tasks mix levels, and Evaluate-vs-Create ordering is debated. Its value is forcing assessment *above* mere recall, not literal sequencing.
+
+Key Proponents:: Benjamin Bloom et al. ("Taxonomy of Educational Objectives", 1956); Lorin Anderson & David Krathwohl ("A Taxonomy for Learning, Teaching, and Assessing", 2001 revision)
+
+[discrete]
+== *When to Use*:
+
+* Writing learning objectives so they name a verifiable cognitive level, not a vague "know about"
+* Designing assessments and quizzes that target higher-order thinking (Apply, Analyze) instead of recall
+* Defining what "demonstrated understanding" means — set the gate at Apply/Analyze, not Remember
+* Reviewing training material or documentation for whether it only informs or also builds skill
+* LLM prompting: "Write quiz questions at the Apply and Analyze levels of Bloom's Taxonomy"
+
+[discrete]
+== *When NOT to Use*:
+
+* As a rigid linear sequence every lesson must climb in order — it is a design lens, not a script
+* For affective or motor learning — the cognitive taxonomy does not cover attitudes (affective domain) or physical skills (psychomotor domain)
+
+[discrete]
+== *Related Anchors*:
+
+* <<4mat,4MAT>> — 4MAT sequences a lesson (Why/What/How/What-If); Bloom grades the cognitive *level* each step targets
+* <<feynman-technique,Feynman Technique>> — explaining-it-back is a concrete check at the Understand level; Bloom names the levels above it
+* <<socratic-method,Socratic Method>> — questioning drives learners up the levels; Bloom labels where they are
+* <<diataxis-framework,Diátaxis Framework>> — documentation types map loosely to cognitive levels (tutorial → Apply, explanation → Understand)
+====

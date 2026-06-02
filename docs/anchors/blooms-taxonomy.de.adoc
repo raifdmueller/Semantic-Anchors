@@ -1,0 +1,62 @@
+= Bloom's Taxonomy
+:categories: communication-presentation
+:roles: educator, technical-writer, consultant, team-lead
+:related: 4mat, feynman-technique, socratic-method, diataxis-framework
+:proponents: Benjamin Bloom, Lorin Anderson, David Krathwohl
+:tags: blooms-taxonomy, learning-objectives, cognitive-levels, higher-order-thinking, assessment, didactics, education
+:tier: 3
+
+[%collapsible]
+====
+Vollständiger Name:: Taxonomy of Educational Objectives, Cognitive Domain (Revised 2001)
+
+Auch bekannt als:: Bloom's Revised Taxonomy; Anderson & Krathwohl Taxonomy
+
+[discrete]
+== *Kernkonzepte*:
+
+Sechs kognitive Stufen:: Eine Hierarchie dessen, *was eine lernende Person mit Wissen tun kann*, von niedriger zu höherer Ordnung — Remember, Understand, Apply, Analyze, Evaluate, Create. Höhere Stufen setzen die niedrigeren voraus.
+
+Remember:: Fakten aus dem Gedächtnis abrufen — erinnern, erkennen, aufzählen, benennen. Der Boden, nicht das Ziel.
+
+Understand:: Bedeutung konstruieren — in eigenen Worten erklären, zusammenfassen, paraphrasieren, ein Beispiel geben. *Verstehen ist noch keine Beherrschung.*
+
+Apply:: Wissen in einer neuen Situation anwenden — ausführen, umsetzen, einen frischen Fall lösen. Die erste Stufe, die Transfer über das gelehrte Beispiel hinaus belegt.
+
+Analyze:: Ein Ganzes in Teile zerlegen und ihre Beziehungen sehen — unterscheiden, zuordnen, Edge Cases finden, Ursache zu Wirkung verfolgen.
+
+Evaluate:: An Kriterien messen — kritisieren, Trade-offs abwägen, eine Entscheidung verteidigen.
+
+Create:: Teile zu etwas Neuem zusammensetzen — entwerfen, bauen, eine funktionierende Lösung erzeugen.
+
+Handlungsverben pro Stufe:: Jede Stufe hat eigene messbare Verben — das macht aus einem vagen Ziel („Rekursion verstehen") ein testbares Lernziel („eine rekursive Traversierung *implementieren*", „*analysieren*, warum dieser Basisfall Endlosrekursion verhindert").
+
+Die Revision von 2001:: Anderson & Krathwohl machten aus Blooms Substantiven von 1956 Verben und tauschten die obersten zwei (das Original endete mit Synthesis → Evaluation; die Revision endet mit Evaluate → *Create*). Sie ergänzten zudem eine zweite Achse — die *Wissensdimension* (faktisch, konzeptuell, prozedural, metakognitiv) — und damit eine zweidimensionale Taxonomie-Tabelle.
+
+Eine Heuristik, kein Gesetz:: Die Hierarchie ist eine Entwurfshilfe, keine strikte Leiter — echte Aufgaben mischen Stufen, und die Reihenfolge Evaluate vs. Create ist umstritten. Ihr Wert liegt darin, Prüfung *über* bloßes Abrufen hinaus zu erzwingen, nicht in wörtlicher Abfolge.
+
+Key Proponents:: Benjamin Bloom et al. („Taxonomy of Educational Objectives", 1956); Lorin Anderson & David Krathwohl („A Taxonomy for Learning, Teaching, and Assessing", Revision 2001)
+
+[discrete]
+== *Verwendung*:
+
+* Lernziele so formulieren, dass sie eine prüfbare kognitive Stufe nennen, kein vages „kennt sich aus mit"
+* Prüfungen und Quizzes entwerfen, die auf höhere Stufen zielen (Apply, Analyze) statt aufs Abrufen
+* Definieren, was „demonstriertes Verständnis" heißt — das Gate auf Apply/Analyze setzen, nicht auf Remember
+* Schulungsmaterial oder Doku prüfen, ob es nur informiert oder auch Können aufbaut
+* LLM-Prompting: „Schreibe Quizfragen auf den Stufen Apply und Analyze der Bloom'schen Taxonomie"
+
+[discrete]
+== *Nicht verwenden*:
+
+* Als starre lineare Abfolge, die jede Lektion der Reihe nach durchklettern muss — es ist eine Entwurfslinse, kein Skript
+* Für affektives oder motorisches Lernen — die kognitive Taxonomie deckt weder Haltungen (affektive Domäne) noch körperliche Fertigkeiten (psychomotorische Domäne) ab
+
+[discrete]
+== *Verwandte Anker*:
+
+* <<4mat,4MAT>> — 4MAT sequenziert eine Lektion (Why/What/How/What-If); Bloom benotet die kognitive *Stufe*, die jeder Schritt anvisiert
+* <<feynman-technique,Feynman Technique>> — Zurückerklären ist ein konkreter Check auf der Understand-Stufe; Bloom benennt die Stufen darüber
+* <<socratic-method,Socratic Method>> — Fragen treiben Lernende die Stufen hinauf; Bloom etikettiert, wo sie stehen
+* <<diataxis-framework,Diátaxis Framework>> — Doku-Typen bilden grob auf kognitive Stufen ab (Tutorial → Apply, Explanation → Understand)
+====

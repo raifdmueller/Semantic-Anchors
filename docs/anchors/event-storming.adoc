@@ -1,0 +1,53 @@
+= Event Storming according to Alberto Brandolini
+:categories: requirements-engineering, software-architecture
+:roles: software-architect, business-analyst, product-owner, consultant, team-lead
+:related: domain-driven-design, user-story-mapping, cqrs, event-driven-architecture
+:proponents: Alberto Brandolini
+:tags: event-storming, ddd, domain-events, collaborative-workshop, bounded-contexts, aggregates, big-picture, design-level, process-modeling
+:tier: 3
+
+[%collapsible]
+====
+Full Name:: Event Storming
+
+Also known as:: EventStorming (Brandolini)
+
+[discrete]
+== *Core Concepts*:
+
+Domain events on a timeline:: Model the domain as past-tense *domain events* (orange stickies) placed left-to-right on a wide wall, reconstructing how the business actually unfolds over time
+
+The colour notation:: A fixed sticky vocabulary — orange = Domain Event, blue = Command, yellow = Aggregate, lilac = Policy (reactive "whenever… then…"), green = Read Model, pink = External System, red = Hotspot (conflict, question, assumption)
+
+Three levels:: *Big Picture* (explore the whole domain with all stakeholders), *Process Modeling* (zoom into one flow: command → event → policy → command), *Design Level* (aggregates, commands and events detailed enough to drive implementation)
+
+Pivotal events:: Events that mark phase transitions or boundaries — strong candidates for *bounded context* seams
+
+Hotspots:: Make conflicts, unknowns and assumptions explicit on the wall instead of glossing over them — they become the agenda
+
+Chaotic exploration → enforced timeline:: Everyone adds events in parallel first (diverge), then the group orders and de-duplicates them into a coherent line (converge)
+
+Key Proponents:: Alberto Brandolini (first run 2012, "Introducing EventStorming" blog post 2013; Leanpub book, continuously updated)
+
+[discrete]
+== *When to Use*:
+
+* Kicking off a Domain-Driven Design effort — discovering bounded contexts and aggregate boundaries collaboratively
+* Aligning business and engineering on a shared, visual domain model
+* Before deciding on an event-driven or CQRS architecture — discover the events/commands first
+* *Reverse Event Storming* on legacy systems (well suited to an AI agent): extract state transitions → map to Domain Events → cluster into Aggregates → surface Bounded Contexts
+
+[discrete]
+== *When NOT to Use*:
+
+* Trivial CRUD domains with no meaningful process or business rules
+* Solo modeling where the collaborative, cross-role discovery — the whole point — is absent
+
+[discrete]
+== *Related Anchors*:
+
+* <<domain-driven-design,Domain-Driven Design>> — the vocabulary (aggregates, bounded contexts) Event Storming discovers; often the on-ramp to DDD
+* <<user-story-mapping,User Story Mapping>> — activity-centric mapping vs. event-centric discovery
+* <<cqrs,CQRS>> — commands and read models found on the wall feed a later CQRS decision
+* <<event-driven-architecture,Event-Driven Architecture>> — the modeling step that precedes deciding how events are routed
+====

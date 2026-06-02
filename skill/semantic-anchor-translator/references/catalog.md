@@ -188,6 +188,11 @@ Source: https://github.com/LLM-Coding/Semantic-Anchors
 
 ## Design Principles
 
+### DRY (Don't Repeat Yourself)
+- **Also known as:** DRY Principle; antonym WET ("Write Everything Twice" / "We Enjoy Typing")
+- **Proponents:** Andy Hunt & Dave Thomas (*The Pragmatic Programmer*, 1999)
+- **Core:** Every piece of knowledge must have a single, unambiguous, authoritative representation within a system; targets duplicated knowledge/intent, not coincidental textual similarity; pair with the Rule of Three (Fowler) and the wrong-abstraction caution ("duplication is far cheaper than the wrong abstraction", Sandi Metz) to avoid premature, leaky abstractions
+
 ### Law of Demeter
 - **Also known as:** Principle of Least Knowledge, "Don't talk to strangers"
 - **Proponents:** Ian Holland & Karl Lieberherr (Northeastern University, 1987)
@@ -450,6 +455,11 @@ Source: https://github.com/LLM-Coding/Semantic-Anchors
 - **Also known as:** Fully Dressed Use Cases, Goal-Level Use Cases
 - **Proponents:** Alistair Cockburn
 - **Core:** Structured textual use case format — Primary Actor, Stakeholders & Interests, Preconditions, Trigger, Main Success Scenario, Extensions, Postconditions; three Goal Levels (Summary/Kite, User Goal/Sea Level, Subfunction/Fish); Actor-Goal List as discovery technique; deliberately prose-based and notation-agnostic — does NOT prescribe Activity Diagrams, Gherkin, or EARS, which are complementary representations
+
+### Event Storming according to Alberto Brandolini
+- **Also known as:** EventStorming
+- **Proponents:** Alberto Brandolini (2012/2013)
+- **Core:** Collaborative workshop that models a domain as past-tense domain events on a timeline using a fixed colour notation (orange Event, blue Command, yellow Aggregate, lilac Policy, green Read Model, pink External System, red Hotspot); runs at three levels (Big Picture, Process Modeling, Design Level); surfaces bounded-context seams via pivotal events and makes assumptions explicit as hotspots; Reverse Event Storming reconstructs legacy systems
 
 ### INVEST
 - **Proponents:** Bill Wake

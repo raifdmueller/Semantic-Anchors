@@ -1,0 +1,53 @@
+= Event Storming according to Alberto Brandolini
+:categories: requirements-engineering, software-architecture
+:roles: software-architect, business-analyst, product-owner, consultant, team-lead
+:related: domain-driven-design, user-story-mapping, cqrs, event-driven-architecture
+:proponents: Alberto Brandolini
+:tags: event-storming, ddd, domain-events, collaborative-workshop, bounded-contexts, aggregates, big-picture, design-level, process-modeling
+:tier: 3
+
+[%collapsible]
+====
+Vollständiger Name:: Event Storming
+
+Auch bekannt als:: EventStorming (Brandolini)
+
+[discrete]
+== *Kernkonzepte*:
+
+Domain Events auf einer Zeitachse:: Die Domäne als *Domain Events* in der Vergangenheitsform (orange Stickies) modellieren, von links nach rechts auf einer breiten Wand — so wird rekonstruiert, wie das Geschäft tatsächlich über die Zeit abläuft
+
+Die Farb-Notation:: Ein festes Sticky-Vokabular — orange = Domain Event, blau = Command, gelb = Aggregate, lila = Policy (reaktives „immer wenn… dann…"), grün = Read Model, pink = External System, rot = Hotspot (Konflikt, Frage, Annahme)
+
+Drei Ebenen:: *Big Picture* (die ganze Domäne mit allen Stakeholdern erkunden), *Process Modeling* (in einen Fluss zoomen: Command → Event → Policy → Command), *Design Level* (Aggregates, Commands und Events detailliert genug zur Implementierung)
+
+Pivotal Events:: Events, die Phasenübergänge oder Grenzen markieren — starke Kandidaten für *Bounded-Context*-Nahtstellen
+
+Hotspots:: Konflikte, Unbekanntes und Annahmen explizit an der Wand machen, statt sie zu übergehen — sie werden zur Agenda
+
+Chaotische Exploration → erzwungene Zeitachse:: Erst fügen alle parallel Events hinzu (divergieren), dann ordnet und entdoppelt die Gruppe sie zu einer kohärenten Linie (konvergieren)
+
+Key Proponents:: Alberto Brandolini (erster Lauf 2012, Blogpost „Introducing EventStorming" 2013; Leanpub-Buch, laufend aktualisiert)
+
+[discrete]
+== *Verwendung*:
+
+* Start eines Domain-Driven-Design-Vorhabens — Bounded Contexts und Aggregate-Grenzen kollaborativ entdecken
+* Business und Engineering auf ein gemeinsames, visuelles Domänenmodell ausrichten
+* Vor der Entscheidung für eine Event-Driven- oder CQRS-Architektur — zuerst die Events/Commands entdecken
+* *Reverse Event Storming* an Legacy-Systemen (gut für einen AI-Agenten geeignet): Zustandsübergänge extrahieren → auf Domain Events abbilden → zu Aggregates clustern → Bounded Contexts sichtbar machen
+
+[discrete]
+== *Nicht verwenden*:
+
+* Triviale CRUD-Domänen ohne nennenswerten Prozess oder Geschäftsregeln
+* Solo-Modellierung, bei der die kollaborative, rollenübergreifende Entdeckung — der eigentliche Zweck — fehlt
+
+[discrete]
+== *Verwandte Anker*:
+
+* <<domain-driven-design,Domain-Driven Design>> — das Vokabular (Aggregates, Bounded Contexts), das Event Storming entdeckt; oft der Einstieg in DDD
+* <<user-story-mapping,User Story Mapping>> — aktivitätszentrierte Abbildung vs. event-zentrierte Entdeckung
+* <<cqrs,CQRS>> — an der Wand gefundene Commands und Read Models speisen eine spätere CQRS-Entscheidung
+* <<event-driven-architecture,Event-Driven Architecture>> — der Modellierungsschritt, der dem Routing der Events vorausgeht
+====

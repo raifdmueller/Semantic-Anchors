@@ -1,0 +1,51 @@
+= DRY (Don't Repeat Yourself)
+:categories: design-principles
+:roles: software-developer, software-architect, educator
+:related: ssot-principle, single-level-of-abstraction-principle, kiss-principle, yagni
+:proponents: Andy Hunt, Dave Thomas
+:tags: dry, dont-repeat-yourself, duplication, knowledge, abstraction, maintainability
+:tier: 3
+
+[%collapsible]
+====
+Vollständiger Name:: Don't Repeat Yourself
+
+Auch bekannt als:: DRY-Prinzip; Gegenstück: WET („Write Everything Twice" / „We Enjoy Typing")
+
+[discrete]
+== *Kernkonzepte*:
+
+Das Prinzip:: „Every piece of knowledge must have a single, unambiguous, authoritative representation within a system." Ein Fakt — eine Geschäftsregel, eine Konstante, ein Schema — lebt an genau einer Stelle
+
+Wissen, nicht Code:: DRY zielt auf dupliziertes *Wissen/Intention*, nicht auf zufällige textuelle Ähnlichkeit. Zwei ähnlich aussehende Fragmente, die sich aus unterschiedlichen Gründen ändern, sind keine DRY-Verletzung; sie zusammenzulegen koppelt unverwandte Belange
+
+Single Source of Truth:: Ableiten statt wiederholen — Doku/Config/Clients aus einer maßgeblichen Definition generieren, damit eine Änderung sich fortpflanzt statt kopiert zu werden
+
+Rule of Three:: Eine gemeinsame Abstraktion erst beim *dritten* Auftreten extrahieren, nicht beim ersten (Martin Fowler). Verfrühtes Entdoppeln rät die Abstraktion, bevor das Muster klar ist
+
+Warnung vor der falschen Abstraktion:: „Duplication is far cheaper than the wrong abstraction" (Sandi Metz). Eine schlechte gemeinsame Abstraktion koppelt die Aufrufer und ist schwerer aufzulösen als die entfernte Duplizierung — lieber duplizieren, bis die richtige Naht offensichtlich ist
+
+Key Proponents:: Andy Hunt & Dave Thomas, *The Pragmatic Programmer* (1999)
+
+[discrete]
+== *Verwendung*:
+
+* Konsolidierung einer Geschäftsregel, Konstante oder eines Schemas, das an mehreren Stellen auftaucht
+* Entwurf einer Single Source of Truth (Config, Typen, API-Contracts), aus der andere Artefakte abgeleitet werden
+* Code-Review auf Wissensduplizierung, die Änderungen an vielen Stellen erzwingt
+
+[discrete]
+== *Nicht verwenden*:
+
+* Vor der Rule of Three — beim ersten oder zweiten Auftreten nicht abstrahieren
+* Wenn zwei ähnliche Fragmente sich aus unterschiedlichen Gründen ändern — Kopplung über eine gemeinsame Abstraktion ist schlimmer als die Duplizierung
+* Als Dogma über Lesbarkeit: etwas Duplizierung schlägt eine undichte, übergeneralisierte Abstraktion
+
+[discrete]
+== *Verwandte Anker*:
+
+* <<ssot-principle,Single Source of Truth>> — der Daten-Vetter von DRYs Wissensregel
+* <<single-level-of-abstraction-principle,Single Level of Abstraction Principle>> — hält extrahierte Abstraktionen kohärent
+* <<kiss-principle,KISS Principle>> — das Einfachheits-Gegengewicht zur Über-Abstraktion
+* <<yagni,YAGNI>> — die Abstraktion erst bauen, wenn sie wirklich gebraucht wird
+====

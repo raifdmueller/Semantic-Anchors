@@ -679,6 +679,38 @@
     "tier": 3
   },
   {
+    "id": "dry",
+    "title": "DRY (Don’t Repeat Yourself)",
+    "categories": [
+      "design-principles"
+    ],
+    "roles": [
+      "software-developer",
+      "software-architect",
+      "educator"
+    ],
+    "related": [
+      "ssot-principle",
+      "single-level-of-abstraction-principle",
+      "kiss-principle",
+      "yagni"
+    ],
+    "proponents": [
+      "Andy Hunt",
+      "Dave Thomas"
+    ],
+    "tags": [
+      "dry",
+      "dont-repeat-yourself",
+      "duplication",
+      "knowledge",
+      "abstraction",
+      "maintainability"
+    ],
+    "filePath": "docs/anchors/dry.adoc",
+    "tier": 3
+  },
+  {
     "id": "ears-requirements",
     "title": "EARS-Requirements",
     "categories": [
@@ -753,6 +785,43 @@
       "eventual-consistency"
     ],
     "filePath": "docs/anchors/event-driven-architecture.adoc",
+    "tier": 3
+  },
+  {
+    "id": "event-storming",
+    "title": "Event Storming according to Alberto Brandolini",
+    "categories": [
+      "requirements-engineering",
+      "software-architecture"
+    ],
+    "roles": [
+      "software-architect",
+      "business-analyst",
+      "product-owner",
+      "consultant",
+      "team-lead"
+    ],
+    "related": [
+      "domain-driven-design",
+      "user-story-mapping",
+      "cqrs",
+      "event-driven-architecture"
+    ],
+    "proponents": [
+      "Alberto Brandolini"
+    ],
+    "tags": [
+      "event-storming",
+      "ddd",
+      "domain-events",
+      "collaborative-workshop",
+      "bounded-contexts",
+      "aggregates",
+      "big-picture",
+      "design-level",
+      "process-modeling"
+    ],
+    "filePath": "docs/anchors/event-storming.adoc",
     "tier": 3
   },
   {

@@ -11,7 +11,7 @@ import {
   updateAnchorCount,
   setFeedbackData,
 } from './components/card-grid.js'
-import { fetchData, fetchContractsData } from './utils/data-loader.js'
+import { fetchData, fetchContractsData, fetchAnchorsData } from './utils/data-loader.js'
 import { buildSearchIndex, isIndexReady, isIndexBuilding } from './utils/search-index.js'
 import {
   initRouter,
@@ -333,8 +333,10 @@ function renderContractsPageHandler() {
   pageContent.innerHTML = renderContractsPage()
   updateActiveNavLink()
 
-  fetchContractsData().then((contracts) => {
-    initContractsPage(contracts)
+  Promise.all([fetchContractsData(), fetchAnchorsData()]).then(([contracts, anchors]) => {
+    const anchorTitles = {}
+    for (const a of anchors || []) anchorTitles[a.id] = a.title
+    initContractsPage(contracts, anchorTitles)
   })
 }
 

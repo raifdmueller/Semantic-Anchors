@@ -2,10 +2,56 @@ import { i18n } from '../i18n.js'
 
 const STORAGE_KEY = 'selected-contracts'
 
+// id -> title map for the anchors a contract declares; set by initContractsPage.
+// Used to highlight verbatim anchor mentions inside the rendered template text.
+// Copy/download use the raw template, so highlighting never leaks into the export.
+let anchorTitleMap = {}
+
 function esc(str) {
   const d = document.createElement('div')
   d.textContent = str
   return d.innerHTML
+}
+
+function escapeRegex(str) {
+  return str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
+}
+
+// Highlight verbatim mentions of a contract's declared anchors, linked to the anchor.
+// Operates on raw text and returns escaped HTML with <a> links injected.
+function highlightAnchors(text, anchorIds) {
+  const entries = (anchorIds || [])
+    .map((id) => ({ id, title: anchorTitleMap[id] }))
+    .filter((e) => e.title)
+    .sort((a, b) => b.title.length - a.title.length) // longest title first
+
+  if (!entries.length) return esc(text)
+
+  // Collect non-overlapping verbatim matches of each declared anchor's title.
+  const matches = []
+  for (const { id, title } of entries) {
+    const re = new RegExp(`(?<![\\w])${escapeRegex(title)}(?![\\w])`, 'g')
+    let m
+    while ((m = re.exec(text)) !== null) {
+      const start = m.index
+      const end = start + m[0].length
+      if (!matches.some((x) => start < x.end && end > x.start)) {
+        matches.push({ start, end, id, text: m[0] })
+      }
+    }
+  }
+  matches.sort((a, b) => a.start - b.start)
+
+  // Rebuild the line, escaping plain text and linking matched anchor names.
+  let html = ''
+  let pos = 0
+  for (const mt of matches) {
+    html += esc(text.slice(pos, mt.start))
+    html += `<a href="#/anchor/${esc(mt.id)}" class="font-medium text-blue-700 dark:text-blue-300 hover:underline">${esc(mt.text)}</a>`
+    pos = mt.end
+  }
+  html += esc(text.slice(pos))
+  return html
 }
 
 function getSelectedContracts() {
@@ -103,13 +149,14 @@ function renderContractCard(contract, isSelected) {
     )
     .join(' ')
 
+  const anchorIds = contract.anchors || []
   const templateHtml = template
     .split('\n')
     .map((line) => {
       if (line.startsWith('- ')) {
-        return `<span class="text-[var(--color-text-secondary)]">• ${esc(line.slice(2))}</span>`
+        return `<span class="text-[var(--color-text-secondary)]">• ${highlightAnchors(line.slice(2), anchorIds)}</span>`
       }
-      return `<span>${esc(line)}</span>`
+      return `<span>${highlightAnchors(line, anchorIds)}</span>`
     })
     .join('<br>')
 
@@ -142,7 +189,8 @@ function renderContractCard(contract, isSelected) {
   `
 }
 
-export function initContractsPage(contracts) {
+export function initContractsPage(contracts, anchorTitles) {
+  if (anchorTitles) anchorTitleMap = anchorTitles
   const oldGrid = document.getElementById('contracts-grid')
   if (!oldGrid || !contracts) return
 

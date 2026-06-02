@@ -54,6 +54,8 @@ Bevor Sie einen Vorschlag machen, testen Sie den Anker mit diesem Prompt in eine
 Welche Konzepte verbindest du mit '<Name Ihres semantischen Ankers>'?
 ----
 
+NOTE: Die Vorlagsvorlage enthält ein Pflichtfeld *LLM Activation Test Result*. Fügen Sie dort Ihre Testausgabe ein — es liefert Reviewern vorab das Precise/Rich/Consistent-Signal.
+
 Bewerten Sie die Antwort:
 
 * *Erkennung:* Erkennt das LLM den Begriff?
@@ -72,6 +74,7 @@ Klicken Sie auf die btn:[Neuen Anker vorschlagen] Schaltfläche auf der https://
 *Alles, was Sie angeben müssen:*
 
 * Der Begriff oder Konzeptname
+* Ein LLM-Aktivierungstestergebnis (Pflichtfeld)
 * (Optional) Warum Sie denken, dass es wertvoll wäre
 
 === Schritt 2: Copilot-Validierung

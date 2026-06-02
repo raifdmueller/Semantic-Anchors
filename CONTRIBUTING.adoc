@@ -56,6 +56,8 @@ Before proposing, test the anchor with this prompt in an LLM:
 What concepts do you associate with '<your semantic anchor name>'?
 ----
 
+NOTE: The proposal template includes a required *LLM Activation Test Result* field. Paste your test output there — it front-loads the Precise/Rich/Consistent signal for reviewers.
+
 Evaluate the response:
 
 * *Recognition:* Does the LLM recognize the term?
@@ -115,6 +117,7 @@ Click the btn:[Propose New Anchor] button on the https://raifdmueller.github.io/
 *All you need to provide:*
 
 * The term or concept name
+* An LLM activation test result (required)
 * (Optional) Why you think it would be valuable
 
 === Step 2: Copilot Validation

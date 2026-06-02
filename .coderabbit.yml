@@ -23,6 +23,10 @@ reviews:
         - Zuordenbar: Rückverfolgbar zu Proponenten, Publikationen oder Standards
         Pflichtfelder: :categories:, :roles:, :proponents:
         Format: AsciiDoc mit [%collapsible] Block
+        Die erste Zeile (`= Titel`) ist der AsciiDoc Level-0-Dokumenttitel
+        und MUSS ein einzelnes `=` verwenden. NICHT als Section-Header-Verstoß
+        flaggen (die Sektionen darunter nutzen korrekt `==`). extract-metadata.js
+        liest den Titel via getDocumentTitle(); `==` würde den Build brechen.
         
         ⚠️ AgentSkill-Katalog aktualisieren:
         Wenn ein neuer Anchor hinzugefügt wird, muss auch

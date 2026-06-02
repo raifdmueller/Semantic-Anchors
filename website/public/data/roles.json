@@ -42,6 +42,7 @@
     "name": "Consultant / Coach",
     "anchors": [
       "4mat",
+      "blooms-taxonomy",
       "bluf",
       "c4-diagrams",
       "cohesion-criteria",
@@ -149,6 +150,7 @@
     "name": "Educator / Trainer",
     "anchors": [
       "4mat",
+      "blooms-taxonomy",
       "code-smells",
       "cohesion-criteria",
       "crc-cards",
@@ -496,6 +498,7 @@
       "adr-according-to-nygard",
       "arc42",
       "atam",
+      "blooms-taxonomy",
       "bluf",
       "c4-diagrams",
       "code-smells",
@@ -564,6 +567,7 @@
     "anchors": [
       "4mat",
       "arc42",
+      "blooms-taxonomy",
       "bluf",
       "c4-diagrams",
       "diataxis-framework",

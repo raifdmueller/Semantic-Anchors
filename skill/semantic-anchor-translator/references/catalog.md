@@ -521,6 +521,11 @@ Source: https://github.com/LLM-Coding/Semantic-Anchors
 - **Proponents:** Bernice McCarthy
 - **Core:** Four-quadrant learning cycle structuring explanations and presentations — Why (motivation, relevance), What (facts, concepts), How (practical application, examples), What If (extension, transfer); order matters to serve all four learner types (Innovative/Analytic/Common Sense/Dynamic) instead of only analytic learners
 
+### Bloom's Taxonomy
+- **Also known as:** Bloom's Revised Taxonomy, Anderson & Krathwohl Taxonomy, Taxonomy of Educational Objectives
+- **Proponents:** Benjamin Bloom (1956); Lorin Anderson & David Krathwohl (2001 revision)
+- **Core:** Six-level hierarchy of cognitive learning objectives — Remember, Understand, Apply, Analyze, Evaluate, Create — each with measurable action verbs; the 2001 revision verb-ifies the levels, reorders the top two (ends in Create), and adds a knowledge dimension (factual/conceptual/procedural/metacognitive); used to write testable learning objectives and assessments that target higher-order thinking rather than recall; a design heuristic, not a strict ladder
+
 ### Chatham House Rule
 - **Proponents:** Chatham House
 - **Core:** Info can be used but not attributed to speaker/org

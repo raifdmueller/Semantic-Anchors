@@ -129,7 +129,7 @@ function renderContractCard(contract, isSelected) {
           <div class="flex-1 min-w-0">
             <h3 class="text-lg font-semibold text-[var(--color-text)] mb-1">${esc(title)}</h3>
             <p class="text-sm text-[var(--color-text-secondary)] mb-3">${esc(description)}</p>
-            <div class="rounded-md bg-[var(--color-bg-secondary)] p-3 mb-3 text-sm leading-relaxed">
+            <div class="rounded-md bg-[var(--color-bg-secondary)] p-3 mb-3 text-sm leading-relaxed max-h-64 overflow-y-auto">
               ${templateHtml}
             </div>
             <div class="flex flex-wrap gap-1.5">

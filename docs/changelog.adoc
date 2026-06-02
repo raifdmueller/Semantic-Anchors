@@ -10,6 +10,10 @@ A chronological record of all semantic anchors added to the catalog. Community c
 * *Event Storming according to Alberto Brandolini* — a collaborative workshop that models a domain as past-tense domain events on a timeline using a fixed colour notation (orange Event, blue Command, yellow Aggregate, lilac Policy, green Read Model, pink External System, red Hotspot) across three levels (Big Picture, Process Modeling, Design Level); surfaces bounded-context seams via pivotal events and makes assumptions explicit as hotspots; Reverse Event Storming reconstructs legacy systems (Alberto Brandolini, 2012/2013; proposed by https://github.com/SidekickJohn[@SidekickJohn] in https://github.com/LLM-Coding/Semantic-Anchors/issues/558[#558])
 * *Bloom's Taxonomy* — the six-level hierarchy of cognitive learning objectives (Remember, Understand, Apply, Analyze, Evaluate, Create) with measurable action verbs per level; pins the Revised 2001 version and its knowledge dimension; complements the teaching cluster (4MAT, Feynman, Socratic) by grading the cognitive *level* a step targets — so "demonstrated understanding" can be set at Apply/Analyze rather than recall (Benjamin Bloom, 1956; Anderson & Krathwohl revision, 2001)
 
+*New contracts:*
+
+* *Explaining and Teaching* — a gated teaching loop for "explain / why / how" requests: explain *and* verify understanding. Composes 4MAT (Why→What→How→What-If), Programming as Theory Building (the why behind the design), Socratic Method (diagnose first), Feynman Technique (explain-it-back), Bloom's Taxonomy (understood = Apply/Analyze, not recall) and Definition of Done (a checklist demonstrated, not nodded at); scales to the size of the question
+
 == 2026-06-01
 
 *New anchors:*

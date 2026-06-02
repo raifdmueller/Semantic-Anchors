@@ -35,4 +35,18 @@ describe('router', () => {
     window.dispatchEvent(new PopStateEvent('popstate'))
     expect(handler).toHaveBeenCalledTimes(2)
   })
+
+  it('reports a GoatCounter pageview with the path on SPA navigation', () => {
+    window.goatcounter = { count: vi.fn() }
+    addRoute('/gc-test', vi.fn())
+    // The very first route of the run is skipped by design (count.js auto-counts
+    // the initial load); clear and navigate again so we assert a later change.
+    navigate('/gc-test')
+    window.goatcounter.count.mockClear()
+    navigate('/gc-test')
+    expect(window.goatcounter.count).toHaveBeenCalledWith(
+      expect.objectContaining({ path: '/gc-test' })
+    )
+    delete window.goatcounter
+  })
 })

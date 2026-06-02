@@ -142,6 +142,23 @@ export function initRouter() {
 /**
  * Handle route change
  */
+// SPA pageview tracking for GoatCounter. count.js auto-counts the initial full
+// page load, so the first handleRoute() is skipped to avoid a double hit; every
+// later client-side route change — including each opened anchor (/anchor/:id) —
+// is reported with its resolved path and title, giving per-anchor view counts.
+// Privacy is unchanged: path only, no query string, no personal data.
+let firstRouteHandled = false
+function trackPageview() {
+  if (!firstRouteHandled) {
+    firstRouteHandled = true
+    return
+  }
+  const gc = typeof window !== 'undefined' ? window.goatcounter : null
+  if (gc && typeof gc.count === 'function') {
+    gc.count({ path: window.location.pathname, title: document.title })
+  }
+}
+
 function handleRoute() {
   let path = getCurrentRoute()
 
@@ -176,6 +193,7 @@ function handleRoute() {
     // Set title to anchor name
     const readableName = safeAnchorId.replace(/-/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase())
     document.title = `${readableName} — Semantic Anchors`
+    trackPageview()
 
     // Open the anchor modal as overlay on current page
     import('../components/anchor-modal.js').then(({ showAnchorDetails }) => {
@@ -190,6 +208,7 @@ function handleRoute() {
     currentRoute = path
     document.title = ROUTE_TITLES[path] || 'Semantic Anchors'
     handler()
+    trackPageview()
   } else {
     // Default to home if route not found
     const homeHandler = routes.get('/')

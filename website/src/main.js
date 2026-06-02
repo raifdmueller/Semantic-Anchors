@@ -333,10 +333,18 @@ function renderContractsPageHandler() {
   pageContent.innerHTML = renderContractsPage()
   updateActiveNavLink()
 
-  Promise.all([fetchContractsData(), fetchAnchorsData()]).then(([contracts, anchors]) => {
+  // Contracts must load to render the page; anchor titles only power the
+  // in-text highlight aliases, so an anchors failure is non-fatal.
+  Promise.allSettled([fetchContractsData(), fetchAnchorsData()]).then(([contractsRes, anchorsRes]) => {
+    if (contractsRes.status !== 'fulfilled') {
+      console.error('Failed to load contracts:', contractsRes.reason)
+      return
+    }
     const anchorTitles = {}
-    for (const a of anchors || []) anchorTitles[a.id] = a.title
-    initContractsPage(contracts, anchorTitles)
+    if (anchorsRes.status === 'fulfilled') {
+      for (const a of anchorsRes.value || []) anchorTitles[a.id] = a.title
+    }
+    initContractsPage(contractsRes.value, anchorTitles)
   })
 }
 

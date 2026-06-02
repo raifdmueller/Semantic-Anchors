@@ -107,7 +107,7 @@ function setSelectedContracts(ids) {
 }
 
 function getLocalizedField(contract, field) {
-  const lang = i18n.currentLanguage || 'en'
+  const lang = i18n.currentLang() || 'en'
   if (lang === 'de' && contract[field + 'De']) {
     return contract[field + 'De']
   }
@@ -316,7 +316,7 @@ function updateUI() {
 
 function buildContractsMarkdown(contracts) {
   const selected = getSelectedContracts()
-  const lang = i18n.currentLanguage || 'en'
+  const lang = i18n.currentLang() || 'en'
   const filtered = contracts.filter((c) => selected.includes(c.id))
 
   if (filtered.length === 0) return null

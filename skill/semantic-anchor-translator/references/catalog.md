@@ -506,6 +506,11 @@ Source: https://github.com/LLM-Coding/Semantic-Anchors
 - **Proponents:** US Military
 - **Core:** Lead with conclusion/recommendation, then details
 
+### AIDA Model
+- **Also known as:** AIDA Funnel; variants AIDAS (+Satisfaction), AIDCA (+Conviction), AIDA-R (+Retention)
+- **Proponents:** E. St. Elmo Lewis (1898)
+- **Core:** Copywriting/advertising funnel — Attention → Interest → Desire → Action; a sequential hierarchy-of-effects model that makes persuasive copy do each job in turn (hook, relevance, wanting, call to action); a heuristic, not measured cognitive science; for persuasion, not informational writing (use BLUF/Inverted Pyramid there)
+
 ### Pyramid Principle
 - **Proponents:** Barbara Minto
 - **Core:** Start with answer, group supporting arguments, logical order

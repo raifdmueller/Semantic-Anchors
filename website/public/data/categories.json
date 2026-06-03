@@ -4,6 +4,7 @@
     "name": "Communication & Presentation",
     "anchors": [
       "4mat",
+      "aida-model",
       "blooms-taxonomy",
       "bluf",
       "gutes-deutsch-wolf-schneider",
@@ -62,6 +63,7 @@
       "gof-template-method-pattern",
       "gof-visitor-pattern",
       "grasp",
+      "iosp",
       "kiss-principle",
       "law-of-demeter",
       "postels-law",

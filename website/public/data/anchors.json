@@ -47,6 +47,37 @@
     "tier": 3
   },
   {
+    "id": "aida-model",
+    "title": "AIDA Model",
+    "categories": [
+      "communication-presentation"
+    ],
+    "roles": [
+      "technical-writer",
+      "product-owner",
+      "consultant",
+      "ux-designer"
+    ],
+    "related": [
+      "inverted-pyramid-style",
+      "pyramid-principle",
+      "bluf"
+    ],
+    "proponents": [
+      "E. St. Elmo Lewis"
+    ],
+    "tags": [
+      "aida",
+      "marketing-funnel",
+      "copywriting",
+      "persuasion",
+      "advertising",
+      "conversion",
+      "attention-interest-desire-action"
+    ],
+    "filePath": "docs/anchors/aida-model.adoc"
+  },
+  {
     "id": "arc42",
     "title": "arc42 Architecture Documentation",
     "categories": [
@@ -2270,6 +2301,44 @@
     ],
     "filePath": "docs/anchors/invest.adoc",
     "tier": 3
+  },
+  {
+    "id": "iosp",
+    "title": "Integration Operation Segregation Principle (IOSP)",
+    "categories": [
+      "design-principles"
+    ],
+    "roles": [
+      "software-developer",
+      "software-architect",
+      "consultant",
+      "educator"
+    ],
+    "related": [
+      "single-level-of-abstraction-principle",
+      "solid-principles",
+      "solid-srp",
+      "cohesion-criteria",
+      "grasp",
+      "solid-dip",
+      "clean-architecture"
+    ],
+    "proponents": [
+      "Ralf Westphal",
+      "Stefan Lieser"
+    ],
+    "tags": [
+      "iosp",
+      "integration",
+      "operation",
+      "testability",
+      "flow-design",
+      "function-design",
+      "clean-code",
+      "functional-dependency"
+    ],
+    "filePath": "docs/anchors/iosp.adoc",
+    "tier": 2
   },
   {
     "id": "iso-25010",

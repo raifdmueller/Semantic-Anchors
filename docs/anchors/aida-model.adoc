@@ -1,0 +1,52 @@
+= AIDA Model
+:categories: communication-presentation
+:roles: technical-writer, product-owner, consultant, ux-designer
+:related: inverted-pyramid-style, pyramid-principle, bluf
+:proponents: E. St. Elmo Lewis
+:tags: aida, marketing-funnel, copywriting, persuasion, advertising, conversion, attention-interest-desire-action
+
+[%collapsible]
+====
+Full Name:: Attention, Interest, Desire, Action
+
+Also known as:: AIDA Funnel, Hierarchy of Effects (AIDA branch); variants: AIDAS (+Satisfaction), AIDCA / AIDCAS (+Conviction), AIDA-R (+Retention)
+
+[discrete]
+== *Core Concepts*:
+
+Attention:: First *capture awareness* — a headline, hook, or visual that makes the audience stop and notice. Nothing else works until this stage lands.
+
+Interest:: *Hold engagement* by making the message relevant — speak to the reader's problem, curiosity, or benefit so they keep reading.
+
+Desire:: *Create wanting* — turn "this is relevant" into "I want this" through benefits, proof, emotion, and addressing objections.
+
+Action:: *Prompt a single, clear next step* — the call to action (buy, sign up, reply). Without an explicit ask, the funnel leaks at the end.
+
+A sequential funnel:: The stages are ordered and narrowing — each filters the audience to the next. The model's value is forcing copy to do each job in turn rather than jumping to the ask.
+
+A hierarchy-of-effects model:: AIDA is the best-known member of a family of step-models describing how persuasion moves a person from unaware to converted; it is a heuristic, not a measured cognitive law.
+
+Key Proponents:: Commonly attributed to E. St. Elmo Lewis (1898), an American advertising advocate; popularised in 20th-century advertising and sales literature
+
+[discrete]
+== *When to Use*:
+
+* Structuring marketing copy, landing pages, ads, cold emails, or pitch openings
+* Reviewing a draft for a missing stage — most often a weak hook (Attention) or an absent call to action (Action)
+* LLM prompting for persuasive text: "Write this product announcement using the AIDA model"
+* Sequencing a sales conversation from hook to close
+
+[discrete]
+== *When NOT to Use*:
+
+* Informational or reference writing where persuasion is not the goal — use BLUF or the Inverted Pyramid instead
+* As a measured model of buyer psychology — it is a copywriting heuristic, not validated cognitive science
+* Long, relationship-based B2B sales, where multi-touch journeys outgrow a single linear funnel
+
+[discrete]
+== *Related Anchors*:
+
+* <<inverted-pyramid-style,Inverted Pyramid Style>> - News structure front-loads the full story; AIDA deliberately withholds the ask until Desire is built
+* <<pyramid-principle,Pyramid Principle>> - Logical top-down argument for clarity; AIDA is an emotional persuasion sequence for conversion
+* <<bluf,BLUF (Bottom Line Up Front)>> - Leads with the conclusion; the opposite move to AIDA, which earns the conclusion across four stages
+====

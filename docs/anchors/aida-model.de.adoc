@@ -1,0 +1,52 @@
+= AIDA Model
+:categories: communication-presentation
+:roles: technical-writer, product-owner, consultant, ux-designer
+:related: inverted-pyramid-style, pyramid-principle, bluf
+:proponents: E. St. Elmo Lewis
+:tags: aida, marketing-funnel, copywriting, persuasion, advertising, conversion, attention-interest-desire-action
+
+[%collapsible]
+====
+Vollständiger Name:: Attention, Interest, Desire, Action
+
+Auch bekannt als:: AIDA-Funnel, Hierarchy of Effects (AIDA-Zweig); Varianten: AIDAS (+Satisfaction), AIDCA / AIDCAS (+Conviction), AIDA-R (+Retention)
+
+[discrete]
+== *Kernkonzepte*:
+
+Attention:: Zuerst *Aufmerksamkeit gewinnen* — eine Headline, ein Hook oder ein Bild, das den Leser innehalten lässt. Vorher wirkt nichts anderes.
+
+Interest:: *Engagement halten*, indem die Botschaft relevant wird — das Problem, die Neugier oder den Nutzen des Lesers ansprechen, damit er weiterliest.
+
+Desire:: *Verlangen erzeugen* — aus „das ist relevant" ein „das will ich" machen, über Nutzen, Belege, Emotion und das Ausräumen von Einwänden.
+
+Action:: *Einen einzigen, klaren nächsten Schritt auslösen* — der Call to Action (kaufen, anmelden, antworten). Ohne expliziten Aufruf verliert der Funnel am Ende.
+
+Ein sequenzieller Funnel:: Die Stufen sind geordnet und verengen sich — jede filtert das Publikum zur nächsten. Der Wert des Modells liegt darin, den Text jede Aufgabe der Reihe nach erledigen zu lassen, statt direkt zum Aufruf zu springen.
+
+Ein Hierarchy-of-Effects-Modell:: AIDA ist das bekannteste Mitglied einer Familie von Stufenmodellen, die beschreiben, wie Überzeugung eine Person von „unbekannt" zu „konvertiert" führt; eine Heuristik, kein gemessenes kognitives Gesetz.
+
+Key Proponents:: Üblicherweise E. St. Elmo Lewis (1898) zugeschrieben, einem amerikanischen Werbe-Vordenker; popularisiert in der Werbe- und Vertriebsliteratur des 20. Jahrhunderts
+
+[discrete]
+== *Verwendung*:
+
+* Strukturierung von Marketing-Copy, Landingpages, Anzeigen, Cold E-Mails oder Pitch-Einstiegen
+* Review eines Entwurfs auf eine fehlende Stufe — meist ein schwacher Hook (Attention) oder ein fehlender Call to Action (Action)
+* LLM-Prompting für überzeugende Texte: „Schreibe diese Produktankündigung nach dem AIDA-Modell"
+* Ein Verkaufsgespräch vom Hook bis zum Abschluss sequenzieren
+
+[discrete]
+== *Nicht verwenden*:
+
+* Informations- oder Referenztexte, bei denen Überzeugung nicht das Ziel ist — dann BLUF oder Inverted Pyramid nutzen
+* Als gemessenes Modell der Käuferpsychologie — es ist eine Copywriting-Heuristik, keine validierte Kognitionswissenschaft
+* Lange, beziehungsbasierte B2B-Verkäufe, deren Multi-Touch-Reisen einen einzelnen linearen Funnel sprengen
+
+[discrete]
+== *Verwandte Anker*:
+
+* <<inverted-pyramid-style,Inverted Pyramid Style>> - Die News-Struktur stellt die ganze Story nach vorn; AIDA hält den Aufruf bewusst zurück, bis Desire aufgebaut ist
+* <<pyramid-principle,Pyramid Principle>> - Logisches Top-down-Argument für Klarheit; AIDA ist eine emotionale Überzeugungssequenz für Conversion
+* <<bluf,BLUF (Bottom Line Up Front)>> - Beginnt mit dem Fazit; der Gegenzug zu AIDA, das das Fazit über vier Stufen erarbeitet
+====

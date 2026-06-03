@@ -42,6 +42,7 @@
     "name": "Consultant / Coach",
     "anchors": [
       "4mat",
+      "aida-model",
       "blooms-taxonomy",
       "bluf",
       "c4-diagrams",
@@ -66,6 +67,7 @@
       "hoshin-kanri",
       "iec-61508-sil-levels",
       "impact-mapping",
+      "iosp",
       "kishotenketsu",
       "kiss-principle",
       "kotter-8-step-change-model",
@@ -167,6 +169,7 @@
       "hemingway-bridge",
       "heros-journey",
       "inverted-pyramid-style",
+      "iosp",
       "kishotenketsu",
       "kiss-principle",
       "law-of-demeter",
@@ -197,6 +200,7 @@
     "id": "product-owner",
     "name": "Product Owner / Product Manager",
     "anchors": [
+      "aida-model",
       "atam",
       "bdd-given-when-then",
       "cockburn-use-cases",
@@ -330,6 +334,7 @@
       "grasp",
       "hexagonal-architecture",
       "iec-61508-sil-levels",
+      "iosp",
       "iso-25010",
       "kiss-principle",
       "lasr",
@@ -429,6 +434,7 @@
       "hexagonal-architecture",
       "iec-61508-sil-levels",
       "invest",
+      "iosp",
       "kiss-principle",
       "lasr",
       "law-of-demeter",
@@ -566,6 +572,7 @@
     "name": "Technical Writer / Documentation Specialist",
     "anchors": [
       "4mat",
+      "aida-model",
       "arc42",
       "blooms-taxonomy",
       "bluf",
@@ -594,6 +601,7 @@
     "id": "ux-designer",
     "name": "UX Designer / Researcher",
     "anchors": [
+      "aida-model",
       "bem-methodology",
       "double-diamond",
       "jobs-to-be-done",

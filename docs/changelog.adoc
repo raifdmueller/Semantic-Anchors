@@ -2,6 +2,12 @@
 
 A chronological record of all semantic anchors added to the catalog. Community contributors are credited with thanks.
 
+== 2026-06-08
+
+*Refined contracts:*
+
+* *Explaining and Teaching* — sharpened the teaching loop: names its trigger ("explain / why / how"), reorders to the actual flow (ground yourself → frame the checklist → diagnose → teach one item in 4MAT order → verify → gate), adds a grounding step (learn the current state before teaching, don't teach from stale memory), an over-fire brake (a one-line question gets a one-line answer) and an explicit learner opt-out; generalised away from code-only wording so it applies to any topic
+
 == 2026-06-03
 
 *New anchors:*

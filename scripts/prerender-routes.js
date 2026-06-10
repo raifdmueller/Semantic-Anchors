@@ -39,6 +39,10 @@ const ROUTES = [
     title: 'About — Semantic Anchors',
     description:
       'Learn what semantic anchors are, why they matter for LLM communication, and how the catalog is curated.',
+    fragmentDe: 'docs/about.de.html',
+    titleDe: 'Über — Semantic Anchors',
+    descriptionDe:
+      'Was semantische Anker sind, warum sie für die Kommunikation mit LLMs zählen und wie der Katalog kuratiert wird.',
   },
   {
     path: '/workflow',
@@ -50,6 +54,10 @@ const ROUTES = [
     title: 'Spec-Driven Development with Semantic Anchors',
     description:
       'Spec-driven development workflow — from requirements to specification to implementation, powered by semantic anchors.',
+    fragmentDe: 'docs/spec-driven-workflow.de.html',
+    titleDe: 'Spec-Driven Development mit Semantic Anchors',
+    descriptionDe:
+      'Spec-Driven-Development-Workflow — von den Anforderungen über die Spezifikation zur Implementierung, getragen von semantischen Ankern.',
   },
   {
     path: '/brownfield',
@@ -57,6 +65,10 @@ const ROUTES = [
     title: 'Brownfield Workflow — Semantic Anchors',
     description:
       'Applying semantic anchors to brownfield codebases using a bounded-context approach.',
+    fragmentDe: 'docs/brownfield-workflow.de.html',
+    titleDe: 'Brownfield-Workflow — Semantic Anchors',
+    descriptionDe:
+      'Semantische Anker in Brownfield-Codebasen anwenden — mit einem Bounded-Context-Ansatz.',
   },
   {
     path: '/brownfield-experiment-report',
@@ -85,6 +97,10 @@ const ROUTES = [
     title: 'Socratic Code-Theory Recovery Skill — Semantic Anchors',
     description:
       'Installable Claude Code Skill that packages the brownfield documentation-recovery workflow. Two-phase Question Tree with [ANSWERED]/[OPEN] leaves, Q-ID traceability. Install on Claude Code, Codex, Cursor, GitHub Copilot, Gemini CLI, and Amazon Kiro.',
+    fragmentDe: 'docs/socratic-recovery-skill.de.html',
+    titleDe: 'Socratic Code-Theory Recovery Skill — Semantic Anchors',
+    descriptionDe:
+      'Installierbarer Claude Code Skill für den Brownfield-Workflow zur Dokumentations-Wiederherstellung. Zweiphasiger Question Tree mit [ANSWERED]/[OPEN]-Blättern und Q-ID-Nachverfolgbarkeit.',
   },
   {
     path: '/training-data-vs-practice',
@@ -112,6 +128,10 @@ const ROUTES = [
     title: 'Contributing — Semantic Anchors',
     description:
       'How to propose new semantic anchors, quality criteria, and the contribution workflow.',
+    fragmentDe: 'CONTRIBUTING.de.html',
+    titleDe: 'Mitwirken — Semantic Anchors',
+    descriptionDe:
+      'Wie du neue semantische Anker vorschlägst: Qualitätskriterien und der Beitrags-Workflow.',
   },
   {
     path: '/agentskill',
@@ -119,6 +139,10 @@ const ROUTES = [
     title: 'AgentSkill — Semantic Anchors',
     description:
       'The semantic-anchor-translator AgentSkill — install semantic anchors into Claude Code, Codex, Cursor, and other coding agents.',
+    fragmentDe: 'docs/agentskill.de.html',
+    titleDe: 'AgentSkill — Semantic Anchors',
+    descriptionDe:
+      'Der semantic-anchor-translator AgentSkill — semantische Anker in Claude Code, Codex, Cursor und andere Coding-Agents installieren.',
   },
   {
     path: '/rejected-proposals',
@@ -126,6 +150,10 @@ const ROUTES = [
     title: 'Rejected Proposals — Semantic Anchors',
     description:
       'Anchor proposals that did not meet the quality criteria, with reasoning — useful for understanding the curation bar.',
+    fragmentDe: 'docs/rejected-proposals.de.html',
+    titleDe: 'Abgelehnte Vorschläge — Semantic Anchors',
+    descriptionDe:
+      'Anker-Vorschläge, die die Qualitätskriterien nicht erfüllt haben — mit Begründung, nützlich zum Verständnis der Kurationsschwelle.',
   },
   {
     path: '/all-anchors',
@@ -177,6 +205,53 @@ function escapeHtml(str) {
   )
 }
 
+const SITE = 'https://llm-coding.github.io/Semantic-Anchors'
+
+/**
+ * Apply per-page <head> metadata to a copy of the shell: <title>, meta
+ * description, self-referencing canonical URL, honest hreflang alternates
+ * (the shell ships home-pointing ones), and the <html lang> attribute for
+ * German pages.
+ * @param {string} html - Shell HTML.
+ * @param {{title: string, description: string, canonicalUrl: string,
+ *   enUrl: string, deUrl: (string|null), lang: string}} meta
+ * @returns {string} Updated HTML.
+ */
+function applyHead(html, { title, description, canonicalUrl, enUrl, deUrl, lang }) {
+  html = html.replace(/<title>[\s\S]*?<\/title>/, `<title>${escapeHtml(title)}</title>`)
+
+  html = html.replace(
+    /<meta\s+name="description"\s+content="[^"]*"\s*\/?>/,
+    `<meta name="description" content="${escapeHtml(description)}" />`
+  )
+
+  html = html.replace(
+    /<link\s+rel="canonical"\s+href="[^"]*"\s*\/?>/,
+    `<link rel="canonical" href="${canonicalUrl}" />`
+  )
+
+  // Drop the shell's home-pointing language alternates, then re-insert
+  // per-page ones right after the canonical link.
+  html = html.replace(
+    /[ \t]*<link\s+rel="alternate"\s+hreflang="[^"]*"\s+href="[^"]*"\s*\/?>\s*\n/g,
+    ''
+  )
+  const alternates = [
+    `    <link rel="alternate" hreflang="en" href="${enUrl}" />`,
+    deUrl ? `    <link rel="alternate" hreflang="de" href="${deUrl}" />` : null,
+    `    <link rel="alternate" hreflang="x-default" href="${enUrl}" />`,
+  ]
+    .filter(Boolean)
+    .join('\n')
+  html = html.replace(/(<link\s+rel="canonical"[^>]*>)/, `$1\n${alternates}`)
+
+  if (lang === 'de') {
+    html = html.replace('<html lang="en">', '<html lang="de">')
+  }
+
+  return html
+}
+
 /**
  * Wrap the doc fragment in the structure that website/src/components/doc-page.js
  * produces at runtime: a centered article container with a #doc-content div.
@@ -216,32 +291,48 @@ function prerenderRoute(shell, route) {
     return
   }
 
-  const fragmentPath = path.join(DIST, route.fragment)
+  const enUrl = `${SITE}${route.path}`
+  const deUrl = route.fragmentDe ? `${SITE}/de${route.path}` : null
+
+  writeRouteVariant(shell, route.path, route.fragment, {
+    title: route.title,
+    description: route.description,
+    canonicalUrl: enUrl,
+    enUrl,
+    deUrl,
+    lang: 'en',
+  })
+
+  if (route.fragmentDe) {
+    writeRouteVariant(shell, `/de${route.path}`, route.fragmentDe, {
+      title: route.titleDe || route.title,
+      description: route.descriptionDe || route.description,
+      canonicalUrl: deUrl,
+      enUrl,
+      deUrl,
+      lang: 'de',
+    })
+  }
+}
+
+/**
+ * Write one language variant of a pre-rendered route: read the fragment,
+ * apply the per-page <head> metadata, inject the content into the shell's
+ * empty #page-content div, and write dist/<outPath>/index.html. Throws if
+ * the fragment is missing so the build fails fast instead of shipping an
+ * incomplete set of pre-rendered pages.
+ */
+function writeRouteVariant(shell, outPath, fragmentRel, headMeta) {
+  const fragmentPath = path.join(DIST, fragmentRel)
   if (!fs.existsSync(fragmentPath)) {
     throw new Error(
-      `Missing fragment for ${route.path}: ${route.fragment} (expected at ${fragmentPath}). ` +
+      `Missing fragment for ${outPath}: ${fragmentRel} (expected at ${fragmentPath}). ` +
         `Make sure scripts/render-docs.js runs before prerender-routes.js and writes the fragment to website/public/docs/.`
     )
   }
   const fragment = fs.readFileSync(fragmentPath, 'utf-8')
 
-  let html = shell
-
-  // Replace <title>
-  html = html.replace(/<title>[\s\S]*?<\/title>/, `<title>${escapeHtml(route.title)}</title>`)
-
-  // Replace meta description if present
-  html = html.replace(
-    /<meta\s+name="description"\s+content="[^"]*"\s*\/?>/,
-    `<meta name="description" content="${escapeHtml(route.description)}" />`
-  )
-
-  // Update canonical URL so each pre-rendered page points to itself
-  const canonicalUrl = `https://llm-coding.github.io/Semantic-Anchors${route.path}`
-  html = html.replace(
-    /<link\s+rel="canonical"\s+href="[^"]*"\s*\/?>/,
-    `<link rel="canonical" href="${canonicalUrl}" />`
-  )
+  let html = applyHead(shell, headMeta)
 
   // Inject pre-rendered content into the static shell's #page-content div.
   // The shell (set up in website/index.html and preserved through vite build)
@@ -257,7 +348,7 @@ function prerenderRoute(shell, route) {
   }
   html = html.replace(pageContentRegex, `$1${buildDocContentMarkup(fragment)}$2`)
 
-  const outDir = path.join(DIST, route.path)
+  const outDir = path.join(DIST, outPath)
   const outFile = path.join(outDir, 'index.html')
   fs.mkdirSync(outDir, { recursive: true })
   fs.writeFileSync(outFile, html, 'utf-8')
@@ -278,12 +369,76 @@ function prerenderRoute(shell, route) {
  * routes (already written from the cached shell) keep their empty-skeleton
  * assumption.
  */
-function prerenderHome() {
-  const enPath = path.join(__dirname, '..', 'website', 'src', 'translations', 'en.json')
-  const en = JSON.parse(fs.readFileSync(enPath, 'utf-8'))
-  const title = en['hero.title'] || ''
-  const intro = en['hero.intro'] || ''
-  const emphasis = en['hero.introEmphasis'] || ''
+function prerenderHome(shell) {
+  writeHomeVariant(shell, 'en')
+  writeHomeVariant(shell, 'de')
+}
+
+/**
+ * Load a JSON file relative to the website/ app directory.
+ */
+function loadWebsiteJson(rel) {
+  return JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'website', rel), 'utf-8'))
+}
+
+/**
+ * Build the static catalog markup for the home page: one section per
+ * category with plain links for every anchor, targeting the stable
+ * per-anchor section IDs in the pre-rendered /all-anchors reference.
+ * Uses only utility classes that already occur in src/ or index.html, so
+ * they are guaranteed to be present in the built stylesheet.
+ */
+function buildCatalogMarkup(lang, translations) {
+  const categories = loadWebsiteJson('public/data/categories.json')
+  const anchors = loadWebsiteJson('public/data/anchors.json')
+  const byId = new Map(anchors.map((a) => [a.id, a]))
+  const heading =
+    lang === 'de'
+      ? `Der Katalog: ${anchors.length} Anker`
+      : `The catalog: ${anchors.length} anchors`
+
+  const linkClasses =
+    'rounded-md px-2 py-1 text-sm text-[var(--color-text-secondary)] ' +
+    'hover:text-[var(--color-text)] hover:bg-[var(--color-bg-secondary)] transition-colors'
+
+  const sections = categories
+    .map((category) => {
+      const items = (category.anchors || [])
+        .map((id) => byId.get(id))
+        .filter(Boolean)
+        .map(
+          (anchor) =>
+            `<li><a href="/Semantic-Anchors/all-anchors#${escapeHtml(anchor.id)}" class="${linkClasses}">${escapeHtml(anchor.title)}</a></li>`
+        )
+        .join('')
+      if (!items) return ''
+      const name = translations[`categories.${category.id}`] || category.name
+      return `
+        <section class="mb-3">
+          <h3 class="text-lg font-semibold mb-2">${escapeHtml(name)}</h3>
+          <ul class="flex flex-wrap gap-2">${items}</ul>
+        </section>`
+    })
+    .filter(Boolean)
+    .join('')
+
+  return `
+      <section class="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
+        <h2 class="text-2xl font-bold mb-3">${escapeHtml(heading)}</h2>${sections}
+      </section>
+    `
+}
+
+/**
+ * Write one language variant of the home page: hero copy + static catalog,
+ * single-sourced from the translations so it never drifts from the live
+ * hero. EN overwrites dist/index.html, DE goes to dist/de/index.html.
+ */
+function writeHomeVariant(shell, lang) {
+  const tr = loadWebsiteJson(`src/translations/${lang}.json`)
+  const title = tr['hero.title'] || ''
+  const intro = tr['hero.intro'] || ''
+  const emphasis = tr['hero.introEmphasis'] || ''
 
   const block = `
       <section class="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
@@ -291,9 +446,24 @@ function prerenderHome() {
         <p class="mb-2 max-w-3xl">${escapeHtml(intro)}</p>
         <p class="font-semibold max-w-3xl">${escapeHtml(emphasis)}</p>
       </section>
+      ${buildCatalogMarkup(lang, tr)}
     `
 
-  let html = fs.readFileSync(SHELL, 'utf-8')
+  let html = applyHead(shell, {
+    title:
+      lang === 'de'
+        ? 'Semantic Anchors - Gemeinsames Vokabular für die Kommunikation mit LLMs'
+        : 'Semantic Anchors - Shared Vocabulary for LLM Communication',
+    description:
+      lang === 'de'
+        ? '110+ semantische Anker und semantische Contracts für präzise LLM-Kommunikation. Kuratierte Methoden, Frameworks und komponierbare Projektkonventionen. Über 10 Modelle evaluiert.'
+        : '110+ semantic anchors and semantic contracts for precise LLM communication. Curated methodologies, frameworks, and composable project conventions. Evaluated across 10 models.',
+    canonicalUrl: lang === 'de' ? `${SITE}/de/` : `${SITE}/`,
+    enUrl: `${SITE}/`,
+    deUrl: `${SITE}/de/`,
+    lang,
+  })
+
   const pageContentRegex = /(<div\s+id="page-content"[^>]*>)\s*(<\/div>)/
   if (!pageContentRegex.test(html)) {
     throw new Error(
@@ -301,8 +471,16 @@ function prerenderHome() {
     )
   }
   html = html.replace(pageContentRegex, `$1${block}$2`)
-  fs.writeFileSync(SHELL, html, 'utf-8')
-  console.log('  ✓ pre-rendered / (home answer block)')
+
+  if (lang === 'de') {
+    const outDir = path.join(DIST, 'de')
+    fs.mkdirSync(outDir, { recursive: true })
+    fs.writeFileSync(path.join(outDir, 'index.html'), html, 'utf-8')
+    console.log('  ✓ pre-rendered /de/ (home, German)')
+  } else {
+    fs.writeFileSync(SHELL, html, 'utf-8')
+    console.log('  ✓ pre-rendered / (home answer block + catalog)')
+  }
 }
 
 /**
@@ -315,9 +493,9 @@ function main() {
   const shell = readShell()
   for (const route of ROUTES) {
     prerenderRoute(shell, route)
-    console.log(`  ✓ pre-rendered ${route.path}`)
+    console.log(`  ✓ pre-rendered ${route.path}${route.fragmentDe ? ' (+ /de variant)' : ''}`)
   }
-  prerenderHome()
+  prerenderHome(shell)
   console.log(`\n✓ Pre-rendered ${ROUTES.length} routes + home to dist/<route>/index.html`)
 }
 

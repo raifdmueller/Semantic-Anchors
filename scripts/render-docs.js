@@ -105,7 +105,12 @@ renderFile(path.join(ROOT, 'docs/about.adoc'), path.join(WEB_DOCS, 'about.html')
 renderFile(path.join(ROOT, 'docs/about.de.adoc'), path.join(WEB_DOCS, 'about.de.html'))
 
 renderFile(path.join(ROOT, 'CONTRIBUTING.adoc'), path.join(WEB_PUBLIC, 'CONTRIBUTING.html'))
-renderFile(path.join(ROOT, 'CONTRIBUTING.de.adoc'), path.join(WEB_PUBLIC, 'CONTRIBUTING.de.html'))
+// The German CONTRIBUTING source lives only in website/public/ (served raw to
+// the SPA); render it from there so the /de/contributing page can be built.
+renderFile(
+  path.join(WEB_PUBLIC, 'CONTRIBUTING.de.adoc'),
+  path.join(WEB_PUBLIC, 'CONTRIBUTING.de.html')
+)
 
 renderFile(path.join(ROOT, 'docs/changelog.adoc'), path.join(WEB_DOCS, 'changelog.html'))
 

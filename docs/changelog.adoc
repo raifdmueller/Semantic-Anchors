@@ -4,6 +4,13 @@ A chronological record of all semantic anchors added to the catalog. Community c
 
 == 2026-06-10
 
+*The website now works without JavaScript (#595):*
+
+* *Static navigation* — the HTML shell shipped empty header/footer placeholders and not a single `<a href>` link, so without JavaScript the site was a dead end for crawlers, LLM fetchers, and no-JS visitors. The shell now carries a real header (logo + nav) and footer with plain clean-URL links; with JavaScript the SPA hydrates on top exactly as before.
+* *Static home catalog* — the full category → anchor catalog (161 anchors) is pre-rendered into the home page, each anchor linking to its stable section in the _Full Reference_ (`/all-anchors#<anchor-id>`).
+* *Static German pages* — the home page and every doc page with a German translation are pre-rendered under `/de/…` with honest `hreflang` pairs (the previous `?lang=de` alternate served identical English HTML). A `/de` URL switches the SPA to German for JS users.
+* The legacy `#/route` hash links in the JS header/footer were replaced with the same clean URLs.
+
 *Discoverability (SEO / AI):*
 
 * *Structured data* — added a standalone `Organization` entity and a `DefinedTermSet` with a `DefinedTerm` for every anchor (name, canonical URL, and a definition where available), generated at build time from `anchors.json`. Lets search engines and retrieval-grounded AI resolve "Semantic Anchors" as a distinct entity and each anchor as a defined term (#579).

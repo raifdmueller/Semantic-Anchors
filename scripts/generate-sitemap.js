@@ -51,6 +51,19 @@ const PAGES = [
   { path: '/rejected-proposals', priority: '0.5', changefreq: 'monthly' },
 ]
 
+// Pre-rendered German variants under /de/. Keep in sync with the routes in
+// scripts/prerender-routes.js that carry a fragmentDe (plus the home page).
+const DE_PAGES = [
+  '/',
+  '/about',
+  '/spec-driven-development',
+  '/brownfield',
+  '/socratic-recovery-skill',
+  '/contributing',
+  '/agentskill',
+  '/rejected-proposals',
+]
+
 const anchorsData = JSON.parse(fs.readFileSync(ANCHORS_DATA, 'utf-8'))
 const today = new Date().toISOString().split('T')[0]
 
@@ -84,6 +97,12 @@ for (const page of PAGES) {
   sitemap += urlEntry(loc, today, page.changefreq, page.priority)
 }
 
+// German variants
+for (const dePath of DE_PAGES) {
+  const loc = dePath === '/' ? `${BASE_URL}/de/` : `${BASE_URL}/de${dePath}`
+  sitemap += urlEntry(loc, today, 'monthly', '0.5')
+}
+
 // Individual anchor pages
 anchorsData.forEach((anchor) => {
   sitemap += urlEntry(
@@ -102,5 +121,5 @@ fs.writeFileSync(OUTPUT_FILE, sitemap, 'utf-8')
 
 console.log(`✓ Sitemap generated: ${OUTPUT_FILE}`)
 console.log(
-  `✓ Total URLs: ${PAGES.length + anchorsData.length} (${PAGES.length} pages + ${anchorsData.length} anchors)`
+  `✓ Total URLs: ${PAGES.length + DE_PAGES.length + anchorsData.length} (${PAGES.length} pages + ${DE_PAGES.length} German variants + ${anchorsData.length} anchors)`
 )

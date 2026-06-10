@@ -87,6 +87,13 @@ const ROUTES = [
       'Installable Claude Code Skill that packages the brownfield documentation-recovery workflow. Two-phase Question Tree with [ANSWERED]/[OPEN] leaves, Q-ID traceability. Install on Claude Code, Codex, Cursor, GitHub Copilot, Gemini CLI, and Amazon Kiro.',
   },
   {
+    path: '/training-data-vs-practice',
+    fragment: 'docs/training-data-vs-practice.html',
+    title: 'An Anchor Delivers Only as Far as the Prior Reaches — Semantic Anchors',
+    description:
+      "A semantic anchor's power depends on how densely the concept sits in an LLM's training data. A reproducible clean-room experiment across Claude Haiku 4.5, Sonnet 4.6, Opus 4.8 and Fable 5 on the Cockburn use-cases anchor.",
+  },
+  {
     path: '/contracts',
     fragment: 'docs/contracts.html',
     title: 'Semantic Contracts — Semantic Anchors',

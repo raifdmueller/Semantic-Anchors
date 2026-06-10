@@ -2,6 +2,13 @@
 
 A chronological record of all semantic anchors added to the catalog. Community contributors are credited with thanks.
 
+== 2026-06-10
+
+*Discoverability (SEO / AI):*
+
+* *Structured data* — added a standalone `Organization` entity and a `DefinedTermSet` with a `DefinedTerm` for every anchor (name, canonical URL, and a definition where available), generated at build time from `anchors.json`. Lets search engines and retrieval-grounded AI resolve "Semantic Anchors" as a distinct entity and each anchor as a defined term (#579).
+* *Fixed:* the _An Anchor Delivers Only as Far as the Prior Reaches_ article was not pre-rendered and was therefore invisible to search engines and LLM crawlers. It is now pre-rendered like every other doc page.
+
 == 2026-06-09
 
 *New contracts:*

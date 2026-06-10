@@ -3,6 +3,8 @@
  * Deployed under a base path (e.g., /Semantic-Anchors/)
  */
 
+import { i18n } from '../i18n.js'
+
 const routes = new Map()
 let currentRoute = null
 let routeBeforeModal = null
@@ -50,6 +52,19 @@ function buildPath(route) {
 }
 
 /**
+ * Split an optional language prefix off a route path. The pre-rendered
+ * German pages live under /de/<route> (e.g. /de/about); the SPA resolves
+ * them to the same route handlers with the language switched to German.
+ * @param {string} path - Route path with the base already stripped.
+ * @returns {{path: string, lang: string|null}}
+ */
+function splitLangPrefix(path) {
+  if (path === '/de') return { path: '/', lang: 'de' }
+  if (path.startsWith('/de/')) return { path: path.slice(3), lang: 'de' }
+  return { path, lang: null }
+}
+
+/**
  * Register a route handler
  * @param {string} path - Route path (e.g., '/', '/about', '/contributing')
  * @param {Function} handler - Function to call when route is active
@@ -79,7 +94,7 @@ export function getCurrentRoute() {
   if (window.location.hash.startsWith('#/')) {
     return window.location.hash.slice(1)
   }
-  return stripBase(window.location.pathname)
+  return splitLangPrefix(stripBase(window.location.pathname)).path
 }
 
 /**
@@ -183,6 +198,11 @@ function closeOpenAnchorModal() {
 }
 
 function handleRoute() {
+  // A /de/<route> URL (pre-rendered German page) switches the app language
+  // before the route handler runs, so the SPA hydrates in German.
+  const { lang } = splitLangPrefix(stripBase(window.location.pathname))
+  if (lang) i18n.setLang(lang)
+
   let path = getCurrentRoute()
 
   // Normalize trailing slash: GitHub Pages 301-redirects routes like

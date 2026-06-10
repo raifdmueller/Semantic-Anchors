@@ -53,16 +53,32 @@
       "url": "https://llm-coding.github.io/Semantic-Anchors/",
       "description": "110+ semantic anchors and semantic contracts for precise communication with Large Language Models. Evaluated across 10 models.",
       "inLanguage": ["en", "de"],
-      "publisher": {
-        "@type": "Organization",
-        "name": "LLM Coding Community",
-        "url": "https://github.com/LLM-Coding"
-      },
+      "publisher": { "@id": "https://llm-coding.github.io/Semantic-Anchors/#organization" },
       "potentialAction": {
         "@type": "SearchAction",
         "target": "https://llm-coding.github.io/Semantic-Anchors/#/search?q={search_term_string}",
         "query-input": "required name=search_term_string"
       }
+    }
+    </script>
+
+    <!-- Standalone Organization entity (resolvable by @id, not only nested as
+         publisher) so search engines and AI can identify "Semantic Anchors" as
+         a distinct entity. See issue #579. -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "@id": "https://llm-coding.github.io/Semantic-Anchors/#organization",
+      "name": "Semantic Anchors",
+      "alternateName": "LLM Coding Community",
+      "url": "https://llm-coding.github.io/Semantic-Anchors/",
+      "logo": "https://llm-coding.github.io/Semantic-Anchors/logo.png",
+      "description": "A curated catalog of semantic anchors and semantic contracts — shared vocabulary for precise communication with Large Language Models.",
+      "sameAs": [
+        "https://github.com/LLM-Coding",
+        "https://github.com/LLM-Coding/Semantic-Anchors"
+      ]
     }
     </script>
 

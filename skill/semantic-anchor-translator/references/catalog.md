@@ -162,7 +162,7 @@ Source: https://github.com/LLM-Coding/Semantic-Anchors
 - **Core:** Six-part template that turns a vague quality goal into a testable statement — Source, Stimulus, Artifact, Environment, Response, Response Measure; the Response Measure (a latency, percentile, throughput, recovery time) is what makes it verifiable; expresses arc42 Chapter 10 quality requirements and the leaves of an ATAM utility tree
 
 ### LASR by Toth/Zörner
-- **Also known as:** Layers–Aspects–Solution Strategy–Rationale
+- **Also known as:** Lightweight Approach for Software Reviews
 - **Proponents:** Stefan Toth, Stefan Zörner
 - **Core:** Lightweight architecture description framework — describe a system through four lenses: Layers (structural decomposition), Aspects (cross-cutting concerns), Solution Strategy (key technology and design choices), Rationale (documented reasoning behind decisions); pairs naturally with arc42 and ADRs
 

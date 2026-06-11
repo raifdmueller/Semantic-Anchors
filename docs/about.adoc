@@ -81,6 +81,8 @@ Different people using the same semantic anchor will get *similar, predictable r
 
 Not every term makes a good semantic anchor. We maintain high quality standards:
 
+*Inclusion means precision, not endorsement.* The catalog is a lexicon: an anchor's presence means the term works as a precise pointer to a dense, well-documented concept — not that we recommend the practice. Where a method is contested or its current edition has drifted away from the training-data prior, the anchor says so in a _Criticism_ or _Current Status_ section with named, linked sources.
+
 === Precise
 References a *specific, established body of knowledge* with clear boundaries.
 

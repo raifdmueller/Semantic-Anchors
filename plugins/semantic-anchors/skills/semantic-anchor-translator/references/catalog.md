@@ -162,9 +162,9 @@ Source: https://github.com/LLM-Coding/Semantic-Anchors
 - **Core:** Six-part template that turns a vague quality goal into a testable statement — Source, Stimulus, Artifact, Environment, Response, Response Measure; the Response Measure (a latency, percentile, throughput, recovery time) is what makes it verifiable; expresses arc42 Chapter 10 quality requirements and the leaves of an ATAM utility tree
 
 ### LASR by Toth/Zörner
-- **Also known as:** Layers–Aspects–Solution Strategy–Rationale
+- **Also known as:** Lightweight Approach for Software Reviews
 - **Proponents:** Stefan Toth, Stefan Zörner
-- **Core:** Lightweight architecture description framework — describe a system through four lenses: Layers (structural decomposition), Aspects (cross-cutting concerns), Solution Strategy (key technology and design choices), Rationale (documented reasoning behind decisions); pairs naturally with arc42 and ADRs
+- **Core:** Lightweight review method for efficient software reviews — uncovers weaknesses and challenges architectural ideas; more streamlined than ATAM. Key elements: Lean Mission Statement (shared vision), Evaluation Criteria (quantified quality attributes), Risk-based Review, Quality-focused Analysis, LASR Result Diagram (objectives vs. assessment), workshop format (moderated team event with LASR-Cards). Community-driven and free to use (lasr-reviews.org)
 
 ### Lehman's Software Classification
 - **Also known as:** SPE Classification, Lehman's SPE Taxonomy

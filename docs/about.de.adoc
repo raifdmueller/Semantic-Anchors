@@ -110,6 +110,8 @@ Verschiedene Personen, die denselben semantischen Anker verwenden, erhalten *äh
 
 Nicht jeder Begriff eignet sich als semantischer Anker. Wir pflegen hohe Qualitätsstandards:
 
+*Aufnahme bedeutet Präzision, nicht Empfehlung.* Der Katalog ist ein Begriffslexikon: Dass ein Anker enthalten ist, heißt, der Begriff funktioniert als präziser Pointer auf ein dichtes, gut dokumentiertes Konzept — nicht, dass wir die Praxis empfehlen. Wo eine Methode umstritten ist oder ihre aktuelle Edition vom Trainingsdaten-Prior abgedriftet ist, sagt der Anker das in einer _Kritik_- oder _Aktueller-Stand_-Sektion mit benannten, verlinkten Quellen.
+
 === Präzise
 Referenziert einen *spezifischen, etablierten Wissensbereich* mit klaren Grenzen.
 

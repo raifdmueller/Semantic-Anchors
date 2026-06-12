@@ -175,7 +175,7 @@ export function renderContractsPage() {
   `
 }
 
-function renderContractCard(contract, isSelected) {
+export function renderContractCard(contract, isSelected) {
   const title = getLocalizedField(contract, 'title')
   const description = getLocalizedField(contract, 'description')
   const template = getLocalizedField(contract, 'template')
@@ -213,7 +213,7 @@ function renderContractCard(contract, isSelected) {
           />
           <div class="flex-1 min-w-0">
             <div class="flex items-start justify-between gap-2 mb-1">
-              <h3 class="text-lg font-semibold text-[var(--color-text)]">${esc(title)}</h3>
+              <h3 class="text-lg font-semibold text-[var(--color-text)]"><a href="${import.meta.env.BASE_URL}contract/${esc(contract.id)}" class="hover:underline" title="${esc(i18n.t('contracts.permalink'))}">${esc(title)}</a></h3>
               <button
                 type="button"
                 class="contract-copy-btn shrink-0 inline-flex items-center justify-center rounded-md border border-[var(--color-border)] p-1.5 text-[var(--color-text-secondary)] hover:text-blue-600 hover:border-blue-300 dark:hover:text-blue-400 dark:hover:border-blue-700 transition-colors"

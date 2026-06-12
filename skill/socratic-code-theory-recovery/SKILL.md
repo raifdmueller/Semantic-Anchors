@@ -24,7 +24,7 @@ When this skill is invoked:
 
 3. **Once you have the pointer, run Phase 1.** Use [prompts/phase-1-question-tree.md](prompts/phase-1-question-tree.md) — substitute `[bounded context path]` with the user's path and `[context-name]` with the kebab-cased human-readable name. Do not change the leaf classification, Q-ID scheme, or the output-file naming scheme.
 
-4. **Stop after Phase 1.** Phase 2 must wait for the team to answer the `[OPEN]` leaves in `OPEN_QUESTIONS-<context-name>.adoc`. Tell the user that Phase 1 is complete, where the two output files are, and what the next manual step is — do not proceed to Phase 2 in the same session unless the user explicitly asks.
+4. **Stop after Phase 1.** Tell the user that Phase 1 is complete, where the two output files are, and that the next step is routing `OPEN_QUESTIONS-<context-name>.adoc` to the team. Phase 2 is gated on the file, not on being asked: before starting Phase 2 — even when the user explicitly requests it — check that every `[OPEN]` leaf in `OPEN_QUESTIONS-<context-name>.adoc` has either a team answer or an explicit `(deferred)` marker. If any leaf has neither, do not run Phase 2; list the unanswered leaves instead.
 
 ## When to use this skill
 

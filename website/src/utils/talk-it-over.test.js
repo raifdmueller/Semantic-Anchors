@@ -123,13 +123,18 @@ describe('catalogPrompt — the reader’s LLM may only fetch URLs it was given'
   })
 
   // Searching solved the provenance rule in a measurement, and answered from
-  // heise and two unrelated blogs instead of from this site. The prompt keeps
-  // the reader's LLM on the pages it was handed.
-  it('forbids answering from memory or from elsewhere', () => {
+  // heise and two unrelated blogs instead of from this site.
+  //
+  // katalog@4 no longer forbids looking things up — it demands attribution
+  // instead. The measured failure stays guarded all the same, because what
+  // went wrong there was not the looking up: it was that the answer arrived
+  // without a word about where it came from. So this site has to be read
+  // first, and a gap in it has to be named as a gap.
+  it('makes this site the first source, not one option among three', () => {
     const prompt = catalogPrompt(manifest).toLowerCase()
 
-    expect(prompt).toContain('do not answer from memory')
-    expect(prompt).toContain('elsewhere')
+    expect(prompt).toContain('answer from what you read')
+    expect(prompt).toMatch(/does not cover my question, say that first/)
   })
 
   // The budget that decides whether the button stays one click. Above the
@@ -156,7 +161,39 @@ describe('catalogPrompt — the reader’s LLM may only fetch URLs it was given'
     expect(prompt).toMatch(/never the (text|\.txt) file|not the (text|\.txt) file/)
   })
 
+  /*
+   * Reported from a real dialogue on this site. The reader asked whether
+   * "OWASP Top 10 (2026)" exists at all — a question about the world, not
+   * about this site — and the LLM refused to look it up, citing our prompt:
+   *
+   *   "Only your own rule. The first prompt says: do not answer from memory
+   *    and do not go looking elsewhere if the site has nothing. I read that
+   *    as the boundary for the whole session."
+   *
+   * The rule was meant as *invent nothing about this site*. Read as a gag
+   * order it costs what the site is for: a reader who can check us.
+   *
+   * What replaces it is a duty to attribute, not a licence. So the test has
+   * two halves, and both matter: the three sources must stand as their own
+   * lines, and none of them may pass for another.
+   */
+  it('separates the sources instead of forbidding two of them', () => {
+    const prompt = catalogPrompt(manifest)
+
+    // As their own lines, not merely somewhere in the prose. A first attempt
+    // matched /your own knowledge/ anywhere and stayed green after the list
+    // line was deleted, because the same words still stood in a sentence.
+    const sources = prompt.match(
+      /^ {2}(this site|somewhere else|your own knowledge) +\S/gm
+    )
+
+    expect(sources).toHaveLength(3)
+    expect(prompt).toMatch(/passing for\s+another/)
+    expect(prompt).not.toMatch(/do not go\s+looking elsewhere/)
+    expect(prompt).not.toMatch(/do not answer from memory/)
+  })
+
   it('announces its own version', () => {
-    expect(CATALOG_VERSION).toBe('katalog@3')
+    expect(CATALOG_VERSION).toBe('katalog@4')
   })
 })
